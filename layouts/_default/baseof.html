@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> {{- block "title" . -}} {{ .Site.Title }} {{- end -}}</title>
+
+  {{ partial "head.html" . }}
+
+</head>
+
+<body>
+  <div class="flip-container">
+    <div class="flipper">
+      <section class="front">
+        {{ block "frontmenu" . }} {{ end }} {{ block "main" . }} {{ end }}
+      </section>
+      <section class="back">
+        {{ partial "back.html" . }}
+      </section>
+    </div>
+  </div>
+
+  {{ partial "footer.html" . }}
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{{ if eq .Type "post" }}
+  <!-- Page Author & Description -->
+  <meta name="author" content="{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}" />
+  <meta name="description" content="{{ .Summary | plainify }}" />
+{{ else }}
+  <!-- Site Author & Description -->
+  <meta name="author" content="{{ .Site.Params.author }}" />
+  <meta name="description" content="{{ .Site.Params.description }}" />
+{{ end }}
+
+<!-- Site Generator -->
+<meta name="generator" content="Hugo {{ .Hugo.Version }}" />
+
+<!-- Permalink & RSSlink -->
+<link rel="canonical" href="{{ .Permalink }}" />
+<link rel="alternative" href="{{ "/index.xml" | relURL }}" title="{{ .Site.Title }}" type="application/atom+xml" />
+
+<link href="https://cdn.bootcss.com/semantic-ui/2.2.13/semantic.min.css" rel="stylesheet" >
+<link rel="stylesheet" href="/css/site.css">

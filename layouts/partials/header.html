@@ -1,0 +1,50 @@
+<section class="ui top attached center aligned inverted segment">
+  <div class="ui small circular image">
+    <img src="{{ .Site.Params.avatar }}">
+  </div>
+  <h3 class="ui header">
+    {{- .Site.Params.author -}}{{- i18n "blogAlias" -}}
+    <div class="sub header" style="color: white;">{{ .Site.Params.motto }}</div>
+  </h3>
+  <a id="tag-category-pop" class="ui red right corner label">
+    <i class="pointing down icon" title="{{ i18n "clickToPopTagsAndCategories" }}"></i>
+  </a>
+</section>
+
+{{ if gt (len .Site.Taxonomies.tags) 0 }}
+<section class="ui attached center aligned inverted segment dream-tags">
+  {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+  <a class="ui label" href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}" title="{{ $name }}">{{ $name }}</a>
+  {{ end }}
+</section>
+{{ end }}
+
+{{ if gt (len .Site.Taxonomies.categories) 0 }}
+<section class="ui attached inverted segment dream-categories">
+  <div class="ui inverted accordion">
+    {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+    <div class="title">
+      <i class="dropdown icon"></i>
+      <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}" class="item" style="color: white;">{{ $name }}</a>
+    </div>
+    <div class="content">
+      <div class="ui link inverted list">
+      {{ range $taxonomy.Pages }}
+      <div class="item" style="padding-left: 24px;">
+        <i class="cocktail icon"></i>
+        <div class="content">
+          <a href="{{ .Permalink}}" class="item">{{ .LinkTitle }}</a>
+        </div>
+      </div>
+      {{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+<section class="ui bottom attached center aligned inverted segment">
+    <p>© {{ if eq now.Year 2017 }}2017{{ else }}2017-{{ now.Year }}{{ end }} {{ .Site.Title }}</p>
+    <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
+</section>

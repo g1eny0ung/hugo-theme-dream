@@ -1,0 +1,22 @@
+<article class="black card">
+  <div class="dimmble image">
+    <div class="ui dimmer">
+      <div class="content">
+        <div class="center">
+          <a href="{{ .Permalink }}">
+            <h2 class="ui header" style="color: white;">{{ .Title }}</h2>
+          </a>
+          <p>{{ .Summary | plainify | htmlUnescape }}</p>
+          <p>@ {{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}</p>
+          <div class="ui top right attached black label">{{ .ReadingTime }} min read</div>
+          <div class="ui bottom left attached black label">{{ .Date.Format "January 1, 2006" }}</div>
+        </div>
+      </div>
+    </div>
+    {{ if isset .Params "cover" }}
+    <img src="{{ .Params.cover }}" alt="{{ .Title }}">
+    {{ else }}
+    <img src="/img/default{{ index (shuffle (seq 1 3)) 0 }}.jpg" alt="{{ .Title }}">
+    {{ end }}
+  </div>
+</article>

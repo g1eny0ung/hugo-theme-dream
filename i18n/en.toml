@@ -1,0 +1,20 @@
+[blogAlias]
+other = "'s blog"
+
+[aboutHeader]
+other = "About me"
+
+[home]
+other = "Home"
+
+[prevPage]
+other = "Previous page"
+
+[nextPage]
+other = "Next page"
+
+[flip]
+other = "Flip it!"
+
+[clickToPopTagsAndCategories]
+other = "Click this to pop tags and categories"

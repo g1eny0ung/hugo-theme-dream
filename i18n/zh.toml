@@ -1,0 +1,20 @@
+[blogAlias]
+other = "的博客"
+
+[aboutHeader]
+other = "关于我"
+
+[home]
+other = "首页"
+
+[prevPage]
+other = "前一页"
+
+[nextPage]
+other = "后一页"
+
+[flip]
+other = "翻转"
+
+[clickToPopTagsAndCategories]
+other = "点击弹出标签和分类"

@@ -1,0 +1,48 @@
+{{ define "frontmenu" }}
+{{ $paginator := .Paginate (where .Data.Pages "Type" "post") (index .Site.Params "paginate" | default 6) }}
+<div class="ui top secondary menu">
+  <div class="item">
+    <i class="inverted big link bullseye icon dream-flip-toggle" title="{{ i18n "flip" }}"></i>
+  </div>
+  <div class="item">
+    {{ if $paginator.HasPrev }}
+    <a href="{{ $paginator.Prev.URL }}">
+      <i class="inverted big arrow circle outline left icon" title="{{ i18n "prevPage" }}"></i>
+    </a>
+    {{ else }}
+    <i class="disabled inverted big arrow circle outline left icon" title="{{ i18n "prevPage" }}"></i>
+    {{ end }}
+  </div>
+  <div class="item">
+    {{ if $paginator.HasNext }}
+    <a href="{{ $paginator.Next.URL }}">
+      <i class="inverted big arrow circle outline right icon" title="{{ i18n "nextPage" }}"></i>
+    </a>
+    {{ else }}
+    <i class="disabled inverted big arrow circle outline right icon" title="{{ i18n "nextPage" }}"></i>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
+
+{{ define "main"}}
+<div class="ui centered grid">
+  <div class="fifteen wide mobile four wide tablet four wide computer column">
+
+    {{ partial "header.html" . }}
+
+  </div>
+  <div class="fifteen wide mobile eleven wide tablet eleven wide computer column post-list">
+
+    <div class="ui two stackable cards">
+      {{ $paginator := .Paginate (where .Data.Pages "Type" "post") (index .Site.Params "paginate" | default 6) }}
+      {{ range $paginator.Pages }}
+
+        {{ .Render "summary" }}
+
+      {{ end }}
+    </div>
+
+  </div>
+</div>
+{{ end }}
