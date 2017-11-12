@@ -11,7 +11,7 @@
   </a>
 </section>
 
-{{ if gt (len .Site.Taxonomies.tags) 0 }}
+{{ if .Site.Taxonomies.tags }}
 <section class="ui attached center aligned inverted segment dream-tags">
   {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
   <a class="ui label" href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}" title="{{ $name }}">{{ $name }}</a>
@@ -19,7 +19,7 @@
 </section>
 {{ end }}
 
-{{ if gt (len .Site.Taxonomies.categories) 0 }}
+{{ if .Site.Taxonomies.categories }}
 <section class="ui attached inverted segment dream-categories">
   <div class="ui inverted accordion">
     {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
