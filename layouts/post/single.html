@@ -13,11 +13,6 @@
 
 {{ define "main" }}
 <div class="ui centered grid">
-  <div class="fifteen wide mobile four wide tablet four wide computer column">
-
-    {{ partial "header.html" . }}
-
-  </div>
   <div class="fifteen wide mobile eleven wide tablet eleven wide computer column post-list">
 
     <section class="ui secondary top attached black segment">
@@ -71,6 +66,11 @@
       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </footer>
     {{ end }}
+
+  </div>
+  <div class="fifteen wide mobile four wide tablet four wide computer column">
+
+    {{ partial "header.html" . }}
 
   </div>
 </div>
