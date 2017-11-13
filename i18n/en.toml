@@ -21,3 +21,6 @@ other = "Click this to pop tags and categories"
 
 [updateAt]
 other = "Update at"
+
+[returnHome]
+other = "Return home page"
