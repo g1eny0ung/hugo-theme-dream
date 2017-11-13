@@ -88,3 +88,7 @@ a.ui.label {
     display: none;
   } 
 }
+
+.about {
+  overflow: scroll;
+}

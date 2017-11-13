@@ -1,7 +1,7 @@
 ---
 title: {{ replace .TranslationBaseName "-" " " | title }}
 date: {{ .Date }}
-update: {{ .Date }}
+lastmod: {{ .Date }}
 author: Author Name
 cover: /img/cover.jpg
 categories: ["category1"]
