@@ -23,7 +23,10 @@ $(document).ready(function () {
   postList.css('max-height', pMaxHeight)
 
   $('.ui.cards .image')
-    .dimmer('setting', 'opacity', .6)
+    .dimmer({
+      opacity: .6,
+      closable: false
+    })
     .dimmer('show')
 
   $('.ui.accordion')
