@@ -4,9 +4,9 @@
 name = "dream"
 license = "MIT"
 licenselink = "https://github.com/g1eny0ung/hugo-theme-dream/blob/master/LICENSE"
-description = ""
+description = "A hugo theme"
 homepage = "https://g1eny0ung.github.io"
-tags = []
+tags = ["colors"]
 features = []
 min_version = "0.29"
 
@@ -16,6 +16,6 @@ min_version = "0.29"
 
 # If porting an existing theme
 [original]
-  name = ""
-  homepage = ""
-  repo = ""
+  name = "g1eny0ung's blog"
+  homepage = "https://g1eny0ung.github.io"
+  repo = "https://github.com/g1eny0ung/blog"
