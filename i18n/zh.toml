@@ -24,3 +24,6 @@ other = "更新于"
 
 [returnHome]
 other = "返回首页"
+
+[noTag]
+other = "暂无标签"

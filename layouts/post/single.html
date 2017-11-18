@@ -31,7 +31,7 @@
       <a class="ui label" href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}" title="{{ $tag }}">{{ $tag }}</a>
       {{ end }}
       {{ else }}
-      <span>暂无标签</span>
+      <span>{{ i18n "noTag" }}</span>
       {{ end }}
     </footer>
 

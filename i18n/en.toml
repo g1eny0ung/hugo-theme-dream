@@ -24,3 +24,6 @@ other = "Update at"
 
 [returnHome]
 other = "Return home page"
+
+[noTag]
+other = "No Tag"
