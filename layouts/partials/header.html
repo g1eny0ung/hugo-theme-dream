@@ -1,6 +1,10 @@
 <section class="ui top attached center aligned inverted segment">
   <div class="ui small circular image">
+    {{ if isset .Site.Params "avatar" }}
     <img src="{{ .Site.Params.avatar }}">
+    {{ else }}
+    <img src='{{ "/img/defaultAvatar.png" }}'>
+    {{ end }}
   </div>
   <h3 class="ui header">
     {{- .Site.Params.author -}}{{- i18n "blogAlias" -}}
