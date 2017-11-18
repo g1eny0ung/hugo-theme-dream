@@ -1,0 +1,25 @@
+baseurl = "https://example.com"
+languageCode = "en"
+defaultContentLanguage = "en"
+title = "Hugo Theme Dream"
+theme = "hugo-theme-dream"
+
+copyright = "Copyright (c) 2017, Yue Yang; all rights reserved."
+
+# enableRobotsTXT = true
+
+# googleAnalytics = ""
+
+# disqusShortname = ""
+
+[params]
+  author = "AuthorTest"
+  motto = "MottoTest"
+  # description = ""
+  # avatar = ""
+  
+  # email = ""
+  # github = ""
+  # linkedin = ""
+  # codepen = ""
+  # stackoverflow = ""

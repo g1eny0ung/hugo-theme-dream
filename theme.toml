@@ -1,13 +1,13 @@
 # theme.toml template for a Hugo theme
 # See https://github.com/gohugoio/hugoThemes#themetoml for an example
 
-name = "dream"
+name = "Dream"
 license = "MIT"
 licenselink = "https://github.com/g1eny0ung/hugo-theme-dream/blob/master/LICENSE"
-description = "A hugo theme"
+description = "A hugo theme named dream"
 homepage = "https://g1eny0ung.github.io"
-tags = ["colors"]
-features = []
+tags = ["colors", "blog", "disqus", "googleanalytics"]
+features = ["flip", "colorful", "imagebackground", "i18n", "responsive", "copyright", "motto"]
 min_version = "0.29"
 
 [author]
