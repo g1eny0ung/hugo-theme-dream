@@ -36,12 +36,12 @@
 
 {{ define "main"}}
 <div class="ui centered grid">
-  <div class="fifteen wide mobile four wide tablet four wide computer column">
+  <div class="fifteen wide mobile fifteen wide tablet four wide computer column">
 
     {{ partial "header.html" . }}
 
   </div>
-  <div class="fifteen wide mobile eleven wide tablet eleven wide computer column post-list">
+  <div class="fifteen wide mobile fifteen wide tablet eleven wide computer column post-list">
 
     <div class="ui two stackable cards">
       {{ $paginator := .Paginate (where .Data.Pages "Type" "post") (index .Site.Params "paginate" | default 6) }}
