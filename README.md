@@ -21,7 +21,7 @@ Then in your `config.toml`, edit `theme = "dream"` and save.
 
 ***I assume you have already viewd [Hugo Docs](https://gohugo.io/documentation/), if you want to use this theme, the doc will help you to understand the configuration.***
 
-> i18n support
+### i18n support
 
 Now the theme has
 
@@ -37,7 +37,7 @@ defaultContentLanguage = "en" // English i18n
 
 View the i18n folder for more details.
 
-> Params configure
+### Params configure
 
 ```
 [params]
@@ -53,7 +53,7 @@ View the i18n folder for more details.
   stackoverflow = ""
 ```
 
-> Website Analytics
+### Website Analytics
 
 Dream support [Google Analytics](https://www.google.com/analytics/)
 
@@ -63,7 +63,7 @@ In `config.toml`, set:
 googleAnalytics = ""
 ```
 
-> Social Comments
+### Social Comments
 
 Dream now use [Disqus](https://disqus.com/)
 
@@ -73,7 +73,7 @@ In `config.toml`, set:
 disqusShortname = ""
 ```
 
-> Copyright
+### Copyright
 
 You can set copyright, it will show in about page and the footer of article page.
 
@@ -83,7 +83,7 @@ copyright = ""
 
 Support html tag in copyright.
 
-> How to write about info?
+### How to write about info?
 
 First, open data folder and create a file named `about.toml`.
 
@@ -149,6 +149,6 @@ in your blog folder, the `-D` represent to build draft post.
 
 View [hugo hosting-and-deployment](https://gohugo.io/hosting-and-deployment/)
 
-# License
+## License
 
 MIT © [g1eny0ung](https://github.com/g1eny0ung)
