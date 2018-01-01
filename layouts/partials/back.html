@@ -59,7 +59,7 @@
       </footer>
       {{ end }}
 
-      {{ if .Site.DisqusShortname }}
+      {{ if and .Site.DisqusShortname (eq .RelPermalink "/") }}
       <footer class="ui secondary segment">
         <div id="disqus_thread"></div>
         <script>
@@ -70,7 +70,7 @@
         */
 
         var disqus_config = function () {
-        this.page.url = '{{ .Permalink }}/about';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.url = '{{ .Permalink }}about';  // Replace PAGE_URL with your page's canonical URL variable
         this.page.identifier = '/about'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         };
 
