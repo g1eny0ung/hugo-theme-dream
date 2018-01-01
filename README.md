@@ -31,7 +31,6 @@ Now the theme has
 Open `config.toml` and write:
 
 ```
-languageCode = "en" // <html lang="en">
 defaultContentLanguage = "en" // English i18n
 ```
 
