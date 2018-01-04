@@ -80,15 +80,39 @@ a.ui.label {
 
   #tag-category-pop {
     display: block;
-  } 
+  }
 }
 
 @media screen and (min-width: 768px) {
   #tag-category-pop {
     display: none;
-  } 
+  }
 }
 
 .about {
   overflow: scroll;
+}
+
+.post-content img {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  background-color: transparent
+}
+
+.post-content strong {
+  color: rgba(0, 0, 0, .7);
+}
+
+.post-content blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 0;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+.post-content blockquote p {
+  display: inline;
 }
