@@ -6,6 +6,10 @@ The main feature is full page flip and random color background ~.
 
 ![screenshot](https://raw.githubusercontent.com/g1eny0ung/hugo-theme-dream/master/images/screenshot.png)
 
+## Documentation
+
+[wiki](https://github.com/g1eny0ung/hugo-theme-dream/wiki)
+
 ## Installation
 
 Go to your blog folder, and:
