@@ -25,6 +25,8 @@ Then in your `config.toml`, edit `theme = "dream"` and save.
 
 ***I assume you have already viewd [Hugo Docs](https://gohugo.io/documentation/), if you want to use this theme, the doc will help you to understand the configuration.***
 
+***View [wiki](https://github.com/g1eny0ung/hugo-theme-dream/wiki) for more details***
+
 ### i18n support
 
 Now the theme has
@@ -44,10 +46,10 @@ View the i18n folder for more details.
 
 ```
 [params]
-  author = "" // Site author or as default article author
+  author = ""
   motto = ""
-  description = "" // <meta name="description" content="">
-  avatar = "" // your logo
+  description = ""
+  avatar = ""
   
   email = ""
   github = ""
