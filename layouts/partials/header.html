@@ -49,8 +49,8 @@
 {{ end }}
 
 <section class="ui bottom attached center aligned inverted segment">
-    {{ if .Site.Params.blogStartYear }}
-    <p>© {{ .Site.Params.blogStartYear }} - {{ now.Year }} {{ .Site.Title }}</p>
+    {{ if .Site.Params.siteStartYear }}
+    <p>© {{ if eq now.Year .Site.Params.siteStartYear }}{{ .Site.Params.siteStartYear }}{{ else }}{{ .Site.Params.siteStartYear }} - {{ now.Year }}{{ end }} {{ .Site.Title }}</p>
     {{ else }}
     <p>© {{ if eq now.Year 2017 }}2017{{ else }}2017 - {{ now.Year }}{{ end }} {{ .Site.Title }}</p>
     {{ end }}
