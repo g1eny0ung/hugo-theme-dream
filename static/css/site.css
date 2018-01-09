@@ -110,9 +110,18 @@ a.ui.label {
   border-left: 10px solid #ccc;
   margin: 1.5em 0;
   padding: 0.5em 10px;
-  quotes: "\201C""\201D""\2018""\2019";
 }
 
 .post-content blockquote p {
   display: inline;
+}
+
+.post-content code {
+  background: #ccc;
+  padding: .2em .5em;
+}
+
+.post-content ul li {
+  padding: .2em 0;
+  line-height: 1.2em;
 }
