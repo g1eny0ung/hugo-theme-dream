@@ -46,6 +46,7 @@
 
 .flip-container .front {
   z-index: 2;
+  transform: rotateY(0deg);
 }
 
 .flip-container .back {
