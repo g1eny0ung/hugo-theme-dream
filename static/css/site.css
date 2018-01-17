@@ -11,6 +11,7 @@
 
 .flip-container {
   height: 100vh;
+  overflow: hidden;
 }
 
 .flip-container.flip-it .flipper {
@@ -65,7 +66,7 @@
 }
 
 .post-list {
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 a.ui.label {
@@ -91,7 +92,8 @@ a.ui.label {
 }
 
 .about {
-  overflow: scroll;
+  height: calc(100vh - 50px - 28px);
+  overflow-y: scroll;
 }
 
 .post-content img {
