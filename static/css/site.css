@@ -11,7 +11,6 @@
 
 .flip-container {
   height: 100vh;
-  overflow: hidden;
 }
 
 .flip-container.flip-it .flipper {
