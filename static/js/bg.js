@@ -1,5 +1,6 @@
 // From https://uigradients.com
 var dreamBGGradients = [
+  [],
   ['#40e0d0', '#ff8c00', '#ff0080'], // Wedding Day Blues
   ['#3e5151', '#decba4'], // Sand to Blue
   ['#11998e', '#38ef7d'], // Quepal
