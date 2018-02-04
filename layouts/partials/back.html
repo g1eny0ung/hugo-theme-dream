@@ -44,7 +44,13 @@
 
     <section class="ui stacked segments">
       <header class="ui inverted segment">
-        <h2 class="ui header">{{- .Site.Params.aboutHead -}}</h2>
+        <h2 class="ui header">
+          {{ if .Site.Params.aboutHeader }}
+          {{- .Site.Params.aboutHeader -}}
+          {{ else }}
+          {{- i18n "aboutHeader" -}}
+          {{ end }}
+        </h2>
       </header>
 
       <article class="ui inverted segment">
