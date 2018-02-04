@@ -4,7 +4,7 @@ defaultContentLanguage = "en"
 title = "Hugo Theme Dream"
 theme = "hugo-theme-dream"
 
-copyright = "Copyright (c) 2017, g1eny0ung; all rights reserved."
+copyright = "Copyright (c) 2018, g1eny0ung; all rights reserved."
 
 # enableRobotsTXT = true
 
@@ -13,8 +13,8 @@ copyright = "Copyright (c) 2017, g1eny0ung; all rights reserved."
 # disqusShortname = ""
 
 [params]
-  author = "AuthorTest"
-  motto = "MottoTest"
+  author = "Author"
+  motto = "Motto"
   # description = ""
   # avatar = ""
   

@@ -3,7 +3,7 @@
     {{ if isset .Site.Params "avatar" }}
     <img src="{{ .Site.Params.avatar }}">
     {{ else }}
-    <img src="/img/avatar{{ index (shuffle (seq 1 4)) 0 }}.png">
+    <img src="/img/avatar{{ index (shuffle (seq 1 4)) 0 }}.svg">
     {{ end }}
   </div>
   <h3 class="ui header">
