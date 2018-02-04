@@ -105,7 +105,9 @@ desc = [
 
 Every string(item) in **[]** will be wrapped in `<p></p>` tag in html.
 
-Also, support html tag in string.
+Also, support html tag and emoji in string.
+
+You can also write your about info in `/content/about/desc.md`.
 
 ## OK, Write a article for your blog.
 
