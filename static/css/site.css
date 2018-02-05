@@ -65,7 +65,7 @@
 }
 
 .post-list {
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 a.ui.label {

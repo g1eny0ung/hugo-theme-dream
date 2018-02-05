@@ -27,3 +27,24 @@ other = "Return home page"
 
 [noTag]
 other = "No Tag"
+
+[archives]
+other = "Archives"
+
+[tag]
+one = "tag"
+other = "{{ .Count }} tags"
+
+[category]
+one = "category"
+other = "{{ .Count }} categories"
+
+[allTags]
+other = "All Tags"
+
+[allCategories]
+other = "All Categories"
+
+[article]
+one = "1 article"
+other = "{{ .Count }} articles"

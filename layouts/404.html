@@ -1,13 +1,30 @@
 {{ define "title" }}Page not found{{ end }}
 
 {{ define "frontmenu" }}
-<nav class="ui top secondary menu">
+<nav class="ui top secondary menu" style="overflow-x: auto">
   <div class="item">
     <i class="inverted big link bullseye icon dream-flip-toggle" title="翻转一下！"></i>
   </div>
   <div class="item">
     <a href="/">
-      <i class="inverted big home icon" title="首页"></i>
+      <i class="inverted big link home icon" title="首页"></i>
+    </a>
+  </div>
+  {{ if gt (len (where .Site.RegularPages "Section" "==" "post")) 0 }}
+  <div class="item">
+    <a href="/post">
+      <i class="inverted big link archive icon" title="{{ i18n "archives" }}"></i>
+    </a>
+  </div>
+  {{ end }}
+  <div class="item">
+    <a href="/tags">
+      <i class="inverted big link tags icon" title="{{ i18n "allTags" }}"></i>
+    </a>
+  </div>
+  <div class="item">
+    <a href="/categories">
+      <i class="inverted big link cubes icon" title="{{ i18n "allCategories" }}"></i>
     </a>
   </div>
 </nav>
@@ -16,6 +33,6 @@
 {{ define "main" }}
 <div class="ui basic center aligned segment">
   <h1 class="ui header">404</h1>
-  <p><a class="ui green label" href="/">{{ i18n "returnHome" }}</a></p>
+  <p><a class="ui blue label" href="/">{{ i18n "returnHome" }}</a></p>
 </div>
 {{ end }}

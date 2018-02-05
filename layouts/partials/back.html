@@ -1,4 +1,4 @@
-<nav class="ui top secondary menu" style="overflow-x: scroll">
+<nav class="ui top secondary menu" style="overflow-x: auto">
   <div class="item">
     <i class="inverted big link bullseye icon dream-flip-toggle" title="{{ i18n "flip" }}"></i>
   </div>
@@ -69,7 +69,7 @@
       </footer>
       {{ end }}
 
-      {{ if in .RelPermalink "post" }}
+      {{ if findRE "post/.+" .RelPermalink }}
       {{ else }}
         {{ if and .Site.DisqusShortname  }}
         <footer class="ui secondary segment">

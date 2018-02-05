@@ -1,0 +1,65 @@
+{{ define "title" }}
+{{ i18n "allCategories" }}
+{{ end }}
+
+{{ define "frontmenu" }}
+<nav class="ui top secondary menu" style="overflow-x: auto">
+  <div class="item">
+    <i class="inverted big link bullseye icon dream-flip-toggle" title="{{ i18n "flip" }}"></i>
+  </div>
+  <div class="item">
+    <a href="/"><i class="inverted big link home icon" title="{{ i18n "home" }}"></i></a>
+  </div>
+  {{ if gt (len (where .Site.RegularPages "Section" "==" "post")) 0 }}
+  <div class="item">
+    <a href="/post">
+      <i class="inverted big link archive icon" title="{{ i18n "archives" }}"></i>
+    </a>
+  </div>
+  {{ end }}
+  <div class="item">
+    <a href="/tags">
+      <i class="inverted big link tags icon" title="{{ i18n "allTags" }}"></i>
+    </a>
+  </div>
+</nav>
+{{ end }}
+
+{{ define "main"}}
+<div class="ui centered grid">
+  <div class="fifteen wide mobile fifteen wide tablet four wide computer column">
+
+    {{ partial "header.html" . }}
+
+  </div>
+  <div class="fifteen wide mobile fifteen wide tablet eleven wide computer column post-list">
+    <div class="ui inverted segment">
+      <h2 class="ui header">
+        {{ i18n "allCategories" }}
+        <div class="ui grey sub header">
+          {{ if eq (len .Data.Terms) 1 }}
+          {{ print "1 " (i18n "category") }}
+          {{ else }}
+          {{ i18n "category" (len .Data.Terms) }}
+          {{ end }}
+        </div>
+      </h2>
+
+      {{ $data := .Data }}
+      {{ range .Data.Terms.Alphabetical }}
+      {{ $termLink := printf "/%s/%s/" $data.Plural .Term | urlize }}
+      <h3 class="ui header">
+          <a href="{{ $termLink }}">{{ .Term }}</a>
+          {{ i18n "article" .Count }}
+      </h3>
+      <ul>
+        {{ range .Pages }}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+      {{ end }}
+
+    </div>
+  </div>
+</div>
+{{ end }}

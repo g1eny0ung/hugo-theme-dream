@@ -14,7 +14,7 @@ other = "前一页"
 other = "后一页"
 
 [flip]
-other = "翻转"
+other = "翻转！"
 
 [clickToPopTagsAndCategories]
 other = "点击弹出标签和分类"
@@ -27,3 +27,24 @@ other = "返回首页"
 
 [noTag]
 other = "暂无标签"
+
+[archives]
+other = "归档"
+
+[tag]
+one = "标签"
+other = "{{ .Count }}标签"
+
+[category]
+one = "分类"
+other = "{{ .Count }}分类"
+
+[allTags]
+other = "所有标签"
+
+[allCategories]
+other = "所有分类"
+
+[article]
+one = "1篇文章"
+other = "{{ .Count }}篇文章"

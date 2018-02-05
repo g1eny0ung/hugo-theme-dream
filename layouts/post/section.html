@@ -1,0 +1,52 @@
+{{ define "title" }}
+{{ .Title }}
+{{ end }}
+
+{{ define "frontmenu" }}
+<nav class="ui top secondary menu" style="overflow-x: auto">
+  <div class="item">
+    <i class="inverted big link bullseye icon dream-flip-toggle" title="{{ i18n "flip" }}"></i>
+  </div>
+  <div class="item">
+    <a href="/"><i class="inverted big link home icon" title="{{ i18n "home" }}"></i></a>
+  </div>
+  <div class="item">
+    <a href="/tags">
+      <i class="inverted big link tags icon" title="{{ i18n "allTags" }}"></i>
+    </a>
+  </div>
+  <div class="item">
+    <a href="/categories">
+      <i class="inverted big link cubes icon" title="{{ i18n "allCategories" }}"></i>
+    </a>
+  </div>
+</nav>
+{{ end }}
+
+{{ define "main"}}
+<div class="ui centered grid">
+  <div class="fifteen wide mobile fifteen wide tablet four wide computer column">
+
+    {{ partial "header.html" . }}
+
+  </div>
+  <div class="fifteen wide mobile fifteen wide tablet eleven wide computer column post-list">
+    <div class="ui inverted segment">
+      <h2 class="ui header">
+        {{ .Title }}
+        <div class="ui grey sub header">{{ .Content }}</div>
+      </h2>
+
+      {{ range .Data.Pages.GroupByDate "2006" }}
+        <h3 class="ui header">{{ .Key }}</h3>
+        <ul>
+          {{ range .Pages }}
+          <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+          {{ end }}
+        </ul>
+      {{ end }}
+
+    </div>
+  </div>
+</div>
+{{ end }}
