@@ -8,7 +8,7 @@ var dreamBGGradients = [
   ['#fc5c7d', '#6a82fb'], // Sublime Light
   ['#fc466b', '#3f5efb'], // Sublime Vivid
   ['#c94b4b', '#4b134f'], // Bighead
-  ['#23074d', '#cc5333'], // Taran Tado
+  ['#23074d', '#cc5333'] // Taran Tado
 ]
 
 var dreamBody = $('body')
