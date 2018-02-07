@@ -74,6 +74,11 @@
   height: 100%;
 }
 
+.about {
+  height: calc(100vh - 50px - 28px);
+  overflow-y: scroll;
+}
+
 .post-list {
   overflow-y: auto;
 }
