@@ -8,7 +8,7 @@ description = "A hugo theme named dream"
 homepage = "https://github.com/g1eny0ung/hugo-theme-dream"
 tags = ["flip", "colorful", "i18n", "blog", "disqus", "google-analytics", "responsive", "copyright", "avatar", "motto", "sociallinks", "creative", "personal"]
 features = ["flip", "colorful", "i18n", "blog", "disqus", "google-analytics", "responsive", "copyright", "avatar", "motto", "sociallinks", "creative", "personal"]
-min_version = "0.29"
+min_version = "0.36"
 
 [author]
   name = "Yue Yang"
