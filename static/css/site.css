@@ -89,7 +89,7 @@ a.ui.label {
 }
 
 @media screen and (max-width: 768px) {
-  .dream-tags,
+  .dream-header-tags.dream-tags,
   .dream-categories {
     display: none;
   }

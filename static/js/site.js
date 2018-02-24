@@ -45,7 +45,7 @@ $(document).ready(function() {
   $('.ui.accordion').accordion()
 
   $('#tag-category-pop').click(function() {
-    var dt = $('.dream-tags')
+    var dt = $('.dream-header-tags.dream-tags')
     var dc = $('.dream-categories')
     var dtDisplay = dt.css('display')
     var dcDisplay = dc.css('display')
