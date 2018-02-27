@@ -58,6 +58,8 @@ View the i18n folder for more details.
   stackoverflow = ""
 ```
 
+View [wiki](https://github.com/g1eny0ung/hugo-theme-dream/wiki) for more configurations.
+
 ### Website Analytics
 
 Dream support [Google Analytics](https://www.google.com/analytics/)
