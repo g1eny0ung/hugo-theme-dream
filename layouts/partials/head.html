@@ -8,6 +8,10 @@
   <meta name="description" content="{{ .Site.Params.description }}" />
 {{ end }}
 
+{{ if isset .Site.Params "favicon" }}
+<link href="{{ .Site.Params.favicon }}" rel="shortcut icon" type="image/x-icon" />
+{{ end }}
+
 <!-- Site Generator -->
 <meta name="generator" content="Hugo {{ .Hugo.Version }}" />
 
