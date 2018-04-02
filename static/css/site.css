@@ -80,7 +80,7 @@
 }
 
 .post-list {
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 a.ui.label {

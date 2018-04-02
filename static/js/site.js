@@ -74,3 +74,19 @@ function setSemanticUIColor() {
     $(this).addClass(SemanticUIColors[randomInt(0, SemanticUIColors.length)])
   })
 }
+
+function savePostAsImg() {
+  var postList = $('.post-list')
+  var useWidth = postList.prop('scrollWidth')
+  var useHeight = postList.prop('scrollHeight')
+  html2canvas(document.querySelector('.post-single-main'), {
+    width: useWidth,
+    height: useHeight
+  }).then(function(canvas) {
+    var image = canvas
+      .toDataURL('image/png')
+      .replace('image/png', 'image/octet-stream')
+    window.location.href = image
+  })
+  return false
+}

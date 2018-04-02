@@ -13,9 +13,12 @@
 
 {{ define "main" }}
 <div class="ui centered grid">
-  <div class="fifteen wide mobile fifteen wide tablet eleven wide computer column post-list">
+  <div class="fifteen wide mobile fifteen wide tablet eleven wide computer column post-list post-single-main">
 
     <section class="ui secondary top attached black segment">
+      <a class="ui black right corner label" href="javascript:void(0)" onclick="savePostAsImg()">
+        <i class="save icon"></i>
+      </a>
       <header>
         <h1 class="ui header">
           {{ .Title }}

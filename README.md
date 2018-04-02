@@ -144,6 +144,8 @@ The remaining content of your post.
 
 **I recommend you go to [Pexels](https://www.pexels.com/) to select your article cover image.(Small size 640 x 426)**
 
+You can download your article as image when you see a save icon ^_^ (Experimental Feature)
+
 When your finish your article, remove `draft: true` and run `hugo` to publish your site.
 
 If your want to have a preview in editing, run:
