@@ -10,18 +10,6 @@
   <div class="item">
     <a href="/"><i class="inverted big link home icon" title="{{ i18n "home" }}"></i></a>
   </div>
-  {{ if gt (len (where .Site.RegularPages "Section" "==" "post")) 0 }}
-  <div class="item">
-    <a href="/post">
-      <i class="inverted big link archive icon" title="{{ i18n "archives" }}"></i>
-    </a>
-  </div>
-  {{ end }}
-  <div class="item">
-    <a href="/categories">
-      <i class="inverted big link cubes icon" title="{{ i18n "allCategories" }}"></i>
-    </a>
-  </div>
 </nav>
 {{ end }}
 
