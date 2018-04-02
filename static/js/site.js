@@ -79,9 +79,10 @@ function savePostAsImg() {
   var postList = $('.post-list')
   var useWidth = postList.prop('scrollWidth')
   var useHeight = postList.prop('scrollHeight')
+  var removedHeight = $('.post-list .post-disqus-area').prop('scrollHeight')
   html2canvas(document.querySelector('.post-single-main'), {
     width: useWidth,
-    height: useHeight
+    height: useHeight - removedHeight
   }).then(function(canvas) {
     var image = canvas
       .toDataURL('image/png')
