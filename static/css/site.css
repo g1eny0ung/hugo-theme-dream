@@ -99,7 +99,7 @@ a.ui.label {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   #tag-category-pop {
     display: none;
   }
