@@ -84,10 +84,14 @@ function savePostAsImg() {
     width: useWidth,
     height: useHeight - removedHeight
   }).then(function(canvas) {
-    var image = canvas
-      .toDataURL('image/png')
-      .replace('image/png', 'image/octet-stream')
-    window.location.href = image
+    var data = canvas.toDataURL('image/png')
+
+    var img = document.createElement('img')
+    img.src = data
+
+    var w = window.open()
+    w.document.title = 'Export Image'
+    w.document.body.appendChild(img)
   })
   return false
 }
