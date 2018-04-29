@@ -88,6 +88,7 @@ function savePostAsImg() {
 
     var img = document.createElement('img')
     img.src = data
+    img.style.width = '200px'
 
     var w = window.open()
     w.document.title = 'Export Image'
