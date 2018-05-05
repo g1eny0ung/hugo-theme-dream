@@ -4,13 +4,13 @@ defaultContentLanguage = "en"
 title = "Hugo Theme Dream"
 theme = "hugo-theme-dream"
 
-copyright = "Copyright (c) 2018, g1eny0ung; all rights reserved."
-
-# enableRobotsTXT = true
+# copyright = ""
 
 # googleAnalytics = ""
 
 # disqusShortname = ""
+
+# enableRobotsTXT = true
 
 [params]
   author = "Author"
@@ -23,3 +23,10 @@ copyright = "Copyright (c) 2018, g1eny0ung; all rights reserved."
   # linkedin = ""
   # codepen = ""
   # stackoverflow = ""
+
+  siteStartYear = 2016
+  aboutHeader = "AboutMe"
+
+  paginate = 4
+
+  # favicon = "/favicon.ico"

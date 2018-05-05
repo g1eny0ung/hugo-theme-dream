@@ -1,0 +1,5 @@
+---
+title: Posts
+---
+
+All Posts.
