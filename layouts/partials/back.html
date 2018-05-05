@@ -53,7 +53,7 @@
         </h2>
       </header>
 
-      <article class="ui inverted segment">
+      <article class="ui inverted segment back-about">
         {{ if (fileExists "/content/about/desc.md") }}
         {{ readFile "/content/about/desc.md" | markdownify | emojify }}
         {{ else }}

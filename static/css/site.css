@@ -141,3 +141,10 @@ a.ui.label {
   padding: 0.2em 0;
   line-height: 1.2em;
 }
+
+.back-about img {
+  width: 100%;
+  height: auto;
+  max-width: 320px;
+  max-height: 320px;
+}
