@@ -2,6 +2,7 @@
 * [i18n](./i18n.md)
 * [Website Analytics](./websiteanalytics.md)
 * [Social Comments](./socialcomments.md)
+* [About Page](./about-page.md)
 * [Copyright](./copyright.md)
 * [Base Configurations](./base-configurations.md)
 * [Params Configurations](./params-configurations.md)
