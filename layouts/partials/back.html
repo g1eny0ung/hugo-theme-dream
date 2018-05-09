@@ -54,13 +54,23 @@
       </header>
 
       <article class="ui inverted segment back-about">
-        {{ if (fileExists "/content/about/desc.md") }}
-        {{ readFile "/content/about/desc.md" | markdownify | emojify }}
-        {{ else }}
-        {{ range $.Site.Data.about.desc }}
-          <p>{{ . | safeHTML | emojify }}</p>
-        {{ end }}
-        {{ end }}
+        <div class="ui stackable three column grid">
+          <div class="column">
+              {{ if (fileExists "/content/about/desc.md") }}
+              {{ readFile "/content/about/desc.md" | markdownify | emojify }}
+              {{ end }}
+          </div>
+          <div class="column">
+              {{ if (fileExists "/content/about/desc-center.md") }}
+              {{ readFile "/content/about/desc-center.md" | markdownify | emojify }}
+              {{ end }}
+          </div>
+          <div class="column">
+              {{ if (fileExists "/content/about/desc-right.md") }}
+              {{ readFile "/content/about/desc-right.md" | markdownify | emojify }}
+              {{ end }}
+          </div>
+        </div>
       </article>
 
       {{ if .Site.Copyright }}
