@@ -4,6 +4,8 @@ Dream is a [Hugo](https://gohugo.io/) theme. I build it for [my blog](http://g1e
 
 The main features is full page flip and random color views ~.
 
+[demo: https://themes.gohugo.io/theme/hugo-theme-dream/](https://themes.gohugo.io/theme/hugo-theme-dream/)
+
 ![screenshot](screenshot.png)
 
 All tags of this theme:
