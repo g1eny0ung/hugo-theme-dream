@@ -70,6 +70,17 @@
   height: 100%;
 }
 
+.ui.cards .card .image .ui.dimmer .content,
+.ui.cards .card .image .ui.dimmer .center {
+  height: 100%;
+}
+
+.ui.cards .card .image .ui.dimmer .display-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .ui.cards .card .image img {
   height: 100%;
 }

@@ -3,11 +3,13 @@
     <div class="ui dimmer">
       <div class="content">
         <div class="center">
-          <a href="{{ .Permalink }}">
-            <h2 class="ui header" style="color: white;">{{ .Title }}</h2>
-          </a>
-          <p style="padding: 5px;">{{ .Summary | plainify | htmlUnescape }}</p>
-          <p>@ {{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}</p>
+          <div class="display-content">
+            <a href="{{ .Permalink }}">
+              <h2 class="ui header" style="color: white;">{{ .Title }}</h2>
+            </a>
+            <p style="padding: 5px;">{{ .Summary | plainify | htmlUnescape }}</p>
+            <p>@ {{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}</p>
+          </div>
           <div class="ui top right attached black label">{{ .ReadingTime }} min read</div>
           <div class="ui bottom left attached black label">{{ .Date.Format "Jan 2, 2006" }}</div>
         </div>
