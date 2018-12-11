@@ -39,6 +39,12 @@ git clone https://github.com/g1eny0ung/hugo-theme-dream.git dream
 
 Then open your `config.toml`, edit to `theme = "dream"` and save.
 
+## Example
+
+[My Blog](http://g1eny0ung.site)
+
+[Source Code](https://github.com/g1eny0ung/blog)
+
 ## Publish
 
 View [hugo hosting-and-deployment](https://gohugo.io/hosting-and-deployment/)
