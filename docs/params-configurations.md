@@ -2,7 +2,7 @@
 
 An example:
 
-```
+```yaml
 [params]
   author = "g1eny0ung"
   description = "g1eny0ung的生活记录～"
@@ -21,6 +21,8 @@ An example:
   paginate = 4
 
   favicon = "/favicon.ico"
+
+  # lightMode = true
 ```
 
 `author = "g1eny0ung"`
@@ -72,3 +74,7 @@ Custom numbers of post will be displayed per page
 `favicon = "/favicon.ico"`
 
 Custom the [favicon](https://en.wikipedia.org/wiki/Favicon), place it in your `static` folder, same as `avatar`
+
+`lightMode = true`
+
+Set to **light mode**. Default is dark mode.

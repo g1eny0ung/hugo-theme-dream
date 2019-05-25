@@ -6,14 +6,11 @@ In `static/js/bg.js`, at first line:
 // From https://uigradients.com
 var dreamBGGradients = [
   [],
+  ['#bdc3c7', '#2c3e50'], // Grade Grey
+  ['#ee9ca7', '#ffdde1'], // Piggy Pink
+  ['#396afc', '#2948ff'], // Kimoby Is The New Blue
   ['#40e0d0', '#ff8c00', '#ff0080'], // Wedding Day Blues
-  ['#3e5151', '#decba4'], // Sand to Blue
-  ['#11998e', '#38ef7d'], // Quepal
-  ['#108dc7', '#ef8e38'], // Pun Yeta
-  ['#fc5c7d', '#6a82fb'], // Sublime Light
-  ['#fc466b', '#3f5efb'], // Sublime Vivid
-  ['#c94b4b', '#4b134f'], // Bighead
-  ['#23074d', '#cc5333'] // Taran Tado
+  ['#833ab4', '#fd1d1d', '#fcb045'] // Instagram
 ]
 ```
 

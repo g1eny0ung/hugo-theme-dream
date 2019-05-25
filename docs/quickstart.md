@@ -1,8 +1,8 @@
 # Quick Start
 
-**_I assume you have already been browsed [Hugo Docs](https://gohugo.io/documentation/), if you want to use this theme, the doc will help you to understand the configurations._**
+**_I assume you have already been browsed [Hugo Docs](https://gohugo.io/documentation/), if you want to use this theme, the docs will help you to understand the configurations._**
 
-## First, Add i18n Support
+## First, add i18n Support
 
 Open `config.toml` and write:
 
@@ -10,7 +10,7 @@ Open `config.toml` and write:
 defaultContentLanguage = "en"
 ```
 
-View the i18n folder for more details.
+View the `i18n` folder for more details.
 
 ## Website Analytics
 
@@ -50,7 +50,7 @@ Third line
 ...
 ```
 
-## OK, Write a post for your blog.
+## OK, write a post for your blog
 
 All of your posts must in the `content/post` folder.
 
@@ -85,8 +85,8 @@ You only need to change `author`, `cover`, `categories` and `tags` fields, the o
 
 - author => **Your name**
 - cover => **Current post's image**, for _quick start_, now you can delete this line, because the theme has been placed some default images for posts.
-- categories => If you're not ready, placed "category1"
-- tags => If you're not ready, placed "tag1"
+- categories => If you're not ready, place "category1"
+- tags => If you're not ready, place "tag1"
 
 At last, remove `draft: true` and run `hugo` to generate your site.
 
