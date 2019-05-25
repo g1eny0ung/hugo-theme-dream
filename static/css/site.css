@@ -171,3 +171,8 @@ a.ui.label {
   max-width: 320px;
   max-height: 320px;
 }
+
+.back-about ul li {
+  padding: 0.2em 0;
+  line-height: 1.2em;
+}
