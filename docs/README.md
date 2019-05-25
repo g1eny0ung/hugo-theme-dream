@@ -1,4 +1,4 @@
-# :seedling: hugo-theme-dream
+# hugo-theme-dream
 
 Dream is a [Hugo](https://gohugo.io/) theme. I build it for [my blog](http://g1eny0ung.site).
 
