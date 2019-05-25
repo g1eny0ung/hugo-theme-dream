@@ -25,8 +25,10 @@ theme = "hugo-theme-dream"
   # stackoverflow = ""
 
   siteStartYear = 2016
-  aboutHeader = "AboutMe"
+  aboutHeader = "About"
 
   paginate = 4
 
   # favicon = "/favicon.ico"
+
+  # lightMode = true

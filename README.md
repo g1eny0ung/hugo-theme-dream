@@ -30,7 +30,7 @@ All tags of this theme:
 
 ## Installation
 
-Go to your blog folder, and:
+Go to your blog folder and:
 
 ```
 cd themes
@@ -43,7 +43,7 @@ Then open your `config.toml`, edit to `theme = "dream"` and save.
 
 [My Blog](http://g1eny0ung.site)
 
-[Source Code](https://github.com/g1eny0ung/blog)
+[My Blog Source Code](https://github.com/g1eny0ung/blog)
 
 ## Publish
 
