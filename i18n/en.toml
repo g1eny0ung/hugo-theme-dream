@@ -17,16 +17,16 @@ other = "Next page"
 other = "Flip it!"
 
 [clickToPopTagsAndCategories]
-other = "Click this to pop tags and categories"
+other = "Show menu"
 
 [updateAt]
 other = "Update at"
 
 [returnHome]
-other = "Return home page"
+other = "Return Home"
 
 [noTag]
-other = "No Tag"
+other = "No Tags"
 
 [archives]
 other = "Archives"

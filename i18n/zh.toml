@@ -17,7 +17,7 @@ other = "后一页"
 other = "翻转！"
 
 [clickToPopTagsAndCategories]
-other = "点击弹出标签和分类"
+other = "弹出菜单"
 
 [updateAt]
 other = "更新于"
