@@ -19,7 +19,7 @@
 <div class="ui centered grid">
   <div class="fifteen wide mobile fifteen wide tablet eleven wide computer column post-list post-single-main">
 
-    <section class="ui secondary top attached black segment">
+    <section class="ui top attached black segment">
       <a class="ui black right corner label" href="javascript:void(0)" onclick="savePostAsImg()">
         <i class="save icon"></i>
       </a>
@@ -32,7 +32,7 @@
       <article class="post-content" style="margin-top: 2rem; font-size: 1.4rem;">{{ .Content }}</article>
     </section>
 
-    <footer class="ui secondary attached segment dream-tags">
+    <footer class="ui attached segment dream-tags">
       {{ if isset .Params "tags" }}
       {{ range $tag := .Params.tags }}
       <a class="ui label" href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}" title="{{ $tag }}">{{ $tag }}</a>
@@ -43,13 +43,13 @@
     </footer>
 
     {{ if .Site.Copyright }}
-    <footer class="ui secondary attached segment">
+    <footer class="ui attached segment">
       {{ .Site.Copyright | safeHTML }}
     </footer>
     {{ end }}
 
     {{ if .Site.DisqusShortname }}
-    <footer class="ui secondary bottom attached stacked segment post-disqus-area" data-html2canvas-ignore="true">
+    <footer class="ui bottom attached stacked segment post-disqus-area" data-html2canvas-ignore="true">
       <div id="disqus_thread"></div>
       <script>
       /**

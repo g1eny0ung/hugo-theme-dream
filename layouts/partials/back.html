@@ -43,7 +43,11 @@
   <div class="fifteen wide mobile fifteen wide tablet fifteen wide computer column">
 
     <section class="ui stacked segments">
+      {{ if .Site.Params.lightMode }}
+      <header class="ui segment">
+      {{ else }}
       <header class="ui inverted segment">
+      {{ end }}
         <h2 class="ui header">
           {{ if .Site.Params.aboutHeader }}
           {{- .Site.Params.aboutHeader -}}
@@ -53,7 +57,11 @@
         </h2>
       </header>
 
+      {{ if .Site.Params.lightMode }}
+      <article class="ui segment back-about">
+      {{ else }}
       <article class="ui inverted segment back-about">
+      {{ end }}
         <div class="ui stackable three column grid">
           <div class="column">
               {{ if (fileExists "/content/about/desc.md") }}

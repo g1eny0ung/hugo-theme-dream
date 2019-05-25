@@ -75,6 +75,10 @@ a[href^="http"], a[hre^="https"] {
   height: 100%;
 }
 
+.ui.cards .card .image .ui.dimmer.light-mode {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
 .ui.cards .card .image .ui.dimmer .content,
 .ui.cards .card .image .ui.dimmer .center {
   height: 100%;
@@ -84,6 +88,10 @@ a[href^="http"], a[hre^="https"] {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.ui.cards .card .image .ui.dimmer .display-content.light-mode {
+  color: black;
 }
 
 .ui.cards .card .image img {
@@ -138,7 +146,7 @@ a.ui.label {
 }
 
 .post-content blockquote {
-  background: #f9f9f9;
+  background: #e8e8e8;
   border-left: 10px solid #ccc;
   margin: 1.5em 0;
   padding: 0.5em 10px;

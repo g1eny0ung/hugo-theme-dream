@@ -1,17 +1,34 @@
 <article class="black card">
   <div class="image">
+    {{ if .Site.Params.lightMode }}
+    <div class="ui inverted dimmer light-mode">
+    {{ else }}
     <div class="ui dimmer">
+    {{ end }}
       <div class="content">
         <div class="center">
+          {{ if .Site.Params.lightMode }}
+          <div class="display-content light-mode">
+          {{ else }}
           <div class="display-content">
+          {{ end }}
             <a href="{{ .Permalink }}">
+              {{ if .Site.Params.lightMode }}
+              <h2 class="ui header" style="color: black;">{{ .Title }}</h2>
+              {{ else }}
               <h2 class="ui header" style="color: white;">{{ .Title }}</h2>
+              {{ end }}
             </a>
             <p style="padding: 5px;">{{ .Summary | plainify | htmlUnescape }}</p>
             <p>@ {{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}</p>
           </div>
+          {{ if .Site.Params.lightMode }}
+          <div class="ui top right attached label">{{ .ReadingTime }} min read</div>
+          <div class="ui bottom left attached label">{{ .Date.Format "Jan 2, 2006" }}</div>
+          {{ else }}
           <div class="ui top right attached black label">{{ .ReadingTime }} min read</div>
           <div class="ui bottom left attached black label">{{ .Date.Format "Jan 2, 2006" }}</div>
+          {{ end }}
         </div>
       </div>
     </div>

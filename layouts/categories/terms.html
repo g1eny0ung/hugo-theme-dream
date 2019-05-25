@@ -21,7 +21,11 @@
 
   </div>
   <div class="fifteen wide mobile fifteen wide tablet eleven wide computer column post-list">
+    {{ if .Site.Params.lightMode }}
+    <div class="ui segment">
+    {{ else }}
     <div class="ui inverted segment">
+    {{ end }}
       <h2 class="ui header">
         {{ i18n "allCategories" }}
         <div class="ui grey sub header">
