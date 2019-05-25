@@ -1,4 +1,4 @@
-/* Custom link color */
+/* Default link color */
 a[href^="http"], a[hre^="https"] {
   color: #2185D0 !important;
 }
