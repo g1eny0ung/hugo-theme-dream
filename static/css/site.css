@@ -77,7 +77,7 @@ a[hre^='https'] {
 }
 
 .ui.cards .card .image .ui.dimmer.light-mode {
-  background-color: rgba(255, 255, 255, 0.5) !important;
+  background-color: rgba(255, 255, 255, 0.3) !important;
 }
 
 .ui.cards .card .image .ui.dimmer .content,

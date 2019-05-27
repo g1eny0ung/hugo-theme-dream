@@ -3,7 +3,7 @@ var dreamBGGradients = [
   // From https://uigradients.com
   ['#bdc3c7', '#2c3e50'], // Grade Grey
   ['#ee9ca7', '#ffdde1'], // Piggy Pink
-  ['#396afc', '#2948ff'], // Kimoby Is The New Blue
+  ['#1c92d2', '#f2fcfe'], // Telegram
   // Custom
   ['#acb6e5'] // Lan
 ]
