@@ -2,7 +2,9 @@
 
 Dream is a [Hugo](https://gohugo.io/) theme. I build it for [my blog](http://g1eny0ung.site).
 
-The main features is full page flip and random color views ~.
+The main features are full page flip and random color views ~.
+
+Dream also support **dark-mode** and **light-mode** out of the box.
 
 [demo: https://themes.gohugo.io/theme/hugo-theme-dream/](https://themes.gohugo.io/theme/hugo-theme-dream/)
 
@@ -23,6 +25,8 @@ All tags of this theme:
 * sociallinks
 * creative
 * personal
+* light-mode
+* dark-mode
 
 ## Documentation
 
@@ -30,7 +34,7 @@ All tags of this theme:
 
 ## Installation
 
-Go to your blog folder and:
+Go into your blog folder and:
 
 ```
 cd themes

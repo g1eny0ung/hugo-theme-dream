@@ -6,8 +6,8 @@ license = "MIT"
 licenselink = "https://github.com/g1eny0ung/hugo-theme-dream/blob/master/LICENSE"
 description = "A hugo theme named dream"
 homepage = "http://g1eny0ung.site/hugo-theme-dream"
-tags = ["flip", "colorful", "i18n", "blog", "disqus", "google-analytics", "responsive", "copyright", "avatar", "motto", "sociallinks", "creative", "personal"]
-features = ["flip", "colorful", "i18n", "blog", "disqus", "google-analytics", "responsive", "copyright", "avatar", "motto", "sociallinks", "creative", "personal"]
+tags = ["flip", "colorful", "i18n", "blog", "disqus", "google-analytics", "responsive", "copyright", "avatar", "motto", "sociallinks", "creative", "personal", "light-mode", "dark-mode"]
+features = ["flip", "colorful", "i18n", "blog", "disqus", "google-analytics", "responsive", "copyright", "avatar", "motto", "sociallinks", "creative", "personal", "light-mode", "dark-mode"]
 min_version = "0.36"
 
 [author]
