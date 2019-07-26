@@ -129,3 +129,9 @@ a.ui.label {
     display: none;
   }
 }
+
+@media screen and (max-width: 1450px) {
+  .ui.two.cards > .card {
+    width: calc(100% - 2em);
+  }
+}
