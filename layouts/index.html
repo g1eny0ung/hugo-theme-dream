@@ -35,7 +35,7 @@
   <div class="fifteen wide mobile fifteen wide tablet eleven wide computer column post-list">
 
     <div class="ui two stackable cards">
-      {{ $paginator := .Paginate (where .Data.Pages "Type" "post") (index .Site.Params "paginate" | default 6) }}
+      {{ $paginator := .Paginate (where .Site.RegularPages "Type" "post") (index .Site.Params "paginate" | default 6) }}
       {{ range $paginator.Pages }}
 
         {{ .Render "summary" }}
