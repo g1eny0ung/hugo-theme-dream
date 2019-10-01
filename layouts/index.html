@@ -1,5 +1,5 @@
 {{ define "frontmenu" }}
-{{ $paginator := .Paginate (where .Data.Pages "Type" "post") (index .Site.Params "paginate" | default 6) }}
+{{ $paginator := .Paginate (where .Site.RegularPages "Type" "post") (index .Site.Params "paginate" | default 6) }}
 <div class="ui top secondary menu" style="overflow-x: auto">
   <div class="item">
     <i class="inverted big link bullseye icon dream-flip-toggle" title="{{ i18n "flip" }}"></i>
