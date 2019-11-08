@@ -1,38 +1,42 @@
 {{ define "title" }}Page not found{{ end }}
 
 {{ define "frontmenu" }}
-<nav class="ui top secondary menu" style="overflow-x: auto">
+<nav class="ui top secondary menu dream-menu" style="overflow-x: auto">
   <div class="item">
-    <i class="inverted big link bullseye icon dream-flip-toggle" title="翻转一下！"></i>
+    <i class="inverted large link bullseye icon dream-flip-toggle" title="翻转一下！"></i>
   </div>
   <div class="item">
     <a href="/">
-      <i class="inverted big link home icon" title="首页"></i>
+      <i class="inverted large link home icon" title="首页"></i>
     </a>
   </div>
   {{ if gt (len (where .Site.RegularPages "Section" "==" "post")) 0 }}
   <div class="item">
     <a href="/post">
-      <i class="inverted big link archive icon" title="{{ i18n "archives" }}"></i>
+      <i class="inverted large link archive icon" title="{{ i18n "archives" }}"></i>
     </a>
   </div>
   {{ end }}
   <div class="item">
     <a href="/tags">
-      <i class="inverted big link tags icon" title="{{ i18n "allTags" }}"></i>
+      <i class="inverted large link tags icon" title="{{ i18n "allTags" }}"></i>
     </a>
   </div>
   <div class="item">
     <a href="/categories">
-      <i class="inverted big link cube icon" title="{{ i18n "allCategories" }}"></i>
+      <i class="inverted large link cube icon" title="{{ i18n "allCategories" }}"></i>
     </a>
   </div>
 </nav>
 {{ end }}
 
 {{ define "main" }}
-<div class="ui basic center aligned segment">
-  <img style="padding: 10em 0;" class="ui centered image" src="/img/404.png" alt="404">
-  <p><a class="ui large label" href="/">{{ i18n "returnHome" }}</a></p>
+<div class="ui container dream-404-container">
+  <div class="ui basic center aligned segment">
+    <img class="ui centered image dream-404-image" src="/img/404.png" alt="404">
+    <p>
+      <a class="ui basic inverted button dream-button" href="/">{{ i18n "backToHome" }}</a>
+    </p>
+  </div>
 </div>
 {{ end }}

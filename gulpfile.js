@@ -5,7 +5,7 @@ const uglify = require('gulp-uglify')
 
 sass.compiler = require('node-sass')
 
-const StylesEntry = './src/sass/site.scss'
+const StylesEntry = './src/sass/**/*.scss'
 const StylesOutput = './static/css'
 const JsEntry = './src/js/**/*.js'
 const JsOutput = './static/js'

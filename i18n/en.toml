@@ -22,8 +22,8 @@ other = "Show menu"
 [updateAt]
 other = "Update at"
 
-[returnHome]
-other = "Return Home"
+[backToHome]
+other = "Back to Home"
 
 [noTag]
 other = "No Tags"
