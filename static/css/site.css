@@ -60,4 +60,5 @@
   margin-top: 1rem; }
 
 .ui.card.dream-card .content .description {
-  margin: 1.5rem 0 1rem 0; }
+  margin: 1.5rem 0 1rem 0;
+  color: rgba(0, 0, 0, 0.87); }
