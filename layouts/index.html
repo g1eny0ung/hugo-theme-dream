@@ -7,13 +7,11 @@
   {{ range .Site.RegularPages }}
     {{ if isset .Params "showcase" }}
       <div class="sixteen wide mobile eight wide tablet eight wide computer column dream-column">
-        {{ .Render "summary" }}
-      </div>
     {{ else }}
       <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    {{ end }}
         {{ .Render "summary" }}
       </div>
-    {{ end }}
   {{ end }}
 </div>
 {{ end }}

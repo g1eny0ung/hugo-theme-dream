@@ -1,11 +1,11 @@
 {{ define "title" }}
 
 {{ if eq .Data.Singular "tag" }}
-{{ i18n "tag" }} | {{ .Data.Term }}
+  {{ i18n "tag" }} | {{ .Data.Term }}
 {{ end }}
 
 {{ if eq .Data.Singular "category" }}
-{{ i18n "category" }} | {{ .Data.Term }}
+  {{ i18n "category" }} | {{ .Data.Term }}
 {{ end }}
 
 {{ end }}

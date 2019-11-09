@@ -5,9 +5,9 @@
 {{ end }}
   <div class="image">
     {{ if isset .Params "cover" }}
-    <img src="{{ .Params.cover }}" alt="{{ .Title }}" />
+      <img src="{{ .Params.cover }}" alt="{{ .Title }}" />
     {{ else }}
-    <img src="/img/default{{ index (shuffle (seq 1 6)) 0 }}.jpg" alt="{{ .Title }}" />
+      <img src="/img/default{{ index (shuffle (seq 1 6)) 0 }}.jpg" alt="{{ .Title }}" />
     {{ end }}
   </div>
   <div class="content">

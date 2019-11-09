@@ -1,7 +1,7 @@
-{{ if .Site.Params.lightMode }}
-<nav class="ui secondary menu dream-menu">
-{{ else }}
+{{ if .Site.Params.darkMode }}
 <nav class="ui secondary inverted menu dream-menu">
+{{ else }}
+<nav class="ui secondary menu dream-menu">
 {{ end }}
   <div class="item">
     <i class="large link bullseye icon dream-flip-toggle" title="{{ i18n "flip" }}"></i>

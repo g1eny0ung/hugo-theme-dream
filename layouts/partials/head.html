@@ -1,8 +1,8 @@
 {{ if isset .Site.Params "favicon" }}
-<link href="{{ .Site.Params.favicon }}" rel="shortcut icon" type="image/x-icon" />
+  <link href="{{ .Site.Params.favicon }}" rel="shortcut icon" type="image/x-icon" />
 {{ end }}
 
-{{ if eq .Type "post" }}
+{{ if eq .Type "posts" }}
   <!-- Page Author & Description -->
   <meta name="author" content="{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}" />
   <meta name="description" content="{{ .Summary | plainify }}" />
@@ -15,10 +15,14 @@
 <!-- Site Generator -->
 {{ hugo.Generator }}
 
-<!-- Permalink & RSSlink -->
 <link rel="canonical" href="{{ .Permalink }}" />
-<link rel="alternative" href="{{ "/index.xml" | relURL }}" title="{{ .Site.Title }}" type="application/atom+xml" />
 
-<link href="/css/semantic.min.css" rel="stylesheet" />
-<link rel="stylesheet" href="/css/site.css" />
+<!-- Open Graph -->
+{{ template "_internal/opengraph.html" . }}
+
+<!-- Twitter Cards -->
+{{ template "_internal/twitter_cards.html" . }}
+
 <link rel="stylesheet" href="/css/github-markdown.css" />
+<link rel="stylesheet" href="/css/semantic.min.css" />
+<link rel="stylesheet" href="/css/site.css" />

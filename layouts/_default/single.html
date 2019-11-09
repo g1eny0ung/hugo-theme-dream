@@ -4,7 +4,7 @@
 
 {{ define "main" }}
 <div class="ui centered relaxed grid dream-grid">
-  <div class="sixteen wide mobile sixteen wide tablet eleven wide computer column dream-single">
+  <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column dream-single">
 
     <section class="ui top attached segment">
       <div class="ui black right corner label" onclick="savePostAsImg()">
@@ -16,55 +16,53 @@
           <div class="sub header">@ {{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }} · {{ .Date.Format "Monday, Jan 2, 2006" }} · {{ .ReadingTime }}{{ i18n "minuteRead" }} · {{ i18n "updateAt" }} {{ dateFormat "Jan 2, 2006" .Lastmod }}</div>
         </h1>
       </header>
-      <article class="markdown-body" style="margin-top: 2rem; font-size: 1.4rem;">{{ .Content }}</article>
+      <article class="markdown-body" style="margin-top: 2rem;">{{ .Content }}</article>
     </section>
 
     <footer class="ui attached segment dream-tags">
       {{ if isset .Params "tags" }}
-      {{ range $tag := .Params.tags }}
-      <a class="ui label" href="{{ "tags/" | relLangURL }}{{ $tag | urlize }}" title="{{ $tag }}">{{ $tag }}</a>
-      {{ end }}
+        {{ range $tag := .Params.tags }}
+          <a class="ui label" href="{{ "tags/" | relLangURL }}{{ $tag | urlize }}" title="{{ $tag }}">{{ $tag }}</a>
+        {{ end }}
       {{ else }}
-      <span>{{ i18n "noTag" }}</span>
+        <span>{{ i18n "noTag" }}</span>
       {{ end }}
     </footer>
 
     {{ if .Site.Copyright }}
-    <footer class="ui attached segment">
-      {{ .Site.Copyright | safeHTML }}
-    </footer>
+      <footer class="ui attached segment">
+        {{ .Site.Copyright | safeHTML }}
+      </footer>
     {{ end }}
 
     {{ if .Site.DisqusShortname }}
-    <footer class="ui bottom attached stacked segment post-disqus-area" data-html2canvas-ignore="true">
-      <div id="disqus_thread"></div>
-      <script>
-        /**
-         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-         */
+      <footer class="ui bottom attached stacked segment post-disqus-area" data-html2canvas-ignore="true">
+        <div id="disqus_thread"></div>
+        <script>
+          /**
+           *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+           *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+           */
 
-        var disqus_config = function () {
-          this.page.url = '{{ .Permalink }}';  // Replace PAGE_URL with your page's canonical URL variable
-          this.page.identifier = '{{ .RelPermalink }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
+          var disqus_config = function () {
+            this.page.url = '{{ .Permalink }}';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = '{{ .RelPermalink }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+          };
 
-        (function() { // DON'T EDIT BELOW THIS LINE
-          var d = document, s = d.createElement('script');
-          s.src = 'https://' + '{{ .Site.DisqusShortname }}' + '.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-        })();
-      </script>
-      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </footer>
+          (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://' + '{{ .Site.DisqusShortname }}' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </footer>
     {{ end }}
 
   </div>
   <div class="sixteen wide mobile sixteen wide tablet four wide computer column">
-
     {{ partial "header.html" . }}
-
   </div>
 </div>
 {{ end }}

@@ -2,7 +2,7 @@
   <section class="ui top attached center aligned segment">
     <div class="ui small circular image">
       {{ if isset .Site.Params "avatar" }}
-      <img src="{{ .Site.Params.avatar }}">
+        <img src="{{ .Site.Params.avatar }}">
       {{ end }}
     </div>
 
@@ -40,7 +40,7 @@
       {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
         <div class="title">
           <i class="dropdown icon"></i>
-          <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}" class="item">{{ $name }}</a>
+          <a href="{{ "categories/" | relLangURL }}{{ $name | urlize }}" class="item">{{ $name }}</a>
         </div>
         <div class="content">
           <div class="ui list">

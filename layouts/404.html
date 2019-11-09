@@ -1,34 +1,4 @@
-{{ define "title" }}Page not found{{ end }}
-
-{{ define "frontmenu" }}
-<nav class="ui top secondary menu dream-menu" style="overflow-x: auto">
-  <div class="item">
-    <i class="inverted large link bullseye icon dream-flip-toggle" title="翻转一下！"></i>
-  </div>
-  <div class="item">
-    <a href="/">
-      <i class="inverted large link home icon" title="首页"></i>
-    </a>
-  </div>
-  {{ if gt (len (where .Site.RegularPages "Section" "==" "post")) 0 }}
-  <div class="item">
-    <a href="/post">
-      <i class="inverted large link archive icon" title="{{ i18n "archives" }}"></i>
-    </a>
-  </div>
-  {{ end }}
-  <div class="item">
-    <a href="/tags">
-      <i class="inverted large link tags icon" title="{{ i18n "allTags" }}"></i>
-    </a>
-  </div>
-  <div class="item">
-    <a href="/categories">
-      <i class="inverted large link cube icon" title="{{ i18n "allCategories" }}"></i>
-    </a>
-  </div>
-</nav>
-{{ end }}
+{{ define "title" }}404 Page Not Found{{ end }}
 
 {{ define "main" }}
 <div class="ui container dream-404-container">

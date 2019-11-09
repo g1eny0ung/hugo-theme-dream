@@ -7,31 +7,33 @@
   <div class="sixteen wide mobile sixteen wide tablet four wide computer column">
     {{ partial "header.html" . }}
   </div>
-  <div class="sixteen wide mobile sixteen wide tablet eleven wide computer column">
+  <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column">
     <div class="ui segment">
       <h2 class="ui header">
         {{ i18n "allCategories" }}
         <div class="ui grey sub header">
           {{ if eq (len .Data.Terms) 1 }}
-          {{ print "1 " (i18n "category") }}
+            {{ print "1 " (i18n "category") }}
           {{ else }}
-          {{ i18n "category" (len .Data.Terms) }}
+            {{ i18n "category" (len .Data.Terms) }}
           {{ end }}
         </div>
       </h2>
 
       {{ $data := .Data }}
       {{ range .Data.Terms.Alphabetical }}
-      {{ $termLink := printf "/%s/%s/" $data.Plural .Term | urlize }}
-      <h3 class="ui header">
+        {{ $termLink := printf "/%s/%s/" $data.Plural .Term | urlize }}
+        <h3 class="ui header">
           <a href="{{ $termLink }}">{{ .Term }}</a>
           {{ i18n "article" .Count }}
-      </h3>
-      <ul>
-        {{ range .Pages }}
-        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-        {{ end }}
-      </ul>
+        </h3>
+        <ul>
+          {{ range .Pages }}
+            <li>
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </li>
+          {{ end }}
+        </ul>
       {{ end }}
 
     </div>
