@@ -1,3 +1,7 @@
+{{ if isset .Site.Params "favicon" }}
+<link href="{{ .Site.Params.favicon }}" rel="shortcut icon" type="image/x-icon" />
+{{ end }}
+
 {{ if eq .Type "post" }}
   <!-- Page Author & Description -->
   <meta name="author" content="{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}" />
@@ -6,10 +10,6 @@
   <!-- Site Author & Description -->
   <meta name="author" content="{{ .Site.Params.author }}" />
   <meta name="description" content="{{ .Site.Params.description }}" />
-{{ end }}
-
-{{ if isset .Site.Params "favicon" }}
-<link href="{{ .Site.Params.favicon }}" rel="shortcut icon" type="image/x-icon" />
 {{ end }}
 
 <!-- Site Generator -->

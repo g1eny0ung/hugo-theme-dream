@@ -1,31 +1,8 @@
-$MenuHeight: 43.5667px;
-$ContainerHeight: calc(100% - #{$MenuHeight});
+$MenuHeight: 40px;
+$ContainerHeight: calc(100% - #{$MenuHeight} - 1rem);
 
 @mixin VHCenter {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.dream-button {
-  transition: 0.8s ease !important;
-
-  &:hover {
-    border-radius: 25px !important;
-  }
-}
-
-.dream-404-container {
-  @include VHCenter;
-
-  display: flex !important;
-  height: $ContainerHeight;
-
-  .dream-404-image {
-    padding-bottom: 10rem;
-  }
-}
-
-.ui.menu.dream-menu {
-  margin: 0;
 }

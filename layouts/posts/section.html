@@ -1,0 +1,31 @@
+{{ define "title" }}
+{{ .Title }}
+{{ end }}
+
+{{ define "main"}}
+<div class="ui centered relaxed grid dream-grid">
+  <div class="sixteen wide mobile sixteen wide tablet four wide computer column">
+
+    {{ partial "header.html" . }}
+
+  </div>
+  <div class="sixteen wide mobile sixteen wide tablet eleven wide computer column">
+    <div class="ui segment">
+      <h2 class="ui header">
+        {{ .Title }}
+        <div class="ui grey sub header">{{ .Content }}</div>
+      </h2>
+
+      {{ range .Data.Pages.GroupByDate "2006" }}
+        <h3 class="ui header">{{ .Key }}</h3>
+        <ul>
+          {{ range .Pages }}
+          <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+          {{ end }}
+        </ul>
+      {{ end }}
+
+    </div>
+  </div>
+</div>
+{{ end }}

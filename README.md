@@ -1,10 +1,10 @@
-# :seedling: hugo-theme-dream
+# 🌱hugo-theme-dream
 
 Dream is a [Hugo](https://gohugo.io/) theme. I build it for [my blog](http://g1eny0ung.site).
 
-The main features are full page flip and random color views ~.
+The main features are **full page flip** and **masonry layouts views** ~.
 
-Dream also support **dark-mode** and **light-mode** out of the box.
+Dream also support **light-mode** and **dark-mode** out of the box.
 
 [demo: https://themes.gohugo.io/theme/hugo-theme-dream/](https://themes.gohugo.io/theme/hugo-theme-dream/)
 
@@ -13,16 +13,16 @@ Dream also support **dark-mode** and **light-mode** out of the box.
 All tags of this theme:
 
 * flip
-* colorful
+* masonry layouts
 * i18n
 * blog
-* disqus
 * google-analytics
+* disqus
 * responsive
 * copyright
 * avatar
 * motto
-* sociallinks
+* social links
 * creative
 * personal
 * light-mode
@@ -30,13 +30,13 @@ All tags of this theme:
 
 ## Documentation
 
-[http://g1eny0ung.site/hugo-theme-dream](http://g1eny0ung.site/hugo-theme-dream)
+[https://g1eny0ung.site/hugo-theme-dream](https://g1eny0ung.site/hugo-theme-dream)
 
 ## Installation
 
 Go into your blog folder and:
 
-```
+```sh
 cd themes
 git clone https://github.com/g1eny0ung/hugo-theme-dream.git dream
 ```
@@ -45,9 +45,9 @@ Then open your `config.toml`, edit to `theme = "dream"` and save.
 
 ## Example
 
-[My Blog](http://g1eny0ung.site)
+[My Blog](https://g1eny0ung.site)
 
-[My Blog Source Code](https://github.com/g1eny0ung/blog)
+[My Blog's Source Code](https://github.com/g1eny0ung/blog)
 
 ## Publish
 

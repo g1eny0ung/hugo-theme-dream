@@ -1,50 +1,44 @@
 [blogAlias]
 other = "的博客"
 
-[aboutHeader]
-other = "关于"
-
 [home]
 other = "首页"
-
-[prevPage]
-other = "前一页"
-
-[nextPage]
-other = "后一页"
-
-[flip]
-other = "翻转！"
-
-[clickToPopTagsAndCategories]
-other = "弹出菜单"
-
-[updateAt]
-other = "更新于"
 
 [backToHome]
 other = "返回首页"
 
-[noTag]
-other = "暂无标签"
+[flip]
+other = "翻转！"
 
 [archives]
 other = "归档"
 
-[tag]
-one = "标签"
-other = "{{ .Count }}标签"
-
-[category]
-one = "分类"
-other = "{{ .Count }}分类"
-
 [allTags]
 other = "所有标签"
+
+[tag]
+one = "标签"
+other = "{{ .Count }} 标签"
 
 [allCategories]
 other = "所有分类"
 
+[category]
+one = "分类"
+other = "{{ .Count }} 分类"
+
 [article]
 one = "1篇文章"
 other = "{{ .Count }}篇文章"
+
+[socialLinks]
+other = "社交链接"
+
+[minuteRead]
+other = " 分钟阅读"
+
+[updateAt]
+other = "更新于"
+
+[noTag]
+other = "暂无标签"

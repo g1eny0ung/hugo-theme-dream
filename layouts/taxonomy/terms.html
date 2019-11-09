@@ -2,30 +2,15 @@
 {{ i18n "allTags" }}
 {{ end }}
 
-{{ define "frontmenu" }}
-<nav class="ui top secondary menu" style="overflow-x: auto">
-  <div class="item">
-    <i class="inverted big link bullseye icon dream-flip-toggle" title="{{ i18n "flip" }}"></i>
-  </div>
-  <div class="item">
-    <a href="/"><i class="inverted big link home icon" title="{{ i18n "home" }}"></i></a>
-  </div>
-</nav>
-{{ end }}
-
 {{ define "main"}}
-<div class="ui centered grid">
-  <div class="fifteen wide mobile fifteen wide tablet four wide computer column">
+<div class="ui centered relaxed grid dream-grid">
+  <div class="sixteen wide mobile sixteen wide tablet four wide computer column">
 
     {{ partial "header.html" . }}
 
   </div>
-  <div class="fifteen wide mobile fifteen wide tablet eleven wide computer column post-list">
-    {{ if .Site.Params.lightMode }}
+  <div class="sixteen wide mobile sixteen wide tablet eleven wide computer column post-list">
     <div class="ui segment">
-    {{ else }}
-    <div class="ui inverted segment">
-    {{ end }}
       <h2 class="ui header">
         {{ i18n "allTags" }}
         <div class="ui grey sub header">

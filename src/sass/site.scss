@@ -5,6 +5,7 @@
 }
 
 .flip-container {
+  width: 100vw;
   height: 100vh;
   perspective: 1000px;
 
@@ -41,71 +42,70 @@
   }
 }
 
-.ui.grid {
-  margin-left: 0;
-  margin-right: 0;
-}
+.dream-404-container {
+  @include VHCenter;
 
-.ui.cards .card .image {
-  height: 100%;
-}
+  display: flex !important;
+  height: $ContainerHeight;
 
-.ui.cards .card .image .ui.dimmer.light-mode {
-  background-color: rgba(255, 255, 255, 0.3) !important;
-}
-
-.ui.cards .card .image .ui.dimmer .content,
-.ui.cards .card .image .ui.dimmer .center {
-  height: 100%;
-}
-
-.ui.cards .card .image .ui.dimmer .display-content {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.ui.cards .card .image .ui.dimmer .display-content.light-mode {
-  color: black;
-}
-
-.ui.cards .card .image img {
-  height: 100%;
-}
-
-.about {
-  height: calc(100vh - 50px - 28px);
-  overflow-y: scroll;
-}
-
-.post-list {
-  overflow-y: scroll;
-}
-
-a.ui.label {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-@media screen and (max-width: 768px) {
-  .dream-header-tags.dream-tags,
-  .dream-categories {
-    display: none;
-  }
-
-  #tag-category-pop {
-    display: block;
+  .dream-404-image {
+    padding-bottom: 10rem;
   }
 }
 
-@media screen and (min-width: 769px) {
-  #tag-category-pop {
-    display: none;
+.ui.menu.dream-menu {
+  .item {
+    padding: 0.5rem;
+
+    &:first-child {
+      padding-left: 1rem;
+    }
+
+    i {
+      margin: 0;
+    }
+
+    a {
+      color: rgba(0, 0, 0, 0.87);
+    }
   }
 }
 
-@media screen and (max-width: 1450px) {
-  .ui.two.cards > .card {
-    width: calc(100% - 2em);
+.dream-tags {
+  .ui.label {
+    margin: 0.5rem 0;
+  }
+}
+
+.dream-categories {
+  .ui.accordion {
+    .ui.list {
+      .item {
+        padding-left: 1rem;
+      }
+    }
+  }
+}
+
+.dream-grid {
+  margin: 1rem !important;
+  margin-top: 0 !important;
+
+  .dream-column {
+    .ui.card {
+      width: 100%;
+    }
+  }
+}
+
+.ui.card.dream-card {
+  .content {
+    .header {
+      margin-top: 1rem;
+    }
+
+    .description {
+      margin: 1.5rem 0 1rem 0;
+    }
   }
 }
