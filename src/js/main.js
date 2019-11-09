@@ -7,8 +7,7 @@ $(document).ready(() => {
 
 function initGrid() {
   $('.dream-grid').masonry({
-    itemSelector: '.dream-column',
-    horizontalOrder: true
+    itemSelector: '.dream-column'
   })
 }
 

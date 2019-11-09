@@ -11,10 +11,10 @@
         <i class="save link icon"></i>
       </div>
       <header>
-        <h1 class="ui header">
+        <h2 class="ui header">
           {{ .Title }}
           <div class="sub header">@ {{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }} · {{ .Date.Format "Monday, Jan 2, 2006" }} · {{ .ReadingTime }}{{ i18n "minuteRead" }} · {{ i18n "updateAt" }} {{ dateFormat "Jan 2, 2006" .Lastmod }}</div>
-        </h1>
+        </h2>
       </header>
       <article class="markdown-body" style="margin-top: 2rem;">{{ .Content }}</article>
     </section>

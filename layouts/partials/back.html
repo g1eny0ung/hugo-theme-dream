@@ -1,4 +1,17 @@
 <div class="ui centered relaxed grid dream-grid">
+  {{ range where .Site.RegularPages "Section" "about" }}
+    <section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+      <article>
+        <div class="ui top attached segment">
+          <h3 class="ui header">{{ .Title }}</h3>
+        </div>
+        <div class="ui attached segment markdown-body">
+          {{ .Content | emojify }}
+        </div>
+      </article>
+    </section>
+  {{ end }}
+
   <section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
     <article>
       <div class="ui top attached segment">
@@ -49,19 +62,6 @@
       </div>
     </article>
   </section>
-
-  {{ range where .Site.RegularPages "Section" "about" }}
-    <section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
-      <article>
-        <div class="ui top attached segment">
-          <h3 class="ui header">{{ .Title }}</h3>
-        </div>
-        <div class="ui attached segment markdown-body">
-          {{ .Content | emojify }}
-        </div>
-      </article>
-    </section>
-  {{ end }}
 
   <section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
     {{ if .Site.Copyright }}
