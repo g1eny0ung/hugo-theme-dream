@@ -4,7 +4,7 @@
     {{ partial "header.html" . }}
   </div>
 
-  {{ range .Site.RegularPages }}
+  {{ range where .Site.RegularPages "Section" "!=" "about" }}
     {{ if isset .Params "showcase" }}
       <div class="sixteen wide mobile eight wide tablet eight wide computer column dream-column">
     {{ else }}
