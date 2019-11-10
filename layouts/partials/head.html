@@ -26,3 +26,16 @@
 <link rel="stylesheet" href="/css/github-markdown.css" />
 <link rel="stylesheet" href="/css/semantic.min.css" />
 <link rel="stylesheet" href="/css/site.css" />
+
+
+{{ if .Site.Params.linkColor }}
+<style>
+  a:hover {
+    color: {{ .Site.Params.linkColor }} !important;
+  }
+
+  .inverted a {
+     color: {{ .Site.Params.linkColor }} !important;
+  }
+</style>
+{{ end }}

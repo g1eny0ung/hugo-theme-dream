@@ -26,6 +26,11 @@
   .flip-container .back {
     transform: rotateY(180deg); }
 
+.inverted a {
+  color: #eee !important; }
+  .inverted a:hover {
+    color: #fff !important; }
+
 .dream-404-container {
   display: flex;
   justify-content: center;

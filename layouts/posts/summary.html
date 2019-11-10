@@ -1,4 +1,4 @@
-{{ if .Site.Params.background }}
+{{ if .Site.Params.backgroundImage }}
 <article class="ui raised card dream-card" style="box-shadow: none;">
 {{ else }}
 <article class="ui raised card dream-card">
@@ -10,20 +10,22 @@
       <img src="/img/default{{ index (shuffle (seq 1 6)) 0 }}.jpg" alt="{{ .Title }}" />
     {{ end }}
   </div>
+
   <div class="content">
-      <a class="header" href="{{ .Permalink }}">{{ .Title }}</a>
-      <div class="meta">
-        <p class="date">{{ .Date.Format "Monday, Jan 2, 2006" }}</p>
-        <p class="author">@ {{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}</p>
-      </div>
-      <div class="description">
-        {{ .Summary | plainify | htmlUnescape }}
-      </div>
+    <a class="header" href="{{ .Permalink }}">{{ .Title }}</a>
+    <div class="meta">
+      <p class="date">{{ .Date.Format "Monday, Jan 2, 2006" }}</p>
+      <p class="author">@ {{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}</p>
     </div>
-    <div class="extra content">
-      <a>
-        <i class="clock icon"></i>
-        {{ .ReadingTime }}{{ i18n "minuteRead" }}
-      </a>
+    <div class="description">
+      {{ .Summary | plainify | htmlUnescape }}
     </div>
+  </div>
+
+  <div class="extra content">
+    <a>
+      <i class="clock icon"></i>
+      {{ .ReadingTime }}{{ i18n "minuteRead" }}
+    </a>
+  </div>
 </article>

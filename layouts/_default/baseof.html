@@ -10,7 +10,9 @@
   </head>
 
   {{ if .Site.Params.background }}
-  <body style="background: url({{ .Site.Params.background }}); background-attachment: fixed; background-size: cover;">
+  <body style="background: {{ .Site.Params.background }};">
+  {{ else if .Site.Params.backgroundImage }}
+  <body style="background: url({{ .Site.Params.backgroundImage }}); background-attachment: fixed; background-size: cover;">
   {{ else }}
   <body>
   {{ end }}

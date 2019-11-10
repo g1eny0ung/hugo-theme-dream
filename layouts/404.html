@@ -5,7 +5,11 @@
   <div class="ui basic center aligned segment">
     <img class="ui centered image dream-404-image" src="/img/404.png" alt="404">
     <p>
-      <a class="ui button" href="/">{{ i18n "backToHome" }}</a>
+      {{ if .Site.Params.dark404Button }}
+        <a class="ui inverted button" href="/">{{ i18n "backToHome" }}</a>
+      {{ else }}
+        <a class="ui button" href="/">{{ i18n "backToHome" }}</a>
+      {{ end }}
     </p>
   </div>
 </div>

@@ -1,4 +1,4 @@
-{{ if .Site.Params.darkMode }}
+{{ if .Site.Params.darkNav }}
 <nav class="ui secondary inverted menu dream-menu">
 {{ else }}
 <nav class="ui secondary menu dream-menu">
@@ -7,8 +7,9 @@
     <i class="large link bullseye icon dream-flip-toggle" title="{{ i18n "flip" }}"></i>
   </div>
   <div class="item">
-    <a href="/">
-      <i class="large link home icon" title="{{ i18n "home" }}"></i>
-    </a>
+    <i class="large link home icon" title="{{ i18n "home" }}" onclick="window.location.href = '/'"></i>
+  </div>
+  <div class="item">
+    <i id="theme-switch" class="large link icon" onclick="themeSwitch()"></i>
   </div>
 </nav>
