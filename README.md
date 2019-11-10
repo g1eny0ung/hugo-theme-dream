@@ -1,12 +1,24 @@
 # 🌱hugo-theme-dream
 
+> **The Major Update in 2019-11-10:**
+
+I completely rewrite the page layout to [masonry layouts](https://masonry.desandro.com/).
+
+Correspondingly, the configuration (`config.toml`) also has some destructive changes.
+
+Please refer to the documentation for details.
+
+If you have other problems, you can also ask in the [issues](https://github.com/g1eny0ung/hugo-theme-dream/issues).
+
+## Intro
+
 Dream is a [Hugo](https://gohugo.io/) theme. I build it for [my blog](http://g1eny0ung.site).
 
-The main features are **full page flip** and **masonry layouts views** ~.
+The main features are **full page flip** and **masonry layouts views**.~
 
-Dream also support **light-mode** and **dark-mode** out of the box.
+Dream also support **light mode** and **dark mode** out of the box.
 
-[demo: https://themes.gohugo.io/theme/hugo-theme-dream/](https://themes.gohugo.io/theme/hugo-theme-dream/)
+demo: [https://themes.gohugo.io/theme/hugo-theme-dream/](https://themes.gohugo.io/theme/hugo-theme-dream/)
 
 ![screenshot](./images/screenshot.png)
 
@@ -25,8 +37,8 @@ All tags of this theme:
 * social links
 * creative
 * personal
-* light-mode
-* dark-mode
+* light mode
+* dark mode
 
 ## Documentation
 
