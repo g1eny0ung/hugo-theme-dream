@@ -13,22 +13,26 @@ theme = "hugo-theme-dream"
 # enableRobotsTXT = true
 
 [params]
-  author = "Author"
-  motto = "Motto"
+  background = "#333"
+  # backgroundImage = "/me/background.jpg"
+  linkColor = "seagreen"
+
+  author = "Demo"
   # description = ""
-  # avatar = ""
+  avatar = "/img/default2.jpg"
+  motto = "Motto"
   
-  # email = ""
+  email = "g1enyy0ung@gmail.com"
   # github = ""
   # linkedin = ""
   # codepen = ""
   # stackoverflow = ""
 
   siteStartYear = 2016
-  aboutHeader = "About"
-
-  paginate = 4
 
   # favicon = "/favicon.ico"
 
-  # lightMode = true
+  # dark mode
+  darkLinkColor = "darkseagreen"
+  darkNav = true 
+  dark404Button = true

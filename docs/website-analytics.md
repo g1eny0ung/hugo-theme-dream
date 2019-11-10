@@ -4,7 +4,7 @@ Now, the dream theme only support [Google Analytics](https://www.google.com/anal
 
 In `config.toml`, set:
 
-```
+```toml
 googleAnalytics = "..."
 ```
 
