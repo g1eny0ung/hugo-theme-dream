@@ -13,11 +13,11 @@ theme = "hugo-theme-dream"
 # enableRobotsTXT = true
 
 [params]
-  background = "#333"
+  background = "black"
   # backgroundImage = "/me/background.jpg"
   linkColor = "seagreen"
 
-  author = "Demo"
+  author = "Yue Yang"
   # description = ""
   avatar = "/img/default2.jpg"
   motto = "Motto"
