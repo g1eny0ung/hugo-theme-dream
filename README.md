@@ -20,7 +20,7 @@ Dream also support **light mode** and **dark mode** out of the box.
 
 demo: [https://themes.gohugo.io/theme/hugo-theme-dream/](https://themes.gohugo.io/theme/hugo-theme-dream/)
 
-![screenshot](./images/screenshot.png)
+![screenshot](screenshot.png)
 
 All tags of this theme:
 

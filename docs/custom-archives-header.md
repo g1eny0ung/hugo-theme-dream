@@ -1,6 +1,6 @@
 # Custom Archives Header
 
-You can custom you `/post` page's header with a `_index.md`.
+You can custom you `/posts` page's header with a `_index.md`.
 
 Place the `_index.md` in `content/post`.
 
@@ -8,18 +8,17 @@ For example, paste below in `_index.md`:
 
 ```markdown
 ---
-title: Posts
+title: 归档
 ---
 
-All Posts.
-
+所有文章的归档。
 ```
 
 These will be rendered as:
 
 ```html
 <h2 class="ui header">
-  {{ .Title }} <!-- title: Posts -->
-  <div class="ui grey sub header">{{ .Content }}</div> <!-- All Posts. -->
+  归档
+  <div class="ui grey sub header">所有文章的归档。</div>
 </h2>
 ```

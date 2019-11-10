@@ -6,9 +6,9 @@
     <img class="ui centered image dream-404-image" src="/img/404.png" alt="404">
     <p>
       {{ if .Site.Params.dark404Button }}
-        <a class="ui inverted button" href="/">{{ i18n "backToHome" }}</a>
+        <button class="ui inverted button" onclick="window.location.href = '/'">{{ i18n "backToHome" }}</button>
       {{ else }}
-        <a class="ui button" href="/">{{ i18n "backToHome" }}</a>
+        <button class="ui button" onclick="window.location.href = '/'">{{ i18n "backToHome" }}</button>
       {{ end }}
     </p>
   </div>

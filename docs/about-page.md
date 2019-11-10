@@ -2,33 +2,28 @@
 
 In [Quick Start](./quickstart.md), we add **About Me** as below:
 
-> Open `content` folder and create a folder named `about`.
+Type in your terminal:
 
-> Then create `desc.md` in `about` folder.
-
-> Write somethings **about you**:
-
-```md
-First line
-
-Second line
-
-Third line
-
-...
+```sh
+hugo new about/desc.md
 ```
 
-From version **1.0.6**, you can also add `desc-center.md`, `desc-right.md` in the same folder:
+Write somethings **about you**:
 
-Then the page will generate as this:
+```md
+---
+title: desc
+---
 
+Hi, my name is Yue Yang.
 
-`left area` | `center area` | `right area`
+This is my blog.
+```
 
-`desc.md` | `desc-center.md` | `desc-right.md`
+**You can add multiple `.md` files, all of them will be rendered as masonry layouts.**
 
-## Note!
+```sh
+hugo new about/desc1.md
 
-After version **1.0.6**, the legacy code `desc.toml ($.Site.Data.about.desc)` was removed.
-
-If you start use this theme after **1.0.6**, you can safely ignore this note.
+hugo new about/desc2.md
+```

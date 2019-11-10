@@ -27,15 +27,18 @@
 <link rel="stylesheet" href="/css/semantic.min.css" />
 <link rel="stylesheet" href="/css/site.css" />
 
-
 {{ if .Site.Params.linkColor }}
 <style>
-  a:hover {
+  a {
     color: {{ .Site.Params.linkColor }} !important;
   }
+</style>
+{{ end }}
 
+{{ if .Site.Params.darkLinkColor }}
+<style>
   .inverted a {
-     color: {{ .Site.Params.linkColor }} !important;
+     color: {{ .Site.Params.darkLinkColor }} !important;
   }
 </style>
 {{ end }}

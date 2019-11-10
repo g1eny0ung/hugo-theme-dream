@@ -6,7 +6,7 @@
 
 Open `config.toml` and write:
 
-```
+```toml
 defaultContentLanguage = "en"
 ```
 
@@ -18,7 +18,7 @@ Dream support [Google Analytics](https://www.google.com/analytics/) for website 
 
 In `config.toml`, set:
 
-```
+```toml
 googleAnalytics = "..."
 ```
 
@@ -28,41 +28,43 @@ Dream now use [Disqus](https://disqus.com/) for social comments.
 
 In `config.toml`, set:
 
-```
+```toml
 disqusShortname = "..."
 ```
 
 ## Add "About Me"
 
-Open `content` folder and create a folder named `about`.
+Type in your terminal:
 
-Then create `desc.md` in `about` folder.
+```sh
+hugo new about/desc.md
+```
 
 Write somethings **about you**:
 
 ```md
-First line
+---
+title: desc
+---
 
-Second line
+Hi, my name is Yue Yang.
 
-Third line
-
-...
+This is my blog.
 ```
 
 ## OK, write a post for your blog
 
-All of your posts must in the `content/post` folder.
+All of your posts must in the `content/posts` folder.
 
 You can generate it by:
 
-```
-hugo new post/articleTitle.md
+```sh
+hugo new posts/articleTitle.md
 ```
 
 By default, the new md file's template will contain:
 
-```
+```md
 ---
 title: {{ replace .TranslationBaseName "-" " " | title }}
 date: {{ .Date }}
@@ -92,7 +94,7 @@ At last, remove `draft: true` and run `hugo` to generate your site.
 
 If your want to have a preview in editing, run:
 
-```
+```sh
 hugo server -D
 ```
 
