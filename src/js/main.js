@@ -6,8 +6,12 @@ $(document).ready(() => {
 })
 
 function initGrid() {
-  $('.dream-grid').masonry({
+  const $grid = $('.dream-grid').masonry({
     itemSelector: '.dream-column'
+  })
+
+  $grid.imagesLoaded().progress(() => {
+    $grid.masonry('layout')
   })
 }
 
