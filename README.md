@@ -4,7 +4,7 @@
 
 I completely rewrite the page layout to [masonry layouts](https://masonry.desandro.com/).
 
-Correspondingly, the configuration (`config.toml`) also has some destructive changes.
+Correspondingly, the configuration (`config.toml`) also has some breaking changes.
 
 Please refer to the documentation for details.
 
