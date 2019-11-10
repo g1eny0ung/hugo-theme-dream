@@ -1,5 +1,0 @@
----
-title: POSTS
----
-
-All Posts.
