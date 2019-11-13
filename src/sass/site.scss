@@ -4,6 +4,12 @@
   display: none;
 }
 
+body {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
 .flip-container {
   width: 100vw;
   height: 100vh;
