@@ -124,6 +124,12 @@ body {
 }
 
 .ui.card.dream-card {
+  .image {
+    video {
+      width: 100%;
+    }
+  }
+
   .content {
     .header {
       margin-top: 1rem;
