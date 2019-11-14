@@ -124,6 +124,8 @@ body {
 }
 
 .ui.card.dream-card {
+  overflow: hidden;
+
   .image {
     video {
       width: 100%;
