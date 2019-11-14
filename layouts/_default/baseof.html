@@ -12,7 +12,7 @@
   {{ if .Site.Params.background }}
   <body style="background: {{ .Site.Params.background }};">
   {{ else if .Site.Params.backgroundImage }}
-  <body style="background: url({{ .Site.Params.backgroundImage }});">
+  <body style="background-image: url({{ .Site.Params.backgroundImage }});">
   {{ else }}
   <body>
   {{ end }}
