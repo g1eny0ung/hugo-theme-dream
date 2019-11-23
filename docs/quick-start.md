@@ -52,6 +52,8 @@ Hi, my name is Yue Yang.
 This is my blog.
 ```
 
+Then, click the button on the top left corner of the page. You will see what you just wrote.
+
 ## OK, write a post for your blog
 
 All of your posts must in the `content/posts` folder.
