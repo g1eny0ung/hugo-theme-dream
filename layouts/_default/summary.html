@@ -5,12 +5,7 @@
 {{ end }}
   <div class="image">
     {{ if isset .Params "cover" }}
-      {{ $file_extension := path.Ext .Params.cover }}
-      {{ if eq $file_extension ".mp4"  }}
-        <video src="{{ .Params.cover }}" type="video/mp4" playsinline preload muted autoplay loop />
-      {{ else }}
-        <img src="{{ .Params.cover }}" alt="{{ .Title }}" />
-      {{ end }}
+      <img src="{{ .Params.cover }}" alt="{{ .Title }}" />
     {{ else }}
       <img src="/img/default{{ index (shuffle (seq 1 4)) 0 }}.jpg" alt="{{ .Title }}" />
     {{ end }}
