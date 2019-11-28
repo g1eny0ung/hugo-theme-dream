@@ -2,7 +2,7 @@
 
 > **The Major Update in 2019-11-10:**
 
-I completely rewrite the page layout to [masonry layouts](https://masonry.desandro.com/).
+I completely rewrite the page layout to [masonry layout](https://masonry.desandro.com/).
 
 Correspondingly, the configuration (`config.toml`) also has some breaking changes.
 
