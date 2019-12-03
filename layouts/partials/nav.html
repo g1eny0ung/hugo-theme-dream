@@ -7,7 +7,7 @@
     <i class="large link bullseye icon dream-flip-toggle" title="{{ i18n "flip" }}"></i>
   </div>
   <div class="item">
-    <i class="large link home icon" title="{{ i18n "home" }}" onclick="window.location.href = '/'"></i>
+    <i class="large link home icon" title="{{ i18n "home" }}" onclick="window.location.href = '{{ .Site.BaseURL }}'"></i>
   </div>
   <div class="item">
     <i id="theme-switch" class="large link icon" onclick="themeSwitch()"></i>
