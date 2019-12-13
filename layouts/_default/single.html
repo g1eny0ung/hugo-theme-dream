@@ -6,11 +6,8 @@
 <div class="ui centered relaxed grid dream-grid">
   <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single">
 
-    <section class="ui top attached segment">
-      <div class="ui right ribbon black inverted label" onclick="savePostAsImg()">
-        <i class="save link icon"></i>
-      </div>
-      <header>
+    <section class="ui top attached segment" id="dream-save-post-as-img">
+      <header style="margin-top: 0 !important;">
         <h2 class="ui header">
           {{ .Title }}
           <div class="sub header">@ {{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }} · {{ .Date.Format "Monday, Jan 2, 2006" }} · {{ .ReadingTime }}{{ i18n "minuteRead" }} · {{ i18n "updateAt" }} {{ dateFormat "Jan 2, 2006" .Lastmod }}</div>
@@ -27,6 +24,12 @@
       {{ else }}
         <span>{{ i18n "noTag" }}</span>
       {{ end }}
+      <div
+        class="ui label"
+        style="float: right; background: #1b1c1d !important; cursor: pointer;"
+        onclick="savePostAsImg()">
+        <i class="save icon"></i> Save as image
+      </div>
     </footer>
 
     {{ if .Site.Copyright }}

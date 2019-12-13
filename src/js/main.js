@@ -16,25 +16,23 @@ function initGrid() {
 }
 
 function savePostAsImg() {
-  var postList = $('.post-list')
-  var useWidth = postList.prop('scrollWidth')
-  var useHeight = postList.prop('scrollHeight')
-  var removedHeight = $('.post-list .post-disqus-area').prop('scrollHeight')
+  var post = $('#dream-save-post-as-img')
+  var useWidth = post.prop('scrollWidth')
+  var useHeight = post.prop('scrollHeight')
 
   var canvas = document.createElement('canvas')
   var width = useWidth
-  var height = useHeight - removedHeight
+  var height = useHeight
   var scale = 2
   canvas.width = width * scale
   canvas.height = height * scale
   canvas.getContext('2d').scale(scale, scale)
 
-  html2canvas(document.querySelector('.post-single-main'), {
+  html2canvas(document.querySelector('#dream-save-post-as-img'), {
     canvas: canvas,
     width: width,
     height: height,
-    scale: scale,
-    useCORS: true
+    scale: scale
   }).then(function(canvas) {
     var ctx = canvas.getContext('2d')
 
@@ -50,6 +48,7 @@ function savePostAsImg() {
     link.download = 'screenshot.png'
     link.click()
   })
+
   return false
 }
 
