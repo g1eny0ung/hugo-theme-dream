@@ -2,6 +2,6 @@
 
 This is an **Experimental Feature**.
 
-In a single post page, the post's top right corner has a save icon.
+You will find a label named `Save as image` In your single post page.
 
-When you click this icon, your post's screenshot will be downloaded.
+Click it, the post's screenshot will be downloaded.
