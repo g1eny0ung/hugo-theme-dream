@@ -22,7 +22,7 @@
           <a class="ui label" href="{{ "tags/" | relLangURL }}{{ $tag | urlize }}" title="{{ $tag }}">{{ $tag }}</a>
         {{ end }}
       {{ else }}
-        <span>{{ i18n "noTag" }}</span>
+          <a class="ui label">{{ i18n "noTag" }}</a>
       {{ end }}
       <div
         class="ui label"
