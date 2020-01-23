@@ -4,14 +4,17 @@
     {{ partial "header.html" . }}
   </div>
 
-  {{ range where .Site.RegularPages "Section" "!=" "about" }}
+  {{ $paginator := .Paginate (where .Site.RegularPages "Section" "!=" "about") }}
+  {{ range $paginator.Pages }}
     {{ if isset .Params "showcase" }}
-      <div class="sixteen wide mobile eight wide tablet eight wide computer column dream-column">
+    <div class="sixteen wide mobile eight wide tablet eight wide computer column dream-column">
     {{ else }}
-      <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
     {{ end }}
-        {{ .Render "summary" }}
-      </div>
+      {{ .Render "summary" }}
+    </div>
   {{ end }}
 </div>
+
+{{ partial "paginator.html" (dict "paginator" $paginator "Site" .Site) }}
 {{ end }}
