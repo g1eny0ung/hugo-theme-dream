@@ -5,7 +5,7 @@ other = "のブログ"
 other = "Home"
 
 [backToHome]
-other = "Back to Home"
+other = "Back to home"
 
 [flip]
 other = "フリップ"
@@ -42,3 +42,9 @@ other = "更新日時"
 
 [noTag]
 other = "タグ未設定"
+
+[prevPage]
+other = '前へ'
+
+[nextPage]
+other = '次へ'
