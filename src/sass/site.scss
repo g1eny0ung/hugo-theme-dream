@@ -96,6 +96,11 @@ body {
   }
 }
 
+.dream-header {
+  position: relative;
+  z-index: 999;
+}
+
 .dream-tags {
   .ui.label {
     margin: 0.5rem 0;
