@@ -2,7 +2,7 @@
 
 You can custom you `/posts` page's header with a `_index.md`.
 
-Place the `_index.md` in `content/post`.
+Place the `_index.md` in `content/posts`.
 
 For example, paste below in `_index.md`:
 
