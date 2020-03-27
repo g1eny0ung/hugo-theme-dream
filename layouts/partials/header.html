@@ -6,10 +6,10 @@
       {{ end }}
     </div>
 
-    <h3 class="ui header">
+    <h1 class="ui medium header">
       {{- .Site.Params.author -}}{{- i18n "blogAlias" -}}
       <div class="sub header" style="margin-top: 0.5rem;">{{- .Site.Params.motto -}}</div>
-    </h3>
+    </h1>
 
     <div class="ui horizontal list">
       {{ if gt (len (where .Site.RegularPages "Section" "==" "posts")) 0 }}

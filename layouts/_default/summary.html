@@ -12,7 +12,9 @@
   </div>
 
   <div class="content">
-    <a class="header" style="color: black !important;" href="{{ .Permalink }}">{{ .Title }}</a>
+    <h2 class="ui medium header">
+      <a style="color: black !important;" href="{{ .Permalink }}">{{ .Title }}</a>
+    </h2>
     <div class="meta">
       <p class="date">{{ .Date.Format "Monday, Jan 2, 2006" }}</p>
       <p class="author">@ {{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}</p>
