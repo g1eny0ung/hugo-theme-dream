@@ -13,6 +13,7 @@ const darkHeaderElements = () => {
     segments.map(function() {
       $(this).toggleClass(dark)
     })
+
     title.toggleClass(dark)
     iconList.toggleClass(dark)
     accordion.toggleClass(dark)
@@ -66,18 +67,30 @@ const darkSingle = () => {
   }
 }
 
+const darkCards = () => {
+  const cards = $('.dream-card')
+
+  if (cards.length) {
+    cards.map(function() {
+      $(this).toggleClass(dark)
+    })
+  }
+}
+
 function toggleDark() {
   darkHeaderElements()
-  darkBack()
+  darkCards()
+  darkSingle()
   darkPostsSection()
   darkTagsSection()
   darkCategoriesSection()
-  darkSingle()
+  darkBack()
 }
 
 let isDark = localStore.getItem('hugo-theme-dream-is-dark')
 const iconSwitch = $('#theme-switch')
 
+// Apply theme when first entering
 if (isDark) {
   iconSwitch.addClass('moon')
   toggleDark()

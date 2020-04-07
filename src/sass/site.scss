@@ -87,7 +87,7 @@ body {
     }
 
     a {
-      color: rgba(black, 0.87);
+      color: rgba(#000, 0.87);
     }
   }
 }
@@ -125,10 +125,32 @@ body {
 }
 
 .ui.card.dream-card {
+  &.inverted {
+    background: #1b1c1d;
+
+    .content {
+      .header > a {
+        color: #fff !important;
+      }
+
+      .meta {
+        color: rgba(#fff, 0.4);
+      }
+
+      .description {
+        color: rgba(#fff, 0.87);
+      }
+    }
+  }
+
   .content {
+    .header > a {
+      color: #000 !important;
+    }
+
     .description {
       margin: 1.5rem 0 1rem 0;
-      color: rgba(black, 0.87);
+      color: rgba(#000, 0.87);
     }
   }
 }
