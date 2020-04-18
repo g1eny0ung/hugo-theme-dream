@@ -18,47 +18,7 @@
         <h3 class="ui header">{{ i18n "socialLinks" }}</h3>
       </div>
       <div class="ui attached segment">
-        <nav class="ui secondary menu dream-menu">
-          {{ if .Site.Params.email }}
-            <div class="item">
-              <a href="mailto:{{ .Site.Params.email }}">
-                <i class="large mail icon" title="email"></i>
-              </a>
-            </div>
-          {{ end }}
-
-          {{ if .Site.Params.github }}
-            <div class="item">
-              <a href="https://github.com/{{ .Site.Params.github }}" target="_blank">
-                <i class="large github icon" title="github"></i>
-              </a>
-            </div>
-          {{ end }}
-
-          {{ if .Site.Params.linkedin }}
-            <div class="item">
-              <a href="https://www.linkedin.com/in/{{ .Site.Params.linkedin }}" target="_blank">
-                <i class="large linkedin icon" title="linkedin"></i>
-              </a>
-            </div>
-          {{ end }}
-
-          {{ if .Site.Params.stackoverflow }}
-            <div class="item">
-              <a href="https://www.stackoverflow.com/users/{{ .Site.Params.stackoverflow }}" target="_blank">
-                <i class="large stack overflow icon" title="stackoverflow"></i>
-              </a>
-            </div>
-          {{ end }}
-
-          {{ if .Site.Params.codepen }}
-            <div class="item">
-              <a href="https://codepen.io/{{ .Site.Params.codepen }}" target="_blank">
-                <i class="large codepen icon" title="codepen"></i>
-              </a>
-            </div>
-          {{ end }}
-        </nav>
+        {{ partial "socials.html" (dict "Site" .Site "IconSize" "large") }}
       </div>
     </article>
   </section>
