@@ -14,10 +14,13 @@ An example:
   motto = "与其感慨路难行，不如马上出发。"
 
   email = "g1enyy0ung@gmail.com"
-  github = "g1eny0ung"
+  twitter = "g1eny0ung"
+  facebook = "g1eny0ung"
+  instagram = "g1enyy0ung"
   linkedin = "钺杨g1eny0ung"
-  codepen = "g1eny0ung"
+  github = "g1eny0ung"
   stackoverflow = "5676489/g1eny0ung"
+  codepen = "g1eny0ung"
 
   siteStartYear = 2016
 
@@ -66,16 +69,19 @@ Used in Header.
 Used in Header.
 
 `email = "g1enyy0ung@gmail.com"`<br />
-`github = "g1eny0ung"`<br />
+`twitter = "g1eny0ung"`<br />
+`facebook = "g1eny0ung"`<br />
+`instagram = "g1enyy0ung"`<br />
 `linkedin = "钺杨g1eny0ung"`<br />
-`codepen = "g1eny0ung"`<br />
-`stackoverflow = "5676489/g1eny0ung"`
+`github = "g1eny0ung"`<br />
+`stackoverflow = "5676489/g1eny0ung"`<br />
+`codepen = "g1eny0ung"`
 
-All of these social links will be showed on about page `layouts/partials/back.html`.
+All of these social links will be showed on about page `layouts/partials/back.html` and header `layouts/partials/header.html`.
 
 You can open an issue or pull a request to add a social link.
 
-Or add by yourself. Follow the template in `layouts/partials/back.html`.
+Or add by yourself. Follow the template in `layouts/partials/socials.html`.
 
 `siteStartYear = 2016`
 
