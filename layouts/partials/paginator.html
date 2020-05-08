@@ -3,9 +3,9 @@
   <div class="item">
     <a href="{{ .paginator.Prev.URL }}">
     {{ if .Site.Params.darkNav }}
-      <i class="large arrow alternate circle outline link left inverted icon" title="{{ i18n "prevPage" }}"></i>
+      <i class="large arrow alternate circle left inverted icon link" title="{{ i18n "prevPage" }}"></i>
     {{ else }}
-      <i class="large arrow alternate circle outline link left icon" title="{{ i18n "prevPage" }}"></i>
+      <i class="large arrow alternate circle left icon link" style="color: rgba(0, 0, 0, .87);" title="{{ i18n "prevPage" }}"></i>
     {{ end }}
     </a>
   </div>
@@ -15,9 +15,9 @@
   <div class="item">
     <a href="{{ .paginator.Next.URL }}">
     {{ if .Site.Params.darkNav }}
-      <i class="large arrow alternate circle outline link right inverted icon" title="{{ i18n "nextPage" }}"></i>
+      <i class="large arrow alternate circle right inverted icon link" title="{{ i18n "nextPage" }}"></i>
     {{ else }}
-      <i class="large arrow alternate circle outline link right icon" title="{{ i18n "nextPage" }}"></i>
+      <i class="large arrow alternate circle right icon link" style="color: rgba(0, 0, 0, .87);" title="{{ i18n "nextPage" }}"></i>
     {{ end }}
     </a>
   </div>
