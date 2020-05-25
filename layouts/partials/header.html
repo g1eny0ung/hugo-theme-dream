@@ -34,7 +34,7 @@
   </section>
   {{ end }}
 
-  {{ if .Site.Taxonomies.categories }}
+  {{ if and (.Site.Taxonomies.categories) (false) }}
   <section class="ui attached segment dream-categories">
     <div class="ui accordion">
       {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
