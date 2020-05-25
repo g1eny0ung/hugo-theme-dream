@@ -1,5 +1,21 @@
 # 🌱hugo-theme-dream
 
+## Hello!
+
+This is a fork of an excellent hugo theme called "dream", which I use for [my blog](https://blog.csuttles.io)
+
+## License
+original author:
+MIT © [g1eny0ung](https://github.com/g1eny0ung)
+me
+MIT © [csuttles](https://github.com/csuttles)
+
+## Bye!
+
+Back to the original README:
+
+---
+
 > **The Major Update in 2019-11-10:**
 
 I completely rewrite the page layout to [masonry layout](https://masonry.desandro.com/).
