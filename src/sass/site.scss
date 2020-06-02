@@ -1,9 +1,13 @@
 @import 'common';
 
 body {
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-position: center;
   background-size: cover;
+
+  @media screen and (max-width: 768px) {
+    background-attachment: scroll;
+  }
 }
 
 .flip-container {
