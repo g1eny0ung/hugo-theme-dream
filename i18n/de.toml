@@ -1,0 +1,53 @@
+[blogAlias]
+other = "s Blog"
+
+[home]
+other = "Start"
+
+[backToHome]
+other = "Zurück zum Start"
+
+[flip]
+other = "Flip it!"
+
+[archives]
+other = "Archiv"
+
+[allTags]
+other = "Alle Tags"
+
+[tag]
+one = "tag"
+other = "{{ .Count }} Tags"
+
+[allCategories]
+other = "Alle Kategorien"
+
+[category]
+one = "Kategorie"
+other = "{{ .Count }} Kategorien"
+
+[article]
+one = "1 Artikel"
+other = "{{ .Count }} Artikel"
+
+[socialLinks]
+other = "Social Links"
+
+[minuteRead]
+other = " Minuten Lesezeit"
+
+[updateAt]
+other = "Aktualisiert "
+
+[noTag]
+other = "Keine Tags"
+
+[prevPage]
+other = 'Vorherige Seite'
+
+[nextPage]
+other = 'Nächste Seite'
+
+[saveAsImage]
+other = "Als Bild speichern"
