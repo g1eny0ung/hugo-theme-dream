@@ -48,3 +48,6 @@ other = 'Page précédente'
 
 [nextPage]
 other = 'Page suivante'
+
+[saveAsImage]
+other = "Enregistrer sous forme d'image"

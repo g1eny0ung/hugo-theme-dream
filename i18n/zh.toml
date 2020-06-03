@@ -48,3 +48,6 @@ other = '上一页'
 
 [nextPage]
 other = '下一页'
+
+[saveAsImage]
+other = "保存为图片"
