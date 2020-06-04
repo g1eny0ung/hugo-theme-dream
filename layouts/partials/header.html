@@ -2,7 +2,7 @@
   <section class="ui top attached center aligned segment">
     <div class="ui small circular image">
       {{ if isset .Site.Params "avatar" }}
-        <img src="{{ .Site.Params.avatar }}">
+        <img src="{{ .Site.Params.avatar | relURL }}">
       {{ end }}
     </div>
 
