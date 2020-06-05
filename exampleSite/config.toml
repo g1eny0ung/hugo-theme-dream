@@ -35,4 +35,4 @@ theme = "hugo-theme-dream"
   # dark mode
   darkLinkColor = "darkseagreen"
   darkNav = true 
-  dark404Button = true
+  dark404 = true

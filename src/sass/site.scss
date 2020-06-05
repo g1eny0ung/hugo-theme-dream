@@ -70,8 +70,12 @@ body {
   display: flex !important;
   height: $ContainerHeight;
 
-  .dream-404-image {
-    padding-bottom: 10rem;
+  .ui.header {
+    margin-bottom: 2rem;
+
+    .sub.header {
+      margin-top: 0.5rem;
+    }
   }
 }
 

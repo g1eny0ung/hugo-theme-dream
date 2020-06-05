@@ -1,16 +1,25 @@
-{{ define "title" }}404 Page Not Found{{ end }}
+{{ define "title" }}404 Not Found{{ end }}
 
 {{ define "main" }}
 <div class="ui container dream-404-container">
   <div class="ui basic center aligned segment">
-    <img class="ui centered image dream-404-image" src="/img/404.png" alt="404">
-    <p>
-      {{ if .Site.Params.dark404Button }}
+    {{ if .Site.Params.dark404 }}
+      <h1 class="ui inverted header">
+        Oops ... You are lost in dream.
+        <div class="sub header">Don't worry though, click the button below to wake up.</div>
+      </h1>
+      <p>
         <button class="ui inverted button" onclick="window.location.href = '/'">{{ i18n "backToHome" }}</button>
-      {{ else }}
+      </p>
+    {{ else }}
+      <h2 class="ui header">
+        Oops...You are lost in dream.
+        <div class="sub header">Don't worry though, click the button below to wake up.</div>
+      </h2>
+      <p>
         <button class="ui button" onclick="window.location.href = '/'">{{ i18n "backToHome" }}</button>
-      {{ end }}
-    </p>
+      </p>
+    {{ end }}
   </div>
 </div>
 {{ end }}
