@@ -29,7 +29,7 @@ An example:
   # dark mode
   darkLinkColor = "darkseagreen"
   darkNav = true
-  dark404Button = true
+  dark404 = true
 ```
 
 ## Explanation
@@ -97,8 +97,14 @@ The site's link color in dark mode.
 
 `darkNav = true`
 
-Set the dark top navbar, usually use with `background` or `backgroundImage`.
+Set the dark top navbar, usually use with dark `background` or `backgroundImage`.
 
 `dark404Button = true`
 
-Set the dark button in 404 page, usually use with `background` or `backgroundImage`.
+> Note: after <https://github.com/g1eny0ung/hugo-theme-dream/commit/b07d6e22183bad58a8498429bc49fca77082533c>, this param is deprecated. If you are using the latest version of dream, you can ignore this note.
+
+Set the dark button in 404 page, usually use with dark `background` or `backgroundImage`.
+
+`dark404 = true`
+
+Set the inverted color in 404 page, usually use with dark `background` or `backgroundImage`.
