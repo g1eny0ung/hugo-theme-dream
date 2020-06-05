@@ -1,12 +1,12 @@
-<script src="/js/jquery.min.js"></script>
-<script src="/js/semantic.min.js"></script>
-<script src="/js/imagesloaded.pkgd.min.js"></script>
-<script src="/js/masonry.pkgd.min.js"></script>
-<script src="/js/nav.js"></script>
-<script src="/js/header.js"></script>
-<script src="/js/main.js"></script>
-<script src="/js/theme.js"></script>
-<script src="/js/html2canvas.min.js"></script>
+<script src="{{ "/js/jquery.min.js" | relURL }}"></script>
+<script src="{{ "/js/semantic.min.js" | relURL }}"></script>
+<script src="{{ "/js/imagesloaded.pkgd.min.js" | relURL }}"></script>
+<script src="{{ "/js/masonry.pkgd.min.js" | relURL }}"></script>
+<script src="{{ "/js/nav.js" | relURL }}"></script>
+<script src="{{ "/js/header.js" | relURL }}"></script>
+<script src="{{ "/js/main.js" | relURL }}"></script>
+<script src="{{ "/js/theme.js" | relURL }}"></script>
+<script src="{{ "/js/html2canvas.min.js" | relURL }}"></script>
 
 {{ if .Site.GoogleAnalytics }}
   {{ template "_internal/google_analytics_async.html" . }}
