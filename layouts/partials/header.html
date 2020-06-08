@@ -47,7 +47,7 @@
           {{ range $taxonomy.Pages }}
             <div class="item">
               <div class="content">
-                <a href="{{ .Permalink }}" class="item">{{ .LinkTitle }}</a>
+                <a href="{{ .RelPermalink }}" class="item">{{ .LinkTitle }}</a>
               </div>
             </div>
           {{ end }}

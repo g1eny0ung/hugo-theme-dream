@@ -13,7 +13,7 @@
         {{ i18n "allCategories" }}
         <div class="ui grey sub header">
           {{ if eq (len .Data.Terms) 1 }}
-            {{ print "1 " (i18n "category") }}
+            {{ i18n "category" 1 }}
           {{ else }}
             {{ i18n "category" (len .Data.Terms) }}
           {{ end }}
