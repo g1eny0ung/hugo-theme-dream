@@ -7,12 +7,10 @@ $(document).ready(() => {
 
 function initGrid() {
   const $grid = $('.dream-grid').masonry({
-    itemSelector: '.dream-column'
+    itemSelector: '.dream-column',
   })
 
-  $grid.imagesLoaded().progress(() => {
-    $grid.masonry('layout')
-  })
+  $grid.imagesLoaded().progress(() => $grid.masonry('layout'))
 }
 
 function savePostAsImg() {
@@ -32,8 +30,8 @@ function savePostAsImg() {
     canvas: canvas,
     width: width,
     height: height,
-    scale: scale
-  }).then(function(canvas) {
+    scale: scale,
+  }).then(function (canvas) {
     var ctx = canvas.getContext('2d')
 
     ctx.mozImageSmoothingEnabled = false
