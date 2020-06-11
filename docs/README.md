@@ -1,4 +1,4 @@
-# 🌱hugo-theme-dream
+# 🌱 hugo-theme-dream
 
 > **The Major Update in 2019-11-10:**
 
