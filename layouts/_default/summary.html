@@ -3,13 +3,13 @@
 {{ else }}
 <article class="ui raised card dream-card">
 {{ end }}
-  <div class="image">
+  <a class="image" href="{{ .Permalink }}">
     {{ if isset .Params "cover" }}
       <img src="{{ .Params.cover }}" alt="{{ .Title }}" />
     {{ else }}
       <img src="/img/default{{ index (shuffle (seq 1 4)) 0 }}.jpg" alt="{{ .Title }}" />
     {{ end }}
-  </div>
+  </a>
 
   <div class="content">
     <h2 class="ui medium header">
@@ -20,7 +20,7 @@
       <p class="author">@ {{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}</p>
     </div>
     <div class="description">
-      {{ .Summary | plainify | htmlUnescape }}
+      {{ .Summary | safeHTML }}
     </div>
   </div>
 
