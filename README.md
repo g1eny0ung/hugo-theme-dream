@@ -10,6 +10,8 @@ Related docs:
 
 <https://gohugo.io/content-management/page-bundles/#headless-bundle>
 
+---
+
 > **The Major Update in 2019-11-10:**
 
 I completely rewrite the page layout to [masonry layout](https://masonry.desandro.com/).
