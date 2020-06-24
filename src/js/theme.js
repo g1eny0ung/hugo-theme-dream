@@ -77,10 +77,25 @@ const darkCards = () => {
   }
 }
 
+const darkTables = () => {
+  const tables = $('.dream-single table')
+
+  if (tables.length) {
+    tables.map(function () {
+      if (this.style.color) {
+        this.style.color = ''
+      } else {
+        this.style.color = 'black'
+      }
+    })
+  }
+}
+
 function toggleDark() {
   darkHeaderElements()
   darkCards()
   darkSingle()
+  darkTables()
   darkPostsSection()
   darkTagsSection()
   darkCategoriesSection()
