@@ -1,6 +1,6 @@
 # 🌱 hugo-theme-dream
 
-> Note: after v1.1.0, you need to set the `about` folder to `Headless Bundle`.
+> Note: after v1.1.0, it's needed to set the `about` folder to `Headless Bundle`.
 
 Related docs:
 
