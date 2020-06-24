@@ -37,19 +37,27 @@ disqusShortname = "..."
 Type in your terminal:
 
 ```sh
-hugo new about/desc.md
+hugo new about/me.md
 ```
 
 Write somethings **about you**:
 
 ```md
 ---
-title: desc
+title: About Me
 ---
 
 Hi, my name is Yue Yang.
 
 This is my blog.
+```
+
+Then create an `index.md` in the about folder and put below contents into it:
+
+```md
+---
+headless: true
+---
 ```
 
 Then, click the button on the top left corner of the page. You will see what you just wrote.
