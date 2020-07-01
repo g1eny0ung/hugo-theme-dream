@@ -16,7 +16,13 @@
       <a href="{{ .Permalink }}">{{ .Title }}</a>
     </h2>
     <div class="meta">
-      <p class="date">{{ .Date.Format "Monday, Jan 2, 2006" }}</p>
+      <p class="date">
+        {{ if eq .Site.Language.Lang "zh" }}
+          {{ index .Site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
+        {{ else }}
+          {{ .Date.Format "Monday, Jan 2, 2006" }}
+        {{ end }}
+      </p>
       <p class="author">@ {{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}</p>
     </div>
     <div class="description">
