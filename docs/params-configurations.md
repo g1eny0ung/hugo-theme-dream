@@ -26,6 +26,9 @@ An example:
 
   favicon = "/favicon.ico"
 
+  # options
+  showSummaryCoverInPost = true
+
   # dark mode
   darkLinkColor = "darkseagreen"
   darkNav = true
@@ -90,6 +93,10 @@ Set your site's start year, then the header will show as **siteStartYear - curre
 `favicon = "/favicon.ico"`
 
 Custom the [favicon](https://en.wikipedia.org/wiki/Favicon), place it in your `static` folder, same as `avatar`
+
+`showSummaryCoverInPost = true`
+
+As the param said, show summary cover in the single post page.
 
 `darkLinkColor = "darkseagreen"`
 

@@ -13,6 +13,11 @@
           <div class="sub header">@ {{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }} · {{ .Date.Format "Monday, Jan 2, 2006" }} · {{ .ReadingTime }}{{ i18n "minuteRead" }} · {{ i18n "updateAt" }} {{ dateFormat "Jan 2, 2006" .Lastmod }}</div>
         </h2>
       </header>
+
+      {{ if .Site.Params.showSummaryCoverInPost }}
+        <img class="ui image" style="margin-top: 2rem;" src="{{ .Params.Cover }}" />
+      {{ end }}
+
       <article style="margin-top: 2rem;">{{ .Content | emojify }}</article>
     </section>
 
