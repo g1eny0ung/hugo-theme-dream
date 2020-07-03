@@ -9,6 +9,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 Because of the site rewriting, I started to calculate the version again.
 
+## [1.2.0] - 2020.07.03
+
+- Fix disqus identifier's problem
+- Fix table display in dark mode (#127)
+- Now the summary card's date can be localized, currently dream already support:
+  - zh
+  - es
+
 ## [1.1.0] - 2020.06.24
 
 - Treat `about` folder as Headless Bundle
