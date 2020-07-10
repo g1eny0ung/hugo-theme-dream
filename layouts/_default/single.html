@@ -64,10 +64,11 @@
     {{ end }}
     
     {{ if .Site.Params.repository }}
+      <meta property="og:title" content="{{.Title}}" />
       <div class="github-comments">
         <script src="https://utteranc.es/client.js"
         repo="{{.Site.Params.repository}}"
-        issue-term="pathname"
+        issue-term="og:title"
         theme="github-light"
         crossorigin="anonymous"
         async>
