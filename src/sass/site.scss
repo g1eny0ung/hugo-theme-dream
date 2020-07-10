@@ -186,3 +186,13 @@ body {
   top: -1rem;
   left: 10.5rem;
 }
+
+.github-comments {
+  margin-top: 15px;
+  padding: 0 10px;
+  background-color: white;
+  .utterances {
+    max-width: unset;
+  }
+}
+

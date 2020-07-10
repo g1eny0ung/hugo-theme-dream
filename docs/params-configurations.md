@@ -90,6 +90,10 @@ Or add by yourself. Follow the template in `layouts/partials/socials.html`.
 
 Set your site's start year, then the header will show as **siteStartYear - currentYear (eg: 2016 - 2018)**
 
+### `repository = "BarryYan/barryyan.github.io"`
+
+Enable github issue for your blog's comment
+
 ### `favicon = "/favicon.ico"`
 
 Custom the [favicon](https://en.wikipedia.org/wiki/Favicon), place it in your `static` folder, same as `avatar`
