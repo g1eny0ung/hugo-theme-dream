@@ -62,6 +62,18 @@
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
       </footer>
     {{ end }}
+    
+    {{ if .Site.Params.repository }}
+      <div class="github-comments">
+        <script src="https://utteranc.es/client.js"
+        repo="{{.Site.Params.repository}}"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+        </script>
+      </div>
+    {{end}}
 
   </div>
   <div class="sixteen wide mobile sixteen wide tablet four wide computer column">
