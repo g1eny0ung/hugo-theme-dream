@@ -4,7 +4,7 @@
 
 Related docs:
 
-<https://g1eny0ung.site/hugo-theme-dream/#/quick-start?id=add-quotabout-mequo>
+<https://g1eny0ung.site/hugo-theme-dream/#/quick-start?id=add-quotabout-mequot>
 
 <https://g1eny0ung.site/hugo-theme-dream/#/about-page>
 
