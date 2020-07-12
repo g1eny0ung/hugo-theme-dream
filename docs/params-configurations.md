@@ -13,6 +13,8 @@
   avatar = "/me/yy.jpg"
   motto = "与其感慨路难行，不如马上出发。"
 
+  rss = true
+
   email = "g1enyy0ung@gmail.com"
   twitter = "g1eny0ung"
   facebook = "g1eny0ung"
@@ -70,6 +72,10 @@ Used in Header.
 ### `motto = "与其感慨路难行，不如马上出发。"`
 
 Used in Header.
+
+### `rss = true`
+
+Enable RSS.
 
 `email = "g1enyy0ung@gmail.com"`<br />
 `twitter = "g1eny0ung"`<br />
