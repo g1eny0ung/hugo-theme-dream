@@ -13,15 +13,15 @@
 
     <div class="ui horizontal list">
       {{ if gt (len (where .Site.RegularPages "Section" "==" "posts")) 0 }}
-      <a class="item" href="{{ "/posts" | relURL }}">
-        <i class="archive icon" title="{{ i18n "archives" }}"></i>
+      <a class="item" href="{{ "posts" | relLangURL }}">
+        <i class="archive icon" title="{{ T "archives" }}"></i>
       </a>
       {{ end }}
-      <a class="item" href="{{ "/tags" | relURL }}">
-        <i class="tags icon" title="{{ i18n "allTags" }}"></i>
+      <a class="item" href="{{ "tags" | relLangURL }}">
+        <i class="tags icon" title="{{ T "allTags" }}"></i>
       </a>
-      <a class="item" href="{{ "/categories" | relURL }}">
-        <i class="th list icon" title="{{ i18n "allCategories" }}"></i>
+      <a class="item" href="{{ "categories" | relLangURL }}">
+        <i class="th list icon" title="{{ T "allCategories" }}"></i>
       </a>
     </div>
   </section>
