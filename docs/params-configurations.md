@@ -13,9 +13,9 @@
   avatar = "/me/yy.jpg"
   motto = "与其感慨路难行，不如马上出发。"
 
-  utterancesRepo = "g1eny0ung/g1eny0ung.github.io"
-
   rss = true
+
+  utterancesRepo = "g1eny0ung/g1eny0ung.github.io"
 
   email = "g1enyy0ung@gmail.com"
   twitter = "g1eny0ung"
@@ -75,15 +75,15 @@ Used in Header.
 
 Used in Header.
 
+### `rss = true`
+
+Enable RSS.
+
 ### `utterancesRepo = "g1eny0ung/g1eny0ung.github.io"`
 
 Utterances is a lightweight comments widget built on GitHub Issues. By setting `utterancesRepo`, you can use it on every post page.
 
 View <https://utteranc.es> to get more details.
-
-### `rss = true`
-
-Enable RSS.
 
 `email = "g1enyy0ung@gmail.com"`<br />
 `twitter = "g1eny0ung"`<br />
