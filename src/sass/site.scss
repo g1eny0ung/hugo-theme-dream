@@ -177,7 +177,6 @@ body {
     .description {
       margin: 1.5rem 0 1rem 0;
       color: rgba(#000, 0.87);
-
       img {
         max-width: 100%;
       }
@@ -190,3 +189,13 @@ body {
   top: -1rem;
   left: 10.5rem;
 }
+
+.github-comments {
+  margin-top: 15px;
+  padding: 0 10px;
+  background-color: white;
+  .utterances {
+    max-width: unset;
+  }
+}
+
