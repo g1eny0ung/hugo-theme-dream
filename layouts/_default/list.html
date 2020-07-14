@@ -1,14 +1,4 @@
-{{ define "title" }}
-
-{{ if eq .Data.Singular "tag" }}
-  {{ .Data.Term }}
-{{ end }}
-
-{{ if eq .Data.Singular "category" }}
-  {{ .Data.Term }}
-{{ end }}
-
-{{ end }}
+{{ define "title" }}{{ if or (eq .Data.Singular "tag") (eq .Data.Singular "category") }}{{ .Data.Term }}{{ end }}{{ end }}
 
 {{ define "main"}}
 <div class="ui centered relaxed grid dream-grid">

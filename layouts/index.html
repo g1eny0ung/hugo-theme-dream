@@ -4,6 +4,7 @@
     {{ partial "header.html" . }}
   </div>
 
+  <!-- For upward compatible, it's needed to filter out the about pages to prevent them from being rendered -->
   {{ $paginator := .Paginate (where .Site.RegularPages "Section" "!=" "about") }}
   {{ range $paginator.Pages }}
     {{ if isset .Params "showcase" }}

@@ -9,13 +9,13 @@
   </div>
   <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column">
     <div class="ui segment dream-posts-section">
-      <h2 class="ui header">
+      <h1 class="ui large header">
         {{ .Title }}
         <div class="ui grey sub header">{{ .Content }}</div>
-      </h2>
+      </h1>
 
       {{ range .Data.Pages.GroupByDate "2006" }}
-        <h3 class="ui header">{{ .Key }}</h3>
+        <h2 class="ui medium header">{{ .Key }}</h2>
         <ul>
           {{ range .Pages }}
             <li>
