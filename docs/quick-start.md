@@ -60,7 +60,7 @@ headless: true
 ---
 ```
 
-Then, click the button on the top left corner of the page. You will see what you just wrote.
+Finally, click the button on the top left corner of the page. You will see what you just wrote.
 
 ## OK, write a post for your blog
 

@@ -1,14 +1,14 @@
 # Base Configurations
 
-`baseURL = "https://g1eny0ung.github.io"`
+`baseURL = "https://g1eny0ung.site"`
 
 The site URL, ensure this is correct!
 
-`languageCode = "zh-cmn-Hans"`
+`languageCode = "zh-Hans"`
 
-LanguageCode will be used as `<html lang="zh-cmn-Hans">`.
+LanguageCode will be used as `<html lang="zh-Hans">`.
 
-`title = "g1eny0ung的博客"`
+`title = "g1eny0ung 的博客"`
 
 The site title.
 

@@ -9,7 +9,7 @@
   linkColor = "seagreen"
 
   author = "g1eny0ung"
-  description = "g1eny0ung的生活记录～"
+  description = "g1eny0ung 的生活记录～"
   avatar = "/me/yy.jpg"
   motto = "与其感慨路难行，不如马上出发。"
 
@@ -47,7 +47,7 @@ The site's background.
 
 ### `backgroundImage = "/me/background.jpg"`
 
-The site's background image. Will cover the `background`.
+The site's background image. Will cover the `background` param.
 
 ### `linkColor = "seagreen"`
 
@@ -61,11 +61,11 @@ The author field will be used as:
 - Header
 - Post Summary
 
-### `description = "g1eny0ung的生活记录～"`
+### `description = "g1eny0ung 的生活记录～"`
 
 The description field will be used as:
 
-- `<meta name="description" content="g1eny0ung的生活记录～" />`
+- `<meta name="description" content="g1eny0ung 的生活记录～" />`
 
 ### `avatar = "/me/yy.jpg"`
 
@@ -104,11 +104,11 @@ Or add by yourself. Follow the template in `layouts/partials/socials.html`.
 
 ### `siteStartYear = 2016`
 
-Set your site's start year, then the header will show as **siteStartYear - currentYear (eg: 2016 - 2018)**
+Set your site's start year, then the header will show as **siteStartYear - currentYear (eg: 2016 - 2020)**.
 
 ### `favicon = "/favicon.ico"`
 
-Custom the [favicon](https://en.wikipedia.org/wiki/Favicon), place it in your `static` folder, same as `avatar`
+Custom the [favicon](https://en.wikipedia.org/wiki/Favicon), place it in your `static` folder, same as `avatar`.
 
 ### `showSummaryCoverInPost = true`
 
