@@ -23,6 +23,8 @@ theme = "hugo-theme-dream"
   motto = "Motto"
 
   # rss = true
+
+  # utterancesRepo = ""
   
   email = "g1enyy0ung@gmail.com"
   # twitter = ""
