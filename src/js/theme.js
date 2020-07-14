@@ -1,6 +1,19 @@
 const dark = 'inverted'
 const localStore = window.localStorage
 
+const setThemeForUtterances = (isDark) => {
+  const message = {
+    type: 'set-theme',
+    theme: isDark ? 'github-dark' : 'github-light',
+  }
+
+  const utterances = document.querySelector('iframe.utterances-frame')
+
+  if (utterances) {
+    utterances.contentWindow.postMessage(message, 'https://utteranc.es')
+  }
+}
+
 const darkHeaderElements = () => {
   const header = $('.dream-header')
 
@@ -64,6 +77,8 @@ const darkSingle = () => {
 
     const title = $('.dream-single .ui.top.segment .ui.header')
     title.toggleClass(dark)
+
+    setThemeForUtterances(localStore.getItem('hugo-theme-dream-is-dark'))
   }
 }
 
@@ -112,6 +127,14 @@ if (isDark) {
 } else {
   iconSwitchs.forEach((s) => $(s).addClass('sun'))
 }
+
+window.addEventListener('message', (e) => {
+  if (e.origin !== 'https://utteranc.es') {
+    return
+  }
+
+  setThemeForUtterances(isDark)
+})
 
 const themeSwitch = () => {
   if (isDark) {

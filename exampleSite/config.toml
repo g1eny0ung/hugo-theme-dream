@@ -21,6 +21,8 @@ theme = "hugo-theme-dream"
   # description = ""
   avatar = "/img/avatar.jpg"
   motto = "Motto"
+
+  # rss = true
   
   email = "g1enyy0ung@gmail.com"
   # twitter = ""

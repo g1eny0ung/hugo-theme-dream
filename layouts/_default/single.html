@@ -69,16 +69,16 @@
     {{ end }}
     
     {{ if .Site.Params.utterancesRepo }}
-      <div class="github-comments">
+      <div class="ui segment utterances-comments">
         <script src="https://utteranc.es/client.js"
-        repo="{{.Site.Params.utterancesRepo}}"
-        issue-term="og:title"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
+          repo="{{ .Site.Params.utterancesRepo }}"
+          issue-term="og:title"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
         </script>
       </div>
-    {{end}}
+    {{ end }}
 
   </div>
   <div class="sixteen wide mobile sixteen wide tablet four wide computer column">

@@ -13,6 +13,8 @@
   avatar = "/me/yy.jpg"
   motto = "与其感慨路难行，不如马上出发。"
 
+  utterancesRepo = "g1eny0ung/g1eny0ung.github.io"
+
   rss = true
 
   email = "g1enyy0ung@gmail.com"
@@ -73,6 +75,12 @@ Used in Header.
 
 Used in Header.
 
+### `utterancesRepo = "g1eny0ung/g1eny0ung.github.io"`
+
+Utterances is a lightweight comments widget built on GitHub Issues. By setting `utterancesRepo`, you can use it on every post page.
+
+View <https://utteranc.es> to get more details.
+
 ### `rss = true`
 
 Enable RSS.
@@ -95,10 +103,6 @@ Or add by yourself. Follow the template in `layouts/partials/socials.html`.
 ### `siteStartYear = 2016`
 
 Set your site's start year, then the header will show as **siteStartYear - currentYear (eg: 2016 - 2018)**
-
-### `utterancesRepo = "BarryYan/barryyan.github.io"`
-
-Enable github issue for your blog's comment
 
 ### `favicon = "/favicon.ico"`
 
