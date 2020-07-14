@@ -85,6 +85,8 @@ Utterances is a lightweight comments widget built on GitHub Issues. By setting `
 
 View <https://utteranc.es> to get more details.
 
+### Social Links
+
 `email = "g1enyy0ung@gmail.com"`<br />
 `twitter = "g1eny0ung"`<br />
 `facebook = "g1eny0ung"`<br />
