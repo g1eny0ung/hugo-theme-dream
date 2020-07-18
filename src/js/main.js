@@ -1,4 +1,5 @@
 $(document).ready(() => {
+  $('body').overlayScrollbars({})
   initFilp()
   initGrid()
   initTags()
