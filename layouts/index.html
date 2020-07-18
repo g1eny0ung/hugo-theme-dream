@@ -19,3 +19,9 @@
 
 {{ partial "paginator.html" (dict "paginator" $paginator "Site" .Site) }}
 {{ end }}
+
+{{ define "js" }}
+<script src="{{ "/js/imagesloaded.pkgd.min.js" | relURL }}"></script>
+<script src="{{ "/js/masonry.pkgd.min.js" | relURL }}"></script>
+<script src="{{ "/js/grid.js" | relURL }}"></script>
+{{ end }}

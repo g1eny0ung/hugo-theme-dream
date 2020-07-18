@@ -1,3 +1,8 @@
+$(document).ready(() => {
+  initTags()
+  initAccordion()
+})
+
 const SemanticUIColors = [
   'red',
   'orange',

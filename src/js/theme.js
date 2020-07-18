@@ -2,15 +2,16 @@ const dark = 'inverted'
 const localStore = window.localStorage
 
 const setThemeForUtterances = (isDark) => {
-  const message = {
-    type: 'set-theme',
-    theme: isDark ? 'github-dark' : 'github-light',
-  }
-
   const utterances = document.querySelector('iframe.utterances-frame')
 
   if (utterances) {
-    utterances.contentWindow.postMessage(message, 'https://utteranc.es')
+    utterances.contentWindow.postMessage(
+      {
+        type: 'set-theme',
+        theme: isDark ? 'github-dark' : 'github-light',
+      },
+      'https://utteranc.es'
+    )
   }
 }
 
