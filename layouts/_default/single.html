@@ -2,6 +2,10 @@
 {{- .Title -}}
 {{ end }}
 
+{{ define "css" }}
+<link rel="stylesheet" href="{{ "/css/github-markdown.css" | relURL }}" />
+{{ end }}
+
 {{ define "main" }}
 <div class="ui centered relaxed grid dream-grid">
   <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single">
@@ -87,6 +91,6 @@
 </div>
 {{ end }}
 
-{{ define "scripts" }}
+{{ define "js" }}
 <script src="{{ "/js/html2canvas.min.js" | relURL }}"></script>
 {{ end }}
