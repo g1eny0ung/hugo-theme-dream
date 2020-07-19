@@ -7,6 +7,7 @@
     <title>{{ block "title" . }} {{- T "home" -}} {{ end }} | {{ .Site.Title }}</title>
 
     {{ partial "head.html" . }}
+    {{ block "css" . }} {{ end }}
   </head>
 
   {{ if .Site.Params.background }}
@@ -30,7 +31,7 @@
     </div>
 
     {{ partial "footer.html" . }}
-    {{ block "scripts" . }} {{ end }}
+    {{ block "js" . }} {{ end }}
 
     {{ if .Site.GoogleAnalytics }}
       {{ template "_internal/google_analytics_async.html" . }}
