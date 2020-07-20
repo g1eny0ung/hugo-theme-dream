@@ -44,21 +44,37 @@
   {{ if .Site.Taxonomies.categories }}
   <section class="ui attached segment dream-categories">
     <div class="ui accordion">
-      {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-        <div class="title">
-          <i class="dropdown icon"></i>
-          <a href="{{ "categories/" | relLangURL }}{{ $name | urlize }}" class="item">{{ $name }}</a>
-        </div>
-        <div class="content">
-          <div class="ui list">
-          {{ range $taxonomy.Pages }}
-            <div class="item">
-              <div class="content">
-                <a href="{{ .RelPermalink }}" class="item">{{ .LinkTitle }}</a>
-              </div>
-            </div>
-          {{ end }}
+      {{ $categories := .Site.Taxonomies.categories }}
+      {{ $categoriesCount := len $categories }}
+      {{ $categoriesLimitInHeader := .Site.Params.categoriesLimitInHeader | default 6 }}
+      {{ $scratch := newScratch }}
+      {{ $scratch.Set "categoriesLimit" 0 }}
+
+      {{ range $name, $taxonomy := $categories }}
+        {{ $scratch.Add "categoriesLimit" 1 }}
+
+        {{ if le ($scratch.Get "categoriesLimit") $categoriesLimitInHeader }}
+          <div class="title">
+            <i class="dropdown icon"></i>
+            <a href="{{ "categories/" | relLangURL }}{{ $name | urlize }}" class="item">{{ $name }}</a>
           </div>
+          <div class="content">
+            <div class="ui list">
+            {{ range $taxonomy.Pages }}
+              <div class="item">
+                <div class="content">
+                  <a href="{{ .RelPermalink }}" class="item">{{ .LinkTitle }}</a>
+                </div>
+              </div>
+            {{ end }}
+            </div>
+          </div>
+        {{ end }}
+      {{ end }}
+
+      {{ if gt $categoriesCount $categoriesLimitInHeader }}
+        <div class="title">
+          <a class="item" href="{{ "categories" | relLangURL }}" style="padding-left: 0.5rem;">......</a>
         </div>
       {{ end }}
     </div>
