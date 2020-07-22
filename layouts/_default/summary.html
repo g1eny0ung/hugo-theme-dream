@@ -25,7 +25,18 @@
           {{ .Date.Format "Monday, Jan 2, 2006" }}
         {{ end }}
       </p>
-      <p class="author">@ {{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}</p>
+      <p class="author">
+        @
+        {{ if isset .Params "author" }}
+          {{ if isset .Params "authorlink" }}
+            <a href="{{ .Params.authorlink }}" target="_blank">{{ .Params.author }}</a>
+          {{ else }}
+            {{ .Params.author }}
+          {{ end }}
+        {{ else }}
+          {{ .Site.Params.author }}
+        {{ end }}
+      </p>
     </div>
     <div class="description">
       {{ .Summary | safeHTML }}

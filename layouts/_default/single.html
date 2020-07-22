@@ -14,7 +14,21 @@
       <header style="margin-top: 0 !important;">
         <h1 class="ui large header">
           {{ .Title }}
-          <div class="sub header">@ {{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }} · {{ .Date.Format "Monday, Jan 2, 2006" }} · {{ .ReadingTime }}{{ i18n "minuteRead" }} · {{ i18n "updateAt" }} {{ dateFormat "Jan 2, 2006" .Lastmod }}</div>
+          <div class="sub header">
+            @
+            {{ if isset .Params "author" }}
+              {{ if isset .Params "authorlink" }}
+                <a href="{{ .Params.authorlink }}" target="_blank">{{ .Params.author }}</a>
+              {{ else }}
+                {{ .Params.author }}
+              {{ end }}
+            {{ else }}
+              {{ .Site.Params.author }}
+            {{ end }}
+            · {{ .Date.Format "Monday, Jan 2, 2006" }}
+            · {{ .ReadingTime }}{{ i18n "minuteRead" }}
+            · {{ i18n "updateAt" }} {{ dateFormat "Jan 2, 2006" .Lastmod }}
+          </div>
         </h1>
       </header>
 
