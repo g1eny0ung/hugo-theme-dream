@@ -32,7 +32,7 @@ Dream also support **light mode** and **dark mode** out of the box.
 
 demo: [https://themes.gohugo.io/theme/hugo-theme-dream/](https://themes.gohugo.io/theme/hugo-theme-dream/)
 
-![screenshot](screenshot.png)
+![https://raw.githubusercontent.com/g1eny0ung/hugo-theme-dream/master/images/screenshot.png](https://raw.githubusercontent.com/g1eny0ung/hugo-theme-dream/master/images/screenshot.png)
 
 All tags of this theme:
 
@@ -65,7 +65,7 @@ cd themes
 git clone https://github.com/g1eny0ung/hugo-theme-dream.git dream
 ```
 
-Then open your `config.toml`, edit to `theme = "dream"` and save.
+Then open your `config.toml` and edit to `theme = "dream"` and save.
 
 ## Example
 
