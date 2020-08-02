@@ -13,6 +13,7 @@
   avatar = "/me/yy.jpg"
   motto = "与其感慨路难行，不如马上出发。"
   categoriesLimitInHeader = 6
+  # headerBottomText = ""
 
   rss = true
 
@@ -79,6 +80,10 @@ Used in Header.
 ### `categoriesLimitInHeader = 6`
 
 Limit the number of categories displayed in the header, the default is **6**.
+
+### `# headerBottomText = ""`
+
+Add text at the bottom of the header, support html. This is usually used as a description of the website information.
 
 ### `rss = true`
 

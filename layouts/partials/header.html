@@ -93,5 +93,9 @@
     {{ end }}
 
     <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
+
+    {{ if .Site.Params.headerBottomText }}
+      <p>{{ .Site.Params.headerBottomText | safeHTML }}</p>
+    {{ end }}
   </section>
 </article>
