@@ -6,6 +6,7 @@
 * [Copyright](copyright.md)
 * [Base Configurations](base-configurations.md)
 * [Params Configurations](params-configurations.md)
+* [Highlight.js](highlightjs.md)
 * [Custom Archives Header](custom-archives-header.md)
 * [Summary Images](summary-images.md)
 * [Post as Image](post-as-image.md)

@@ -4,6 +4,15 @@
 
 {{ define "css" }}
 <link rel="stylesheet" href="{{ "/css/github-markdown.css" | relURL }}" />
+
+{{ if .Site.Params.highlightjs }}
+  {{ if .Site.Params.highlightjsTheme }}
+    <link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/{{ .Site.Params.highlightjsTheme }}.min.css" />
+  {{ else }}
+    <link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css" />
+  {{ end }}
+{{ end }}
+
 {{ end }}
 
 {{ define "main" }}
@@ -108,4 +117,17 @@
 {{ define "js" }}
 <script src="{{ "/js/html2canvas.min.js" | relURL }}"></script>
 <script src="{{ "/js/post.js" | relURL }}"></script>
+
+{{ if .Site.Params.highlightjs }}
+  <script src="{{ if .Site.Params.highlightjsCDN }}{{ .Site.Params.highlightjsCDN }}{{ else }}{{ "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js" }}{{ end}}"></script>
+
+  {{ if .Site.Params.highlightjsExtraLanguages }}
+    {{ range .Site.Params.highlightjsExtraLanguages }}
+      <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/languages/{{ . }}.min.js"></script>
+    {{ end }} 
+  {{ end }}
+
+  {{ partial "highlight.html" . }}
+{{ end }}
+
 {{ end }}

@@ -80,6 +80,9 @@ const darkSingle = () => {
     title.toggleClass(dark)
 
     setThemeForUtterances(localStore.getItem('hugo-theme-dream-is-dark'))
+    if (typeof setHighlightTheme === 'function') {
+      setHighlightTheme()
+    }
   }
 }
 
