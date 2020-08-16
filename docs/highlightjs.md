@@ -5,11 +5,12 @@ You can use [highlight.js](https://highlightjs.org/) to replace the default mark
 This is all params which you can setting:
 
 ```toml
-highlightjs = true
-# highlightjsCDN = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"
-highlightjsExtraLanguages = ["ocaml"]
-highlightjsTheme = "gruvbox-light"
-highlightjsThemeDark = "gruvbox-dark"
+[params]
+  highlightjs = true
+  # highlightjsCDN = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"
+  highlightjsExtraLanguages = ["ocaml"]
+  highlightjsTheme = "gruvbox-light"
+  highlightjsThemeDark = "gruvbox-dark"
 ```
 
 ## Explanation
