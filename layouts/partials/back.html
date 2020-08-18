@@ -7,7 +7,7 @@
         <div class="ui top attached segment">
           <h3 class="ui header">{{ .Title }}</h3>
         </div>
-        <div class="ui attached segment markdown-body">
+        <div class="ui bottom attached segment markdown-body">
           {{ .Content | emojify }}
         </div>
       </article>
@@ -19,7 +19,7 @@
       <div class="ui top attached segment">
         <h3 class="ui header">{{ i18n "socialLinks" }}</h3>
       </div>
-      <div class="ui attached segment">
+      <div class="ui bottom attached segment">
         {{ partial "socials.html" (dict "Site" .Site "IconSize" "large") }}
       </div>
     </article>

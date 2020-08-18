@@ -151,9 +151,9 @@ body {
 }
 
 .ui.card.dream-card {
-  &.inverted {
-    background: #1b1c1d;
+  border-radius: 0.28571429rem !important;
 
+  &.inverted {
     .content {
       .header > a {
         color: #fff !important;
