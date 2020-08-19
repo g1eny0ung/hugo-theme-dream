@@ -17,14 +17,13 @@
   {{ else }}
   <body>
   {{ end }}
+    {{ partial "nav.html" . }}
     <div class="flip-container">
       <div class="flipper">
         <section class="front">
-          {{ partial "nav.html" . }}
           {{ block "main" . }} {{ end }}
         </section>
         <section class="back">
-          {{ partial "nav.html" . }}
           {{ partial "back.html" . }}
         </section>
       </div>
