@@ -1,7 +1,8 @@
 const dark = 'inverted'
 const localStore = window.localStorage
+let isDark = localStore.getItem('hugo-theme-dream-is-dark')
 
-const setThemeForUtterances = (isDark) => {
+const setThemeForUtterances = () => {
   const utterances = document.querySelector('iframe.utterances-frame')
 
   if (utterances) {
@@ -79,7 +80,7 @@ const darkSingle = () => {
     const title = $('.dream-single .ui.top.segment .ui.header')
     title.toggleClass(dark)
 
-    setThemeForUtterances(localStore.getItem('hugo-theme-dream-is-dark'))
+    setThemeForUtterances()
     if (typeof setHighlightTheme === 'function') {
       setHighlightTheme()
     }
@@ -121,7 +122,6 @@ function toggleDark() {
   darkBack()
 }
 
-let isDark = localStore.getItem('hugo-theme-dream-is-dark')
 const iconSwitchs = $('.theme-switch').toArray()
 
 // Apply theme when first entering
@@ -137,7 +137,7 @@ window.addEventListener('message', (e) => {
     return
   }
 
-  setThemeForUtterances(isDark)
+  setThemeForUtterances()
 })
 
 const themeSwitch = () => {

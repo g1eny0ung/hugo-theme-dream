@@ -1,1 +1,1 @@
-"use strict";function initFilp(){$(".dream-flip-toggle").click(function(){$(".flip-container").toggleClass("flip-it")})}$(document).ready(function(){$("body").overlayScrollbars({}),initFilp()});
+"use strict";function initFilp(){$(".dream-flip-toggle").click(function(){$(".flip-container").toggleClass("flip-it")})}$(document).ready(function(){$("body").overlayScrollbars({className:window.darkNav?"os-theme-light":"os-theme-dark",nativeScrollbarsOverlaid:{initialize:!1}}),initFilp()});

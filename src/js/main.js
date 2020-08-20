@@ -1,5 +1,10 @@
 $(document).ready(() => {
-  $('body').overlayScrollbars({})
+  $('body').overlayScrollbars({
+    className: window.darkNav ? 'os-theme-light' : 'os-theme-dark',
+    nativeScrollbarsOverlaid: {
+      initialize: false,
+    },
+  })
   initFilp()
 })
 
