@@ -25,9 +25,7 @@ const darkHeaderElements = () => {
     const iconList = $('.dream-header .ui.top.segment .ui.list')
     const accordion = $('.dream-header .ui.segment .ui.accordion')
 
-    segments.map(function () {
-      $(this).toggleClass(dark)
-    })
+    segments.toggleClass(dark)
 
     title.toggleClass(dark)
     iconList.toggleClass(dark)
@@ -39,9 +37,7 @@ const darkBack = () => {
   const segments = $('.dream-back .ui.segment')
 
   if (segments.length) {
-    segments.map(function () {
-      $(this).toggleClass(dark)
-    })
+    segments.toggleClass(dark)
   }
 }
 
@@ -73,9 +69,7 @@ const darkSingle = () => {
   const segments = $('.dream-single .ui.segment')
 
   if (segments.length) {
-    segments.map(function () {
-      $(this).toggleClass(dark)
-    })
+    segments.toggleClass(dark)
 
     const title = $('.dream-single .ui.top.segment .ui.header')
     title.toggleClass(dark)
@@ -91,9 +85,7 @@ const darkCards = () => {
   const cards = $('.dream-card')
 
   if (cards.length) {
-    cards.map(function () {
-      $(this).toggleClass(dark)
-    })
+    cards.toggleClass(dark)
   }
 }
 
@@ -122,14 +114,14 @@ function toggleDark() {
   darkBack()
 }
 
-const iconSwitchs = $('.theme-switch').toArray()
+const iconSwitchs = $('.theme-switch')
 
 // Apply theme when first entering
 if (isDark) {
-  iconSwitchs.forEach((s) => $(s).addClass('moon'))
+  iconSwitchs.addClass('moon')
   toggleDark()
 } else {
-  iconSwitchs.forEach((s) => $(s).addClass('sun'))
+  iconSwitchs.addClass('sun')
 }
 
 window.addEventListener('message', (e) => {
@@ -142,13 +134,13 @@ window.addEventListener('message', (e) => {
 
 const themeSwitch = () => {
   if (isDark) {
-    iconSwitchs.forEach((s) => $(s).removeClass('moon'))
-    iconSwitchs.forEach((s) => $(s).addClass('sun'))
+    iconSwitchs.removeClass('moon')
+    iconSwitchs.addClass('sun')
     localStore.removeItem('hugo-theme-dream-is-dark')
     isDark = null
   } else {
-    iconSwitchs.forEach((s) => $(s).removeClass('sun'))
-    iconSwitchs.forEach((s) => $(s).addClass('moon'))
+    iconSwitchs.removeClass('sun')
+    iconSwitchs.addClass('moon')
     localStore.setItem('hugo-theme-dream-is-dark', 'y')
     isDark = 'y'
   }
