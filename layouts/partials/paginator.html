@@ -1,25 +1,23 @@
-<div class="ui secondary menu dream-menu dream-paginator">
-  {{ if .paginator.HasPrev }}
-  <div class="item">
-    <a href="{{ .paginator.Prev.URL }}">
-    {{ if .Site.Params.darkNav }}
-      <i class="large arrow alternate circle left inverted icon link" title="{{ i18n "prevPage" }}"></i>
-    {{ else }}
-      <i class="large arrow alternate circle left icon link" style="color: rgba(0, 0, 0, .87);" title="{{ i18n "prevPage" }}"></i>
-    {{ end }}
-    </a>
+{{ if .paginator.HasPrev }}
+<article class="ui attached center aligned segment card dream-card">
+  <div class="content">
+    <div class="ui medium header">
+      <a href="{{ .paginator.Prev.URL }}" title="{{ i18n "prevPage" }}">
+        {{ i18n "prevPage" }}
+      </a>
+    </div>
   </div>
-  {{ end }}
+</article>
+{{ end }}
 
-  {{ if .paginator.HasNext }}
-  <div class="item">
-    <a href="{{ .paginator.Next.URL }}">
-    {{ if .Site.Params.darkNav }}
-      <i class="large arrow alternate circle right inverted icon link" title="{{ i18n "nextPage" }}"></i>
-    {{ else }}
-      <i class="large arrow alternate circle right icon link" style="color: rgba(0, 0, 0, .87);" title="{{ i18n "nextPage" }}"></i>
-    {{ end }}
-    </a>
+{{ if .paginator.HasNext }}
+<article class="ui attached center aligned segment card dream-card">
+  <div class="content">
+    <div class="ui medium header">
+      <a href="{{ .paginator.Next.URL }}" title="{{ i18n "nextPage" }}">
+        {{ i18n "nextPage" }}
+      </a>
+    </div>
   </div>
-  {{ end }}
-</div>
+</article>
+{{ end }}

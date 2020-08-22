@@ -16,9 +16,11 @@
       {{ .Render "summary" }}
     </div>
   {{ end }}
-</div>
 
-{{ partial "paginator.html" (dict "paginator" $paginator "Site" .Site) }}
+  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    {{ partial "paginator.html" (dict "paginator" $paginator "Site" .Site) }}
+  </div>
+</div>
 {{ end }}
 
 {{ define "js" }}
