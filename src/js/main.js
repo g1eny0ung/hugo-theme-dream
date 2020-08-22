@@ -5,7 +5,7 @@ $(document).ready(() => {
       initialize: false,
     },
     scrollbars: {
-      autoHide: 'move',
+      autoHide: 'scroll',
     },
   })
 
