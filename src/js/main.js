@@ -4,7 +4,11 @@ $(document).ready(() => {
     nativeScrollbarsOverlaid: {
       initialize: false,
     },
+    scrollbars: {
+      autoHide: 'move',
+    },
   })
+
   initFilp()
 })
 
