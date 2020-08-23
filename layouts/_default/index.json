@@ -1,0 +1,6 @@
+{{ $search := newScratch }}
+{{ $search.Add "index" slice }}
+{{ range .Site.RegularPages }}
+    {{ $search.Add "index" (dict "title" .Title "url" .Permalink  "categories" .Params.categories "tags" .Params.tags "description" .Summary ) }}
+{{ end }}
+{{ $search.Get "index" | jsonify }}

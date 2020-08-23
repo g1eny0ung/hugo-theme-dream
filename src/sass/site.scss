@@ -191,3 +191,49 @@ body {
     max-width: unset;
   }
 }
+
+#dream-search {
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  width: 30%;
+  display: none;
+  border: 1px solid #555;
+  transform: translateX(-50%);
+
+  @media screen and (max-width: 768px) {
+    width: 90%;
+  }
+
+  .ui.input {
+    width: calc(100% - 2rem);
+  }
+
+  input {
+    color: #fff;
+  }
+
+  .results {
+    background: #1b1c1d;
+    border-color: #555;
+  }
+
+  .result,
+  .message.empty {
+    border-color: rgba(255, 255, 255, 0.1);
+
+    &:hover,
+    &.active {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .title,
+    .header {
+      color: #fff;
+    }
+
+    .description {
+      color: rgba(#fff, 0.87);
+    }
+  }
+}

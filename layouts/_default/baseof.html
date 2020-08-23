@@ -32,6 +32,10 @@
     {{ partial "footer.html" . }}
     {{ block "js" . }} {{ end }}
 
+    {{ if .Site.Params.enableSearch }}
+      {{ partial "search.html" . }}
+    {{ end }}
+
     {{ if .Site.GoogleAnalytics }}
       {{ template "_internal/google_analytics_async.html" . }}
     {{ end }}

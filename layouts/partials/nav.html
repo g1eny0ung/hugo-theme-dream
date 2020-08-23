@@ -12,4 +12,9 @@
   <div class="item">
     <i class="large link icon theme-switch" onclick="themeSwitch()"></i>
   </div>
+  {{ if .Site.Params.enableSearch }}
+  <div class="item">
+    <i class="large link search icon" onclick="toggleSearch()"></i>
+  </div>
+  {{ end }}
 </nav>
