@@ -28,7 +28,7 @@ function savePostAsImg() {
 
     var link = document.createElement('a')
     link.href = URL.createObjectURL(dataURLtoBlob(data))
-    link.download = 'screenshot.png'
+    link.download = `${document.title.replace('|', '').split(' ').join('-')}.png`
     link.click()
   })
 
