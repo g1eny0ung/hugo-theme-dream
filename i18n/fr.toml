@@ -44,10 +44,10 @@ other = "Mise à jour le"
 other = "Pas d'étiquette"
 
 [prevPage]
-other = 'Page précédente'
+other = "Page précédente"
 
 [nextPage]
-other = 'Page suivante'
+other = "Page suivante"
 
 [saveAsImage]
 other = "Enregistrer sous forme d'image"

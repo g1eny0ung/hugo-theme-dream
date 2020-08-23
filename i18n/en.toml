@@ -44,10 +44,13 @@ other = "Update at"
 other = "No Tags"
 
 [prevPage]
-other = 'Previous page'
+other = "Previous page"
 
 [nextPage]
-other = 'Next page'
+other = "Next page"
 
 [saveAsImage]
 other = "Save as image"
+
+[search]
+other = "Search"

@@ -44,10 +44,10 @@ other = "Aktualisiert "
 other = "Keine Tags"
 
 [prevPage]
-other = 'Vorherige Seite'
+other = "Vorherige Seite"
 
 [nextPage]
-other = 'Nächste Seite'
+other = "Nächste Seite"
 
 [saveAsImage]
 other = "Als Bild speichern"

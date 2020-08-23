@@ -44,10 +44,10 @@ other = "更新日時"
 other = "タグ未設定"
 
 [prevPage]
-other = '前へ'
+other = "前へ"
 
 [nextPage]
-other = '次へ'
+other = "次へ"
 
 [saveAsImage]
 other = "画像として保存"

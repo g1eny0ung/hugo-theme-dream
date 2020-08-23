@@ -44,10 +44,13 @@ other = "更新于"
 other = "暂无标签"
 
 [prevPage]
-other = '上一页'
+other = "上一页"
 
 [nextPage]
-other = '下一页'
+other = "下一页"
 
 [saveAsImage]
 other = "保存为图片"
+
+[search]
+other = "搜索"
