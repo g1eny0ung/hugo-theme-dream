@@ -1,6 +1,6 @@
 # Search
 
-You can enable search feature by setting the `enableSeach` param to true in `[params]`
+You can enable the search feature by setting the `enableSeach` param to `true` in `[params]`
 
 ```toml
 [params]
