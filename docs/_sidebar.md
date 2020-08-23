@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD041 -->
 * [Quick Start](quick-start.md)
 * [i18n](i18n.md)
 * [Website Analytics](website-analytics.md)
@@ -7,6 +8,7 @@
 * [Base Configurations](base-configurations.md)
 * [Params Configurations](params-configurations.md)
 * [Highlight.js](highlightjs.md)
+* [Seach](search.md)
 * [Custom Archives Header](custom-archives-header.md)
 * [Summary Images](summary-images.md)
 * [Post as Image](post-as-image.md)

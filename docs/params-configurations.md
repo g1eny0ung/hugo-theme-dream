@@ -32,6 +32,15 @@
 
   favicon = "/favicon.ico"
 
+  highlightjs = true
+  # highlightjsCDN = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"
+  highlightjsExtraLanguages = ["ocaml"]
+  highlightjsTheme = "gruvbox-light"
+  highlightjsThemeDark = "gruvbox-dark"
+
+  # search
+  enableSearch = true
+
   # options
   showSummaryCoverInPost = true
 
@@ -119,6 +128,14 @@ Set your site's start year, then the header will show as **siteStartYear - curre
 ### `favicon = "/favicon.ico"`
 
 Custom the [favicon](https://en.wikipedia.org/wiki/Favicon), place it in your `static` folder, same as `avatar`.
+
+### `highlightjs = true`
+
+View [Highlight.js](highlightjs.md) for more details.
+
+### `enableSearch = true`
+
+View [Search](search.md) for more details.
 
 ### `showSummaryCoverInPost = true`
 
