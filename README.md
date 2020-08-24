@@ -51,6 +51,7 @@ All tags of this theme:
 - personal
 - light mode
 - dark mode
+- search
 
 ## Documentation
 
