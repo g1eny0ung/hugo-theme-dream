@@ -21,10 +21,14 @@
     <div class="flip-container">
       <div class="flipper">
         <section class="front">
-          {{ block "main" . }} {{ end }}
+          <div class="dream-max-width">
+            {{ block "main" . }} {{ end }}
+          </div>
         </section>
         <section class="back">
-          {{ partial "back.html" . }}
+          <div class="dream-max-width">
+            {{ partial "back.html" . }}
+          </div>
         </section>
       </div>
     </div>
