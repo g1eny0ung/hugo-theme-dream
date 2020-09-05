@@ -20,4 +20,4 @@ Optional, here is this config's [doc](https://gohugo.io/templates/robots).
 
 Because my blog was written in Chinese, I need to set this to correct my post's `{{ .ReadingTime }}`
 
-Here is the [doc](https://gohugo.io/getting-started/configuration/#all-configuration-settings).
+Here is the [full configuration](https://gohugo.io/getting-started/configuration/#all-configuration-settings), view it for more details.

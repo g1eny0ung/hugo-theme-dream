@@ -151,7 +151,7 @@ Set the dark top navbar, usually use with dark `background` or `backgroundImage`
 
 ### `dark404Button = true`
 
-> Note: after <https://github.com/g1eny0ung/hugo-theme-dream/commit/b07d6e22183bad58a8498429bc49fca77082533c>, this param is deprecated. If you are using the latest version of dream, you can ignore this note.
+> Note: after <https://github.com/g1eny0ung/hugo-theme-dream/commit/b07d6e22183bad58a8498429bc49fca77082533c>, this param is deprecated. If you are using the latest version of dream, you can safely ignore this note.
 
 Set the dark button in 404 page, usually use with dark `background` or `backgroundImage`.
 
