@@ -43,3 +43,16 @@
   }
 </style>
 {{ end }}
+
+{{ if or .Site.Params.background .Site.Params.backgroundImage }}
+<style>
+  body {
+    {{ if .Site.Params.background }}
+      background-color: {{ .Site.Params.background }};
+    {{ end }}
+    {{ if .Site.Params.backgroundImage }}
+      background-image: url({{ .Site.Params.backgroundImage }});
+    {{ end }}
+  }
+</style>
+{{ end }}

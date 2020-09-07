@@ -4,7 +4,7 @@
 
 ```toml
 [params]
-  # background = "black"
+  background = "black"
   backgroundImage = "/me/background.jpg"
   linkColor = "seagreen"
 
@@ -55,6 +55,8 @@
 ### `background = "black"`
 
 The site's background.
+
+This param can be used with `backgroundImage`, when the image has not been loaded yet, it will serve as the background color.
 
 ### `backgroundImage = "/me/background.jpg"`
 
