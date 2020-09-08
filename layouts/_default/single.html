@@ -16,10 +16,14 @@
 
 {{ define "main" }}
 <div class="ui centered relaxed grid dream-grid">
-  <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single">
-
-    <section class="ui top attached segment" id="dream-save-post-as-img">
-      <header style="margin-top: 0 !important;">
+  <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single" id="dream-save-post-as-img">
+    {{ if .Site.Params.showSummaryCoverInPost }}
+    <section class="ui top attached segment cover">
+      <div class="cover-img" style="background-image: url({{ .Params.Cover }});"></div>
+    </section>
+    {{ end }}
+    <section class="ui {{ if not .Site.Params.showSummaryCoverInPost }}top {{ end }}attached segment">
+      <header>
         <h1 class="ui large header">
           {{ .Title }}
           <div class="sub header">
@@ -40,14 +44,10 @@
         </h1>
       </header>
 
-      {{ if .Site.Params.showSummaryCoverInPost }}
-        <img class="ui image" style="margin-top: 2rem;" src="{{ .Params.Cover }}" />
-      {{ end }}
-
       <article style="margin-top: 2rem;">{{ .Content | emojify }}</article>
     </section>
 
-    <footer class="ui attached segment dream-tags">
+    <footer class="ui attached segment dream-tags" data-html2canvas-ignore>
       {{ if isset .Params "tags" }}
         {{ range $tag := .Params.tags }}
           <a class="ui label" href="{{ "tags/" | relLangURL }}{{ $tag | urlize }}" title="{{ $tag }}">{{ $tag }}</a>
@@ -64,13 +64,13 @@
     </footer>
 
     {{ if .Site.Copyright }}
-      <footer class="ui attached segment">
+      <footer class="ui attached segment" data-html2canvas-ignore>
         {{ .Site.Copyright | safeHTML }}
       </footer>
     {{ end }}
 
     {{ if .Site.DisqusShortname }}
-      <footer class="ui bottom attached stacked segment post-disqus-area" data-html2canvas-ignore="true">
+      <footer class="ui bottom attached stacked segment post-disqus-area" data-html2canvas-ignore>
         <div id="disqus_thread"></div>
         <script>
           /**
@@ -95,7 +95,7 @@
     {{ end }}
     
     {{ if .Site.Params.utterancesRepo }}
-      <div class="ui segment utterances-comments">
+      <div class="ui segment utterances-comments" data-html2canvas-ignore>
         <script src="https://utteranc.es/client.js"
           repo="{{ .Site.Params.utterancesRepo }}"
           issue-term="og:title"

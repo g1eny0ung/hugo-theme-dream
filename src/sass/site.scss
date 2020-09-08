@@ -191,6 +191,26 @@ body {
   }
 }
 
+.dream-single {
+  .cover {
+    padding: 0;
+
+    .cover-img {
+      height: 256px;
+      background-position: center;
+      background-size: cover;
+
+      @media screen and (max-width: 768px) {
+        height: 128px;
+      }
+    }
+  }
+
+  h1.ui.large.header {
+    margin-top: 1rem;
+  }
+}
+
 .utterances-comments {
   .utterances {
     max-width: unset;

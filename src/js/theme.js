@@ -71,7 +71,7 @@ const darkSingle = () => {
   if (segments.length) {
     segments.toggleClass(dark)
 
-    const title = $('.dream-single .ui.top.segment .ui.header')
+    const title = $('.dream-single h1.ui.header')
     title.toggleClass(dark)
 
     setThemeForUtterances()
