@@ -24,5 +24,6 @@ The utterances only takes effect on the **Single Post Page**.
 
 ## Valine
 
+See: <https://g1eny0ung.site/hugo-theme-dream/#/params-configurations?id=valine-true>
 
 Valine only takes effect on the **Single Post Page**.
