@@ -55,7 +55,7 @@ theme = "hugo-theme-dream"
   enableSearch = true
 
   # options
-  showSummaryCoverInPost = true
+  # showSummaryCoverInPost = true
 
   # dark mode
   darkLinkColor = "darkseagreen"
