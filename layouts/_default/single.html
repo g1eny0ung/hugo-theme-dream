@@ -12,6 +12,10 @@
   {{ end }}
 {{ end }}
 
+{{ if .Site.Params.valine }}
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+{{ end }}
+
 {{ end }}
 
 {{ define "main" }}
@@ -104,6 +108,19 @@
           async>
         </script>
       </div>
+    {{ end }}
+
+    {{ if .Site.Params.valine }}
+      <div class="ui segment">
+        <div  id="vcomments"></div>
+      </div>
+      <script>
+        new Valine({
+          el: '#vcomments',
+          appId: {{ .Site.Params.LEANCLOUD_APP_ID }},
+          appKey: {{ .Site.Params.LEANCLOUD_APP_KEY }}
+        })
+      </script> 
     {{ end }}
 
   </div>

@@ -19,6 +19,10 @@
 
   utterancesRepo = "g1eny0ung/g1eny0ung.github.io"
 
+  # valine = true
+  # LEANCLOUD_APP_ID = ""
+  # LEANCLOUD_APP_KEY = ""
+
   email = "g1enyy0ung@gmail.com"
   twitter = "g1eny0ung"
   facebook = "g1eny0ung"
@@ -105,6 +109,20 @@ Enable RSS.
 Utterances is a lightweight comments widget built on GitHub Issues. By setting `utterancesRepo`, you can use it on every post page.
 
 View <https://utteranc.es> to get more details.
+
+### `valine = true`
+
+Valine is a fast, simple & efficient Leancloud based no back end comment system.
+
+In order to make it work, you still need to set two parameters:
+
+```toml
+[params]
+  LEANCLOUD_APP_ID = ""
+  LEANCLOUD_APP_KEY = ""
+```
+
+View <https://valine.js.org/en/quickstart> to get more details.
 
 ### Social Links
 
