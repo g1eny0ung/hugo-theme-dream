@@ -21,10 +21,16 @@ theme = "hugo-theme-dream"
   # description = ""
   avatar = "/img/avatar.jpg"
   motto = "Motto"
+  # categoriesLimitInHeader = 6
+  # headerBottomText = ""
 
   # rss = true
 
   # utterancesRepo = ""
+
+  # valine = true
+  # LEANCLOUD_APP_ID = ""
+  # LEANCLOUD_APP_KEY = ""
   
   email = "g1enyy0ung@gmail.com"
   # twitter = ""
@@ -38,6 +44,15 @@ theme = "hugo-theme-dream"
   siteStartYear = 2016
 
   # favicon = "/favicon.ico"
+
+  # highlightjs = true
+  # highlightjsCDN = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"
+  # highlightjsExtraLanguages = ["ocaml"]
+  # highlightjsTheme = "gruvbox-light"
+  # highlightjsThemeDark = "gruvbox-dark"
+
+  # search
+  enableSearch = true
 
   # options
   showSummaryCoverInPost = true
