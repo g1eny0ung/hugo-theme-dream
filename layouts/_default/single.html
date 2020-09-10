@@ -41,9 +41,25 @@
             {{ else }}
               {{ .Site.Params.author }}
             {{ end }}
-            · {{ .Date.Format "Monday, Jan 2, 2006" }}
+
+            · {{ if eq .Site.Language.Lang "zh" }}
+                {{ index .Site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
+              {{ else if eq .Site.Language.Lang "es" }}
+                {{ index .Site.Data.es.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
+              {{ else }}
+                {{ .Date.Format "Monday, Jan 2, 2006" }}
+              {{ end }}
+
             · {{ .ReadingTime }}{{ i18n "minuteRead" }}
-            · {{ i18n "updateAt" }} {{ dateFormat "Jan 2, 2006" .Lastmod }}
+
+            · {{ i18n "updateAt" }}
+              {{ if eq .Site.Language.Lang "zh" }}
+                {{ index .Site.Data.zh.Weekday (printf "%d" .Lastmod.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Day }} 日，{{ .Lastmod.Year }} 年
+              {{ else if eq .Site.Language.Lang "es" }}
+                {{ index .Site.Data.es.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
+              {{ else }}
+                {{ .Lastmod.Format "Monday, Jan 2, 2006" }}
+              {{ end }}
           </div>
         </h1>
       </header>
