@@ -10,7 +10,6 @@ categories:
 tags:
   - tag1
   - tag2
-# showcase: true
 draft: true
 ---
 

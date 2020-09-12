@@ -36,6 +36,7 @@ theme = "hugo-theme-dream"
   # twitter = ""
   # facebook = ""
   # instagram = ""
+  # mastodon = ""
   # linkedin = ""
   # github = ""
   # stackoverflow = ""
@@ -56,6 +57,7 @@ theme = "hugo-theme-dream"
 
   # options
   # showSummaryCoverInPost = true
+  # hasTwitterEmbed = true
 
   # dark mode
   darkLinkColor = "darkseagreen"

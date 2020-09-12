@@ -27,6 +27,7 @@
   twitter = "g1eny0ung"
   facebook = "g1eny0ung"
   instagram = "g1enyy0ung"
+  # mastodon = ""
   linkedin = "钺杨g1eny0ung"
   github = "g1eny0ung"
   stackoverflow = "5676489/g1eny0ung"
@@ -47,6 +48,7 @@
 
   # options
   showSummaryCoverInPost = true
+  # hasTwitterEmbed = true
 
   # dark mode
   darkLinkColor = "darkseagreen"
@@ -130,6 +132,7 @@ View <https://valine.js.org/en/quickstart> to get more details.
 `twitter = "g1eny0ung"`<br />
 `facebook = "g1eny0ung"`<br />
 `instagram = "g1enyy0ung"`<br />
+`# mastodon = ""`<br />
 `linkedin = "钺杨g1eny0ung"`<br />
 `github = "g1eny0ung"`<br />
 `stackoverflow = "5676489/g1eny0ung"`<br />
@@ -160,6 +163,12 @@ View [Search](search.md) for more details.
 ### `showSummaryCoverInPost = true`
 
 As the param said, show summary cover in the single post page.
+
+### `hasTwitterEmbed = true`
+
+If you have embedded twitter components generated from <https://publish.twitter.com/>, please set this param to `true` for better performance.
+
+After setting this, you can safely remove the async script in the generated code.
 
 ### `darkLinkColor = "darkseagreen"`
 

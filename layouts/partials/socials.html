@@ -38,6 +38,14 @@
     </div>
   {{ end }}
 
+  {{ if .Site.Params.mastodon }}
+    <div class="item">
+      <a href="{{ .Site.Params.mastodon }}" target="_blank">
+        <i class="{{ .IconSize }} icon-mastodon icon" title="Mastodon"></i>
+      </a>
+    </div>
+  {{ end }}
+
   {{ if .Site.Params.linkedin }}
     <div class="item">
       <a href="https://www.linkedin.com/in/{{ .Site.Params.linkedin }}" target="_blank">
