@@ -66,10 +66,11 @@ body {
 }
 
 .dream-404-container {
-  @include VHCenter;
-
-  display: flex !important;
-  height: $ContainerHeight;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate3d(-50%, -50%, 0);
 
   .ui.header {
     margin-bottom: 2rem;
