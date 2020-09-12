@@ -21,7 +21,7 @@
 {{ define "main" }}
 <div class="ui centered relaxed grid dream-grid">
   <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single" id="dream-save-post-as-img">
-    {{ if .Site.Params.showSummaryCoverInPost }}
+    {{ if and .Params.Cover .Site.Params.showSummaryCoverInPost }}
     <section class="ui top attached segment cover">
       <div class="cover-img" style="background-image: url({{ .Params.Cover }});"></div>
     </section>
