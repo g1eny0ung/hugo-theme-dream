@@ -53,7 +53,7 @@ theme = "hugo-theme-dream"
   # highlightjsThemeDark = "gruvbox-dark"
 
   # search
-  enableSearch = true
+  # enableSearch = true
 
   # options
   # showSummaryCoverInPost = true
