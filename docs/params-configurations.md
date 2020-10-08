@@ -16,7 +16,7 @@
   # headerBottomText = ""
 
   rss = true
-
+  images = [""]
   utterancesRepo = "g1eny0ung/g1eny0ung.github.io"
 
   # valine = true
