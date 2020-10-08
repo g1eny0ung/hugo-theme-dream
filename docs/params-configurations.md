@@ -8,6 +8,8 @@
   backgroundImage = "/me/background.jpg"
   linkColor = "seagreen"
 
+  images = [""]
+
   author = "g1eny0ung"
   description = "g1eny0ung 的生活记录～"
   avatar = "/me/yy.jpg"
@@ -16,7 +18,6 @@
   # headerBottomText = ""
 
   rss = true
-  images = [""]
   utterancesRepo = "g1eny0ung/g1eny0ung.github.io"
 
   # valine = true
@@ -71,6 +72,10 @@ The site's background image. Will cover the `background` param.
 ### `linkColor = "seagreen"`
 
 The site's link color.
+
+### `images = [""]`
+
+See <https://gohugo.io/templates/internal/#open-graph>.
 
 ### `author = "g1eny0ung"`
 
