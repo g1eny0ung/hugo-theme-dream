@@ -35,7 +35,7 @@
       </p>
     </div>
     <div class="description">
-      {{ .Summary | safeHTML }}
+      {{ .Summary | emojify | safeHTML }}
     </div>
   </div>
 

@@ -42,7 +42,7 @@
               {{ .Site.Params.author }}
             {{ end }}
 
-            · {{ if eq .Site.Language.Lang "zh" }}
+            | {{ if eq .Site.Language.Lang "zh" }}
                 {{ index .Site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
               {{ else if eq .Site.Language.Lang "es" }}
                 {{ index .Site.Data.es.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
@@ -50,9 +50,9 @@
                 {{ .Date.Format "Monday, Jan 2, 2006" }}
               {{ end }}
 
-            · {{ .ReadingTime }}{{ i18n "minuteRead" }}
+            | {{ .ReadingTime }}{{ i18n "minuteRead" }}
 
-            · {{ i18n "updateAt" }}
+            | {{ i18n "updateAt" }}
               {{ if eq .Site.Language.Lang "zh" }}
                 {{ index .Site.Data.zh.Weekday (printf "%d" .Lastmod.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Day }} 日，{{ .Lastmod.Year }} 年
               {{ else if eq .Site.Language.Lang "es" }}
@@ -64,7 +64,7 @@
         </h1>
       </header>
 
-      <article style="margin-top: 2rem;">{{ .Content | emojify }}</article>
+      <article class="main">{{ .Content | emojify }}</article>
     </section>
 
     <footer class="ui attached segment dream-tags" data-html2canvas-ignore>
