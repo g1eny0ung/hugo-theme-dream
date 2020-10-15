@@ -36,6 +36,10 @@
     </div>
     <div class="description">
       {{ .Summary | emojify | safeHTML }}
+      {{ if .Truncated }}
+      <!-- This <div> includes a read more link, but only if the summary is truncated... -->
+      <a class="ui small bottom right attached green label" href="{{ .RelPermalink }}">Read More...</a>
+      {{ end }}
     </div>
   </div>
 
