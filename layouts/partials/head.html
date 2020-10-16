@@ -29,31 +29,33 @@
 <link rel="stylesheet" href="{{ "/css/github-markdown.css" | relURL }}" />
 <link rel="stylesheet" href="{{ "/css/site.css" | relURL }}" />
 
-{{ if .Site.Params.linkColor }}
 <style>
+  a:hover {
+    text-decoration: underline; 
+  }
+
+  {{ if .Site.Params.linkColor }}
   a {
     color: {{ .Site.Params.linkColor }} !important;
   }
-</style>
-{{ end }}
+  {{ end }}
 
-{{ if .Site.Params.darkLinkColor }}
-<style>
-  .inverted a {
+  {{ if .Site.Params.darkLinkColor }}
+  .inverted a,
+  .inverted a:hover {
      color: {{ .Site.Params.darkLinkColor }} !important;
   }
-</style>
-{{ end }}
+  {{ end }}
 
-{{ if or .Site.Params.background .Site.Params.backgroundImage }}
-<style>
+  {{ if or .Site.Params.background .Site.Params.backgroundImage }}
   body {
     {{ if .Site.Params.background }}
-      background-color: {{ .Site.Params.background }};
+    background-color: {{ .Site.Params.background }};
     {{ end }}
+
     {{ if .Site.Params.backgroundImage }}
-      background-image: url({{ .Site.Params.backgroundImage }});
+    background-image: url({{ .Site.Params.backgroundImage }});
     {{ end }}
   }
+  {{ end }}
 </style>
-{{ end }}
