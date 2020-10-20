@@ -16,6 +16,14 @@ const setThemeForUtterances = () => {
   }
 }
 
+const darkNav = () => {
+  const nav = $('.dream-menu')
+
+  if (nav.length) {
+    nav.toggleClass(dark)
+  }
+}
+
 const darkHeaderElements = () => {
   const header = $('.dream-header')
 
@@ -104,6 +112,7 @@ const darkTables = () => {
 }
 
 function toggleDark() {
+  darkNav()
   darkHeaderElements()
   darkCards()
   darkSingle()
