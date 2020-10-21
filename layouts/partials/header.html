@@ -8,13 +8,18 @@
 
     {{ if or (hasPrefix .RelPermalink "/posts") (hasPrefix .RelPermalink "/tags") (hasPrefix .RelPermalink "/categories") }}
     <div class="ui medium header">
-      {{- .Site.Params.author -}}{{- i18n "blogAlias" -}}
-      <div class="sub header" style="margin-top: 0.5rem;">{{- .Site.Params.motto -}}</div>
-    </div>
     {{ else }}
     <h1 class="ui medium header">
-      {{- .Site.Params.author -}}{{- i18n "blogAlias" -}}
+    {{ end }}
+      {{ if .Site.Params.headerTitle }}
+        {{- .Site.Params.headerTitle -}}
+      {{ else }}
+        {{- .Site.Params.author -}}{{- T "blogAlias" -}}
+      {{ end }}
       <div class="sub header" style="margin-top: 0.5rem;">{{- .Site.Params.motto -}}</div>
+    {{ if or (hasPrefix .RelPermalink "/posts") (hasPrefix .RelPermalink "/tags") (hasPrefix .RelPermalink "/categories") }}
+    </div>
+    {{ else }}
     </h1>
     {{ end }}
 

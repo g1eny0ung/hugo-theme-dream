@@ -13,6 +13,7 @@
   author = "g1eny0ung"
   description = "g1eny0ung 的生活记录～"
   avatar = "/me/yy.jpg"
+  headerTitle = "g1eny0ung 的博客"
   motto = "与其感慨路难行，不如马上出发。"
   categoriesLimitInHeader = 6
   # headerBottomText = ""
@@ -94,6 +95,12 @@ The description field will be used as:
 ### `avatar = "/me/yy.jpg"`
 
 Used in Header.
+
+### `headerTitle = "g1eny0ung 的博客"`
+
+Dream was originally intended to be used only as a blog theme. But with continuous development, people also use Dream in other places.
+
+So this param aims to replace the legacy `blogAlias` in i18n files. If this param is set, the **header title** will use it rather than author + blogAlias(e.g. xxx's blog).
 
 ### `motto = "与其感慨路难行，不如马上出发。"`
 
