@@ -1,6 +1,16 @@
 $(document).ready(() => {
+  function setClassName() {
+    return (
+      window.backgroundDark || window.backgroundImageDark
+        ? localStore.getItem('hugo-theme-dream-is-dark')
+        : window.darkNav
+    )
+      ? 'os-theme-light'
+      : 'os-theme-dark'
+  }
+
   $('body').overlayScrollbars({
-    className: window.darkNav ? 'os-theme-light' : 'os-theme-dark',
+    className: setClassName(),
     nativeScrollbarsOverlaid: {
       initialize: false,
     },

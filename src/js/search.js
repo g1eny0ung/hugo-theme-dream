@@ -13,11 +13,11 @@ function toggleSearch() {
 
 $(document).ready(() => {
   $(document).on('keydown', (e) => {
-    if (e.metaKey && e.which === 191 && !searchVisible) {
+    if (e.metaKey && e.key === '/' && !searchVisible) {
       toggleSearch()
     }
 
-    if (e.keyCode === 27 && searchVisible) {
+    if (e.key === 'Escape' && searchVisible) {
       toggleSearch()
     }
   })

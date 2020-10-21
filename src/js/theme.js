@@ -2,17 +2,26 @@ const dark = 'inverted'
 const localStore = window.localStorage
 let isDark = localStore.getItem('hugo-theme-dream-is-dark')
 
-const setThemeForUtterances = () => {
-  const utterances = document.querySelector('iframe.utterances-frame')
+const dark404 = () => {
+  if (window.backgroundDark || window.backgroundImageDark) {
+    const dream404 = $('.dream-404-container')
 
-  if (utterances) {
-    utterances.contentWindow.postMessage(
-      {
-        type: 'set-theme',
-        theme: isDark ? 'github-dark' : 'github-light',
-      },
-      'https://utteranc.es'
-    )
+    if (dream404.length) {
+      $('.dream-404-container h1').toggleClass(dark)
+      $('.dream-404-container button').toggleClass(dark)
+    }
+  }
+}
+
+const darkBackground = () => {
+  if (window.backgroundDark || window.backgroundImageDark) {
+    $('body').toggleClass('default').toggleClass('dark')
+  }
+}
+
+const darkNavMenu = () => {
+  if (window.backgroundDark || window.backgroundImageDark) {
+    $('nav.dream-menu').toggleClass(dark)
   }
 }
 
@@ -33,11 +42,41 @@ const darkHeaderElements = () => {
   }
 }
 
-const darkBack = () => {
-  const segments = $('.dream-back .ui.segment')
+const darkCards = () => {
+  const cards = $('.dream-card')
+
+  if (cards.length) {
+    cards.toggleClass(dark)
+  }
+}
+
+const darkSingle = () => {
+  const segments = $('.dream-single .ui.segment')
 
   if (segments.length) {
     segments.toggleClass(dark)
+
+    const title = $('.dream-single h1.ui.header')
+    title.toggleClass(dark)
+
+    setThemeForUtterances()
+    if (typeof setHighlightTheme === 'function') {
+      setHighlightTheme()
+    }
+  }
+}
+
+const darkTables = () => {
+  const tables = $('.dream-single table')
+
+  if (tables.length) {
+    tables.map(function () {
+      if (this.style.color) {
+        this.style.color = ''
+      } else {
+        this.style.color = 'black'
+      }
+    })
   }
 }
 
@@ -65,45 +104,18 @@ const darkCategoriesSection = () => {
   }
 }
 
-const darkSingle = () => {
-  const segments = $('.dream-single .ui.segment')
+const darkBack = () => {
+  const segments = $('.dream-back .ui.segment')
 
   if (segments.length) {
     segments.toggleClass(dark)
-
-    const title = $('.dream-single h1.ui.header')
-    title.toggleClass(dark)
-
-    setThemeForUtterances()
-    if (typeof setHighlightTheme === 'function') {
-      setHighlightTheme()
-    }
-  }
-}
-
-const darkCards = () => {
-  const cards = $('.dream-card')
-
-  if (cards.length) {
-    cards.toggleClass(dark)
-  }
-}
-
-const darkTables = () => {
-  const tables = $('.dream-single table')
-
-  if (tables.length) {
-    tables.map(function () {
-      if (this.style.color) {
-        this.style.color = ''
-      } else {
-        this.style.color = 'black'
-      }
-    })
   }
 }
 
 function toggleDark() {
+  dark404()
+  darkBackground()
+  darkNavMenu()
   darkHeaderElements()
   darkCards()
   darkSingle()
@@ -113,6 +125,28 @@ function toggleDark() {
   darkCategoriesSection()
   darkBack()
 }
+
+const setThemeForUtterances = () => {
+  const utterances = document.querySelector('iframe.utterances-frame')
+
+  if (utterances) {
+    utterances.contentWindow.postMessage(
+      {
+        type: 'set-theme',
+        theme: isDark ? 'github-dark' : 'github-light',
+      },
+      'https://utteranc.es'
+    )
+  }
+}
+
+window.addEventListener('message', (e) => {
+  if (e.origin !== 'https://utteranc.es') {
+    return
+  }
+
+  setThemeForUtterances()
+})
 
 const iconSwitchs = $('.theme-switch')
 
@@ -124,15 +158,7 @@ if (isDark) {
   iconSwitchs.addClass('sun')
 }
 
-window.addEventListener('message', (e) => {
-  if (e.origin !== 'https://utteranc.es') {
-    return
-  }
-
-  setThemeForUtterances()
-})
-
-const themeSwitch = () => {
+function themeSwitch() {
   if (isDark) {
     iconSwitchs.removeClass('moon')
     iconSwitchs.addClass('sun')
