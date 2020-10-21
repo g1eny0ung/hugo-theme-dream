@@ -3,35 +3,27 @@ const localStore = window.localStorage
 let isDark = localStore.getItem('hugo-theme-dream-is-dark')
 
 const dark404 = () => {
-  if (!window.backgroundDark || !window.backgroundImageDark) {
-    return
-  }
+  if (window.backgroundDark || window.backgroundImageDark) {
+    const dream404 = $('.dream-404-container')
 
-  const dream404 = $('.dream-404-container')
-
-  if (dream404.length) {
-    $('.dream-404-container h1').toggleClass(dark)
-    $('.dream-404-container button').toggleClass(dark)
+    if (dream404.length) {
+      $('.dream-404-container h1').toggleClass(dark)
+      $('.dream-404-container button').toggleClass(dark)
+    }
   }
 }
-dark404() // For backward compatible, it's needed to call darkNav when first time rendering
 
 const darkBackground = () => {
-  if (!window.backgroundDark || !window.backgroundImageDark) {
-    return
+  if (window.backgroundDark || window.backgroundImageDark) {
+    $('body').toggleClass('default').toggleClass('dark')
   }
-
-  $('body').toggleClass('default').toggleClass('dark')
 }
 
 const darkNav = () => {
-  if (!window.backgroundDark || !window.backgroundImageDark) {
-    return
+  if (window.backgroundDark || window.backgroundImageDark) {
+    $('nav.dream-menu').toggleClass(dark)
   }
-
-  $('nav.dream-menu').toggleClass(dark)
 }
-darkNav() // For backward compatible, it's needed to call darkNav when first time rendering
 
 const darkHeaderElements = () => {
   const header = $('.dream-header')

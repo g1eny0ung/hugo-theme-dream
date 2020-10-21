@@ -1,4 +1,6 @@
-{{ if .Site.Params.darkNav }}
+{{ if or .Site.Params.backgroundDark .Site.Params.backgroundImageDark }}
+<nav class="ui secondary menu dream-menu">
+{{ else if .Site.Params.darkNav }}
 <nav class="ui secondary inverted menu dream-menu">
 {{ else }}
 <nav class="ui secondary menu dream-menu">
