@@ -48,13 +48,25 @@
   {{ end }}
 
   {{ if or .Site.Params.background .Site.Params.backgroundImage }}
-  body {
+  body.default {
     {{ if .Site.Params.background }}
     background-color: {{ .Site.Params.background }};
     {{ end }}
 
     {{ if .Site.Params.backgroundImage }}
     background-image: url({{ .Site.Params.backgroundImage }});
+    {{ end }}
+  }
+  {{ end }}
+
+  {{ if or .Site.Params.backgroundDark .Site.Params.backgroundImageDark }}
+  body.dark {
+    {{ if .Site.Params.backgroundDark }}
+    background-color: {{ .Site.Params.backgroundDark }};
+    {{ end }}
+
+    {{ if .Site.Params.backgroundImageDark }}
+    background-image: url({{ .Site.Params.backgroundImageDark }});
     {{ end }}
   }
   {{ end }}

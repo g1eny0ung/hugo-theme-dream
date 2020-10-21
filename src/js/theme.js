@@ -2,27 +2,36 @@ const dark = 'inverted'
 const localStore = window.localStorage
 let isDark = localStore.getItem('hugo-theme-dream-is-dark')
 
-const setThemeForUtterances = () => {
-  const utterances = document.querySelector('iframe.utterances-frame')
-
-  if (utterances) {
-    utterances.contentWindow.postMessage(
-      {
-        type: 'set-theme',
-        theme: isDark ? 'github-dark' : 'github-light',
-      },
-      'https://utteranc.es'
-    )
+const dark404 = () => {
+  if (!window.backgroundDark || !window.backgroundImageDark) {
+    return
   }
+
+  const dream404 = $('.dream-404-container')
+
+  if (dream404.length) {
+    $('.dream-404-container h1').toggleClass(dark)
+    $('.dream-404-container button').toggleClass(dark)
+  }
+}
+dark404() // For backward compatible, it's needed to call darkNav when first time rendering
+
+const darkBackground = () => {
+  if (!window.backgroundDark || !window.backgroundImageDark) {
+    return
+  }
+
+  $('body').toggleClass('default').toggleClass('dark')
 }
 
 const darkNav = () => {
-  const nav = $('.dream-menu')
-
-  if (nav.length) {
-    nav.toggleClass(dark)
+  if (!window.backgroundDark || !window.backgroundImageDark) {
+    return
   }
+
+  $('nav.dream-menu').toggleClass(dark)
 }
+darkNav() // For backward compatible, it's needed to call darkNav when first time rendering
 
 const darkHeaderElements = () => {
   const header = $('.dream-header')
@@ -41,11 +50,41 @@ const darkHeaderElements = () => {
   }
 }
 
-const darkBack = () => {
-  const segments = $('.dream-back .ui.segment')
+const darkCards = () => {
+  const cards = $('.dream-card')
+
+  if (cards.length) {
+    cards.toggleClass(dark)
+  }
+}
+
+const darkSingle = () => {
+  const segments = $('.dream-single .ui.segment')
 
   if (segments.length) {
     segments.toggleClass(dark)
+
+    const title = $('.dream-single h1.ui.header')
+    title.toggleClass(dark)
+
+    setThemeForUtterances()
+    if (typeof setHighlightTheme === 'function') {
+      setHighlightTheme()
+    }
+  }
+}
+
+const darkTables = () => {
+  const tables = $('.dream-single table')
+
+  if (tables.length) {
+    tables.map(function () {
+      if (this.style.color) {
+        this.style.color = ''
+      } else {
+        this.style.color = 'black'
+      }
+    })
   }
 }
 
@@ -73,45 +112,17 @@ const darkCategoriesSection = () => {
   }
 }
 
-const darkSingle = () => {
-  const segments = $('.dream-single .ui.segment')
+const darkBack = () => {
+  const segments = $('.dream-back .ui.segment')
 
   if (segments.length) {
     segments.toggleClass(dark)
-
-    const title = $('.dream-single h1.ui.header')
-    title.toggleClass(dark)
-
-    setThemeForUtterances()
-    if (typeof setHighlightTheme === 'function') {
-      setHighlightTheme()
-    }
-  }
-}
-
-const darkCards = () => {
-  const cards = $('.dream-card')
-
-  if (cards.length) {
-    cards.toggleClass(dark)
-  }
-}
-
-const darkTables = () => {
-  const tables = $('.dream-single table')
-
-  if (tables.length) {
-    tables.map(function () {
-      if (this.style.color) {
-        this.style.color = ''
-      } else {
-        this.style.color = 'black'
-      }
-    })
   }
 }
 
 function toggleDark() {
+  dark404()
+  darkBackground()
   darkNav()
   darkHeaderElements()
   darkCards()
@@ -123,14 +134,18 @@ function toggleDark() {
   darkBack()
 }
 
-const iconSwitchs = $('.theme-switch')
+const setThemeForUtterances = () => {
+  const utterances = document.querySelector('iframe.utterances-frame')
 
-// Apply theme when first entering
-if (isDark) {
-  iconSwitchs.addClass('moon')
-  toggleDark()
-} else {
-  iconSwitchs.addClass('sun')
+  if (utterances) {
+    utterances.contentWindow.postMessage(
+      {
+        type: 'set-theme',
+        theme: isDark ? 'github-dark' : 'github-light',
+      },
+      'https://utteranc.es'
+    )
+  }
 }
 
 window.addEventListener('message', (e) => {
@@ -141,7 +156,17 @@ window.addEventListener('message', (e) => {
   setThemeForUtterances()
 })
 
-const themeSwitch = () => {
+const iconSwitchs = $('.theme-switch')
+
+// Apply theme when first entering
+if (isDark) {
+  iconSwitchs.addClass('moon')
+  toggleDark()
+} else {
+  iconSwitchs.addClass('sun')
+}
+
+function themeSwitch() {
   if (isDark) {
     iconSwitchs.removeClass('moon')
     iconSwitchs.addClass('sun')
