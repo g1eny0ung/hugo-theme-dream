@@ -1,10 +1,12 @@
 $(document).ready(() => {
   function setClassName() {
-    const result =
+    return (
       window.backgroundDark || window.backgroundImageDark
         ? localStore.getItem('hugo-theme-dream-is-dark')
         : window.darkNav
-    return result ? 'os-theme-light' : 'os-theme-dark'
+    )
+      ? 'os-theme-light'
+      : 'os-theme-dark'
   }
 
   $('body').overlayScrollbars({

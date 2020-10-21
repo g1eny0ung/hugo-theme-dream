@@ -19,7 +19,7 @@ const darkBackground = () => {
   }
 }
 
-const darkNav = () => {
+const darkNavMenu = () => {
   if (window.backgroundDark || window.backgroundImageDark) {
     $('nav.dream-menu').toggleClass(dark)
   }
@@ -115,7 +115,7 @@ const darkBack = () => {
 function toggleDark() {
   dark404()
   darkBackground()
-  darkNav()
+  darkNavMenu()
   darkHeaderElements()
   darkCards()
   darkSingle()
