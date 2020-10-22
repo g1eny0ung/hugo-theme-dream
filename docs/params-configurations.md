@@ -100,7 +100,7 @@ Set the dark top navbar, usually use with dark `background` or `backgroundImage`
 
 Set the inverted color in 404 page, usually use with dark `background` or `backgroundImage`.
 
-> Note: if you already set `backgroundDark` or `backgroundImageDark`, the `darkNav` param will be ignored.
+> Note: if you already set `backgroundDark` or `backgroundImageDark`, the `dark404` param will be ignored.
 
 ### `dark404Button = true`
 
