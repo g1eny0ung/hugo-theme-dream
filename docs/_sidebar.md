@@ -7,6 +7,7 @@
 - [Copyright](copyright.md)
 - [Base Configurations](base-configurations.md)
 - [Params Configurations](params-configurations.md)
+- [Dark Mode](dark-mode.md)
 - [Highlight.js](highlightjs.md)
 - [Search](search.md)
 - [Custom Archives Header](custom-archives-header.md)
