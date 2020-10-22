@@ -60,7 +60,7 @@
   # hasTwitterEmbed = true
 ```
 
-For more details with dark mode related params, see [dark-mode.md].
+For more details with dark mode related params, see [Dark Mode](dark-mode.md).
 
 ## Explanation
 
