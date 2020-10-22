@@ -4,9 +4,16 @@
 
 ```toml
 [params]
-  background = "black"
+  background = "#ccc"
   backgroundImage = "/me/background.jpg"
   linkColor = "seagreen"
+
+  # dark mode
+  backgroundDark = "black"
+  backgroundImageDark = "/me/background-dark.jpg"
+  darkLinkColor = "darkseagreen"
+  darkNav = true
+  dark404 = true
 
   images = [""]
 
@@ -51,16 +58,13 @@
   # options
   showSummaryCoverInPost = true
   # hasTwitterEmbed = true
-
-  # dark mode
-  darkLinkColor = "darkseagreen"
-  darkNav = true
-  dark404 = true
 ```
+
+For more details with dark mode related params, see [dark-mode.md].
 
 ## Explanation
 
-### `background = "black"`
+### `background = "#ccc"`
 
 The site's background.
 
@@ -73,6 +77,36 @@ The site's background image. Will cover the `background` param.
 ### `linkColor = "seagreen"`
 
 The site's link color.
+
+### `backgroundDark = "black"`
+
+The background in dark mode.
+
+### `backgroundImageDark = "/me/background-dark.jpg"`
+
+The background image in dark mode. Will cover the `backgroundDark` param.
+
+### `darkLinkColor = "darkseagreen"`
+
+The site's link color in dark mode.
+
+### `darkNav = true`
+
+Set the dark top navbar, usually use with dark `background` or `backgroundImage`.
+
+> Note: if you already set `backgroundDark` or `backgroundImageDark`, the `darkNav` param will be ignored.
+
+### `dark404 = true`
+
+Set the inverted color in 404 page, usually use with dark `background` or `backgroundImage`.
+
+> Note: if you already set `backgroundDark` or `backgroundImageDark`, the `darkNav` param will be ignored.
+
+### `dark404Button = true`
+
+> Note: after <https://github.com/g1eny0ung/hugo-theme-dream/commit/b07d6e22183bad58a8498429bc49fca77082533c>, this param is deprecated. If you are using the latest version of dream, you can safely ignore this param.
+
+Set the dark button in 404 page, usually use with dark `background` or `backgroundImage`.
 
 ### `images = [""]`
 
@@ -181,21 +215,3 @@ As the param said, show summary cover in the single post page.
 If you have embedded twitter components generated from <https://publish.twitter.com/>, please set this param to `true` for better performance.
 
 After setting this, you can safely remove the async script in the generated code.
-
-### `darkLinkColor = "darkseagreen"`
-
-The site's link color in dark mode.
-
-### `darkNav = true`
-
-Set the dark top navbar, usually use with dark `background` or `backgroundImage`.
-
-### `dark404Button = true`
-
-> Note: after <https://github.com/g1eny0ung/hugo-theme-dream/commit/b07d6e22183bad58a8498429bc49fca77082533c>, this param is deprecated. If you are using the latest version of dream, you can safely ignore this param.
-
-Set the dark button in 404 page, usually use with dark `background` or `backgroundImage`.
-
-### `dark404 = true`
-
-Set the inverted color in 404 page, usually use with dark `background` or `backgroundImage`.
