@@ -10,12 +10,12 @@
   <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column">
     <div class="ui segment dream-categories-section">
       <h1 class="ui large header">
-        {{ i18n "allCategories" }}
+        {{- T "allCategories" -}}
         <div class="ui grey sub header">
           {{ if eq (len .Data.Terms) 1 }}
-            {{ i18n "category" 1 }}
+            {{- T "category" 1 -}}
           {{ else }}
-            {{ i18n "category" (len .Data.Terms) }}
+            {{- T "category" (len .Data.Terms) -}}
           {{ end }}
         </div>
       </h1>
@@ -24,13 +24,13 @@
       {{ range .Data.Terms.Alphabetical }}
         {{ $termLink := printf "/%s/%s/" $data.Plural .Term | urlize }}
         <h2 class="ui medium header">
-          <a href="{{ $termLink }}">{{ .Term }}</a>
-          {{ i18n "article" .Count }}
+          <a href="{{ $termLink }}">{{ .Term | humanize | title }}</a>&nbsp;
+          {{- T "article" .Count -}}
         </h2>
         <ul>
           {{ range .Pages }}
             <li>
-              <a href="{{ .Permalink }}">{{ .Title }}</a>
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
             </li>
           {{ end }}
         </ul>
