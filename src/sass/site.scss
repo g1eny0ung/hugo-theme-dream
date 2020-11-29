@@ -223,6 +223,16 @@ body {
   }
 }
 
+.toc {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+
+  ul {
+    padding-left: 2rem;
+  }
+}
+
 .utterances-comments {
   .utterances {
     max-width: unset;

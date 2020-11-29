@@ -17,7 +17,7 @@
     "gulp-babel": "^8.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
-    "node-sass": "^4.13.0"
+    "node-sass": "^5.0.0"
   },
   "resolutions": {
     "kind-of": ">=6.0.3"

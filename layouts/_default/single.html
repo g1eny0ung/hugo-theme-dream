@@ -130,6 +130,7 @@
       <div class="ui segment">
         <div id="vcomments"></div>
       </div>
+
       <script>
         new Valine({
           el: '#vcomments',
@@ -140,9 +141,16 @@
     {{ end }}
 
   </div>
-  <div class="sixteen wide mobile sixteen wide tablet four wide computer column">
+  <aside class="sixteen wide mobile sixteen wide tablet four wide computer column">
+    <!-- len <nav id="TableOfContents"></nav> == 32 -->
+    {{ if ge (len .TableOfContents) 33 }}
+      <div class="ui segment sticky toc">
+        {{ .TableOfContents }}
+      </div>
+    {{ end }}
+
     {{ partial "header.html" . }}
-  </div>
+  </aside>
 </div>
 {{ end }}
 

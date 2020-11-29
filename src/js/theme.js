@@ -64,6 +64,8 @@ const darkSingle = () => {
       setHighlightTheme()
     }
   }
+
+  $('.toc').toggleClass(dark)
 }
 
 const darkTables = () => {
