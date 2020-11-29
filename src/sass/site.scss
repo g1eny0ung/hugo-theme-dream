@@ -4,6 +4,10 @@ body {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+
+  .os-host > .os-padding > .os-viewport > .os-content {
+    height: auto !important;
+  }
 }
 
 .flip-container {
@@ -223,11 +227,17 @@ body {
   }
 }
 
-.toc {
+.dream-single-aside {
+  position: sticky !important;
+  top: 0;
+  height: 0;
+
   @media screen and (max-width: 768px) {
     display: none;
   }
+}
 
+.toc {
   ul {
     padding-left: 2rem;
   }

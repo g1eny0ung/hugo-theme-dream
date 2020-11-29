@@ -141,10 +141,10 @@
     {{ end }}
 
   </div>
-  <aside class="sixteen wide mobile sixteen wide tablet four wide computer column">
+  <aside class="sixteen wide mobile sixteen wide tablet four wide computer column dream-single-aside">
     <!-- len <nav id="TableOfContents"></nav> == 32 -->
     {{ if ge (len .TableOfContents) 33 }}
-      <div class="ui segment sticky toc">
+      <div class="ui segment toc">
         {{ .TableOfContents }}
       </div>
     {{ end }}
