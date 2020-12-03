@@ -233,7 +233,7 @@ body {
   height: 0;
 
   @media screen and (max-width: 768px) {
-    display: none;
+    display: none !important;
   }
 }
 
