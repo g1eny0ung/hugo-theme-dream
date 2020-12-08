@@ -173,6 +173,10 @@ body {
     }
   }
 
+  &.inverted .extra {
+    color: rgba(#fff, 0.4);
+  }
+
   .content {
     .header {
       margin-bottom: 0;
@@ -195,10 +199,21 @@ body {
         width: 100% !important;
       }
     }
+  }
+
+  .extra {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .author {
+      display: flex;
+      align-items: center;
+    }
 
     .reading-time {
-      text-decoration: none !important;
-      cursor: text !important;
+      position: absolute;
+      right: 1em;
     }
   }
 }
