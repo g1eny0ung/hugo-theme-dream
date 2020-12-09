@@ -52,4 +52,4 @@ Because of the site rewriting, I started to calculate the version again.
 
 ## [1.0.0] - 2019.11.10
 
-- masonry layouts
+- masonry layout

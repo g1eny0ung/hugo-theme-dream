@@ -34,7 +34,7 @@ Related docs: <https://gohugo.io/content-management/page-bundles/#headless-bundl
 
 ## More describes
 
-**You can add multiple `.md` files, all of them will also be rendered as masonry layouts.**
+**You can add multiple `.md` files, all of them will also be rendered as masonry layout.**
 
 ```sh
 hugo new about/desc1.md

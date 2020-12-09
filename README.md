@@ -38,7 +38,7 @@ If you have other problems, you can also ask in the [issues](https://github.com/
 
 Dream is a [Hugo](https://gohugo.io/) theme. I build it for [my blog](http://g1eny0ung.site).
 
-The main features are **full page flip** and **masonry layouts views**.~
+The main features are **full page flip** and **masonry layout views**.~
 
 Dream also support **light mode** and **dark mode** out of the box.
 
@@ -49,7 +49,7 @@ demo: [https://themes.gohugo.io/theme/hugo-theme-dream/](https://themes.gohugo.i
 All tags of this theme:
 
 - flip
-- masonry layouts
+- masonry layout
 - i18n
 - blog
 - google-analytics
