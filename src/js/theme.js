@@ -1,6 +1,7 @@
 const dark = 'inverted'
 const localStore = window.localStorage
 let isDark = localStore.getItem('hugo-theme-dream-is-dark')
+isDark = isDark ? isDark : window.defaultDark ? 'y' : isDark
 
 const dark404 = () => {
   if (window.backgroundDark || window.backgroundImageDark) {
@@ -135,7 +136,7 @@ const setThemeForUtterances = () => {
     utterances.contentWindow.postMessage(
       {
         type: 'set-theme',
-        theme: isDark ? 'github-dark' : 'github-light',
+        theme: isDark === 'y' ? 'github-dark' : 'github-light',
       },
       'https://utteranc.es'
     )
@@ -153,7 +154,7 @@ window.addEventListener('message', (e) => {
 const iconSwitchs = $('.theme-switch')
 
 // Apply theme when first entering
-if (isDark) {
+if (isDark === 'y') {
   iconSwitchs.addClass('moon')
   toggleDark()
 } else {
@@ -161,11 +162,11 @@ if (isDark) {
 }
 
 function themeSwitch() {
-  if (isDark) {
+  if (isDark === 'y') {
     iconSwitchs.removeClass('moon')
     iconSwitchs.addClass('sun')
-    localStore.removeItem('hugo-theme-dream-is-dark')
-    isDark = null
+    localStore.setItem('hugo-theme-dream-is-dark', 'n')
+    isDark = 'n'
   } else {
     iconSwitchs.removeClass('sun')
     iconSwitchs.addClass('moon')

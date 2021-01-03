@@ -9,6 +9,7 @@
   linkColor = "seagreen"
 
   # dark mode
+  defaultDark = true
   backgroundDark = "black"
   backgroundImageDark = "/me/background-dark.jpg"
   darkLinkColor = "darkseagreen"
@@ -78,6 +79,12 @@ The site's background image. Will cover the `background` param.
 ### `linkColor = "seagreen"`
 
 The site's link color.
+
+### `defaultDark = true`
+
+Set the default theme to dark.
+
+> Note: if you set the theme to **light** manually, this param will be overridden.
 
 ### `backgroundDark = "black"`
 
