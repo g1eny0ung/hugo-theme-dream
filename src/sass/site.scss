@@ -245,7 +245,7 @@ body {
 .dream-single-aside {
   position: sticky !important;
   top: 0;
-  height: 0;
+  height: 100%;
 
   @media screen and (max-width: 768px) {
     display: none !important;
@@ -255,6 +255,10 @@ body {
 .toc {
   ul {
     padding-left: 2rem;
+  }
+
+  li {
+    margin: 0.5rem 0;
   }
 }
 
