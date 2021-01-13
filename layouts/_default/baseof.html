@@ -8,6 +8,9 @@
 
     {{ partial "head.html" . }}
     {{ block "css" . }} {{ end }}
+    {{ range .Site.Params.Advanced.customCSS -}}
+      <link rel="stylesheet" href="{{ . | relURL }}" />
+    {{- end }}
   </head>
 
   <body class="default">
@@ -33,6 +36,10 @@
     {{ if .Site.Params.enableSearch }}
       {{ partial "search.html" . }}
     {{ end }}
+
+    {{ range .Site.Params.Advanced.customJS -}}
+      <script src="{{ . | relURL }}"></script>
+    {{- end }}
 
     {{ if .Site.GoogleAnalytics }}
       {{ template "_internal/google_analytics_async.html" . }}

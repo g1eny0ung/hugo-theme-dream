@@ -17,9 +17,18 @@ theme = "hugo-theme-dream"
   # backgroundImage = "/me/background.jpg"
   linkColor = "seagreen"
 
+  # dark mode
+  # defaultDark = true
+  # backgroundDark = "black"
+  # backgroundImageDark = "/me/background-dark.jpg"
+  # darkLinkColor = "darkseagreen"
+  # darkNav = true
+  # dark404 = true
+
   author = "Yue Yang"
   # description = ""
   avatar = "/img/avatar.jpg"
+  # headerTitle = ""
   motto = "Motto"
   # categoriesLimitInHeader = 6
   # headerBottomText = ""
@@ -31,7 +40,7 @@ theme = "hugo-theme-dream"
   # valine = true
   # LEANCLOUD_APP_ID = ""
   # LEANCLOUD_APP_KEY = ""
-  
+
   email = "g1enyy0ung@gmail.com"
   # twitter = ""
   # facebook = ""
@@ -59,7 +68,6 @@ theme = "hugo-theme-dream"
   # showSummaryCoverInPost = true
   # hasTwitterEmbed = true
 
-  # dark mode
-  darkLinkColor = "darkseagreen"
-  darkNav = true 
-  dark404 = true
+  # [params.advanced]
+  #   customCSS = ["css/custom.css"]
+  #   customJS = []

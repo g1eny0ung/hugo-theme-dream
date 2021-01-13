@@ -60,11 +60,13 @@
   # options
   showSummaryCoverInPost = true
   # hasTwitterEmbed = true
+
+  [params.advanced]
+    customCSS = ["css/custom.css"]
+    customJS = []
 ```
 
-For more details with dark mode related params, see [Dark Mode](dark-mode.md).
-
-## Explanation
+> For more details with dark mode related params, see [Dark Mode](dark-mode.md).
 
 ### `background = "#ccc"`
 
@@ -223,3 +225,19 @@ As the param said, show summary cover in the single post page.
 If you have embedded twitter components generated from <https://publish.twitter.com/>, please set this param to `true` for better performance.
 
 After setting this, you can safely remove the async script in the generated code.
+
+## Advanced
+
+> Note: Generally, the following advanced parameters are not necessary to be set. Their main purpose is to further customize the entire theme.
+
+### `customCSS = ["css/custom.css"]`
+
+Add your custom CSS files after the theme CSS files.
+
+For example, create a folder named `css` under `static`, then add `custom.css` in it.
+
+### `customJS = []`
+
+Add your custom JS files.
+
+Same as `customCSS`, except all custom JS files will be placed after the theme JS files.
