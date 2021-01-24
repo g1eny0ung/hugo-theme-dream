@@ -17,6 +17,8 @@
           {{ index .Site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
         {{- else if eq .Site.Language.Lang "es" -}}
           {{ index .Site.Data.es.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
+        {{- else if eq .Site.Language.Lang "pt" -}}
+          {{ index .Site.Data.pt.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
         {{- else -}}
           {{ .Date.Format "Monday, Jan 2, 2006" }}
         {{- end -}}
