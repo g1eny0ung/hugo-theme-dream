@@ -1,0 +1,57 @@
+[blogAlias]
+other = "'s blog"
+
+[home]
+other = "Página inicial"
+
+[backToHome]
+other = "Voltar para a página inicial"
+
+[flip]
+other = "Girar!"
+
+[archives]
+other = "Arquivos"
+
+[allTags]
+other = "Todas as tags"
+
+[tag]
+one = "tag"
+other = "{{ .Count }} tags"
+
+[allCategories]
+other = "Todas as categorias"
+
+[category]
+one = "categoria"
+other = "{{ .Count }} categorias"
+
+[article]
+one = "1 artigo"
+other = "{{ .Count }} artigos"
+
+[socialLinks]
+other = "Links de redes sociais"
+
+[minuteRead]
+one = " minuto de leitura"
+other = " minutos de leitura"
+
+[updateAt]
+other = "Atualizado"
+
+[noTag]
+other = "Sem tags"
+
+[prevPage]
+other = "Página anterior"
+
+[nextPage]
+other = "Próxima página"
+
+[saveAsImage]
+other = "Salvar como imagem"
+
+[search]
+other = "Pesquisar"
