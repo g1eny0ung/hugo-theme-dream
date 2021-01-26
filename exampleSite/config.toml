@@ -22,8 +22,8 @@ theme = "hugo-theme-dream"
   # backgroundDark = "black"
   # backgroundImageDark = "/me/background-dark.jpg"
   # darkLinkColor = "darkseagreen"
-  # darkNav = true
-  # dark404 = true
+  darkNav = true
+  dark404 = true
 
   author = "Yue Yang"
   # description = ""
