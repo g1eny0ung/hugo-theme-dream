@@ -41,7 +41,7 @@
   {{ if .Site.Taxonomies.tags }}
   <section class="ui attached center aligned segment dream-tags">
     {{ range $name, $_ := .Site.Taxonomies.tags }}
-      {{ $link := printf "/tags/%s/" $name | urlize }}
+      {{ $link := printf "/tags/%s/" $name | urlize | relLangURL }}
       {{ $title := $name | humanize | title }}
       <a class="ui label" href="{{ $link }}" title="{{ $title }}">
         {{ $title }}
@@ -65,7 +65,7 @@
         {{ if le ($scratch.Get "categoriesLimit") $categoriesLimitInHeader }}
           <div class="title">
             <i class="dropdown icon"></i>
-            {{ $link := printf "/categories/%s/" $name | urlize }}
+            {{ $link := printf "/categories/%s/" $name | urlize | relLangURL }}
             {{ $title := $name | humanize | title }}
             <a class="item" href="{{ $link }}" title="{{ $title }}">
               {{ $title }}
