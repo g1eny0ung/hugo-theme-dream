@@ -9,6 +9,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 Because of the site rewriting, I started to calculate the version again.
 
+## [1.6.0] - 2021.01.30
+
+- Process term name with humanize | title
+- Support TOC
+- Add `avatar` post param
+- Add `defaultDark` param
+- Add advanced params
+  - `customCSS`
+  - `customJS`
+- Add portuguese translation (#167)
+- Add portuguese dates (#168)
+- Bugs fixes
+
 ## [1.5.0] - 2020.10.22
 
 - Support [Netlify CMS](https://www.netlifycms.org/)
