@@ -1,114 +1,42 @@
-<article class="dream-header">
-  <section class="ui top attached center aligned segment">
-    <div class="ui small circular image">
-      {{ if isset .Site.Params "avatar" }}
-        <img src="{{ .Site.Params.avatar | relURL }}">
-      {{ end }}
-    </div>
+<header class="ui basic very padded segment dream-header">
+  <div class="ui small circular image">
+    {{ if isset .Site.Params "avatar" }}
+    <img src="{{ .Site.Params.avatar | relURL }}" />
+    {{ end }}
+  </div>
 
-    {{ if or (hasPrefix .RelPermalink "/posts") (hasPrefix .RelPermalink "/tags") (hasPrefix .RelPermalink "/categories") }}
-    <div class="ui medium header">
-    {{ else }}
+  <div class="content">
     <h1 class="ui medium header">
-    {{ end }}
-      {{ if .Site.Params.headerTitle }}
-        {{- .Site.Params.headerTitle -}}
-      {{ else }}
-        {{- .Site.Params.author -}}{{- T "blogAlias" -}}
-      {{ end }}
-      <div class="sub header" style="margin-top: 0.5rem;">{{- .Site.Params.motto -}}</div>
-    {{ if or (hasPrefix .RelPermalink "/posts") (hasPrefix .RelPermalink "/tags") (hasPrefix .RelPermalink "/categories") }}
-    </div>
-    {{ else }}
+      {{- if .Site.Params.headerTitle -}}{{ .Site.Params.headerTitle }}{{ else }}{{ .Site.Params.author }}{{ T "blogAlias" }}{{- end -}}
+      <div class="sub header">
+        {{- .Site.Params.motto -}}
+      </div>
     </h1>
-    {{ end }}
 
-    <div class="ui horizontal list">
+    <article class="ui horizontal list">
       {{ if gt (len (where .Site.RegularPages "Section" "==" "posts")) 0 }}
       <a class="item" href="{{ "posts" | relLangURL }}">
         <i class="archive icon" title="{{ T "archives" }}"></i>
       </a>
       {{ end }}
-      <a class="item" href="{{ "tags" | relLangURL }}">
-        <i class="tags icon" title="{{ T "allTags" }}"></i>
-      </a>
       <a class="item" href="{{ "categories" | relLangURL }}">
         <i class="th list icon" title="{{ T "allCategories" }}"></i>
       </a>
-    </div>
-  </section>
+      <a class="item" href="{{ "tags" | relLangURL }}">
+        <i class="tags icon" title="{{ T "allTags" }}"></i>
+      </a>
+    </article>
 
-  {{ if .Site.Taxonomies.tags }}
-  <section class="ui attached center aligned segment dream-tags">
+    {{ if .Site.Taxonomies.tags }}
+    <article class="dream-tags">
     {{ range $name, $_ := .Site.Taxonomies.tags }}
       {{ $link := printf "/tags/%s/" $name | urlize | relLangURL }}
       {{ $title := $name | humanize | title }}
       <a class="ui label" href="{{ $link }}" title="{{ $title }}">
-        {{ $title }}
+        {{- $title -}}
       </a>
     {{ end }}
-  </section>
-  {{ end }}
-
-  {{ if .Site.Taxonomies.categories }}
-  <section class="ui attached segment dream-categories">
-    <div class="ui accordion">
-      {{ $categories := .Site.Taxonomies.categories }}
-      {{ $categoriesCount := len $categories }}
-      {{ $categoriesLimitInHeader := .Site.Params.categoriesLimitInHeader | default 6 }}
-      {{ $scratch := newScratch }}
-      {{ $scratch.Set "categoriesLimit" 0 }}
-
-      {{ range $name, $taxonomy := $categories }}
-        {{ $scratch.Add "categoriesLimit" 1 }}
-
-        {{ if le ($scratch.Get "categoriesLimit") $categoriesLimitInHeader }}
-          <div class="title">
-            <i class="dropdown icon"></i>
-            {{ $link := printf "/categories/%s/" $name | urlize | relLangURL }}
-            {{ $title := $name | humanize | title }}
-            <a class="item" href="{{ $link }}" title="{{ $title }}">
-              {{ $title }}
-            </a>
-          </div>
-          <div class="content">
-            <div class="ui list">
-            {{ range $taxonomy.Pages }}
-              <div class="item">
-                <div class="content">
-                  <a class="item" href="{{ .RelPermalink }}">{{ .Title }}</a>
-                </div>
-              </div>
-            {{ end }}
-            </div>
-          </div>
-        {{ end }}
-      {{ end }}
-
-      {{ if gt $categoriesCount $categoriesLimitInHeader }}
-        <div class="title">
-          <a class="item" href="{{ "categories" | relLangURL }}" style="padding-left: 0.5rem;">......</a>
-        </div>
-      {{ end }}
-    </div>
-  </section>
-  {{ end }}
-
-  <section class="ui attached segment header-socials">
-    {{ partial "socials.html" (dict "Site" .Site "IconSize" "") }}
-  </section>
-
-  <section class="ui bottom attached center aligned segment">
-    {{ if .Site.Params.siteStartYear }}
-      <p>© {{ if eq now.Year .Site.Params.siteStartYear }}{{ now.Year }}{{ else }}{{ .Site.Params.siteStartYear }} - {{ now.Year }}{{ end }} {{ .Site.Title }}</p>
-    {{ else }}
-      <p>© {{ now.Year }} {{ .Site.Title }}</p>
+    </article>
     {{ end }}
-
-    <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
-
-    {{ if .Site.Params.headerBottomText }}
-      <p>{{ .Site.Params.headerBottomText | safeHTML }}</p>
-    {{ end }}
-  </section>
-</article>
+  </div>
+</header>

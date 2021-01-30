@@ -13,7 +13,7 @@ theme = "hugo-theme-dream"
 # enableRobotsTXT = true
 
 [params]
-  background = "black"
+  background = "#f7f7f7"
   # backgroundImage = "/me/background.jpg"
   linkColor = "seagreen"
 
@@ -22,16 +22,18 @@ theme = "hugo-theme-dream"
   # backgroundDark = "black"
   # backgroundImageDark = "/me/background-dark.jpg"
   # darkLinkColor = "darkseagreen"
-  darkNav = true
-  dark404 = true
+  # darkNav = true
+  # dark404 = true
 
   author = "Yue Yang"
   # description = ""
   avatar = "/img/avatar.jpg"
   # headerTitle = ""
   motto = "Motto"
-  # categoriesLimitInHeader = 6
-  # headerBottomText = ""
+  # categoriesLimitInHeader = 6 # deprecated
+  # headerBottomText = "" # deprecated
+
+  # footerBottomText = ""
 
   # rss = true
 

@@ -1,6 +1,3 @@
-$MenuHeight: 40px;
-$ContainerHeight: calc(100% - #{$MenuHeight} - 1rem);
-
 @mixin VHCenter {
   display: flex;
   justify-content: center;

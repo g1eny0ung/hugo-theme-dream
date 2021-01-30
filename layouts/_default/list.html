@@ -1,25 +1,26 @@
 {{ define "title" }}
 {{- if or (eq .Data.Singular "tag") (eq .Data.Singular "category") -}}
-  {{ .Data.Term }}
+{{ .Data.Term }}
 {{- end -}}
 {{ end }}
 
 {{ define "main"}}
-<div class="ui centered relaxed grid dream-grid">
-  <div class="sixteen wide mobile eight wide tablet eight wide computer four wide large screen four wide widescreen column dream-column">
-    {{ partial "header.html" . }}
-  </div>
 
+{{ partial "header.html" . }}
+
+<div class="ui relaxed grid dream-grid">
   {{ $paginator := .Paginate .Pages }}
   {{ range $paginator.Pages }}
-    <div class="sixteen wide mobile eight wide tablet eight wide computer four wide large screen four wide widescreen column dream-column">
-      {{ .Render "summary" }}
-    </div>
+  <div class="sixteen wide mobile eight wide tablet eight wide computer four wide large screen four wide widescreen column dream-column">
+    {{ .Render "summary" }}
+  </div>
   {{ end }}
 
+  {{ if or $paginator.HasPrev $paginator.HasNext  }}
   <div class="sixteen wide mobile eight wide tablet eight wide computer four wide large screen four wide widescreen column dream-column">
-    {{ partial "paginator.html" (dict "paginator" $paginator "Site" .Site) }}
+    {{ partial "paginator.html" (dict "paginator" $paginator) }}
   </div>
+  {{ end }}
 </div>
 {{ end }}
 

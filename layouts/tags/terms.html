@@ -3,40 +3,37 @@
 {{ end }}
 
 {{ define "main"}}
-<div class="ui centered relaxed grid dream-grid">
-  <div class="sixteen wide mobile sixteen wide tablet four wide computer column">
-    {{ partial "header.html" . }}
-  </div>
-  <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column">
-    <div class="ui segment dream-tags-section">
-      <h1 class="ui large header">
-        {{- T "allTags" -}}
-        <div class="ui grey sub header">
-          {{ if eq (len .Data.Terms) 1 }}
-            {{- T "tag" 1 -}}
-          {{ else }}
-            {{- T "tag" (len .Data.Terms) -}}
-          {{ end }}
-        </div>
-      </h1>
 
-      {{ $data := .Data }}
-      {{ range .Data.Terms.Alphabetical }}
-        {{ $termLink := printf "/%s/%s/" $data.Plural .Term | urlize }}
-        <h2 class="ui medium header">
-          <a href="{{ $termLink }}">{{ .Term | humanize | title }}</a>&nbsp;
-          {{- T "article" .Count -}}
-        </h2>
-        <ul>
-          {{ range .Pages }}
-            <li>
-              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            </li>
-          {{ end }}
-        </ul>
+{{ partial "header.html" . }}
+
+<div class="ui container">
+  <article class="ui segment dream-tags-section">
+    <h2 class="ui large header">
+      {{- T "allTags" -}}
+      <div class="ui grey sub header">
+        {{ if eq (len .Data.Terms) 1 }}
+        {{- T "tag" 1 -}}
+        {{ else }}
+        {{- T "tag" (len .Data.Terms) -}}
+        {{ end }}
+      </div>
+    </h2>
+
+    {{ $data := .Data }}
+    {{ range .Data.Terms.Alphabetical }}
+    {{ $termLink := printf "/%s/%s/" $data.Plural .Term | urlize }}
+    <h3 class="ui medium header">
+      <a href="{{ $termLink }}">{{ .Term | humanize | title }}</a>&nbsp;
+      {{- T "article" .Count -}}
+    </h3>
+    <ul>
+      {{ range .Pages }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </li>
       {{ end }}
-
-    </div>
-  </div>
+    </ul>
+    {{ end }}
+  </article>
 </div>
 {{ end }}

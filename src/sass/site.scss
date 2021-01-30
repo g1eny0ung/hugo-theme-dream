@@ -1,7 +1,6 @@
 @import 'common';
 
 body {
-  background-attachment: fixed;
   background-position: center;
   background-size: cover;
 
@@ -71,7 +70,7 @@ body {
 
 .dream-404-container {
   position: fixed;
-  top: 50%;
+  top: calc(50% - 54px);
   left: 50%;
   width: 100%;
   transform: translate3d(-50%, -50%, 0);
@@ -116,56 +115,50 @@ body {
 }
 
 .dream-header {
-  position: relative;
-  z-index: 999;
+  @include VHCenter;
 
-  .header-socials {
-    padding-top: 0;
-    padding-bottom: 0;
-
-    .dream-socials {
-      justify-content: center;
-    }
+  .content {
+    max-width: 512px;
+    margin-left: 2rem;
   }
-}
 
-.dream-tags {
-  .ui.label {
-    margin: 0.5rem 0;
+  .ui.horizontal.list {
+    line-height: 1rem;
   }
-}
 
-.dream-categories {
-  .ui.accordion {
-    .ui.list {
-      .item {
-        padding-left: 1rem;
-      }
+  .dream-tags .ui.label {
+    margin-top: 1rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+
+    .content {
+      margin-top: 2rem;
+      margin-left: unset;
+      text-align: center;
     }
   }
 }
 
 .dream-grid {
-  margin: 1rem !important;
-  margin-top: 0 !important;
-
-  .dream-column {
-    .ui.card {
-      width: 100%;
-    }
-  }
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .ui.card.dream-card {
-  border-radius: 0.28571429rem !important;
+  > .image {
+    border-top-left-radius: inherit !important;
+    border-top-right-radius: inherit !important;
+  }
 
   &.inverted .content {
     .header > a {
-      color: #fff !important;
+      color: rgba(#fff, 0.87) !important;
     }
 
     .meta {
-      color: rgba(#fff, 0.4);
+      color: rgba(#fff, 0.6);
     }
 
     .description {
@@ -174,7 +167,7 @@ body {
   }
 
   &.inverted .extra {
-    color: rgba(#fff, 0.4);
+    color: rgba(#fff, 0.6);
   }
 
   .content {
@@ -182,7 +175,7 @@ body {
       margin-bottom: 0;
 
       a {
-        color: #000 !important;
+        color: rgba(#000, 0.87) !important;
       }
     }
 
@@ -205,6 +198,7 @@ body {
     position: relative;
     display: flex;
     align-items: center;
+    border-top: none !important;
 
     .author {
       display: flex;
@@ -226,6 +220,7 @@ body {
       height: 256px;
       background-position: center;
       background-size: cover;
+      border-radius: inherit;
 
       @media screen and (max-width: 768px) {
         height: 128px;
@@ -240,6 +235,12 @@ body {
   .main {
     margin-top: 2rem;
   }
+
+  .ui.inverted.segment {
+    blockquote {
+      color: rgba(#fff, 0.6);
+    }
+  }
 }
 
 .dream-single-aside {
@@ -250,6 +251,12 @@ body {
   @media screen and (max-width: 768px) {
     display: none !important;
   }
+}
+
+.dream-single-actions {
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
 
 .toc {
