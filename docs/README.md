@@ -4,6 +4,7 @@
 ![Hugo min version](https://img.shields.io/badge/hugo--min--version-0.57.2-important)
 ![GitHub](https://img.shields.io/github/license/g1eny0ung/hugo-theme-dream)
 
+- [The next version is out](#the-next-version-is-out)
 - [Note After v1.1.0](#note-after-v110)
 - [Major update in 2019-11-10](#major-update-in-2019-11-10)
 - [Intro](#intro)
@@ -11,6 +12,16 @@
 - [Installation](#installation)
 - [Example](#example)
 - [Publish](#publish)
+
+## The next version is out
+
+> If you still want to use the old version, you can check out the branch to `release-1.6`.
+
+The new version brings some new design elements and bug fixes. When it stabilizes, it will be released as `v2.0.0`.
+
+All changes will be committed to the `master` branch. You can check the screenshot below to see the rough interface changes.
+
+For more detail, please refer to the [Release v2.0.0-beta]()
 
 ## Note After v1.1.0
 

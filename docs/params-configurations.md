@@ -4,17 +4,17 @@
 
 ```toml
 [params]
-  background = "#ccc"
+  background = "#fff"
   backgroundImage = "/me/background.jpg"
   linkColor = "seagreen"
 
   # dark mode
-  defaultDark = true
+  # defaultDark = true
   backgroundDark = "black"
   backgroundImageDark = "/me/background-dark.jpg"
   darkLinkColor = "darkseagreen"
-  darkNav = true
-  dark404 = true
+  # darkNav = true
+  # dark404 = true
 
   images = [""]
 
@@ -23,8 +23,10 @@
   avatar = "/me/yy.jpg"
   headerTitle = "g1eny0ung 的博客"
   motto = "与其感慨路难行，不如马上出发。"
-  categoriesLimitInHeader = 6
-  # headerBottomText = ""
+  # categoriesLimitInHeader = 6 # deprecated
+  # headerBottomText = "" # deprecated
+
+  # footerBottomText = ""
 
   rss = true
 
@@ -152,11 +154,21 @@ Used in Header.
 
 ### `categoriesLimitInHeader = 6`
 
+> Deprecated. Only available before `v2.0.0`
+
 Limit the number of categories displayed in the header, the default is **6**.
 
 ### `# headerBottomText = ""`
 
+> Deprecated. Only available before `v2.0.0`
+
 Add text at the bottom of the header, support html. This is usually used as a description of the website information.
+
+### `# footerBottomText = ""`
+
+> Only available after `v2.0.0`
+
+Add text at the bottom of the footer, support html. This is usually used as a description of the website information.
 
 ### `rss = true`
 

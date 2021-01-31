@@ -9,6 +9,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 Because of the site rewriting, I started to calculate the version again.
 
+## [2.0.0-beta] - 2021.01.31
+
+- New `header` component
+- At the same time, remove some clutter or repetitive elements
+- Deprecate `categoriesLimitInHeader` param
+- Replace `headerBottomText` param to `footerBottomText`
+- Improve semantic HTML tags
+- Add share buttons in post page
+
 ## [1.6.0] - 2021.01.30
 
 - Process term name with humanize | title
