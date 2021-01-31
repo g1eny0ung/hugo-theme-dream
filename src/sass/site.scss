@@ -29,7 +29,7 @@ body {
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    transition: all 0.8s ease;
+    transition: all 0.75s ease;
   }
 
   .front,
@@ -109,7 +109,7 @@ body {
     }
 
     a {
-      color: rgba(#000, 0.87);
+      color: $black87;
     }
   }
 }
@@ -154,20 +154,20 @@ body {
 
   &.inverted .content {
     .header > a {
-      color: rgba(#fff, 0.87) !important;
+      color: $white87 !important;
     }
 
     .meta {
-      color: rgba(#fff, 0.6);
+      color: $white60;
     }
 
     .description {
-      color: rgba(#fff, 0.87);
+      color: $white87;
     }
   }
 
   &.inverted .extra {
-    color: rgba(#fff, 0.6);
+    color: $white60;
   }
 
   .content {
@@ -175,13 +175,13 @@ body {
       margin-bottom: 0;
 
       a {
-        color: rgba(#000, 0.87) !important;
+        color: $black87 !important;
       }
     }
 
     .description {
       margin-top: 1rem;
-      color: rgba(#000, 0.87);
+      color: $black87;
       overflow-wrap: break-word;
 
       img {
@@ -238,7 +238,7 @@ body {
 
   .ui.inverted.segment {
     blockquote {
-      color: rgba(#fff, 0.6);
+      color: $white60;
     }
   }
 }
@@ -251,12 +251,6 @@ body {
   @media screen and (max-width: 768px) {
     display: none !important;
   }
-}
-
-.dream-single-actions {
-  position: fixed;
-  bottom: 0;
-  right: 0;
 }
 
 .toc {
@@ -303,11 +297,11 @@ body {
 
   .result,
   .message.empty {
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(#000, 0.1);
 
     &:hover,
     &.active {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(#000, 0.1);
     }
 
     .title,
@@ -316,7 +310,7 @@ body {
     }
 
     .description {
-      color: rgba(#fff, 0.87);
+      color: $white87;
     }
   }
 }
