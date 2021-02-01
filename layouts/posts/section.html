@@ -8,13 +8,13 @@
 
 <div class="ui container">
   <article class="ui segment dream-posts-section">
-    <h2 class="ui large header">
+    <h2 class="ui header">
       {{ .Title }}
       <div class="ui grey sub header">{{ .Content }}</div>
     </h2>
 
     {{ range .Data.Pages.GroupByDate "2006" }}
-    <h3 class="ui medium header">{{ .Key }}</h3>
+    <h3 class="ui header">{{ .Key }}</h3>
     <ul>
       {{ range .Pages }}
       <li>

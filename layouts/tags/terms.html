@@ -8,7 +8,7 @@
 
 <div class="ui container">
   <article class="ui segment dream-tags-section">
-    <h2 class="ui large header">
+    <h2 class="ui header">
       {{- T "allTags" -}}
       <div class="ui grey sub header">
         {{ if eq (len .Data.Terms) 1 }}
@@ -22,7 +22,7 @@
     {{ $data := .Data }}
     {{ range .Data.Terms.Alphabetical }}
     {{ $termLink := printf "/%s/%s/" $data.Plural .Term | urlize }}
-    <h3 class="ui medium header">
+    <h3 class="ui header">
       <a href="{{ $termLink }}">{{ .Term | humanize | title }}</a>&nbsp;
       {{- T "article" .Count -}}
     </h3>
