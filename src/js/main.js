@@ -2,7 +2,7 @@ $(document).ready(() => {
   function setClassName() {
     return (
       window.backgroundDark || window.backgroundImageDark
-        ? localStore.getItem('hugo-theme-dream-is-dark')
+        ? localStore.getItem('hugo-theme-dream-is-dark') === 'y'
         : window.darkNav
     )
       ? 'os-theme-light'
@@ -11,9 +11,6 @@ $(document).ready(() => {
 
   $('body').overlayScrollbars({
     className: setClassName(),
-    nativeScrollbarsOverlaid: {
-      initialize: false,
-    },
     scrollbars: {
       autoHide: 'scroll',
     },

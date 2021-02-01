@@ -7,10 +7,12 @@
     <title>{{ block "title" . }} {{- T "home" -}} {{ end }} | {{ .Site.Title }}</title>
 
     {{ partial "head.html" . }}
+
     {{ block "css" . }} {{ end }}
-    {{ range .Site.Params.Advanced.customCSS -}}
-      <link rel="stylesheet" href="{{ . | relURL }}" />
-    {{- end }}
+
+    {{ range .Site.Params.Advanced.customCSS }}
+    <link rel="stylesheet" href="{{ . | relURL }}" />
+    {{ end }}
   </head>
 
   <body class="default">
@@ -20,6 +22,20 @@
         <section class="front">
           <div class="dream-max-width">
             {{ block "main" . }} {{ end }}
+
+            <footer class="ui basic center aligned segment" style="background-color: transparent;">
+              {{ if .Site.Params.siteStartYear }}
+              <p>© {{ if eq now.Year .Site.Params.siteStartYear }}{{ now.Year }}{{ else }}{{ .Site.Params.siteStartYear }} - {{ now.Year }}{{ end }} {{ .Site.Title }}</p>
+              {{ else }}
+              <p>© {{ now.Year }} {{ .Site.Title }}</p>
+              {{ end }}
+
+              <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
+
+              {{ if .Site.Params.footerBottomText }}
+              <p>{{ .Site.Params.footerBottomText | safeHTML }}</p>
+              {{ end }}
+            </footer>
           </div>
         </section>
         <section class="back">
@@ -34,15 +50,15 @@
     {{ block "js" . }} {{ end }}
 
     {{ if .Site.Params.enableSearch }}
-      {{ partial "search.html" . }}
+    {{ partial "search.html" . }}
     {{ end }}
 
-    {{ range .Site.Params.Advanced.customJS -}}
-      <script src="{{ . | relURL }}"></script>
-    {{- end }}
+    {{ range .Site.Params.Advanced.customJS }}
+    <script src="{{ . | relURL }}"></script>
+    {{ end }}
 
     {{ if .Site.GoogleAnalytics }}
-      {{ template "_internal/google_analytics_async.html" . }}
+    {{ template "_internal/google_analytics_async.html" . }}
     {{ end }}
   </body>
 </html>

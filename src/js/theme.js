@@ -9,7 +9,10 @@ const dark404 = () => {
 
     if (dream404.length) {
       $('.dream-404-container h1').toggleClass(dark)
-      $('.dream-404-container button').toggleClass(dark)
+
+      const button = $('.dream-404-container button')
+      button.toggleClass(dark)
+      button.toggleClass('secondary')
     }
   }
 }
@@ -30,16 +33,11 @@ const darkHeaderElements = () => {
   const header = $('.dream-header')
 
   if (header.length) {
-    const segments = $('.dream-header .ui.segment')
-    const title = $('.dream-header .ui.top.segment .ui.header')
-    const iconList = $('.dream-header .ui.top.segment .ui.list')
-    const accordion = $('.dream-header .ui.segment .ui.accordion')
-
-    segments.toggleClass(dark)
+    const title = $('.dream-header .ui.header')
+    const iconList = $('.dream-header .ui.list')
 
     title.toggleClass(dark)
     iconList.toggleClass(dark)
-    accordion.toggleClass(dark)
   }
 }
 
@@ -64,9 +62,10 @@ const darkSingle = () => {
     if (typeof setHighlightTheme === 'function') {
       setHighlightTheme()
     }
-  }
 
-  $('.toc').toggleClass(dark)
+    $('.toc').toggleClass(dark)
+    $('.actions').toggleClass(dark)
+  }
 }
 
 const darkTables = () => {
@@ -115,6 +114,10 @@ const darkBack = () => {
   }
 }
 
+const darkFooter = () => {
+  $('footer.ui.segment').toggleClass(dark)
+}
+
 function toggleDark() {
   dark404()
   darkBackground()
@@ -127,6 +130,7 @@ function toggleDark() {
   darkTagsSection()
   darkCategoriesSection()
   darkBack()
+  darkFooter()
 }
 
 const setThemeForUtterances = () => {

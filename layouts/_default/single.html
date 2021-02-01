@@ -1,35 +1,51 @@
-{{ define "title" }}
-{{- .Title -}}
-{{ end }}
+{{ define "title" }}{{ .Title }}{{ end }}
 
 {{ define "css" }}
 
 {{ if .Site.Params.highlightjs }}
-  {{ if .Site.Params.highlightjsTheme }}
-    <link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/{{ .Site.Params.highlightjsTheme }}.min.css" />
-  {{ else }}
-    <link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css" />
-  {{ end }}
+{{ if .Site.Params.highlightjsTheme }}
+<link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/{{ .Site.Params.highlightjsTheme }}.min.css" />
+{{ else }}
+<link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css" />
+{{ end }}
 {{ end }}
 
 {{ if .Site.Params.valine }}
-  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 {{ end }}
 
 {{ end }}
 
 {{ define "main" }}
-<div class="ui centered relaxed grid dream-grid">
+<div class="ui relaxed grid dream-grid">
+  <aside class="sixteen wide mobile sixteen wide tablet four wide computer column dream-single-aside">
+    <!-- len <nav id="TableOfContents"></nav> == 32 -->
+    {{ if ge (len .TableOfContents) 33 }}
+    <div class="ui segment toc">
+      {{ .TableOfContents }}
+    </div>
+    {{ end }}
+    <div class="ui segment actions">
+      <button
+        class="ui circular icon button save-as-image"
+        title="{{ i18n "saveAsImage" }}"
+        onclick="savePostAsImg()">
+        <i class="save icon"></i>
+      </button>
+
+      {{ partial "share.html" . }}
+    </div>
+  </aside>
   <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single" id="dream-save-post-as-img">
     {{ if and .Params.Cover .Site.Params.showSummaryCoverInPost }}
-    <section class="ui top attached segment cover">
+    <div class="ui top attached segment cover">
       <div class="cover-img" style="background-image: url({{ .Params.Cover }});"></div>
-    </section>
+    </div>
     {{ end }}
     <section class="ui {{ if not .Site.Params.showSummaryCoverInPost }}top {{ end }}attached segment">
       <header>
         <h1 class="ui large header">
-          {{ .Title }}
+          {{- .Title -}}
           <div class="sub header">
             @
             {{ if isset .Params "author" }}
@@ -46,6 +62,8 @@
                 {{ index .Site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
               {{ else if eq .Site.Language.Lang "es" }}
                 {{ index .Site.Data.es.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
+              {{- else if eq .Site.Language.Lang "pt" -}}
+                {{ index .Site.Data.pt.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
               {{ else }}
                 {{ .Date.Format "Monday, Jan 2, 2006" }}
               {{ end }}
@@ -57,6 +75,8 @@
                 {{ index .Site.Data.zh.Weekday (printf "%d" .Lastmod.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Day }} 日，{{ .Lastmod.Year }} 年
               {{ else if eq .Site.Language.Lang "es" }}
                 {{ index .Site.Data.es.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
+              {{- else if eq .Site.Language.Lang "pt" -}}
+                {{ index .Site.Data.pt.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
               {{ else }}
                 {{ .Lastmod.Format "Monday, Jan 2, 2006" }}
               {{ end }}
@@ -67,90 +87,58 @@
       <article class="main">{{ .Content | emojify }}</article>
     </section>
 
-    <footer class="ui attached segment dream-tags" data-html2canvas-ignore>
-      {{ if isset .Params "tags" }}
-        {{ range $tag := .Params.tags }}
-          <a class="ui label" href="{{ "tags/" | relLangURL }}{{ $tag | urlize }}" title="{{ $tag }}">{{ $tag }}</a>
-        {{ end }}
-      {{ else }}
-          <a class="ui label">{{ i18n "noTag" }}</a>
-      {{ end }}
-      <div
-        class="ui label"
-        style="float: right; cursor: pointer;"
-        onclick="savePostAsImg()">
-        <i class="save icon"></i>{{ i18n "saveAsImage" }}
-      </div>
-    </footer>
-
-    {{ if .Site.Copyright }}
-      <footer class="ui attached segment" data-html2canvas-ignore>
-        {{ .Site.Copyright | safeHTML }}
-      </footer>
-    {{ end }}
-
     {{ if .Site.DisqusShortname }}
-      <footer class="ui bottom attached stacked segment post-disqus-area" data-html2canvas-ignore>
-        <div id="disqus_thread"></div>
-        <script>
-          /**
-           *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-           *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-           */
+    <article class="ui segment post-disqus-area" data-html2canvas-ignore>
+      <div id="disqus_thread"></div>
+      <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+         */
 
-          var disqus_config = function () {
-            this.page.url = '{{ .Permalink }}';  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = '{{ .RelPermalink }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-          };
+        var disqus_config = function () {
+          this.page.url = '{{ .Permalink }}';  // Replace PAGE_URL with your page's canonical URL variable
+          this.page.identifier = '{{ .RelPermalink }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
 
-          (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://' + '{{ .Site.DisqusShortname }}' + '.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-          })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-      </footer>
+        (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+          s.src = 'https://' + '{{ .Site.DisqusShortname }}' + '.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </article>
     {{ end }}
-    
+
     {{ if .Site.Params.utterancesRepo }}
-      <div class="ui segment utterances-comments" data-html2canvas-ignore>
-        <script src="https://utteranc.es/client.js"
-          repo="{{ .Site.Params.utterancesRepo }}"
-          issue-term="og:title"
-          theme="github-light"
-          crossorigin="anonymous"
-          async>
-        </script>
-      </div>
+    <article class="ui segment utterances-comments" data-html2canvas-ignore>
+      <script
+        src="https://utteranc.es/client.js"
+        repo="{{ .Site.Params.utterancesRepo }}"
+        issue-term="og:title"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+      </script>
+    </article>
     {{ end }}
 
     {{ if .Site.Params.valine }}
-      <div class="ui segment">
-        <div id="vcomments"></div>
-      </div>
+    <article class="ui segment" data-html2canvas-ignore>
+      <div id="vcomments"></div>
+    </article>
 
-      <script>
-        new Valine({
-          el: '#vcomments',
-          appId: {{ .Site.Params.LEANCLOUD_APP_ID }},
-          appKey: {{ .Site.Params.LEANCLOUD_APP_KEY }}
-        })
-      </script> 
+    <script>
+      new Valine({
+        el: '#vcomments',
+        appId: {{ .Site.Params.LEANCLOUD_APP_ID }},
+        appKey: {{ .Site.Params.LEANCLOUD_APP_KEY }}
+      })
+    </script>
     {{ end }}
-
   </div>
-  <aside class="sixteen wide mobile sixteen wide tablet four wide computer column dream-single-aside">
-    <!-- len <nav id="TableOfContents"></nav> == 32 -->
-    {{ if ge (len .TableOfContents) 33 }}
-      <div class="ui segment toc">
-        {{ .TableOfContents }}
-      </div>
-    {{ end }}
-
-    {{ partial "header.html" . }}
-  </aside>
 </div>
 {{ end }}
 
@@ -159,15 +147,15 @@
 <script src="{{ "/js/post.js" | relURL }}"></script>
 
 {{ if .Site.Params.highlightjs }}
-  <script src="{{ if .Site.Params.highlightjsCDN }}{{ .Site.Params.highlightjsCDN }}{{ else }}{{ "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js" }}{{ end}}"></script>
+<script src="{{ if .Site.Params.highlightjsCDN }}{{ .Site.Params.highlightjsCDN }}{{ else }}{{ "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js" }}{{ end}}"></script>
 
-  {{ if .Site.Params.highlightjsExtraLanguages }}
-    {{ range .Site.Params.highlightjsExtraLanguages }}
-      <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/languages/{{ . }}.min.js"></script>
-    {{ end }} 
-  {{ end }}
+{{ if .Site.Params.highlightjsExtraLanguages }}
+{{ range .Site.Params.highlightjsExtraLanguages }}
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/languages/{{ . }}.min.js"></script>
+{{ end }}
+{{ end }}
 
-  {{ partial "highlight.html" . }}
+{{ partial "highlight.html" . }}
 {{ end }}
 
 {{ end }}

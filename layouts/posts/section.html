@@ -3,29 +3,26 @@
 {{ end }}
 
 {{ define "main"}}
-<div class="ui centered relaxed grid dream-grid">
-  <div class="sixteen wide mobile sixteen wide tablet four wide computer column">
-    {{ partial "header.html" . }}
-  </div>
-  <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column">
-    <div class="ui segment dream-posts-section">
-      <h1 class="ui large header">
-        {{ .Title }}
-        <div class="ui grey sub header">{{ .Content }}</div>
-      </h1>
 
-      {{ range .Data.Pages.GroupByDate "2006" }}
-        <h2 class="ui medium header">{{ .Key }}</h2>
-        <ul>
-          {{ range .Pages }}
-            <li>
-              <a href="{{ .Permalink }}">{{ .Title }}</a>
-            </li>
-          {{ end }}
-        </ul>
+{{ partial "header.html" . }}
+
+<div class="ui container">
+  <article class="ui segment dream-posts-section">
+    <h2 class="ui large header">
+      {{ .Title }}
+      <div class="ui grey sub header">{{ .Content }}</div>
+    </h2>
+
+    {{ range .Data.Pages.GroupByDate "2006" }}
+    <h3 class="ui medium header">{{ .Key }}</h3>
+    <ul>
+      {{ range .Pages }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </li>
       {{ end }}
-
-    </div>
-  </div>
+    </ul>
+    {{ end }}
+  </article>
 </div>
 {{ end }}

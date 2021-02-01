@@ -1,65 +1,59 @@
-<div class="ui centered relaxed grid dream-grid dream-back">
+{{ partial "header.html" . }}
+
+<div class="ui relaxed grid dream-grid dream-back">
   {{ $headless := .Site.GetPage "/about" }}
   {{ $aboutPages := $headless.Resources.ByType "page" }}
   {{ range $aboutPages }}
-    <section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
-      <article>
-        <div class="ui top attached segment">
-          <h3 class="ui header">{{ .Title }}</h3>
-        </div>
-        <div class="ui bottom attached segment markdown-body">
-          {{ .Content | emojify }}
-        </div>
-      </article>
-    </section>
+  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    <article class="ui segment markdown-body">
+      <h3 class="ui header">{{ .Title }}</h3>
+      {{ .Content | emojify }}
+    </article>
+  </div>
   {{ end }}
 
-  <section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
-    <article>
-      <div class="ui top attached segment">
-        <h3 class="ui header">{{ i18n "socialLinks" }}</h3>
-      </div>
-      <div class="ui bottom attached segment">
-        {{ partial "socials.html" (dict "Site" .Site "IconSize" "large") }}
-      </div>
+  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    <article class="ui segment">
+      <h3 class="ui header">{{ i18n "socialLinks" }}</h3>
+      {{ partial "socials.html" (dict "Site" .Site "IconSize" "large") }}
     </article>
-  </section>
+  </div>
 
-  <section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
     {{ if .Site.Copyright }}
-      <footer class="ui segment">
-        {{ .Site.Copyright | safeHTML }}
-      </footer>
+    <article class="ui segment">
+      {{ .Site.Copyright | safeHTML }}
+    </article>
     {{ end }}
-  </section>
+  </div>
 
   {{ if findRE "posts/.+" .RelPermalink }}
   {{ else }}
-    {{ if and .Site.DisqusShortname  }}
-      <section class="sixteen wide mobile eight wide tablet eight wide computer column dream-column">
-        <footer class="ui segment">
-          <div id="disqus_thread"></div>
-          <script>
-            /**
-            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-            */
+  {{ if and .Site.DisqusShortname  }}
+  <div class="sixteen wide mobile eight wide tablet eight wide computer column dream-column">
+    <article class="ui segment">
+      <div id="disqus_thread"></div>
+      <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+        */
 
-            var disqus_config = function () {
-              this.page.url = '{{ .Permalink }}';  // Replace PAGE_URL with your page's canonical URL variable
-              this.page.identifier = '/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            };
+        var disqus_config = function () {
+          this.page.url = '{{ .Permalink }}';  // Replace PAGE_URL with your page's canonical URL variable
+          this.page.identifier = '/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
 
-            (function() { // DON'T EDIT BELOW THIS LINE
-              var d = document, s = d.createElement('script');
-              s.src = 'https://' + '{{ .Site.DisqusShortname }}' + '.disqus.com/embed.js';
-              s.setAttribute('data-timestamp', +new Date());
-              (d.head || d.body).appendChild(s);
-            })();
-          </script>
-          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        </footer>
-      </section>
-    {{ end }}
+        (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+          s.src = 'https://' + '{{ .Site.DisqusShortname }}' + '.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </article>
+  </div>
+  {{ end }}
   {{ end }}
 </div>

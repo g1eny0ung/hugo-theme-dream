@@ -1,5 +1,5 @@
 {{ if .paginator.HasPrev }}
-<article class="ui attached center aligned segment card dream-card">
+<article class="ui center aligned attached segment card dream-card">
   <div class="content">
     <div class="ui medium header">
       <a href="{{ .paginator.Prev.URL }}" title="{{ i18n "prevPage" }}">
@@ -11,7 +11,7 @@
 {{ end }}
 
 {{ if .paginator.HasNext }}
-<article class="ui attached center aligned segment card dream-card">
+<article class="ui center aligned attached segment card dream-card">
   <div class="content">
     <div class="ui medium header">
       <a href="{{ .paginator.Next.URL }}" title="{{ i18n "nextPage" }}">
