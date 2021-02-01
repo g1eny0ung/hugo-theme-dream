@@ -21,7 +21,7 @@ The new version brings some new design elements and bug fixes. When it stabilize
 
 All changes will be committed to the `master` branch. You can check the screenshot below to see the rough interface changes.
 
-For more detail, please refer to the [Release v2.0.0-beta]()
+For more detail, please refer to the [Release v2.0.0-beta](https://github.com/g1eny0ung/hugo-theme-dream/releases/tag/v2.0.0-beta)
 
 ## Note After v1.1.0
 
