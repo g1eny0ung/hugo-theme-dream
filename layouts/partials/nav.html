@@ -11,9 +11,11 @@
   <div class="item">
     <i class="large link home icon" title="{{ i18n "home" }}" onclick="window.location.href = '{{ .Site.BaseURL }}'"></i>
   </div>
+  {{ if or .Site.Params.backgroundDark .Site.Params.backgroundImageDark }}
   <div class="item">
     <i class="large link icon theme-switch" onclick="themeSwitch()"></i>
   </div>
+  {{ end }}
   {{ if .Site.Params.enableSearch }}
   <div class="item">
     <i class="large link search icon" onclick="toggleSearch()"></i>
