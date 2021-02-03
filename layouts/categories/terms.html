@@ -23,7 +23,7 @@
     {{ range .Data.Terms.Alphabetical }}
     {{ $termLink := printf "/%s/%s/" $data.Plural .Term | urlize }}
     <h3 class="ui header">
-      <a href="{{ $termLink }}">{{ .Term | humanize | title }}</a>&nbsp;
+      <a href="{{ $termLink | relLangURL }}">{{ .Term | humanize | title }}</a>&nbsp;
       {{- T "article" .Count -}}
     </h3>
     <ul>
