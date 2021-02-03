@@ -17,14 +17,14 @@ other = "归档"
 other = "所有标签"
 
 [tag]
-one = "标签"
+one = "1 标签"
 other = "{{ .Count }} 标签"
 
 [allCategories]
 other = "所有分类"
 
 [category]
-one = "分类"
+one = "1 分类"
 other = "{{ .Count }} 分类"
 
 [article]

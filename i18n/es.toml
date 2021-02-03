@@ -17,14 +17,14 @@ other = "Archivos"
 other = "Todas las etiquetas"
 
 [tag]
-one = "etiqueta"
+one = "1 etiqueta"
 other = "{{ .Count }} etiquetas"
 
 [allCategories]
 other = "Todas las categorías"
 
 [category]
-one = "categoría"
+one = "1 categoría"
 other = "{{ .Count }} categorías"
 
 [article]

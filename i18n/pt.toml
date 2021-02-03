@@ -17,14 +17,14 @@ other = "Arquivos"
 other = "Todas as tags"
 
 [tag]
-one = "tag"
+one = "1 tag"
 other = "{{ .Count }} tags"
 
 [allCategories]
 other = "Todas as categorias"
 
 [category]
-one = "categoria"
+one = "1 categoria"
 other = "{{ .Count }} categorias"
 
 [article]

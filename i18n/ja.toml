@@ -17,14 +17,14 @@ other = "アーカイブ"
 other = "タグ一覧"
 
 [tag]
-one = "タグ"
+one = "1 タグ"
 other = "{{ .Count }} タグ"
 
 [allCategories]
 other = "カテゴリー一覧"
 
 [category]
-one = "カテゴリー"
+one = "1 カテゴリー"
 other = "{{ .Count }} カテゴリー"
 
 [article]

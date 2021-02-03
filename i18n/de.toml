@@ -17,14 +17,14 @@ other = "Archiv"
 other = "Alle Tags"
 
 [tag]
-one = "tag"
+one = "1 tag"
 other = "{{ .Count }} Tags"
 
 [allCategories]
 other = "Alle Kategorien"
 
 [category]
-one = "Kategorie"
+one = "1 Kategorie"
 other = "{{ .Count }} Kategorien"
 
 [article]
