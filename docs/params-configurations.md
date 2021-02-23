@@ -62,6 +62,7 @@
   # options
   showSummaryCoverInPost = true
   # hasTwitterEmbed = true
+  # reversePostAndAside = true
 
   [params.advanced]
     customCSS = ["css/custom.css"]
@@ -237,6 +238,10 @@ As the param said, show summary cover in the single post page.
 If you have embedded twitter components generated from <https://publish.twitter.com/>, please set this param to `true` for better performance.
 
 After setting this, you can safely remove the async script in the generated code.
+
+### reversePostAndAside = true
+
+Reverse the position of the post content and its aside.
 
 ## Advanced
 

@@ -17,7 +17,7 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="ui relaxed grid dream-grid dream-grid-single">
+<div class="ui relaxed grid dream-grid dream-grid-single"{{ if .Site.Params.reversePostAndAside }}style="flex-direction: row-reverse;"{{ end }}>
   <aside class="sixteen wide mobile sixteen wide tablet four wide computer column dream-single-aside">
     <!-- len <nav id="TableOfContents"></nav> == 32 -->
     {{ if ge (len .TableOfContents) 33 }}
