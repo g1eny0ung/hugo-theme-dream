@@ -35,6 +35,7 @@ other = "{{ .Count }} articles"
 other = "Liens sociaux"
 
 [minuteRead]
+one = " minute de lecture"
 other = " minutes de lecture"
 
 [updateAt]
