@@ -40,11 +40,9 @@
 
   {{ if .Site.Taxonomies.tags }}
   <section class="ui attached center aligned segment dream-tags">
-    {{ range $name, $_ := .Site.Taxonomies.tags }}
-      {{ $link := printf "/tags/%s/" $name | urlize | relLangURL }}
-      {{ $title := $name | humanize | title }}
-      <a class="ui label" href="{{ $link }}" title="{{ $title }}">
-        {{ $title }}
+    {{ range .Site.Taxonomies.tags }}
+      <a class="ui label" href="{{ .Page.RelPermalink }}" title="{{ .Page.Title }}">
+        {{ .Page.Title }}
       </a>
     {{ end }}
   </section>
