@@ -1,7 +1,7 @@
 <header class="ui basic very padded segment dream-header">
   <div class="ui small circular image">
     {{ if isset .Site.Params "avatar" }}
-    <img src="{{ .Site.Params.avatar | relURL }}" />
+    <img src="{{ .Site.Params.avatar | relURL }}" alt="avatar" />
     {{ end }}
   </div>
 
