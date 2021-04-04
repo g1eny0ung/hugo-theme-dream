@@ -3,7 +3,6 @@
 {{ partial "header.html" . }}
 
 <div class="ui relaxed grid dream-grid">
-  <!-- For backward compatible, it's needed to filter out the about pages to prevent them from being rendered -->
   {{ $paginator := .Paginate (where .Site.RegularPages "Section" "!=" "about") }}
   {{ range $paginator.Pages }}
   <div class="sixteen wide mobile eight wide tablet eight wide computer four wide large screen four wide widescreen column dream-column">
