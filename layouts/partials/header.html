@@ -9,7 +9,7 @@
     <h1 class="ui medium header">
       {{- if .Site.Params.headerTitle -}}{{ .Site.Params.headerTitle }}{{ else }}{{ .Site.Params.author }}{{ T "blogAlias" }}{{- end -}}
       <div class="sub header">
-        {{- .Site.Params.motto -}}
+        {{- .Site.Params.motto | safeHTML -}}
       </div>
     </h1>
 
