@@ -58,28 +58,36 @@
               {{ .Site.Params.author }}
             {{ end }}
 
-            | {{ if eq .Site.Language.Lang "zh" }}
-                {{ index .Site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
-              {{ else if eq .Site.Language.Lang "es" }}
-                {{ index .Site.Data.es.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
-              {{ else if eq .Site.Language.Lang "pt" }}
-                {{ index .Site.Data.pt.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
+            | {{ if .Site.Params.Experimental.jsDate }}
+                <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
               {{ else }}
-                {{ .Date.Format "Monday, Jan 2, 2006" }}
+                {{ if eq .Site.Language.Lang "zh" }}
+                  {{ index .Site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
+                {{ else if eq .Site.Language.Lang "es" }}
+                  {{ index .Site.Data.es.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
+                {{ else if eq .Site.Language.Lang "pt" }}
+                  {{ index .Site.Data.pt.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
+                {{ else }}
+                  {{ .Date.Format "Monday, Jan 2, 2006" }}
+                {{ end }}
               {{ end }}
 
             | {{ .ReadingTime }}{{ i18n "minuteRead" }}
 
             {{ if ne .Params.nolastmod true }}
             | {{ i18n "updateAt" }}
-              {{ if eq .Site.Language.Lang "zh" }}
-                {{ index .Site.Data.zh.Weekday (printf "%d" .Lastmod.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Day }} 日，{{ .Lastmod.Year }} 年
-              {{ else if eq .Site.Language.Lang "es" }}
-                {{ index .Site.Data.es.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
-              {{ else if eq .Site.Language.Lang "pt" }}
-                {{ index .Site.Data.pt.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
+              {{ if .Site.Params.Experimental.jsDate }}
+                <span data-format="luxon">{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}</span>
               {{ else }}
-                {{ .Lastmod.Format "Monday, Jan 2, 2006" }}
+                {{ if eq .Site.Language.Lang "zh" }}
+                  {{ index .Site.Data.zh.Weekday (printf "%d" .Lastmod.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Day }} 日，{{ .Lastmod.Year }} 年
+                {{ else if eq .Site.Language.Lang "es" }}
+                  {{ index .Site.Data.es.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
+                {{ else if eq .Site.Language.Lang "pt" }}
+                  {{ index .Site.Data.pt.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
+                {{ else }}
+                  {{ .Lastmod.Format "Monday, Jan 2, 2006" }}
+                {{ end }}
               {{ end }}
             {{ end }}
           </div>
@@ -145,8 +153,12 @@
 {{ end }}
 
 {{ define "js" }}
-<script src="{{ "/js/html2canvas.min.js" | relURL }}"></script>
-<script src="{{ "/js/post.js" | relURL }}"></script>
+
+{{ if .Site.Params.Experimental.jsDate }}
+<script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0/build/global/luxon.min.js"></script>
+
+{{ partial "luxon.html" . }}
+{{ end }}
 
 {{ if .Site.Params.highlightjs }}
 <script src="{{ if .Site.Params.highlightjsCDN }}{{ .Site.Params.highlightjsCDN }}{{ else }}{{ "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js" }}{{ end}}"></script>
@@ -158,7 +170,8 @@
 {{ end }}
 
 {{ partial "highlight.html" . }}
-
 {{ end }}
 
+<script src="{{ "/js/html2canvas.min.js" | relURL }}" defer></script>
+<script src="{{ "/js/post.js" | relURL }}" defer></script>
 {{ end }}

@@ -1,0 +1,11 @@
+<script>
+  format()
+
+  function format() {
+    $('span[data-format="luxon"]').each(function () {
+      var date = $(this).text()
+
+      $(this).text(luxon.DateTime.fromISO(date, { locale: {{ .Site.Language.Lang }} }).toFormat({{ .Site.Params.Experimental.jsDateFormat | default "yyyy-MM-dd" }}))
+    })
+  }
+</script>

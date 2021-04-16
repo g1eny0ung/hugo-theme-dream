@@ -17,6 +17,13 @@
 {{ end }}
 
 {{ define "js" }}
+
+{{ if .Site.Params.Experimental.jsDate }}
+<script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0/build/global/luxon.min.js"></script>
+
+{{ partial "luxon.html" . }}
+{{ end }}
+
 <script src="{{ "/js/imagesloaded.pkgd.min.js" | relURL }}"></script>
 <script src="{{ "/js/masonry.pkgd.min.js" | relURL }}"></script>
 <script src="{{ "/js/grid.js" | relURL }}"></script>
