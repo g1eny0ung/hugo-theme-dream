@@ -67,6 +67,10 @@
   [params.advanced]
     customCSS = ["css/custom.css"]
     customJS = []
+
+  [params.experimental]
+    jsDate = true
+    jsDateFormat = "yyyy年MM月dd日"
 ```
 
 > For more details with dark mode related params, see [Dark Mode](dark-mode.md).
@@ -245,7 +249,7 @@ Reverse the position of the post content and its aside.
 
 ## Advanced
 
-> Note: Generally, the following advanced parameters are not necessary to be set. Their main purpose is to further customize the entire theme.
+> Note: generally, the following advanced parameters are not necessary to be set. Their main purpose is to further customize the entire theme.
 
 ### customCSS = ["css/custom.css"]
 
@@ -258,3 +262,23 @@ For example, create a folder named `css` under `static`, then add `custom.css` i
 Add your custom JS files.
 
 Same as `customCSS`, except all custom JS files will be placed after the theme JS files.
+
+## Experimental
+
+> Note:
+>
+> The experimental parameters are often not perfect. They have advantages as well as certain disadvantages.
+
+### jsDate
+
+Use [Luxon](https://moment.github.io/luxon/index.html) to replace the built-in [.Format](https://gohugo.io/functions/format/) function. This allows you to define the time format more flexibly.
+
+You may not want to use this param if you want the final date is generated at compile time. After setting this param, the date will output as an [RFC3339](https://en.wikipedia.org/wiki/ISO_8601) format and all rest format operations will be executed after the page is loaded.
+
+For how to define the format, see below.
+
+### jsDateFormat
+
+Refer to this page (<https://moment.github.io/luxon/docs/manual/formatting.html>) to define your date format.
+
+For example, `yyyy-MM-dd` represents a date format like `2021-04-17`.

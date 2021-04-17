@@ -36,6 +36,10 @@ collections:
       - label: "Tags"
         name: "tags"
         widget: "list"
+      - label: "No Last Mod"
+        name: "nolastmod"
+        widget: "boolean"
+        default: false
 
       - label: "Body"
         name: "body"
