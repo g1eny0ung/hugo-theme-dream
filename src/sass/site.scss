@@ -213,33 +213,39 @@ body {
 }
 
 .dream-single {
-  .cover {
-    padding: 0;
+  h1.ui.large.header {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
 
-    .cover-img {
-      height: 256px;
-      background-position: center;
-      background-size: cover;
-      border-radius: inherit;
+    .sub.header {
+      display: flex;
+      justify-content: space-between;
 
-      @media screen and (max-width: 768px) {
-        height: 128px;
+      @media screen and (max-width: 1024px) {
+        flex-direction: column;
+        justify-content: unset;
       }
     }
   }
 
-  h1.ui.large.header {
-    margin-top: 1rem;
-  }
-
-  .main {
-    margin-top: 2rem;
+  .cover {
+    margin-bottom: 1.5rem;
   }
 
   .ui.inverted.segment {
     blockquote {
       color: $white60;
     }
+  }
+}
+
+.dream-share {
+  a {
+    text-decoration: none !important;
+  }
+
+  @media screen and (max-width: 1024px) {
+    margin-top: 0.5rem;
   }
 }
 

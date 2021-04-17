@@ -17,84 +17,79 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="ui relaxed grid dream-grid dream-grid-single"{{ if .Site.Params.reversePostAndAside }}style="flex-direction: row-reverse;"{{ end }}>
-  <aside class="sixteen wide mobile sixteen wide tablet four wide computer column dream-single-aside">
-    <!-- len <nav id="TableOfContents"></nav> == 32 -->
-    {{ if ge (len .TableOfContents) 33 }}
+<div class="ui relaxed centered grid dream-grid dream-grid-single"{{ if .Site.Params.reversePostAndAside }}style="flex-direction: row-reverse;"{{ end }}>
+  <!-- len <nav id="TableOfContents"></nav> == 32 -->
+  {{ if ge (len .TableOfContents) 33 }}
+  <aside class="sixteen wide mobile sixteen wide tablet three wide computer column dream-single-aside">
     <div class="ui segment toc">
       {{ .TableOfContents }}
     </div>
-    {{ end }}
-    <div class="ui segment actions">
-      <button
-        class="ui circular icon button save-as-image"
-        title="{{ i18n "saveAsImage" }}"
-        onclick="savePostAsImg()">
-        <i class="save icon"></i>
-      </button>
-
-      {{ partial "share.html" . }}
-    </div>
   </aside>
-  <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single" id="dream-save-post-as-img">
-    {{ if and .Params.Cover .Site.Params.showSummaryCoverInPost }}
-    <div class="ui top attached segment cover">
-      <div class="cover-img" style="background-image: url({{ .Params.Cover }});"></div>
-    </div>
-    {{ end }}
-    <section class="ui {{ if not .Site.Params.showSummaryCoverInPost }}top {{ end }}attached segment">
+  {{ end }}
+  <div class="sixteen wide mobile sixteen wide tablet ten wide computer column markdown-body dream-single" id="dream-save-post-as-img">
+    <section class="ui top attached segment">
       <header>
         <h1 class="ui large header">
           {{- .Title -}}
           <div class="sub header">
-            @
-            {{ if isset .Params "author" }}
-              {{ if isset .Params "authorlink" }}
-                <a href="{{ .Params.authorlink }}" target="_blank">{{ .Params.author }}</a>
-              {{ else }}
-                {{ .Params.author }}
-              {{ end }}
-            {{ else }}
-              {{ .Site.Params.author }}
-            {{ end }}
-
-            | {{ if .Site.Params.Experimental.jsDate }}
-                <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
-              {{ else }}
-                {{ if eq .Site.Language.Lang "zh" }}
-                  {{ index .Site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
-                {{ else if eq .Site.Language.Lang "es" }}
-                  {{ index .Site.Data.es.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
-                {{ else if eq .Site.Language.Lang "pt" }}
-                  {{ index .Site.Data.pt.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
+            <div class="left">
+              @
+              {{ if isset .Params "author" }}
+                {{ if isset .Params "authorlink" }}
+                  <a href="{{ .Params.authorlink }}" target="_blank">{{ .Params.author }}</a>
                 {{ else }}
-                  {{ .Date.Format "Monday, Jan 2, 2006" }}
+                  {{ .Params.author }}
+                {{ end }}
+              {{ else }}
+                {{ .Site.Params.author }}
+              {{ end }}
+
+              | {{ if .Site.Params.Experimental.jsDate }}
+                  <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
+                {{ else }}
+                  {{ if eq .Site.Language.Lang "zh" }}
+                    {{ index .Site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
+                  {{ else if eq .Site.Language.Lang "es" }}
+                    {{ index .Site.Data.es.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
+                  {{ else if eq .Site.Language.Lang "pt" }}
+                    {{ index .Site.Data.pt.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
+                  {{ else }}
+                    {{ .Date.Format "Monday, Jan 2, 2006" }}
+                  {{ end }}
+                {{ end }}
+
+              | {{ .ReadingTime }}{{ i18n "minuteRead" }}
+
+              {{ if ne .Params.nolastmod true }}
+              | {{ i18n "updateAt" }}
+                {{ if .Site.Params.Experimental.jsDate }}
+                  <span data-format="luxon">{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}</span>
+                {{ else }}
+                  {{ if eq .Site.Language.Lang "zh" }}
+                    {{ index .Site.Data.zh.Weekday (printf "%d" .Lastmod.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Day }} 日，{{ .Lastmod.Year }} 年
+                  {{ else if eq .Site.Language.Lang "es" }}
+                    {{ index .Site.Data.es.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
+                  {{ else if eq .Site.Language.Lang "pt" }}
+                    {{ index .Site.Data.pt.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
+                  {{ else }}
+                    {{ .Lastmod.Format "Monday, Jan 2, 2006" }}
+                  {{ end }}
                 {{ end }}
               {{ end }}
+            </div>
 
-            | {{ .ReadingTime }}{{ i18n "minuteRead" }}
-
-            {{ if ne .Params.nolastmod true }}
-            | {{ i18n "updateAt" }}
-              {{ if .Site.Params.Experimental.jsDate }}
-                <span data-format="luxon">{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}</span>
-              {{ else }}
-                {{ if eq .Site.Language.Lang "zh" }}
-                  {{ index .Site.Data.zh.Weekday (printf "%d" .Lastmod.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Day }} 日，{{ .Lastmod.Year }} 年
-                {{ else if eq .Site.Language.Lang "es" }}
-                  {{ index .Site.Data.es.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
-                {{ else if eq .Site.Language.Lang "pt" }}
-                  {{ index .Site.Data.pt.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
-                {{ else }}
-                  {{ .Lastmod.Format "Monday, Jan 2, 2006" }}
-                {{ end }}
-              {{ end }}
-            {{ end }}
+            {{ partial "share.html" . }}
           </div>
         </h1>
       </header>
 
-      <article class="main">{{ .Content | emojify }}</article>
+      <article class="main">
+        {{ if and .Params.Cover .Site.Params.showSummaryCoverInPost }}
+        <img class="cover" src="{{ .Params.Cover }}" />
+        {{ end }}
+
+        {{ .Content | emojify }}
+      </article>
     </section>
 
     {{ if .Site.DisqusShortname }}
