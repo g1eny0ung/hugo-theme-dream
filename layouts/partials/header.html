@@ -28,13 +28,58 @@
     </article>
 
     {{ if .Site.Taxonomies.tags }}
-    <article class="dream-tags">
+    {{ $tags := slice }}
+    {{ $first := slice }}
+    {{ $rest := slice }}
     {{ range .Site.Taxonomies.tags }}
-      <a class="ui label" href="{{ .Page.RelPermalink }}" title="{{ .Page.Title }}">
-        {{ .Page.Title }}
-      </a>
+      {{ $tags = $tags | append (dict "title" .Page.Title "link" .Page.RelPermalink) }}
     {{ end }}
-    </article>
+    {{ $sum := len $tags }}
+
+    {{ $maxTags := .Site.Params.maxTags }}
+
+    {{ if $maxTags }}
+
+    {{ $first = first $maxTags $tags }}
+    {{ $rest = last (sub $sum $maxTags) $tags }}
+
+    <div class="tags-with-dropdown">
+      <div class="ui accordion">
+        <div class="title">
+          <div class="ui horizontal list">
+            <a class="item dropdown" href="#">
+              <i class="chevron right icon dropdown-icon"></i>
+            </a>
+          </div>
+          <div class="dream-tags">
+          {{ range $tag := $first }}
+          {{ $title := index $tag "title" }}
+          {{ $link := index $tag "link" }}
+            <a class="ui label" href="{{ $link }}" title="{{ $title }}">
+              {{ $title }}
+            </a>
+          {{ end }}
+          </div>
+        </div>
+        <div class="content">
+    {{ else }}
+    {{ $rest = $tags }}
+    {{ end }}
+          <div class="dream-tags"{{ if $maxTags }} style="margin-left: 1.5rem;"{{ end}}>
+          {{ range $tag := $rest }}
+          {{ $title := index $tag "title" }}
+          {{ $link := index $tag "link" }}
+            <a class="ui label" href="{{ $link }}" title="{{ $title }}">
+              {{ $title }}
+            </a>
+          {{ end }}
+          </div>
+    {{ if $maxTags }}
+        </div>
+      </div>
+    </div>
+    {{ end }}
+
     {{ end }}
   </div>
 </header>

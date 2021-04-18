@@ -115,10 +115,14 @@ body {
 }
 
 .dream-header {
-  @include VHCenter;
+  display: flex;
+  justify-content: center;
 
-  .content {
-    max-width: 512px;
+  > .content {
+    $width: 512px;
+
+    width: $width;
+    max-width: $width;
     margin-left: 2rem;
   }
 
@@ -126,8 +130,36 @@ body {
     line-height: 1rem;
   }
 
-  .dream-tags .ui.label {
-    margin-top: 1rem;
+  .tags-with-dropdown {
+    .title {
+      display: flex;
+    }
+
+    .title,
+    .content {
+      padding: 0 !important;
+    }
+
+    .ui.list {
+      margin-top: 1rem;
+      margin-right: 0.375rem;
+    }
+
+    .dropdown-icon {
+      position: relative;
+      top: 2px;
+      right: 1px;
+      padding: 0 !important;
+      text-decoration: none !important;
+      transform-origin: center;
+      transition: transform 0.5s ease !important;
+    }
+  }
+
+  .dream-tags {
+    .ui.label {
+      margin-top: 1rem;
+    }
   }
 
   @media screen and (max-width: 768px) {
