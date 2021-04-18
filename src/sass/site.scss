@@ -164,11 +164,20 @@ body {
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
+    align-items: center;
 
-    .content {
+    > .content {
+      width: 100%;
+      max-width: 100%;
       margin-top: 2rem;
       margin-left: unset;
       text-align: center;
+    }
+
+    .tags-with-dropdown {
+      .title {
+        justify-content: center;
+      }
     }
   }
 }
