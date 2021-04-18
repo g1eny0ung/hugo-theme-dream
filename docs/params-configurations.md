@@ -23,6 +23,7 @@
   avatar = "/me/yy.jpg"
   headerTitle = "g1eny0ung 的博客"
   motto = "与其感慨路难行，不如马上出发。"
+  # maxTags = 5
   # categoriesLimitInHeader = 6 # deprecated
   # headerBottomText = "" # deprecated
 
@@ -156,6 +157,10 @@ So this param aims to replace the legacy `blogAlias` in i18n files. If this para
 ### motto = "与其感慨路难行，不如马上出发。"
 
 Used in Header.
+
+### maxTags = 5
+
+Limit the number of labels displayed visually. The hidden tags will be displayed in the form of an [Accordion](https://semantic-ui.com/modules/accordion.html).
 
 ### categoriesLimitInHeader = 6
 
