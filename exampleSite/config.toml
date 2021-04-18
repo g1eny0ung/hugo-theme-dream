@@ -27,7 +27,7 @@ theme = "hugo-theme-dream"
 
   author = "Yue Yang"
   # description = ""
-  avatar = "/img/avatar.jpg"
+  avatar = "/img/avatar.jpeg"
   # headerTitle = ""
   motto = "Motto"
   # maxTags = 5
