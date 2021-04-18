@@ -30,6 +30,7 @@ theme = "hugo-theme-dream"
   avatar = "/img/avatar.jpg"
   # headerTitle = ""
   motto = "Motto"
+  # maxTags = 5
   # categoriesLimitInHeader = 6 # deprecated
   # headerBottomText = "" # deprecated
 
@@ -74,3 +75,7 @@ theme = "hugo-theme-dream"
   # [params.advanced]
   #   customCSS = ["css/custom.css"]
   #   customJS = []
+
+  # [params.experimental]
+  #   jsDate = true
+  #   jsDateFormat = "yyyy年MM月dd日"
