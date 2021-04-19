@@ -64,6 +64,7 @@
   showSummaryCoverInPost = true
   # hasTwitterEmbed = true
   # reversePostAndAside = true
+  # shareInAside = true
 
   [params.advanced]
     customCSS = ["css/custom.css"]
@@ -251,6 +252,10 @@ After setting this, you can safely remove the async script in the generated code
 ### reversePostAndAside = true
 
 Reverse the position of the post content and its aside.
+
+### shareInAside = true
+
+Display share buttons in aside, not under the post title.
 
 ## Advanced
 

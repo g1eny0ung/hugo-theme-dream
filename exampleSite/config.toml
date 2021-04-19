@@ -71,6 +71,7 @@ theme = "hugo-theme-dream"
   # showSummaryCoverInPost = true
   # hasTwitterEmbed = true
   # reversePostAndAside = true
+  # shareInAside = true
 
   # [params.advanced]
   #   customCSS = ["css/custom.css"]

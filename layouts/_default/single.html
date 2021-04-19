@@ -19,11 +19,23 @@
 {{ define "main" }}
 <div class="ui relaxed centered grid dream-grid dream-grid-single"{{ if .Site.Params.reversePostAndAside }}style="flex-direction: row-reverse;"{{ end }}>
   <!-- len <nav id="TableOfContents"></nav> == 32 -->
-  {{ if ge (len .TableOfContents) 33 }}
+  {{ $showTOC := ge (len .TableOfContents) 33 }}
+  {{ $shareInAside := .Site.Params.shareInAside }}
+  {{ $showAside := or $showTOC $shareInAside }}
+
+  {{ if $showAside }}
   <aside class="sixteen wide mobile sixteen wide tablet three wide computer column dream-single-aside">
+  {{ end }}
+    {{ if $showTOC }}
     <div class="ui segment toc">
       {{ .TableOfContents }}
     </div>
+    {{ end }}
+
+    {{ if $shareInAside }}
+    {{ partial "share1.html" . }}
+    {{ end }}
+  {{ if $showAside }}
   </aside>
   {{ end }}
   <div class="sixteen wide mobile sixteen wide tablet ten wide computer column markdown-body dream-single" id="dream-save-post-as-img">
@@ -78,7 +90,9 @@
               {{ end }}
             </div>
 
+            {{ if not $shareInAside }}
             {{ partial "share.html" . }}
+            {{ end }}
           </div>
         </h1>
       </header>
