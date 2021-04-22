@@ -41,8 +41,7 @@
   {{ end }}
 
   {{ if .Site.Params.darkLinkColor }}
-  .inverted a:not(.ui.button),
-  .inverted a:not(.ui.button):hover {
+  .inverted a:not(.ui.button) {
      color: {{ .Site.Params.darkLinkColor }} !important;
   }
   {{ end }}
