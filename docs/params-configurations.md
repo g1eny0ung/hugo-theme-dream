@@ -153,7 +153,7 @@ Used in Header.
 
 Dream was originally intended to be used only as a blog theme. But with continuous development, people also use Dream in other places.
 
-So this param aims to replace the legacy `blogAlias` in i18n files. If this param is set, the **header title** will use it rather than author + blogAlias (e.g. xxx's blog).
+~~So this param aims to replace the legacy `blogAlias` in i18n files. If this param is set, the **header title** will use it rather than author + blogAlias (e.g. xxx's blog).~~ (`blogAlias` was deprecated and removed at 2021-05-06)
 
 ### motto = "与其感慨路难行，不如马上出发。"
 

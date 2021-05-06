@@ -7,7 +7,11 @@
 
   <div class="content">
     <h1 class="ui medium header">
-      {{- if .Site.Params.headerTitle -}}{{ .Site.Params.headerTitle }}{{ else }}{{ .Site.Params.author }}{{ T "blogAlias" }}{{- end -}}
+      {{- if .Site.Params.headerTitle -}}
+        {{- .Site.Params.headerTitle -}}
+      {{- else -}}
+        Set headerTitle in the config to display
+      {{- end -}}
       <div class="sub header">
         {{- .Site.Params.motto | safeHTML -}}
       </div>
