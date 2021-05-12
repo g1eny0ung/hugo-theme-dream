@@ -19,6 +19,6 @@ These will be rendered as:
 ```html
 <h2 class="ui header">
   归档
-  <div class="ui grey sub header">所有文章的归档。</div>
+  <span class="ui grey sub header">所有文章的归档。</span>
 </h1>
 ```

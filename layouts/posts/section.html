@@ -10,7 +10,7 @@
   <article class="ui segment dream-posts-section">
     <h2 class="ui header">
       {{ .Title }}
-      <div class="ui grey sub header">{{ .Content }}</div>
+      <span class="ui grey sub header">{{ .Content }}</span>
     </h2>
 
     {{ range .Data.Pages.GroupByDate "2006" }}

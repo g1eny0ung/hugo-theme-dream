@@ -6,7 +6,7 @@
     {{ if or .Site.Params.backgroundDark .Site.Params.backgroundImageDark }}
       <h1 class="ui header">
         Oops...You are lost in dream.
-        <div class="sub header">Don't worry though, click the button below to wake up.</div>
+        <span class="sub header">Don't worry though, click the button below to wake up.</span>
       </h1>
       <p>
         <button class="ui secondary button" onclick="window.location.href = '/'">{{ i18n "backToHome" }}</button>
@@ -14,7 +14,7 @@
     {{ else if .Site.Params.dark404 }}
       <h1 class="ui inverted header">
         Oops...You are lost in dream.
-        <div class="sub header">Don't worry though, click the button below to wake up.</div>
+        <span class="sub header">Don't worry though, click the button below to wake up.</span>
       </h1>
       <p>
         <button class="ui inverted button" onclick="window.location.href = '/'">{{ i18n "backToHome" }}</button>
@@ -22,7 +22,7 @@
     {{ else }}
       <h1 class="ui header">
         Oops...You are lost in dream.
-        <div class="sub header">Don't worry though, click the button below to wake up.</div>
+        <span class="sub header">Don't worry though, click the button below to wake up.</span>
       </h1>
       <p>
         <button class="ui secondary button" onclick="window.location.href = '/'">{{ i18n "backToHome" }}</button>

@@ -10,13 +10,13 @@
   <article class="ui segment dream-tags-section">
     <h2 class="ui header">
       {{- T "allTags" -}}
-      <div class="ui grey sub header">
+      <span class="ui grey sub header">
         {{ if eq (len .Data.Terms) 1 }}
         {{- T "tag" 1 -}}
         {{ else }}
         {{- T "tag" (len .Data.Terms) -}}
         {{ end }}
-      </div>
+      </span>
     </h2>
 
     {{ range .Data.Terms.Alphabetical }}

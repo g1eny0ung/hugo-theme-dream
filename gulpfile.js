@@ -1,9 +1,9 @@
 const { src, dest, watch, parallel } = require('gulp')
-const sass = require('gulp-sass')
+const sass = require('gulp-dart-sass')
 const babel = require('gulp-babel')
 const uglify = require('gulp-uglify')
 
-sass.compiler = require('node-sass')
+sass.compiler = require('sass')
 
 const StylesEntry = './src/sass/**/*.scss'
 const StylesOutput = './static/css'
@@ -14,7 +14,7 @@ const sassProd = () =>
   src(StylesEntry)
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
     .pipe(dest(StylesOutput))
-const sassWatch = () => watch(sassProd, sassDev)
+const sassWatch = () => watch(StylesEntry, sassProd)
 
 const jsProd = () =>
   src(JsEntry)
@@ -27,5 +27,5 @@ const jsProd = () =>
     .pipe(dest(JsOutput))
 const jsWatch = () => watch(JsEntry, jsProd)
 
-exports.watch = parallel(sassWatch, jsWatch)
 exports.prod = parallel(sassProd, jsProd)
+exports.watch = parallel(sassWatch, jsWatch)

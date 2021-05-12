@@ -43,8 +43,8 @@
       <header>
         <h1 class="ui large header">
           {{- .Title -}}
-          <div class="sub header">
-            <div class="left">
+          <span class="sub header">
+            <span class="left">
               @
               {{ if isset .Params "author" }}
                 {{ if isset .Params "authorlink" }}
@@ -88,12 +88,12 @@
                   {{ end }}
                 {{ end }}
               {{ end }}
-            </div>
+            </span>
 
             {{ if not $shareInAside }}
             {{ partial "share.html" . }}
             {{ end }}
-          </div>
+          </span>
         </h1>
       </header>
 
