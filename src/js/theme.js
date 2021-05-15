@@ -118,6 +118,10 @@ const darkFooter = () => {
   $('footer.ui.segment').toggleClass(dark)
 }
 
+const darkSearch = () => {
+  $('#dream-search').toggleClass(dark)
+}
+
 function toggleDark() {
   dark404()
   darkBackground()
@@ -131,6 +135,7 @@ function toggleDark() {
   darkCategoriesSection()
   darkBack()
   darkFooter()
+  darkSearch()
 }
 
 const setThemeForUtterances = () => {

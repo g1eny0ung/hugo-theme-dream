@@ -322,7 +322,6 @@ body {
   left: 50%;
   width: 30%;
   display: none;
-  border: 1px solid #555;
   transform: translateX(-50%);
 
   @media screen and (max-width: 768px) {
@@ -333,31 +332,28 @@ body {
     width: calc(100% - 2rem);
   }
 
-  input {
-    color: #fff;
+  &.inverted {
+    border: 1px solid #555;
   }
 
-  .results {
+  &.inverted input {
+    color: $white87;
+  }
+
+  &.inverted .results {
     background: #1b1c1d;
-    border-color: #555;
-  }
+    border: none;
 
-  .result,
-  .message.empty {
-    border-color: rgba(#000, 0.1);
-
-    &:hover,
-    &.active {
-      background: rgba(#000, 0.1);
+    .result:hover {
+      background: #202020;
     }
 
-    .title,
-    .header {
-      color: #fff;
+    .title {
+      color: $white87 !important;
     }
 
     .description {
-      color: $white87;
+      color: $white60 !important;
     }
   }
 }

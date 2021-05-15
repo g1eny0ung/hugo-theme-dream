@@ -1,4 +1,4 @@
-<div class="ui inverted segment" id="dream-search">
+<div class="ui segment" id="dream-search">
   <div class="ui search">
     <div class="ui transparent input">
       <input class="prompt" type="text" placeholder="{{ i18n "search" }}" />
@@ -12,7 +12,7 @@
       $('.ui.search').search({
         source: data,
         searchFields: ['title'],
-        showNoResults: true,
+        showNoResults: false,
       })
     })
   })
