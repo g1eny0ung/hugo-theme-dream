@@ -70,7 +70,7 @@
                   {{ end }}
                 {{ end }}
 
-              | {{ .ReadingTime }}{{ i18n "minuteRead" }}
+              | {{ .ReadingTime }}{{ i18n "minuteRead" .ReadingTime }}
 
               {{ if ne .Params.nolastmod true }}
               | {{ i18n "updateAt" }}
