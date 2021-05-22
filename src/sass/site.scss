@@ -4,9 +4,10 @@ body {
   background-position: center;
   background-size: cover;
 
-  .os-host > .os-padding > .os-viewport > .os-content {
-    height: auto !important;
-  }
+  // https://github.com/KingSora/OverlayScrollbars/issues/89
+  // .os-host > .os-padding > .os-viewport > .os-content {
+  //   height: auto !important;
+  // }
 }
 
 .flip-container {
@@ -308,6 +309,12 @@ body {
   li {
     margin: 0.5rem 0;
   }
+}
+
+.dream-scroll-to-top {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
 }
 
 .utterances-comments {

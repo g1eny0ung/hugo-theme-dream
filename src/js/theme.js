@@ -42,11 +42,7 @@ const darkHeaderElements = () => {
 }
 
 const darkCards = () => {
-  const cards = $('.dream-card')
-
-  if (cards.length) {
-    cards.toggleClass(dark)
-  }
+  $('.dream-card').toggleClass(dark)
 }
 
 const darkSingle = () => {
@@ -66,52 +62,34 @@ const darkSingle = () => {
     $('.toc').toggleClass(dark)
     $('.actions').toggleClass(dark)
   }
+
+  $('.dream-scroll-to-top').toggleClass(dark)
 }
 
 const darkTables = () => {
-  const tables = $('.dream-single table')
-
-  if (tables.length) {
-    tables.map(function () {
-      if (this.style.color) {
-        this.style.color = ''
-      } else {
-        this.style.color = 'black'
-      }
-    })
-  }
+  $('.dream-single table').map(function () {
+    if (this.style.color) {
+      this.style.color = ''
+    } else {
+      this.style.color = 'black'
+    }
+  })
 }
 
 const darkPostsSection = () => {
-  const segment = $('.ui.segment.dream-posts-section')
-
-  if (segment.length) {
-    segment.toggleClass(dark)
-  }
+  $('.ui.segment.dream-posts-section').toggleClass(dark)
 }
 
 const darkTagsSection = () => {
-  const segment = $('.ui.segment.dream-tags-section')
-
-  if (segment.length) {
-    segment.toggleClass(dark)
-  }
+  $('.ui.segment.dream-tags-section').toggleClass(dark)
 }
 
 const darkCategoriesSection = () => {
-  const segment = $('.ui.segment.dream-categories-section')
-
-  if (segment.length) {
-    segment.toggleClass(dark)
-  }
+  $('.ui.segment.dream-categories-section').toggleClass(dark)
 }
 
 const darkBack = () => {
-  const segments = $('.dream-back .ui.segment')
-
-  if (segments.length) {
-    segments.toggleClass(dark)
-  }
+  $('.dream-back .ui.segment').toggleClass(dark)
 }
 
 const darkFooter = () => {

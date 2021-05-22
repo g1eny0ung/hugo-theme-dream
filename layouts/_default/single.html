@@ -169,6 +169,8 @@
 {{ partial "luxon.html" . }}
 {{ end }}
 
+<script src="{{ "/js/scrollToTop.js" | relURL }}"></script>
+
 {{ if .Site.Params.highlightjs }}
 <script src="{{ if .Site.Params.highlightjsCDN }}{{ .Site.Params.highlightjsCDN }}{{ else }}{{ "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js" }}{{ end}}"></script>
 

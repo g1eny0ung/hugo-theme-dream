@@ -9,12 +9,15 @@ $(document).ready(() => {
       : 'os-theme-dark'
   }
 
-  $('body').overlayScrollbars({
-    className: setClassName(),
-    scrollbars: {
-      autoHide: 'scroll',
-    },
-  })
+  window.overlayScrollbarsInstance = $('body')
+    .overlayScrollbars({
+      className: setClassName(),
+      scrollbars: {
+        autoHide: 'scroll',
+        clickScrolling: true,
+      },
+    })
+    .overlayScrollbars()
 
   initFilp()
 })
