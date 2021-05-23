@@ -10,6 +10,12 @@
 
     {{ block "css" . }} {{ end }}
 
+    <!--  文章页字数与篇数统计  -->
+    {{$scratch := newScratch}}
+    {{ range (where .Site.Pages "Kind" "page" )}}
+      {{$scratch.Add "total" .WordCount}}
+    {{ end }}
+    
     {{ range .Site.Params.Advanced.customCSS }}
     <link rel="stylesheet" href="{{ . | relURL }}" />
     {{ end }}
@@ -24,6 +30,7 @@
             {{ block "main" . }} {{ end }}
 
             <footer class="ui basic center aligned segment" style="background-color: transparent;">
+              <div class="zishu">共 {{ len (where .Site.RegularPages "Section" "posts") }} 篇文章 | 总计 {{$scratch.Get "total" }} 字</div>
               {{ if .Site.Params.siteStartYear }}
               <p>© {{ if eq now.Year .Site.Params.siteStartYear }}{{ now.Year }}{{ else }}{{ .Site.Params.siteStartYear }} - {{ now.Year }}{{ end }} {{ .Site.Title }}</p>
               {{ else }}
