@@ -95,7 +95,13 @@ Then open your `config.toml` and edit to `theme = "dream"` and save.
 
 [My Blog](https://g1eny0ung.site)
 
-[My Blog's Source Code](https://github.com/g1eny0ung/blog)
+[My Blog's Source Code](https://github.com/g1eny0ung/blog)  
+  
+[使用 Hugo + Dream主题搭建个人Blog](/posts/hugo-blog/ "Hugo搭建个人Blog")  
+  
+[Hugo 启用 Twikoo 评论系统](/posts/hugo-twikoo/ "Hugo 启用 Twikoo 评论系统")  
+  
+[Hugo 设置不同页面共用一套 Twikoo 评论](/posts/hugo-gongyong-twikoo/ "Hugo 设置不同页面共用一套 Twikoo 评论")  
 
 ## Publish
 
