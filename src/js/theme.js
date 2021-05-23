@@ -25,7 +25,11 @@ const darkBackground = () => {
 
 const darkNavMenu = () => {
   if (window.backgroundDark || window.backgroundImageDark) {
-    $('nav.dream-menu').toggleClass(dark)
+    $('.dream-nav').toggleClass(dark)
+  }
+
+  if (window.fixedNav && window.overlayScrollbarsInstance.scroll().position.y > 0) {
+    $('.dream-nav').css('background', window.isDark === 'y' ? window.backgroundDark : window.background)
   }
 }
 
@@ -101,8 +105,8 @@ const darkSearch = () => {
 }
 
 function toggleDark() {
-  dark404()
   darkBackground()
+  dark404()
   darkNavMenu()
   darkHeaderElements()
   darkCards()

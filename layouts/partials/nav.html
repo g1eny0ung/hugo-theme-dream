@@ -1,9 +1,9 @@
 {{ if or .Site.Params.backgroundDark .Site.Params.backgroundImageDark }}
-<nav class="ui secondary menu dream-menu">
+<nav class="ui secondary menu dream-menu dream-nav">
 {{ else if .Site.Params.darkNav }}
-<nav class="ui secondary inverted menu dream-menu">
+<nav class="ui secondary inverted menu dream-menu dream-nav">
 {{ else }}
-<nav class="ui secondary menu dream-menu">
+<nav class="ui secondary menu dream-menu dream-nav">
 {{ end }}
   <div class="item">
     <i class="large link bullseye icon dream-flip-toggle" title="{{ i18n "flip" }}"></i>

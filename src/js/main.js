@@ -9,7 +9,7 @@ $(document).ready(() => {
       : 'os-theme-dark'
   }
 
-  window.overlayScrollbarsInstance = $('body')
+  const osInstance = $('body')
     .overlayScrollbars({
       className: setClassName(),
       scrollbars: {
@@ -18,6 +18,20 @@ $(document).ready(() => {
       },
     })
     .overlayScrollbars()
+
+  if (window.fixedNav) {
+    const nav = $('.dream-nav')
+
+    osInstance.options('callbacks.onScroll', function () {
+      const y = this.scroll().position.y
+
+      y > 0
+        ? nav.addClass('fixed').css('background', window.isDark === 'y' ? window.backgroundDark : window.background)
+        : nav.removeClass('fixed').css('background', 'unset')
+    })
+  }
+
+  window.overlayScrollbarsInstance = osInstance
 
   initFilp()
 })

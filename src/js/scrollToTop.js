@@ -5,7 +5,7 @@ setTimeout(function () {
 
   const osInstance = window.overlayScrollbarsInstance
   osInstance.options('callbacks.onScrollStop', function () {
-    const y = osInstance.scroll().position.y
+    const y = this.scroll().position.y
 
     y > 0 ? scrollToTop.show(500) : scrollToTop.hide(500)
   })

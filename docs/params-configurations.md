@@ -65,6 +65,7 @@
   # hasTwitterEmbed = true
   # reversePostAndAside = true
   # shareInAside = true
+  fixedNav = true
 
   [params.advanced]
     customCSS = ["css/custom.css"]
@@ -256,6 +257,10 @@ Reverse the position of the post content and its aside.
 ### shareInAside = true
 
 Display share buttons in aside, not under the post title.
+
+### fixedNav = true
+
+Make navbar fixed when scrolling.
 
 ## Advanced
 
