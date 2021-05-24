@@ -5,7 +5,7 @@ other = "Accueil"
 other = "Revenir à l'accueil"
 
 [flip]
-other = "Retourne ça!"
+other = "Retourne ça !"
 
 [archives]
 other = "Archives"
@@ -21,7 +21,7 @@ other = "{{ .Count }} étiquettes"
 other = "Toutes les catégories"
 
 [category]
-one = "1 category"
+one = "1 catégorie"
 other = "{{ .Count }} catégories"
 
 [article]
