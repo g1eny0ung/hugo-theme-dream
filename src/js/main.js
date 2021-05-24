@@ -25,9 +25,13 @@ $(document).ready(() => {
     osInstance.options('callbacks.onScroll', function () {
       const y = this.scroll().position.y
 
-      y > 0
-        ? nav.addClass('fixed').css('background', window.isDark === 'y' ? window.backgroundDark : window.background)
-        : nav.removeClass('fixed').css('background', 'unset')
+      if (y > 0) {
+        nav.addClass('fixed').css('background', window.isDark === 'y' ? window.backgroundDark : window.background)
+        $('.dream-single-aside').css('top', 54)
+      } else {
+        nav.removeClass('fixed').css('background', 'unset')
+        $('.dream-single-aside').css('top', 0)
+      }
     })
   }
 

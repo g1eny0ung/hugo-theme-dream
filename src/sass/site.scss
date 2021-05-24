@@ -295,6 +295,7 @@ body {
   position: sticky !important;
   top: 0;
   height: 100%;
+  transition: top 0.5s ease;
 
   @media screen and (max-width: 768px) {
     display: none !important;
