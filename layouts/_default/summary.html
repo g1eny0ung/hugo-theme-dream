@@ -22,6 +22,8 @@
             {{ index .Site.Data.es.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
           {{- else if eq .Site.Language.Lang "pt" -}}
             {{ index .Site.Data.pt.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
+          {{- else if eq .Site.Language.Lang "fr" -}}
+            {{ index .Site.Data.fr.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.fr.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
           {{- else -}}
             {{ .Date.Format "Monday, Jan 2, 2006" }}
           {{- end -}}
