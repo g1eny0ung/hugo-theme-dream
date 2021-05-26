@@ -297,6 +297,10 @@ body {
   height: 100%;
   transition: top 0.5s ease;
 
+  @supports (-moz-appearance: none) {
+    position: relative !important;
+  }
+
   @media screen and (max-width: 768px) {
     display: none !important;
   }
