@@ -11,6 +11,7 @@
 - [Documentation](#documentation)
 - [Installation](#installation)
 - [Example](#example)
+- [Tutorials from community](#tutorials-from-community)
 - [Publish](#publish)
 
 ## The next version is out
@@ -97,9 +98,15 @@ Then open your `config.toml` and edit to `theme = "dream"` and save.
 
 [My Blog's Source Code](https://github.com/g1eny0ung/blog)
 
+## Tutorials from community
+
+### Chinese
+
+- [使用 Hugo + Dream 主题构建个人博客](https://guole.fun/posts/hugo-blog/)
+
 ## Publish
 
-View [hugo hosting-and-deployment](https://gohugo.io/hosting-and-deployment/)
+View [hugo hosting-and-deployment](https://gohugo.io/hosting-and-deployment/).
 
 ## License
 
