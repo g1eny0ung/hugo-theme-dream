@@ -27,14 +27,11 @@
     {{ end }}
   </div>
 
-  {{ if findRE "posts/.+" .RelPermalink }}
-  {{ else }}
-  {{ if and .Site.DisqusShortname  }}
+  {{ if and .Site.DisqusShortname .IsHome }}
   <div class="sixteen wide mobile eight wide tablet eight wide computer column dream-column">
     <article class="ui segment">
       {{ partial "disqus.html" (dict "Context" . "Identifier" "/") }}
     </article>
   </div>
-  {{ end }}
   {{ end }}
 </div>
