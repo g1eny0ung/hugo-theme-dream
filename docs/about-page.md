@@ -4,7 +4,7 @@ In [Quick Start](./quick-start.md), we add **About Me** as below:
 
 Type in your terminal:
 
-```sh
+```bash
 hugo new about/me.md
 ```
 
@@ -36,7 +36,7 @@ Related docs: <https://gohugo.io/content-management/page-bundles/#headless-bundl
 
 **You can add multiple `.md` files, all of them will also be rendered as masonry layout.**
 
-```sh
+```bash
 hugo new about/desc1.md
 
 hugo new about/desc2.md

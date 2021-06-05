@@ -85,7 +85,7 @@ All tags of this theme:
 
 Go into your blog folder and:
 
-```sh
+```bash
 cd themes
 git clone https://github.com/g1eny0ung/hugo-theme-dream.git dream
 ```

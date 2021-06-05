@@ -16,7 +16,7 @@ If you haven't know how to deploy your site to Netlify, please read:
 
 If you don't want to use git submodule to track Dream updates, you can use the following build command in Netlify:
 
-```sh
+```bash
 rm -rf themes/dream && git clone https://github.com/g1eny0ung/hugo-theme-dream.git themes/dream && hugo --cleanDestinationDir --minify --gc
 ```
 

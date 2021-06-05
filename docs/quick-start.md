@@ -36,7 +36,7 @@ disqusShortname = "..."
 
 Type in your terminal:
 
-```sh
+```bash
 hugo new about/me.md
 ```
 
@@ -68,7 +68,7 @@ All of your posts must in the `content/posts` folder.
 
 You can generate it by:
 
-```sh
+```bash
 hugo new posts/articleTitle.md
 ```
 
@@ -108,7 +108,7 @@ At last, remove `draft: true` and run `hugo` to generate your site.
 
 If your want to have a preview in editing, run:
 
-```sh
+```bash
 hugo server -D
 ```
 
