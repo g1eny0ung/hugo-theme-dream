@@ -3,6 +3,12 @@ const localStore = window.localStorage
 let isDark = localStore.getItem('hugo-theme-dream-is-dark')
 isDark = isDark ? isDark : window.defaultDark ? 'y' : isDark
 
+const darkBackground = () => {
+  if (window.backgroundDark || window.backgroundImageDark) {
+    $('body').toggleClass('default').toggleClass('dark')
+  }
+}
+
 const dark404 = () => {
   if (window.backgroundDark || window.backgroundImageDark) {
     const dream404 = $('.dream-404-container')
@@ -14,12 +20,6 @@ const dark404 = () => {
       button.toggleClass(dark)
       button.toggleClass('secondary')
     }
-  }
-}
-
-const darkBackground = () => {
-  if (window.backgroundDark || window.backgroundImageDark) {
-    $('body').toggleClass('default').toggleClass('dark')
   }
 }
 
@@ -85,12 +85,12 @@ const darkPostsSection = () => {
   $('.ui.segment.dream-posts-section').toggleClass(dark)
 }
 
-const darkTagsSection = () => {
-  $('.ui.segment.dream-tags-section').toggleClass(dark)
-}
-
 const darkCategoriesSection = () => {
   $('.ui.segment.dream-categories-section').toggleClass(dark)
+}
+
+const darkTagsSection = () => {
+  $('.ui.segment.dream-tags-section').toggleClass(dark)
 }
 
 const darkBack = () => {
@@ -114,8 +114,8 @@ function toggleDark() {
   darkSingle()
   darkTables()
   darkPostsSection()
-  darkTagsSection()
   darkCategoriesSection()
+  darkTagsSection()
   darkBack()
   darkFooter()
   darkSearch()

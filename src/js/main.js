@@ -37,11 +37,11 @@ $(document).ready(() => {
 
   window.overlayScrollbarsInstance = osInstance
 
+  function initFilp() {
+    $('.dream-flip-toggle').click(() => {
+      $('.flip-container').toggleClass('flip-it')
+    })
+  }
+
   initFilp()
 })
-
-function initFilp() {
-  $('.dream-flip-toggle').click(() => {
-    $('.flip-container').toggleClass('flip-it')
-  })
-}
