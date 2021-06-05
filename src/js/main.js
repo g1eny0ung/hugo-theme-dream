@@ -24,13 +24,18 @@ $(document).ready(() => {
 
     osInstance.options('callbacks.onScroll', function () {
       const y = this.scroll().position.y
+      const fake = $('.fake-dream-nav')
 
       if (y > 0) {
         nav.addClass('fixed').css('background', window.isDark === 'y' ? window.backgroundDark : window.background)
         $('.dream-single-aside').css('top', 54)
+        if (!fake.length) {
+          $('<div class="fake-dream-nav" />').css('height', 54).insertBefore(nav)
+        }
       } else {
         nav.removeClass('fixed').css('background', 'unset')
         $('.dream-single-aside').css('top', 0)
+        fake.remove()
       }
     })
   }
