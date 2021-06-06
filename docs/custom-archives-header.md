@@ -1,8 +1,6 @@
-# Custom Archives Header
+# Custom archives header
 
-You can custom you `/posts` page's header with a `_index.md`.
-
-Place the `_index.md` in `content/posts`.
+You can custom your `/posts` page's header by placing a `_index.md` in `content/posts`.
 
 For example, paste below in `_index.md`:
 
