@@ -76,6 +76,7 @@ theme = "hugo-theme-dream"
 
   # [params.advanced]
   #   customCSS = ["css/custom.css"]
+  #   customJSBefore = []
   #   customJS = []
 
   # [params.experimental]

@@ -119,6 +119,10 @@ function toggleDark() {
   darkBack()
   darkFooter()
   darkSearch()
+
+  if (Array.isArray(window.darkFunctions)) {
+    darkFunctions.forEach((d) => d())
+  }
 }
 
 const setThemeForUtterances = () => {

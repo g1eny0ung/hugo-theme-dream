@@ -46,11 +46,15 @@
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2"></script>
 
     {{ if .Site.Params.enableSearch }}
     {{ partial "search.html" . }}
+    {{ end }}
+
+    {{ range .Site.Params.Advanced.customJSBefore }}
+    <script src="{{ . | relURL }}"></script>
     {{ end }}
 
     {{ partial "footer.html" . }}
