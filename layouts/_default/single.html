@@ -25,7 +25,6 @@
 
   {{ if $showAside }}
   <aside class="sixteen wide mobile sixteen wide tablet three wide computer column dream-single-aside">
-  {{ end }}
     {{ if $showTOC }}
     <div class="ui segment toc">
       {{ .TableOfContents }}
@@ -35,7 +34,6 @@
     {{ if $shareInAside }}
     {{ partial "share1.html" . }}
     {{ end }}
-  {{ if $showAside }}
   </aside>
   {{ end }}
   <div class="sixteen wide mobile sixteen wide tablet ten wide computer column markdown-body dream-single" id="dream-save-post-as-img">
