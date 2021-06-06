@@ -8,12 +8,14 @@ Before customization, you need to add the related fields to your configuration, 
 [params]
   [params.advanced]
     customCSS = ["css/custom.css"] # files in the list will be loaded in order
+    customJSBefore = ["js/custom-before.js"]
     customJS = ["js/custom.js"]
 ```
 
 ## CSS
 
-It’s very easy to change the theme through CSS. Dream theme base on [Semantic UI](https://semantic-ui.com/), and nearly all the custom classes start with the `dream-` prefix. So in most cases, you only need to customize in these two ways:
+It’s very easy to change the theme through CSS. Dream theme base on [Semantic UI](https://semantic-ui.com/), and nearly
+all the custom classes start with the `dream-` prefix. So in most cases, you only need to customize in these two ways:
 
 - **Override Semantic UI classes**
 - **Override Dream specified classes** (Can be found in [site.scss](https://github.com/g1eny0ung/hugo-theme-dream/blob/master/src/sass/site.scss))
@@ -64,3 +66,42 @@ Due to the Dream theme use Semantic UI `.ui.inverted` as the color of dark mode,
 ```
 
 ## JS
+
+By customizing JS, you can manipulate the whole theme more freely. For example, some params will output to the global
+so you can achieve custom behaviors through them.
+
+Here are the current output params (Can be found in [footer.html](https://github.com/g1eny0ung/hugo-theme-dream/blob/master/layouts/partials/footer.html)):
+
+```js
+window.background = {{ .Site.Params.background }}
+window.defaultDark = {{ .Site.Params.defaultDark }}
+window.backgroundDark = {{ .Site.Params.backgroundDark }}
+window.backgroundImageDark = {{ .Site.Params.backgroundImageDark }}
+window.darkNav = {{ .Site.Params.darkNav }}
+window.maxTags = {{ .Site.Params.maxTags }}
+window.hasTwitterEmbed = {{ .Site.Params.hasTwitterEmbed }}
+window.fixedNav = {{ .Site.Params.fixedNav }}
+```
+
+But mostly, you only need to insert the function into the reserved interface.
+
+Here are some examples:
+
+### inject functions into theme switching
+
+You can add custom functions into `window.darkFunctions` to call them when switching the theme:
+
+```toml
+[params]
+  [params.advanced]
+    customJSBefore = ["js/custom-before.js"]
+```
+
+```js
+// js/custom-before.js
+function darkFunc() {
+  console.log(`Now in ${window.isDark === 'y' ? 'dark' : 'light'} mode`)
+}
+
+window.darkFunctions = [darkFunc]
+```

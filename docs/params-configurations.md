@@ -69,7 +69,8 @@
 
   [params.advanced]
     customCSS = ["css/custom.css"]
-    customJS = []
+    # customJSBefore = []
+    # customJS = []
 
   [params.experimental]
     jsDate = true
@@ -270,13 +271,15 @@ Make navbar fixed when scrolling.
 
 Add your custom CSS files after the theme CSS files.
 
-For example, create a folder named `css` under `static`, then add `custom.css` in it.
+For example, create a folder named `css` under `static`, then add `custom.css` into it.
+
+### customJSBefore = []
+
+Like `customCSS`, add your custom JS files **before** the theme JS files.
 
 ### customJS = []
 
-Add your custom JS files.
-
-Same as `customCSS`, except all custom JS files will be placed after the theme JS files.
+Like `customJSBefore`, add your custom JS files **after** the theme JS files.
 
 ## Experimental
 
