@@ -100,10 +100,6 @@
       </header>
 
       <article class="main">
-        {{ if and .Params.Cover .Site.Params.showSummaryCoverInPost }}
-        <img class="cover" src="{{ .Params.Cover }}" />
-        {{ end }}
-
         {{ .Content | emojify }}
       </article>
     </section>
