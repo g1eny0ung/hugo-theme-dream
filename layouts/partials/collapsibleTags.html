@@ -1,0 +1,38 @@
+<details>
+  {{ $s := slice }}
+  {{ range .context.WeightedPages }}
+    {{ $s = $s | append .Title }}
+  {{ end }}
+  {{ $set := uniq $s }}
+  {{ $len := len $set }}
+  {{ $collapseBySummary := .collapseBySummary }}
+  <summary>
+    <h3 style="display: inline; color: #2E8B57;">{{ .context.Page.Title }}&nbsp</h3>
+    <h3 style="display: inline;">{{- T "group" $len -}}</h3>
+  </summary>
+    <ul>
+      {{ range .context.Pages.GroupBy "Title" }}
+      {{ $len := len .Pages }}
+      <details>
+        <summary>
+          <h3 style="display: inline; color: #2E8B57;">{{ .Key}}&nbsp</h3>
+          <h3 style="display: inline;">{{- T "article" $len -}}</h3>
+        </summary>
+        <br>
+        {{range .Pages}}
+          <ul>
+            <li>
+              {{if $collapseBySummary}}
+                <a href="{{ .RelPermalink }}">{{ safeHTML (substr .Summary 0 20)}}...</a>
+              {{else}}
+                <a href="{{ .RelPermalink }}">{{.Title}}...</a>
+              {{end}}
+            </li>
+          </ul>
+        {{ end }}
+        <br>
+      </details>
+      {{ end }}
+    </ul>
+</details>
+
