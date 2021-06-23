@@ -73,6 +73,8 @@ theme = "hugo-theme-dream"
   # reversePostAndAside = true
   # shareInAside = true
   # fixedNav = true
+  # collapsibleTags = true
+  # collapseBySummary = false
 
   # [params.advanced]
   #   customCSS = ["css/custom.css"]

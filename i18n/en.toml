@@ -28,6 +28,10 @@ other = "{{ .Count }} categories"
 one = "1 article"
 other = "{{ .Count }} articles"
 
+[group]
+one = "1 group"
+other = "{{ .Count }} groups"
+
 [socialLinks]
 other = "Social Links"
 
