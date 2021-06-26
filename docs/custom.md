@@ -22,6 +22,30 @@ all the custom classes start with the `dream-` prefix. So in most cases, you onl
 
 Here are some examples:
 
+### Custom fonts
+
+> Note: Since semantic-ui is close to being unmaintained, it is difficult to customize the theme **through source code**.
+>
+> So, to be more convenient and fast, I suggest using the following example method to override the font.
+
+For global:
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif !important;
+}
+```
+
+For post content:
+
+```css
+.markdown-body .main {
+  font-family: 'Roboto', sans-serif !important;
+}
+```
+
 ### Dim background in dark mode
 
 This CSS snippet is useful when you want the `backgroundImage` and `backgroundImageDark` params to be the same and adapt to dark mode.
