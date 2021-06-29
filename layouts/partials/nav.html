@@ -8,12 +8,17 @@
   <div class="item">
     <i class="large link bullseye icon dream-flip-toggle" title="{{ i18n "flip" }}"></i>
   </div>
-  <div class="item">
-    <i class="large link home icon" title="{{ i18n "home" }}" onclick="window.location.href = '{{ .Site.BaseURL }}'"></i>
+  <div class="item"> <i class="large link home icon" title="{{ i18n "home" }}" onclick="window.location.href = '{{ .Site.BaseURL }}'"></i>
   </div>
   {{ if or .Site.Params.backgroundDark .Site.Params.backgroundImageDark }}
   <div class="item">
     <i class="large link icon theme-switch" onclick="themeSwitch()"></i>
+  </div>
+  {{ end }}
+  {{ $currentPage := . }}
+  {{ range .Site.Menus.main }}
+  <div class="item">
+  <i class="large link icon {{ .Identifier }} {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}"  onclick="window.location.href = '{{ .URL }}'"></i>
   </div>
   {{ end }}
   {{ if .Site.Params.enableSearch }}
@@ -22,3 +27,4 @@
   </div>
   {{ end }}
 </nav>
+
