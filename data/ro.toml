@@ -1,0 +1,22 @@
+[Weekday]
+  0 = 'Duminică'
+  1 = 'Luni'
+  2 = 'Marţi'
+  3 = 'Miercuri'
+  4 = 'Joi'
+  5 = 'Vineri'
+  6 = 'Sâmbătă'
+
+[Month]
+  1 = 'Ianuarie'
+  2 = 'Februarie'
+  3 = 'Martie'
+  4 = 'Aprilie'
+  5 = 'Mai'
+  6 = 'Iunie'
+  7 = 'Iulie'
+  8 = 'August'
+  9 = 'Septembrie'
+  10 = 'Octombrie'
+  11 = 'Noiembrie'
+  12 = 'Decembrie'

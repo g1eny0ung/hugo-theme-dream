@@ -1,0 +1,54 @@
+[home]
+other = "דף הבית"
+
+[backToHome]
+other = "חזור לדף הבית"
+
+[flip]
+other = "!להפוך"
+
+[archives]
+other = "ארכיון"
+
+[allTags]
+other = "כל התגים"
+
+[tag]
+one = "1 תג"
+other = "תגים {{ .Count }}"
+
+[allCategories]
+other = "כל הקטגוריות"
+
+[category]
+one = "1 קטגוריה"
+other = "קטגוריות {{ .Count }}"
+
+[article]
+one = "מאמר  1"
+other = "מאמרים {{ .Count }}"
+
+[socialLinks]
+other = "קישורים למדיה חברתית"
+
+[minuteRead]
+one = " דקה לקרוא"
+other = " דקות לקריאה"
+
+[updateAt]
+other = "עודכן בשעה"
+
+[noTag]
+other = "אין תגים"
+
+[prevPage]
+other = "עמוד קודם"
+
+[nextPage]
+other = "עמוד הבא"
+
+[saveAsImage]
+other = "שמור כתמונה"
+
+[search]
+other = "לחפש"

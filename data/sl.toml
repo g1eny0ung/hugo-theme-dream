@@ -1,0 +1,22 @@
+[Weekday]
+  0 = 'Nedelja'
+  1 = 'Ponedeljek'
+  2 = 'Torek'
+  3 = 'Sreda'
+  4 = 'Četrtek'
+  5 = 'Petek'
+  6 = 'Sobota'
+
+[Month]
+  1 = 'Januarja'
+  2 = 'Februarja'
+  3 = 'Marec'
+  4 = 'April'
+  5 = 'Maj'
+  6 = 'Junij'
+  7 = 'Julij'
+  8 = 'Avgust'
+  9 = 'September'
+  10 = 'Oktober'
+  11 = 'November'
+  12 = 'December'
