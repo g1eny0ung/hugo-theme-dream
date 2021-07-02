@@ -1,0 +1,22 @@
+[Weekday]
+  0 = 'Svētdiena'
+  1 = 'Pirmdiena'
+  2 = 'Otrdiena'
+  3 = 'Trešdiena'
+  4 = 'Ceturtdiena'
+  5 = 'Piektdiena'
+  6 = 'Sestdiena'
+
+[Month]
+  1 = 'Janvāris'
+  2 = 'Februāris'
+  3 = 'Martā'
+  4 = 'Aprīlis'
+  5 = 'Maijs'
+  6 = 'Jūnijs'
+  7 = 'Jūlijs'
+  8 = 'Augusts'
+  9 = 'Septembris'
+  10 = 'Oktobris'
+  11 = 'Novembrī'
+  12 = 'Decembrī'

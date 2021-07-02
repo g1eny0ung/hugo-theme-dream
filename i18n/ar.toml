@@ -1,0 +1,58 @@
+[home]
+other = "الصفحة الرئيسية"
+
+[backToHome]
+other = "العودة إلى الصفحة الرئيسية"
+
+[flip]
+other = "!اقلب"
+
+[archives]
+other = "أرشيف"
+
+[allTags]
+other = "كل العلامات"
+
+[tag]
+one = "1 علامة"
+other = "{{ .Count }} علامتان"
+
+[allCategories]
+other = "جميع الفئات"
+
+[category]
+one = "1 فئة"
+other = "{{ .Count }} فئات"
+
+[article]
+one = "1 مقال"
+other = "{{ .Count }} مقالات"
+
+[group]
+one = "1 مجموعة"
+other = "{{ .Count }} مجموعات"
+
+[socialLinks]
+other = "روابط وسائل التواصل الاجتماعي"
+
+[minuteRead]
+one = " قراءة دقيقة"
+other = " ست دقائق للقر"
+
+[updateAt]
+other = "تم التحديث في"
+
+[noTag]
+other = "بدون علامات"
+
+[prevPage]
+other = "الصفحة السابقة"
+
+[nextPage]
+other = "الصفحة التالية"
+
+[saveAsImage]
+other = "حفظ كصورة"
+
+[search]
+other = "يبحث"

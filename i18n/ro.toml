@@ -1,0 +1,54 @@
+[home]
+other = "Pagina principala"
+
+[backToHome]
+other = "Înapoi la pagina de start"
+
+[flip]
+other = "Întoarceți!"
+
+[archives]
+other = "Arhive"
+
+[allTags]
+other = "Toate etichetele"
+
+[tag]
+one = "1 etichetă"
+other = "{{ .Count }} etichete"
+
+[allCategories]
+other = "Toate categoriile"
+
+[category]
+one = "1 categorie"
+other = "{{ .Count }} categorii"
+
+[article]
+one = "1 articol"
+other = "{{ .Count }} articole"
+
+[socialLinks]
+other = "Link-uri de social media"
+
+[minuteRead]
+one = " minut de citit"
+other = " minute de citire"
+
+[updateAt]
+other = "Actualizat la"
+
+[noTag]
+other = "Fără etichete"
+
+[prevPage]
+other = "Pagina precedentă"
+
+[nextPage]
+other = "Pagina următoare"
+
+[saveAsImage]
+other = "Salvați ca imagine"
+
+[search]
+other = "Căutare"
