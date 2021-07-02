@@ -157,7 +157,9 @@ if (isDark === 'y') {
   iconSwitchs.addClass('sun')
 }
 
-function themeSwitch() {
+function themeSwitch(e) {
+  e.preventDefault()
+
   if (isDark === 'y') {
     iconSwitchs.removeClass('moon')
     iconSwitchs.addClass('sun')

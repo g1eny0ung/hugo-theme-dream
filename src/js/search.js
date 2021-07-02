@@ -1,6 +1,8 @@
 let searchVisible = false
 
-function toggleSearch() {
+function toggleSearch(e) {
+  e.preventDefault()
+
   if (searchVisible) {
     $('#dream-search').css('display', '')
   } else {

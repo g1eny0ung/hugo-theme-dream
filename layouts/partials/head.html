@@ -30,18 +30,18 @@
 <link rel="stylesheet" href="{{ "/css/site.css" | relURL }}" />
 
 <style>
-  .ui.header a:not(.ui.button):hover {
+  .ui.header a:not(.item, .ui.button):hover {
     text-decoration: underline;
   }
 
   {{ if .Site.Params.linkColor }}
-  a:not(.ui.button) {
+  a:not(.item, .ui.button) {
     color: {{ .Site.Params.linkColor }} !important;
   }
   {{ end }}
 
   {{ if .Site.Params.darkLinkColor }}
-  .inverted a:not(.ui.button) {
+  .inverted a:not(.item, .ui.button) {
      color: {{ .Site.Params.darkLinkColor }} !important;
   }
   {{ end }}
