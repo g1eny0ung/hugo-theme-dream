@@ -1,38 +1,34 @@
 <details>
-  {{ $s := slice }}
-  {{ range .context.WeightedPages }}
-    {{ $s = $s | append .Title }}
-  {{ end }}
-  {{ $set := uniq $s }}
-  {{ $len := len $set }}
-  {{ $collapseBySummary := .collapseBySummary }}
-  <summary>
-    <h3 style="display: inline; color: #2E8B57;">{{ .context.Page.Title }}&nbsp</h3>
-    <h3 style="display: inline;">{{- T "group" $len -}}</h3>
+  <summary class="ui header">
+    <a href="{{ .ctx.Page.RelPermalink }}">{{ .ctx.Page.Title }}</a>
+    {{- if not .collapseBySummary -}}&nbsp;{{ T "article" .ctx.Count }}{{- end -}}
   </summary>
-    <ul>
-      {{ range .context.Pages.GroupBy "Title" }}
-      {{ $len := len .Pages }}
-      <details>
-        <summary>
-          <h3 style="display: inline; color: #2E8B57;">{{ .Key}}&nbsp</h3>
-          <h3 style="display: inline;">{{- T "article" $len -}}</h3>
-        </summary>
-        <br>
-        {{range .Pages}}
-          <ul>
-            <li>
-              {{if $collapseBySummary}}
-                <a href="{{ .RelPermalink }}">{{ safeHTML (substr .Summary 0 20)}}...</a>
-              {{else}}
-                <a href="{{ .RelPermalink }}">{{.Title}}...</a>
-              {{end}}
-            </li>
-          </ul>
-        {{ end }}
-        <br>
-      </details>
-      {{ end }}
-    </ul>
-</details>
+  {{- if .collapseBySummary -}}
 
+  <ul>
+    {{ range .ctx.Pages.GroupBy "Title" }}
+    <details>
+      <summary>{{ .Key }}</summary>
+      <ul>
+        {{ range .Pages }}
+        <li>
+          <a href="{{ .RelPermalink }}" title="{{ .Summary }}">{{ substr (plainify .Summary) 0 25 }}...</a>
+        </li>
+        {{ end }}
+      </ul>
+    </details>
+    {{ end }}
+  </ul>
+
+  {{- else -}}
+
+  <ul>
+    {{ range .ctx.Pages }}
+    <li>
+      <a href="{{ .Page.RelPermalink }}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+  </ul>
+
+  {{- end -}}
+</details>

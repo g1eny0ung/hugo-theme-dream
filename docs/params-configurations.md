@@ -267,11 +267,11 @@ Make navbar fixed when scrolling.
 
 ### collapsibleTags = true
 
-Break tags into multiple levels by a collapsible manner.
+Make `/tags` page's tags collapsible.
 
-### collapseBySummary = false
+### collapseBySummary = true
 
-collapsibleTags collapses tags by .Title by default and by .Summary when collapseBySummary is true.
+If your posts contain duplicate titles, you can use this param to continue grouping the titles. The lowest level will use `.Summary` to render.
 
 ## Advanced
 
