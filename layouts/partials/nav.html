@@ -12,12 +12,12 @@
     <i class="large link home icon"></i>
   </a>
   {{ if or .Site.Params.backgroundDark .Site.Params.backgroundImageDark }}
-  <a class="item" onclick="themeSwitch()">
+  <a class="item" onclick="themeSwitch(event)">
     <i class="large link icon theme-switch"></i>
   </a>
   {{ end }}
   {{ if .Site.Params.enableSearch }}
-  <a class="item" title="{{ i18n "search" }}" onclick="toggleSearch()">
+  <a class="item" title="{{ i18n "search" }}" onclick="toggleSearch(event)">
     <i class="large link search icon"></i>
   </a>
   {{ end }}
