@@ -136,7 +136,8 @@
       new Valine({
         el: '#vcomments',
         appId: {{ .Site.Params.LEANCLOUD_APP_ID }},
-        appKey: {{ .Site.Params.LEANCLOUD_APP_KEY }}
+        appKey: {{ .Site.Params.LEANCLOUD_APP_KEY }},
+        lang: {{ .Site.Params.VALINE_LANGUAGE }}
       })
     </script>
     {{ end }}
