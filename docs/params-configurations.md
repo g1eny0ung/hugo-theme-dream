@@ -36,6 +36,7 @@
   # valine = true
   # LEANCLOUD_APP_ID = ""
   # LEANCLOUD_APP_KEY = ""
+  # VALINE_LANGUAGE = ""
 
   email = "g1enyy0ung@gmail.com"
   twitter = "g1eny0ung"
@@ -199,13 +200,16 @@ View <https://utteranc.es> to get more details.
 
 Valine is a fast, simple & efficient Leancloud based no back end comment system.
 
-In order to make it work, you still need to set two parameters:
+In order to make it work, you still need to set first two parameters:
 
 ```toml
 [params]
   LEANCLOUD_APP_ID = ""
   LEANCLOUD_APP_KEY = ""
+  VALINE_LANGUAGE = ""
 ```
+
+Default language param is "zh-CN" , other supported languages are "zh-TW" , "en" , "ja" .
 
 View <https://valine.js.org/en/quickstart> to get more details.
 

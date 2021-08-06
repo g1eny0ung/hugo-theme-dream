@@ -43,6 +43,7 @@ theme = "hugo-theme-dream"
   # valine = true
   # LEANCLOUD_APP_ID = ""
   # LEANCLOUD_APP_KEY = ""
+  # VALINE_LANGUAGE = ""
 
   email = "g1enyy0ung@gmail.com"
   # twitter = ""
