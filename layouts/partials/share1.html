@@ -5,13 +5,15 @@
     onclick="savePostAsImg()">
     <i class="save icon"></i>
   </button>
-  <a href="https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}"target="_blank" title="Twitter">
+  <a href="https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}"target="_blank" class="ui circular twitter icon button" title="Twitter">
     <i class="twitter icon"></i>
   </a>
-  <a href="https://facebook.com/sharer/sharer.php?u={{ .Permalink }}"target="_blank" title="Facebook">
+  <a href="https://facebook.com/sharer/sharer.php?u={{ .Permalink }}"target="_blank" class="ui circular facebook icon button" title="Facebook">
     <i class="facebook icon"></i>
   </a>
-  <a href="whatsapp://send?text={{ .Title }}%0A{{ .Permalink }}"target="_blank" title="WhatsApp">
+  <span class="whatsapp">
+    <a href="https://wa.me/?text={{ .Title }}%0A{{ .Permalink }}"target="_blank" class="ui circular whatsapp icon button" title="WhatsApp">
     <i class="whatsapp icon"></i>
-  </a>
+   </a>
+ </span>
 </div>
