@@ -58,4 +58,13 @@
     <i class="{{ .IconSize }} codepen icon" title="Codepen"></i>
   </a>
   {{ end }}
+
+  {{ if (fileExists "data/socials.toml") }}
+  {{ $iconSize := .IconSize }}
+  {{ range .Site.Data.socials.socials }}
+    <a class="item" href="{{ .href }}" target="{{ .target }}">
+      <i class="{{ $iconSize }} {{ .icon }} icon" title="{{ .title }}"></i>
+    </a>
+  {{ end }}
+  {{ end }}
 </nav>

@@ -215,6 +215,10 @@ View <https://valine.js.org/en/quickstart> to get more details.
 
 ### Social Links
 
+> Deprecated. **Now you can do the rendering of socials with a custom data file. This file must be named `socials.toml` and must contain the array named `socials`.**
+>
+> Example: <https://github.com/g1eny0ung/blog/blob/master/data/socials.toml>.
+
 `email = "g1enyy0ung@gmail.com"`<br />
 `twitter = "g1eny0ung"`<br />
 `facebook = "g1eny0ung"`<br />
@@ -225,7 +229,7 @@ View <https://valine.js.org/en/quickstart> to get more details.
 `stackoverflow = "5676489/g1eny0ung"`<br />
 `codepen = "g1eny0ung"`
 
-All of these social links will be showed on about page `layouts/partials/back.html` and header `layouts/partials/header.html`.
+All of these social links will be showed on about page `layouts/partials/back.html`.
 
 You can open an issue or pull a request to add a social link.
 
