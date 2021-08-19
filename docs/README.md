@@ -106,7 +106,7 @@ Then open your `config.toml` and edit to `theme = "dream"` and save.
 
 ## Publish
 
-View [hugo hosting-and-deployment](https://gohugo.io/hosting-and-deployment/).
+View [Hosting & Deployment](https://gohugo.io/hosting-and-deployment/).
 
 ## License
 
