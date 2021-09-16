@@ -1,0 +1,37 @@
+﻿{{ if .Site.Params.Experimental.jsDate }}
+  <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
+{{ else }}
+  {{ if eq .Site.Language.Lang "zh" }}
+    {{ index .Site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
+  {{ else if eq .Site.Language.Lang "es" }}
+    {{ index .Site.Data.es.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
+  {{ else if eq .Site.Language.Lang "pt" }}
+    {{ index .Site.Data.pt.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
+  {{ else if eq .Site.Language.Lang "fr" }}
+    {{ index .Site.Data.fr.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.fr.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
+<!-- added some new language formatting alphabetically below this line. May have left out connecting words for languages I don't know; need native users to feed back -->			
+  {{- else if eq .Site.Language.Lang "ar" -}}
+    {{ index .Site.Data.ar.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.ar.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
+  {{- else if eq .Site.Language.Lang "ca" -}}
+    {{ index .Site.Data.ca.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.ca.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
+  {{- else if eq .Site.Language.Lang "de" -}}
+    {{ index .Site.Data.de.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.de.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}	
+  {{- else if eq .Site.Language.Lang "he" -}}
+    {{ index .Site.Data.he.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.he.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}		
+  {{- else if eq .Site.Language.Lang "it" -}}
+    {{ index .Site.Data.it.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.it.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
+  {{- else if eq .Site.Language.Lang "ja" -}}
+    {{ index .Site.Data.ja.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.ja.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
+  {{- else if eq .Site.Language.Lang "lv" -}}
+    {{ index .Site.Data.lv.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.lv.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}	
+  {{- else if eq .Site.Language.Lang "ro" -}}
+    {{ index .Site.Data.ro.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.ro.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}		
+  {{- else if eq .Site.Language.Lang "ru" -}}
+    {{ index .Site.Data.ru.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.ru.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
+  {{- else if eq .Site.Language.Lang "sl" -}}
+    {{ index .Site.Data.sl.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.sl.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}				
+<!-- end of else-if, and change date to international/UK, rather than USA format -->					
+  {{ else }}
+    {{ .Date.Format "Monday, 2 Jan, 2006" }}
+  {{ end }}
+{{ end }}
