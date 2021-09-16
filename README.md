@@ -48,7 +48,7 @@ All of this theme's tags:
 
 ## Documentation
 
-Read offline: a copy is included in the folder ```hugo-theme-dream/docs```
+Read offline: a copy is included in [the docs folder](/docs).
 
 Read online: [https://g1eny0ung.site/hugo-theme-dream](https://g1eny0ung.site/hugo-theme-dream)
 
