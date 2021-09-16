@@ -48,12 +48,12 @@ All of this theme's tags:
 
 ## Documentation
 
-Read offline: a copy is included in the folder ```hugo-theme-dream\docs```
+Read offline: a copy is included in the folder ```hugo-theme-dream/docs```
 
 Read online: [https://g1eny0ung.site/hugo-theme-dream](https://g1eny0ung.site/hugo-theme-dream)
 
 ## Version history
-See [Version History](version-history.md) or [the Changelog](CHANGELOG.md) for breaking changes and important announcements.
+See [the Changelog](docs/CHANGELOG.md) for breaking changes and important announcements.
 
 ## Installation
 
