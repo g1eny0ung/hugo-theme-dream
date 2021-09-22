@@ -26,12 +26,14 @@ Dream also supports **light mode** and **dark mode** out of the box, and has a r
 
 ## Documentation
 
-Read offline: a copy is included in [the docs folder](/docs).
+*This is the [GoHugo.io](https://themes.gohugo.io/themes/hugo-theme-dream/) and docs README.md*
+
+Read offline: a copy is included here in [the docs folder](/docs).
 
 Read online: [https://g1eny0ung.site/hugo-theme-dream](https://g1eny0ung.site/hugo-theme-dream)
 
 ## Version history
-See [the Changelog](docs/CHANGELOG.md) for breaking changes and important announcements.
+See [the Changelog](/docs/CHANGELOG.md) for breaking changes and important announcements.
 
 ## Installation
 
@@ -58,7 +60,7 @@ See [Hugo: Hosting & Deployment](https://gohugo.io/hosting-and-deployment/).
 This theme is compatible with [netlify CMS](https://www.netlifycms.org/).
 
 ## Tags
-All of this theme's tags, from [theme.toml](theme.toml):
+All of this theme's tags, from [theme.toml](/theme.toml):
 
 "avatar", "blog", "copyright", "creative", "dark mode", "disqus", "flip", "google-analytics", "grid", "i18n", "light mode", "masonry layout", "motto", "netlify", "personal", "responsive", "search", "social links" 
 
