@@ -1,0 +1,47 @@
+{
+  "short_name": "Dream",
+  "name": "Dream: When do I wake up?",
+  "icons": [
+    {
+      "src": "/favicons/pwa-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/favicons/pwa-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "scope": "/",
+  "display_override": ["window-control-overlay", "minimal-ui"],
+  "display": "standalone",
+  "background_color": "#3367D6",
+  "orientation": "portrait",
+  "theme_color": "#3367D6",
+  "shortcuts": [
+    {
+      "name": "How's weather today?",
+      "short_name": "Today",
+      "description": "View weather information for today",
+      "url": "/today?source=pwa",
+      "icons": [{ "src": "/images/today.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "How's weather tomorrow?",
+      "short_name": "Tomorrow",
+      "description": "View weather information for tomorrow",
+      "url": "/tomorrow?source=pwa",
+      "icons": [{ "src": "/images/tomorrow.png", "sizes": "192x192" }]
+    }
+  ],
+  "description": "Dream example screenshot",
+  "screenshots": [
+    {
+      "src": "/images/screenshot.png",
+      "type": "image/png",
+      "sizes": "540x720"
+    }
+  ]
+}
