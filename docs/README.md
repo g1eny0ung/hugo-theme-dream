@@ -26,7 +26,7 @@ Dream also supports **light mode** and **dark mode** out of the box, and has a r
 
 ## Documentation
 
-*This is the [GoHugo.io](https://themes.gohugo.io/themes/hugo-theme-dream/) and docs README.md*
+*This is the [GoHugo.io](https://themes.gohugo.io/themes/hugo-theme-dream/) and ```/docs/README.md```*
 
 Read offline: a copy is included here in [the docs folder](/docs).
 
