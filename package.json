@@ -7,8 +7,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "gulp watch",
-    "prod": "gulp prod"
+    "prod": "gulp prod",
+    "watch": "gulp watch"
   },
   "devDependencies": {
     "@babel/core": "^7.13.15",
