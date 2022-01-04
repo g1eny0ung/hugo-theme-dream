@@ -37,7 +37,7 @@
   </aside>
   {{ end }}
   <div class="sixteen wide mobile sixteen wide tablet ten wide computer column markdown-body dream-single" id="dream-save-post-as-img">
-    <section class="ui top attached segment">
+    <section class="ui segment">
       <header>
         <h1 class="ui large header">
           {{- .Title -}}
@@ -135,9 +135,9 @@
     <script>
       new Valine({
         el: '#vcomments',
-        appId: {{ .Site.Params.LEANCLOUD_APP_ID }},
-        appKey: {{ .Site.Params.LEANCLOUD_APP_KEY }},
-        lang: {{ .Site.Params.VALINE_LANGUAGE }}
+        appId: '{{ .Site.Params.LEANCLOUD_APP_ID }}',
+        appKey: '{{ .Site.Params.LEANCLOUD_APP_KEY }}',
+        lang: '{{ .Site.Params.VALINE_LANGUAGE }}'
       })
     </script>
     {{ end }}
