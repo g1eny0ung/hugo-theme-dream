@@ -1,0 +1,58 @@
+[home]
+other = "Ana Sayfa"
+
+[backToHome]
+other = "Ana sayfaya geri dön"
+
+[flip]
+other = "Çevir!"
+
+[archives]
+other = "Arşivler"
+
+[allTags]
+other = "Tüm etiketler"
+
+[tag]
+one = "1 etiket"
+other = "{{ .Count }} etiket"
+
+[allCategories]
+other = "Tüm kategoriler"
+
+[category]
+one = "1 kategori"
+other = "{{ .Count }} kategori"
+
+[article]
+one = "1 makale"
+other = "{{ .Count }} makale"
+
+[group]
+one = "1 grup"
+other = "{{ .Count }} grup"
+
+[socialLinks]
+other = "Sosyal Bağlantılar"
+
+[minuteRead]
+one = " dakika okuma süresi"
+other = " dakika okuma süresi"
+
+[updateAt]
+other = "Güncellenme tarihi"
+
+[noTag]
+other = "Etiketsiz"
+
+[prevPage]
+other = "Önceki sayfa"
+
+[nextPage]
+other = "Sonraki sayfa"
+
+[saveAsImage]
+other = "Resim olarak kaydet"
+
+[search]
+other = "Arama"
