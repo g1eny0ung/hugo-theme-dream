@@ -26,9 +26,9 @@ Dream also supports **light mode** and **dark mode** out of the box, and has a r
 
 ## Documentation
 
-Read offline: a copy is included in [the docs folder](/docs).
+**Read offline:** a copy of all documentation is included in [the docs folder](/docs), besides this Readme.
 
-Read online: [https://g1eny0ung.site/hugo-theme-dream](https://g1eny0ung.site/hugo-theme-dream)
+**Read online:** [https://g1eny0ung.site/hugo-theme-dream](https://g1eny0ung.site/hugo-theme-dream)
 
 ## Version history
 See [the Changelog](docs/CHANGELOG.md) for breaking changes and important announcements.

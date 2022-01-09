@@ -209,6 +209,10 @@ body {
   }
 
   .content {
+    &.no-cover {
+      margin-top: .5rem;
+    }
+
     .header {
       margin-bottom: 0;
 

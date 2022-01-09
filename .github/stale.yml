@@ -3,6 +3,9 @@ daysUntilStale: 60
 # Number of days of inactivity before a stale issue is closed
 daysUntilClose: 7
 # Label to use when marking an issue as stale
+exemptLabels:
+  - enhancement
+  - bug
 staleLabel: wontfix
 # Comment to post when marking an issue as stale. Set to `false` to disable
 markComment: >
