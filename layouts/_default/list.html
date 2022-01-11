@@ -27,8 +27,6 @@
 {{ define "js" }}
 
 {{ if .Site.Params.Experimental.jsDate }}
-<script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"></script>
-
 {{ partial "luxon.html" . }}
 {{ end }}
 

@@ -19,12 +19,10 @@
 {{ define "js" }}
 
 {{ if .Site.Params.Experimental.jsDate }}
-<script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"></script>
-
 {{ partial "luxon.html" . }}
 {{ end }}
 
-<script src="https://cdn.jsdelivr.net/npm/imagesloaded@4.1.4/imagesloaded.pkgd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/imagesloaded@4.1.4/imagesloaded.pkgd.js" integrity="sha256-ZtjBh+3lqbfJ5UfahD26E9Rns4w4UyNqMpPVZ+LTT/g=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
 <script src="{{ "/js/grid.js" | relURL }}"></script>
 {{ end }}
