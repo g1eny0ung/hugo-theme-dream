@@ -6,12 +6,12 @@
 {{ if .Site.Params.highlightjsTheme }}
 <link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/{{ .Site.Params.highlightjsTheme }}.min.css" />
 {{ else }}
-<link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css" />
+<link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css" integrity="sha384-4Y0nObtF3CbKnh+lpzmAVdAMtQXl+ganWiiv73RcGVdRdfVIya8Cao1C8ZsVRRDz" crossorigin="anonymous"/>
 {{ end }}
 {{ end }}
 
 {{ if .Site.Params.valine }}
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js' integrity="sha384-e0+DNUCJo75aOAzHQbFWYBCM9/S4f0BhRJXvEgbE3mMS85RM20MSSGStHuNdY2QK" crossorigin="anonymous"></script>
 {{ end }}
 
 {{ end }}
