@@ -27,7 +27,8 @@
 {{ define "js" }}
 
 {{ if .Site.Params.Experimental.jsDate }}
-<script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0" integrity="sha384-fkBdKrBlHHJMjhP5UHOflZYWTeT+1TMgYYxLF+1pFiQQvaSqG6eQF47cFHKKB/wK" crossorigin="anonymous"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0" integrity="sha384-fkBdKrBlHHJMjhP5UHOflZYWTeT+1TMgYYxLF+1pFiQQvaSqG6eQF47cFHKKB/wK" crossorigin="anonymous"></script>-->
+<script src="{{ "/js/3p/luxon@1.26.0.js" | relURL }}"></script>
 
 {{ partial "luxon.html" . }}
 {{ end }}

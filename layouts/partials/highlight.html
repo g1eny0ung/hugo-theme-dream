@@ -10,7 +10,7 @@
     var darkTheme = {{ .Site.Params.highlightjsThemeDark }}
     var theme = isDark === 'y' ? darkTheme : lightTheme
 
-    $('link[data-highlight]').attr('href', 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/' + theme + '.min.css')
+    $('link[data-highlight]').attr('href', 'css/3p/hljs' + theme + '.min.css')
     $('pre').css('background', isDark === 'y' ? '#333' : '')
   }
 </script>
