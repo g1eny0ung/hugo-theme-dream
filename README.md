@@ -4,110 +4,66 @@
 ![Hugo min version](https://img.shields.io/badge/hugo--min--version-0.57.2-important)
 ![GitHub](https://img.shields.io/github/license/g1eny0ung/hugo-theme-dream)
 
-- [The next version is out](#the-next-version-is-out)
-- [Note After v1.1.0](#note-after-v110)
-- [Major update in 2019-11-10](#major-update-in-2019-11-10)
+
 - [Intro](#intro)
 - [Documentation](#documentation)
+- [Version History](#version-history)
 - [Installation](#installation)
-- [Example](#example)
-- [Tutorials from community](#tutorials-from-community)
-- [Publish](#publish)
-
-## The next version is out
-
-> If you still want to use the old version, you can check out the branch to `release-1.6`.
-
-The new version brings some new design elements and bug fixes. When it stabilizes, it will be released as `v2.0.0`.
-
-All changes will be committed to the `master` branch. You can check the screenshot below to see the rough interface changes.
-
-For more detail, please refer to the [Release v2.0.0-beta](https://github.com/g1eny0ung/hugo-theme-dream/releases/tag/v2.0.0-beta).
-
-## Note After v1.1.0
-
-> It's needed to set the **`about`** folder to **`Headless Bundle`**.
-
-Related docs:
-
-<https://g1eny0ung.site/hugo-theme-dream/#/quick-start?id=add-quotabout-mequot>
-
-<https://g1eny0ung.site/hugo-theme-dream/#/about-page>
-
-<https://gohugo.io/content-management/page-bundles/#headless-bundle>
-
-## Major update in 2019-11-10
-
-I completely rewrite the page layout to [masonry layout](https://masonry.desandro.com/).
-
-Correspondingly, the configuration (`config.toml`) also has some breaking changes.
-
-Please refer to the documentation for details.
-
-If you have other problems, you can also ask in the [issues](https://github.com/g1eny0ung/hugo-theme-dream/issues).
+- [Examples & Tutorials](#examples-&-tutorials)
+- [Publishing](#publishing)
+- [Tags](#tags)
+- [License](#license)
 
 ## Intro
 
-Dream is a [Hugo](https://gohugo.io/) theme. I build it for [my blog](http://g1eny0ung.site).
+Dream is a [Hugo](https://gohugo.io/) theme. I built it for [my blog](http://g1eny0ung.site).
 
-The main features are **full page flip** and **masonry layout views**.~
+The main features are **full page flip** and grid-like **masonry layout views**.
 
-Dream also support **light mode** and **dark mode** out of the box.
+Dream also supports **light mode** and **dark mode** out of the box, and has a responsive layout.
 
-demo: [https://themes.gohugo.io/theme/hugo-theme-dream/](https://themes.gohugo.io/theme/hugo-theme-dream/)
-
-![https://raw.githubusercontent.com/g1eny0ung/hugo-theme-dream/master/images/screenshot.png](https://raw.githubusercontent.com/g1eny0ung/hugo-theme-dream/master/images/screenshot.png)
-
-All tags of this theme:
-
-- flip
-- masonry layout
-- i18n
-- blog
-- google-analytics
-- disqus
-- responsive
-- copyright
-- avatar
-- motto
-- social links
-- creative
-- personal
-- light mode
-- dark mode
-- search
+![/images/screenshot.png](/images/screenshot.png)
 
 ## Documentation
 
-[https://g1eny0ung.site/hugo-theme-dream](https://g1eny0ung.site/hugo-theme-dream)
+**Read offline:** a copy of all documentation is included in [the docs folder](/docs), besides this Readme.
+
+**Read online:** [https://g1eny0ung.site/hugo-theme-dream](https://g1eny0ung.site/hugo-theme-dream)
+
+## Version history
+See [the Changelog](docs/CHANGELOG.md) for breaking changes and important announcements.
 
 ## Installation
 
-Go into your blog folder and:
+Go into your blog folder and run:
 
 ```bash
 cd themes
 git clone https://github.com/g1eny0ung/hugo-theme-dream.git dream
 ```
 
-Then open your `config.toml` and edit to `theme = "dream"` and save.
+Then open your `config.toml` and edit the `theme` parameter to `theme = "dream"` and save. Your site will now build like a dream with this theme!
 
-## Example
+## Examples & Tutorials
 
-[My Blog](https://g1eny0ung.site)
+- [My Blog](https://g1eny0ung.site)
+- [My Blog's Source Code](https://github.com/g1eny0ung/blog)
+- Official Hugo demo: [https://themes.gohugo.io/theme/hugo-theme-dream/](https://themes.gohugo.io/theme/hugo-theme-dream/)
+- [使用 Hugo + Dream 主题构建个人博客](https://guole.fun/posts/hugo-blog/) (Chinese language tutorial)
 
-[My Blog's Source Code](https://github.com/g1eny0ung/blog)
+## Publishing
 
-## Tutorials from community
+See [Hugo: Hosting & Deployment](https://gohugo.io/hosting-and-deployment/).
 
-### Chinese
+This theme is compatible with [netlify CMS](https://www.netlifycms.org/).
 
-- [使用 Hugo + Dream 主题构建个人博客](https://guole.fun/posts/hugo-blog/)
+## Tags
+All of this theme's tags, from [theme.toml](theme.toml):
 
-## Publish
-
-View [Hosting & Deployment](https://gohugo.io/hosting-and-deployment/).
+"avatar", "blog", "copyright", "creative", "dark mode", "disqus", "flip", "google-analytics", "grid", "i18n", "light mode", "masonry layout", "motto", "netlify", "personal", "responsive", "search", "social links" 
 
 ## License
 
-MIT © [g1eny0ung](https://github.com/g1eny0ung)
+[MIT](LICENSE) © [g1eny0ung](https://github.com/g1eny0ung)
+
+
