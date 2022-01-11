@@ -61,6 +61,7 @@ theme = "hugo-theme-dream"
 
   # highlightjs = true
   # highlightjsCDN = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"
+  # highlightjsCDN = "js/3p/highlight.min.js"
   # highlightjsExtraLanguages = ["ocaml"]
   # highlightjsTheme = "gruvbox-light"
   # highlightjsThemeDark = "gruvbox-dark"
