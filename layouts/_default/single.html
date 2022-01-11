@@ -118,6 +118,7 @@
     {{ end }}
 
     {{ if .Site.Params.utterancesRepo }}
+	<!-- https://utteranc.es/, SaaS Github Issues are used as comments; not worth archiving JS -->
     <article class="ui segment utterances-comments" data-html2canvas-ignore>
       <script
         src="https://utteranc.es/client.js"
@@ -151,7 +152,8 @@
 {{ define "js" }}
 
 {{ if .Site.Params.Experimental.jsDate }}
-<script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0" integrity="sha384-fkBdKrBlHHJMjhP5UHOflZYWTeT+1TMgYYxLF+1pFiQQvaSqG6eQF47cFHKKB/wK" crossorigin="anonymous"></script>-->
+<script src="{{ "/js/3p/luxon@1.26.0.js" | relURL }}"></script>
 
 {{ partial "luxon.html" . }}
 {{ end }}
@@ -163,13 +165,15 @@
 
 {{ if .Site.Params.highlightjsExtraLanguages }}
 {{ range .Site.Params.highlightjsExtraLanguages }}
-<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/languages/{{ . }}.min.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/languages/{{ . }}.min.js"></script>-->
+<script src="{{ "/js/3p/hljs/{{ . }}.min.js" | relURL }}" />
 {{ end }}
 {{ end }}
 
 {{ partial "highlight.html" . }}
 {{ end }}
 
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1" integrity="sha384-LJOFaibPBMXPUd9DJVRyTiAIMytdoEA5O7jpac5g2K8LhAaRhOI1YinBCuTsT8/L" crossorigin="anonymous"></script>-->
+<script src="{{ "/js/3p/html2canvas@1.0.0-rc.1.js" | relURL }}"></script>
 <script src="{{ "/js/post.js" | relURL }}" defer></script>
 {{ end }}

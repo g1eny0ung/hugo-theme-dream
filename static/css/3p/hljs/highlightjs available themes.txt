@@ -41,6 +41,8 @@ far.css
 foundation.css 
 github.css 
 googlecode.css 
+gruvbox-dark.css
+gruvbox-light.css
 hybrid.css 
 idea.css 
 $ir_black.css 
