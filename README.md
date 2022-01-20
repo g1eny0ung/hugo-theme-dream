@@ -30,9 +30,9 @@ For more detail, please refer to the [Release v2.0.0-beta](https://github.com/g1
 
 Related docs:
 
-<https://g1eny0ung.site/hugo-theme-dream/#/quick-start?id=add-quotabout-mequot>
+<https://g1eny0ung.github.io/hugo-theme-dream/#/quick-start?id=add-quotabout-mequot>
 
-<https://g1eny0ung.site/hugo-theme-dream/#/about-page>
+<https://g1eny0ung.github.io/hugo-theme-dream/#/about-page>
 
 <https://gohugo.io/content-management/page-bundles/#headless-bundle>
 
@@ -48,7 +48,7 @@ If you have other problems, you can also ask in the [issues](https://github.com/
 
 ## Intro
 
-Dream is a [Hugo](https://gohugo.io/) theme. I build it for [my blog](http://g1eny0ung.site).
+Dream is a [Hugo](https://gohugo.io/) theme. I build it for [my blog](http://g1eny0ung.github.io).
 
 The main features are **full page flip** and **masonry layout views**.~
 
@@ -79,7 +79,7 @@ All tags of this theme:
 
 ## Documentation
 
-[https://g1eny0ung.site/hugo-theme-dream](https://g1eny0ung.site/hugo-theme-dream)
+[https://g1eny0ung.github.io/hugo-theme-dream](https://g1eny0ung.github.io/hugo-theme-dream)
 
 ## Installation
 
@@ -94,7 +94,7 @@ Then open your `config.toml` and edit to `theme = "dream"` and save.
 
 ## Example
 
-[My Blog](https://g1eny0ung.site)
+[My Blog](https://g1eny0ung.github.io)
 
 [My Blog's Source Code](https://github.com/g1eny0ung/blog)
 
