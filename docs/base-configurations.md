@@ -4,7 +4,7 @@
 
 ## Basic
 
-### baseURL = "https://g1eny0ung.github.io"
+### baseURL = "https://g1en.site"
 
 The site URL, ensure this is correct!
 
