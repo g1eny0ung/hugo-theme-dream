@@ -66,5 +66,10 @@
       <i class="{{ $iconSize }} {{ .icon }} icon" title="{{ .title }}"></i>
     </a>
   {{ end }}
+  {{ range .Site.Data.socials.ali_socials }}
+    <a class="item" href="{{ .href }}" target="{{ .target }}">
+      <i class="{{ $iconSize }} icon" title="{{ .title }}">{{ .svg | safeHTML }}</i>
+    </a>
+  {{ end }}
   {{ end }}
 </nav>

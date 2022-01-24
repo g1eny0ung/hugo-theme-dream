@@ -19,71 +19,72 @@
 
     <article class="ui horizontal list">
       {{ if gt (len (where .Site.RegularPages "Section" "==" "posts")) 0 }}
-      <a class="item" href="{{ "posts" | relLangURL }}">
-        <i class="archive icon" title="{{ T "archives" }}"></i>
+      <a class="item" href="{{ "posts" | relLangURL }}" style="color: #999999;">
+        <i class="archive icon" title="{{ T "archives" }}"></i>&nbsp;归档
       </a>
       {{ end }}
-      <a class="item" href="{{ "categories" | relLangURL }}">
-        <i class="th list icon" title="{{ T "allCategories" }}"></i>
+      <a class="item" href="{{ "categories" | relLangURL }}" style="color: #999999;">
+        <i class="th list icon" title="{{ T "allCategories" }}"></i>&nbsp;分类
       </a>
-      <a class="item" href="{{ "tags" | relLangURL }}">
-        <i class="tags icon" title="{{ T "allTags" }}"></i>
+      <a class="item" href="{{ "tags" | relLangURL }}" style="color: #999999;">
+        <i class="tags icon" title="{{ T "allTags" }}"></i>&nbsp;标签
       </a>
     </article>
+    
+    {{ if .Site.Params.headerShowType }}
 
-    {{ if .Site.Taxonomies.tags }}
-    {{ $tags := slice }}
-    {{ $first := slice }}
-    {{ $rest := slice }}
-    {{ range .Site.Taxonomies.tags }}
-      {{ $tags = $tags | append (dict "title" .Page.Title "link" .Page.RelPermalink) }}
-    {{ end }}
-    {{ $sum := len $tags }}
+      {{ $info := slice }}
+      {{ $first := slice }}
+      {{ $rest := slice }}
 
-    {{ $maxTags := .Site.Params.maxTags }}
+      {{ range index .Site.Taxonomies .Site.Params.headerShowType }}
+        {{ $info = $info | append (dict "title" .Page.Title "link" .Page.RelPermalink) }}
+      {{ end }}
 
-    {{ if $maxTags }}
+      {{ $sum := len $info }}
+      {{ $maxCount := .Site.Params.maxCount }}
 
-    {{ $first = first $maxTags $tags }}
-    {{ $rest = last (sub $sum $maxTags) $tags }}
+      {{ if $maxCount }}
 
-    <div class="tags-with-dropdown">
-      <div class="ui accordion">
-        <div class="title">
-          <div class="ui horizontal list">
-            <a class="item dropdown" href="#">
-              <i class="chevron right icon dropdown-icon"></i>
-            </a>
-          </div>
-          <div class="dream-tags">
-          {{ range $tag := $first }}
-          {{ $title := index $tag "title" }}
-          {{ $link := index $tag "link" }}
-            <a class="ui label" href="{{ $link }}" title="{{ $title }}">
-              {{ $title }}
-            </a>
-          {{ end }}
+        {{ $first = first $maxCount $info }}
+        {{ $rest = last (sub $sum $maxCount) $info }}
+        
+        <div class="tags-with-dropdown">
+          <div class="ui accordion">
+            <div class="title">
+              <div class="ui horizontal list">
+                <a class="item dropdown" href="#">
+                  <i class="chevron right icon dropdown-icon"></i>
+                </a>
+              </div>
+              <div class="dream-tags">
+                {{ range $tag := $first }}
+                  {{ $title := index $tag "title" }}
+                  {{ $link := index $tag "link" }}
+                  <a class="ui label" href="{{ $link }}" title="{{ $title }}">
+                    {{ $title }}
+                  </a>
+                {{ end }}
+              </div>
+            </div>
+            <div class="content">
+            </div>
           </div>
         </div>
-        <div class="content">
-    {{ else }}
-    {{ $rest = $tags }}
-    {{ end }}
-          <div class="dream-tags"{{ if $maxTags }} style="margin-left: 1.5rem;"{{ end}}>
+      {{ else }}
+        {{ $rest = $info }}
+        <div class="dream-tags" {{ if $maxCount }} style="margin-left: 1.5rem;" {{ end }}>
           {{ range $tag := $rest }}
-          {{ $title := index $tag "title" }}
-          {{ $link := index $tag "link" }}
+            {{ $title := index $tag "title" }}
+            {{ $link := index $tag "link" }}
             <a class="ui label" href="{{ $link }}" title="{{ $title }}">
               {{ $title }}
             </a>
           {{ end }}
-          </div>
-    {{ if $maxTags }}
         </div>
-      </div>
-    </div>
-    {{ end }}
+      {{ end }}
 
     {{ end }}
+
   </div>
 </header>
