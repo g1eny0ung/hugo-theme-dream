@@ -1,0 +1,39 @@
+socials = [
+  { href = "https://twitter.com/joebloggs", target="_blank", icon = "twitter", title = "Twitter" },
+  { href = "https://facebook.com/joebloggs", target="_blank", icon = "facebook", title = "Facebook" },
+  { href = "https://messenger.com/joebloggs", target="_blank", icon = "comment", title = "Facebook Messenger" },
+  { href = "https://vk.com/joebloggs", target="_blank", icon = "vk", title = "VKontakte" },
+  { href = "https://mastodon.social/@JoeBloggs", target="_blank", icon = "hashtag", title = "Mastodon" },
+  { href = "https://old.reddit.com/r/joebloggssubreddit/", target="_blank", icon = "android", title = "SubReddit" },
+  { href = "https://www.reddit.com/u/joebloggs/", target="_blank", icon = "android", title = "Reddit User Account" },
+  { href = "https://www.youtube.com/channel/UCuAXFkgsw1L7xaCfnd5JJOw", target="_blank", icon = "youtube", title = "YouTube" }, # Recommended to use channel hash (case-sensitive, unchangeable) rather than username (changeable)
+  { href = "https://www.twitch.tv/moistcr1tikal", target="_blank", icon = "twitch", title = "Twitch.tv" },
+  { href = "https://vimeo.com/user12345678", target="_blank", icon = "vimeo", title = "Vimeo" },
+  { href = "https://instagram.com/joebloggs", target="_blank", icon = "instagram", title = "Instagram" },
+  { href = "https://www.linkedin.com/in/joebloggs", icon = "linkedin", title = "Linkedin" },
+  { href = "https://github.com/joebloggs", target="_blank", icon = "github", title = "GitHub" },
+  { href = "https://gitlab.com/joebloggs", target="_blank", icon = "gitlab", title = "GitLab" },
+  { href = "https://drive.google.com/drive/folders/blablabla?usp=sharing", target="_blank", icon = "download", title = "Google Drive/Cloud" },
+  { href = "https://stackoverflow.com/users/1234567/joebloggs", target="_blank", icon = "stack overflow", title = "Stack Overflow" },
+  { href = "https://t.me/joebloggs", target="_blank", icon = "telegram", title = "Telegram" },
+  { href = "https://wa.me/15551234567?text=I'm%20interested%20in%20your%20car%20for%20sale", target="_blank", icon = "whatsapp", title = "Whatsapp" },
+  { href = "https://www.google.com", target="_blank", icon = "chain", title = "Other website" },
+  { href = "https://www.patreon.com/joebloggs", target="_blank", icon = "patreon", title = "Patreon" },
+  { href = "https://www.paypal.com/paypalme/JoeBloggs", target="_blank", icon = "paypal", title = "PayPal" },
+  { href = "https://www.etsy.com/uk/shop/JoeBloggs", target="_blank", icon = "etsy", title = "Etsy" },
+  { href = "https://www.ebay.co.uk/usr/joebloggs", target="_blank", icon = "cart", title = "eBay" },
+  { href = "https://soundcloud.com/user-12345678", target="_blank", icon = "soundcloud", title = "SoundCloud" },
+  { href = "https://hearthis.at/joe-bloggs/", target="_blank", icon = "microphone", title = "HeartThis.at" },
+  { href = "https://www.last.fm/user/JoeBloggs", target="_blank", icon = "lastfm", title = "Last.fm" },
+  { href = "https://open.spotify.com/artist/0gxyHStUsqpMadRV0Di1Qt", target="_blank", icon = "spotify", title = "Spotify" },
+  { href = "https://www.deezer.com/en/artist/12345678", target="_blank", icon = "music", title = "Deezer" },
+  { href = "https://matrix.to/#/@joebloggs:matrix.org", target="_blank", icon = "at", title = "Matrix" },
+  # { href = "https://app.element.io/#/room/#joebloggsroom:matrix.org", target="_blank", icon = "at", title = "Matrix" },
+  { href = "https://discord.gg/HP5sQ6c", target="_blank", icon = "discord", title = "Discord Server" }, # Discord cannot link to username/start chat, only server invites
+  { href = "skype:joebloggs420", target="_blank", icon = "skype", title = "Skype" }, # You can specify skype:joebloggs420?chat or ?call to initiate chat or call
+  { href = "mailto:joebloggs@email.com", target="_blank", icon = "envelope", title = "Email" },
+  { href = "https://codepen.io/joebloggs", target="_blank", icon = "codepen", title = "Codepen" },
+  { href = "tox:56A1ADE4B65B86BCD51CC73E2CD4E542179F47959FE3E0E21B4B0ACDADE51855D34D34D37CB5", target="_blank", icon = "lock", title = "qTox" }, # 
+  { href = "tel:1-408-555-5555", target="_blank", icon = "phone", title = "Telephone" }, # Only works on mobile
+  { href = "bitcoin:<address>[?amount=<amount>][?label=<label>][?message=<message>]", target="_blank", icon = "bitcoin", title = "Cryptocurrency" }
+]
