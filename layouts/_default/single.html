@@ -132,12 +132,12 @@
 {{ if .Site.Params.highlightjs }}
 <script src="{{ if .Site.Params.highlightjsCDN }}{{ .Site.Params.highlightjsCDN }}{{ else }}{{ "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js" }}{{ end}}"></script>
 
-{{ if .Site.Params.highlightjsExtraLanguages }}
-{{ range .Site.Params.highlightjsExtraLanguages }}
+<!--{{ if .Site.Params.highlightjsExtraLanguages }}
+{{ range .Site.Params.highlightjsExtraLanguages }}-->
 <!--<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/languages/{{ . }}.min.js"></script>-->
-<script src="{{ "/js/3p/hljs/{{ . }}.min.js" | relURL }}" />
+<!--<script src="{{ "/js/3p/hljs/{{ . }}.min.js" | relURL }}" />
 {{ end }}
-{{ end }}
+{{ end }}-->
 
 {{ partial "highlight.html" . }}
 {{ end }}
