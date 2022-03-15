@@ -18,6 +18,7 @@
 	  <noscript>Please enable JavaScript for this website to work properly.</noscript>
     </h1>
 
+{{ if not .Site.Params.topTags }}
     <article class="ui horizontal list">
       {{ if gt (len (where .Site.RegularPages "Section" "==" "posts")) 0 }}
       <a class="item" href="{{ "posts" | relLangURL }}">
@@ -31,6 +32,7 @@
         <i class="tags icon" title="{{ T "allTags" }}"></i>
       </a>
     </article>
+{{ end }}
 
     {{ if .Site.Taxonomies.tags }}
     {{ $tags := slice }}
