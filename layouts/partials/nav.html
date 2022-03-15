@@ -6,7 +6,7 @@
 <nav class="ui secondary menu dream-menu dream-nav">
 {{ end }}
   <a class="item dream-flip-toggle" title="{{ i18n "flip" }}">
-    <i class="large link bullseye icon"></i>
+    <i class="large link question circle icon"></i>
   </a>
   <a class="item" href="{{ .Site.BaseURL }}" title="{{ i18n "home" }}">
     <i class="large link home icon"></i>
@@ -21,4 +21,20 @@
     <i class="large link search icon"></i>
   </a>
   {{ end }}
+  {{ if .Site.Params.topTags }}
+    <article class="ui horizontal list">
+      {{ if gt (len (where .Site.RegularPages "Section" "==" "posts")) 0 }}
+      <a class="item" href="{{ "posts" | relLangURL }}">
+        <i class="archive icon" title="{{ T "archives" }}"></i>
+      </a>
+      {{ end }}
+      <a class="item" href="{{ "categories" | relLangURL }}">
+        <i class="th list icon" title="{{ T "allCategories" }}"></i>
+      </a>
+      <a class="item" href="{{ "tags" | relLangURL }}">
+        <i class="tags icon" title="{{ T "allTags" }}"></i>
+      </a>
+    </article>
+  {{ end }}
+  
 </nav>
