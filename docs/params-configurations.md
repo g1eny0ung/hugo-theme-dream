@@ -3,6 +3,9 @@
 ## Example
 
 ```toml
+# recommended for GitHub pages
+publishDir = 'docs'
+
 [params]
   background = "#fff"
   backgroundImage = "/me/background.jpg"
@@ -68,6 +71,7 @@
   # shareInAside = true
   fixedNav = true
   # collapsibleTags = true
+  # topTags = false
   # collapseBySummary = true
 
   [params.advanced]
@@ -78,9 +82,16 @@
   [params.experimental]
     jsDate = true
     jsDateFormat = "yyyy年MM月dd日"
+
+  # required for search
+  # [outputs]
+  #   home = ["HTML", "RSS", "JSON"]
 ```
 
 > For more details with dark mode related params, see [Dark Mode](dark-mode.md).
+
+### publishDir = 'docs'
+GitHub pages builds from the `/docs` folder by default, rather than Hugo's default `/public` folder
 
 ### background = "#ccc"
 
@@ -217,7 +228,7 @@ View <https://valine.js.org/en/quickstart> to get more details.
 
 > Deprecated. **Now you can do the rendering of socials with a custom data file. This file must be named `socials.toml` and must contain the array named `socials`.**
 >
-> Example: <https://github.com/g1eny0ung/blog/blob/master/data/socials.toml>.
+> Example: [../exampleSite/data/socials.toml](../exampleSite/data/socials.toml)
 
 `email = "g1enyy0ung@gmail.com"`<br />
 `twitter = "g1eny0ung"`<br />
@@ -241,7 +252,7 @@ Set your site's start year, then the header will show as **siteStartYear - curre
 
 ### favicon = "/favicon.ico"
 
-Custom the [favicon](https://en.wikipedia.org/wiki/Favicon), place it in your `static` folder, same as `avatar`.
+Customise the 16x16px [favicon](https://en.wikipedia.org/wiki/Favicon), place it in your `static` folder, same as `avatar`. If you want all the different possible favicon sizes for iOS, Android, Firefox, PWA, etc. resize an HD favicon manually based off the examples [../exampleSite/static/favicons/](../exampleSite/static/favicons/), or use an online service like [Favicomatic](https://favicomatic.com/) or [Favicon Generator](https://www.favicon-generator.org/).
 
 ### highlightjs = true
 
@@ -276,6 +287,9 @@ Make navbar fixed when scrolling.
 ### collapsibleTags = true
 
 Make `/tags` page's tags collapsible.
+
+### topTags = true
+Make the Archive, Categories and Tags buttons appear in the top navbar, instead of next to the avatar above the tag cloud.
 
 ### collapseBySummary = true
 

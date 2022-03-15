@@ -45,6 +45,7 @@ theme = "hugo-theme-dream"
   # LEANCLOUD_APP_KEY = ""
   # VALINE_LANGUAGE = ""
 
+  # socials, deprecated - use /data/socials.toml instead
   email = "g1enyy0ung@gmail.com"
   # twitter = ""
   # facebook = ""
@@ -57,7 +58,7 @@ theme = "hugo-theme-dream"
 
   siteStartYear = 2016
 
-  # favicon = "/favicon.ico"
+  favicon = "/favicons/favicon.ico"
 
   # highlightjs = true
   # highlightjsCDN = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"
@@ -86,3 +87,10 @@ theme = "hugo-theme-dream"
   # [params.experimental]
   #   jsDate = true
   #   jsDateFormat = "yyyy年MM月dd日"
+  
+    [params.advanced]
+    customCSS = ["css/custom.css"] # files in the list will be loaded in order
+  
+  # required for search
+  # [outputs]
+  #   home = ["HTML", "RSS", "JSON"]
