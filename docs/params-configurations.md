@@ -24,6 +24,7 @@ publishDir = 'docs'
   author = "g1eny0ung"
   description = "g1eny0ung 的生活记录～"
   avatar = "/me/yy.jpg"
+  # roundAvatar = true
   headerTitle = "g1eny0ung 的博客"
   motto = "与其感慨路难行，不如马上出发。"
   # maxTags = 5
@@ -164,6 +165,10 @@ The description field will be used as:
 ### avatar = "/me/yy.jpg"
 
 Used in Header.
+
+### roundAvatar = true
+
+Choose between rounded avatar (best for profile pictures) or unset (best for custom brand logos)
 
 ### headerTitle = "g1eny0ung 的博客"
 

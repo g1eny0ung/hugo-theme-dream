@@ -1,12 +1,18 @@
 <header class="ui basic very padded segment dream-header">
   {{ if isset .Site.Params "avatar" }}
-  <div class="ui small circular image">
-    <img src="{{ .Site.Params.avatar | relURL }}" alt="avatar" />
-  </div>
+	{{ if .Site.Params.roundAvatar }}
+		<div class="ui small circular image">
+			<img src="{{ .Site.Params.avatar | relURL }}" alt="avatar" />
+		</div>
+	{{- else -}}
+		<div class="ui small image">
+			<img src="{{ .Site.Params.avatar | relURL }}" alt="avatar" />
+		</div>
+	{{ end }}
   {{ end }}
 
   <div class="content">
-    <h1 class="ui medium header">
+    <h1 class="ui extra-large header">
       {{- if .Site.Params.headerTitle -}}
         {{- .Site.Params.headerTitle -}}
       {{- else -}}
