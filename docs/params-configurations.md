@@ -6,6 +6,9 @@
 # recommended for GitHub pages
 publishDir = 'docs'
 
+[markup.goldmark.renderer] 
+unsafe = true 
+
 [params]
   background = "#fff"
   backgroundImage = "/me/background.jpg"
@@ -93,6 +96,9 @@ publishDir = 'docs'
 
 ### publishDir = 'docs'
 GitHub pages builds from the `/docs` folder by default, rather than Hugo's default `/public` folder
+
+### [markup.goldmark.renderer] unsafe = true 
+[When using Hugo 0.60.0+, raw HTML are now silently replaced with < !-- raw HTML omitted -->.](https://discourse.gohugo.io/t/raw-html-getting-omitted-in-0-60-0/22032). This means any inline images or fancy stuff you try and do that are beyond the capabilities of Markdown will be omitted. Setting `unsafe = true` will allow it to render.
 
 ### background = "#ccc"
 

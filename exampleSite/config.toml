@@ -12,6 +12,12 @@ theme = "hugo-theme-dream"
 
 # enableRobotsTXT = true
 
+# recommended for GitHub pages
+publishDir = 'docs'
+
+[markup.goldmark.renderer] 
+unsafe = true 
+
 [params]
   background = "#f7f7f7"
   # backgroundImage = "/me/background.jpg"
