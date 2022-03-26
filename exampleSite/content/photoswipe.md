@@ -289,7 +289,7 @@ Result:
 ## placeholder for arduino gallery
 
 ## Don't forget
-to call `{{< pswp-init >}}` somewhere on the page!
+to call `{ {< pswp-init >}}` somewhere on the page!
 
 ## Credits
 Thanks to [Tom Helmer](http://www.thehome.dk/article/photoswipe-gallery-hugo/) and [Thoriq Firdaus](https://webdesign.tutsplus.com/tutorials/the-perfect-lightbox-using-photoswipe-with-jquery--cms-23587) for their blog posts which helped me with this post.

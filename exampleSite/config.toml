@@ -15,8 +15,12 @@ theme = "hugo-theme-dream"
 # recommended for GitHub pages
 publishDir = 'docs'
 
+# enable inline html rendering within Markdown posts
 [markup.goldmark.renderer] 
 unsafe = true 
+
+# ignore stupid error
+ignoreErrors = ["error-missing-instagram-accesstoken"]
 
 [params]
   background = "#f7f7f7"

@@ -195,8 +195,8 @@ You can specify the following options to make your captions pretty:
 	width="400px" caption-position="bottom" >}}
 {{< figure src="/img/homepage/sydney-harbour.jpg" caption="Sydney Harbour"
 	width="400px" caption-position="bottom" caption-effect="appear" >}}
-{{< figure ... caption-effect="slide" >}}
-{{< figure ... caption-effect="fade" >}}
+{ {< figure ... caption-effect="slide" >}}
+{ {< figure ... caption-effect="fade" >}}
 ```
 
 ## placeholder sydney: no effect, appear, slide, fade
