@@ -37,7 +37,7 @@ If all your existing figures already have a `link` that points to a larger versi
 
 Put this file in `/layouts/shortcodes/figure.html`:
 
-```
+```html
 <figure {{ with .Get "class" }}class="{{.}}"{{ end }} itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
     <a href="{{ with .Get "link" }}{{.}}{{ else }}{{ .Get "src" }}{{ end }}" {{ with .Get "size" }}data-size="{{.}}"{{ end }} itemprop="contentUrl"> 
         <img itemprop="thumbnail"
@@ -61,13 +61,13 @@ Put this file in `/layouts/shortcodes/figure.html`:
 
 This new shortcode accepts two new parameters size and thumb, and behaves differently as follows:
 
-`{{< figure src="/img/homepage/cc_jeepers.jpg" >}}` does the same as normal, but with a hyperlink to itself:
+`{{</* figure src="/img/homepage/cc_jeepers.jpg" */>}}` does the same as normal, but with a hyperlink to itself:
 
-## placeholder cc_jeepers.jpg
+{{< figure src="/img/homepage/cc_jeepers.jpg" >}}
 
-`{{< figure link="/img/homepage/cc_jeepers.jpg" thumb="-thumb" >}}` will display `/img/homepage/cc_jeepers-thumb.jpg` and a hyperlink to `/img/homepage/cc_jeepers.jpg`:
+`{{</* figure link="/img/homepage/cc_jeepers.jpg" thumb="-thumb" */>}}` will display `/img/homepage/cc_jeepers-thumb.jpg` and a hyperlink to `/img/homepage/cc_jeepers.jpg`:
 
-## placeholder cc_jeepers-thumb.jpg
+{{< figure link="/img/homepage/cc_jeepers.jpg" thumb="-thumb" >}}
 
 That’s already kind of useful by itself, but wait, there’s more…
 
@@ -77,7 +77,7 @@ To initialise PhotoSwipe we need to add some html and include the PhotoSwipe css
 
 Put this file in `/layouts/shortcodes/pswp-init.html`:
 
-```
+```html
 <!-- Photoswipe css/js libraries -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
@@ -148,7 +148,7 @@ This script runs once the page is loaded, and does three things:
 
 Put this file in `/static/js/pswp-init.js`:
 
-```
+```js
 $( document ).ready(function() {
   var items = []; // array of slide objects that will be passed to PhotoSwipe()
   // for every figure element on the page:
@@ -214,15 +214,15 @@ $( document ).ready(function() {
 
 With the `pswp-init` shortcode called, our image should now show a carousel when clicked:
 
-`{{< figure link="/img/homepage/cc_jeepers.jpg" thumb="-thumb" >}}`:
+`{{</* figure link="/img/homepage/cc_jeepers.jpg" thumb="-thumb" */>}}`:
 
-## placeholder image
+{{< figure link="/img/homepage/cc_jeepers.jpg" thumb="-thumb" >}}
 
 Note that the large image was already loaded - this is because we didn’t pre-define the image size, so the script had to load the image to check its size. If we pre-define the size, your browser won’t need to load it until you click on it (or any other image). We can also include a caption.
 
-`{{< figure link="/img/homepage/sydney-harbour.jpg" thumb="-thumb" size="1920x928" caption="Sydney Harbour" >}}`:
+`{{</* figure link="/img/homepage/sydney-harbour.jpg" thumb="-thumb" size="1920x928" caption="Sydney Harbour" */>}}`:
 
-## placeholder image with caption
+{{< figure link="/img/homepage/sydney-harbour.jpg" thumb="-thumb" size="1920x928" caption="Sydney Harbour" >}}
 
 If you refresh the page and then click on the image above, you’ll see it is pixellated for a litle while whilst it loads.
 
@@ -235,15 +235,15 @@ But what if you **do** want a bunch of thumbnails all together in a box?
 Don’t worry, we can do that too. Here’s the code:
 
 Put this file in `/layouts/shortcodes/gallery.html`:
-```
+```html
 <div class="gallery" itemscope itemtype="http://schema.org/ImageGallery">
 {{ .Inner }}
 <div class="title">{{ .Get "title" }}</div>
 </div>
 <link rel="stylesheet" href="/css/pswp-gallery.css" />
 ```
-Put this file in ```/static/css/pswp-gallery.js```:
-```
+Put this file in ```/static/css/pswp-gallery.css```:
+```css
 .gallery {
   float: none;
   border: 1px solid lightgrey;
@@ -275,6 +275,18 @@ figcaption {
 Hugo shortcodes:
 
 ```
+{{</* gallery title="Pictures from my Arduino post" */>}}
+{{</* figure link="/img/arduino/garage-opener.jpg" thumb="-thumb" size="600x800" caption="Garage remote" */>}}
+{{</* figure link="/img/arduino/garage-opener-inside.jpg" thumb="-thumb" size="800x600" caption="Garage remote showing EV1527 chipset" */>}}
+{{</* figure link="/img/arduino/ms-front.jpg" thumb="-thumb" size="600x800" caption="RC mains switch - front" */>}}
+{{</* figure link="/img/arduino/ms-rear.jpg" thumb="-thumb" size="600x800" caption="RC mains switch - back showing PowerTran model A0342" */>}}
+{{</* figure link="/img/arduino/ms-remote.jpg" thumb="-thumb" size="600x800" caption="RC mains switch remote" */>}}
+{{</* figure link="/img/arduino/ms-remote-inside.jpg" thumb="-thumb" size="600x800" caption="RC mains switch remote showing LX2262A-R4 chipset" */>}}
+{{</* figure link="/img/arduino/lamp-setup.jpg" thumb="-thumb" size="600x800" caption="Test setup with lamp" */>}}
+{{</* /gallery */>}}
+```
+Result:
+
 {{< gallery title="Pictures from my Arduino post" >}}
 {{< figure link="/img/arduino/garage-opener.jpg" thumb="-thumb" size="600x800" caption="Garage remote" >}}
 {{< figure link="/img/arduino/garage-opener-inside.jpg" thumb="-thumb" size="800x600" caption="Garage remote showing EV1527 chipset" >}}
@@ -284,12 +296,9 @@ Hugo shortcodes:
 {{< figure link="/img/arduino/ms-remote-inside.jpg" thumb="-thumb" size="600x800" caption="RC mains switch remote showing LX2262A-R4 chipset" >}}
 {{< figure link="/img/arduino/lamp-setup.jpg" thumb="-thumb" size="600x800" caption="Test setup with lamp" >}}
 {{< /gallery >}}
-```
-Result:
-## placeholder for arduino gallery
 
 ## Don't forget
-to call `{ {< pswp-init >}}` somewhere on the page!
+to call `{{</* pswp-init */>}}` somewhere on the page!
 
 ## Credits
 Thanks to [Tom Helmer](http://www.thehome.dk/article/photoswipe-gallery-hugo/) and [Thoriq Firdaus](https://webdesign.tutsplus.com/tutorials/the-perfect-lightbox-using-photoswipe-with-jquery--cms-23587) for their blog posts which helped me with this post.
