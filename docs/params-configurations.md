@@ -72,8 +72,8 @@ unsafe = true
   enableSearch = true
 
   # Error 404 Not Found page text
-  404header = "Oops...You are lost in dream."
-  404subheader = "Don't worry though, click the button below to wake up."
+  404_header = "Oops...You are lost in dream."
+  404_subheader = "Don't worry though, click the button below to wake up."
 
   # options
   showSummaryCoverInPost = true
@@ -297,10 +297,10 @@ View [Highlight.js](highlightjs.md) for more details.
 
 View [Search](search.md) for more details.
 
-###  404header = "Oops...You are lost in dream."
+###  404_header = "Oops...You are lost in dream."
 Error 404 Page Not Found header text.
 
-###  404subheader = "Don't worry though, click the button below to wake up."
+###  404_subheader = "Don't worry though, click the button below to wake up."
 Error 404 Page Not Found sub-header text, appears between header and "Go back home" button.
 
 ### showSummaryCoverInPost = true
