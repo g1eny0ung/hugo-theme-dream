@@ -23,7 +23,8 @@ Hugo Easy Gallery makes Hugo image galleries easy. [Get the code and documentati
 ```
 {{</* gallery dir="/img/arduino/" */>}} {{</* load-photoswipe */>}}
 ```
-<!-- do not uncomment the gallery thing below, or it breaks the page; everything else works. Dunno why. jQuery version mismatch?-->
+
+<!-- do not uncomment the gallery thing below, or it breaks the page; everything else works. Dunno why. jQuery version mismatch? EDIT: Doesn't load necessary CSS for some reason-->
 {{</* gallery dir="/img/arduino/" */>}} {{< load-photoswipe >}}
 
 Notes:
@@ -54,6 +55,7 @@ ms-remote.jpg
 ```
 
 ## Create gallery of specific files
+
 ```
 {{</* gallery */>}}
 {{</* figure link="/img/homepage/sydney-harbour.jpg" caption="Sydney Harbour" */>}}
@@ -275,7 +277,7 @@ You can specify the following options to make your captions pretty:
 	width="400px" caption-position="bottom" >}}
 {{< figure src="/img/homepage/sydney-harbour.jpg" caption="Sydney Harbour"
 	width="400px" caption-position="bottom" caption-effect="appear" >}}
-{ {< figure figure src="/img/homepage/sydney-harbour.jpg" caption="Sydney Harbour"
+{{< figure src="/img/homepage/sydney-harbour.jpg" caption="Sydney Harbour"
 	width="400px" caption-position="bottom" caption-effect="slide" >}}
-{ {< figure figure src="/img/homepage/sydney-harbour.jpg" caption="Sydney Harbour"
+{{< figure src="/img/homepage/sydney-harbour.jpg" caption="Sydney Harbour"
 	width="400px" caption-position="bottom" caption-effect="fade" >}}
