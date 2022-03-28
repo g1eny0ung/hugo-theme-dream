@@ -140,7 +140,9 @@
 <script src="{{ "/js/scrollToTop.js" | relURL }}"></script>
 
 {{ if .Site.Params.highlightjs }}
-<script src="{{ if .Site.Params.highlightjsCDN }}{{ .Site.Params.highlightjsCDN }}{{ else }}{{ "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js" integrity="sha256-+drbZCPWcVz0Wo0d8P8eD49H5xzTu68R7h7W5trZRk8=" crossorigin="anonymous" }}{{ end}}"></script>
+<script src="{{ if .Site.Params.highlightjsCDN }}{{ .Site.Params.highlightjsCDN }}{{ else }}{{ "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js" }}{{ end}}"></script>
+
+<!--Hugo doesn't like SRI for highlightjs: integrity="sha256-+drbZCPWcVz0Wo0d8P8eD49H5xzTu68R7h7W5trZRk8=" crossorigin="anonymous"-->
 
 <!--{{ if .Site.Params.highlightjsExtraLanguages }}
 {{ range .Site.Params.highlightjsExtraLanguages }}-->
