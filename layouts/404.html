@@ -5,8 +5,8 @@
   <div class="ui basic center aligned segment">
     {{ if or .Site.Params.backgroundDark .Site.Params.backgroundImageDark }}
       <h1 class="ui header">
-        {{ .Site.Params.404_header }}
-        <span class="sub header">{{ .Site.Params.404_subheader }}</span>
+        {{ .Site.Params.error404Header }}
+        <span class="sub header">{{ .Site.Params.error404SubHeader }}</span>
       </h1>
       <p>
         <button class="ui secondary button" onclick="window.location.href = '{{ .Site.BaseURL }}'">{{ i18n "backToHome" }}</button>

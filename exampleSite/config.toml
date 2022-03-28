@@ -80,8 +80,8 @@ unsafe = true
   # enableSearch = true
   
   # Error 404 Not Found page text
-  404_header = "Oops...You are lost in dream."
-  404_subheader = "Don't worry though, click the button below to wake up."
+  error404Header = "Oops...You are lost in dream."
+  error404SubHeader = "Don't worry though, click the button below to wake up."
 
   # options
   # showSummaryCoverInPost = true
