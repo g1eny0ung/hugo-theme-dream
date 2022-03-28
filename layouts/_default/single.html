@@ -157,7 +157,7 @@
 {{ if .Site.Params.CDNJS }}
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1/dist/html2canvas.min.js" integrity="sha256-uacRffSSMP9qpvNWhVmYLykBv9YKMA1d/VSIN1AmfyQ=" crossorigin="anonymous"></script>-->
 {{- else -}}
-  <script src="{{ "/js/3p/html2canvas@1.0.0-rc.1.js" | relURL }}"></script>
+  <script src="{{ "/js/3p/html2canvas.min@1.0.0-rc.1.js" | relURL }}"></script>
 {{ end }}
   <script src="{{ "/js/post.js" | relURL }}" defer></script>
 {{ end }}
