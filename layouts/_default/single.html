@@ -8,11 +8,13 @@
     <link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/{{ .Site.Params.highlightjsTheme }}.min.css" />
   {{- else -}}
     <link rel="stylesheet" data-highlight href="{{ "/css/3p/hljs/{{ .Site.Params.highlightjsTheme }}.min.css" | relURL }}" />
+  {{ end }}
 {{ else }}
   {{ if .Site.Params.CDNJS }}
     <link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css" integrity="sha256-+94KwJIdhsNWxBUy5zGciHojvRuP8ABgyrRHJJ8Dx88=" crossorigin="anonymous"/>
   {{- else -}}
     <link rel="stylesheet" data-highlight href="{{ "/css/3p/hljs/default.min.css" | relURL }}" />
+  {{ end }}
 {{ end }}
 {{ end }}
 
@@ -21,6 +23,7 @@
     <script src='https://unpkg.com/valine/dist/Valine.min.js' integrity="sha256-nPUdUfwNm4YBBhEYBxrSbW5DmfVODKCzs0nAp1Z3RnM=" crossorigin="anonymous"></script>
   {{- else -}}
     <script src="{{ "/js/3p/Valine.min@1.4.16.js" | relURL }}"></script>
+  {{ end }}
 {{ end }}
 
 {{ end }}
@@ -153,5 +156,6 @@
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1/dist/html2canvas.min.js" integrity="sha256-uacRffSSMP9qpvNWhVmYLykBv9YKMA1d/VSIN1AmfyQ=" crossorigin="anonymous"></script>-->
 {{- else -}}
   <script src="{{ "/js/3p/html2canvas@1.0.0-rc.1.js" | relURL }}"></script>
+{{ end }}
   <script src="{{ "/js/post.js" | relURL }}" defer></script>
 {{ end }}
