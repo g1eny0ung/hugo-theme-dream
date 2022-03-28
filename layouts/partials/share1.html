@@ -3,15 +3,15 @@
     class="ui circular icon button save-as-image"
     title="{{ i18n "saveAsImage" }}"
     onclick="savePostAsImg()">
-    <i class="save icon"></i>
+    <i class="save icon" alt="{{ i18n "saveAsImage" }}"></i>
   </button>
   <a href="https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}" class="ui circular twitter icon button">
-    <i class="twitter icon"></i>
+    <i class="twitter icon" alt="Twitter"></i>
   </a>
   <a href="https://facebook.com/sharer/sharer.php?u={{ .Permalink }}" class="ui circular facebook icon button">
-    <i class="facebook icon"></i>
+    <i class="facebook icon" alt="Facebook"></i>
   </a>
   <a href="https://t.me/share/url?url={{ .Permalink }}&text={{ .Title }}" class="ui circular telegram icon button">
-    <i class="telegram icon"></i>
+    <i class="telegram icon" alt="Telegram"></i>
   </a>
 </div>
