@@ -5,8 +5,8 @@
   <div class="ui basic center aligned segment">
     {{ if or .Site.Params.backgroundDark .Site.Params.backgroundImageDark }}
       <h1 class="ui header">
-        Oops...You are lost in dream.
-        <span class="sub header">Don't worry though, click the button below to wake up.</span>
+        {{ .Site.Params.404header }}
+        <span class="sub header">{{ .Site.Params.404subheader }}</span>
       </h1>
       <p>
         <button class="ui secondary button" onclick="window.location.href = '{{ .Site.BaseURL }}'">{{ i18n "backToHome" }}</button>

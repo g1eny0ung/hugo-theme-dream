@@ -78,6 +78,10 @@ unsafe = true
 
   # search
   # enableSearch = true
+  
+  # Error 404 Not Found page text
+  404header = "Oops...You are lost in dream."
+  404subheader = "Don't worry though, click the button below to wake up."
 
   # options
   # showSummaryCoverInPost = true
