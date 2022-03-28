@@ -42,6 +42,36 @@ Please refer to the documentation for details.
 
 If you have other problems, you can also ask in the [issues](https://github.com/g1eny0ung/hugo-theme-dream/issues).
 
+## Next plans
+- compatibility fixes for Internet Explorer, Firefox, iOS safari (the site breaks in all those browsers and loads the About flip page on top of, or just below, the main article selection)
+- performance fixes: scrolling is sometimes juddery, and the navbar doesn't always stick cleanly to the top of the page
+- collapsible "Share" menu in articles, with various socials, to avoid clutter.
+- option to use 2 avatars, one for the main homepage, 1 for the About flip page
+- separate out the flip page into its own separate thing? since it seems to be part of the main page at the moment and loads on top of it when CSS breaks.
+- remove (or make optional) custom scrollbars and jQuery
+- add Photoswipe
+- maybe add [StPageFlip](https://nodlik.github.io/StPageFlip/)???
+
+## [2.9.5] - 2022.03.28
+- Added exampleSite data, including:
+ -  many social network URI schemes
+ -  example graphics
+ -  example favicons in all sizes
+- Improved documentation formatting and grammar
+- i18n: `ar`, `ca`, `de`, `he`, `ja`, `lv`, `ro`, `ru`, `sl` (and deduplication of translation code)
+- opt out of Google FLoC
+- update miscellaneous dependencies
+- Sub-Resource Integrity hashes for all remote content
+- `CDNJS` site param (site is now **offline capable**, you can choose to load JS/CSS locally or from a CDN)
+- `TopTags` site param: optionally display all buttons in top navbar instead of mixed with tag cloud
+- `roundAvatar` site param: choose whether to have a round avatar or unset image to better display custom logos
+- Accessibility improvements (alt tags, NoScript warning)
+- Customisable 404 page text
+- Enable inline html in Markdown files
+### Work in progress:
+- [WIP] Start implementing PWA service worker and manifest (**v2.9.x**)
+- [WIP] Start implementing [Photoswipe](https://photoswipe.com/) via [Hugo Easy Gallery](https://github.com/liwenyip/hugo-easy-gallery/) in an [unofficial fork](https://github.com/Darthagnon/hugo-easy-gallery) (jQuery-free version!) (**v3.0.0?**)
+
 ## [2.0.0-beta] - 2021.01.31
 
 - New `header` component
