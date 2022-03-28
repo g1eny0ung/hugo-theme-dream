@@ -67,6 +67,8 @@ unsafe = true
 
   favicon = "/favicons/favicon.ico"
 
+  # true: load 3rd-party JS/CSS from CDN; false: load instead from local files
+	CDNJS = false
   # highlightjs = true
   # highlightjsCDN = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"
   # highlightjsCDN = "js/3p/highlight.min.js"

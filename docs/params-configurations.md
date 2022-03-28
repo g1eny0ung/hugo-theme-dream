@@ -59,6 +59,9 @@ unsafe = true
 
   favicon = "/favicon.ico"
 
+  # Set to true to load JS/CSS from CDN (higher speed, load-balancing for self hosted sites) or false to load from local files (e.g. IPFS, Tor, intranet, resilient sites)
+  # true: load 3rd-party JS/CSS from CDN; false: load instead from local files
+  CDNJS = false
   highlightjs = true
   # highlightjsCDN = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"
   highlightjsExtraLanguages = ["ocaml"]
@@ -264,6 +267,23 @@ Set your site's start year, then the header will show as **siteStartYear - curre
 ### favicon = "/favicon.ico"
 
 Customise the 16x16px [favicon](https://en.wikipedia.org/wiki/Favicon), place it in your `static` folder, same as `avatar`. If you want all the different possible favicon sizes for iOS, Android, Firefox, PWA, etc. resize an HD favicon manually based off the examples [../exampleSite/static/favicons/](../exampleSite/static/favicons/), or use an online service like [Favicomatic](https://favicomatic.com/) or [Favicon Generator](https://www.favicon-generator.org/).
+
+### CDNJS = false
+
+Set to true to load JS/CSS from CDN (higher speed, load-balancing for self hosted sites) or false to load from local files (e.g. IPFS, Tor, intranet, resilient sites). This does not include SaaS JS like Twitter embeds, Disqus comments, etc. as these constantly update and you shouldn't depend on them anyway.
+
+Food for thought articles on why remote JS (or remote anything, really) is bad:
+
+- [Open source developer corrupts widely-used libraries, affecting tons of projects (Jan 2022, The Verge, faker.js incident)](https://www.theverge.com/2022/1/9/22874949/developer-corrupts-open-source-libraries-projects-affected)
+- [Reasons to avoid Javascript CDNs (Dec 2021, Wesley Aptekar-Cassels)](https://blog.wesleyac.com/posts/why-not-javascript-cdn)
+- [How an irate developer briefly broke JavaScript (Mar 2016, The Verge, leftpad incident)](https://www.theverge.com/2016/3/24/11300840/how-an-irate-developer-briefly-broke-javascript)
+- [Sabotage: Code added to popular NPM package wiped files in Russia and Belarus (Mar 2022, Ars Technica, node-ipc/Vue.js protestware)](https://arstechnica.com/information-technology/2022/03/sabotage-code-added-to-popular-npm-package-wiped-files-in-russia-and-belarus/)
+- [Hotlinking was bad manners on the internet, and can lead to revenge vandalism](https://old.reddit.com/r/sysadmin/comments/nmt2kq/externally_hosted_soundbite/gzr0cj4/)
+
+See [Hugo Theme Dream, Issue #256](https://github.com/g1eny0ung/hugo-theme-dream/issues/256)
+
+Using SRI hashes to verify remote content helps a bit.
+  
 
 ### highlightjs = true
 

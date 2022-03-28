@@ -4,17 +4,23 @@
 
 {{ if .Site.Params.highlightjs }}
 {{ if .Site.Params.highlightjsTheme }}
-<!--<link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/{{ .Site.Params.highlightjsTheme }}.min.css" />-->
-<link rel="stylesheet" data-highlight href="{{ "/css/3p/hljs/{{ .Site.Params.highlightjsTheme }}.min.css" | relURL }}" />
+  {{ if .Site.Params.CDNJS }}
+    <link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/{{ .Site.Params.highlightjsTheme }}.min.css" />
+  {{- else -}}
+    <link rel="stylesheet" data-highlight href="{{ "/css/3p/hljs/{{ .Site.Params.highlightjsTheme }}.min.css" | relURL }}" />
 {{ else }}
-<!--<link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css" integrity="sha384-4Y0nObtF3CbKnh+lpzmAVdAMtQXl+ganWiiv73RcGVdRdfVIya8Cao1C8ZsVRRDz" crossorigin="anonymous"/>-->
-<link rel="stylesheet" data-highlight href="{{ "/css/3p/hljs/default.min.css" | relURL }}" />
+  {{ if .Site.Params.CDNJS }}
+    <link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css" integrity="sha256-+94KwJIdhsNWxBUy5zGciHojvRuP8ABgyrRHJJ8Dx88=" crossorigin="anonymous"/>
+  {{- else -}}
+    <link rel="stylesheet" data-highlight href="{{ "/css/3p/hljs/default.min.css" | relURL }}" />
 {{ end }}
 {{ end }}
 
 {{ if .Site.Params.valine }}
-<!--<script src='//unpkg.com/valine/dist/Valine.min.js' integrity="sha384-e0+DNUCJo75aOAzHQbFWYBCM9/S4f0BhRJXvEgbE3mMS85RM20MSSGStHuNdY2QK" crossorigin="anonymous"></script>-->
-<script src="{{ "/js/3p/Valine.min@1.4.16.js" | relURL }}"></script>
+  {{ if .Site.Params.CDNJS }}
+    <script src='https://unpkg.com/valine/dist/Valine.min.js' integrity="sha256-nPUdUfwNm4YBBhEYBxrSbW5DmfVODKCzs0nAp1Z3RnM=" crossorigin="anonymous"></script>
+  {{- else -}}
+    <script src="{{ "/js/3p/Valine.min@1.4.16.js" | relURL }}"></script>
 {{ end }}
 
 {{ end }}
@@ -97,6 +103,7 @@
         repo="{{ .Site.Params.utterancesRepo }}"
         issue-term="og:title"
         theme="github-light"
+        integrity="sha256-824DMomOHyPwhftdoGk58msv1X6ZwwbpwfStOxfvzzQ="
         crossorigin="anonymous"
         async>
       </script>
@@ -130,7 +137,7 @@
 <script src="{{ "/js/scrollToTop.js" | relURL }}"></script>
 
 {{ if .Site.Params.highlightjs }}
-<script src="{{ if .Site.Params.highlightjsCDN }}{{ .Site.Params.highlightjsCDN }}{{ else }}{{ "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js" }}{{ end}}"></script>
+<script src="{{ if .Site.Params.highlightjsCDN }}{{ .Site.Params.highlightjsCDN }}{{ else }}{{ "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js" integrity="sha256-+drbZCPWcVz0Wo0d8P8eD49H5xzTu68R7h7W5trZRk8=" crossorigin="anonymous" }}{{ end}}"></script>
 
 <!--{{ if .Site.Params.highlightjsExtraLanguages }}
 {{ range .Site.Params.highlightjsExtraLanguages }}-->
@@ -142,7 +149,9 @@
 {{ partial "highlight.html" . }}
 {{ end }}
 
-<!--<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1/dist/html2canvas.min.js" integrity="sha256-uacRffSSMP9qpvNWhVmYLykBv9YKMA1d/VSIN1AmfyQ=" crossorigin="anonymous"></script>-->
-<script src="{{ "/js/3p/html2canvas@1.0.0-rc.1.js" | relURL }}"></script>
-<script src="{{ "/js/post.js" | relURL }}" defer></script>
+{{ if .Site.Params.CDNJS }}
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1/dist/html2canvas.min.js" integrity="sha256-uacRffSSMP9qpvNWhVmYLykBv9YKMA1d/VSIN1AmfyQ=" crossorigin="anonymous"></script>-->
+{{- else -}}
+  <script src="{{ "/js/3p/html2canvas@1.0.0-rc.1.js" | relURL }}"></script>
+  <script src="{{ "/js/post.js" | relURL }}" defer></script>
 {{ end }}

@@ -30,9 +30,17 @@
 {{ partial "luxon.html" . }}
 {{ end }}
 
-<!--<script src="https://cdn.jsdelivr.net/npm/imagesloaded@4.1.4/imagesloaded.pkgd.min.js" integrity="sha384-YnGSHPPWEUDKMHFPOVmNP7Xyfwx5G0CHet6IoNgiX6CbFZS8gCeIfEgB1MgPwjdI" crossorigin="anonymous"></script>-->
-<script src="{{ "/js/3p/imagesloaded.pkgd.min@4.1.4.js" | relURL }}"></script>
-<!--<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script>-->
-<script src="{{ "/js/3p/masonry.pkgd.min@4.2.2.js" | relURL }}"></script>
+{{ if .Site.Params.CDNJS }}
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+{{- else -}}
+  <script src="{{ "/js/3p/imagesloaded.pkgd.min@4.1.4.js" | relURL }}"></script>
+{{ end }}
+
+{{ if .Site.Params.CDNJS }}
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+{{- else -}}
+  <script src="{{ "/js/3p/masonry.pkgd.min@4.2.2.js" | relURL }}"></script>
+{{ end }}
+
 <script src="{{ "/js/grid.js" | relURL }}"></script>
 {{ end }}
