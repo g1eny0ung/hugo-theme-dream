@@ -29,10 +29,12 @@
     })(document, 'script', 'twitter-wjs')
   }
 </script>
-{{ if .Site.Params.CDNJS }}
-  <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@1.13.1/js/jquery.overlayScrollbars.min.js" integrity="sha256-tBd38uWlvgfps3zHPrUb2ePBg+Z8EjMf0QloFONzpvU=" crossorigin="anonymous"></script>
-{{- else -}}
-  <script src="{{ "/js/3p/jquery.overlayScrollbars.min@1.13.1.js" | relURL }}"></script>
+{{ if .Site.Params.OverlayScrollbars }}
+  {{ if .Site.Params.CDNJS }}
+    <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@1.13.1/js/jquery.overlayScrollbars.min.js" integrity="sha256-tBd38uWlvgfps3zHPrUb2ePBg+Z8EjMf0QloFONzpvU=" crossorigin="anonymous"></script>
+  {{- else -}}
+    <script src="{{ "/js/3p/jquery.overlayScrollbars.min@1.13.1.js" | relURL }}"></script>
+  {{ end }}
 {{ end }}
 <script src="{{ "/js/header.js" | relURL }}"></script>
 <script src="{{ "/js/main.js" | relURL }}"></script>

@@ -36,10 +36,12 @@
   <link rel="stylesheet" href="{{ "/css/3p/semantic.min@2.4.2.css" | relURL }}" />
 {{ end }}
 <link rel="stylesheet" href="{{ "/css/icomoon.css" | relURL }}" />
-{{ if .Site.Params.CDNJS }}
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@1.13.1/css/OverlayScrollbars.min.css" integrity="sha256-WKijf8KI68sbq8Znd6yMepIuFF0wdWfIt6gk3JWcQfk=" crossorigin="anonymous">
-{{- else -}}
-  <link rel="stylesheet" href="{{ "/css/3p/OverlayScrollbars.min@1.13.0.css" | relURL }}" />
+{{ if .Site.Params.OverlayScrollbars }}
+  {{ if .Site.Params.CDNJS }}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@1.13.1/css/OverlayScrollbars.min.css" integrity="sha256-WKijf8KI68sbq8Znd6yMepIuFF0wdWfIt6gk3JWcQfk=" crossorigin="anonymous">
+  {{- else -}}
+    <link rel="stylesheet" href="{{ "/css/3p/OverlayScrollbars.min@1.13.0.css" | relURL }}" />
+  {{ end }}
 {{ end }}
 {{ if .Site.Params.CDNJS }}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" integrity="sha256-1OR6V77ZEwFz6LcdRjvwt/FYAfQk/VGKTpHwmvAFHsk=" crossorigin="anonymous">

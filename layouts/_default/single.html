@@ -55,7 +55,11 @@
           {{- .Title -}}
           <span class="sub header">
             <span class="left">
+              {{- if isset .Params "avatar" -}}
+                <img class="ui avatar image" src="{{ .Params.avatar }}" alt="avatar" />
+              {{- else -}}
               @
+              {{ end }}
               {{ if isset .Params "author" }}
                 {{ if isset .Params "authorlink" }}
                   <a href="{{ .Params.authorlink }}" target="_blank">{{ .Params.author }}</a>

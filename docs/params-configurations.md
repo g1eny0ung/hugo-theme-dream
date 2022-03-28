@@ -75,6 +75,9 @@ unsafe = true
   error404Header = "Oops...You are lost in dream."
   error404SubHeader = "Don't worry though, click the button below to wake up."
 
+  # Enable/Disable Mac OS X style scrollbars - GLITCHY! Recommended false if using PhotoSwipe
+  OverlayScrollbars = true
+
   # options
   showSummaryCoverInPost = true
   # hasTwitterEmbed = true
@@ -302,6 +305,11 @@ Error 404 Page Not Found header text.
 
 ###  404_subheader = "Don't worry though, click the button below to wake up."
 Error 404 Page Not Found sub-header text, appears between header and "Go back home" button.
+
+### OverlayScrollbars = true
+
+Enable/Disable Mac OS X style scrollbars - GLITCHY! Causes issues with `main.js` and flip if disabled.  Recommended `false` if using PhotoSwipe, as [Hugo Easy Gallery](https://github.com/liwenyip/hugo-easy-gallery)  does not work well in combination with the scrollbars (resets position on the page after viewing album).
+There is a non-jQuery version of OverlayScrollbars [available](https://github.com/KingSora/OverlayScrollbars/).
 
 ### showSummaryCoverInPost = true
 
