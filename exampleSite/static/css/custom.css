@@ -1,5 +1,62 @@
+/* custom.css ripped from https://g1en.site/ */
+
+/*body.dark .os-viewport {
+  background-color: rgba(0, 0, 0, 0.6);
+}*/
+
+/*@media screen and (max-width: 768px) {
+  body {
+    background-position: unset;
+  }
+}*/
+
+/*.ui.inverted.segment,
+#dream-search.inverted .results {
+  background-color: #333;
+}*/
+
+/*.dream-nav.fixed {
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%),
+    0 0 0 1px rgb(10 10 10 / 2%) !important;
+}*/
+
+/* round corners of non-article boxes */
 .ui.attached.segment.dream-card {
   border: none;
   border-radius: 1.5em;
-  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%); /* Bulma Box */
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%),
+    0 0 0 1px rgb(10 10 10 / 2%); /* Bulma Box */
 }
+
+
+/* round corners of About Flip page, Disqus comments, etc. */
+.dream-back .ui.segment,
+.ui.segment.dream-posts-section,
+.ui.segment.dream-categories-section,
+.ui.segment.dream-tags-section,
+.dream-single-aside .ui.segment,
+.ui.segment.post-disqus-area,
+.ui.segment.utterances-comments {
+  border-radius: 1.5em;
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%),
+    0 0 0 1px rgb(10 10 10 / 2%); /* Bulma Box 2 */
+}
+
+/*.ui.segment.toc {
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+  float: right;
+}*/
+
+/* round corners of article boxes */
+.dream-single .ui.segment {
+  border-radius: 1.5em;
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%),
+    0 0 0 1px rgb(10 10 10 / 2%);
+}
+
+/*body.dark .markdown-body .highlight pre {
+  background: #222 !important;
+}*/
