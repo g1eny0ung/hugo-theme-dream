@@ -52,7 +52,7 @@ If you have other problems, you can also ask in the [issues](https://github.com/
 - add Photoswipe
 - maybe add [StPageFlip](https://nodlik.github.io/StPageFlip/)???
 
-## [2.9.5] - 2022.03.28
+## [2.9.6] - 2022.03.28
 - Added exampleSite data, including:
  -  many social network URI schemes
  -  example graphics
@@ -65,6 +65,7 @@ If you have other problems, you can also ask in the [issues](https://github.com/
 - `CDNJS` site param (site is now **offline capable**, you can choose to load JS/CSS locally or from a CDN)
 - `TopTags` site param: optionally display all buttons in top navbar instead of mixed with tag cloud
 - `roundAvatar` site param: choose whether to have a round avatar or unset image to better display custom logos
+- `OverlayScrollbars` site param: disable the Mac OS X style scrollbars if you prefer system scrollbars or for compatibility reasons (e.g. Hugo Easy Gallery workarounds)
 - Accessibility improvements (alt tags, NoScript warning)
 - Customisable 404 page text
 - Enable inline html in Markdown files
