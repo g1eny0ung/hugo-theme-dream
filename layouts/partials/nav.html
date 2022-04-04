@@ -14,7 +14,9 @@
   <a class="item" href="{{ .Site.BaseURL }}" title="{{ i18n "home" }}" alt="{{ i18n "home" }}">
     <i class="large link home icon"></i>
       {{ if .Site.Params.textButtons }}
+      <div id="bigscreen">
       &nbsp;&nbsp;{{ i18n "home" }}
+      </div>
       {{ end }}
   </a>
   {{ if or .Site.Params.backgroundDark .Site.Params.backgroundImageDark }}

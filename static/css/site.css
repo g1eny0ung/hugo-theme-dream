@@ -119,6 +119,12 @@ body {
         flex - direction: column;
         align - items: center
     }
+	
+@media only screen and (max-width: 768px) {
+	#bigscreen {
+		display: none !important;
+	}
+ }
     .dream - header > .content {
         width: 100 % ;
         max - width: 100 % ;
