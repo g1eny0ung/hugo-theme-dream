@@ -51,8 +51,11 @@ If you have other problems, you can also ask in the [issues](https://github.com/
 - remove (or make optional) custom scrollbars and jQuery
 - add Photoswipe
 - maybe add [StPageFlip](https://nodlik.github.io/StPageFlip/)???
+- Consolidate i18n into one folder
+- Custom navbar buttons
+- siteParam: rounded corners (from `custom.css`)
 
-## [2.9.6] - 2022.03.28
+## [2.9.8] - 2022.04.05
 - Added exampleSite data, including:
  -  many social network URI schemes
  -  example graphics
@@ -62,16 +65,20 @@ If you have other problems, you can also ask in the [issues](https://github.com/
 - opt out of Google FLoC
 - update miscellaneous dependencies
 - Sub-Resource Integrity hashes for all remote content
-- `CDNJS` site param (site is now **offline capable**, you can choose to load JS/CSS locally or from a CDN)
-- `TopTags` site param: optionally display all buttons in top navbar instead of mixed with tag cloud
-- `roundAvatar` site param: choose whether to have a round avatar or unset image to better display custom logos
-- `OverlayScrollbars` site param: disable the Mac OS X style scrollbars if you prefer system scrollbars or for compatibility reasons (e.g. Hugo Easy Gallery workarounds)
+- site params:
+ - `CDNJS` - site is now **offline capable**, you can choose to load JS/CSS locally or from a CDN)
+ - `TopTags` - optionally display all buttons in top navbar instead of mixed with tag cloud
+ - `roundAvatar` - choose whether to have a round avatar or unset image to better display custom logos
+ - `OverlayScrollbars` - disable the Mac OS X style scrollbars if you prefer system scrollbars or for compatibility reasons (e.g. Hugo Easy Gallery workarounds)
+ - `textButtons`,`textButtonsMini` - optional text labels on the navbar buttons (and the Archive/Categories/Tags buttons even when they're small), for accessibility improvements.
+ - `rssHeader` - optional "subscribe" RSS button in the navbar; RSS is good and more people should use it!
 - Accessibility improvements (alt tags, NoScript warning)
 - Customisable 404 page text
 - Enable inline html in Markdown files
 ### Work in progress:
 - [WIP] Start implementing PWA service worker and manifest (**v2.9.x**)
 - [WIP] Start implementing [Photoswipe](https://photoswipe.com/) via [Hugo Easy Gallery](https://github.com/liwenyip/hugo-easy-gallery/) in an [unofficial fork](https://github.com/Darthagnon/hugo-easy-gallery) (jQuery-free version!) (**v3.0.0?**)
+- [WIP] update i18n with missing words for the `textButtons`
 
 ## [2.0.0-beta] - 2021.01.31
 
