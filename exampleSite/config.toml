@@ -43,7 +43,8 @@ unsafe = true
 
   # footerBottomText = ""
 
-  # rss = true
+  rss = true
+  # rssHeader = true
 
   # utterancesRepo = ""
 
@@ -78,6 +79,9 @@ unsafe = true
 
   # search
   # enableSearch = true
+  # topTags = true
+  # textButtons = true
+  # textButtonsMini = false
   
   # Error 404 Not Found page text
   error404Header = "Oops...You are lost in dream."

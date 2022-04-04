@@ -7,32 +7,61 @@
 {{ end }}
   <a class="item dream-flip-toggle" title="{{ i18n "flip" }}" alt="{{ i18n "flip" }}">
     <i class="large link question circle icon"></i>
+    {{ if .Site.Params.textButtons }}
+    &nbsp;&nbsp;{{ i18n "flip" }}
+    {{ end }}
   </a>
   <a class="item" href="{{ .Site.BaseURL }}" title="{{ i18n "home" }}" alt="{{ i18n "home" }}">
     <i class="large link home icon"></i>
+      {{ if .Site.Params.textButtons }}
+      &nbsp;&nbsp;{{ i18n "home" }}
+      {{ end }}
   </a>
   {{ if or .Site.Params.backgroundDark .Site.Params.backgroundImageDark }}
   <a class="item" onclick="themeSwitch(event)">
     <i class="large link icon theme-switch"></i>
+    {{ if .Site.Params.textButtons }}
+    &nbsp;&nbsp;{{ i18n "switchTheme" }}
+    {{ end }}
   </a>
   {{ end }}
   {{ if .Site.Params.enableSearch }}
   <a class="item" title="{{ i18n "search" }}" alt="{{ i18n "search" }}" onclick="toggleSearch(event)">
     <i class="large link search icon"></i>
+    {{ if .Site.Params.textButtons }}
+    &nbsp;&nbsp;{{ i18n "search" }}
+    {{ end }}
   </a>
   {{ end }}
   {{ if .Site.Params.topTags }}
       {{ if gt (len (where .Site.RegularPages "Section" "==" "posts")) 0 }}
       <a class="item" href="{{ "posts" | relLangURL }}">
         <i class="large archive icon" title="{{ T "archives" }}" alt="{{ T "archives" }}"></i>
+        {{ if .Site.Params.textButtons }}
+        &nbsp;&nbsp;{{ i18n "archives" }}
+        {{ end }}
       </a>
       {{ end }}
       <a class="item" href="{{ "categories" | relLangURL }}">
         <i class="large th list icon" title="{{ T "allCategories" }}" alt="{{ T "allCategories" }}"></i>
+        {{ if .Site.Params.textButtons }}
+        &nbsp;&nbsp;{{ i18n "allCategories" }}
+        {{ end }}
       </a>
       <a class="item" href="{{ "tags" | relLangURL }}">
         <i class="large tags icon" title="{{ T "allTags" }}" alt="{{ T "allTags" }}"></i>
+        {{ if .Site.Params.textButtons }}
+        &nbsp;&nbsp;{{ i18n "allTags" }}
+        {{ end }}
       </a>
+  {{ end }}
+  {{ if .Site.Params.RSSheader }}
+  <a class="item" href="{{ .Site.BaseURL }}{{ "index.xml" }}" title="{{ i18n "rss" }}" alt="{{ i18n "rss" }}">
+    <i class="large link rss icon"></i>
+    {{ if .Site.Params.textButtons }}
+    &nbsp;&nbsp;{{ i18n "rss" }}
+    {{ end }}
+  </a>
   {{ end }}
   
 </nav>

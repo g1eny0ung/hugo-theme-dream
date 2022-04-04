@@ -37,6 +37,7 @@ unsafe = true
   # footerBottomText = ""
 
   rss = true
+  # rssHeader = true
 
   utterancesRepo = "g1eny0ung/g1eny0ung.github.io"
 
@@ -70,6 +71,7 @@ unsafe = true
 
   # search
   enableSearch = true
+  # topTags = false
 
   # Error 404 Not Found page text
   error404Header = "Oops...You are lost in dream."
@@ -85,7 +87,6 @@ unsafe = true
   # shareInAside = true
   fixedNav = true
   # collapsibleTags = true
-  # topTags = false
   # collapseBySummary = true
 
   [params.advanced]
@@ -222,6 +223,9 @@ Add text at the bottom of the footer, support html. This is usually used as a de
 
 Enable RSS.
 
+### rssHeader = true
+Enable RSS button in the navbar.
+
 ### utterancesRepo = "g1eny0ung/g1eny0ung.github.io"
 
 Utterances is a lightweight comments widget built on GitHub Issues. By setting `utterancesRepo`, you can use it on every post page.
@@ -300,6 +304,15 @@ View [Highlight.js](highlightjs.md) for more details.
 
 View [Search](search.md) for more details.
 
+### topTags = true
+Make the Archive, Categories and Tags buttons appear in the top navbar, instead of next to the avatar above the tag cloud.
+
+### textButtons = true
+Enable text next on navbar buttons. TODO: Not yet responsive, so will overflow. Ideally, on small screens, button text disappears
+
+### textButtonsMini = true
+Enable text next to small Archive, Categories, Tags buttons; use only when `topTags = false`.
+
 ###  404_header = "Oops...You are lost in dream."
 Error 404 Page Not Found header text.
 
@@ -336,9 +349,6 @@ Make navbar fixed when scrolling.
 ### collapsibleTags = true
 
 Make `/tags` page's tags collapsible.
-
-### topTags = true
-Make the Archive, Categories and Tags buttons appear in the top navbar, instead of next to the avatar above the tag cloud.
 
 ### collapseBySummary = true
 
