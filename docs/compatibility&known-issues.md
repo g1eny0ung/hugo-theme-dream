@@ -5,46 +5,52 @@
 - About/Flip page loads inline html images from incorrect paths (example: visit any page other than Home and then click About/Flip)
 - Internet Explorer 11 weird laggy/zoom scrolling (Win10)
 - Older Safari (iOS, Windows) loads About/Flip page content on top of homepage content
-- Hugo Easy Gallery pointed at a folder `{{</* gallery dir="/img/arduino/" */>}}` does not load `hugo-easy-gallery.css`, so images will repeat. If you force the CSS to load (`config.toml` >> `[params.advanced]`), they will display in a correctly formatted grid, but `load-photoswipe.js` is not loaded (so images function as hotlinks only). It also prevents the rest of the page from being rendered. Workaround: reference images directly, rather than as a folder. See [hugo-easy-gallery, Issue #65](https://github.com/liwenyip/hugo-easy-gallery/issues/65)
-- Upon dismissing Hugo Easy Gallery's Photoswipe lightbox, scroll position on page is reset to top
-- Hugo Easy Gallery's thumbnails are rectangular, rather than square, with weird gaps between them
 - TODO: rich-content-offline.md - figure out some alternate shortcodes to include, instead of inline HTML 
 - Make sure to set `baseURL` in `config.toml` correctly, e.g. `baseURL = 'https://site-name.github.io/'`. For example, if you forget to set "https" and put "http", but then your site is served over https, the search function will break, as modern browsers will block its attempts to `insecure XMLHttpRequest` the search index over http from an https site.
 
+### Hugo Easy Gallery compatibility
+- Hugo Easy Gallery pointed at a folder `{{</* gallery dir="/img/arduino/" */>}}` does not load `hugo-easy-gallery.css`, so images will repeat. If you force the CSS to load (`config.toml` >> `[params.advanced]`), they will display in a correctly formatted grid, but `load-photoswipe.js` is not loaded (so images function as hotlinks only). It also prevents the rest of the page from being rendered. Workaround: reference images directly, rather than as a folder. See [hugo-easy-gallery, Issue #65](https://github.com/liwenyip/hugo-easy-gallery/issues/65)
+- Upon dismissing Hugo Easy Gallery's Photoswipe lightbox, scroll position on page is reset to top
+- Hugo Easy Gallery's thumbnails are rectangular, rather than square, with weird gaps between them
+
 ## Browser compatibility
-
-iOS browsers
-Android browsers
-Desktop browsers
-Modern
-Legacy
-
-approximately dividable by tab shape...
-Chromium derivatives new (v90+)
-Chromium derivatives medium (v70-80-something)
-Chromium derivatives old (v30ish upwards)
-
-Edge Spartan
-
-Internet Explorer
-
-Opera Presto (v12.13)
-
-Firefox derivatives new (Proton, Photon, Tor etc.)
-Firefox derivatives old (Waterfox, Palemoon)
-
-Safari for Windows
-Safari for Mac 
-Safari for iOS
-
-
+Browser compatibility matrix, according to user reports and developer testing.
 
 | Browser | Version | Compatibility? |
 | --- | --- | --- |
+| **Desktop Browsers** |
 | Chrome | v90 | Yes |
 | Ungoogled Chromium | v90 | Yes |
-| Edge (Chromium) | 
-| Vivaldi |
-| Brave |
-| Opera |
-|
+| Edge (Chromium) | v? | Untested |
+| Edge Spartan | Win10 v1709 | Untested |
+| Internet Explorer | 11 | Slightly glitchy scrolling |
+| Vivaldi | v? | Untested |
+| Brave | v? | Untested |
+| Opera | v? | Untested |
+| Cent Browser | v? | Untested |
+| Firefox Proton | v89+ | Untested |
+| Firefox Photon | v78.15 | Poor scrolling performance, wallpaper image doesn't appear|
+| Tor Browser Proton | based on Firefox v89+ | Untested
+| Tor Browser Photon | based on Firefox v78.15 | Untested |
+| Waterfox | v? | Untested |
+| Palemoon | v? | Untested |
+| Safari | MacOS v? | Untested |
+| ** Legacy Desktop Browsers** |
+| Ungoogled Chromium (material tabs)| v70-80ish | Untested |
+| Ungoogled Chromium (pre-material trapezoid tabs) | v30/v50 something | Untested |
+| Internet Explorer | 9 | Untested |
+| Internet Explorer | 8 | Untested |
+| Internet Explorer | 6 | Untested |
+| Safari for Windows | v5.1.7 (2012) | Flip/about renders on top of page content |
+| Opera Presto | v12.13 | Untested |
+| Firefox Australis | v? | Untested |
+| **Mobile Browsers** |
+| Safari | iOS 7.1.2 | Flip/about renders on top of page content |
+| Puffin browser | iOS | Untested |
+| Chrome (Android) | v? | Untested |
+| Bromite | v? | Untested |
+| [Kiwi](https://kiwibrowser.com/) | Android v? | Untested |
+| [EInkBro](https://f-droid.org/en/packages/info.plateaukao.einkbro/) | Android eReader | Untested |
+| Firefox | Android | Untested |
+| [Fennec](https://f-droid.org/en/packages/org.mozilla.fennec_fdroid/) (Firefox Android) | Android | Untested |
+| Opera Mini | v? | Untested |
