@@ -3,6 +3,10 @@ author = "Hugo Authors"
 title = "Placeholder Text"
 date = "2019-03-09"
 description = "Lorem Ipsum Dolor Si Amet"
+cover = "/img/default3.jpg"
+images = [
+	"/img/default3.jpg"
+]
 tags = [
     "markdown",
     "text",

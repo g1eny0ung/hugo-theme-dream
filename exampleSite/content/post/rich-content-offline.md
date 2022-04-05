@@ -4,12 +4,14 @@ title: Rich Content - Offline
 date: 2019-03-10
 lastmod: 2022-03-27T03:45:00Z
 description: A brief description of Hugo Shortcodes
+avatar: /img/authors/hugo.jpg
+authorlink: https://gohugo.io
 cover: /img/default1.jpg
 images:
     - /img/default1.jpg
 tags:
-    - shortcodes",
-    - privacy"
+    - shortcodes
+    - privacy
 ---
 
 Hugo ships with several [Built-in Shortcodes](https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes) for rich content, along with a [Privacy Config](https://gohugo.io/about/hugo-and-gdpr/) and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.
