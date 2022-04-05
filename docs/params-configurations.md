@@ -316,6 +316,8 @@ Enable text next to small Archive, Categories, Tags buttons; use only when `topT
 ###  404_header = "Oops...You are lost in dream."
 Error 404 Page Not Found header text.
 
+> Don't worry if your custom 404 page doesn't appear when testing locally with `hugo serve -D`; for some reason, Hugo v0.96 doesn't display custom 404 pages, but it does render them correctly! It will appear when someone tries to visit a non-existent page or broken URL on your live page. 
+
 ###  404_subheader = "Don't worry though, click the button below to wake up."
 Error 404 Page Not Found sub-header text, appears between header and "Go back home" button.
 
