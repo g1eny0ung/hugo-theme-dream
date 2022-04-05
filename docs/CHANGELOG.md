@@ -52,9 +52,10 @@ If you have other problems, you can also ask in the [issues](https://github.com/
 - add Photoswipe
 - maybe add [StPageFlip](https://nodlik.github.io/StPageFlip/)???
 - Consolidate i18n into one folder
-- Custom navbar buttons
+- Custom navbar buttons, e.g. to other social media, Etsy/Shopify, etc.
 - siteParam: rounded corners (from `custom.css`) 
 - fix SRI hash for imagesloaded js (seems to be called 2x in the code, but I can only find 1x with the correct SRI)
+- Pretty RSS/tag XML that is human-readable via XSL styling ([Making RSS Pretty, sburke@inerglacial.com](https://interglacial.com/~sburke/stuff/pretty_rss.html), [How to style RSS feed with XSL, Hsiaoming@lepture.com](https://lepture.com/en/2019/rss-style-with-xsl), [Hugo RSS templates](https://gohugo.io/templates/rss/), [Default Hugo RSS](https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_default/rss.xml))
 
 ## [2.9.8] - 2022.04.05
 - Added exampleSite data, including:
