@@ -13,16 +13,16 @@
       </p>
     {{ else if .Site.Params.dark404 }}
       <h1 class="ui inverted header">
-        Oops...You are lost in dream.
-        <span class="sub header">Don't worry though, click the button below to wake up.</span>
+        {{ .Site.Params.error404Header }}
+        <span class="sub header">{{ .Site.Params.error404SubHeader }}</span>
       </h1>
       <p>
         <button class="ui inverted button" onclick="window.location.href = '{{ .Site.BaseURL }}'">{{ i18n "backToHome" }}</button>
       </p>
     {{ else }}
       <h1 class="ui header">
-        Oops...You are lost in dream.
-        <span class="sub header">Don't worry though, click the button below to wake up.</span>
+        {{ .Site.Params.error404Header }}
+        <span class="sub header">{{ .Site.Params.error404SubHeader }}</span>
       </h1>
       <p>
         <button class="ui secondary button" onclick="window.location.href = '{{ .Site.BaseURL }}'">{{ i18n "backToHome" }}</button>
