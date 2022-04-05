@@ -17,5 +17,5 @@ min_version = "0.57.2"
 # If porting an existing theme
 [original]
   name = "g1eny0ung's blog"
-  homepage = "https://g1eny0ung.github.io"
+  homepage = "https://g1en.site"
   repo = "https://github.com/g1eny0ung/blog"

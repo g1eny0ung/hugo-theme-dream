@@ -4,7 +4,7 @@
 
 ## Basic
 
-### baseURL = "https://g1eny0ung.site"
+### baseURL = "https://g1en.site"
 
 The site URL, ensure this is correct!
 

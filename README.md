@@ -46,7 +46,7 @@ Then open your `config.toml` and edit the `theme` parameter to `theme = "dream"`
 
 ## Examples & Tutorials
 
-- [My Blog](https://g1eny0ung.site)
+- [My Blog](https://g1en.site)
 - [My Blog's Source Code](https://github.com/g1eny0ung/blog)
 - Official Hugo demo: [https://themes.gohugo.io/theme/hugo-theme-dream/](https://themes.gohugo.io/theme/hugo-theme-dream/)
 - [使用 Hugo + Dream 主题构建个人博客](https://guole.fun/posts/hugo-blog/) (Chinese language tutorial)
