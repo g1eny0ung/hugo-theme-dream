@@ -58,7 +58,7 @@
       </a>
   {{ end }}
   {{ if .Site.Params.RSSheader }}
-  <a class="item" href="{{ .Site.BaseURL }}{{ "index.xml" }}" title="{{ i18n "rss" }}" alt="{{ i18n "rss" }}">
+  <a class="item" href="{{ "index.xml" | relLangURL }}" title="{{ i18n "rss" }}" alt="{{ i18n "rss" }}">
     <i class="large link rss icon"></i>
     {{ if .Site.Params.textButtons }}
     &nbsp;&nbsp;{{ i18n "rss" }}

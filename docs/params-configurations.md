@@ -364,6 +364,12 @@ Add your custom CSS files after the theme CSS files.
 
 For example, create a folder named `css` under `static`, then add `custom.css` into it.
 
+**Important! If you get the following error, either your `custom.css` is missing and this param is enabled, or your CSS cannot start with comments ([see here](https://stackoverflow.com/a/48270432)):**
+
+>Refused to apply style from 'http://localhost:1313/css/custom.css' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.
+
+Solution: Check that `custom.css` is present. Else, minify your CSS, or just make sure it does **not** start with a commented out section (as is wont to happen in development)
+
 ### customJSBefore = []
 
 Like `customCSS`, add your custom JS files **before** the theme JS files.

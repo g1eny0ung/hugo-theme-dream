@@ -31,8 +31,7 @@
 {{ end }}
 
 {{ if .Site.Params.CDNJS }}
-  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@4.1.4/imagesloaded.pkgd.min.js"  crossorigin="anonymous"></script>
-  <!--integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" fails every time, despite correct SRI hash-->
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
 {{- else -}}
   <script src="{{ "/js/3p/imagesloaded.pkgd.min@4.1.4.js" | relURL }}"></script>
 {{ end }}

@@ -53,7 +53,8 @@ If you have other problems, you can also ask in the [issues](https://github.com/
 - maybe add [StPageFlip](https://nodlik.github.io/StPageFlip/)???
 - Consolidate i18n into one folder
 - Custom navbar buttons
-- siteParam: rounded corners (from `custom.css`)
+- siteParam: rounded corners (from `custom.css`) 
+- fix SRI hash for imagesloaded js (seems to be called 2x in the code, but I can only find 1x with the correct SRI)
 
 ## [2.9.8] - 2022.04.05
 - Added exampleSite data, including:
