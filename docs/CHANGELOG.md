@@ -54,8 +54,7 @@ If you have other problems, you can also ask in the [issues](https://github.com/
 - Consolidate i18n into one folder
 - Custom navbar buttons, e.g. to other social media, Etsy/Shopify, etc.
 - siteParam: rounded corners (from `custom.css`) 
-- fix SRI hash for imagesloaded js (seems to be called 2x in the code, but I can only find 1x with the correct SRI)
-- Pretty RSS/tag XML that is human-readable via XSL styling ([Making RSS Pretty, sburke@inerglacial.com](https://interglacial.com/~sburke/stuff/pretty_rss.html), [How to style RSS feed with XSL, Hsiaoming@lepture.com](https://lepture.com/en/2019/rss-style-with-xsl), [Hugo RSS templates](https://gohugo.io/templates/rss/), [Default Hugo RSS](https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_default/rss.xml))
+- Linkable headings (similar to index) with hyperlink icon
 
 ## [2.9.8] - 2022.04.05
 - Added exampleSite data, including:
@@ -77,11 +76,12 @@ If you have other problems, you can also ask in the [issues](https://github.com/
 - Accessibility improvements (alt tags, NoScript warning)
 - Customisable 404 page text
 - Enable inline html in Markdown files
+- ~~fix SRI hash for imagesloaded js (seems to be called 2x in the code, but I can only find 1x with the correct SRI)~~ EDIT: It was in `layouts\index.html`
 ### Work in progress:
 - [WIP] Start implementing PWA service worker and manifest (**v2.9.x**)
 - [WIP] Start implementing [Photoswipe](https://photoswipe.com/) via [Hugo Easy Gallery](https://github.com/liwenyip/hugo-easy-gallery/) in an [unofficial fork](https://github.com/Darthagnon/hugo-easy-gallery) (jQuery-free version!) (**v3.0.0?**)
 - [WIP] update i18n with missing words for the `textButtons`
-
+- [WIP] Pretty RSS/tag XML that is human-readable via XSL styling; still needs adapting, site avatar, etc. ([Making RSS Pretty, sburke@inerglacial.com](https://interglacial.com/~sburke/stuff/pretty_rss.html), [How to style RSS feed with XSL, Hsiaoming@lepture.com](https://lepture.com/en/2019/rss-style-with-xsl), [Hugo RSS templates](https://gohugo.io/templates/rss/), [Default Hugo RSS](https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_default/rss.xml))
 ## [2.0.0-beta] - 2021.01.31
 
 - New `header` component

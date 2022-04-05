@@ -103,6 +103,7 @@
             <a href="https://typlog.com/about?utm_medium=feed">About</a>
             <a href="https://typlog.com/terms?utm_medium=feed">Terms</a>
           </nav>
+		  <div style="font-size: 14px"> | This is an <a href="https://www.wikipedia.org/wiki/RSS">RSS</a> feed, intended for news-feed readers like <a href="https://nodetics.com/feedbro/">FeedBro</a> (Browser), <a href="https://play.google.com/store/apps/details?id=com.madsvyat.simplerssreader">Simple RSS Reader</a> (Android), <a href="https://apps.apple.com/us/app/inoreader-news-app-rss/id892355414">Inoreader</a> (iOS), <a href="https://quiterss.org/">QuiteRSS</a> (Desktop) or <a href="https://www.thunderbird.net/">Thunderbird</a> (Email). There may also be <a href="https://www.wikipedia.org/wiki/Podcast">podcast</a> episodes available by opening in <a href="https://www.apple.com/itunes/">iTunes</a> or <a href="https://gpodder.github.io/">gPodder</a>.</div>
         </div>
       </body>
     </html>

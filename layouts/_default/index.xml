@@ -36,5 +36,9 @@
       <description>{{ .Summary | html }}</description>
     </item>
     {{ end }}
+	<!-- I cannot manage to set an image that is picked up by rss.xsl. No idea why the below doesn't work.-->
+	{{- if isset .Params "avatar" -}}
+    <image>{{ .Params.avatar }}</image>
+    {{ end }}
   </channel>
 </rss>
