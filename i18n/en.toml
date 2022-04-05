@@ -5,20 +5,20 @@ other = "Home"
 other = "Back to home"
 
 [flip]
-other = "Flip it!"
+other = "About"
 
 [archives]
 other = "Archives"
 
 [allTags]
-other = "All Tags"
+other = "Tags"
 
 [tag]
 one = "1 tag"
 other = "{{ .Count }} tags"
 
 [allCategories]
-other = "All Categories"
+other = "Categories"
 
 [category]
 one = "1 category"
@@ -40,7 +40,7 @@ one = " minute read"
 other = " minutes read"
 
 [updateAt]
-other = "Update at"
+other = "Last updated"
 
 [noTag]
 other = "No Tags"
@@ -56,3 +56,9 @@ other = "Save as image"
 
 [search]
 other = "Search"
+
+[rss]
+other = "Subscribe!"
+
+[switchTheme]
+other = "Theme"

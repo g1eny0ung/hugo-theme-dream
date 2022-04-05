@@ -5,13 +5,13 @@ other = "Главная"
 other = "На главную"
 
 [flip]
-other = "Повернуть!"
+other = "о нас"
 
 [archives]
 other = "Архивы"
 
 [allTags]
-other = "Все теги"
+other = "Теги"
 
 [tag]
 one = "1 тег"
@@ -20,7 +20,7 @@ many = "{{ .Count }} тегов"
 other = "{{ .Count }} тегов"
 
 [allCategories]
-other = "Все категории"
+other = "Категории"
 
 [category]
 one = "1 категория"
@@ -33,6 +33,10 @@ one = "1 статья"
 few = "{{ .Count }} статьи"
 many = "{{ .Count }} статей"
 other = "{{ .Count }} статей"
+
+[group]
+one = "1 группа"
+other = "{{ .Count }} группы"
 
 [socialLinks]
 other = "Социальные сети"
@@ -60,3 +64,9 @@ other = "Сохранить как изображение"
 
 [search]
 other = "Поиск"
+
+[rss]
+other = "Подпишитесь!"
+
+[switchTheme]
+other = "Тема"

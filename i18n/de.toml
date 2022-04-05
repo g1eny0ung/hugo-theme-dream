@@ -5,20 +5,20 @@ other = "Start"
 other = "Zurück zum Start"
 
 [flip]
-other = "Flip it!"
+other = "Über uns"
 
 [archives]
 other = "Archiv"
 
 [allTags]
-other = "Alle Tags"
+other = "Tags"
 
 [tag]
-one = "1 tag"
+one = "1 Tag"
 other = "{{ .Count }} Tags"
 
 [allCategories]
-other = "Alle Kategorien"
+other = "Kategorien"
 
 [category]
 one = "1 Kategorie"
@@ -28,8 +28,12 @@ other = "{{ .Count }} Kategorien"
 one = "1 Artikel"
 other = "{{ .Count }} Artikel"
 
+[group]
+one = "1 Gruppe"
+other = "{{ .Count }} Gruppen"
+
 [socialLinks]
-other = "Social Links"
+other = "Soziale Verbindungen"
 
 [minuteRead]
 other = " Minuten Lesezeit"
@@ -48,3 +52,12 @@ other = "Nächste Seite"
 
 [saveAsImage]
 other = "Als Bild speichern"
+
+[search]
+other = "Suchen"
+
+[rss]
+other = "Abonnieren-sie!"
+
+[switchTheme]
+other = "Thema"

@@ -5,20 +5,20 @@ other = "Inicio"
 other = "Volver a inicio"
 
 [flip]
-other = "Voltear!"
+other = "Quienes somos"
 
 [archives]
 other = "Archivos"
 
 [allTags]
-other = "Todas las etiquetas"
+other = "Etiquetas"
 
 [tag]
 one = "1 etiqueta"
 other = "{{ .Count }} etiquetas"
 
 [allCategories]
-other = "Todas las categorías"
+other = "Categorías"
 
 [category]
 one = "1 categoría"
@@ -27,6 +27,10 @@ other = "{{ .Count }} categorías"
 [article]
 one = "1 artículo"
 other = "{{ .Count }} artículos"
+
+[group]
+one = "1 grupo"
+other = "{{ .Count }} grupos"
 
 [socialLinks]
 other = "Enlaces sociales"
@@ -49,3 +53,12 @@ other = "Página siguiente"
 
 [saveAsImage]
 other = "Guardar como imagen"
+
+[search]
+other = "Buscar"
+
+[rss]
+other = "Suscríbete!"
+
+[switchTheme]
+other = "Tema"

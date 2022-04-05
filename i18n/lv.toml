@@ -1,24 +1,24 @@
 [home]
-other = "Mājas lapa"
+other = "Mājas"
 
 [backToHome]
 other = "Atpakaļ uz sākumlapu"
 
 [flip]
-other = "Uzsist!"
+other = "Par mums"
 
 [archives]
 other = "Arhīvs"
 
 [allTags]
-other = "Visi tagi"
+other = "Tagi"
 
 [tag]
 one = "1 tagu"
 other = "{{ .Count }} tagi"
 
 [allCategories]
-other = "Visas kategorijas"
+other = "Kategorijas"
 
 [category]
 one = "1 kategorija"
@@ -27,6 +27,10 @@ other = "{{ .Count }} kategorijas"
 [article]
 one = "1 raksts"
 other = "{{ .Count }} raksti"
+
+[group]
+one = "1 grupa"
+other = "{{ .Count }} grupas"
 
 [socialLinks]
 other = "Saites sociālajos tīklos"
@@ -52,3 +56,9 @@ other = "Saglabāt kā attēlu"
 
 [search]
 other = "Meklēt"
+
+[rss]
+other = "Abonēt!"
+
+[switchTheme]
+other = "Tēma"

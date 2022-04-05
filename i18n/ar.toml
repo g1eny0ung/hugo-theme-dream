@@ -5,20 +5,20 @@ other = "الصفحة الرئيسية"
 other = "العودة إلى الصفحة الرئيسية"
 
 [flip]
-other = "!اقلب"
+other = "من نحن"
 
 [archives]
 other = "أرشيف"
 
 [allTags]
-other = "كل العلامات"
+other = "علامتان"
 
 [tag]
 one = "1 علامة"
 other = "{{ .Count }} علامتان"
 
 [allCategories]
-other = "جميع الفئات"
+other = "فئات"
 
 [category]
 one = "1 فئة"
@@ -56,3 +56,9 @@ other = "حفظ كصورة"
 
 [search]
 other = "يبحث"
+
+[rss]
+other = "!اشترك"
+
+[switchTheme]
+other = "سمة"

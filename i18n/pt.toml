@@ -1,24 +1,24 @@
 [home]
-other = "Página inicial"
+other = "Inicio"
 
 [backToHome]
 other = "Voltar para a página inicial"
 
 [flip]
-other = "Girar!"
+other = "Quem somos"
 
 [archives]
 other = "Arquivos"
 
 [allTags]
-other = "Todas as tags"
+other = "Tags"
 
 [tag]
 one = "1 tag"
 other = "{{ .Count }} tags"
 
 [allCategories]
-other = "Todas as categorias"
+other = "Categorias"
 
 [category]
 one = "1 categoria"
@@ -28,8 +28,12 @@ other = "{{ .Count }} categorias"
 one = "1 artigo"
 other = "{{ .Count }} artigos"
 
+[group]
+one = "1 grupo"
+other = "{{ .Count }} grupos"
+
 [socialLinks]
-other = "Links de redes sociais"
+other = "Redes sociais"
 
 [minuteRead]
 one = " minuto de leitura"
@@ -51,4 +55,10 @@ other = "Próxima página"
 other = "Salvar como imagem"
 
 [search]
-other = "Pesquisar"
+other = "Procurar"
+
+[rss]
+other = "Inscreva-se!"
+
+[switchTheme]
+other = "Tema"

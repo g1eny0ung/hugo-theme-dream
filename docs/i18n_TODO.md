@@ -1,5 +1,10 @@
+Double-check; all should be done!
+
+-------------
 shorten allTags
 shorten allCategories
 switchTheme
 change "flip" to "About"
-RSS/Subscribe!
+rss /Subscribe!
+check "update at"
+Groups

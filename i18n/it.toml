@@ -5,7 +5,7 @@ other = "Home"
 other = "Torna alla home"
 
 [flip]
-other = "Flip it!"
+other = "Di noi"
 
 [archives]
 other = "Archivi"
@@ -18,7 +18,7 @@ one = "Un tag"
 other = "{{ .Count }} tag"
 
 [allCategories]
-other = "Tutte le categorie"
+other = "Categorie"
 
 [category]
 one = "Una categoria"
@@ -27,6 +27,10 @@ other = "{{ .Count }} categorie"
 [article]
 one = "Un articolo"
 other = "{{ .Count }} articoli"
+
+[group]
+one = "1 gruppo"
+other = "{{ .Count }} gruppi"
 
 [socialLinks]
 other = "Social"
@@ -52,3 +56,9 @@ other = "Salva come immagine"
 
 [search]
 other = "Cerca"
+
+[rss]
+other = "Iscriviti!"
+
+[switchTheme]
+other = "Tema"

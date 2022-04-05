@@ -28,6 +28,10 @@ other = "{{ .Count }} 分类"
 one = "1篇文章"
 other = "{{ .Count }}篇文章"
 
+[group]
+one = "1 團體"
+other = "{{ .Count }} 團體"
+
 [socialLinks]
 other = "社交链接"
 
@@ -51,3 +55,9 @@ other = "保存为图片"
 
 [search]
 other = "搜索"
+
+[rss]
+other = "訂閱!"
+
+[switchTheme]
+other = "主題"

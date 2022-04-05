@@ -5,20 +5,20 @@ other = "Ana Sayfa"
 other = "Ana sayfaya geri dön"
 
 [flip]
-other = "Çevir!"
+other = "Biz kimiz"
 
 [archives]
 other = "Arşivler"
 
 [allTags]
-other = "Tüm etiketler"
+other = "Etiketler"
 
 [tag]
 one = "1 etiket"
 other = "{{ .Count }} etiket"
 
 [allCategories]
-other = "Tüm kategoriler"
+other = "Kategoriler"
 
 [category]
 one = "1 kategori"
@@ -56,3 +56,9 @@ other = "Resim olarak kaydet"
 
 [search]
 other = "Arama"
+
+[rss]
+other = "Abone ol!"
+
+[switchTheme]
+other = "Tema"

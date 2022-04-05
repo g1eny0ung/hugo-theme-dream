@@ -5,20 +5,20 @@ other = "Pàgina inicial"
 other = "Tornar a la pàgina d'inici"
 
 [flip]
-other = "Capgirar!"
+other = "Qui som"
 
 [archives]
 other = "Arxiu"
 
 [allTags]
-other = "Totes les etiquetes"
+other = "Etiquetes"
 
 [tag]
 one = "1 etiqueta"
 other = "{{ .Count }} etiquetes"
 
 [allCategories]
-other = "Totes les categories"
+other = "Categories"
 
 [category]
 one = "1 categoria"
@@ -28,6 +28,10 @@ other = "{{ .Count }} categories"
 one = "1 article"
 other = "{{ .Count }} articles"
 
+[group]
+one = "1 grup"
+other = "{{ .Count }} grups"
+
 [socialLinks]
 other = "Enllaços de xarxes socials"
 
@@ -36,7 +40,7 @@ one = " minut de lectura"
 other = " minuts de lectura"
 
 [updateAt]
-other = "Actualització a"
+other = "Última actualització"
 
 [noTag]
 other = "Sense etiquetes"
@@ -52,3 +56,9 @@ other = "Desa com a imatge"
 
 [search]
 other = "Buscar"
+
+[rss]
+other = "Subscriu-te!"
+
+[switchTheme]
+other = "Tema"

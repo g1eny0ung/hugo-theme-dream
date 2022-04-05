@@ -5,20 +5,20 @@ other = "דף הבית"
 other = "חזור לדף הבית"
 
 [flip]
-other = "!להפוך"
+other = "עלינו"
 
 [archives]
 other = "ארכיון"
 
 [allTags]
-other = "כל התגים"
+other = "תגים"
 
 [tag]
 one = "1 תג"
 other = "תגים {{ .Count }}"
 
 [allCategories]
-other = "כל הקטגוריות"
+other = "קטגוריות"
 
 [category]
 one = "1 קטגוריה"
@@ -28,6 +28,10 @@ other = "קטגוריות {{ .Count }}"
 one = "מאמר  1"
 other = "מאמרים {{ .Count }}"
 
+[group]
+one = "1 קבוצה"
+other = "קבוצות {{ .Count }}"
+
 [socialLinks]
 other = "קישורים למדיה חברתית"
 
@@ -36,7 +40,7 @@ one = " דקה לקרוא"
 other = " דקות לקריאה"
 
 [updateAt]
-other = "עודכן בשעה"
+other = "עודכן לאחרונה"
 
 [noTag]
 other = "אין תגים"
@@ -52,3 +56,9 @@ other = "שמור כתמונה"
 
 [search]
 other = "לחפש"
+
+[rss]
+other = "!הירשם"
+
+[switchTheme]
+other = "נושא"

@@ -1,24 +1,24 @@
 [home]
-other = "Pagina principala"
+other = "Start"
 
 [backToHome]
 other = "Înapoi la pagina de start"
 
 [flip]
-other = "Întoarceți!"
+other = "Despre noi"
 
 [archives]
 other = "Arhive"
 
 [allTags]
-other = "Toate etichetele"
+other = "Etichetele"
 
 [tag]
 one = "1 etichetă"
 other = "{{ .Count }} etichete"
 
 [allCategories]
-other = "Toate categoriile"
+other = "Categoriile"
 
 [category]
 one = "1 categorie"
@@ -27,6 +27,10 @@ other = "{{ .Count }} categorii"
 [article]
 one = "1 articol"
 other = "{{ .Count }} articole"
+
+[group]
+one = "1 grup"
+other = "{{ .Count }} grupuri"
 
 [socialLinks]
 other = "Link-uri de social media"
@@ -52,3 +56,9 @@ other = "Salvați ca imagine"
 
 [search]
 other = "Căutare"
+
+[rss]
+other = "Abonați-vă!"
+
+[switchTheme]
+other = "Temă"

@@ -5,20 +5,20 @@ other = "Domača stran"
 other = "Vrnite se na domačo stran"
 
 [flip]
-other = "Obrniti!"
+other = "O nas"
 
 [archives]
 other = "Arhiv"
 
 [allTags]
-other = "Vse oznake"
+other = "Oznake"
 
 [tag]
 one = "1 oznaka"
 other = "{{ .Count }} oznaki"
 
 [allCategories]
-other = "Vse kategorije"
+other = "Kategorije"
 
 [category]
 one = "1 kategorija"
@@ -27,6 +27,10 @@ other = "{{ .Count }} kategoriji"
 [article]
 one = "1 članek"
 other = "{{ .Count }} članka"
+
+[group]
+one = "1 skupina"
+other = "{{ .Count }} skupine"
 
 [socialLinks]
 other = "Povezave do družabnih medijev"
@@ -52,3 +56,9 @@ other = "Shrani kot sliko"
 
 [search]
 other = "Iskanje"
+
+[rss]
+other = "Naročite se!"
+
+[switchTheme]
+other = "Temo"
