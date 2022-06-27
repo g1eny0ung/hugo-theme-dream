@@ -15,7 +15,7 @@
   <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
     <article class="ui segment">
       <div class="ui medium header">{{ i18n "socialLinks" }}</div>
-      {{ partial "socials.html" (dict "Site" .Site "IconSize" "large") }}
+      {{ partialCached "socials.html" (dict "Site" .Site "IconSize" "large") }}
     </article>
   </div>
 
