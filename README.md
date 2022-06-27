@@ -44,7 +44,7 @@ Dream also support **light mode** and **dark mode** out of the box.
 
 demo: [https://themes.gohugo.io/theme/hugo-theme-dream/](https://themes.gohugo.io/theme/hugo-theme-dream/)
 
-![https://raw.githubusercontent.com/g1eny0ung/hugo-theme-dream/master/images/screenshot.png](https://raw.githubusercontent.com/g1eny0ung/hugo-theme-dream/master/images/screenshot.png)
+![https://raw.githubusercontent.com/g1eny0ung/hugo-theme-dream/release-1.6/images/screenshot.png](https://raw.githubusercontent.com/g1eny0ung/hugo-theme-dream/release-1.6/images/screenshot.png)
 
 All tags of this theme:
 
