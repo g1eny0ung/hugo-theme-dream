@@ -24,7 +24,8 @@
 {{ template "_internal/twitter_cards.html" . }}
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" integrity="sha256-UXesixbeLkB/UYxVTzuj/gg3+LMzgwAmg3zD+C4ZASQ=" crossorigin="anonymous">
-<link rel="stylesheet" href="{{ "/css/icomoon.css" | relURL }}" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" integrity="sha256-rTpdO0HXBCNpreAHcu6tB2Ppg515Vo+5GtYSsnNLz+8=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@1.13.1/css/OverlayScrollbars.min.css" integrity="sha256-WKijf8KI68sbq8Znd6yMepIuFF0wdWfIt6gk3JWcQfk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css">
 <link rel="stylesheet" href="{{ "/css/site.css" | relURL }}" />
@@ -33,12 +34,6 @@
   .ui.header a:not(.item, .ui.button):hover {
     text-decoration: underline;
   }
-
-  {{ if .Site.Params.linkColor }}
-  a:not(.item, .ui.button) {
-    color: {{ .Site.Params.linkColor }} !important;
-  }
-  {{ end }}
 
   {{ if .Site.Params.darkLinkColor }}
   .inverted a:not(.item, .ui.button) {

@@ -54,11 +54,6 @@ body {
   }
 }
 
-.dream-max-width {
-  max-width: 1408px + 256px;
-  margin: 0 auto;
-}
-
 .inverted {
   a {
     color: #eee !important;
@@ -175,81 +170,6 @@ body {
       .title {
         justify-content: center;
       }
-    }
-  }
-}
-
-.dream-grid {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-.ui.card.dream-card {
-  > .image {
-    border-top-left-radius: inherit !important;
-    border-top-right-radius: inherit !important;
-  }
-
-  &.inverted .content {
-    .header > a {
-      color: $white87 !important;
-    }
-
-    .meta {
-      color: $white60;
-    }
-
-    .description {
-      color: $white87;
-    }
-  }
-
-  &.inverted .extra {
-    color: $white60;
-  }
-
-  .content {
-    &.no-cover {
-      margin-top: .5rem;
-    }
-
-    .header {
-      margin-bottom: 0;
-
-      a {
-        color: $black87 !important;
-      }
-    }
-
-    .description {
-      margin-top: 1rem;
-      color: $black87;
-      overflow-wrap: break-word;
-
-      img {
-        max-width: 100%;
-      }
-
-      iframe[id^='twitter-widget-'] {
-        width: 100% !important;
-      }
-    }
-  }
-
-  .extra {
-    position: relative;
-    display: flex;
-    align-items: center;
-    border-top: none !important;
-
-    .author {
-      display: flex;
-      align-items: center;
-    }
-
-    .reading-time {
-      position: absolute;
-      right: 1em;
     }
   }
 }

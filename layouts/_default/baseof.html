@@ -19,8 +19,8 @@
     {{ partial "nav.html" . }}
     <div class="flip-container">
       <div class="flipper">
-        <section class="front">
-          <div class="dream-max-width">
+        <section class="section front">
+          <div class="container is-fullhd">
             {{ block "main" . }} {{ end }}
 
             <footer class="ui basic center aligned segment" style="background-color: transparent;">
@@ -38,8 +38,8 @@
             </footer>
           </div>
         </section>
-        <section class="back">
-          <div class="dream-max-width">
+        <section class="section back">
+          <div class="container">
             {{ partial "back.html" . }}
           </div>
         </section>

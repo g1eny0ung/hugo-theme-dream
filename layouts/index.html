@@ -2,15 +2,15 @@
 
 {{ partial "header.html" . }}
 
-<div class="ui relaxed grid dream-grid">
+<div class="columns is-mobile is-multiline dream-columns">
   {{ $paginator := .Paginate (where .Site.RegularPages "Section" "!=" "about") }}
   {{ range $paginator.Pages }}
-  <div class="sixteen wide mobile eight wide tablet eight wide computer four wide large screen four wide widescreen column dream-column">
+  <div class="column is-6-tablet is-3-desktop dream-column">
     {{ .Render "summary" }}
   </div>
   {{ end }}
 
-  <div class="sixteen wide mobile eight wide tablet eight wide computer four wide large screen four wide widescreen column dream-column">
+  <div class="column is-6-tablet is-3-desktop dream-column">
     {{ partial "paginator.html" (dict "paginator" $paginator "Site" .Site) }}
   </div>
 </div>

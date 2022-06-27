@@ -1,6 +1,6 @@
 $(document).ready(() => {
   function initGrid() {
-    const $grid = $('.dream-grid').masonry({
+    const $grid = $('.dream-columns').masonry({
       itemSelector: '.dream-column',
     })
 
