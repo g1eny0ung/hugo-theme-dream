@@ -31,9 +31,11 @@
 <link rel="stylesheet" href="{{ "/css/site.css" | relURL }}" />
 
 <style>
-  .ui.header a:not(.item, .ui.button):hover {
-    text-decoration: underline;
+  {{ if .Site.Params.linkColor }}
+  a:not(.icon) {
+    color: {{ .Site.Params.linkColor }};
   }
+  {{ end }}
 
   {{ if .Site.Params.darkLinkColor }}
   .inverted a:not(.item, .ui.button) {

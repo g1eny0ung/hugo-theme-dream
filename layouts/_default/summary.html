@@ -16,36 +16,34 @@
   {{ else }}
   <div class="card-content no-cover">
   {{ end }}
-    <h2 class="title is-4">
-      {{ .Title }}
-    </h2>
+    <a href="{{ .RelPermalink }}">
+      <h2 class="title is-5 mb-2">
+        {{ .Title }}
+      </h2>
+    </a>
 
-    <div class="content">
+    <div class="content has-text-grey">
       {{ .Summary | emojify | safeHTML }}
     </div>
 
     <div class="media">
+      {{- if isset .Params "avatar" -}}
       <div class="media-left">
-        {{- if isset .Params "avatar" -}}
         <figure class="image is-32x32">
           <img src="{{ .Params.avatar }}" alt="avatar" />
         </figure>
-        {{- else -}}
-        <span class="icon is-medium">
-          <i class="fa-solid fa-circle-user fa-lg"></i>
-        </span>
-        {{- end -}}
       </div>
+      {{- end -}}
       <div class="media-content">
-        <div class="subtitle is-6 mb-1">
+        <div class="subtitle mb-1 subtitle-author">
         {{- if isset .Params "author" -}}
           {{- if isset .Params "authorlink" -}}
           <a href="{{ .Params.authorlink }}" target="_blank">{{ .Params.author }}</a>
           {{- else -}}
-          {{- .Params.author -}}
+          {{ .Params.author }}
           {{- end -}}
         {{- else -}}
-          {{- .Site.Params.author -}}
+          {{ .Site.Params.author }}
         {{- end -}}
         </div>
 

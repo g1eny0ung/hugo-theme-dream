@@ -1,4 +1,5 @@
-@import 'common';
+@charset "utf-8";
+@import "../../node_modules/bulma/bulma.sass";
 
 body {
   background-position: center;
@@ -106,71 +107,28 @@ body {
   }
 }
 
-.dream-header {
-  display: flex;
-  justify-content: center;
-
-  > .content {
-    $width: 512px;
-
-    width: $width;
-    max-width: $width;
-    margin-left: 2rem;
+.hero.dream-header {
+  .hero-body {
+    display: flex;
+    justify-content: center;
   }
 
-  .ui.horizontal.list {
-    line-height: 1rem;
+  .tags {
+    width: 512px;
+    max-width: 50vw;
   }
 
-  .tags-with-dropdown {
-    .title {
-      display: flex;
-    }
-
-    .title,
-    .content {
-      padding: 0 !important;
-    }
-
-    .ui.list {
-      margin-top: 1rem;
-      margin-right: 0.375rem;
-    }
-
-    .dropdown-icon {
-      position: relative;
-      top: 2px;
-      right: 1px;
-      padding: 0 !important;
-      text-decoration: none !important;
-      transform-origin: center;
-      transition: transform 0.5s ease !important;
+  @include mobile {
+    .media {
+      flex-direction: column;
+      align-items: center;
     }
   }
+}
 
-  .dream-tags {
-    .ui.label {
-      margin-top: 1rem;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-
-    > .content {
-      width: 100%;
-      max-width: 100%;
-      margin-top: 2rem;
-      margin-left: unset;
-      text-align: center;
-    }
-
-    .tags-with-dropdown {
-      .title {
-        justify-content: center;
-      }
-    }
+.card.dream-card {
+  .subtitle-author {
+    font-size: 0.875rem;
   }
 }
 
@@ -194,11 +152,11 @@ body {
     margin-bottom: 1.5rem;
   }
 
-  .ui.inverted.segment {
-    blockquote {
-      color: $white60;
-    }
-  }
+  // .ui.inverted.segment {
+  //   blockquote {
+  //     color: $white60;
+  //   }
+  // }
 }
 
 .dream-share {
@@ -248,44 +206,44 @@ body {
   }
 }
 
-#dream-search {
-  position: fixed;
-  top: 5%;
-  left: 50%;
-  width: 30%;
-  display: none;
-  transform: translateX(-50%);
+// #dream-search {
+//   position: fixed;
+//   top: 5%;
+//   left: 50%;
+//   width: 30%;
+//   display: none;
+//   transform: translateX(-50%);
 
-  @media screen and (max-width: 768px) {
-    width: 90%;
-  }
+//   @media screen and (max-width: 768px) {
+//     width: 90%;
+//   }
 
-  .ui.input {
-    width: calc(100% - 2rem);
-  }
+//   .ui.input {
+//     width: calc(100% - 2rem);
+//   }
 
-  &.inverted {
-    border: 1px solid #555;
-  }
+//   &.inverted {
+//     border: 1px solid #555;
+//   }
 
-  &.inverted input {
-    color: $white87;
-  }
+//   &.inverted input {
+//     color: $white87;
+//   }
 
-  &.inverted .results {
-    background: #1b1c1d;
-    border: none;
+//   &.inverted .results {
+//     background: #1b1c1d;
+//     border: none;
 
-    .result:hover {
-      background: #202020;
-    }
+//     .result:hover {
+//       background: #202020;
+//     }
 
-    .title {
-      color: $white87 !important;
-    }
+//     .title {
+//       color: $white87 !important;
+//     }
 
-    .description {
-      color: $white60 !important;
-    }
-  }
-}
+//     .description {
+//       color: $white60 !important;
+//     }
+//   }
+// }

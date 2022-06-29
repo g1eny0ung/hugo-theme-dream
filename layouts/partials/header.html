@@ -1,89 +1,58 @@
-<header class="ui basic very padded segment dream-header">
-  {{ if isset .Site.Params "avatar" }}
-  <div class="ui small circular image">
-    <img src="{{ .Site.Params.avatar | relURL }}" alt="avatar" />
-  </div>
-  {{ end }}
-
-  <div class="content">
-    <h1 class="ui medium header">
-      {{- if .Site.Params.headerTitle -}}
-        {{- .Site.Params.headerTitle -}}
-      {{- else -}}
-        Set headerTitle in the config to display
-      {{- end -}}
-      <span class="sub header">
-        {{- .Site.Params.motto | safeHTML -}}
-      </span>
-    </h1>
-
-    <article class="ui horizontal list">
-      {{ if gt (len (where .Site.RegularPages "Section" "==" "posts")) 0 }}
-      <a class="item" href="{{ "posts" | relLangURL }}">
-        <i class="archive icon" title="{{ T "archives" }}"></i>
-      </a>
+<header class="hero dream-header">
+  <div class="hero-body">
+    <div class="media">
+      {{ if isset .Site.Params "avatar" }}
+      <div class="media-left">
+        <figure class="image is-128x128">
+          <img src="{{ .Site.Params.avatar | relURL }}" alt="avatar" />
+        </figure>
+      </div>
       {{ end }}
-      <a class="item" href="{{ "categories" | relLangURL }}">
-        <i class="th list icon" title="{{ T "allCategories" }}"></i>
-      </a>
-      <a class="item" href="{{ "tags" | relLangURL }}">
-        <i class="tags icon" title="{{ T "allTags" }}"></i>
-      </a>
-    </article>
 
-    {{ if .Site.Taxonomies.tags }}
-    {{ $tags := slice }}
-    {{ $first := slice }}
-    {{ $rest := slice }}
-    {{ range .Site.Taxonomies.tags }}
-      {{ $tags = $tags | append (dict "title" .Page.Title "link" .Page.RelPermalink) }}
-    {{ end }}
-    {{ $sum := len $tags }}
-
-    {{ $maxTags := .Site.Params.maxTags }}
-
-    {{ if $maxTags }}
-
-    {{ $first = first $maxTags $tags }}
-    {{ $rest = last (sub $sum $maxTags) $tags }}
-
-    <div class="tags-with-dropdown">
-      <div class="ui accordion">
-        <div class="title">
-          <div class="ui horizontal list">
-            <a class="item dropdown" href="#">
-              <i class="chevron right icon dropdown-icon"></i>
-            </a>
-          </div>
-          <div class="dream-tags">
-          {{ range $tag := $first }}
-          {{ $title := index $tag "title" }}
-          {{ $link := index $tag "link" }}
-            <a class="ui label" href="{{ $link }}" title="{{ $title }}">
-              {{ $title }}
-            </a>
-          {{ end }}
-          </div>
+      <div class="media-content">
+        <h1 class="title is-4">
+          {{- if .Site.Params.headerTitle -}}
+          {{ .Site.Params.headerTitle }}
+          {{- else -}}
+          {{ "Set `headerTitle` in the `config.toml` to display the title" | markdownify }}
+          {{- end -}}
+        </h1>
+        {{- if .Site.Params.motto -}}
+        <div class="subtitle is-6 mb-4">
+          {{- .Site.Params.motto | safeHTML -}}
         </div>
-        <div class="content">
-    {{ else }}
-    {{ $rest = $tags }}
-    {{ end }}
-          <div class="dream-tags"{{ if $maxTags }} style="margin-left: 1.5rem;"{{ end}}>
-          {{ range $tag := $rest }}
-          {{ $title := index $tag "title" }}
-          {{ $link := index $tag "link" }}
-            <a class="ui label" href="{{ $link }}" title="{{ $title }}">
-              {{ $title }}
-            </a>
+        {{- end -}}
+
+        <section class="mb-4">
+          {{ if gt (len (where .Site.RegularPages "Section" "==" "posts")) 0 }}
+          <a href="{{ "posts" | relLangURL }}" title="{{ T "archives" }}">
+            <span class="icon has-text-grey-dark">
+              <i class="fa-solid fa-box-archive"></i>
+            </span>
+          </a>
           {{ end }}
-          </div>
-    {{ if $maxTags }}
-        </div>
+          <a href="{{ "categories" | relLangURL }}" title="{{ T "allCategories" }}">
+            <span class="icon has-text-grey-dark">
+              <i class="fa-solid fa-bars-staggered"></i>
+            </span>
+          </a>
+          <a href="{{ "tags" | relLangURL }}" title="{{ T "allTags" }}">
+            <span class="icon has-text-grey-dark">
+              <i class="fa-solid fa-tags"></i>
+            </span>
+          </a>
+        </section>
+
+        {{ if .Site.Taxonomies.tags }}
+        <section class="tags">
+          {{ range .Site.Taxonomies.tags }}
+          <a class="tag" href="{{ .Page.RelPermalink }}" title="{{ .Page.Title }}">
+            {{- .Page.Title -}}
+          </a>
+          {{ end }}
+        </section>
+        {{ end }}
       </div>
     </div>
-    {{ end }}
-
-    {{ end }}
   </div>
 </header>

@@ -5,12 +5,12 @@
 <div class="columns is-mobile is-multiline dream-columns">
   {{ $paginator := .Paginate (where .Site.RegularPages "Section" "!=" "about") }}
   {{ range $paginator.Pages }}
-  <div class="column is-6-tablet is-3-desktop dream-column">
+  <div class="column is-6-tablet is-4-desktop is-3-widescreen dream-column">
     {{ .Render "summary" }}
   </div>
   {{ end }}
 
-  <div class="column is-6-tablet is-3-desktop dream-column">
+  <div class="column is-6-tablet is-4-desktop is-3-widescreen dream-column">
     {{ partial "paginator.html" (dict "paginator" $paginator "Site" .Site) }}
   </div>
 </div>

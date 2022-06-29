@@ -1,23 +1,23 @@
 {{ if .paginator.HasPrev }}
-<article class="ui center aligned attached segment card dream-card">
-  <div class="content">
-    <div class="ui medium header">
-      <a href="{{ .paginator.Prev.URL }}" title="{{ i18n "prevPage" }}">
+<article class="card dream-card">
+  <div class="card-content">
+    <a href="{{ .paginator.Prev.URL }}" title="{{ i18n "prevPage" }}">
+      <div class="title is-5 has-text-centered">
         {{ i18n "prevPage" }}
-      </a>
-    </div>
+      </div>
+    </a>
   </div>
 </article>
 {{ end }}
 
 {{ if .paginator.HasNext }}
-<article class="ui center aligned attached segment card dream-card">
-  <div class="content">
-    <div class="ui medium header">
-      <a href="{{ .paginator.Next.URL }}" title="{{ i18n "nextPage" }}">
+<article class="card dream-card">
+  <div class="card-content">
+    <a href="{{ .paginator.Next.URL }}" title="{{ i18n "nextPage" }}">
+      <div class="title is-5 has-text-centered">
         {{ i18n "nextPage" }}
-      </a>
-    </div>
+      </div>
+    </a>
   </div>
 </article>
 {{ end }}
