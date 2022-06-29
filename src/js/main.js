@@ -20,23 +20,23 @@ $(document).ready(() => {
     .overlayScrollbars()
 
   if (window.fixedNav) {
+    const body = $('body')
     const nav = $('.dream-nav')
 
     osInstance.options('callbacks.onScroll', function () {
       const y = this.scroll().position.y
-      const fake = $('.fake-dream-nav')
 
       if (y > 0) {
-        nav.addClass('fixed').css('background', window.isDark === 'y' ? window.backgroundDark : window.background)
-        $('.dream-single-aside').css('top', 54)
-        if (!fake.length) {
-          $('<div class="fake-dream-nav" />').css('height', 54).insertBefore(nav)
-        }
+        body.addClass('has-navbar-fixed-top')
+        nav
+          .addClass('is-fixed-top')
+          .css('background', window.isDark === 'y' ? window.backgroundDark : window.background)
       } else {
-        nav.removeClass('fixed').css('background', 'unset')
-        $('.dream-single-aside').css('top', 0)
-        fake.remove()
+        body.removeClass('has-navbar-fixed-top')
+        nav.removeClass('is-fixed-top').css('background', 'unset')
       }
+
+      $('.dream-single-aside').css('top', y > 0 ? 52 + 48 : 0)
     })
   }
 

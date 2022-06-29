@@ -23,7 +23,7 @@
           <div class="container is-fullhd">
             {{ block "main" . }} {{ end }}
 
-            <footer class="ui basic center aligned segment" style="background-color: transparent;">
+            <footer class="section has-text-centered">
               {{ if .Site.Params.siteStartYear }}
               <p>© {{ if eq now.Year .Site.Params.siteStartYear }}{{ now.Year }}{{ else }}{{ .Site.Params.siteStartYear }} - {{ now.Year }}{{ end }} {{ .Site.Title }}</p>
               {{ else }}

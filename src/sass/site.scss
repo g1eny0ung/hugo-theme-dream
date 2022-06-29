@@ -1,14 +1,13 @@
 @charset "utf-8";
-@import "../../node_modules/bulma/bulma.sass";
+
+$content-blockquote-padding: 0.625em 0.75em;
+$content-pre-padding: 0.625em 0.75em;
+
+@import '../../node_modules/bulma/bulma.sass';
 
 body {
   background-position: center;
   background-size: cover;
-
-  // https://github.com/KingSora/OverlayScrollbars/issues/89
-  // .os-host > .os-padding > .os-viewport > .os-content {
-  //   height: auto !important;
-  // }
 }
 
 .flip-container {
@@ -55,16 +54,6 @@ body {
   }
 }
 
-.inverted {
-  a {
-    color: #eee !important;
-
-    &:hover {
-      color: #fff !important;
-    }
-  }
-}
-
 .dream-404-container {
   position: fixed;
   top: calc(50% - 54px);
@@ -83,28 +72,6 @@ body {
 
 .dream-nav {
   transition: background 0.5s ease;
-}
-
-.ui.menu.dream-menu {
-  margin-left: 0;
-  margin-right: 0;
-
-  &.dream-socials {
-    display: flex;
-    flex-wrap: wrap;
-
-    .item:first-child {
-      padding-left: 0.5rem;
-    }
-  }
-
-  .item {
-    padding: 0.5rem;
-
-    i {
-      margin: 0;
-    }
-  }
 }
 
 .hero.dream-header {
@@ -133,30 +100,15 @@ body {
 }
 
 .dream-single {
-  h1.ui.large.header {
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
+  .subtitle {
+    display: flex;
+    justify-content: space-between;
 
-    .sub.header {
-      display: flex;
-      justify-content: space-between;
-
-      @media screen and (max-width: 1024px) {
-        flex-direction: column;
-        justify-content: unset;
-      }
+    @include touch {
+      flex-direction: column;
+      justify-content: unset;
     }
   }
-
-  .cover {
-    margin-bottom: 1.5rem;
-  }
-
-  // .ui.inverted.segment {
-  //   blockquote {
-  //     color: $white60;
-  //   }
-  // }
 }
 
 .dream-share {
@@ -164,7 +116,7 @@ body {
     text-decoration: none !important;
   }
 
-  @media screen and (max-width: 1024px) {
+  @include touch {
     margin-top: 0.5rem;
   }
 }
@@ -181,16 +133,6 @@ body {
 
   @media screen and (max-width: 768px) {
     display: none !important;
-  }
-}
-
-.toc {
-  ul {
-    padding-left: 2rem;
-  }
-
-  li {
-    margin: 0.5rem 0;
   }
 }
 

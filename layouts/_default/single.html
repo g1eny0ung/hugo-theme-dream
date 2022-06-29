@@ -17,16 +17,16 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="ui relaxed centered grid dream-grid dream-grid-single"{{ if .Site.Params.reversePostAndAside }}style="flex-direction: row-reverse;"{{ end }}>
+<div class="columns"{{ if .Site.Params.reversePostAndAside }} style="flex-direction: row-reverse;"{{ end }}>
   <!-- len <nav id="TableOfContents"></nav> == 32 -->
   {{ $showTOC := ge (len .TableOfContents) 33 }}
   {{ $shareInAside := .Site.Params.shareInAside }}
   {{ $showAside := or $showTOC $shareInAside }}
 
   {{ if $showAside }}
-  <aside class="sixteen wide mobile sixteen wide tablet three wide computer column dream-single-aside">
+  <aside class="column is-12-tablet is-3-desktop dream-single-aside">
     {{ if $showTOC }}
-    <div class="ui segment toc">
+    <div class="box content">
       {{ .TableOfContents }}
     </div>
     {{ end }}
@@ -36,86 +36,55 @@
     {{ end }}
   </aside>
   {{ end }}
-  <div class="sixteen wide mobile sixteen wide tablet ten wide computer column markdown-body dream-single" id="dream-save-post-as-img">
-    <section class="ui segment">
-      <header>
-        <h1 class="ui large header">
-          {{- .Title -}}
-          <span class="sub header">
-            <span class="left">
-              @
-              {{ if isset .Params "author" }}
-                {{ if isset .Params "authorlink" }}
-                  <a href="{{ .Params.authorlink }}" target="_blank">{{ .Params.author }}</a>
-                {{ else }}
-                  {{ .Params.author }}
-                {{ end }}
-              {{ else }}
-                {{ .Site.Params.author }}
-              {{ end }}
-
-              | {{ if .Site.Params.Experimental.jsDate }}
-                  <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
-                {{ else }}
-                  {{ if eq .Site.Language.Lang "zh" }}
-                    {{ index .Site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
-                  {{ else if eq .Site.Language.Lang "es" }}
-                    {{ index .Site.Data.es.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
-                  {{ else if eq .Site.Language.Lang "pt" }}
-                    {{ index .Site.Data.pt.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
-                  {{ else if eq .Site.Language.Lang "fr" }}
-                    {{ index .Site.Data.fr.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.fr.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
-                  {{ else }}
-                    {{ .Date.Format "Monday, Jan 2, 2006" }}
-                  {{ end }}
-                {{ end }}
-
-              | {{ .ReadingTime }}{{ i18n "minuteRead" .ReadingTime }}
-
-              {{ if ne .Params.nolastmod true }}
-              | {{ i18n "updateAt" }}
-                {{ if .Site.Params.Experimental.jsDate }}
-                  <span data-format="luxon">{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}</span>
-                {{ else }}
-                  {{ if eq .Site.Language.Lang "zh" }}
-                    {{ index .Site.Data.zh.Weekday (printf "%d" .Lastmod.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Day }} 日，{{ .Lastmod.Year }} 年
-                  {{ else if eq .Site.Language.Lang "es" }}
-                    {{ index .Site.Data.es.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
-                  {{ else if eq .Site.Language.Lang "pt" }}
-                    {{ index .Site.Data.pt.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
-                  {{ else if eq .Site.Language.Lang "fr" }}
-                    {{ index .Site.Data.fr.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.fr.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
-                  {{ else }}
-                    {{ .Lastmod.Format "Monday, Jan 2, 2006" }}
-                  {{ end }}
-                {{ end }}
-              {{ end }}
-            </span>
-
-            {{ if not $shareInAside }}
-            {{ partial "share.html" . }}
+  <div class="column is-12-tablet is-9-desktop dream-single" id="dream-save-post-as-img">
+    <section class="box">
+      <h1 class="title">
+        {{- .Title -}}
+      </h1>
+      <div class="subtitle">
+        <span class="left">
+          @
+          {{ if isset .Params "author" }}
+            {{ if isset .Params "authorlink" }}
+              <a href="{{ .Params.authorlink }}" target="_blank">{{ .Params.author }}</a>
+            {{ else }}
+              {{ .Params.author }}
             {{ end }}
-          </span>
-        </h1>
-      </header>
+          {{ else }}
+            {{ .Site.Params.author }}
+          {{ end }}
 
-      <article class="main">
-        {{ if and .Params.Cover .Site.Params.showSummaryCoverInPost }}
-        <img class="cover" src="{{ .Params.Cover }}" />
+          | {{ partial "date.html" . }} · {{ .ReadingTime }}{{ i18n "minuteRead" .ReadingTime }}
+
+          {{ if ne .Params.nolastmod true }}
+          | {{ i18n "updateAt" }} {{ partial "date.html" (dict "Site" .Site "Date" .Lastmod) }}
+          {{ end }}
+        </span>
+
+        {{ if not $shareInAside }}
+        {{ partial "share.html" . }}
         {{ end }}
+      </div>
 
+      {{ if and .Params.Cover .Site.Params.showSummaryCoverInPost }}
+      <div class="block">
+        <img class="cover" src="{{ .Params.Cover }}" />
+      </div>
+      {{ end }}
+
+      <article class="content">
         {{ .Content | emojify }}
       </article>
     </section>
 
     {{ if .Site.DisqusShortname }}
-    <article class="ui segment post-disqus-area" data-html2canvas-ignore>
+    <article class="box" data-html2canvas-ignore>
       {{ partial "disqus.html" (dict "Context" . "Identifier" .RelPermalink) }}
     </article>
     {{ end }}
 
     {{ if .Site.Params.utterancesRepo }}
-    <article class="ui segment utterances-comments" data-html2canvas-ignore>
+    <article class="box utterances-comments" data-html2canvas-ignore>
       <script
         src="https://utteranc.es/client.js"
         repo="{{ .Site.Params.utterancesRepo }}"
@@ -128,7 +97,7 @@
     {{ end }}
 
     {{ if .Site.Params.valine }}
-    <article class="ui segment" data-html2canvas-ignore>
+    <article class="box" data-html2canvas-ignore>
       <div id="vcomments"></div>
     </article>
 

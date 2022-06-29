@@ -1,36 +1,46 @@
 {{ partial "header.html" . }}
 
-<div class="ui relaxed grid dream-grid dream-back">
+<div class="columns is-mobile is-multiline dream-columns dream-back">
   {{ $headless := .Site.GetPage "/about" }}
   {{ $aboutPages := $headless.Resources.ByType "page" }}
   {{ range $aboutPages }}
-  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
-    <article class="ui segment markdown-body">
-      <div class="ui medium header">{{ .Title }}</div>
-      {{ .Content | emojify }}
+  <div class="column is-6-tablet is-4-desktop is-3-widescreen dream-column">
+    <article class="card dream-card">
+      <div class="card-content">
+        <div class="title is-5">{{ .Title }}</div>
+        <div class="content">
+          {{ .Content | emojify }}
+        </div>
+      </div>
     </article>
   </div>
   {{ end }}
 
-  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
-    <article class="ui segment">
-      <div class="ui medium header">{{ i18n "socialLinks" }}</div>
-      {{ partialCached "socials.html" (dict "Site" .Site "IconSize" "large") }}
+  <div class="column is-6-tablet is-4-desktop is-3-widescreen dream-column">
+    <article class="card dream-card">
+      <div class="card-content">
+        <div class="title is-5">{{ i18n "socialLinks" }}</div>
+        {{ partialCached "socials.html" (dict "Site" .Site) }}
+      </div>
     </article>
   </div>
 
-  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
-    {{ if .Site.Copyright }}
-    <article class="ui segment">
-      {{ .Site.Copyright | safeHTML }}
+  {{ if .Site.Copyright }}
+  <div class="column is-6-tablet is-4-desktop is-3-widescreen dream-column">
+    <article class="card dream-card">
+      <div class="card-content">
+        {{ .Site.Copyright | safeHTML }}
+      </div>
     </article>
-    {{ end }}
   </div>
+  {{ end }}
 
   {{ if and .Site.DisqusShortname .IsHome }}
-  <div class="sixteen wide mobile eight wide tablet eight wide computer column dream-column">
-    <article class="ui segment">
-      {{ partial "disqus.html" (dict "Context" . "Identifier" "/") }}
+  <div class="column is-6-tablet is-4-desktop is-6-widescreen dream-column">
+    <article class="card dream-card">
+      <div class="card-content">
+        {{ partial "disqus.html" (dict "Context" . "Identifier" "/") }}
+      </div>
     </article>
   </div>
   {{ end }}

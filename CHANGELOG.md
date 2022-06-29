@@ -9,6 +9,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 Because of the site rewriting, I started to calculate the version again.
 
+## [Unreleased]
+
+### Changed
+
+- Rewrite with [Bulma](https://bulma.io/).
+- Use Font Awesome 6 icons.
+
+### Removed
+
+- Replace [github-markdown-css](https://github.com/sindresorhus/github-markdown-css) with Bulma Content.
+- Remove the way to specify socials in the `config.toml`, now you need to use `data/socials.toml`.
+
 ## [2.0.0-beta] - 2021.01.31
 
 - New `header` component

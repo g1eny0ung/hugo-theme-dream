@@ -147,27 +147,31 @@ window.addEventListener('message', (e) => {
   setThemeForUtterances()
 })
 
-const iconSwitchs = $('.theme-switch')
+const themeSwitchItem = $('.theme-switch')
+const themeSwitchItemIcon = $('.theme-switch i')
 
 // Apply theme when first entering
 if (isDark === 'y') {
-  iconSwitchs.addClass('moon')
+  themeSwitchItemIcon.addClass('fa-moon')
+
   toggleDark()
 } else {
-  iconSwitchs.addClass('sun')
+  themeSwitchItemIcon.addClass('fa-sun')
 }
+
+themeSwitchItem.click(themeSwitch)
 
 function themeSwitch(e) {
   e.preventDefault()
 
   if (isDark === 'y') {
-    iconSwitchs.removeClass('moon')
-    iconSwitchs.addClass('sun')
+    themeSwitchItemIcon.removeClass('fa-moon')
+    themeSwitchItemIcon.addClass('fa-sun')
     localStore.setItem('hugo-theme-dream-is-dark', 'n')
     isDark = 'n'
   } else {
-    iconSwitchs.removeClass('sun')
-    iconSwitchs.addClass('moon')
+    themeSwitchItemIcon.removeClass('fa-sun')
+    themeSwitchItemIcon.addClass('fa-moon')
     localStore.setItem('hugo-theme-dream-is-dark', 'y')
     isDark = 'y'
   }
