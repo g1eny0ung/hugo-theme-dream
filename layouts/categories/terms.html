@@ -6,23 +6,25 @@
 
 {{ partial "header.html" . }}
 
-<div class="ui container">
-  <article class="ui segment dream-categories-section">
-    <h2 class="ui header">
+<article class="box dream-categories">
+  <div class="block">
+    <h2 class="title is-5 mb-0">
       {{- T "allCategories" -}}
-      <span class="ui grey sub header">
-        {{- if eq (len .Data.Terms) 1 -}}
-        {{ T "category" 1 }}
-        {{- else -}}
-        {{ T "category" (len .Data.Terms) }}
-        {{- end -}}
-      </span>
     </h2>
+    <div class="subheader">
+      {{- if eq (len .Data.Terms) 1 -}}
+      {{ T "category" 1 }}
+      {{- else -}}
+      {{ T "category" (len .Data.Terms) }}
+      {{- end -}}
+    </div>
+  </div>
 
-    {{ range .Data.Terms.Alphabetical }}
-    <h3 class="ui header">
-      <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>&nbsp;{{- T "article" .Count -}}
-    </h3>
+  {{ range .Data.Terms.Alphabetical }}
+  <h3 class="title is-6">
+    <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>&nbsp;{{- T "article" .Count -}}
+  </h3>
+  <div class="content">
     <ul>
       {{ range .Pages }}
       <li>
@@ -30,7 +32,7 @@
       </li>
       {{ end }}
     </ul>
-    {{ end }}
-  </article>
-</div>
+  </div>
+  {{ end }}
+</article>
 {{ end }}

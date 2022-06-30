@@ -54,22 +54,6 @@ body {
   }
 }
 
-.dream-404-container {
-  position: fixed;
-  top: calc(50% - 54px);
-  left: 50%;
-  width: 100%;
-  transform: translate3d(-50%, -50%, 0);
-
-  .ui.header {
-    margin-bottom: 2rem;
-
-    .sub.header {
-      margin-top: 0.5rem;
-    }
-  }
-}
-
 .dream-nav {
   transition: background 0.5s ease;
 }

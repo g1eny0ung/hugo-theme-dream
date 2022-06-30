@@ -86,11 +86,11 @@ const darkPostsSection = () => {
 }
 
 const darkCategoriesSection = () => {
-  $('.ui.segment.dream-categories-section').toggleClass(dark)
+  $('.dream-categories').toggleClass(dark)
 }
 
 const darkTagsSection = () => {
-  $('.ui.segment.dream-tags-section').toggleClass(dark)
+  $('.dream-tags').toggleClass(dark)
 }
 
 const darkBack = () => {

@@ -1,33 +1,22 @@
 {{ define "title" }}404 Not Found{{ end }}
 
 {{ define "main" }}
-<div class="dream-404-container">
-  <div class="ui basic center aligned segment">
-    {{ if or .Site.Params.backgroundDark .Site.Params.backgroundImageDark }}
-      <h1 class="ui header">
-        Oops...You are lost in dream.
-        <span class="sub header">Don't worry though, click the button below to wake up.</span>
-      </h1>
-      <p>
-        <button class="ui secondary button" onclick="window.location.href = '{{ .Site.BaseURL }}'">{{ i18n "backToHome" }}</button>
-      </p>
-    {{ else if .Site.Params.dark404 }}
-      <h1 class="ui inverted header">
-        Oops...You are lost in dream.
-        <span class="sub header">Don't worry though, click the button below to wake up.</span>
-      </h1>
-      <p>
-        <button class="ui inverted button" onclick="window.location.href = '{{ .Site.BaseURL }}'">{{ i18n "backToHome" }}</button>
-      </p>
-    {{ else }}
-      <h1 class="ui header">
-        Oops...You are lost in dream.
-        <span class="sub header">Don't worry though, click the button below to wake up.</span>
-      </h1>
-      <p>
-        <button class="ui secondary button" onclick="window.location.href = '{{ .Site.BaseURL }}'">{{ i18n "backToHome" }}</button>
-      </p>
-    {{ end }}
+<div class="hero is-halfheight">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="block">
+        <h1 class="title is-4 mb-0">
+          Oops...You are lost in dream.
+        </h1>
+        <div class="subheader is-6">Don't worry though, click the button below to wake up.</div>
+      </div>
+
+      {{ if .Site.Params.dark404 }}
+      <button class="button is-dark" onclick="window.location.href = '{{ .Site.BaseURL }}'">{{ i18n "backToHome" }}</button>
+      {{ else }}
+      <button class="button is-light" onclick="window.location.href = '{{ .Site.BaseURL }}'">{{ i18n "backToHome" }}</button>
+      {{ end }}
+    </div>
   </div>
 </div>
 {{ end }}

@@ -6,15 +6,17 @@
 
 {{ partial "header.html" . }}
 
-<div class="ui container">
-  <article class="ui segment dream-posts-section">
-    <h2 class="ui header">
+<article class="box dream-posts">
+  <div class="block">
+    <h2 class="title is-5 mb-0">
       {{ .Title }}
-      <span class="ui grey sub header">{{ .Content }}</span>
     </h2>
+    <div class="subheader">{{ .Content }}</div>
+  </div>
 
-    {{ range .Data.Pages.GroupByDate "2006" }}
-    <h3 class="ui header">{{ .Key }}</h3>
+  {{ range .Data.Pages.GroupByDate "2006" }}
+  <h3 class="title is-6">{{ .Key }}</h3>
+  <div class="content">
     <ul>
       {{ range .Pages }}
       <li>
@@ -22,7 +24,7 @@
       </li>
       {{ end }}
     </ul>
-    {{ end }}
-  </article>
-</div>
+  </div>
+  {{ end }}
+</article>
 {{ end }}

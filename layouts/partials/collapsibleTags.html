@@ -1,18 +1,20 @@
-<details>
-  <summary class="ui header">
-    <a href="{{ .ctx.Page.RelPermalink }}">{{ .ctx.Page.Title }}</a>
-    {{- if not .collapseBySummary -}}&nbsp;{{ T "article" .ctx.Count }}{{- end -}}
+{{ $collapseBySummary := site.Params.collapseBySummary }}
+<details class="content">
+  <summary class="title is-6 mb-0">
+    <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+    {{ T "article" .Count -}}
   </summary>
-  {{- if .collapseBySummary -}}
+
+  {{- if $collapseBySummary -}}
 
   <ul>
-    {{ range .ctx.Pages.GroupBy "Title" }}
-    <details>
+    {{ range .Pages.GroupBy "Title" }}
+    <details class="mb-2">
       <summary>{{ .Key }}</summary>
       <ul>
         {{ range .Pages }}
         <li>
-          <a href="{{ .RelPermalink }}" title="{{ .Summary }}">{{ substr (plainify .Summary) 0 25 }}...</a>
+          <a href="{{ .RelPermalink }}" title="{{ .Summary }}">{{ .Summary | safeHTML | truncate 30 }}...</a>
         </li>
         {{ end }}
       </ul>
@@ -23,7 +25,7 @@
   {{- else -}}
 
   <ul>
-    {{ range .ctx.Pages }}
+    {{ range .Pages }}
     <li>
       <a href="{{ .Page.RelPermalink }}">{{ .Title }}</a>
     </li>

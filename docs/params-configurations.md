@@ -170,19 +170,19 @@ Limit the number of labels displayed visually. The hidden tags will be displayed
 
 ### categoriesLimitInHeader = 6
 
-> Deprecated. Only available before `v2.0.0`
+> Deprecated. Only available before `v2.0.0`.
 
 Limit the number of categories displayed in the header, the default is **6**.
 
 ### headerBottomText = ""
 
-> Deprecated. Only available before `v2.0.0`
+> Deprecated. Only available before `v2.0.0`.
 
 Add text at the bottom of the header, support html. This is usually used as a description of the website information.
 
 ### footerBottomText = ""
 
-> Only available after `v2.0.0`
+> Added in `v2.0.0`.
 
 Add text at the bottom of the footer, support html. This is usually used as a description of the website information.
 
@@ -215,6 +215,8 @@ View <https://valine.js.org/en/quickstart> to get more details.
 
 ### Social Links
 
+> Removed in `v2.1.0`.
+>
 > Deprecated. **Now you can do the rendering of socials with a custom data file. This file must be named `socials.toml` and must contain the array named `socials`.**
 >
 > Example: <https://github.com/g1eny0ung/blog/blob/master/data/socials.toml>.
