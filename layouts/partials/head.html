@@ -35,8 +35,8 @@
   {{ end }}
 
   {{ if .Site.Params.darkLinkColor }}
-  .inverted a:not(.item, .ui.button) {
-     color: {{ .Site.Params.darkLinkColor }} !important;
+  a.is-dark:not(.icon) {
+     color: {{ .Site.Params.darkLinkColor }};
   }
   {{ end }}
 

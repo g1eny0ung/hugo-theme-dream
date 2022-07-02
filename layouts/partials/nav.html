@@ -1,9 +1,7 @@
-{{ if or .Site.Params.backgroundDark .Site.Params.backgroundImageDark }}
-<nav class="navbar dream-nav">
-{{ else if .Site.Params.darkNav }}
-<nav class="navbar dream-nav">
+{{ if or .Site.Params.defaultDark .Site.Params.darkNav }}
+<nav class="navbar is-dark dream-nav">
 {{ else }}
-<nav class="navbar dream-nav">
+<nav class="navbar is-light dream-nav">
 {{ end }}
   <div class="navbar-menu">
     <a class="navbar-item dream-flip-toggle" title="{{ i18n "flip" }}">
