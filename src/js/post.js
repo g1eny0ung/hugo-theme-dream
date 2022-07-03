@@ -1,3 +1,6 @@
+// Apply Bulma classes to markdown elements.
+$('table').addClass('table is-bordered is-striped')
+
 function savePostAsImg() {
   var post = document.querySelector('#dream-save-post-as-img')
   var style = window.getComputedStyle(post)

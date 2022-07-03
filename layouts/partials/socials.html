@@ -1,27 +1,27 @@
 <nav class="field is-grouped">
   {{ if .Site.Params.rss }}
   <div class="control">
-    <a class="icon has-text-grey-dark" href="{{ "index.xml" | relLangURL }}" title="RSS">
-      <i class="fa-solid fa-square-rss fa-lg"></i>
+    <a href='{{ "index.xml" | relLangURL }}' title="RSS">
+      <span class="icon">
+        <i class="fa-solid fa-square-rss fa-lg"></i>
+      </span>
     </a>
   </div>
-  {{ end }}
-
-  {{ if .Site.Params.email }}
+  {{ end }} {{ if .Site.Params.email }}
   <div class="control">
-    <a class="icon has-text-grey-dark" href="mailto:{{ .Site.Params.email }}" title="Email">
-      <i class="fa-solid fa-envelope fa-lg"></i>
+    <a href="mailto:{{ .Site.Params.email }}" title="Email">
+      <span class="icon">
+        <i class="fa-solid fa-envelope fa-lg"></i>
+      </span>
     </a>
   </div>
-  {{ end }}
-
-  {{ if (fileExists "data/socials.toml") }}
-  {{ range .Site.Data.socials.socials }}
+  {{ end }} {{ if (fileExists "data/socials.toml") }} {{ range .Site.Data.socials.socials }}
   <div class="control">
-    <a class="icon has-text-grey-dark" href="{{ .href }}" target="{{ .target }}" title="{{ .title }}">
-      <i class="fa-brands fa-{{ .icon }} fa-lg"></i>
+    <a href="{{ .href }}" target="{{ .target }}" title="{{ .title }}">
+      <span class="icon">
+        <i class="fa-brands fa-{{ .icon }} fa-lg"></i>
+      </span>
     </a>
   </div>
-  {{ end }}
-  {{ end }}
+  {{ end }} {{ end }}
 </nav>

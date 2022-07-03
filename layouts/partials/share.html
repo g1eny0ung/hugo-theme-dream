@@ -1,11 +1,17 @@
 <span class="dream-share">
-  <a href="#" class="save-as-image" title="{{ i18n "saveAsImage" }}" onclick="savePostAsImg()">
-    <i class="save icon"></i>
+  <a href="#" class="save-as-image" title='{{ i18n "saveAsImage" }}' onclick="savePostAsImg()">
+    <span class="icon">
+      <i class="fa-solid fa-download"></i>
+    </span>
   </a>
   <a href="https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}" title="Twitter">
-    <i class="twitter icon"></i>
+    <span class="icon">
+      <i class="fa-brands fa-twitter"></i>
+    </span>
   </a>
   <a href="https://facebook.com/sharer/sharer.php?u={{ .Permalink }}" title="Facebook">
-    <i class="facebook icon"></i>
+    <span class="icon">
+      <i class="fa-brands fa-facebook"></i>
+    </span>
   </a>
 </span>

@@ -25,23 +25,14 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@1.13.1/css/OverlayScrollbars.min.css" integrity="sha256-WKijf8KI68sbq8Znd6yMepIuFF0wdWfIt6gk3JWcQfk=" crossorigin="anonymous">
-<link rel="stylesheet" href="{{ "/css/site.css" | relURL }}" />
+{{ $css := resources.Get "scss/template.scss" | resources.ExecuteAsTemplate "site.scss" . | resources.ToCSS }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" />
 
 <style>
-  {{ if .Site.Params.linkColor }}
-  a:not(.icon) {
-    color: {{ .Site.Params.linkColor }};
-  }
-  {{ end }}
 
-  {{ if .Site.Params.darkLinkColor }}
-  a.is-dark:not(.icon) {
-     color: {{ .Site.Params.darkLinkColor }};
-  }
-  {{ end }}
 
   {{ if or .Site.Params.background .Site.Params.backgroundImage }}
-  body.default {
+  body {
     {{ if .Site.Params.background }}
     background-color: {{ .Site.Params.background }};
     {{ end }}
@@ -53,7 +44,7 @@
   {{ end }}
 
   {{ if or .Site.Params.backgroundDark .Site.Params.backgroundImageDark }}
-  body.dark {
+  body.is-dark {
     {{ if .Site.Params.backgroundDark }}
     background-color: {{ .Site.Params.backgroundDark }};
     {{ end }}

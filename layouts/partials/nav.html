@@ -1,29 +1,24 @@
-{{ if or .Site.Params.defaultDark .Site.Params.darkNav }}
+{{ if .Site.Params.transparentNav }}
+<nav class="navbar is-transparent dream-nav">
+{{ else if or .Site.Params.defaultDark .Site.Params.darkNav }}
 <nav class="navbar is-dark dream-nav">
 {{ else }}
 <nav class="navbar is-light dream-nav">
 {{ end }}
   <div class="navbar-menu">
     <a class="navbar-item dream-flip-toggle" title="{{ i18n "flip" }}">
-      <span class="icon is-medium has-text-grey-dark">
+      <span class="icon is-medium">
         <i class="fa-solid fa-repeat fa-lg"></i>
       </span>
     </a>
     <a class="navbar-item" href="{{ .Site.BaseURL }}" title="{{ i18n "home" }}">
-      <span class="icon is-medium has-text-grey-dark">
+      <span class="icon is-medium">
         <i class="fa-solid fa-house fa-lg"></i>
       </span>
     </a>
-    {{ if or .Site.Params.backgroundDark .Site.Params.backgroundImageDark }}
-    <a class="navbar-item theme-switch">
-      <span class="icon is-medium has-text-grey-dark">
-        <i class="fa-solid fa-lg"></i>
-      </span>
-    </a>
-    {{ end }}
     {{ if .Site.Params.enableSearch }}
     <a class="navbar-item" title="{{ i18n "search" }}" onclick="toggleSearch(event)">
-      <span class="icon is-medium has-text-grey-dark">
+      <span class="icon is-medium">
         <i class="fa-solid fa-magnifying-glass fa-lg"></i>
       </span>
     </a>

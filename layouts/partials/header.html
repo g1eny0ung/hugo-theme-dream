@@ -3,8 +3,8 @@
     <div class="media">
       {{ if isset .Site.Params "avatar" }}
       <div class="media-left">
-        <figure class="image is-128x128">
-          <img src="{{ .Site.Params.avatar | relURL }}" alt="avatar" />
+        <figure class="image is-128x128 mr-4">
+          <img class="is-rounded" src="{{ .Site.Params.avatar | relURL }}" alt="avatar" />
         </figure>
       </div>
       {{ end }}
@@ -26,18 +26,18 @@
         <section class="mb-4">
           {{ if gt (len (where .Site.RegularPages "Section" "==" "posts")) 0 }}
           <a href="{{ "posts" | relLangURL }}" title="{{ T "archives" }}">
-            <span class="icon has-text-grey-dark">
+            <span class="icon">
               <i class="fa-solid fa-box-archive"></i>
             </span>
           </a>
           {{ end }}
           <a href="{{ "categories" | relLangURL }}" title="{{ T "allCategories" }}">
-            <span class="icon has-text-grey-dark">
+            <span class="icon">
               <i class="fa-solid fa-bars-staggered"></i>
             </span>
           </a>
           <a href="{{ "tags" | relLangURL }}" title="{{ T "allTags" }}">
-            <span class="icon has-text-grey-dark">
+            <span class="icon">
               <i class="fa-solid fa-tags"></i>
             </span>
           </a>

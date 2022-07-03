@@ -10,6 +10,32 @@ body {
   background-size: cover;
 }
 
+{{ with .Site.Params.linkColor }}
+a {
+  color: {{ . }} !important;
+}
+{{ end }}
+
+a > .icon {
+  color: $text;
+}
+
+pre code {
+  background-color: initial !important;
+}
+
+.highlight {
+  @include block;
+}
+
+.navbar {
+  transition: background 0.5s ease;
+
+  &.is-transparent {
+    background-color: transparent;
+  }
+}
+
 .flip-container {
   width: 100vw;
   height: 100vh;
@@ -54,10 +80,6 @@ body {
   }
 }
 
-.dream-nav {
-  transition: background 0.5s ease;
-}
-
 .hero.dream-header {
   .hero-body {
     display: flex;
@@ -96,27 +118,23 @@ body {
 }
 
 .dream-share {
-  a {
-    text-decoration: none !important;
-  }
-
   @include touch {
     margin-top: 0.5rem;
   }
 }
 
 .dream-single-aside {
-  position: sticky !important;
+  position: sticky;
   top: 0;
   height: 100%;
   transition: top 0.5s ease;
 
   @supports (-moz-appearance: none) {
-    position: relative !important;
+    position: relative;
   }
 
-  @media screen and (max-width: 768px) {
-    display: none !important;
+  @include mobile {
+    display: none;
   }
 }
 
@@ -124,6 +142,7 @@ body {
   position: fixed;
   bottom: 1rem;
   right: 1rem;
+  cursor: pointer;
 }
 
 .utterances-comments {
@@ -132,44 +151,44 @@ body {
   }
 }
 
-// #dream-search {
-//   position: fixed;
-//   top: 5%;
-//   left: 50%;
-//   width: 30%;
-//   display: none;
-//   transform: translateX(-50%);
+@media (prefers-color-scheme: dark) {
+  body,
+  .box,
+  .card {
+    background-color: $dark;
+  }
 
-//   @media screen and (max-width: 768px) {
-//     width: 90%;
-//   }
+  body,
+  .title,
+  .subtitle {
+    color: $light;
+  }
 
-//   .ui.input {
-//     width: calc(100% - 2rem);
-//   }
+  {{ with .Site.Params.darkLinkColor }}
+  a {
+    color: {{ . }} !important;
+  }
+  {{ end }}
 
-//   &.inverted {
-//     border: 1px solid #555;
-//   }
+  a > .icon {
+    color: $grey-lighter;
+  }
 
-//   &.inverted input {
-//     color: $white87;
-//   }
+  .content {
+    color: $light;
 
-//   &.inverted .results {
-//     background: #1b1c1d;
-//     border: none;
+    blockquote {
+      background-color: $grey-dark;
+    }
 
-//     .result:hover {
-//       background: #202020;
-//     }
-
-//     .title {
-//       color: $white87 !important;
-//     }
-
-//     .description {
-//       color: $white60 !important;
-//     }
-//   }
-// }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong {
+      color: $light;
+    }
+  }
+}

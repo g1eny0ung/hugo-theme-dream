@@ -1,16 +1,13 @@
 {{ partial "header.html" . }}
 
 <div class="columns is-mobile is-multiline dream-columns dream-back">
-  {{ $headless := .Site.GetPage "/about" }}
-  {{ $aboutPages := $headless.Resources.ByType "page" }}
-  {{ range $aboutPages }}
+  {{ $headless := .Site.GetPage "/about" }} {{ $aboutPages := $headless.Resources.ByType "page" }} {{ range $aboutPages
+  }}
   <div class="column is-6-tablet is-4-desktop is-3-widescreen dream-column">
     <article class="card dream-card">
       <div class="card-content">
         <div class="title is-5">{{ .Title }}</div>
-        <div class="content">
-          {{ .Content | emojify }}
-        </div>
+        <div class="content">{{ .Content | emojify }}</div>
       </div>
     </article>
   </div>
@@ -29,18 +26,14 @@
   <div class="column is-6-tablet is-4-desktop is-3-widescreen dream-column">
     <article class="card dream-card">
       <div class="card-content">
-        {{ .Site.Copyright | safeHTML }}
+        <div class="content">{{ .Site.Copyright | safeHTML }}</div>
       </div>
     </article>
   </div>
-  {{ end }}
-
-  {{ if and .Site.DisqusShortname .IsHome }}
+  {{ end }} {{ if and .Site.DisqusShortname .IsHome }}
   <div class="column is-6-tablet is-4-desktop is-6-widescreen dream-column">
     <article class="card dream-card">
-      <div class="card-content">
-        {{ partial "disqus.html" (dict "Context" . "Identifier" "/") }}
-      </div>
+      <div class="card-content">{{ partial "disqus.html" (dict "Context" . "Identifier" "/") }}</div>
     </article>
   </div>
   {{ end }}

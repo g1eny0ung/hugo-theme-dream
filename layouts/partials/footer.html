@@ -1,12 +1,47 @@
 <script>
-  window.background = {{ .Site.Params.background }}
-  window.defaultDark = {{ .Site.Params.defaultDark }}
-  window.backgroundDark = {{ .Site.Params.backgroundDark }}
-  window.backgroundImageDark = {{ .Site.Params.backgroundImageDark }}
-  window.darkNav = {{ .Site.Params.darkNav }}
-  window.maxTags = {{ .Site.Params.maxTags }}
-  window.hasTwitterEmbed = {{ .Site.Params.hasTwitterEmbed }}
-  window.fixedNav = {{ .Site.Params.fixedNav }}
+  {{- with .Site.Params.background }}
+  window.background = {{ . }}
+  {{- end }}
+
+  {{- with .Site.Params.defaultDark }}
+  window.defaultDark = {{ . }}
+  {{- end }}
+
+  {{- with .Site.Params.backgroundDark }}
+  window.backgroundDark = {{ . }}
+  {{- end }}
+
+  {{- with .Site.Params.backgroundImageDark }}
+  window.backgroundImageDark = {{ . }}
+  {{- end }}
+
+  {{- with .Site.Params.darkNav }}
+  window.darkNav = {{ . }}
+  {{- end }}
+
+  {{- with .Site.Params.maxTags }}
+  window.maxTags = {{ . }}
+  {{- end }}
+
+  {{- with .Site.Params.hasTwitterEmbed }}
+  window.hasTwitterEmbed = {{ . }}
+  {{- end }}
+
+  {{- with .Site.Params.fixedNav }}
+  window.fixedNav = {{ . }}
+  {{- end }}
+
+  {{- with .Site.Params.transparentNav }}
+  window.transparentNav = {{ . }}
+  {{- end }}
+
+  {{- with .Site.Params.highlightjsTheme }}
+  window.highlightjsTheme = {{ . }}
+  {{- end }}
+
+  {{- with .Site.Params.highlightjsThemeDark }}
+  window.highlightjsThemeDark = {{ . }}
+  {{- end }}
 
   if (window.hasTwitterEmbed) {
     // https://developer.twitter.com/en/docs/twitter-for-websites/javascript-api/guides/set-up-twitter-for-websites
@@ -30,5 +65,8 @@
   }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@1.13.1/js/jquery.overlayScrollbars.min.js" integrity="sha256-tBd38uWlvgfps3zHPrUb2ePBg+Z8EjMf0QloFONzpvU=" crossorigin="anonymous"></script>
-<script src="{{ "/js/main.js" | relURL }}"></script>
-<script src="{{ "/js/theme.js" | relURL }}"></script>
+
+{{ range (slice "js/main.js" "js/theme.js") }}
+{{ $js := resources.Get . | js.Build (substr . 3) }}
+<script src="{{ $js.RelPermalink }}"></script>
+{{ end }}

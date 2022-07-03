@@ -2,7 +2,7 @@ $(document).ready(() => {
   function setClassName() {
     return (
       window.backgroundDark || window.backgroundImageDark
-        ? localStore.getItem('hugo-theme-dream-is-dark') === 'y'
+        ? window.localStorage.getItem('hugo-theme-dream-is-dark') === 'y'
         : window.darkNav
     )
       ? 'os-theme-light'
@@ -21,22 +21,28 @@ $(document).ready(() => {
 
   if (window.fixedNav) {
     const body = $('body')
-    const nav = $('.dream-nav')
+    const nav = $('.navbar')
 
     osInstance.options('callbacks.onScroll', function () {
       const y = this.scroll().position.y
 
       if (y > 0) {
         body.addClass('has-navbar-fixed-top')
-        nav
-          .addClass('is-fixed-top')
-          .css('background', window.isDark === 'y' ? window.backgroundDark : window.background)
+        nav.addClass('is-fixed-top')
+
+        if (window.transparentNav) {
+          nav.css('background', window.isDark === 'y' ? window.backgroundDark : window.background)
+        }
       } else {
         body.removeClass('has-navbar-fixed-top')
-        nav.removeClass('is-fixed-top').css('background', 'unset')
+        nav.removeClass('is-fixed-top')
+
+        if (window.transparentNav) {
+          nav.css('background', '')
+        }
       }
 
-      $('.dream-single-aside').css('top', y > 0 ? 52 + 48 : 0)
+      $('.dream-single-aside').css('top', y > 0 ? 52 + 12 : 0)
     })
   }
 

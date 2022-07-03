@@ -115,15 +115,14 @@
 {{ end }}
 
 {{ define "js" }}
-
+<!-- luxon -->
 {{ if .Site.Params.Experimental.jsDate }}
 {{ partial "luxon.html" . }}
 {{ end }}
 
-<script src="{{ "/js/scrollToTop.js" | relURL }}"></script>
-
+<!-- highlightjs -->
 {{ if .Site.Params.highlightjs }}
-<script src="{{ if .Site.Params.highlightjsCDN }}{{ .Site.Params.highlightjsCDN }}{{ else }}{{ "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js" }}{{ end}}"></script>
+<script src='{{ if .Site.Params.highlightjsCDN }}{{ .Site.Params.highlightjsCDN }}{{ else }}{{ "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js" }}{{ end}}'></script>
 
 {{ if .Site.Params.highlightjsExtraLanguages }}
 {{ range .Site.Params.highlightjsExtraLanguages }}
@@ -135,5 +134,9 @@
 {{ end }}
 
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1/dist/html2canvas.min.js" integrity="sha256-uacRffSSMP9qpvNWhVmYLykBv9YKMA1d/VSIN1AmfyQ=" crossorigin="anonymous"></script>
-<script src="{{ "/js/post.js" | relURL }}" defer></script>
+
+{{ range (slice "js/post.js" "js/scrollToTop.js") }}
+{{ $js := resources.Get . | js.Build (substr . 3) }}
+<script src="{{ $js.RelPermalink }}" defer></script>
+{{ end }}
 {{ end }}

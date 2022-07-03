@@ -1,9 +1,9 @@
 setTimeout(function () {
   const scrollToTop = $(`
-    <i class="big arrow circle up link icon dream-scroll-to-top${
-      window.isDark === 'y' ? ' ' + window.dark : ''
-    }" style="display: none;"></i>
-  `)
+    <span class="icon is-large dream-scroll-to-top">
+      <i class="fa-solid fa-circle-arrow-up fa-2x"></i>
+    </span>
+  `).hide()
 
   const osInstance = window.overlayScrollbarsInstance
   osInstance.options('callbacks.onScrollStop', function () {
