@@ -41,16 +41,14 @@
       <header>
         <h1 class="ui large header">
           {{- .Title -}}
-          
-    {{ if .IsTranslated }}
-    <span class="lang">
-        {{/* <div class=""> */}}
-            {{ range .Translations }}
+
+          {{ if .IsTranslated }}
+            <span class="lang">
+              {{ range .Translations }}
                 <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
-            {{ end }}
-        {{/* </div> */}}
-    </span>
-    {{ end }}
+              {{ end }}
+            </span>
+          {{ end }}
 
 
           <span class="sub header">

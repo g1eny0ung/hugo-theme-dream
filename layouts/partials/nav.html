@@ -10,7 +10,7 @@
     <i class="large link bullseye icon"></i>
   </a>
   {{ end }}
-  <a class="item" href="{{ .Site.BaseURL }}" title="{{ i18n "home" }}">
+  <a class="item" href="{{ .Site.BaseURL | relLangURL}}" title="{{ i18n "home" }}">
     <i class="large link home icon"></i>
   </a>
   {{ if or .Site.Params.backgroundDark .Site.Params.backgroundImageDark }}
