@@ -33,6 +33,7 @@ theme = "hugo-theme-dream"
   # maxTags = 5
   # categoriesLimitInHeader = 6 # deprecated
   # headerBottomText = "" # deprecated
+  # showHeaderLanguageChooser = false
 
   # footerBottomText = ""
 

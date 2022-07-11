@@ -109,6 +109,10 @@ body {
       margin: 0;
     }
   }
+
+  .langpicker {
+    display: flex;
+  }
 }
 
 .dream-header {
@@ -267,6 +271,12 @@ body {
         flex-direction: column;
         justify-content: unset;
       }
+    }
+
+    .translation {
+      float: right;
+      scale: 0.7;
+      margin-right: .5rem
     }
   }
 

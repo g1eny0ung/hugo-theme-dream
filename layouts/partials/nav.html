@@ -8,7 +8,7 @@
   <a class="item dream-flip-toggle" title="{{ i18n "flip" }}">
     <i class="large link bullseye icon"></i>
   </a>
-  <a class="item" href="{{ .Site.BaseURL }}" title="{{ i18n "home" }}">
+  <a class="item" href="{{ .Site.BaseURL | relLangURL}}" title="{{ i18n "home" }}">
     <i class="large link home icon"></i>
   </a>
   {{ if or .Site.Params.backgroundDark .Site.Params.backgroundImageDark }}
@@ -20,5 +20,18 @@
   <a class="item" title="{{ i18n "search" }}" onclick="toggleSearch(event)">
     <i class="large link search icon"></i>
   </a>
+  {{ end }}
+
+  {{ if and (gt .Site.Languages 1) (.Site.Params.showHeaderLanguageChooser | default true) }}
+    {{- $language := .Language -}}
+    <span class="langpicker">
+    {{ range $.Site.Home.AllTranslations }}
+      {{ if eq $language .Language }}
+          <a href="{{ .Permalink }}" class="item active">{{ .Language.LanguageName }}</a>
+      {{ else }}
+          <a href="{{ .Permalink }}" class="item">{{ .Language.LanguageName }}</a>
+      {{ end }}
+    {{ end }}
+    </span>
   {{ end }}
 </nav>
