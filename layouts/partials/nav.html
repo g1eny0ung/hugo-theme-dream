@@ -18,18 +18,6 @@
     <i class="large link icon theme-switch"></i>
   </a>
   {{ end }}
-  {{ if and (gt .Site.Languages 1) (.Site.Params.showHeaderLanguageChooser | default true) }}
-      {{- $language := .Language -}}
-      <div class="languages">
-      {{ range $.Site.Home.AllTranslations }}
-        {{ if eq $language .Language }}
-            <a href="{{ .Permalink }}" class="active">{{ .Language.LanguageName }}</a>
-        {{ else }}
-            <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
-        {{ end }}
-      {{ end }}
-      </div>
-  {{ end }}
   {{ if .Site.Params.enableSearch }}
   <a class="item" title="{{ i18n "search" }}" onclick="toggleSearch(event)">
     <i class="large link search icon"></i>
