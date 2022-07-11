@@ -1,0 +1,58 @@
+[home]
+other = "হোম"
+
+[backToHome]
+other = "হোমে ফেরত"
+
+[flip]
+other = "ফ্লিপ!"
+
+[archives]
+other = "আর্কাইভ"
+
+[allTags]
+other = "সকল ট্যাগ"
+
+[tag]
+one = "একটি ট্যাগ"
+other = "{{ .Count }}টি ট্যাগ"
+
+[allCategories]
+other = "সকল ক্যাটাগরি"
+
+[category]
+one = "একটি ক্যাটাগরি"
+other = "{{ .Count }}টি ক্যাটাগরি"
+
+[article]
+one = "একটি আর্টিকেল"
+other = "{{ .Count }}টি আর্টিকেল"
+
+[group]
+one = "একটি গ্রুপ"
+other = "{{ .Count }}টি গ্রুপ"
+
+[socialLinks]
+other = "সোশাল লিঙ্কস"
+
+[minuteRead]
+one = " মিনিট"
+other = " মিনিট"
+
+[updateAt]
+other = "সর্বশেষ আপডেট"
+
+[noTag]
+other = "কোন ট্যাগ নেই"
+
+[prevPage]
+other = "আগের পেইজ"
+
+[nextPage]
+other = "পরের পেইজ"
+
+[saveAsImage]
+other = "ইমেজে সেইভ"
+
+[search]
+other = "সার্চ"
