@@ -76,6 +76,8 @@ theme = "hugo-theme-dream"
   # fixedNav = true
   # collapsibleTags = true
   # collapseBySummary = true
+  # disableFlip = true
+  # hideBackSocialLinks = true
 
   # [params.advanced]
   #   customCSS = ["css/custom.css"]

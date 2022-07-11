@@ -12,12 +12,14 @@
   </div>
   {{ end }}
 
-  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
-    <article class="ui segment">
-      <div class="ui medium header">{{ i18n "socialLinks" }}</div>
-      {{ partialCached "socials.html" (dict "Site" .Site "IconSize" "large") }}
-    </article>
-  </div>
+  {{ if not .Site.Params.hideBackSocialLinks }}
+    <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+      <article class="ui segment">
+        <div class="ui medium header">{{ i18n "socialLinks" }}</div>
+        {{ partialCached "socials.html" (dict "Site" .Site "IconSize" "large") }}
+      </article>
+    </div>
+  {{ end }}
 
   <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
     {{ if .Site.Copyright }}
