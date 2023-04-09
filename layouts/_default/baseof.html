@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ block "title" . }} {{- T "home" -}} {{ end }} | {{ .Site.Title }}</title>
 
     {{ partial "head.html" . }}
@@ -16,11 +16,11 @@
   </head>
 
   <body class="default">
-    {{ partial "nav.html" . }}
+    <!-- {{ partial "nav.html" . }} -->
     <div class="flip-container">
       <div class="flipper">
         <section class="front">
-          <div class="dream-max-width">
+          <div class="container mx-auto">
             {{ block "main" . }} {{ end }}
 
             <footer class="ui basic center aligned segment" style="background-color: transparent;">
@@ -39,7 +39,7 @@
           </div>
         </section>
         <section class="back">
-          <div class="dream-max-width">
+          <div class="container mx-auto">
             {{ partial "back.html" . }}
           </div>
         </section>
