@@ -14,10 +14,10 @@ $(document).ready(function () {
   }).overlayScrollbars();
 
   if (window.fixedNav) {
-    var body = $('body');
-    var nav = $('.navbar');
+    const body = $('body');
+    const nav = $('.navbar');
     osInstance.options('callbacks.onScroll', function () {
-      var y = this.scroll().position.y;
+      const y = this.scroll().position.y;
 
       if (y > 0) {
         body.addClass('has-navbar-fixed-top');
