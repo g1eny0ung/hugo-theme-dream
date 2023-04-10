@@ -106,7 +106,7 @@ const darkSearch = () => {
 }
 
 function toggleDark() {
-  darkBackground()
+  // darkBackground()
   dark404()
   darkNavMenu()
   darkHeaderElements()

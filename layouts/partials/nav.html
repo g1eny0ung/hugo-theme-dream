@@ -1,4 +1,4 @@
-{{ if or .Site.Params.backgroundDark .Site.Params.backgroundImageDark }}
+<!-- {{ if or .Site.Params.backgroundDark .Site.Params.backgroundImageDark }}
 <nav class="ui secondary menu dream-menu dream-nav">
 {{ else if .Site.Params.darkNav }}
 <nav class="ui secondary inverted menu dream-menu dream-nav">
@@ -23,4 +23,30 @@
     <i class="large link search icon"></i>
   </a>
   {{ end }}
-</nav>
+</nav> -->
+
+<div class="container navbar my-6">
+  <div class="flex-1 space-x-3">
+    <div class="avatar cursor-pointer" @click="flip = !flip">
+      <div class="w-8 rounded-full hover:ring hover:ring-base-200">
+        <img src="{{ .Site.Params.avatar | relURL }}" alt="avatar" />
+      </div>
+    </div>
+
+    <div class="text-base font-semibold">
+      {{- if .Site.Params.headerTitle -}}
+        {{- .Site.Params.headerTitle -}}
+      {{- else -}}
+        Set headerTitle in the config to display
+      {{- end -}}
+    </div>
+  </div>
+  <div class="flex-none" x-data="{
+    toggleTheme() {
+      this.dark = !this.dark
+      window.localStorage.setItem('hugo-theme-dream-is-dark', this.dark ? 'y' : 'n')
+    }
+  }">
+    <ion-icon class="cursor-pointer" :name="dark ? 'moon' : 'sunny'" size="small" @click="toggleTheme"></ion-icon>
+  </div>
+</div>

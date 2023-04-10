@@ -1,6 +1,6 @@
 {{ define "main"}}
 
-{{ partial "header.html" . }}
+<!-- {{ partial "header.html" . }} -->
 
 <div class="ui relaxed grid dream-grid">
   {{ $paginator := .Paginate (where .Site.RegularPages "Section" "!=" "about") }}

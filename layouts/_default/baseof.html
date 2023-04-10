@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.LanguageCode }}"
+  x-data="{
+    dark: window.localStorage.getItem('hugo-theme-dream-is-dark') === 'y',
+  }"
+  :data-theme="dark ? 'forest' : 'emerald'">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,17 +17,21 @@
     {{ range .Site.Params.Advanced.customCSS }}
     <link rel="stylesheet" href="{{ . | relURL }}" />
     {{ end }}
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
 
-  <body class="default">
-    <!-- {{ partial "nav.html" . }} -->
-    <div class="flip-container">
+  <body class="default" x-data="{
+    flip: false,
+  }">
+    {{ partial "nav.html" . }}
+
+    <div class="flip-container" :class="{ 'flip-it': flip }">
       <div class="flipper">
         <section class="front">
-          <div class="container mx-auto">
-            {{ block "main" . }} {{ end }}
+          <div class="container">
 
-            <footer class="ui basic center aligned segment" style="background-color: transparent;">
+            <!-- <footer class="ui basic center aligned segment" style="background-color: transparent;">
               {{ if .Site.Params.siteStartYear }}
               <p>© {{ if eq now.Year .Site.Params.siteStartYear }}{{ now.Year }}{{ else }}{{ .Site.Params.siteStartYear }} - {{ now.Year }}{{ end }} {{ .Site.Title }}</p>
               {{ else }}
@@ -35,11 +43,11 @@
               {{ if .Site.Params.footerBottomText }}
               <p>{{ .Site.Params.footerBottomText | safeHTML }}</p>
               {{ end }}
-            </footer>
+            </footer> -->
           </div>
         </section>
         <section class="back">
-          <div class="container mx-auto">
+          <div class="container">
             {{ partial "back.html" . }}
           </div>
         </section>
@@ -67,5 +75,8 @@
     {{ if .Site.GoogleAnalytics }}
     {{ template "_internal/google_analytics_async.html" . }}
     {{ end }}
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   </body>
 </html>

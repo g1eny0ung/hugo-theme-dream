@@ -1,1 +1,30 @@
-"use strict";$(document).ready(function(){var e=["red","orange","yellow","olive","green","teal","blue","violet","purple","pink","brown"];$(".dream-tags > .ui.label").each(function(){var o,t;$(this).addClass(e[o=0,t=e.length,o=Math.ceil(o),t=Math.floor(t),Math.floor(Math.random()*(t-o)+o)])}),window.maxTags&&($(".ui.accordion").accordion({selector:{trigger:".title .dropdown"}}),$(".tags-with-dropdown .dropdown").click(function(){$(this).children(":first").toggleClass("rotated")}))});
+"use strict";
+
+$(document).ready(function () {
+  var SemanticUIColors = ['red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'pink', 'brown'];
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+  }
+
+  function initTags() {
+    $('.dream-tags > .ui.label').each(function () {
+      $(this).addClass(SemanticUIColors[getRandomInt(0, SemanticUIColors.length)]);
+    });
+  }
+  function initTagsDropdown() {
+    $('.ui.accordion').accordion({
+      selector: {
+        trigger: '.title .dropdown'
+      }
+    });
+    $('.tags-with-dropdown .dropdown').click(function () {
+      $(this).children(':first').toggleClass('rotated');
+    });
+  }
+  initTags();
+  if (window.maxTags) {
+    initTagsDropdown();
+  }
+});

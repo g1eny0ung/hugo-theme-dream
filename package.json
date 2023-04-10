@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "css": "tailwindcss -i ./src/input.css -o ./static/css/output.css",
-    "js": "babel src --out-dir assets --presets=@babel/preset-env"
+    "js": "babel src --out-dir static --presets=@babel/preset-env"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",

@@ -2,7 +2,13 @@
 module.exports = {
   content: ['./layouts/**/*.html'],
   theme: {
-    extend: {},
+    container: {
+      center: true,
+    },
   },
   plugins: [require('daisyui')],
+  daisyui: {
+    themes: ['emerald', 'forest'],
+    darkTheme: "forest",
+  }
 }
