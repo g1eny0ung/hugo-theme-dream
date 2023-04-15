@@ -1518,9 +1518,9 @@ html {
   box-shadow: 0 0 0 2px hsl(var(--b1));
 }
 
-.my-6 {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .block {
@@ -1547,14 +1547,23 @@ html {
   cursor: pointer;
 }
 
-.space-x-3 > :not([hidden]) ~ :not([hidden]) {
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
-  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .rounded-full {
   border-radius: 9999px;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .text-base {
@@ -1562,17 +1571,76 @@ html {
   line-height: 1.5rem;
 }
 
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .font-semibold {
   font-weight: 600;
 }
 
-.hover\:ring:hover {
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+body {
+  background-position: center;
+  background-size: cover;
+}
+
+.flip-container {
+  width: 100vw;
+  height: 100vh;
+  perspective: 1000px;
+  &.flip-it {
+    .flipper {
+      transform: rotateY(180deg);
+    }
+  }
+  .flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.75s ease;
+  }
+  .front,
+  .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  .front {
+    transform: rotateY(0deg);
+  }
+  .back {
+    transform: rotateY(180deg);
+  }
+}
+
+.hover\:ring-2:hover {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
 .hover\:ring-base-200:hover {
   --tw-ring-opacity: 1;
   --tw-ring-color: hsl(var(--b2, var(--b1)) / var(--tw-ring-opacity));
+}
+
+.hover\:ring-offset-2:hover {
+  --tw-ring-offset-width: 2px;
+}
+
+@media (min-width: 640px) {
+  .sm\:my-8 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
 }

@@ -8,12 +8,14 @@
   "private": true,
   "scripts": {
     "css": "tailwindcss -i ./src/input.css -o ./static/css/output.css",
-    "js": "babel src --out-dir static --presets=@babel/preset-env"
+    "js": "babel src --out-dir static --presets=@babel/preset-env",
+    "watch": "concurrently \"npm:css -- -w\" \"npm:js -- -w\""
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",
     "@babel/core": "^7.21.4",
     "@babel/preset-env": "^7.21.4",
+    "concurrently": "^8.0.1",
     "daisyui": "^2.51.5",
     "tailwindcss": "^3.3.1"
   }
