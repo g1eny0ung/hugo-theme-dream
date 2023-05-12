@@ -1,20 +1,20 @@
 "use strict";
 
-$(document).ready(function () {
-  function initGrid() {
-    var $grid = $('.dream-grid').masonry({
+function initGrid() {
+  document.querySelectorAll('.dream-grid').forEach(function (grid) {
+    var msnry = new Masonry(grid, {
       itemSelector: '.dream-column'
     });
-    $grid.imagesLoaded().progress(function () {
-      return $grid.masonry('layout');
+    imagesLoaded(msnry).on('process', function () {
+      return msnry.masonry('layout');
     });
     if (window.hasTwitterEmbed) {
       window.twttr.ready(function (twttr) {
         return twttr.events.bind('loaded', function () {
-          return $grid.masonry('layout');
+          return msnry.masonry('layout');
         });
       });
     }
-  }
-  initGrid();
-});
+  });
+}
+initGrid();

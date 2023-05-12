@@ -1,70 +1,91 @@
-<nav class="ui secondary menu dream-menu dream-socials">
+<ul class="menu menu-horizontal flex-wrap w-full [&_ion-icon]:text-lg">
   {{ if .Site.Params.rss }}
-  <a class="item" href="{{ "index.xml" | relLangURL }}">
-    <i class="{{ .IconSize }} rss square icon" title="RSS"></i>
-  </a>
+  <li>
+    <a href="{{ "index.xml" | relLangURL }}" title="RSS">
+      <ion-icon name="logo-rss"></ion-icon>
+    </a>
+  </li>
   {{ end }}
 
   {{ if .Site.Params.email }}
-  <a class="item" href="mailto:{{ .Site.Params.email }}">
-    <i class="{{ .IconSize }} mail icon" title="Email"></i>
-  </a>
+  <li>
+    <a href="mailto:{{ .Site.Params.email }}" title="Email">
+      <ion-icon name="mail"></ion-icon>
+    </a>
+  </li>
   {{ end }}
 
   {{ if .Site.Params.twitter }}
-  <a class="item" href="https://twitter.com/{{ .Site.Params.twitter }}" target="_blank">
-    <i class="{{ .IconSize }} twitter icon" title="Twitter"></i>
-  </a>
+  <li>
+    <a href="https://twitter.com/{{ .Site.Params.twitter }}" target="_blank" title="Twitter">
+      <ion-icon name="logo-twitter"></ion-icon>
+    </a>
+  </li>
   {{ end }}
 
   {{ if .Site.Params.facebook }}
-  <a class="item" href="https://facebook.com/{{ .Site.Params.facebook }}" target="_blank">
-    <i class="{{ .IconSize }} facebook icon" title="Facebook"></i>
-  </a>
+  <li>
+    <a href="https://facebook.com/{{ .Site.Params.facebook }}" target="_blank" title="Facebook">
+      <ion-icon name="logo-facebook"></ion-icon>
+    </a>
+  </li>
   {{ end }}
 
   {{ if .Site.Params.instagram }}
-  <a class="item" href="https://instagram.com/{{ .Site.Params.instagram }}" target="_blank">
-    <i class="{{ .IconSize }} instagram icon" title="Instagram"></i>
-  </a>
+  <li>
+    <a href="https://instagram.com/{{ .Site.Params.instagram }}" target="_blank" title="Instagram">
+      <ion-icon name="logo-instagram"></ion-icon>
+    </a>
+  </li>
   {{ end }}
 
   {{ if .Site.Params.mastodon }}
-  <a class="item" href="{{ .Site.Params.mastodon }}" target="_blank">
-    <i class="{{ .IconSize }} icon-mastodon icon" title="Mastodon"></i>
-  </a>
+  <li>
+    <a href="{{ .Site.Params.mastodon }}" target="_blank" title="Mastodon">
+      <ion-icon name="logo-mastodon"></ion-icon>
+    </a>
+  </li>
   {{ end }}
 
   {{ if .Site.Params.linkedin }}
-  <a class="item" href="https://www.linkedin.com/in/{{ .Site.Params.linkedin }}" target="_blank">
-    <i class="{{ .IconSize }} linkedin icon" title="Linkedin"></i>
-  </a>
+  <li>
+    <a href="https://linkedin.com/in/{{ .Site.Params.linkedin }}" target="_blank" title="Linkedin">
+      <ion-icon name="logo-linkedin"></ion-icon>
+    </a>
+  </li>
   {{ end }}
 
   {{ if .Site.Params.github }}
-  <a class="item" href="https://github.com/{{ .Site.Params.github }}" target="_blank">
-    <i class="{{ .IconSize }} github icon" title="GitHub"></i>
-  </a>
+  <li>
+    <a href="https://github.com/{{ .Site.Params.github }}" target="_blank" title="GitHub">
+      <ion-icon name="logo-github"></ion-icon>
+    </a>
+  </li>
   {{ end }}
 
   {{ if .Site.Params.stackoverflow }}
-  <a class="item" href="https://www.stackoverflow.com/users/{{ .Site.Params.stackoverflow }}" target="_blank">
-    <i class="{{ .IconSize }} stack overflow icon" title="StackOverflow"></i>
-  </a>
+  <li>
+    <a href="https://stackoverflow.com/users/{{ .Site.Params.stackoverflow }}" target="_blank" title="stack overflow">
+      <ion-icon name="logo-stackoverflow"></ion-icon>
+    </a>
+  </li>
   {{ end }}
 
   {{ if .Site.Params.codepen }}
-  <a class="item" href="https://codepen.io/{{ .Site.Params.codepen }}" target="_blank">
-    <i class="{{ .IconSize }} codepen icon" title="Codepen"></i>
-  </a>
+  <li>
+    <a href="https://codepen.io/{{ .Site.Params.codepen }}" target="_blank" title="Codepen">
+      <ion-icon name="logo-codepen"></ion-icon>
+    </a>
+  </li>
   {{ end }}
 
   {{ if (fileExists "data/socials.toml") }}
-  {{ $iconSize := .IconSize }}
   {{ range .Site.Data.socials.socials }}
-    <a class="item" href="{{ .href }}" target="{{ .target }}">
-      <i class="{{ $iconSize }} {{ .icon }} icon" title="{{ .title }}"></i>
+  <li>
+    <a href="{{ .href }}" target="{{ .target }}" title="{{ .title }}">
+      <ion-icon name="{{ .icon }}"></ion-icon>
     </a>
+  </li>
   {{ end }}
   {{ end }}
-</nav>
+</ul>

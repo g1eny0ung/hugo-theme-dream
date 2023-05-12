@@ -1,12 +1,16 @@
-<script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0" integrity="sha256-4sbTzmCCW9LGrIh5OsN8V5Pfdad1F1MwhLAOyXKnsE0=" crossorigin="anonymous"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"
+  integrity="sha256-4sbTzmCCW9LGrIh5OsN8V5Pfdad1F1MwhLAOyXKnsE0="
+  crossorigin="anonymous"
+></script>
 <script>
-  // format()
+  format()
 
-  // function format() {
-  //   $('span[data-format="luxon"]').each(function () {
-  //     var date = $(this).text()
+  function format() {
+    document.querySelectorAll('span[data-format="luxon"]').forEach(el => {
+      const date = el.textContent
 
-  //     $(this).text(luxon.DateTime.fromISO(date, { locale: {{ .Site.Language.Lang }} }).toFormat({{ .Site.Params.Experimental.jsDateFormat | default "yyyy-MM-dd" }}))
-  //   })
-  // }
+      el.textContent = luxon.DateTime.fromISO(date, { locale: {{ .Site.Language.Lang }} }).toFormat({{ .Site.Params.Experimental.jsDateFormat | default "yyyy-MM-dd" }})
+    })
+  }
 </script>

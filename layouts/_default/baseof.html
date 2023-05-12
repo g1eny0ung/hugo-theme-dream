@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}"
-  x-data="{
-    dark: window.localStorage.getItem('hugo-theme-dream-is-dark') === 'y',
-  }"
-  :data-theme="dark ? 'forest' : 'emerald'">
+  x-data
+  :class="$store.darkMode.class()"
+  :data-theme="$store.darkMode.theme()">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,33 +28,49 @@
     <div class="flip-container" :class="{ 'flip-it': flip }">
       <div class="flipper">
         <section class="front">
-          <div class="container">
+          <div class="container xl:w-3/4">
+            {{ block "main" . }} {{ end }}
 
-            <footer class="text-center">
-              {{ if .Site.Params.siteStartYear }}
-              <p>© {{ if eq now.Year .Site.Params.siteStartYear }}{{ now.Year }}{{ else }}{{ .Site.Params.siteStartYear }} - {{ now.Year }}{{ end }} {{ .Site.Title }}</p>
-              {{ else }}
-              <p>© {{ now.Year }} {{ .Site.Title }}</p>
-              {{ end }}
+            <footer class="flex justify-between items-center py-8">
+              <div>
+                {{ if .Site.Params.siteStartYear }}
+                <p>© {{ if eq now.Year .Site.Params.siteStartYear }}{{ now.Year }}{{ else }}{{ .Site.Params.siteStartYear }} - {{ now.Year }}{{ end }} {{ .Site.Title }}</p>
+                {{ else }}
+                <p>© {{ now.Year }} {{ .Site.Title }}</p>
+                {{ end }}
 
-              <p class="text-gray-500 text-sm">🌱 Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
+                <p class="text-gray-500 text-sm">🌱 Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
 
-              {{ if .Site.Params.footerBottomText }}
-              <p>{{ .Site.Params.footerBottomText | safeHTML }}</p>
-              {{ end }}
+                {{ if .Site.Params.footerBottomText }}
+                <p>{{ .Site.Params.footerBottomText | safeHTML }}</p>
+                {{ end }}
+              </div>
+              <div x-data="{ icons: ['moon', 'sunny', 'desktop'] }" class="flex items-center h-[32px] px-2 gap-2 border border-gray-300 rounded-full">
+                <template x-for="icon in icons">
+                  <div
+                    class="inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-secondary"
+                    :class="$store.darkMode.icon() === icon && 'bg-secondary'"
+                    @click="$store.darkMode.toggle(icon)"
+                  >
+                    <ion-icon
+                      :name="`${icon}-outline`"
+                      size="small"
+                      class="hover:text-secondary-content"
+                      :class="$store.darkMode.icon() === icon && 'text-secondary-content'">
+                    </ion-icon>
+                  </div>
+                </template>
+              </div>
             </footer>
           </div>
         </section>
         <section class="back">
-          <div class="container">
+          <div class="container xl:w-3/4">
             {{ partial "back.html" . }}
           </div>
         </section>
       </div>
     </div>
-
-    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js" integrity="sha256-CgSoWC9w5wNmI1aN8dIMK+6DPelUEtvDr+Bc2m/0Nx8=" crossorigin="anonymous"></script> -->
 
     <!-- {{ if .Site.Params.enableSearch }}
     {{ partial "search.html" . }}
