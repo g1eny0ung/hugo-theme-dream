@@ -1,0 +1,20 @@
+<div
+  x-data="{ icons: ['moon', 'sunny', 'desktop'] }"
+  class="flex items-center h-[32px] px-2 gap-2 border border-gray-300 dark:border-gray-600 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      class="inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-secondary"
+      :class="$store.darkMode.icon() === icon && 'bg-secondary'"
+      @click="$store.darkMode.toggle(icon)"
+    >
+      <ion-icon
+        :name="`${icon}-outline`"
+        size="small"
+        class="hover:text-secondary-content"
+        :class="$store.darkMode.icon() === icon && 'text-secondary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>

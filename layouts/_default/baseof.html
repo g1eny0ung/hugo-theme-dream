@@ -31,36 +31,9 @@
           <div class="container xl:w-3/4">
             {{ block "main" . }} {{ end }}
 
-            <footer class="flex justify-between items-center py-8">
-              <div>
-                {{ if .Site.Params.siteStartYear }}
-                <p>© {{ if eq now.Year .Site.Params.siteStartYear }}{{ now.Year }}{{ else }}{{ .Site.Params.siteStartYear }} - {{ now.Year }}{{ end }} {{ .Site.Title }}</p>
-                {{ else }}
-                <p>© {{ now.Year }} {{ .Site.Title }}</p>
-                {{ end }}
-
-                <p class="text-gray-500 text-sm">🌱 Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
-
-                {{ if .Site.Params.footerBottomText }}
-                <p>{{ .Site.Params.footerBottomText | safeHTML }}</p>
-                {{ end }}
-              </div>
-              <div x-data="{ icons: ['moon', 'sunny', 'desktop'] }" class="flex items-center h-[32px] px-2 gap-2 border border-gray-300 rounded-full">
-                <template x-for="icon in icons">
-                  <div
-                    class="inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-secondary"
-                    :class="$store.darkMode.icon() === icon && 'bg-secondary'"
-                    @click="$store.darkMode.toggle(icon)"
-                  >
-                    <ion-icon
-                      :name="`${icon}-outline`"
-                      size="small"
-                      class="hover:text-secondary-content"
-                      :class="$store.darkMode.icon() === icon && 'text-secondary-content'">
-                    </ion-icon>
-                  </div>
-                </template>
-              </div>
+            <footer class="flex justify-between items-center py-16">
+              {{ partial "footerLeft.html" . }}
+              {{ partial "footerRight.html" . }}
             </footer>
           </div>
         </section>
@@ -80,7 +53,7 @@
     <script src="{{ . | relURL }}"></script>
     {{ end }}
 
-    {{ partial "footer.html" . }}
+    {{ partial "scripts.html" . }}
     {{ block "js" . }} {{ end }}
 
     {{ range .Site.Params.Advanced.customJS }}
