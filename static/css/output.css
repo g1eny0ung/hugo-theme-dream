@@ -434,17 +434,16 @@ html {
 
 :root {
   color-scheme: light;
-  --pf: 138.86 15.982% 34.353%;
-  --sf: 96.923 37.143% 74.51%;
-  --af: 0 67.742% 75.137%;
-  --nf: 0 3.9106% 28.078%;
-  --b2: 0 4.3478% 81.882%;
-  --b3: 0 4.3478% 73.694%;
+  --pf: 141.18 50% 48%;
+  --sf: 218.88 96.078% 48%;
+  --af: 9.8901 81.25% 44.863%;
+  --nf: 219.23 20.312% 20.078%;
+  --b2: 0 0% 90%;
+  --b3: 0 0% 81%;
   --in: 198 93% 60%;
   --su: 158 64% 52%;
   --wa: 43 96% 56%;
   --er: 0 91% 71%;
-  --pc: 138.86 100% 88.588%;
   --inc: 198 100% 12%;
   --suc: 158 100% 10%;
   --wac: 43 100% 11%;
@@ -452,22 +451,23 @@ html {
   --rounded-box: 1rem;
   --rounded-btn: 0.5rem;
   --rounded-badge: 1.9rem;
-  --animation-btn: 0.25s;
-  --animation-input: .2s;
   --btn-text-case: uppercase;
-  --btn-focus-scale: 0.95;
   --border-btn: 1px;
   --tab-border: 1px;
   --tab-radius: 0.5rem;
-  --p: 138.86 15.982% 42.941%;
-  --s: 96.923 37.143% 93.137%;
-  --sc: 96 32.468% 15.098%;
-  --a: 0 67.742% 93.922%;
-  --ac: 0 21.951% 16.078%;
-  --n: 0 3.9106% 35.098%;
-  --nc: 0 4.3478% 90.98%;
-  --b1: 0 4.3478% 90.98%;
-  --bc: 0 3.2258% 6.0784%;
+  --p: 141.18 50% 60%;
+  --pc: 151.11 28.421% 18.627%;
+  --s: 218.88 96.078% 60%;
+  --sc: 210 20% 98.039%;
+  --a: 9.8901 81.25% 56.078%;
+  --ac: 210 20% 98.039%;
+  --n: 219.23 20.312% 25.098%;
+  --nc: 210 20% 98.039%;
+  --b1: 0 0% 100%;
+  --bc: 219.23 20.312% 25.098%;
+  --animation-btn: 0;
+  --animation-input: 0;
+  --btn-focus-scale: 1;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -510,19 +510,18 @@ html {
   }
 }
 
-[data-theme=garden] {
+[data-theme=emerald] {
   color-scheme: light;
-  --pf: 138.86 15.982% 34.353%;
-  --sf: 96.923 37.143% 74.51%;
-  --af: 0 67.742% 75.137%;
-  --nf: 0 3.9106% 28.078%;
-  --b2: 0 4.3478% 81.882%;
-  --b3: 0 4.3478% 73.694%;
+  --pf: 141.18 50% 48%;
+  --sf: 218.88 96.078% 48%;
+  --af: 9.8901 81.25% 44.863%;
+  --nf: 219.23 20.312% 20.078%;
+  --b2: 0 0% 90%;
+  --b3: 0 0% 81%;
   --in: 198 93% 60%;
   --su: 158 64% 52%;
   --wa: 43 96% 56%;
   --er: 0 91% 71%;
-  --pc: 138.86 100% 88.588%;
   --inc: 198 100% 12%;
   --suc: 158 100% 10%;
   --wac: 43 100% 11%;
@@ -530,22 +529,23 @@ html {
   --rounded-box: 1rem;
   --rounded-btn: 0.5rem;
   --rounded-badge: 1.9rem;
-  --animation-btn: 0.25s;
-  --animation-input: .2s;
   --btn-text-case: uppercase;
-  --btn-focus-scale: 0.95;
   --border-btn: 1px;
   --tab-border: 1px;
   --tab-radius: 0.5rem;
-  --p: 138.86 15.982% 42.941%;
-  --s: 96.923 37.143% 93.137%;
-  --sc: 96 32.468% 15.098%;
-  --a: 0 67.742% 93.922%;
-  --ac: 0 21.951% 16.078%;
-  --n: 0 3.9106% 35.098%;
-  --nc: 0 4.3478% 90.98%;
-  --b1: 0 4.3478% 90.98%;
-  --bc: 0 3.2258% 6.0784%;
+  --p: 141.18 50% 60%;
+  --pc: 151.11 28.421% 18.627%;
+  --s: 218.88 96.078% 60%;
+  --sc: 210 20% 98.039%;
+  --a: 9.8901 81.25% 56.078%;
+  --ac: 210 20% 98.039%;
+  --n: 219.23 20.312% 25.098%;
+  --nc: 210 20% 98.039%;
+  --b1: 0 0% 100%;
+  --bc: 219.23 20.312% 25.098%;
+  --animation-btn: 0;
+  --animation-input: 0;
+  --btn-focus-scale: 1;
 }
 
 [data-theme=forest] {
@@ -1822,26 +1822,6 @@ html {
   background-color: hsl(var(--b1) / var(--tw-bg-opacity));
 }
 
-.bg-base-200 {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--b2, var(--b1)) / var(--tw-bg-opacity));
-}
-
-.bg-accent {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--a) / var(--tw-bg-opacity));
-}
-
-.bg-gray-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
-}
-
-.bg-base-300 {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--b3, var(--b2)) / var(--tw-bg-opacity));
-}
-
 .bg-secondary {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--s) / var(--tw-bg-opacity));
@@ -1865,9 +1845,9 @@ html {
   padding-right: 1rem;
 }
 
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .text-base {
@@ -1942,19 +1922,13 @@ body {
   }
 }
 
-.hover\:bg-base-200:hover {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--b2, var(--b1)) / var(--tw-bg-opacity));
+.hover\:bg-base-content\/10:hover {
+  background-color: hsl(var(--bc) / 0.1);
 }
 
 .hover\:bg-secondary:hover {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--s) / var(--tw-bg-opacity));
-}
-
-.hover\:bg-accent:hover {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--a) / var(--tw-bg-opacity));
 }
 
 .hover\:text-secondary-content:hover {
@@ -1975,6 +1949,11 @@ body {
 
 .hover\:ring-offset-2:hover {
   --tw-ring-offset-width: 2px;
+}
+
+:is(.dark .dark\:border-gray-600) {
+  --tw-border-opacity: 1;
+  border-color: rgb(75 85 99 / var(--tw-border-opacity));
 }
 
 @media (min-width: 640px) {

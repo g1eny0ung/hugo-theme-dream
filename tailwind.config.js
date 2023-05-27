@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./layouts/**/*.html'],
+  darkMode: 'class',
   theme: {
     container: {
       center: true,
@@ -8,7 +9,7 @@ module.exports = {
   },
   plugins: [require('daisyui')],
   daisyui: {
-    themes: ['garden', 'forest'],
+    themes: ['emerald', 'forest'],
     darkTheme: "forest",
   }
 }
