@@ -25,9 +25,9 @@ document.addEventListener('alpine:init', function () {
     },
     theme: function theme() {
       if (this.on === 'auto') {
-        return this.mql.matches ? 'forest' : 'garden';
+        return this.mql.matches ? window.darkTheme : window.lightTheme;
       } else {
-        return this.on === 'y' ? 'forest' : 'garden';
+        return this.on === 'y' ? window.darkTheme : window.lightTheme;
       }
     },
     iconMap: {
@@ -38,13 +38,13 @@ document.addEventListener('alpine:init', function () {
     icon: function icon() {
       return this.iconMap[this.on];
     },
-    onMap: {
+    statusMap: {
       sunny: 'n',
       moon: 'y',
       desktop: 'auto'
     },
     toggle: function toggle(icon) {
-      var on = this.onMap[icon];
+      var on = this.statusMap[icon];
       this.on = on;
       if (on === 'auto') {
         window.localStorage.removeItem('hugo-theme-dream-is-dark');

@@ -1760,12 +1760,12 @@ html {
   width: 25%;
 }
 
-.w-6 {
-  width: 1.5rem;
+.w-10 {
+  width: 2.5rem;
 }
 
-.w-8 {
-  width: 2rem;
+.w-6 {
+  width: 1.5rem;
 }
 
 .w-full {
@@ -1850,9 +1850,9 @@ html {
   padding-bottom: 4rem;
 }
 
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .text-sm {
@@ -1936,19 +1936,18 @@ body {
   color: hsl(var(--sc) / var(--tw-text-opacity));
 }
 
-.hover\:ring-2:hover {
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+.hover\:shadow-xl:hover {
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.hover\:ring-primary:hover {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: hsl(var(--p) / var(--tw-ring-opacity));
+:is(.dark .dark\:border) {
+  border-width: 1px;
 }
 
-.hover\:ring-offset-2:hover {
-  --tw-ring-offset-width: 2px;
+:is(.dark .dark\:border-base-content\/30) {
+  border-color: hsl(var(--bc) / 0.3);
 }
 
 :is(.dark .dark\:border-gray-600) {

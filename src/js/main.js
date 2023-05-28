@@ -26,9 +26,9 @@ document.addEventListener('alpine:init', () => {
     },
     theme() {
       if (this.on === 'auto') {
-        return this.mql.matches ? 'forest' : 'garden'
+        return this.mql.matches ? window.darkTheme : window.lightTheme
       } else {
-        return this.on === 'y' ? 'forest' : 'garden'
+        return this.on === 'y' ? window.darkTheme : window.lightTheme
       }
     },
 
@@ -41,13 +41,13 @@ document.addEventListener('alpine:init', () => {
       return this.iconMap[this.on]
     },
 
-    onMap: {
+    statusMap: {
       sunny: 'n',
       moon: 'y',
       desktop: 'auto',
     },
     toggle(icon) {
-      const on = this.onMap[icon]
+      const on = this.statusMap[icon]
 
       this.on = on
       if (on === 'auto') {
