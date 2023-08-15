@@ -3,7 +3,7 @@ export default {
   project: {
     link: 'https://github.com/g1eny0ung/hugo-theme-dream',
   },
-  docsRepositoryBase: 'https://github.com/g1eny0ung/hugo-theme-dream/blob/master/docs/pages',
+  docsRepositoryBase: 'https://github.com/g1eny0ung/hugo-theme-dream/blob/master/docs',
   useNextSeoProps() {
     return {
       titleTemplate: '%s | Hugo Theme Dream',
@@ -14,4 +14,15 @@ export default {
       <meta name="description" content="Documentation for hugo-theme-dream" />
     </>
   ),
+  footer: {
+    text: (
+      <span>
+        MIT {new Date().getFullYear()} ©{' '}
+        <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">
+          🌱 Hugo Theme Dream
+        </a>
+        .
+      </span>
+    ),
+  },
 }
