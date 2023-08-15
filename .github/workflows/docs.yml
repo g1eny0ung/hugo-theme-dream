@@ -43,6 +43,7 @@ jobs:
         with:
           node-version: 18
           cache: 'pnpm'
+          cache-dependency-path: 'docs/pnpm-lock.yaml'
       - run: pnpm install
 
       - name: Restore cache
