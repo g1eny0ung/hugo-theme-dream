@@ -50,8 +50,8 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            .next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('pnpm-lock.yaml') }}
+            docs/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('docs/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-
       - name: Build
