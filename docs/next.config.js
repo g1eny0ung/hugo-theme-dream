@@ -5,7 +5,9 @@ const withNextra = require('nextra')({
 
 module.exports = withNextra({
   output: 'export',
-  basePath: '/hugo-theme-dream',
+  ...(process.env.IN_NETLIFY !== 'true' && {
+    basePath: '/hugo-theme-dream',
+  }),
   images: {
     unoptimized: true,
   },
