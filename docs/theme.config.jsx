@@ -9,6 +9,8 @@ export default {
       titleTemplate: '%s | Hugo Theme Dream',
     }
   },
+  primaryHue: 146,
+  primarySaturation: 50,
   head: (
     <>
       <meta name="description" content="Documentation for hugo-theme-dream" />
