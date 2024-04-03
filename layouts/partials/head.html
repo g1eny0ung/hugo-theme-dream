@@ -29,7 +29,7 @@
 
 <style>
   {{ if .Site.Params.backgroundImage }}
-  body.default {
+  body:not(.dark) {
     background-image: url({{ .Site.Params.backgroundImage }});
   }
   {{ end }}
