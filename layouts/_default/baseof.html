@@ -64,8 +64,8 @@
     <script src="{{ . | relURL }}"></script>
     {{ end }}
 
-    {{ if .Site.GoogleAnalytics }}
-    {{ template "_internal/google_analytics_async.html" . }}
+    {{ if site.Config.Services.GoogleAnalytics.ID }}
+    {{ template "_internal/google_analytics.html" . }}
     {{ end }}
   </body>
 </html>
