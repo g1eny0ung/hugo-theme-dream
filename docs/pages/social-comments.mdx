@@ -1,0 +1,39 @@
+import { Callout } from 'nextra/components'
+
+# Social Comments
+
+Currently, Dream supports these comment systems:
+
+- [Disqus](https://disqus.com/)
+- [utterances](https://utteranc.es/)
+- [Valine](https://valine.js.org/en/)
+
+## Disqus
+
+In `hugo.toml`, set:
+
+```toml
+[services]
+[services.disqus]
+shortname = "..."
+```
+
+<Callout type="warning" emoji="⚠️">
+You may have used `disqusShortname = "..."` before. This is deprecated in Hugo `0.120.0`.
+
+Please upgrade to the new configuration. See https://gohugo.io/methods/site/disqusshortname/ for more details.
+</Callout>
+
+Disqus comments will be showed on the **Single Post Page** and **About Page**.
+
+## utterances
+
+See: https://g1en.site/hugo-theme-dream/#/params-configurations?id=utterancesrepo-quotg1eny0ungg1eny0unggithubioquot
+
+The utterances only takes effect on the **Single Post Page**.
+
+## Valine
+
+See: https://g1en.site/hugo-theme-dream/#/params-configurations?id=valine-true
+
+Valine only takes effect on the **Single Post Page**.

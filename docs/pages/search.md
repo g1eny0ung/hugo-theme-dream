@@ -10,7 +10,7 @@ You can enable the search feature by setting the `enableSeach` param to `true` i
 In addition, you also need to set Hugo outputs to include `JSON`:
 
 ```toml
-# in your config.toml
+# In hugo.toml.
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 ```

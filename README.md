@@ -36,7 +36,7 @@ cd themes
 git clone https://github.com/g1eny0ung/hugo-theme-dream.git dream
 ```
 
-Then open `config.toml` and add `theme = "dream"`.
+Then open `hugo.toml` and add `theme = "dream"`.
 
 ## Example
 

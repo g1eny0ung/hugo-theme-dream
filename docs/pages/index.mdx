@@ -1,10 +1,12 @@
+import { Callout } from 'nextra/components'
+
 # Quick Start
 
 **_I assume you have already been browsed [Hugo Docs](https://gohugo.io/documentation/), if you want to use this theme, the docs will help you to understand the configurations._**
 
 ## First, add i18n Support
 
-Open `config.toml` and write:
+Open `hugo.toml` and write:
 
 ```toml
 defaultContentLanguage = "en"
@@ -16,21 +18,37 @@ View the `i18n` folder for more details.
 
 Dream support [Google Analytics](https://www.google.com/analytics/) for website analytics.
 
-In `config.toml`, set:
+In `hugo.toml`, set:
 
 ```toml
-googleAnalytics = "..."
+[services]
+[services.googleAnalytics]
+ID = '...'
+
 ```
+
+<Callout type="warning" emoji="⚠️">
+You may have used `googleAnalytics = "..."` before. This is deprecated in Hugo `0.120.0`.
+
+Please upgrade to the new configuration. See https://gohugo.io/methods/site/googleanalytics/ for more details.
+</Callout>
 
 ## Social Comments
 
 Dream now use [Disqus](https://disqus.com/) for social comments.
 
-In `config.toml`, set:
+In `hugo.toml`, set:
 
 ```toml
-disqusShortname = "..."
+[services]
+[services.disqus]
+shortname = "..."
 ```
+<Callout type="warning" emoji="⚠️">
+You may have used `disqusShortname = "..."` before. This is deprecated in Hugo `0.120.0`.
+
+Please upgrade to the new configuration. See https://gohugo.io/methods/site/disqusshortname/ for more details.
+</Callout>
 
 ## Add "About Me"
 
