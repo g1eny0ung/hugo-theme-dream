@@ -24,18 +24,17 @@
 {{ template "_internal/twitter_cards.html" . }}
 
 <link rel="stylesheet" href="{{ "/css/output.css" | relURL }}" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@1.13.1/css/OverlayScrollbars.min.css" integrity="sha256-WKijf8KI68sbq8Znd6yMepIuFF0wdWfIt6gk3JWcQfk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css">
 
 <style>
   {{ if .Site.Params.backgroundImage }}
-  body:not(.dark) {
+  #dream-global-bg {
     background-image: url({{ .Site.Params.backgroundImage }});
   }
   {{ end }}
 
   {{ if .Site.Params.backgroundImageDark }}
-  body.dark {
+  #dream-global-bg.dark {
     background-image: url({{ .Site.Params.backgroundImageDark }});
   }
   {{ end }}

@@ -2,9 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+#dream-global-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background-position: center;
   background-size: cover;
+  z-index: -1;
 }
 
 .flip-container {

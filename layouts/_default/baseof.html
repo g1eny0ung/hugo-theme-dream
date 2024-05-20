@@ -23,22 +23,25 @@
   <body :class="$store.darkMode.class()" x-data="{
     flip: false,
   }">
+    <!-- If backgroundImage defined -->
+    <div id="dream-global-bg"></div>
+
     {{ partial "nav.html" . }}
 
     <div class="flip-container" :class="{ 'flip-it': flip }">
       <div class="flipper">
         <section class="front">
-          <div class="container xl:w-3/4">
+          <div class="container">
             {{ block "main" . }} {{ end }}
 
-            <footer class="flex justify-between items-center py-16">
+            <footer class="flex justify-between items-center px-4 py-12">
               {{ partial "footerLeft.html" . }}
               {{ partial "footerRight.html" . }}
             </footer>
           </div>
         </section>
         <section class="back">
-          <div class="container xl:w-3/4">
+          <div class="container">
             {{ partial "back.html" . }}
           </div>
         </section>
