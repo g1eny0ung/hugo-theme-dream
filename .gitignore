@@ -1,3 +1,6 @@
 .DS_Store
 
-/node_modules
+node_modules
+
+docs/.next
+docs/out

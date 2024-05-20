@@ -1,0 +1,19 @@
+{
+  "index": "Quick Start",
+  "i18n": "i18n",
+  "website-analytics": "Website Analytics",
+  "social-comments": "Social Comments",
+  "about-page": "About Page",
+  "copyright": "Copyright",
+  "base-configurations": "Base Configurations",
+  "params-configurations": "Params Configurations",
+  "dark-mode": "Dark Mode",
+  "highlightjs": "Code Highlight",
+  "search": "Search",
+  "custom-archives-header": "Custom Archives Header",
+  "summary-images": "Summary Images",
+  "post-as-image": "Post as Image",
+  "netlify-cms": "Netlify CMS",
+  "custom": "Custom Theme",
+  "CHANGELOG": "Changelog"
+}
