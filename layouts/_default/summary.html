@@ -1,4 +1,4 @@
-<a class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-lg cursor-pointer dark:border dark:border-base-content/30" href="{{ .RelPermalink }}">
+<a class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="{{ .RelPermalink }}">
   <figure>
   {{ if isset .Params "cover" }}
     <img src="{{ .Params.cover }}" alt="{{ .Title }}" />
@@ -28,32 +28,31 @@
     {{ end }}
     </p>
 
-    <p>{{ .Summary | emojify | safeHTML }}</p>
+    {{ .Summary | emojify | safeHTML }}
 
     <div class="card-actions justify-between items-center">
       <div class="flex items-center">
-      {{- if isset .Params "avatar" -}}
-        <div class="avatar">
-          <div class="w-6 rounded-full">
-            <img src="{{ .Params.avatar }}" alt="avatar" />
-          </div>
+      {{ if isset .Params "avatar" }}
+      <div class="avatar">
+        <div class="w-6 rounded-full">
+          <img src="{{ .Params.avatar }}" alt="avatar" />
         </div>
-      {{- else -}}
-        <span>@</span>
-      {{- end -}}
-
-        <span class="ml-1">
-        {{- if isset .Params "author" -}}
-          {{ .Params.author }}
-        {{- else -}}
-          {{ .Site.Params.author }}
-        {{- end -}}
-        </span>
+      </div>
+      {{ else }}
+      <span>@</span>
+      {{ end }}
+      <span class="ml-1">
+      {{ if isset .Params "author" }}
+        {{ .Params.author }}
+      {{ else }}
+        {{ .Site.Params.author }}
+      {{ end }}
+      </span>
       </div>
 
       <div class="inline-flex items-center">
         <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>{{- .ReadingTime -}}{{- i18n "minuteRead" .ReadingTime -}}</span>
+        <span>{{ .ReadingTime }}{{ i18n "minuteRead" .ReadingTime }}</span>
       </div>
     </div>
   </div>

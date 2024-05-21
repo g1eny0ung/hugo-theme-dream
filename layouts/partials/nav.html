@@ -1,48 +1,40 @@
-<!-- {{ if or .Site.Params.backgroundDark .Site.Params.backgroundImageDark }}
-<nav class="ui secondary menu dream-menu dream-nav">
-{{ else if .Site.Params.darkNav }}
-<nav class="ui secondary inverted menu dream-menu dream-nav">
-{{ else }}
-<nav class="ui secondary menu dream-menu dream-nav">
-{{ end }}
-  {{ if not .Site.Params.disableFlip }}
-  <a class="item dream-flip-toggle" title="{{ i18n "flip" }}">
-    <i class="large link bullseye icon"></i>
-  </a>
-  {{ end }}
-  <a class="item" href="{{ .Site.BaseURL }}" title="{{ i18n "home" }}">
-    <i class="large link home icon"></i>
-  </a>
-  {{ if or .Site.Params.backgroundDark .Site.Params.backgroundImageDark }}
-  <a class="item" onclick="themeSwitch(event)">
-    <i class="large link icon theme-switch"></i>
-  </a>
-  {{ end }}
-  {{ if .Site.Params.enableSearch }}
-  <a class="item" title="{{ i18n "search" }}" onclick="toggleSearch(event)">
-    <i class="large link search icon"></i>
-  </a>
-  {{ end }}
-</nav> -->
-
-<div class="container px-4">
-  <nav class="mt-8 lg:mt-12 mb-4 lg:mb-8">
-    <div class="flex gap-4">
-      <div class="avatar cursor-pointer" @click="flip = !flip">
-        <div class="w-10 rounded-full hover:shadow-xl">
-          <img src="{{ .Site.Params.avatar | relURL }}" alt="avatar" />
-        </div>
-      </div>
-
-      <div>
-        <div class="text-lg font-semibold">
-          {{- if .Site.Params.headerTitle -}} {{ .Site.Params.headerTitle }} {{- else -}} Set `headerTitle` in the
-          config to display {{- end -}}
-        </div>
-        {{- if .Site.Params.motto -}}
-        <div class="text-sm text-gray-500">{{ .Site.Params.motto }}</div>
-        {{- end -}}
+<nav class="container flex justify-between mt-8 lg:mt-12 mb-4 lg:mb-8 px-4">
+  <section class="flex items-center gap-4">
+    <div class="avatar cursor-pointer" @click="flip = !flip" title="{{ T "flip" }}">
+      <div class="h-10 rounded-full hover:shadow-xl hover:ring-2 hover:ring-primary hover:ring-offset-base-100 hover:ring-offset-2">
+        <img src="{{ site.Params.avatar | relURL }}" alt="{{ site.Params.headerTitle }}" />
       </div>
     </div>
-  </nav>
-</div>
+
+    {{ if or site.Params.headerTitle site.Params.motto }}
+    <div>
+      {{ if site.Params.headerTitle }}
+      <a href="{{ site.BaseURL }}" class="text-lg font-semibold cursor-pointer">
+        {{ site.Params.headerTitle }}
+      </a>
+      {{ end }}
+      {{ if site.Params.motto }}
+      <div class="text-sm text-gray-500">{{ site.Params.motto }}</div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </section>
+
+  <section class="flex items-center gap-2 md:gap-4">
+    {{ if gt (len (where site.RegularPages "Section" "==" "posts")) 0 }}
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="{{ "posts" | relLangURL }}" title="{{ T "archives" }}">
+      <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
+    </a>
+    {{ end }}
+    {{ if site.Taxonomies.categories }}
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="{{ "categories" | relLangURL }}" title="{{ T "allCategories" }}">
+      <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
+    </a>
+    {{ end }}
+    {{ if site.Taxonomies.tags }}
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="{{ "tags" | relLangURL }}" title="{{ T "allTags" }}">
+      <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
+    </a>
+    {{ end }}
+  </section>
+</nav>

@@ -4,14 +4,14 @@
 >
   <template x-for="icon in icons">
     <div
-      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-secondary"
-      :class="$store.darkMode.icon() === icon && 'bg-secondary'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon && 'bg-primary'"
       @click="$store.darkMode.toggle(icon)"
     >
       <ion-icon
         :name="`${icon}-outline`"
-        class="group-hover:text-secondary-content"
-        :class="$store.darkMode.icon() === icon && 'text-secondary-content'"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon && 'text-primary-content'"
       >
       </ion-icon>
     </div>

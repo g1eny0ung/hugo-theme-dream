@@ -17,13 +17,13 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="ui relaxed centered grid dream-grid dream-grid-single"{{ if .Site.Params.reversePostAndAside }}style="flex-direction: row-reverse;"{{ end }}>
+<div class="flex justify-center mt-4 px-4">
   <!-- len <nav id="TableOfContents"></nav> == 32 -->
   {{ $showTOC := ge (len .TableOfContents) 33 }}
   {{ $shareInAside := .Site.Params.shareInAside }}
   {{ $showAside := or $showTOC $shareInAside }}
 
-  {{ if $showAside }}
+  <!-- {{ if $showAside }}
   <aside class="sixteen wide mobile sixteen wide tablet three wide computer column dream-single-aside">
     {{ if $showTOC }}
     <div class="ui segment toc">
@@ -35,14 +35,14 @@
     {{ partial "share1.html" . }}
     {{ end }}
   </aside>
-  {{ end }}
-  <div class="sixteen wide mobile sixteen wide tablet ten wide computer column markdown-body dream-single" id="dream-save-post-as-img">
-    <section class="ui segment">
+  {{ end }} -->
+  <div class="prose dark:prose-invert w-full" id="dream-save-post-as-img">
+    <section>
       <header>
-        <h1 class="ui large header">
-          {{- .Title -}}
-          <span class="sub header">
-            <span class="left">
+        <h1>{{ .Title }}</h1>
+        <p>
+          <span>
+            <span>
               @
               {{ if isset .Params "author" }}
                 {{ if isset .Params "authorlink" }}
@@ -96,7 +96,7 @@
             {{ partial "share.html" . }}
             {{ end }}
           </span>
-        </h1>
+        </p>
       </header>
 
       <article class="main">
