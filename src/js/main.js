@@ -17,6 +17,9 @@ document.addEventListener('alpine:init', () => {
     mql: window.matchMedia('(prefers-color-scheme: dark)'),
     on: 'n',
 
+    isDark() {
+      return this.on === 'auto' ? this.mql.matches : this.on === 'y'
+    },
     class() {
       if (this.on === 'auto') {
         return this.mql.matches ? 'dark' : 'light'
@@ -41,16 +44,10 @@ document.addEventListener('alpine:init', () => {
       return this.iconMap[this.on]
     },
 
-    statusMap: {
-      sunny: 'n',
-      moon: 'y',
-      desktop: 'auto',
-    },
-    toggle(icon) {
-      const on = this.statusMap[icon]
+    toggle(status) {
+      this.on = status
 
-      this.on = on
-      if (on === 'auto') {
+      if (status === 'auto') {
         window.localStorage.removeItem('hugo-theme-dream-is-dark')
       } else {
         window.localStorage.setItem('hugo-theme-dream-is-dark', on)

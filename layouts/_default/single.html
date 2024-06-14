@@ -36,7 +36,7 @@
     {{ end }}
   </aside>
   {{ end }} -->
-  <div class="prose dark:prose-invert w-full" id="dream-save-post-as-img">
+  <div class="prose dark:prose-invert" id="dream-save-post-as-img">
     <section>
       <header>
         <h1>{{ .Title }}</h1>
@@ -152,17 +152,9 @@
 {{ partial "luxon.html" . }}
 {{ end }}
 
-<script src="{{ "/js/scrollToTop.js" | relURL }}"></script>
+<!-- <script src="{{ "/js/scrollToTop.js" | relURL }}"></script> -->
 
-{{ if .Site.Params.highlightjs }}
-<script src="{{ if .Site.Params.highlightjsCDN }}{{ .Site.Params.highlightjsCDN }}{{ else }}{{ "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js" }}{{ end}}"></script>
-
-{{ if .Site.Params.highlightjsExtraLanguages }}
-{{ range .Site.Params.highlightjsExtraLanguages }}
-<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/languages/{{ . }}.min.js"></script>
-{{ end }}
-{{ end }}
-
+{{ if site.Params.highlightjs }}
 {{ partial "highlight.html" . }}
 {{ end }}
 

@@ -1,13 +1,13 @@
 <script>
-  window.lightTheme = {{ .Site.Params.lightTheme }}
-  window.darkTheme = {{ .Site.Params.darkTheme }}
+  window.lightTheme = {{ site.Params.lightTheme }}
+  window.darkTheme = {{ site.Params.darkTheme }}
 
-  window.defaultDark = {{ .Site.Params.defaultDark }}
-  window.backgroundImageDark = {{ .Site.Params.backgroundImageDark }}
-  window.darkNav = {{ .Site.Params.darkNav }}
-  window.maxTags = {{ .Site.Params.maxTags }}
-  window.hasTwitterEmbed = {{ .Site.Params.hasTwitterEmbed }}
-  window.fixedNav = {{ .Site.Params.fixedNav }}
+  window.defaultDark = {{ site.Params.defaultDark }}
+  window.backgroundImageDark = {{ site.Params.backgroundImageDark }}
+  window.darkNav = {{ site.Params.darkNav }}
+  window.maxTags = {{ site.Params.maxTags }}
+  window.hasTwitterEmbed = {{ site.Params.hasTwitterEmbed }}
+  window.fixedNav = {{ site.Params.fixedNav }}
 
   if (window.hasTwitterEmbed) {
     // https://developer.twitter.com/en/docs/twitter-for-websites/javascript-api/guides/set-up-twitter-for-websites
@@ -31,5 +31,4 @@
   }
 </script>
 <script src="{{ "/js/main.js" | relURL }}"></script>
-<!-- <script src="{{ "/js/header.js" | relURL }}"></script> -->
 <!-- <script src="{{ "/js/theme.js" | relURL }}"></script> -->

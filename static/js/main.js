@@ -16,6 +16,9 @@ document.addEventListener('alpine:init', function () {
     },
     mql: window.matchMedia('(prefers-color-scheme: dark)'),
     on: 'n',
+    isDark: function isDark() {
+      return this.on === 'auto' ? this.mql.matches : this.on === 'y';
+    },
     "class": function _class() {
       if (this.on === 'auto') {
         return this.mql.matches ? 'dark' : 'light';
@@ -38,15 +41,9 @@ document.addEventListener('alpine:init', function () {
     icon: function icon() {
       return this.iconMap[this.on];
     },
-    statusMap: {
-      sunny: 'n',
-      moon: 'y',
-      desktop: 'auto'
-    },
-    toggle: function toggle(icon) {
-      var on = this.statusMap[icon];
-      this.on = on;
-      if (on === 'auto') {
+    toggle: function toggle(status) {
+      this.on = status;
+      if (status === 'auto') {
         window.localStorage.removeItem('hugo-theme-dream-is-dark');
       } else {
         window.localStorage.setItem('hugo-theme-dream-is-dark', on);

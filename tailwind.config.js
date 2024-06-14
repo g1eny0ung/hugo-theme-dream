@@ -6,6 +6,21 @@ module.exports = {
     container: {
       center: true,
     },
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            pre: null,
+            code: null,
+            'code:before': null,
+            'code:after': null,
+            'pre code': null,
+            'pre code:before': null,
+            'pre code:after': null,
+          },
+        },
+      },
+    },
   },
   plugins: [require('@tailwindcss/typography'), require('daisyui')],
   daisyui: {
