@@ -1,0 +1,23 @@
+<div class="flex items-center">
+  {{ if isset .Params "avatar" }}
+  <div class="avatar">
+    <div class="w-8 rounded-full">
+      <img class="my-0" src="{{ .Params.avatar }}" />
+    </div>
+  </div>
+  {{ else }}
+  <span>@</span>
+  {{ end }}
+
+  {{ if isset .Params "avatar" }}
+  <span class="ml-1">
+  {{ else }}
+  <span>
+  {{ end }}
+  {{ if isset .Params "author" }}
+    {{ .Params.author }}
+  {{ else }}
+    {{ .Site.Params.author }}
+  {{ end }}
+  </span>
+</div>

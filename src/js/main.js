@@ -53,6 +53,11 @@ document.addEventListener('alpine:init', () => {
         window.localStorage.setItem('hugo-theme-dream-is-dark', status)
       }
 
+      this.setThemeForUtterances()
+      this.changeSyntaxHighlightingTheme()
+    },
+
+    changeSyntaxHighlightingTheme() {
       if (document.querySelector('#dream-save-post-as-img')) {
         const customSyntaxHighlightingUrl = this.isDark()
           ? window.customSyntaxHighlighting.dark
@@ -61,6 +66,20 @@ document.addEventListener('alpine:init', () => {
         document
           .querySelector('link[data-custom-syntax-highlighting]')
           .setAttribute('href', customSyntaxHighlightingUrl)
+      }
+    },
+
+    setThemeForUtterances() {
+      const utterances = document.querySelector('iframe.utterances-frame')
+
+      if (utterances) {
+        utterances.contentWindow.postMessage(
+          {
+            type: 'set-theme',
+            theme: this.isDark() ? 'github-dark' : 'github-light',
+          },
+          'https://utteranc.es'
+        )
       }
     },
   })

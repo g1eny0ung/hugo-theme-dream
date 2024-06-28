@@ -26,129 +26,104 @@
 
 {{ define "main" }}
 <div class="flex justify-center mt-4 px-4">
-  <!-- len <nav id="TableOfContents"></nav> == 32 -->
-  {{ $showTOC := ge (len .TableOfContents) 33 }}
-  {{ $shareInAside := .Site.Params.shareInAside }}
-  {{ $showAside := or $showTOC $shareInAside }}
-
-  <!-- {{ if $showAside }}
-  <aside class="sixteen wide mobile sixteen wide tablet three wide computer column dream-single-aside">
-    {{ if $showTOC }}
-    <div class="ui segment toc">
-      {{ .TableOfContents }}
-    </div>
-    {{ end }}
-
-    {{ if $shareInAside }}
-    {{ partial "share1.html" . }}
-    {{ end }}
-  </aside>
-  {{ end }} -->
   <div class="prose dark:prose-invert" id="dream-save-post-as-img">
     <section>
       <header>
         <h1>{{ .Title }}</h1>
-        <p>
-          <span>
-            <span>
-              {{ if isset .Params "author" }}
-                {{ if isset .Params "authorlink" }}
-                  @<a href="{{ .Params.authorlink }}" target="_blank">{{ .Params.author }}</a>
-                {{ else }}
-                  @{{ .Params.author }}
-                {{ end }}
-              {{ else }}
-                @{{ .Site.Params.author }}
-              {{ end }}
-
-              | {{ if .Site.Params.Experimental.jsDate }}
-                  <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
-                {{ else }}
-                  {{ if eq .Site.Language.Lang "zh" }}
-                    {{ index .Site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
-                  {{ else if eq .Site.Language.Lang "es" }}
-                    {{ index .Site.Data.es.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
-                  {{ else if eq .Site.Language.Lang "pt" }}
-                    {{ index .Site.Data.pt.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
-                  {{ else if eq .Site.Language.Lang "fr" }}
-                    {{ index .Site.Data.fr.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.fr.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
-                  {{ else }}
-                    {{ .Date.Format "Monday, Jan 2, 2006" }}
-                  {{ end }}
-                {{ end }}
-
-              | {{ .ReadingTime }}{{ i18n "minuteRead" .ReadingTime }}
-
-              {{ if ne .Params.nolastmod true }}
-              | {{ i18n "updateAt" }}
-                {{ if .Site.Params.Experimental.jsDate }}
-                  <span data-format="luxon">{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}</span>
-                {{ else }}
-                  {{ if eq .Site.Language.Lang "zh" }}
-                    {{ index .Site.Data.zh.Weekday (printf "%d" .Lastmod.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Day }} 日，{{ .Lastmod.Year }} 年
-                  {{ else if eq .Site.Language.Lang "es" }}
-                    {{ index .Site.Data.es.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
-                  {{ else if eq .Site.Language.Lang "pt" }}
-                    {{ index .Site.Data.pt.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
-                  {{ else if eq .Site.Language.Lang "fr" }}
-                    {{ index .Site.Data.fr.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.fr.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
-                  {{ else }}
-                    {{ .Lastmod.Format "Monday, Jan 2, 2006" }}
-                  {{ end }}
-                {{ end }}
-              {{ end }}
-            </span>
-
-            {{ if not $shareInAside }}
-            {{ partial "share.html" . }}
+        <p class="text-sm">
+          {{ if .Site.Params.Experimental.jsDate }}
+            <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
+          {{ else }}
+            {{ if eq .Site.Language.Lang "zh" }}
+              {{ index .Site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
+            {{ else if eq .Site.Language.Lang "es" }}
+              {{ index .Site.Data.es.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
+            {{ else if eq .Site.Language.Lang "pt" }}
+              {{ index .Site.Data.pt.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
+            {{ else if eq .Site.Language.Lang "fr" }}
+              {{ index .Site.Data.fr.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.fr.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
+            {{ else }}
+              {{ .Date.Format "Monday, Jan 2, 2006" }}
             {{ end }}
-          </span>
+          {{ end }}
+
+          | <span>{{ .ReadingTime }}{{ i18n "minuteRead" .ReadingTime }}</span>
+
+          {{ if ne .Params.nolastmod true }}
+          | <span>{{ i18n "updateAt" }}
+            {{ if .Site.Params.Experimental.jsDate }}
+              <span data-format="luxon">{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}</span>
+            {{ else }}
+              {{ if eq .Site.Language.Lang "zh" }}
+                {{ index .Site.Data.zh.Weekday (printf "%d" .Lastmod.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Day }} 日，{{ .Lastmod.Year }} 年
+              {{ else if eq .Site.Language.Lang "es" }}
+                {{ index .Site.Data.es.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
+              {{ else if eq .Site.Language.Lang "pt" }}
+                {{ index .Site.Data.pt.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
+              {{ else if eq .Site.Language.Lang "fr" }}
+                {{ index .Site.Data.fr.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.fr.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
+              {{ else }}
+                {{ .Lastmod.Format "Monday, Jan 2, 2006" }}
+              {{ end }}
+            {{ end }}</span>
+          {{ end }}
         </p>
+        <div class="flex justify-between">
+          {{ partial "author.html" . }}
+
+          {{ partial "share.html" . }}
+        </div>
       </header>
 
-      <article class="main">
+      <main>
         {{ if and .Params.Cover .Site.Params.showSummaryCoverInPost }}
-        <img class="cover" src="{{ .Params.Cover }}" />
+        <img src="{{ .Params.Cover }}" />
         {{ end }}
 
         {{ .Content | emojify }}
-      </article>
+      </main>
     </section>
 
     {{ $disqusShortname := (or .Site.Config.Services.Disqus.Shortname .Site.DisqusShortname) }}
-    {{ if $disqusShortname }}
-    <article class="ui segment post-disqus-area" data-html2canvas-ignore>
-      {{ partial "disqus.html" (dict "Context" . "Identifier" .RelPermalink "DisqusShortname" $disqusShortname) }}
-    </article>
+
+    {{ if or $disqusShortname .Site.Params.utterancesRepo .Site.Params.valine }}
+    <hr />
     {{ end }}
 
-    {{ if .Site.Params.utterancesRepo }}
-    <article class="ui segment utterances-comments" data-html2canvas-ignore>
-      <script
-        src="https://utteranc.es/client.js"
-        repo="{{ .Site.Params.utterancesRepo }}"
-        issue-term="og:title"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
+    <section class="space-y-4">
+      {{ if $disqusShortname }}
+      <article data-html2canvas-ignore>
+        {{ template "_internal/disqus.html" . }}
+      </article>
+      {{ end }}
+
+      {{ if .Site.Params.utterancesRepo }}
+      <article data-html2canvas-ignore>
+        <script
+          src="https://utteranc.es/client.js"
+          repo="{{ .Site.Params.utterancesRepo }}"
+          issue-term="og:title"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+        </script>
+      </article>
+      {{ end }}
+
+      {{ if .Site.Params.valine }}
+      <article data-html2canvas-ignore>
+        <div id="vcomments"></div>
+      </article>
+      <script>
+        new Valine({
+          el: '#vcomments',
+          appId: '{{ .Site.Params.LEANCLOUD_APP_ID }}',
+          appKey: '{{ .Site.Params.LEANCLOUD_APP_KEY }}',
+          lang: '{{ .Site.Params.VALINE_LANGUAGE }}'
+        })
       </script>
-    </article>
-    {{ end }}
-
-    {{ if .Site.Params.valine }}
-    <article class="ui segment" data-html2canvas-ignore>
-      <div id="vcomments"></div>
-    </article>
-
-    <script>
-      new Valine({
-        el: '#vcomments',
-        appId: '{{ .Site.Params.LEANCLOUD_APP_ID }}',
-        appKey: '{{ .Site.Params.LEANCLOUD_APP_KEY }}',
-        lang: '{{ .Site.Params.VALINE_LANGUAGE }}'
-      })
-    </script>
-    {{ end }}
+      {{ end }}
+    </section>
   </div>
 </div>
 {{ end }}
