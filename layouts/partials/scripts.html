@@ -2,6 +2,16 @@
   window.lightTheme = {{ site.Params.lightTheme }}
   window.darkTheme = {{ site.Params.darkTheme }}
 
+  {{ if site.Params.customSyntaxHighlighting }}
+  {{- $syntaxLightCSS := resources.Get "css/syntax-light.css" | minify -}}
+  {{- $syntaxDarkCSS := resources.Get "css/syntax-dark.css" | minify -}}
+
+  window.customSyntaxHighlighting = {
+    light: {{ $syntaxLightCSS.RelPermalink}},
+    dark: {{ $syntaxDarkCSS.RelPermalink }}
+  }
+  {{- end }}
+
   window.defaultDark = {{ site.Params.defaultDark }}
   window.backgroundImageDark = {{ site.Params.backgroundImageDark }}
   window.darkNav = {{ site.Params.darkNav }}

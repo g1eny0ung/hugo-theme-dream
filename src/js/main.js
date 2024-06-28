@@ -50,7 +50,17 @@ document.addEventListener('alpine:init', () => {
       if (status === 'auto') {
         window.localStorage.removeItem('hugo-theme-dream-is-dark')
       } else {
-        window.localStorage.setItem('hugo-theme-dream-is-dark', on)
+        window.localStorage.setItem('hugo-theme-dream-is-dark', status)
+      }
+
+      if (document.querySelector('#dream-save-post-as-img')) {
+        const customSyntaxHighlightingUrl = this.isDark()
+          ? window.customSyntaxHighlighting.dark
+          : window.customSyntaxHighlighting.light
+
+        document
+          .querySelector('link[data-custom-syntax-highlighting]')
+          .setAttribute('href', customSyntaxHighlightingUrl)
       }
     },
   })

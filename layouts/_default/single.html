@@ -2,12 +2,20 @@
 
 {{ define "css" }}
 
-{{ if .Site.Params.highlightjs }}
-{{ if .Site.Params.highlightjsTheme }}
-<link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/{{ .Site.Params.highlightjsTheme }}.min.css" />
-{{ else }}
-<link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css" />
-{{ end }}
+{{ if .Site.Params.customSyntaxHighlighting }}
+<link rel="stylesheet" data-custom-syntax-highlighting />
+<style>
+  .chroma {
+    padding: 1em;
+    background-color: var(--dream-pre-bg, #f5f5f5);
+    border-radius: .5em;
+    overflow: auto;
+  }
+
+  html.dark .chroma {
+    background-color: var(--dream-pre-bg-dark, #262626);
+  }
+</style>
 {{ end }}
 
 {{ if .Site.Params.valine }}
@@ -43,15 +51,14 @@
         <p>
           <span>
             <span>
-              @
               {{ if isset .Params "author" }}
                 {{ if isset .Params "authorlink" }}
-                  <a href="{{ .Params.authorlink }}" target="_blank">{{ .Params.author }}</a>
+                  @<a href="{{ .Params.authorlink }}" target="_blank">{{ .Params.author }}</a>
                 {{ else }}
-                  {{ .Params.author }}
+                  @{{ .Params.author }}
                 {{ end }}
               {{ else }}
-                {{ .Site.Params.author }}
+                @{{ .Site.Params.author }}
               {{ end }}
 
               | {{ if .Site.Params.Experimental.jsDate }}
@@ -152,11 +159,20 @@
 {{ partial "luxon.html" . }}
 {{ end }}
 
-<!-- <script src="{{ "/js/scrollToTop.js" | relURL }}"></script> -->
+{{ if .Site.Params.customSyntaxHighlighting }}
+<script>
+  document.addEventListener('alpine:initialized', () => {
+    var isDark = Alpine.store('darkMode').isDark()
+    var customSyntaxHighlightingUrl = isDark ? window.customSyntaxHighlighting.dark : window.customSyntaxHighlighting.light
 
-{{ if site.Params.highlightjs }}
-{{ partial "highlight.html" . }}
+    document
+      .querySelector('link[data-custom-syntax-highlighting]')
+      .setAttribute('href', customSyntaxHighlightingUrl)
+  })
+</script>
 {{ end }}
+
+<!-- <script src="{{ "/js/scrollToTop.js" | relURL }}"></script> -->
 
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1/dist/html2canvas.min.js" integrity="sha256-uacRffSSMP9qpvNWhVmYLykBv9YKMA1d/VSIN1AmfyQ=" crossorigin="anonymous"></script>
 <script src="{{ "/js/post.js" | relURL }}" defer></script>

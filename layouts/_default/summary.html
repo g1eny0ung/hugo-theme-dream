@@ -41,7 +41,11 @@
       {{ else }}
       <span>@</span>
       {{ end }}
+      {{ if isset .Params "avatar" }}
       <span class="ml-1">
+      {{ else }}
+      <span>
+      {{ end }}
       {{ if isset .Params "author" }}
         {{ .Params.author }}
       {{ else }}
