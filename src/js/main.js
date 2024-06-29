@@ -58,7 +58,7 @@ document.addEventListener('alpine:init', () => {
     },
 
     changeSyntaxHighlightingTheme() {
-      if (document.querySelector('#dream-save-post-as-img')) {
+      if (document.querySelector('#dream-single-page')) {
         const customSyntaxHighlightingUrl = this.isDark()
           ? window.customSyntaxHighlighting.dark
           : window.customSyntaxHighlighting.light

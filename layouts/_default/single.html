@@ -25,8 +25,8 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="flex justify-center mt-4 px-4">
-  <div class="prose dark:prose-invert" id="dream-save-post-as-img">
+<div class="mt-4 px-4">
+  <div class="mx-auto prose dark:prose-invert" id="dream-single-page">
     <section>
       <header>
         <h1>{{ .Title }}</h1>
@@ -69,7 +69,7 @@
           {{ end }}
         </p>
         <div class="flex justify-between">
-          {{ partial "author.html" . }}
+          {{ partial "author.html" (dict "Params" .Params "template" "single") }}
 
           {{ partial "share.html" . }}
         </div>
@@ -92,13 +92,13 @@
 
     <section class="space-y-4">
       {{ if $disqusShortname }}
-      <article data-html2canvas-ignore>
+      <article>
         {{ template "_internal/disqus.html" . }}
       </article>
       {{ end }}
 
       {{ if .Site.Params.utterancesRepo }}
-      <article data-html2canvas-ignore>
+      <article>
         <script
           src="https://utteranc.es/client.js"
           repo="{{ .Site.Params.utterancesRepo }}"
@@ -111,7 +111,7 @@
       {{ end }}
 
       {{ if .Site.Params.valine }}
-      <article data-html2canvas-ignore>
+      <article>
         <div id="vcomments"></div>
       </article>
       <script>
@@ -147,8 +147,4 @@
 </script>
 {{ end }}
 
-<!-- <script src="{{ "/js/scrollToTop.js" | relURL }}"></script> -->
-
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1/dist/html2canvas.min.js" integrity="sha256-uacRffSSMP9qpvNWhVmYLykBv9YKMA1d/VSIN1AmfyQ=" crossorigin="anonymous"></script>
-<script src="{{ "/js/post.js" | relURL }}" defer></script>
 {{ end }}

@@ -1,7 +1,7 @@
 <nav class="container flex justify-between mt-8 lg:mt-12 mb-4 lg:mb-8 px-4">
   <section class="flex items-center gap-4">
-    <div class="avatar cursor-pointer" @click="flip = !flip" title="{{ T "flip" }}">
-      <div class="h-10 rounded-full hover:shadow-xl hover:ring-2 hover:ring-primary hover:ring-offset-base-100 hover:ring-offset-2">
+    <div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="{{ T "flip" }}">
+      <div class="h-10 rounded-full">
         <img src="{{ site.Params.avatar | relURL }}" alt="{{ site.Params.headerTitle }}" />
       </div>
     </div>

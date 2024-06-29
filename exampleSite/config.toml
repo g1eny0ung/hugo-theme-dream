@@ -13,17 +13,8 @@ theme = "hugo-theme-dream"
 # enableRobotsTXT = true
 
 [params]
-  background = "#f7f7f7"
   # backgroundImage = "/me/background.jpg"
-  linkColor = "seagreen"
-
-  # dark mode
-  # defaultDark = true
-  # backgroundDark = "black"
   # backgroundImageDark = "/me/background-dark.jpg"
-  # darkLinkColor = "darkseagreen"
-  # darkNav = true
-  # dark404 = true
 
   author = "Yue Yang"
   # description = ""

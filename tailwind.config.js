@@ -10,6 +10,9 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
+            p: {
+              wordBreak: 'break-word',
+            },
             pre: null,
             'pre code': null,
             'pre code::before': null,

@@ -1,47 +1,56 @@
 <div class="dream-grid">
-  {{ $headless := .Site.GetPage "/about" }}
+  {{ $headless := site.GetPage "/about" }}
   {{ $aboutPages := $headless.Resources.ByType "page" }}
   {{ range $aboutPages }}
-  <div class="w-1/4 p-4 dream-column">
-    <article class="card card-compact bg-base-100 shadow-lg markdown-body">
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
       <div class="card-body">
         <div class="card-title">{{ .Title }}</div>
 
-        {{ .Content | emojify }}
+        <div class="prose dark:prose-invert">
+          {{ .Content | emojify }}
+        </div>
       </div>
     </article>
   </div>
   {{ end }}
 
-  {{ if not .Site.Params.hideBackSocialLinks }}
-  <div class="w-1/4 p-4 dream-column">
-    <article class="card card-compact bg-base-100 shadow-lg">
+  {{ if not site.Params.hideBackSocialLinks }}
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
       <div class="card-body">
         <div class="card-title">{{ i18n "socialLinks" }}</div>
 
-        {{ partialCached "socials.html" (dict "Site" .Site "IconSize" "large") }}
+        {{ partialCached "socials.html" . }}
       </div>
     </article>
   </div>
   {{ end }}
 
-  {{ if .Site.Copyright }}
-  <div class="w-1/4 p-4 dream-column">
-    <article class="card card-compact bg-base-100 shadow-lg">
+  {{ if site.Copyright }}
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
       <div class="card-body">
-        {{ .Site.Copyright | safeHTML }}
+        <div class="prose dark:prose-invert">
+          {{ site.Copyright | safeHTML }}
+        </div>
       </div>
     </article>
   </div>
   {{ end }}
 
-  {{ $disqusShortname := (or .Site.Config.Services.Disqus.Shortname .Site.DisqusShortname) }}
-  {{ if and $disqusShortname .IsHome }}
-  <div class="w-1/2 p-4 dream-column">
-    <article class="card card-compact bg-base-100 shadow-lg">
-      <div class="card-body">
-        {{ partial "disqus.html" (dict "Context" . "Identifier" "/") }}
-      </div>
+  {{ $disqusShortname := (or site.Config.Services.Disqus.Shortname site.DisqusShortname) }} {{ if and $disqusShortname .IsHome }}
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">{{ template "_internal/disqus.html" . }}</div>
     </article>
   </div>
   {{ end }}

@@ -52,7 +52,7 @@ document.addEventListener('alpine:init', function () {
       this.changeSyntaxHighlightingTheme();
     },
     changeSyntaxHighlightingTheme: function changeSyntaxHighlightingTheme() {
-      if (document.querySelector('#dream-save-post-as-img')) {
+      if (document.querySelector('#dream-single-page')) {
         var customSyntaxHighlightingUrl = this.isDark() ? window.customSyntaxHighlighting.dark : window.customSyntaxHighlighting.light;
         document.querySelector('link[data-custom-syntax-highlighting]').setAttribute('href', customSyntaxHighlightingUrl);
       }
