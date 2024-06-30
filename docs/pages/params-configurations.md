@@ -23,7 +23,6 @@
   avatar = "/me/yy.jpg"
   headerTitle = "g1eny0ung 的博客"
   motto = "与其感慨路难行，不如马上出发。"
-  # maxTags = 5
   # categoriesLimitInHeader = 6 # deprecated
   # headerBottomText = "" # deprecated
 
@@ -66,13 +65,12 @@
   # hasTwitterEmbed = true
   # reversePostAndAside = true
   # shareInAside = true
-  fixedNav = true
+  stickyNav = true
   # collapsibleTags = true
   # collapseBySummary = true
 
   [params.advanced]
     customCSS = ["css/custom.css"]
-    # customJSBefore = []
     # customJS = []
 
   [params.experimental]
@@ -163,10 +161,6 @@ Dream was originally intended to be used only as a blog theme. But with continuo
 ### motto = "与其感慨路难行，不如马上出发。"
 
 Used in Header.
-
-### maxTags = 5
-
-Limit the number of labels displayed visually. The hidden tags will be displayed in the form of an [Accordion](https://semantic-ui.com/modules/accordion.html).
 
 ### categoriesLimitInHeader = 6
 
@@ -269,7 +263,7 @@ Reverse the position of the post content and its aside.
 
 Display share buttons in aside, not under the post title.
 
-### fixedNav = true
+### stickyNav = true
 
 Make navbar fixed when scrolling.
 
@@ -291,13 +285,9 @@ Add your custom CSS files after the theme CSS files.
 
 For example, create a folder named `css` under `static`, then add `custom.css` into it.
 
-### customJSBefore = []
-
-Like `customCSS`, add your custom JS files **before** the theme JS files.
-
 ### customJS = []
 
-Like `customJSBefore`, add your custom JS files **after** the theme JS files.
+Like `customCSS`, add your custom JS files **after** the theme JS files.
 
 ## Experimental
 

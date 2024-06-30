@@ -8,7 +8,6 @@ Before customization, you need to add the related fields to your configuration, 
 [params]
   [params.advanced]
     customCSS = ["css/custom.css"] # files in the list will be loaded in order
-    customJSBefore = ["js/custom-before.js"]
     customJS = ["js/custom.js"]
 ```
 
@@ -102,9 +101,8 @@ window.defaultDark = {{ .Site.Params.defaultDark }}
 window.backgroundDark = {{ .Site.Params.backgroundDark }}
 window.backgroundImageDark = {{ .Site.Params.backgroundImageDark }}
 window.darkNav = {{ .Site.Params.darkNav }}
-window.maxTags = {{ .Site.Params.maxTags }}
 window.hasTwitterEmbed = {{ .Site.Params.hasTwitterEmbed }}
-window.fixedNav = {{ .Site.Params.fixedNav }}
+window.stickyNav = {{ .Site.Params.stickyNav }}
 ```
 
 But mostly, you only need to insert the function into the reserved interface.

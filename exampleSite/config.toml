@@ -21,7 +21,6 @@ theme = "hugo-theme-dream"
   avatar = "/img/avatar.jpeg"
   headerTitle = "Hugo Theme Dream"
   motto = "Motto"
-  # maxTags = 5
   # categoriesLimitInHeader = 6 # deprecated
   # headerBottomText = "" # deprecated
 
@@ -64,7 +63,7 @@ theme = "hugo-theme-dream"
   # hasTwitterEmbed = true
   # reversePostAndAside = true
   # shareInAside = true
-  # fixedNav = true
+  # stickyNav = true
   # collapsibleTags = true
   # collapseBySummary = true
   # disableFlip = true
@@ -72,7 +71,6 @@ theme = "hugo-theme-dream"
 
   # [params.advanced]
   #   customCSS = ["css/custom.css"]
-  #   customJSBefore = []
   #   customJS = []
 
   # [params.experimental]

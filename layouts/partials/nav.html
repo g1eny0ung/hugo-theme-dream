@@ -1,40 +1,49 @@
-<nav class="container flex justify-between mt-8 lg:mt-12 mb-4 lg:mb-8 px-4">
-  <section class="flex items-center gap-4">
-    <div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="{{ T "flip" }}">
-      <div class="h-10 rounded-full">
-        <img src="{{ site.Params.avatar | relURL }}" alt="{{ site.Params.headerTitle }}" />
+{{ if site.Params.stickyNav }}
+<nav x-data="{ isSticky: false }"
+  x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 0; console.log(isSticky) })"
+  class="sticky top-0 z-30 mt-4 lg:mt-8 pt-4 pb-4"
+  :class="{ 'transition bg-base-100 shadow-xl dark:border-b dark:border-base-content/30': isSticky }">
+{{ else }}
+<nav class="mt-4 lg:mt-8 pt-4 pb-4">
+{{ end }}
+  <div class="container flex justify-between px-4">
+    <section class="flex items-center gap-4">
+      <div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="{{ T "flip" }}">
+        <div class="h-10 rounded-full">
+          <img src="{{ site.Params.avatar | relURL }}" alt="{{ site.Params.headerTitle }}" />
+        </div>
       </div>
-    </div>
 
-    {{ if or site.Params.headerTitle site.Params.motto }}
-    <div>
-      {{ if site.Params.headerTitle }}
-      <a href="{{ site.BaseURL }}" class="text-lg font-semibold cursor-pointer">
-        {{ site.Params.headerTitle }}
+      {{ if or site.Params.headerTitle site.Params.motto }}
+      <div>
+        {{ if site.Params.headerTitle }}
+        <a href="{{ site.BaseURL }}" class="text-lg font-semibold cursor-pointer">
+          {{ site.Params.headerTitle }}
+        </a>
+        {{ end }}
+        {{ if site.Params.motto }}
+        <div class="text-sm text-gray-500">{{ site.Params.motto }}</div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </section>
+
+    <section class="flex items-center gap-2 md:gap-4">
+      {{ if gt (len (where site.RegularPages "Section" "==" "posts")) 0 }}
+      <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="{{ "posts" | relLangURL }}" title="{{ T "archives" }}">
+        <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
       </a>
       {{ end }}
-      {{ if site.Params.motto }}
-      <div class="text-sm text-gray-500">{{ site.Params.motto }}</div>
+      {{ if site.Taxonomies.categories }}
+      <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="{{ "categories" | relLangURL }}" title="{{ T "allCategories" }}">
+        <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
+      </a>
       {{ end }}
-    </div>
-    {{ end }}
-  </section>
-
-  <section class="flex items-center gap-2 md:gap-4">
-    {{ if gt (len (where site.RegularPages "Section" "==" "posts")) 0 }}
-    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="{{ "posts" | relLangURL }}" title="{{ T "archives" }}">
-      <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
-    </a>
-    {{ end }}
-    {{ if site.Taxonomies.categories }}
-    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="{{ "categories" | relLangURL }}" title="{{ T "allCategories" }}">
-      <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
-    </a>
-    {{ end }}
-    {{ if site.Taxonomies.tags }}
-    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="{{ "tags" | relLangURL }}" title="{{ T "allTags" }}">
-      <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
-    </a>
-    {{ end }}
-  </section>
+      {{ if site.Taxonomies.tags }}
+      <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="{{ "tags" | relLangURL }}" title="{{ T "allTags" }}">
+        <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
+      </a>
+      {{ end }}
+    </section>
+  </div>
 </nav>

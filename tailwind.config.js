@@ -25,6 +25,7 @@ module.exports = {
       },
     },
   },
+  safelist: ['dark:border-b'],
   plugins: [require('@tailwindcss/typography'), require('daisyui')],
   daisyui: {
     themes: ['emerald', 'forest'],

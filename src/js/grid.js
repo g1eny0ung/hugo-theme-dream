@@ -1,13 +1,13 @@
 function initGrid() {
   document.querySelectorAll('.dream-grid').forEach((grid) => {
-    const msnry = new Masonry(grid, {
+    const m = new Masonry(grid, {
       itemSelector: '.dream-column',
     })
 
-    imagesLoaded(msnry).on('process', () => msnry.masonry('layout'))
+    imagesLoaded(m).on('process', () => m.masonry('layout'))
 
     if (window.hasTwitterEmbed) {
-      window.twttr.ready((twttr) => twttr.events.bind('loaded', () => msnry.masonry('layout')))
+      window.twttr.ready((twttr) => twttr.events.bind('loaded', () => m.masonry('layout')))
     }
   })
 }

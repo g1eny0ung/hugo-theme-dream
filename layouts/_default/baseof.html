@@ -33,7 +33,7 @@
           <div class="container">
             {{ block "main" . }} {{ end }}
 
-            <footer class="flex justify-between items-center px-4 py-12">
+            <footer class="flex justify-between items-center gap-2 px-4 py-12">
               {{ partial "footerLeft.html" . }}
               {{ partial "footerRight.html" . }}
             </footer>
@@ -50,10 +50,6 @@
     <!-- {{ if .Site.Params.enableSearch }}
     {{ partial "search.html" . }}
     {{ end }} -->
-
-    {{ range .Site.Params.Advanced.customJSBefore }}
-    <script src="{{ . | relURL }}"></script>
-    {{ end }}
 
     {{ partial "scripts.html" . }}
     {{ block "js" . }} {{ end }}
