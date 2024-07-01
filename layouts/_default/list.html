@@ -6,8 +6,6 @@
 
 {{ define "main"}}
 
-{{ partial "header.html" . }}
-
 <div class="ui relaxed grid dream-grid">
   {{ $paginator := .Paginate .Pages }}
   {{ range $paginator.Pages }}

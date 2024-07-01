@@ -1,6 +1,6 @@
 {{ if site.Params.stickyNav }}
 <nav x-data="{ isSticky: false }"
-  x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 0; console.log(isSticky) })"
+  x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })"
   class="sticky top-0 z-30 mt-4 lg:mt-8 pt-4 pb-4"
   :class="{ 'transition bg-base-100 shadow-xl dark:border-b dark:border-base-content/30': isSticky }">
 {{ else }}

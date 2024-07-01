@@ -4,25 +4,38 @@
 
 {{ define "main"}}
 
-{{ partial "header.html" . }}
-
-<div class="ui container">
-  <article class="ui segment dream-posts-section">
-    <h2 class="ui header">
+<div class="mt-8 lg:mt-12 px-4">
+  <div class="mx-auto prose dark:prose-invert">
+    <h1 class="text-3xl">
       {{ .Title }}
-      <span class="ui grey sub header">{{ .Content }}</span>
-    </h2>
+    </h1>
+    <span class="text-sm">{{ .Content }}</span>
+  </div>
 
-    {{ range .Data.Pages.GroupByDate "2006" }}
-    <h3 class="ui header">{{ .Key }}</h3>
-    <ul>
-      {{ range .Pages }}
-      <li>
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
+  <div class="max-w-[65ch] mx-auto mt-8 lg:mt-12">
+    <ul class="timeline timeline-vertical">
+      {{ range .Data.Pages.GroupByDate "2006" }}
+      <li class="[--timeline-col-start:64px]">
+        <hr class="dark:bg-base-content" />
+        <div class="timeline-start !justify-self-start">
+          <div class="text-lg font-semibold">{{ .Key }}</div>
+        </div>
+        <div class="timeline-middle flex items-center mx-8 my-2">
+          <ion-icon name="time"></ion-icon>
+        </div>
+        <div class="timeline-end timeline-box dark:border-base-content/60 prose dark:prose-invert my-8">
+          <ul>
+            {{ range .Pages }}
+            <li>
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+        <hr class="dark:bg-base-content" />
       </li>
       {{ end }}
     </ul>
-    {{ end }}
-  </article>
+  </div>
 </div>
 {{ end }}
