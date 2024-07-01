@@ -1,0 +1,55 @@
+{{ define "title" }}
+{{- T (print "all" (strings.FirstUpper .Data.Plural)) -}}
+{{ end }}
+
+{{ define "main"}}
+
+<div class="flex gap-4 mt-8 lg:mt-12 px-4">
+  <div class="basis-[300px] prose dark:prose-invert">
+    <h1 class="text-2xl">
+      {{- T (print "all" (strings.FirstUpper .Data.Plural)) -}}
+    </h1>
+    <p class="text-sm">
+      {{- if eq (len .Data.Terms) 1 }}
+      {{- T .Data.Singular 1 }}
+      {{- else }}
+      {{- T .Data.Singular (len .Data.Terms) }}
+      {{- end }}
+    </p>
+    <div class="flex flex-wrap gap-4 mt-6">
+      {{ range .Data.Terms.Alphabetical }}
+      <a href="{{ .Page.RelPermalink }}" class="badge h-6 no-underline hover:badge-primary">
+        {{ .Page.Title }}
+      </a>
+      {{ end }}
+    </div>
+  </div>
+  <div class="divider divider-horizontal"></div>
+  <div class="flex-1 space-y-4">
+    {{ $uniquePosts := dict }}
+    {{ range $key, $value := .Data.Terms }}
+        {{ range $value.Pages }}
+        <hr />
+        {{ $key}}
+        <hr />
+        {{ $value }}
+        {{ end }}
+    {{ end }}
+
+    {{ range $uniquePosts.Alphabetical }}
+    {{ range .Pages }}
+    {{ .Render "term-summary" }}
+    {{ end }}
+    {{ end }}
+  </div>
+</div>
+
+{{ end }}
+
+{{ define "js" }}
+
+{{ if .Site.Params.Experimental.jsDate }}
+{{ partial "luxon.html" . }}
+{{ end }}
+
+{{ end }}

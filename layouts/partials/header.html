@@ -18,7 +18,7 @@
     </h1>
 
     <article class="ui horizontal list">
-      {{ if gt (len (where .Site.RegularPages "Section" "==" "posts")) 0 }}
+      {{ if gt (len (where .Site.RegularPages "Type" "posts")) 0 }}
       <a class="item" href="{{ "posts" | relLangURL }}">
         <i class="archive icon" title="{{ T "archives" }}"></i>
       </a>
