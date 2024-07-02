@@ -2,7 +2,7 @@
 
 {{ define "css" }}
 
-{{ if .Site.Params.customSyntaxHighlighting }}
+{{ if site.Params.customSyntaxHighlighting }}
 <link rel="stylesheet" data-custom-syntax-highlighting />
 <style>
   .chroma {
@@ -18,7 +18,7 @@
 </style>
 {{ end }}
 
-{{ if .Site.Params.valine }}
+{{ if site.Params.valine }}
 <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 {{ end }}
 
@@ -31,17 +31,17 @@
       <header>
         <h1>{{ .Title }}</h1>
         <p class="text-sm">
-          {{ if .Site.Params.Experimental.jsDate }}
+          {{ if site.Params.Experimental.jsDate }}
             <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
           {{ else }}
-            {{ if eq .Site.Language.Lang "zh" }}
-              {{ index .Site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
-            {{ else if eq .Site.Language.Lang "es" }}
-              {{ index .Site.Data.es.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
-            {{ else if eq .Site.Language.Lang "pt" }}
-              {{ index .Site.Data.pt.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
-            {{ else if eq .Site.Language.Lang "fr" }}
-              {{ index .Site.Data.fr.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.fr.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
+            {{ if eq site.Language.Lang "zh" }}
+              {{ index site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}，{{ index site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
+            {{ else if eq site.Language.Lang "es" }}
+              {{ index site.Data.es.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index site.Data.es.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
+            {{ else if eq site.Language.Lang "pt" }}
+              {{ index site.Data.pt.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index site.Data.pt.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
+            {{ else if eq site.Language.Lang "fr" }}
+              {{ index site.Data.fr.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index site.Data.fr.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
             {{ else }}
               {{ .Date.Format "Monday, Jan 2, 2006" }}
             {{ end }}
@@ -51,17 +51,17 @@
 
           {{ if ne .Params.nolastmod true }}
           | <span>{{ i18n "updateAt" }}
-            {{ if .Site.Params.Experimental.jsDate }}
+            {{ if site.Params.Experimental.jsDate }}
               <span data-format="luxon">{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}</span>
             {{ else }}
-              {{ if eq .Site.Language.Lang "zh" }}
-                {{ index .Site.Data.zh.Weekday (printf "%d" .Lastmod.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Day }} 日，{{ .Lastmod.Year }} 年
-              {{ else if eq .Site.Language.Lang "es" }}
-                {{ index .Site.Data.es.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
-              {{ else if eq .Site.Language.Lang "pt" }}
-                {{ index .Site.Data.pt.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
-              {{ else if eq .Site.Language.Lang "fr" }}
-                {{ index .Site.Data.fr.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.fr.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
+              {{ if eq site.Language.Lang "zh" }}
+                {{ index site.Data.zh.Weekday (printf "%d" .Lastmod.Weekday) }}，{{ index site.Data.zh.Month (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Day }} 日，{{ .Lastmod.Year }} 年
+              {{ else if eq site.Language.Lang "es" }}
+                {{ index site.Data.es.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index site.Data.es.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
+              {{ else if eq site.Language.Lang "pt" }}
+                {{ index site.Data.pt.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index site.Data.pt.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
+              {{ else if eq site.Language.Lang "fr" }}
+                {{ index site.Data.fr.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index site.Data.fr.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
               {{ else }}
                 {{ .Lastmod.Format "Monday, Jan 2, 2006" }}
               {{ end }}
@@ -76,7 +76,7 @@
       </header>
 
       <main>
-        {{ if and .Params.Cover .Site.Params.showSummaryCoverInPost }}
+        {{ if and .Params.Cover site.Params.showSummaryCoverInPost }}
         <img src="{{ .Params.Cover }}" />
         {{ end }}
 
@@ -84,9 +84,9 @@
       </main>
     </section>
 
-    {{ $disqusShortname := (or .Site.Config.Services.Disqus.Shortname .Site.DisqusShortname) }}
+    {{ $disqusShortname := (or site.Config.Services.Disqus.Shortname site.DisqusShortname) }}
 
-    {{ if or $disqusShortname .Site.Params.utterancesRepo .Site.Params.valine }}
+    {{ if or $disqusShortname site.Params.utterancesRepo site.Params.valine }}
     <hr />
     {{ end }}
 
@@ -97,11 +97,11 @@
       </article>
       {{ end }}
 
-      {{ if .Site.Params.utterancesRepo }}
+      {{ if site.Params.utterancesRepo }}
       <article>
         <script
           src="https://utteranc.es/client.js"
-          repo="{{ .Site.Params.utterancesRepo }}"
+          repo="{{ site.Params.utterancesRepo }}"
           issue-term="og:title"
           theme="github-light"
           crossorigin="anonymous"
@@ -110,16 +110,16 @@
       </article>
       {{ end }}
 
-      {{ if .Site.Params.valine }}
+      {{ if site.Params.valine }}
       <article>
         <div id="vcomments"></div>
       </article>
       <script>
         new Valine({
           el: '#vcomments',
-          appId: '{{ .Site.Params.LEANCLOUD_APP_ID }}',
-          appKey: '{{ .Site.Params.LEANCLOUD_APP_KEY }}',
-          lang: '{{ .Site.Params.VALINE_LANGUAGE }}'
+          appId: '{{ site.Params.LEANCLOUD_APP_ID }}',
+          appKey: '{{ site.Params.LEANCLOUD_APP_KEY }}',
+          lang: '{{ site.Params.VALINE_LANGUAGE }}'
         })
       </script>
       {{ end }}
@@ -130,12 +130,19 @@
 
 {{ define "js" }}
 
-{{ if .Site.Params.Experimental.jsDate }}
+{{ if site.Params.Experimental.jsDate }}
 {{ partial "luxon.html" . }}
 {{ end }}
 
-{{ if .Site.Params.customSyntaxHighlighting }}
+{{ if site.Params.customSyntaxHighlighting }}
+{{- $syntaxLightCSS := resources.Get "css/syntax-light.css" | minify -}}
+{{- $syntaxDarkCSS := resources.Get "css/syntax-dark.css" | minify -}}
 <script>
+  window.customSyntaxHighlighting = {
+    light: {{ $syntaxLightCSS.RelPermalink}},
+    dark: {{ $syntaxDarkCSS.RelPermalink }}
+  }
+
   document.addEventListener('alpine:initialized', () => {
     var isDark = Alpine.store('darkMode').isDark()
     var customSyntaxHighlightingUrl = isDark ? window.customSyntaxHighlighting.dark : window.customSyntaxHighlighting.light

@@ -2302,6 +2302,10 @@ html {
   line-height: 1em;
 }
 
+.input-bordered {
+  border-color: var(--fallback-bc,oklch(var(--bc)/0.2));
+}
+
 .input:focus,
   .input:focus-within {
   box-shadow: none;
@@ -2870,6 +2874,20 @@ html {
   width: 0.125rem;
 }
 
+.divider-vertical {
+  flex-direction: row;
+}
+
+.divider-vertical:before {
+  height: 0.125rem;
+  width: 100%;
+}
+
+.divider-vertical:after {
+  height: 0.125rem;
+  width: 100%;
+}
+
 .join.join-vertical {
   flex-direction: column;
 }
@@ -3082,6 +3100,15 @@ html {
   width: 1rem;
 }
 
+.divider-vertical {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  height: 1rem;
+  width: auto;
+}
+
 .join.join-vertical > :where(*:not(:first-child)) {
   margin-left: 0px;
   margin-right: 0px;
@@ -3196,13 +3223,14 @@ html {
   margin-bottom: 0.5rem;
 }
 
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
-}
-
-.ml-1 {
-  margin-left: 0.25rem;
 }
 
 .mr-1 {
@@ -3253,6 +3281,10 @@ html {
   height: 32px;
 }
 
+.h-\[60vh\] {
+  height: 60vh;
+}
+
 .w-8 {
   width: 2rem;
 }
@@ -3269,6 +3301,10 @@ html {
   flex: 1 1 0%;
 }
 
+.grow {
+  flex-grow: 1;
+}
+
 .basis-\[300px\] {
   flex-basis: 300px;
 }
@@ -3279,6 +3315,10 @@ html {
 
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .flex-wrap {
@@ -3541,6 +3581,31 @@ html {
   --tw-prose-td-borders: var(--tw-prose-invert-td-borders);
 }
 
+@media (min-width: 768px) {
+  .md\:divider-horizontal {
+    flex-direction: column;
+  }
+
+  .md\:divider-horizontal:before {
+    height: 100%;
+    width: 0.125rem;
+  }
+
+  .md\:divider-horizontal:after {
+    height: 100%;
+    width: 0.125rem;
+  }
+
+  .md\:divider-horizontal {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: auto;
+    width: 1rem;
+  }
+}
+
 .hover\:bg-base-content\/10:hover {
   background-color: var(--fallback-bc,oklch(var(--bc)/0.1));
 }
@@ -3581,6 +3646,14 @@ html {
     width: 50%;
   }
 
+  .md\:basis-\[200px\] {
+    flex-basis: 200px;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
   .md\:gap-4 {
     gap: 1rem;
   }
@@ -3597,6 +3670,10 @@ html {
 
   .lg\:w-1\/3 {
     width: 33.333333%;
+  }
+
+  .lg\:basis-\[300px\] {
+    flex-basis: 300px;
   }
 }
 

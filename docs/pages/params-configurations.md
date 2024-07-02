@@ -23,7 +23,6 @@
   avatar = "/me/yy.jpg"
   headerTitle = "g1eny0ung 的博客"
   motto = "与其感慨路难行，不如马上出发。"
-  # categoriesLimitInHeader = 6 # deprecated
   # headerBottomText = "" # deprecated
 
   # footerBottomText = ""
@@ -51,26 +50,15 @@
 
   favicon = "/favicon.ico"
 
-  highlightjs = true
-  # highlightjsCDN = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"
-  highlightjsExtraLanguages = ["ocaml"]
-  highlightjsTheme = "gruvbox-light"
-  highlightjsThemeDark = "gruvbox-dark"
-
-  # search
-  enableSearch = true
-
   # options
   showSummaryCoverInPost = true
   # hasTwitterEmbed = true
   # reversePostAndAside = true
   # shareInAside = true
   stickyNav = true
-  # collapsibleTags = true
-  # collapseBySummary = true
 
   [params.advanced]
-    customCSS = ["css/custom.css"]
+    # customCSS = []
     # customJS = []
 
   [params.experimental]
@@ -162,12 +150,6 @@ Dream was originally intended to be used only as a blog theme. But with continuo
 
 Used in Header.
 
-### categoriesLimitInHeader = 6
-
-> Deprecated. Only available before `v2.0.0`
-
-Limit the number of categories displayed in the header, the default is **6**.
-
 ### headerBottomText = ""
 
 > Deprecated. Only available before `v2.0.0`
@@ -241,10 +223,6 @@ Custom the [favicon](https://en.wikipedia.org/wiki/Favicon), place it in your `s
 
 View [Highlight.js](highlightjs.md) for more details.
 
-### enableSearch = true
-
-View [Search](search.md) for more details.
-
 ### showSummaryCoverInPost = true
 
 As the param said, show summary cover in the single post page.
@@ -255,25 +233,9 @@ If you have embedded twitter components generated from <https://publish.twitter.
 
 After setting this, you can safely remove the async script in the generated code.
 
-### reversePostAndAside = true
-
-Reverse the position of the post content and its aside.
-
-### shareInAside = true
-
-Display share buttons in aside, not under the post title.
-
 ### stickyNav = true
 
 Make navbar fixed when scrolling.
-
-### collapsibleTags = true
-
-Make `/tags` page's tags collapsible.
-
-### collapseBySummary = true
-
-If your posts contain duplicate titles, you can use this param to continue grouping the titles. The lowest level will use `.Summary` to render.
 
 ## Advanced
 

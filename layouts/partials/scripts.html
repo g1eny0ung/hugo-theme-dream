@@ -2,16 +2,6 @@
   window.lightTheme = {{ site.Params.lightTheme }}
   window.darkTheme = {{ site.Params.darkTheme }}
 
-  {{ if site.Params.customSyntaxHighlighting }}
-  {{- $syntaxLightCSS := resources.Get "css/syntax-light.css" | minify -}}
-  {{- $syntaxDarkCSS := resources.Get "css/syntax-dark.css" | minify -}}
-
-  window.customSyntaxHighlighting = {
-    light: {{ $syntaxLightCSS.RelPermalink}},
-    dark: {{ $syntaxDarkCSS.RelPermalink }}
-  }
-  {{- end }}
-
   window.hasTwitterEmbed = {{ site.Params.hasTwitterEmbed }}
 
   if (window.hasTwitterEmbed) {
@@ -35,7 +25,4 @@
     })(document, 'script', 'twitter-wjs')
   }
 </script>
-<script src="https://cdn.jsdelivr.net/npm/imagesloaded@4.1.4/imagesloaded.pkgd.js" integrity="sha256-ZtjBh+3lqbfJ5UfahD26E9Rns4w4UyNqMpPVZ+LTT/g=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
-<script src="{{ "/js/grid.js" | relURL }}"></script>
 <script src="{{ "/js/main.js" | relURL }}"></script>

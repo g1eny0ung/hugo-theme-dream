@@ -1,6 +1,6 @@
 <div class="flex items-center">
   {{ if .Params.avatar }}
-  <div class="avatar">
+  <div class="avatar mr-1">
     <div class="w-8 rounded-full">
       <img class="my-0" src="{{ .Params.avatar }}" />
     </div>
@@ -9,11 +9,7 @@
   <span>@</span>
   {{ end }}
 
-  {{ if .Params.avatar }}
-  <span class="ml-1">
-  {{ else }}
   <span>
-  {{ end }}
   {{ if .Params.author }}
     {{ if and .Params.authorlink (eq .template "single") }}
       <a href="{{ .Params.authorlink }}" target="_blank">{{ .Params.author }}</a>

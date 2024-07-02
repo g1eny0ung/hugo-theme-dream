@@ -21,7 +21,6 @@ theme = "hugo-theme-dream"
   avatar = "/img/avatar.jpeg"
   headerTitle = "Hugo Theme Dream"
   motto = "Motto"
-  # categoriesLimitInHeader = 6 # deprecated
   # headerBottomText = "" # deprecated
 
   # footerBottomText = ""
@@ -55,17 +54,10 @@ theme = "hugo-theme-dream"
   # highlightjsTheme = "gruvbox-light"
   # highlightjsThemeDark = "gruvbox-dark"
 
-  # search
-  # enableSearch = true
-
   # options
   # showSummaryCoverInPost = true
   # hasTwitterEmbed = true
-  # reversePostAndAside = true
-  # shareInAside = true
   # stickyNav = true
-  # collapsibleTags = true
-  # collapseBySummary = true
   # disableFlip = true
   # hideBackSocialLinks = true
 
