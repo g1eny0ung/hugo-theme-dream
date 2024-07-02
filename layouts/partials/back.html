@@ -31,20 +31,6 @@
   </div>
   {{ end }}
 
-  {{ if site.Copyright }}
-  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
-    <article
-      class="card card-compact hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
-    >
-      <div class="card-body">
-        <div class="prose dark:prose-invert">
-          {{ site.Copyright | safeHTML }}
-        </div>
-      </div>
-    </article>
-  </div>
-  {{ end }}
-
   {{ $disqusShortname := (or site.Config.Services.Disqus.Shortname site.DisqusShortname) }}
   {{ if and $disqusShortname .IsHome }}
   <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
