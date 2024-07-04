@@ -4,67 +4,51 @@ defaultContentLanguage = "en"
 title = "Hugo Theme Dream"
 theme = "hugo-theme-dream"
 
-# copyright = ""
-
-# googleAnalytics = ""
-
-# disqusShortname = ""
-
-# enableRobotsTXT = true
+# [services]
+# [services.disqus]
+# shortname = ""
+# [services.googleAnalytics]
+# ID = ''
 
 [params]
-  # backgroundImage = "/me/background.jpg"
-  # backgroundImageDark = "/me/background-dark.jpg"
+# backgroundImage = "/me/background.jpg"
+# backgroundImageDark = "/me/background-dark.jpg"
 
-  author = "Yue Yang"
-  # description = ""
-  avatar = "/img/avatar.jpeg"
-  headerTitle = "Hugo Theme Dream"
-  motto = "Motto"
-  # headerBottomText = "" # deprecated
+author = "Yue Yang"
+# description = ""
+avatar = "/img/avatar.jpeg"
+headerTitle = "Hugo Theme Dream"
+motto = "Motto"
 
-  # footerBottomText = ""
+# footerBottomText = ""
 
-  # rss = true
+# rss = true
 
-  # utterancesRepo = ""
+# utterancesRepo = ""
 
-  # valine = true
-  # LEANCLOUD_APP_ID = ""
-  # LEANCLOUD_APP_KEY = ""
-  # VALINE_LANGUAGE = ""
+# valine = true
+# LEANCLOUD_APP_ID = ""
+# LEANCLOUD_APP_KEY = ""
+# VALINE_LANGUAGE = ""
 
-  email = "g1enyy0ung@gmail.com"
-  # twitter = ""
-  # facebook = ""
-  # instagram = ""
-  # mastodon = ""
-  # linkedin = ""
-  # github = ""
-  # stackoverflow = ""
-  # codepen = ""
+email = "g1enyy0ung@gmail.com"
 
-  siteStartYear = 2016
+siteStartYear = 2016
 
-  # favicon = "/favicon.ico"
+# favicon = "/favicon.ico"
 
-  # highlightjs = true
-  # highlightjsCDN = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"
-  # highlightjsExtraLanguages = ["ocaml"]
-  # highlightjsTheme = "gruvbox-light"
-  # highlightjsThemeDark = "gruvbox-dark"
+# Syntax highlighting
+# customSyntaxHighlighting = true
 
-  # options
-  # showSummaryCoverInPost = true
-  # hasTwitterEmbed = true
-  # stickyNav = true
-  # disableFlip = true
-  # hideBackSocialLinks = true
+# options
+# stickyNav = true
+# showSummaryCoverInPost = true
+# hasTwitterEmbed = true
 
-  # [params.advanced]
-  #   customCSS = ["css/custom.css"]
-  #   customJS = []
+# [params.advanced]
+# customCSS = []
+# customJS = []
 
-  # [params.experimental]
-  #   jsDate = true
-  #   jsDateFormat = "yyyy年MM月dd日"
+# [params.experimental]
+# jsDate = true
+# jsDateFormat = "yyyy年MM月dd日"

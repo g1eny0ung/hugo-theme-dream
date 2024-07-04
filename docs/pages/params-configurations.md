@@ -23,7 +23,6 @@
   avatar = "/me/yy.jpg"
   headerTitle = "g1eny0ung 的博客"
   motto = "与其感慨路难行，不如马上出发。"
-  # headerBottomText = "" # deprecated
 
   # footerBottomText = ""
 
@@ -149,12 +148,6 @@ Dream was originally intended to be used only as a blog theme. But with continuo
 ### motto = "与其感慨路难行，不如马上出发。"
 
 Used in Header.
-
-### headerBottomText = ""
-
-> Deprecated. Only available before `v2.0.0`
-
-Add text at the bottom of the header, support html. This is usually used as a description of the website information.
 
 ### footerBottomText = ""
 

@@ -1,15 +1,15 @@
-{{ if isset .Site.Params "favicon" }}
-<link href="{{ .Site.Params.favicon }}" rel="shortcut icon" type="image/x-icon" />
+{{ if isset site.Params "favicon" }}
+<link href="{{ site.Params.favicon }}" rel="shortcut icon" type="image/x-icon" />
 {{ end }}
 
 {{ if eq .Type "posts" }}
 <!-- Page Author & Description -->
-<meta name="author" content="{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}" />
+<meta name="author" content="{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ site.Params.author }}{{ end }}" />
 <meta name="description" content="{{ .Summary | plainify }}" />
 {{ else }}
 <!-- Site Author & Description -->
-<meta name="author" content="{{ .Site.Params.author }}" />
-<meta name="description" content="{{ .Site.Params.description }}" />
+<meta name="author" content="{{ site.Params.author }}" />
+<meta name="description" content="{{ site.Params.description }}" />
 {{ end }}
 
 <!-- Site Generator -->
@@ -33,7 +33,7 @@
   {{ end }}
 
   {{ if .Site.Params.backgroundImageDark }}
-  #dream-global-bg.dark {
+  html.dark #dream-global-bg {
     background-image: url({{ .Site.Params.backgroundImageDark }});
   }
   {{ end }}
