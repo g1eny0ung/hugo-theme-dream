@@ -1,0 +1,26 @@
+### Social Links
+
+You can render social links on the About page (`layouts/partials/back.html`) using a custom data file.
+
+This file must be named `data/socials.toml` (put it in the `data` folder) and
+must contain a array named `socials`. For example:
+
+```toml
+# Go to https://ionic.io/ionicons to find available icons.
+socials = [
+  { href = "https://github.com/g1eny0ung", target="_blank", icon = "logo-github", title = "GitHub" },
+  { href = "https://x.com/g1eny0ung", target="_blank", icon = "logo-x", title = "X" },
+  # { href = "https://facebook.com/g1eny0ung", target="_blank", icon = "logo-facebook", title = "Facebook" },
+  # { href = "https://instagram.com/g1eny0ung", target="_blank", icon = "logo-instagram", title = "Instagram" },
+  { href = "https://www.linkedin.com/in/g1eny0ung", target="_blank", icon = "logo-linkedin", title = "Linkedin" },
+  { href = "https://stackoverflow.com/users/5676489/g1eny0ung", target="_blank", icon = "logo-stackoverflow", title = "stack overflow" },
+  # { href = "https://codepen.io/g1eny0ung", target="_blank", icon = "logo-codepen", title = "Codepen" },
+]
+```
+
+Each object in the array must have the following properties:
+
+- `href`: The URL of the social link.
+- `target`: The target attribute of the link.
+- `icon`: The name of the icon. You can find available icons [here](https://ionic.io/ionicons).
+- `title`: The title of the social link.

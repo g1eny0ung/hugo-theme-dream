@@ -10,7 +10,7 @@
   <div class="card-body">
     <h2 class="card-title">{{ .Title }}</h2>
 
-    <p class="date text-gray-500">
+    <p class="date text-base-content/60">
     {{ if site.Params.Experimental.jsDate }}
       <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
     {{ else }}

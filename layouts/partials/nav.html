@@ -49,6 +49,11 @@
         <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
       </a>
       {{ end }}
+      {{ if site.Params.rss }}
+      <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="{{ "index.xml" | relLangURL }}" title="RSS">
+        <ion-icon name="logo-rss"></ion-icon>
+      </a>
+      {{ end }}
     </section>
   </div>
 </nav>

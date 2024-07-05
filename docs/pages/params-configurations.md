@@ -4,156 +4,95 @@
 
 ```toml
 [params]
-  background = "#fff"
-  backgroundImage = "/me/background.jpg"
-  linkColor = "seagreen"
+# backgroundImage = "/me/background.jpg"
+# backgroundImageDark = ""
 
-  # dark mode
-  # defaultDark = true
-  backgroundDark = "black"
-  backgroundImageDark = "/me/background-dark.jpg"
-  darkLinkColor = "darkseagreen"
-  # darkNav = true
-  # dark404 = true
+images = ["me/background.jpg"]
 
-  images = [""]
+author = "g1eny0ung"
+description = "g1eny0ung 的生活记录～"
+avatar = "/me/yy.jpg"
+headerTitle = "g1eny0ung 的博客"
+motto = "与其感慨路难行，不如马上出发。"
 
-  author = "g1eny0ung"
-  description = "g1eny0ung 的生活记录～"
-  avatar = "/me/yy.jpg"
-  headerTitle = "g1eny0ung 的博客"
-  motto = "与其感慨路难行，不如马上出发。"
+# footerBottomText = ""
 
-  # footerBottomText = ""
+rss = true
 
-  rss = true
+utterancesRepo = "g1eny0ung/g1eny0ung.github.io"
 
-  utterancesRepo = "g1eny0ung/g1eny0ung.github.io"
+# valine = true
+# LEANCLOUD_APP_ID = ""
+# LEANCLOUD_APP_KEY = ""
+# VALINE_LANGUAGE = ""
 
-  # valine = true
-  # LEANCLOUD_APP_ID = ""
-  # LEANCLOUD_APP_KEY = ""
-  # VALINE_LANGUAGE = ""
+email = "g1enyy0ung@gmail.com"
 
-  email = "g1enyy0ung@gmail.com"
-  twitter = "g1eny0ung"
-  facebook = "g1eny0ung"
-  instagram = "g1enyy0ung"
-  # mastodon = ""
-  linkedin = "钺杨g1eny0ung"
-  github = "g1eny0ung"
-  stackoverflow = "5676489/g1eny0ung"
-  codepen = "g1eny0ung"
+siteStartYear = 2016
 
-  siteStartYear = 2016
+favicon = "/favicon.ico"
 
-  favicon = "/favicon.ico"
+# Syntax highlighting
+customSyntaxHighlighting = true
 
-  # options
-  showSummaryCoverInPost = true
-  # hasTwitterEmbed = true
-  # reversePostAndAside = true
-  # shareInAside = true
-  stickyNav = true
+# options
+stickyNav = true
+showSummaryCoverInPost = true
+# hasTwitterEmbed = true
 
-  [params.advanced]
-    # customCSS = []
-    # customJS = []
+[params.advanced]
+# customCSS = ["css/custom.css"]
+# customJS = []
 
-  [params.experimental]
-    jsDate = true
-    jsDateFormat = "yyyy年MM月dd日"
+[params.experimental]
+jsDate = true
+jsDateFormat = "yyyy年MM月dd日"
 ```
-
-> For more details with dark mode related params, see [Dark Mode](dark-mode.md).
-
-### background = "#ccc"
-
-The site's background.
-
-This param can be used with `backgroundImage`, when the image has not been loaded yet, it will serve as the background color.
 
 ### backgroundImage = "/me/background.jpg"
 
-The site's background image. Will cover the `background` param.
-
-### linkColor = "seagreen"
-
-The site's link color.
-
-### defaultDark = true
-
-Set the default theme to dark.
-
-> Note: if you set the theme to **light** manually, this param will be overridden.
-
-### backgroundDark = "black"
-
-The background in dark mode.
+Define a global background image.
 
 ### backgroundImageDark = "/me/background-dark.jpg"
 
-The background image in dark mode. Will cover the `backgroundDark` param.
-
-### darkLinkColor = "darkseagreen"
-
-The site's link color in dark mode.
-
-### darkNav = true
-
-Set the dark top navbar, usually use with dark `background` or `backgroundImage`.
-
-> Note: if you already set `backgroundDark` or `backgroundImageDark`, the `darkNav` param will be ignored.
-
-### dark404 = true
-
-Set the inverted color in 404 page, usually use with dark `background` or `backgroundImage`.
-
-> Note: if you already set `backgroundDark` or `backgroundImageDark`, the `dark404` param will be ignored.
-
-### dark404Button = true
-
-> Note: after <https://github.com/g1eny0ung/hugo-theme-dream/commit/b07d6e22183bad58a8498429bc49fca77082533c>, this param is deprecated. If you are using the latest version of dream, you can safely ignore this param.
-
-Set the dark button in 404 page, usually use with dark `background` or `backgroundImage`.
+Define a global background image in dark mode.
 
 ### images = [""]
 
 See <https://gohugo.io/templates/internal/#open-graph>.
+
+Use the first one of site images as the fallback image for Open Graph.
 
 ### author = "g1eny0ung"
 
 The author field will be used as:
 
 - `<meta name="author" content="g1eny0ung" />`
-- Header
-- Post Summary
+- In the summary of post cards
 
 ### description = "g1eny0ung 的生活记录～"
 
-The description field will be used as:
-
-- `<meta name="description" content="g1eny0ung 的生活记录～" />`
+The description field will be used as `<meta name="description" content="g1eny0ung 的生活记录～" />`
 
 ### avatar = "/me/yy.jpg"
 
-Used in Header.
+Your personal avatar.
 
 ### headerTitle = "g1eny0ung 的博客"
 
-Dream was originally intended to be used only as a blog theme. But with continuous development, people also use Dream in other places.
-
-~~So this param aims to replace the legacy `blogAlias` in i18n files. If this param is set, the **header title** will use it rather than author + blogAlias (e.g. xxx's blog).~~ (`blogAlias` was deprecated and removed at 2021-05-06)
+The global title of the website.
 
 ### motto = "与其感慨路难行，不如马上出发。"
 
-Used in Header.
+A motto that will be displayed below the `headerTitle`. This field is optional.
 
 ### footerBottomText = ""
 
-> Only available after `v2.0.0`
+Used to display text at the bottom of the site footer, below the `siteStartYear` field. This field supports HTML.
 
-Add text at the bottom of the footer, support html. This is usually used as a description of the website information.
+If this field is not specified, the default text will be displayed:
+
+`🌱 Powered by Hugo with theme Dream.`
 
 ### rss = true
 
@@ -161,64 +100,47 @@ Enable RSS.
 
 ### utterancesRepo = "g1eny0ung/g1eny0ung.github.io"
 
-Utterances is a lightweight comments widget built on GitHub Issues. By setting `utterancesRepo`, you can use it on every post page.
+Utterances is a lightweight comments widget built on GitHub Issues. By setting `utterancesRepo`, each post will have a comment section powered by GitHub Issues.
 
-View <https://utteranc.es> to get more details.
+View <https://utteranc.es> for more details.
 
 ### valine = true
 
 Valine is a fast, simple & efficient Leancloud based no back end comment system.
 
-In order to make it work, you still need to set first two parameters:
+To make it work, you still need to set first two parameters:
 
 ```toml
 [params]
-  LEANCLOUD_APP_ID = ""
-  LEANCLOUD_APP_KEY = ""
-  VALINE_LANGUAGE = ""
+LEANCLOUD_APP_ID = ""
+LEANCLOUD_APP_KEY = ""
+VALINE_LANGUAGE = "" # optional
 ```
 
 Default language param is "zh-CN" , other supported languages are "zh-TW" , "en" , "ja" .
 
-View <https://valine.js.org/en/quickstart> to get more details.
-
-### Social Links
-
-> Deprecated. **Now you can do the rendering of socials with a custom data file. This file must be named `socials.toml` and must contain the array named `socials`.**
->
-> Example: <https://github.com/g1eny0ung/blog/blob/master/data/socials.toml>.
-
-`email = "g1enyy0ung@gmail.com"`<br />
-`twitter = "g1eny0ung"`<br />
-`facebook = "g1eny0ung"`<br />
-`instagram = "g1enyy0ung"`<br />
-`# mastodon = ""`<br />
-`linkedin = "钺杨g1eny0ung"`<br />
-`github = "g1eny0ung"`<br />
-`stackoverflow = "5676489/g1eny0ung"`<br />
-`codepen = "g1eny0ung"`
-
-All of these social links will be showed on about page `layouts/partials/back.html`.
-
-You can open an issue or pull a request to add a social link.
-
-Or add by yourself. Follow the template in `layouts/partials/socials.html`.
+View <https://valine.js.org/en/quickstart> for more details.
 
 ### siteStartYear = 2016
 
-Set your site's start year, then the header will show as **siteStartYear - currentYear (eg: 2016 - 2020)**.
+Set the start year of your site, it will be displayed as **siteStartYear - currentYear (eg: 2016 - 2020)** in the
+site footer.
 
 ### favicon = "/favicon.ico"
 
-Custom the [favicon](https://en.wikipedia.org/wiki/Favicon), place it in your `static` folder, same as `avatar`.
+Custom the [favicon](https://en.wikipedia.org/wiki/Favicon), place it in the `static` folder.
 
-### highlightjs = true
+### customSyntaxHighlighting = true
 
-View [Highlight.js](highlightjs.md) for more details.
+View [Syntax highlighting](syntax-highlighting.md) for more details.
+
+### stickyNav = true
+
+Make navbar sticky when scrolling.
 
 ### showSummaryCoverInPost = true
 
-As the param said, show summary cover in the single post page.
+Show summary cover image in the single post page.
 
 ### hasTwitterEmbed = true
 
@@ -226,17 +148,13 @@ If you have embedded twitter components generated from <https://publish.twitter.
 
 After setting this, you can safely remove the async script in the generated code.
 
-### stickyNav = true
-
-Make navbar fixed when scrolling.
-
 ## Advanced
 
 > Note: generally, the following advanced parameters are not necessary to be set. Their main purpose is to further customize the entire theme.
 
 ### customCSS = ["css/custom.css"]
 
-Add your custom CSS files after the theme CSS files.
+Add your custom CSS files **after** the theme CSS files.
 
 For example, create a folder named `css` under `static`, then add `custom.css` into it.
 
@@ -252,9 +170,9 @@ Like `customCSS`, add your custom JS files **after** the theme JS files.
 
 ### jsDate
 
-Use [Luxon](https://moment.github.io/luxon/index.html) to replace the built-in [.Format](https://gohugo.io/functions/format/) function. This allows you to define the time format more flexibly.
+Use [Luxon](https://moment.github.io/luxon/index.html) to replace the Hugo built-in [.Format](https://gohugo.io/functions/format/) function. This allows you to define the time format more flexibly.
 
-You may not want to use this param if you want the final date is generated at compile time. After setting this param, the date will output as an [RFC3339](https://en.wikipedia.org/wiki/ISO_8601) format and all rest format operations will be executed after the page is loaded.
+You may not want to use this param if you want the final date is generated at compile time. After setting this param, all dates will output as an [RFC3339](https://en.wikipedia.org/wiki/ISO_8601) format and all rest format operations will be executed after the page is loaded.
 
 For how to define the format, see below.
 

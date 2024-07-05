@@ -12,9 +12,6 @@
 <meta name="description" content="{{ site.Params.description }}" />
 {{ end }}
 
-<!-- Site Generator -->
-{{ hugo.Generator }}
-
 <link rel="canonical" href="{{ .Permalink }}" />
 
 <!-- Open Graph -->
@@ -23,18 +20,21 @@
 <!-- Twitter Cards -->
 {{ template "_internal/twitter_cards.html" . }}
 
+<!-- Site Generator -->
+{{ hugo.Generator }}
+
 <link rel="stylesheet" href="{{ "/css/output.css" | relURL }}" />
 
 <style>
-  {{ if .Site.Params.backgroundImage }}
-  #dream-global-bg {
-    background-image: url({{ .Site.Params.backgroundImage }});
-  }
-  {{ end }}
+{{ if .Site.Params.backgroundImage }}
+#dream-global-bg {
+  background-image: url({{ .Site.Params.backgroundImage }});
+}
+{{ end }}
 
-  {{ if .Site.Params.backgroundImageDark }}
-  html.dark #dream-global-bg {
-    background-image: url({{ .Site.Params.backgroundImageDark }});
-  }
-  {{ end }}
+{{ if .Site.Params.backgroundImageDark }}
+html.dark #dream-global-bg {
+  background-image: url({{ .Site.Params.backgroundImageDark }});
+}
+{{ end }}
 </style>

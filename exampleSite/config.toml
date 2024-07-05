@@ -46,7 +46,7 @@ siteStartYear = 2016
 # hasTwitterEmbed = true
 
 # [params.advanced]
-# customCSS = []
+# customCSS = ["css/custom.css"]
 # customJS = []
 
 # [params.experimental]

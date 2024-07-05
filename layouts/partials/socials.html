@@ -1,12 +1,4 @@
 <ul class="menu menu-horizontal flex-wrap w-full [&_ion-icon]:text-lg">
-  {{ if site.Params.rss }}
-  <li>
-    <a href="{{ "index.xml" | relLangURL }}" title="RSS">
-      <ion-icon name="logo-rss"></ion-icon>
-    </a>
-  </li>
-  {{ end }}
-
   {{ if site.Params.email }}
   <li>
     <a href="mailto:{{ site.Params.email }}" title="Email">
@@ -15,77 +7,11 @@
   </li>
   {{ end }}
 
-  {{ if site.Params.twitter }}
-  <li>
-    <a href="https://x.com/{{ site.Params.twitter }}" target="_blank" title="X">
-      <ion-icon name="logo-x"></ion-icon>
-    </a>
-  </li>
-  {{ end }}
-
-  {{ if site.Params.facebook }}
-  <li>
-    <a href="https://facebook.com/{{ site.Params.facebook }}" target="_blank" title="Facebook">
-      <ion-icon name="logo-facebook"></ion-icon>
-    </a>
-  </li>
-  {{ end }}
-
-  {{ if site.Params.instagram }}
-  <li>
-    <a href="https://instagram.com/{{ site.Params.instagram }}" target="_blank" title="Instagram">
-      <ion-icon name="logo-instagram"></ion-icon>
-    </a>
-  </li>
-  {{ end }}
-
-  {{ if site.Params.mastodon }}
-  <li>
-    <a href="{{ site.Params.mastodon }}" target="_blank" title="Mastodon">
-      <ion-icon name="logo-mastodon"></ion-icon>
-    </a>
-  </li>
-  {{ end }}
-
-  {{ if site.Params.linkedin }}
-  <li>
-    <a href="https://linkedin.com/in/{{ site.Params.linkedin }}" target="_blank" title="Linkedin">
-      <ion-icon name="logo-linkedin"></ion-icon>
-    </a>
-  </li>
-  {{ end }}
-
-  {{ if site.Params.github }}
-  <li>
-    <a href="https://github.com/{{ site.Params.github }}" target="_blank" title="GitHub">
-      <ion-icon name="logo-github"></ion-icon>
-    </a>
-  </li>
-  {{ end }}
-
-  {{ if site.Params.stackoverflow }}
-  <li>
-    <a href="https://stackoverflow.com/users/{{ site.Params.stackoverflow }}" target="_blank" title="stack overflow">
-      <ion-icon name="logo-stackoverflow"></ion-icon>
-    </a>
-  </li>
-  {{ end }}
-
-  {{ if site.Params.codepen }}
-  <li>
-    <a href="https://codepen.io/{{ site.Params.codepen }}" target="_blank" title="Codepen">
-      <ion-icon name="logo-codepen"></ion-icon>
-    </a>
-  </li>
-  {{ end }}
-
-  {{ if (fileExists "data/socials.toml") }}
   {{ range site.Data.socials.socials }}
   <li>
     <a href="{{ .href }}" target="{{ .target }}" title="{{ .title }}">
       <ion-icon name="{{ .icon }}"></ion-icon>
     </a>
   </li>
-  {{ end }}
   {{ end }}
 </ul>
