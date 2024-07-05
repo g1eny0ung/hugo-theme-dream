@@ -1,7 +1,6 @@
 <div class="dream-grid">
-  {{ $headless := site.GetPage "/about" }}
-  {{ $aboutPages := $headless.Resources.ByType "page" }}
-  {{ range $aboutPages }}
+  {{ with site.GetPage "/about" }}
+  {{ range .Resources.ByType "page" }}
   <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
     <article
       class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
@@ -15,6 +14,7 @@
       </div>
     </article>
   </div>
+  {{ end }}
   {{ end }}
 
   {{ if (fileExists "data/socials.toml") }}
