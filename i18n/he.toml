@@ -38,17 +38,11 @@ other = " דקות לקריאה"
 [updateAt]
 other = "עודכן בשעה"
 
-[noTag]
-other = "אין תגים"
-
 [prevPage]
 other = "עמוד קודם"
 
 [nextPage]
 other = "עמוד הבא"
-
-[saveAsImage]
-other = "שמור כתמונה"
 
 [search]
 other = "לחפש"

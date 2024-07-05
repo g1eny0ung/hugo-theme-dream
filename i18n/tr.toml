@@ -42,17 +42,11 @@ other = " dakika okuma süresi"
 [updateAt]
 other = "Güncellenme tarihi"
 
-[noTag]
-other = "Etiketsiz"
-
 [prevPage]
 other = "Önceki sayfa"
 
 [nextPage]
 other = "Sonraki sayfa"
-
-[saveAsImage]
-other = "Resim olarak kaydet"
 
 [search]
 other = "Arama"

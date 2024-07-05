@@ -42,17 +42,11 @@ other = " ست دقائق للقر"
 [updateAt]
 other = "تم التحديث في"
 
-[noTag]
-other = "بدون علامات"
-
 [prevPage]
 other = "الصفحة السابقة"
 
 [nextPage]
 other = "الصفحة التالية"
-
-[saveAsImage]
-other = "حفظ كصورة"
 
 [search]
 other = "يبحث"

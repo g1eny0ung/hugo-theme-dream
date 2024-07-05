@@ -38,17 +38,11 @@ other = " minutos de leitura"
 [updateAt]
 other = "Atualizado"
 
-[noTag]
-other = "Sem tags"
-
 [prevPage]
 other = "Página anterior"
 
 [nextPage]
 other = "Próxima página"
-
-[saveAsImage]
-other = "Salvar como imagem"
 
 [search]
 other = "Pesquisar"

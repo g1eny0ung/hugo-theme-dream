@@ -38,17 +38,11 @@ other = " minuti za branje"
 [updateAt]
 other = "Posodobljeno ob"
 
-[noTag]
-other = "Brez oznak "
-
 [prevPage]
 other = "Prejšnja stran"
 
 [nextPage]
 other = "Naslednja stran"
-
-[saveAsImage]
-other = "Shrani kot sliko"
 
 [search]
 other = "Iskanje"

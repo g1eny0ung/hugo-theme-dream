@@ -37,14 +37,8 @@ other = " 分で読めます"
 [updateAt]
 other = "更新日時"
 
-[noTag]
-other = "タグ未設定"
-
 [prevPage]
 other = "前へ"
 
 [nextPage]
 other = "次へ"
-
-[saveAsImage]
-other = "画像として保存"
