@@ -28,7 +28,14 @@ You will be curious why it's needed to create an `index.md`. Because Dream don't
 
 Related docs: <https://gohugo.io/content-management/page-bundles/#headless-bundles>
 
-## More describes
+## Access the About page
+
+There are two ways to access the About page:
+
+- Click the **About** link in the top right navigation bar
+- Click the avatar in the top left navigation bar
+
+## More descriptions
 
 You can add multiple `.md` files, all of them will be rendered one by one in the masonry layout.
 

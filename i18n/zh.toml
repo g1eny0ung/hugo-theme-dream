@@ -7,6 +7,9 @@ other = "返回首页"
 [flip]
 other = "翻转！"
 
+[about]
+other = "关于"
+
 [archives]
 other = "归档"
 

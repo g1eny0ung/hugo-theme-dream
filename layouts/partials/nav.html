@@ -29,26 +29,39 @@
     </section>
 
     <section class="flex items-center gap-2 md:gap-4">
+      {{ with site.GetPage "/about" }}
+      {{ $aboutPages := .Resources.ByType "page" }}
+      {{ if gt (len $aboutPages) 0 }}
+      <div class="text-sm font-semibold cursor-pointer hover:underline" @click="flip = !flip" title="{{ T "about" }}">
+        {{- T "about" -}}
+      </div>
+      {{ end }}
+      {{ end }}
+
       {{ if gt (len (where site.Pages "Type" "search")) 0 }}
       <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="{{ "search" | relLangURL }}" title="{{ T "search" }}">
         <ion-icon name="search"></ion-icon>
       </a>
       {{ end }}
+
       {{ if gt (len (where site.RegularPages "Type" "posts")) 0 }}
       <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="{{ "posts" | relLangURL }}" title="{{ T "archives" }}">
         <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
       </a>
       {{ end }}
+
       {{ if site.Taxonomies.categories }}
       <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="{{ "categories" | relLangURL }}" title="{{ T "allCategories" }}">
         <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
       </a>
       {{ end }}
+
       {{ if site.Taxonomies.tags }}
       <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="{{ "tags" | relLangURL }}" title="{{ T "allTags" }}">
         <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
       </a>
       {{ end }}
+
       {{ if site.Params.rss }}
       <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="{{ "index.xml" | relLangURL }}" title="RSS">
         <ion-icon name="logo-rss"></ion-icon>

@@ -6,11 +6,11 @@
 
 ### baseURL = "https://g1en.site"
 
-The site URL, ensure this is correct!
+The site URL, usually the domain name.
 
 ### languageCode = "zh-Hans"
 
-LanguageCode will be used as `<html lang="zh-Hans">`.
+LanguageCode will be used as `<html lang="zh-Hans">` and in RSS feeds.
 
 ### title = "g1eny0ung 的博客"
 
@@ -22,4 +22,4 @@ Optional. Here is this config's [doc](https://gohugo.io/templates/robots).
 
 ### hasCJKLanguage = true
 
-Because my blog was written in Chinese, I need to set this to correct my post's `{{ .ReadingTime }}`.
+Because my blog was written in Chinese, I need to set this to correct the post's `{{ .ReadingTime }}`.
