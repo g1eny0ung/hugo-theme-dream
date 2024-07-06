@@ -6,17 +6,19 @@ For example, paste below in `_index.md`:
 
 ```markdown
 ---
-title: 归档
+title: Archives
 ---
 
-所有文章的归档。
+All posts by timeline.
 ```
 
 These will be rendered as:
 
 ```html
-<h2 class="ui header">
-  归档
-  <span class="ui grey sub header">所有文章的归档。</span>
+<h1 class="text-3xl">
+  Archives
 </h1>
+<p class="text-sm">All posts by timeline.</p>
 ```
+
+One is the title, and the other is the description.

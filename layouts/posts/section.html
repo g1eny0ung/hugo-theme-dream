@@ -7,9 +7,11 @@
 <div class="mt-8 lg:mt-12 px-4">
   <div class="mx-auto prose dark:prose-invert">
     <h1 class="text-3xl">
-      {{ .Title }}
+      {{ default .Title (T "archives") }}
     </h1>
+    {{ if .Content }}
     <p class="text-sm">{{ .Content }}</p>
+    {{ end }}
   </div>
 
   <div class="max-w-[65ch] mx-auto mt-8 lg:mt-12">
