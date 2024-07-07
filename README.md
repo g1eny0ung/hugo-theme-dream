@@ -54,4 +54,6 @@ View [Hosting & Deployment](https://gohugo.io/hosting-and-deployment/).
 
 ## License
 
-MIT © [g1eny0ung](https://github.com/g1eny0ung)
+Hugo Theme Dream is licensed under the MIT License.
+
+Author: [g1eny0ung](https://github.com/g1eny0ung).
