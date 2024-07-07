@@ -3,6 +3,10 @@
 ![GitHub Release](https://img.shields.io/github/v/release/g1eny0ung/hugo-theme-dream)
 ![GitHub License](https://img.shields.io/github/license/g1eny0ung/hugo-theme-dream)
 
+> The latest version of Dream is v3.x.
+>
+> If you are using v2.x, please check the [v2 branch](https://github.com/g1eny0ung/hugo-theme-dream/tree/v2) and its [docs](https://hugo-theme-dream-docs-v2.netlify.app/).
+
 - [Intro](#intro)
 - [Installation](#installation)
 - [Documentation](#documentation)
