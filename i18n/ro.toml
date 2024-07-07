@@ -38,17 +38,11 @@ other = " minute de citire"
 [updateAt]
 other = "Actualizat la"
 
-[noTag]
-other = "Fără etichete"
-
 [prevPage]
 other = "Pagina precedentă"
 
 [nextPage]
 other = "Pagina următoare"
-
-[saveAsImage]
-other = "Salvați ca imagine"
 
 [search]
 other = "Căutare"

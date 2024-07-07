@@ -1,0 +1,208 @@
+import { Callout } from 'nextra/components'
+
+# Params Configurations
+
+This page will introduce all the parameters that can be configured in the `[params]`.
+
+## Example
+
+```toml
+[params]
+lightTheme = "emerald"
+darkTheme = "forest"
+
+# backgroundImage = "/me/background.jpg"
+# backgroundImageDark = ""
+
+images = ["me/background.jpg"]
+
+author = "g1eny0ung"
+description = "g1eny0ung 的生活记录～"
+avatar = "/me/yy.jpg"
+headerTitle = "g1eny0ung 的博客"
+motto = "与其感慨路难行，不如马上出发。"
+
+# footerBottomText = ""
+
+rss = true
+
+utterancesRepo = "g1eny0ung/g1eny0ung.github.io"
+
+# valine = true
+# LEANCLOUD_APP_ID = ""
+# LEANCLOUD_APP_KEY = ""
+# VALINE_LANGUAGE = ""
+
+email = "g1enyy0ung@gmail.com"
+
+siteStartYear = 2016
+
+favicon = "/favicon.ico"
+
+# Syntax highlighting
+customSyntaxHighlighting = true
+
+# options
+stickyNav = true
+showSummaryCoverInPost = true
+# hasTwitterEmbed = true
+
+[params.advanced]
+# customCSS = ["css/custom.css"]
+# customJS = []
+
+[params.experimental]
+jsDate = true
+jsDateFormat = "yyyy年MM月dd日"
+```
+
+## Basic
+
+### Light and Dark Mode
+
+> Required.
+
+You can first add these two parameters to the `[params]`, they are default themes for light and dark mode.
+
+```toml
+lightTheme = "emerald"
+darkTheme = "forest"
+```
+
+For using other themes, view [Light and Dark Mode](light-and-dark-mode.md) for more details.
+
+### backgroundImage = "/me/background.jpg"
+
+Define a global background image.
+
+### backgroundImageDark = "/me/background-dark.jpg"
+
+Define a global background image in dark mode.
+
+### images = [""]
+
+View https://gohugo.io/templates/internal/#open-graph for more details.
+
+Use the first one of site images as the fallback image for Open Graph.
+
+### author = "g1eny0ung"
+
+The author field will be used as:
+
+- `<meta name="author" content="g1eny0ung" />`
+- In the summary of post cards
+
+### description = "g1eny0ung 的生活记录～"
+
+The description field will be used as `<meta name="description" content="g1eny0ung 的生活记录～" />`
+
+### avatar = "/me/yy.jpg"
+
+Your personal avatar.
+
+### headerTitle = "g1eny0ung 的博客"
+
+The global title of the website.
+
+### motto = "与其感慨路难行，不如马上出发。"
+
+A motto that will be displayed below the `headerTitle`. This field is optional.
+
+### footerBottomText = ""
+
+Used to display text at the bottom of the site footer, below the `siteStartYear` field. This field supports HTML.
+
+If this field is not specified, the default text will be displayed:
+
+`🌱 Powered by Hugo with theme Dream.`
+
+### rss = true
+
+Enable RSS.
+
+### utterancesRepo = "g1eny0ung/g1eny0ung.github.io"
+
+Utterances is a lightweight comments widget built on GitHub Issues. By setting `utterancesRepo`, each post will have a comment section powered by GitHub Issues.
+
+View https://utteranc.es for more details.
+
+### valine = true
+
+Valine is a fast, simple & efficient Leancloud based no back end comment system.
+
+To make it work, you still need to set first two parameters:
+
+```toml
+[params]
+LEANCLOUD_APP_ID = ""
+LEANCLOUD_APP_KEY = ""
+VALINE_LANGUAGE = "" # optional
+```
+
+Default language param is "zh-CN" , other supported languages are "zh-TW" , "en" , "ja" .
+
+View https://valine.js.org/en/quickstart for more details.
+
+### siteStartYear = 2016
+
+Set the start year of your site, it will be displayed as **siteStartYear - currentYear (eg: 2016 - 2020)** in the
+site footer.
+
+### favicon = "/favicon.ico"
+
+Custom the [favicon](https://en.wikipedia.org/wiki/Favicon), place it in the `static` folder.
+
+### customSyntaxHighlighting = true
+
+View [Syntax highlighting](syntax-highlighting.md) for more details.
+
+### stickyNav = true
+
+Make navbar sticky when scrolling.
+
+### showSummaryCoverInPost = true
+
+Show summary cover image in the single post page.
+
+### hasTwitterEmbed = true
+
+If you have embedded twitter components generated from https://publish.twitter.com/, please set this param to `true` for better performance.
+
+After setting this, you can safely remove the async script in the generated code.
+
+## Advanced
+
+<Callout type="info">
+  Generally, the following advanced parameters are not necessary to be set. Their main purpose is to further customize
+  the entire theme.
+</Callout>
+
+### customCSS = ["css/custom.css"]
+
+Add your custom CSS files **after** the theme CSS files.
+
+For example, create a folder named `css` under `static`, then add `custom.css` into it.
+
+### customJS = []
+
+Like `customCSS`, add your custom JS files **after** the theme JS files.
+
+## Experimental
+
+<Callout type="info">
+  The experimental parameters are often not perfect. They have advantages as well as certain disadvantages.
+</Callout>
+
+### jsDate
+
+Use [Luxon](https://moment.github.io/luxon/index.html) to replace the Hugo built-in [.Format](https://gohugo.io/functions/format/) function. This allows you to define the time format more flexibly.
+
+You may not want to use this param if you want the final date is generated at compile time. After setting this param, all dates will output as an [RFC3339](https://en.wikipedia.org/wiki/ISO_8601) format and all rest format operations will be executed after the page is loaded.
+
+For how to define the format, see below.
+
+### jsDateFormat
+
+Refer to this page (https://moment.github.io/luxon/docs/manual/formatting.html) to define your date format.
+
+For example, `yyyy-MM-dd` represents a date format like `2021-04-17`.

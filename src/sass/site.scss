@@ -3,11 +3,6 @@
 body {
   background-position: center;
   background-size: cover;
-
-  // https://github.com/KingSora/OverlayScrollbars/issues/89
-  // .os-host > .os-padding > .os-viewport > .os-content {
-  //   height: auto !important;
-  // }
 }
 
 .flip-container {
@@ -52,11 +47,6 @@ body {
   .back {
     transform: rotateY(180deg);
   }
-}
-
-.dream-max-width {
-  max-width: 1408px + 256px;
-  margin: 0 auto;
 }
 
 .inverted {

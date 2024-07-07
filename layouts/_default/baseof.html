@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.LanguageCode }}"
+  x-data
+  :class="$store.darkMode.class()"
+  :data-theme="$store.darkMode.theme()">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ block "title" . }} {{- T "home" -}} {{ end }} | {{ .Site.Title }}</title>
 
     {{ partial "head.html" . }}
@@ -13,51 +15,39 @@
     {{ range .Site.Params.Advanced.customCSS }}
     <link rel="stylesheet" href="{{ . | relURL }}" />
     {{ end }}
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
 
-  <body class="default">
+  <body x-data="{
+    flip: false,
+  }">
+    <!-- If backgroundImage defined -->
+    <div id="dream-global-bg"></div>
+
     {{ partial "nav.html" . }}
-    <div class="flip-container">
+
+    <div class="flip-container" :class="{ 'flip-it': flip }">
       <div class="flipper">
         <section class="front">
-          <div class="dream-max-width">
+          <div class="container">
             {{ block "main" . }} {{ end }}
 
-            <footer class="ui basic center aligned segment" style="background-color: transparent;">
-              {{ if .Site.Params.siteStartYear }}
-              <p>© {{ if eq now.Year .Site.Params.siteStartYear }}{{ now.Year }}{{ else }}{{ .Site.Params.siteStartYear }} - {{ now.Year }}{{ end }} {{ .Site.Title }}</p>
-              {{ else }}
-              <p>© {{ now.Year }} {{ .Site.Title }}</p>
-              {{ end }}
-
-              <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
-
-              {{ if .Site.Params.footerBottomText }}
-              <p>{{ .Site.Params.footerBottomText | safeHTML }}</p>
-              {{ end }}
+            <footer class="flex justify-between items-center gap-2 px-4 py-12">
+              {{ partial "footerLeft.html" . }}
+              {{ partial "footerRight.html" . }}
             </footer>
           </div>
         </section>
         <section class="back">
-          <div class="dream-max-width">
+          <div class="container">
             {{ partial "back.html" . }}
           </div>
         </section>
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js" integrity="sha256-CgSoWC9w5wNmI1aN8dIMK+6DPelUEtvDr+Bc2m/0Nx8=" crossorigin="anonymous"></script>
-
-    {{ if .Site.Params.enableSearch }}
-    {{ partial "search.html" . }}
-    {{ end }}
-
-    {{ range .Site.Params.Advanced.customJSBefore }}
-    <script src="{{ . | relURL }}"></script>
-    {{ end }}
-
-    {{ partial "footer.html" . }}
+    {{ partial "scripts.html" . }}
     {{ block "js" . }} {{ end }}
 
     {{ range .Site.Params.Advanced.customJS }}
@@ -67,5 +57,8 @@
     {{ if site.Config.Services.GoogleAnalytics.ID }}
     {{ template "_internal/google_analytics.html" . }}
     {{ end }}
+
+    <script type="module" src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
   </body>
 </html>

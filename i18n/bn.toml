@@ -42,17 +42,11 @@ other = " মিনিট"
 [updateAt]
 other = "সর্বশেষ আপডেট"
 
-[noTag]
-other = "কোন ট্যাগ নেই"
-
 [prevPage]
 other = "আগের পেইজ"
 
 [nextPage]
 other = "পরের পেইজ"
-
-[saveAsImage]
-other = "ইমেজে সেইভ"
 
 [search]
 other = "সার্চ"

@@ -1,23 +1,20 @@
-{{ if .paginator.HasPrev }}
-<article class="ui center aligned attached segment card dream-card">
-  <div class="content">
-    <div class="ui medium header">
-      <a href="{{ .paginator.Prev.URL }}" title="{{ i18n "prevPage" }}">
-        {{ i18n "prevPage" }}
-      </a>
-    </div>
-  </div>
-</article>
-{{ end }}
-
-{{ if .paginator.HasNext }}
-<article class="ui center aligned attached segment card dream-card">
-  <div class="content">
-    <div class="ui medium header">
-      <a href="{{ .paginator.Next.URL }}" title="{{ i18n "nextPage" }}">
-        {{ i18n "nextPage" }}
-      </a>
-    </div>
-  </div>
-</article>
-{{ end }}
+<div class="join grid grid-cols-2">
+  {{ if .paginator.HasPrev }}
+  <a href="{{ .paginator.Prev.URL }}" title={{ T "prevPage" }} class="join-item btn btn-outline btn-sm">
+    {{ T "prevPage" }}
+  </a>
+  {{ else }}
+  <button class="join-item btn btn-outline btn-sm" disabled>
+    {{ T "prevPage" }}
+  </button>
+  {{ end }}
+  {{ if .paginator.HasNext }}
+  <a href="{{ .paginator.Next.URL }}" title="{{ T "nextPage" }}" class="join-item btn btn-outline btn-sm">
+    {{ T "nextPage" }}
+  </a>
+  {{ else }}
+  <button class="join-item btn btn-outline btn-sm" disabled>
+    {{ T "nextPage" }}
+  </button>
+  {{ end }}
+</div>

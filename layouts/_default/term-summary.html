@@ -1,0 +1,42 @@
+<a class="card card-side image-full card-compact" href="{{ .RelPermalink }}">
+  <figure class="h-[200px]">
+  {{ if .Params.cover }}
+    <img src="{{ .Params.cover }}" alt="{{ .Title }}" />
+  {{ else }}
+    <img src="{{ "/img/" | relURL }}default{{ index (shuffle (seq 1 4)) 0 }}.jpg" alt="{{ .Title }}" />
+  {{ end }}
+  </figure>
+
+  <div class="card-body">
+    <h2 class="card-title">{{ .Title }}</h2>
+
+    <p class="date">
+    {{ if site.Params.Experimental.jsDate }}
+      <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
+    {{ else }}
+    {{- if eq site.Language.Lang "zh" -}}
+      {{ index site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}，{{ index site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
+    {{- else if eq site.Language.Lang "es" -}}
+      {{ index site.Data.es.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index site.Data.es.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
+    {{- else if eq site.Language.Lang "pt" -}}
+      {{ index site.Data.pt.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index site.Data.pt.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
+    {{- else if eq site.Language.Lang "fr" -}}
+      {{ index site.Data.fr.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index site.Data.fr.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
+    {{- else -}}
+      {{ .Date.Format "Monday, Jan 2, 2006" }}
+    {{- end -}}
+    {{ end }}
+    </p>
+
+    {{ .Summary | emojify | safeHTML }}
+
+    <div class="card-actions justify-between items-center mt-4">
+      {{ partial "author.html" (dict "Params" .Params "template" "summary") }}
+
+      <div class="inline-flex items-center">
+        <ion-icon name="time" class="mr-1"></ion-icon>
+        <span>{{ .ReadingTime }}{{ T "minuteRead" .ReadingTime }}</span>
+      </div>
+    </div>
+  </div>
+</a>

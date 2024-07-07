@@ -1,11 +1,8 @@
-<span class="dream-share">
-  <a href="#" class="save-as-image" title="{{ i18n "saveAsImage" }}" onclick="savePostAsImg()">
-    <i class="save icon"></i>
+<span class="flex items-center gap-2">
+  <a class="group inline-flex items-center p-2 text-sm rounded-full cursor-pointer hover:bg-primary" href="https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}" title="Share on X">
+    <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
   </a>
-  <a href="https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}" title="Twitter">
-    <i class="twitter icon"></i>
-  </a>
-  <a href="https://facebook.com/sharer/sharer.php?u={{ .Permalink }}" title="Facebook">
-    <i class="facebook icon"></i>
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://facebook.com/sharer/sharer.php?u={{ .Permalink }}" title="Share on Facebook">
+    <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
   </a>
 </span>

@@ -1,0 +1,78 @@
+{{ define "title" }}
+{{- T "search" -}}
+{{ end }}
+
+{{ define "main" }}
+
+<div class="mt-8 lg:mt-12 px-4" x-data="{
+  search: '',
+  get posts() { return this.search !== '' ? window.fuse.search(this.search) : [] },
+}">
+  <label class="input input-bordered flex items-center gap-2">
+    <input type="text" class="grow" placeholder="{{ T "search" }}" x-model.debounce="search" />
+    <ion-icon name="search"></ion-icon>
+  </label>
+
+  <div class="mt-8 space-y-4">
+  <template x-for="post in posts">
+    <a class="card card-compact bg-base-100 hover:bg-base-content/10 cursor-pointer border border-base-content/30" :href="post.item.url">
+      <div class="card-body">
+        <h2 class="card-title" x-text="post.item.title"></h2>
+
+        <div x-html="post.item.description"></div>
+
+        <div class="card-actions justify-between items-center mt-4">
+          <div class="flex items-center">
+            <template x-if="post.item.avatar">
+            <div class="avatar mr-1">
+              <div class="w-8 rounded-full">
+                <img class="my-0" :src="post.item.avatar" />
+              </div>
+            </div>
+            </template>
+            <template x-if="!post.item.avatar">
+            <span>@</span>
+            </template>
+
+            <template x-if="post.item.author">
+            <span x-text="post.item.author"></span>
+            </template>
+            <template x-if="!post.item.author">
+            <span x-text="{{ site.Params.author }}"></span>
+            </template>
+            </span>
+          </div>
+
+          <div class="inline-flex items-center">
+            <ion-icon name="time" class="mr-1"></ion-icon>
+            <span><span x-text="post.item.readingTime"></span>{{ T "minuteRead" .ReadingTime }}</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </template>
+  </div>
+</div>
+
+{{ end }}
+
+{{ define "js" }}
+
+{{ $data := slice }}
+{{ range (where site.RegularPages "Type" "posts") }}
+{{ $data = $data | append (dict "title" .Title "url" .RelPermalink "author" .Params.author "avatar" .Params.avatar "categories" .Params.categories "tags" .Params.tags "description" (.Summary | emojify | safeHTML) "readingTime" .ReadingTime) }}
+{{ end }}
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+<script>
+  var fuseData = {{ $data }};
+  var fuseOptions = {
+    keys: [
+      "title",
+    ]
+  };
+
+  var fuse = new Fuse(fuseData, fuseOptions);
+</script>
+
+{{ end }}

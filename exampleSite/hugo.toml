@@ -1,0 +1,57 @@
+baseurl = "https://example.com"
+languageCode = "en"
+defaultContentLanguage = "en"
+title = "Hugo Theme Dream"
+theme = "hugo-theme-dream"
+
+# [services]
+# [services.disqus]
+# shortname = ""
+# [services.googleAnalytics]
+# ID = ''
+
+[params]
+lightTheme = "emerald"
+darkTheme = "forest"
+
+# backgroundImage = "/me/background.jpg"
+# backgroundImageDark = ""
+
+author = "Yue Yang"
+# description = ""
+avatar = "/img/avatar.jpeg"
+headerTitle = "Hugo Theme Dream"
+motto = "Motto"
+
+# footerBottomText = ""
+
+# rss = true
+
+# utterancesRepo = ""
+
+# valine = true
+# LEANCLOUD_APP_ID = ""
+# LEANCLOUD_APP_KEY = ""
+# VALINE_LANGUAGE = ""
+
+email = "g1enyy0ung@gmail.com"
+
+siteStartYear = 2016
+
+# favicon = "/favicon.ico"
+
+# Syntax highlighting
+# customSyntaxHighlighting = true
+
+# options
+# stickyNav = true
+# showSummaryCoverInPost = true
+# hasTwitterEmbed = true
+
+# [params.advanced]
+# customCSS = ["css/custom.css"]
+# customJS = []
+
+# [params.experimental]
+# jsDate = true
+# jsDateFormat = "yyyy年MM月dd日"

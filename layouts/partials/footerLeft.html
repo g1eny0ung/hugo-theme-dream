@@ -1,0 +1,22 @@
+<div>
+  {{ if site.Params.siteStartYear }}
+  <p>
+    © {{ if eq now.Year site.Params.siteStartYear }}{{ now.Year }}{{ else }}{{ site.Params.siteStartYear }} - {{
+    now.Year }}{{ end }} {{ site.Title }}
+  </p>
+  {{ else }}
+  <p>© {{ now.Year }} {{ site.Title }}</p>
+  {{ end }}
+
+  {{ if site.Params.footerBottomText }}
+  <p>{{ site.Params.footerBottomText | safeHTML }}</p>
+  {{ else }}
+  <p class="text-sm">
+    🌱
+    <span class="text-base-content/60">
+      Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme
+      <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</span
+    >
+  </p>
+  {{ end }}
+</div>

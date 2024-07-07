@@ -1,0 +1,39 @@
+import { Callout } from 'nextra/components'
+
+# Custom Theme
+
+This doc describes how to add `CSS` and `JS` to customize the theme.
+
+Before customization, you need to add the related fields to your configuration, below is an example:
+
+```toml
+[params]
+[params.advanced]
+customCSS = ["css/custom.css"] # Files in the list will be loaded in order.
+customJS = ["js/custom.js"]
+```
+
+## CSS
+
+<Callout>
+In v3, Dream uses [tailwindcss](https://tailwindcss.com/) and [daisyUI](https://daisyui.com/) to build the theme.
+The old way to customize the CSS is still available (by adding `customCSS`), but now it's harder to style components with
+pure css, because the tailwindcss class is more trivial than the Semantic UI used in the past.
+
+I'll think about how to customize styles based on tailwindcss more easily in the future.
+
+So if you are not familiar with frontend development, recommend you to ignore this part. Mostly, you don't need to customize the CSS.
+</Callout>
+
+## JS
+
+<Callout>
+In v3, Dream uses [Alpine.js](https://alpinejs.dev/) to build the theme.
+
+Like the CSS, the old way to customize the JS is still available (by adding `customJS`),
+but there are no specific hooks for now that allow you to execute JS functions to modify specific places.
+
+Now you can use Alpine.js to do anything you want. I prepare to add some hooks in the future to make it easier to customize the theme with Alpine.js.
+
+So if you are not familiar with frontend development, recommend you to ignore this part. Mostly, you don't need to customize the JS.
+</Callout>

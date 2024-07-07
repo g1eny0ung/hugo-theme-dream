@@ -1,0 +1,23 @@
+<div class="flex items-center">
+  {{ if .Params.avatar }}
+  <div class="avatar mr-1">
+    <div class="w-8 rounded-full">
+      <img class="my-0" src="{{ .Params.avatar }}" />
+    </div>
+  </div>
+  {{ else }}
+  <span>@</span>
+  {{ end }}
+
+  <span>
+  {{ if .Params.author }}
+    {{ if and .Params.authorlink (eq .template "single") }}
+      <a href="{{ .Params.authorlink }}" target="_blank">{{ .Params.author }}</a>
+    {{ else }}
+      {{ .Params.author }}
+    {{ end }}
+  {{ else }}
+    {{ site.Params.author }}
+  {{ end }}
+  </span>
+</div>

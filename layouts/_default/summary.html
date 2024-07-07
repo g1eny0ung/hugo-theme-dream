@@ -1,67 +1,42 @@
-<article class="ui attached segment card dream-card">
-  {{ if isset .Params "cover" }}
-  <a class="image" href="{{ .Permalink }}">
-    {{ if isset .Params "cover" }}
+<a class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="{{ .RelPermalink }}">
+  <figure>
+  {{ if .Params.cover }}
     <img src="{{ .Params.cover }}" alt="{{ .Title }}" />
-    {{ else }}
-    <img src="{{ "/img/" | relURL }}default{{ index (shuffle (seq 1 4)) 0 }}.jpg" alt="{{ .Title }}" />
-    {{ end }}
-  </a>
-  {{ end }}
-
-  {{ if isset .Params "cover" }}
-  <div class="content">
   {{ else }}
-  <div class="content no-cover">
+    <img src="{{ "/img/" | relURL }}default{{ index (shuffle (seq 1 4)) 0 }}.jpg" alt="{{ .Title }}" />
   {{ end }}
-    <h2 class="ui medium header">
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    </h2>
-    <div class="meta">
-      <p class="date">
-        {{ if .Site.Params.Experimental.jsDate }}
-          <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
-        {{ else }}
-          {{- if eq .Site.Language.Lang "zh" -}}
-            {{ index .Site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}，{{ index .Site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
-          {{- else if eq .Site.Language.Lang "es" -}}
-            {{ index .Site.Data.es.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.es.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
-          {{- else if eq .Site.Language.Lang "pt" -}}
-            {{ index .Site.Data.pt.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index .Site.Data.pt.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
-          {{- else if eq .Site.Language.Lang "fr" -}}
-            {{ index .Site.Data.fr.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index .Site.Data.fr.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
-          {{- else -}}
-            {{ .Date.Format "Monday, Jan 2, 2006" }}
-          {{- end -}}
-        {{ end }}
-      </p>
-    </div>
-    <div class="description">
-      {{ .Summary | emojify | safeHTML }}
+  </figure>
+
+  <div class="card-body">
+    <h2 class="card-title">{{ .Title }}</h2>
+
+    <p class="date text-base-content/60">
+    {{ if site.Params.Experimental.jsDate }}
+      <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
+    {{ else }}
+    {{- if eq site.Language.Lang "zh" -}}
+      {{ index site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}，{{ index site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
+    {{- else if eq site.Language.Lang "es" -}}
+      {{ index site.Data.es.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index site.Data.es.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
+    {{- else if eq site.Language.Lang "pt" -}}
+      {{ index site.Data.pt.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index site.Data.pt.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
+    {{- else if eq site.Language.Lang "fr" -}}
+      {{ index site.Data.fr.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index site.Data.fr.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
+    {{- else -}}
+      {{ .Date.Format "Monday, Jan 2, 2006" }}
+    {{- end -}}
+    {{ end }}
+    </p>
+
+    {{ .Summary | emojify | safeHTML }}
+
+    <div class="card-actions justify-between items-center mt-4">
+      {{ partial "author.html" (dict "Params" .Params "template" "summary") }}
+
+      <div class="inline-flex items-center">
+        <ion-icon name="time" class="mr-1"></ion-icon>
+        <span>{{ .ReadingTime }}{{ T "minuteRead" .ReadingTime }}</span>
+      </div>
     </div>
   </div>
-
-  <div class="extra content">
-    <div class="author">
-      {{- if isset .Params "avatar" -}}
-      <img class="ui avatar image" src="{{ .Params.avatar }}" alt="avatar" />
-      {{- else -}}
-      @&nbsp;
-      {{- end -}}
-
-      {{- if isset .Params "author" -}}
-        {{- if isset .Params "authorlink" -}}
-          <a href="{{ .Params.authorlink }}" target="_blank">{{ .Params.author }}</a>
-        {{- else -}}
-          {{- .Params.author -}}
-        {{- end -}}
-      {{- else -}}
-        {{- .Site.Params.author -}}
-      {{- end -}}
-    </div>
-    <div class="reading-time">
-      <i class="clock icon"></i>
-      {{- .ReadingTime -}}{{- i18n "minuteRead" .ReadingTime -}}
-    </div>
-  </div>
-</article>
+</a>

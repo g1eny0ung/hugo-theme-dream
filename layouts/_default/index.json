@@ -1,5 +1,0 @@
-{{ $search := slice }}
-{{ range .Site.RegularPages }}
-  {{ $search = $search | append (dict "title" .Title "url" .Permalink  "categories" .Params.categories "tags" .Params.tags "description" .Summary) }}
-{{ end }}
-{{ $search | jsonify }}

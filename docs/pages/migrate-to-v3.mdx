@@ -1,0 +1,154 @@
+import { Callout, Tabs } from 'nextra/components'
+
+# Migrate to v3
+
+This guide will help you migrate your existing v2 project to v3. It will cover the most common changes you will need to make to your project to get it working with v3.
+
+## Introduction
+
+<Tabs items={['English', '中文']}>
+  <Tabs.Tab>
+    Around the end of 2017, I was planning to start my own blog. I came across Hugo, which is very fast, and it subverted my idea of using Node.js Hexo to build a blog. At the same time, I didn't want to use existing themes, I wanted to write my own theme from scratch, because I thought it was a unique experience. I named it Dream, which represents my little dream. I was still an intern at that time, just starting to work, I learned it in my spare time, and finally developed the first version of the theme. In my current opinion, the design is not that good-looking, but I can still understand my mood at that time, I was excited and full of accomplishment at that time.
+
+    Later, as my technology improved, I gradually overturned my previous design. I think this process is also inevitable. As a person grows, his level and quality will gradually improve, so he will naturally have the idea of wanting to modify his early works. So, I started my v2.0 action, I used masonry layout to reconstruct Dream, because I particularly liked this irregular arrangement structure at that time, I think it is very good to display my articles in this form. From this stage on, my theme was gradually discovered by more and more people, and many people also started to use my theme, and they also raised many questions, and I would also fix it synchronously. In this way, Dream has continuously added more parameters, and on the basis of masonry layout, there are more customizable display forms.
+
+    But later, due to my loss of motivation to write a blog (there are many reasons, the COVID-19, work, life troubles, etc.), the maintenance of Dream has gradually become deserted. I have tried many times to modify some places before, but in the end it all came to nothing (for example, I once wanted to use Bulma to replace the outdated and no longer maintained Semantic UI). Just like I lost my motivation to write a blog, it is also very difficult for me to complete other things, I became very anxious, it was the kind of anxiety of growth, which makes you no longer able to concentrate and wholeheartedly do one thing. Time is all fragmented.
+
+    Around the beginning of this year (2024), when I saw my blog again (I rarely looked at it myself before), I thought I should make some changes. I want to pick up my blog again, and not just it, I want to pick up every unfinished thing I have done. I have already passed a lot of my youth, and I don't want to waste it anymore. But it is easy to think, but it is still very difficult to do. I started to rebuild Dream, I used three new things: tailwindcss, daisyUI and Alpine.js, to replace the old technology stack. These are all new things I have come into contact with in the past few years. I combine them with Hugo, so that Hugo can both maintain its speed and have stronger rendering capabilities. At the same time, I also adopted a new design. Before, I added a lot of parameters, but I didn't think carefully about whether they were "meaningful" modifications. As a theme, my current idea is to be ready to use without making too many modifications. This may be the original intention of a theme. To make a durable and durable design, not a fancy design, is more in line with my current ideas. This reconstruction is also a summary of my 7 years of aesthetics, design and technology.
+
+    Time came to the beginning of July, and I finally completed the reconstruction, which is a new milestone version. I have not only completed the modification of the theme, but also completed the writing of the documentation. I want to make it very good in every aspect. This is also my commitment to myself. I want to complete every task completely. This is just the beginning of all subsequent things. I hope you will like Dream's latest design. If you encounter any problems during use, please feel free to raise them in the [issues](https://github.com/g1eny0ung/hugo-theme-dream/issues), and I will check them in time.
+
+    The following content will help you migrate from v2 to v3. You can compare it one by one to make modifications. Similarly, if you encounter any migration issues, please feel free to raise them at any time.
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+    大约在 2017 年底，那时候的我想要建立一个自己的博客，我偶然发现了 Hugo，它速度很快，打破了我想要使用 Node.js Hexo 去建立博客的想法。同时，我不打算使用已有的主题，我想要自己从头书写一个属于我自己的主题，因为我觉得这是一个独一无二的体验。我把它起名为 Dream，代表着我的一个小梦想。那时候我还在实习，是我刚刚接触工作的时候，我在业余时间自己学习，终于开发出了第一版的主题。在我现在看来它设计的没有那么好看，但是我依然能理解我当时的心情，那时候的我是激动的且富有成就感的。
+
+    后来，随着我的技术的进步，我逐步推翻了我之前的设计。这个过程我想也是必然的，随着一个人的成长，他的水平素养得到了逐渐的提升，那么自然会对早期的作品产生想要修改的想法。于是，我开启了我的 v2.0 行动，我使用了 masonry layout 去重构了 Dream，因为我那时候特别喜欢这种不规则的排列结构，我觉得以这样的形式去展示我的文章是很好看的。从这个阶段开始，我的主题逐渐被更多的人发现，也有很多人开始使用我的主题，他们也提出了很多问题，我也会同步进行修复。就这样，Dream 不断加入了更多的参数，在 masonry layout 的基础上有了更多的自定义展示形式。
+
+    但后来，由于我丧失了写博客的动力（原因有很多，新冠疫情，工作，人生烦恼等等），Dream 的维护也逐渐地荒废掉了。我曾经多次努力去修改一些地方，但是最后都不了了之（比如我曾经想使用 Bulma 去替换过时且不再维护的 Semantic UI）。就像我丧失了写博客的动力一样，做其他的事情我也很难完整地完成它们，我变得很焦虑，是那种成长的焦虑😐，让你不再能够专心地，心无旁骛地去做一件事情。时间全部被碎片化掉了。
+
+    大约是今年（2024）开始吧，当我又一次看到我的博客的时候（之前我自己都已经很少去看了），我想我应该做出一些改变了。我想重新拾起我的博客，也不仅仅是它，我想拾起每一个我半途而废的事情，我的年轻时光已经过去很多了，现在我再也不想去浪费掉它们了。但是想很容易，做起来还是很困难的，我开始重新构建 Dream，我使用了三个新东西：tailwindcss，daisyUI 和 Alpine.js，去替换了那些老旧的技术栈，这些都是我最近几年接触到的新事物，我将它们与 Hugo 结合在了一起，让 Hugo 既保持快速，也拥有了更强的渲染能力。同时我也采用了新的设计，之前我添加了大量的参数，但是我都没有好好思考它们是否是一个“有意义”的修改，作为一个主题，我现在的想法是，开箱即用，而不做出过多的修改，这可能才是一个主题的初衷吧。做耐看耐用的设计，而不是花里胡哨的设计，更能符合我现在的想法，这次的重构也是我 7 年来在审美，设计和技术上的一个总结。
+
+    时间来到了现在，7月初，我终于完成了重构，这是一个新的里程碑版本。我不仅完成了主题的修改，也完成了文档的书写。我想要在每个方面都让它变得很精良，这也是我对我自己的承诺，我要完整地去完成每一件事情，这仅仅是后面所有事情的开始。希望你能喜欢 Dream 的最新设计，如果你遇到了使用上的问题，欢迎你前往 [issues](https://github.com/g1eny0ung/hugo-theme-dream/issues) 提出，我会及时地进行查看的。
+
+    以下的内容会帮助你从 v2 迁移到 v3，你可以一一对照去进行修改。同样，如果你遇到了迁移方面的问题，也欢迎你随时提出。
+
+  </Tabs.Tab>
+</Tabs>
+
+## Params Changes
+
+Some params have been changed in v3. You can compare the following sections to make modifications.
+
+### copyright
+
+The old `copyright = ""` has been removed, it used to be used to display copyright on the About page. Now you can add
+a copyright file directly into the `content/about` folder, and it will be displayed on the About page:
+
+```bash
+hugo new about/copyright.md
+```
+
+### Colors and Dark Mode
+
+There're many color params in v2, but in v3, all params below have been removed:
+
+```toml
+# background = ""
+# linkColor = "seagreen"
+
+# dark mode
+# defaultDark = true
+# backgroundDark = "black"
+# darkLinkColor = "darkseagreen"
+# darkNav = true
+# dark404 = true
+```
+
+Currently, Dream uses daisyUI to provide some out-of-box [themes](https://daisyui.com/docs/themes/)
+to use in light and dark mode.
+
+Please view [Light and Dark Mode](light-and-dark-mode.md) for more details.
+
+### Tags and Categories
+
+If you have the following params specified, you can safely remove them:
+
+```toml
+# maxTags = 5
+# categoriesLimitInHeader = 6 # deprecated
+# headerBottomText = "" # deprecated
+```
+
+### Social Links
+
+Old specific social links have been removed:
+
+```toml
+# twitter = ""
+# facebook = ""
+# instagram = ""
+# mastodon = ""
+# linkedin = ""
+# github = ""
+# stackoverflow = ""
+# codepen = ""
+```
+
+Refer to [Social Links](social-links.md) for the updated configuration.
+
+### highlightjs
+
+hightlight.js has been deprecated in favor of Hugo built-in syntax highlighting,
+you can safely remove the following params:
+
+```toml
+# highlightjs = true
+# highlightjsCDN = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"
+# highlightjsExtraLanguages = ["ocaml"]
+# highlightjsTheme = "gruvbox-light"
+# highlightjsThemeDark = "gruvbox-dark"
+```
+
+If you want to custom the syntax highlighting,
+please refer to [Syntax Highlighting](syntax-highlighting.md).
+
+<Callout type="info">
+Customizing the syntax highlighting is recommended if you have code blocks in your posts.
+</Callout>
+
+### Search
+
+The old search has been removed, you can safely remove the following params:
+
+```toml
+# search
+# enableSearch = true
+```
+
+The new way to add search functionality is described in [Search](search.md).
+
+### Other options
+
+Below are some other options that have been removed, you can safely remove them:
+
+```toml
+# reversePostAndAside = true
+# shareInAside = true
+# fixedNav = true
+# collapsibleTags = true
+# collapseBySummary = true
+# disableFlip = true
+# hideBackSocialLinks = true
+```
+
+## Almost Done
+
+I hope this guide has helped you migrate your project to v3 successfully.
+
+I may ignore some deprecated params, if you encounter any problems,
+please feel free to raise them in the [issues](https://github.com/g1eny0ung/hugo-theme-dream/issues),
+thank you very much!
+
+Wish you a happy journey with Dream v3! 🎉

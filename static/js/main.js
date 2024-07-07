@@ -1,1 +1,70 @@
-"use strict";$(document).ready(function(){var e,a=$("body").overlayScrollbars({className:(window.backgroundDark||window.backgroundImageDark?"y"===localStore.getItem("hugo-theme-dream-is-dark"):window.darkNav)?"os-theme-light":"os-theme-dark",scrollbars:{autoHide:"scroll",clickScrolling:!0}}).overlayScrollbars();window.fixedNav&&(e=$(".dream-nav"),a.options("callbacks.onScroll",function(){var a=this.scroll().position.y,o=$(".fake-dream-nav");0<a?(e.addClass("fixed").css("background","y"===window.isDark?window.backgroundDark:window.background),$(".dream-single-aside").css("top",54),o.length||$('<div class="fake-dream-nav" />').css("height",54).insertBefore(e)):(e.removeClass("fixed").css("background","unset"),$(".dream-single-aside").css("top",0),o.remove())})),window.overlayScrollbarsInstance=a,$(".dream-flip-toggle").click(function(){$(".flip-container").toggleClass("flip-it")})});
+"use strict";
+
+document.addEventListener('alpine:init', function () {
+  Alpine.store('darkMode', {
+    init: function init() {
+      var _this = this;
+      var isDark = window.localStorage.getItem('hugo-theme-dream-is-dark');
+      if (isDark) {
+        this.on = isDark;
+      } else {
+        this.mql.addEventListener('change', function (event) {
+          _this.on = event.matches ? 'y' : 'n';
+        });
+        this.on = 'auto';
+      }
+    },
+    mql: window.matchMedia('(prefers-color-scheme: dark)'),
+    on: 'n',
+    isDark: function isDark() {
+      return this.on === 'auto' ? this.mql.matches : this.on === 'y';
+    },
+    "class": function _class() {
+      if (this.on === 'auto') {
+        return this.mql.matches ? 'dark' : 'light';
+      } else {
+        return this.on === 'y' ? 'dark' : 'light';
+      }
+    },
+    theme: function theme() {
+      if (this.on === 'auto') {
+        return this.mql.matches ? window.darkTheme : window.lightTheme;
+      } else {
+        return this.on === 'y' ? window.darkTheme : window.lightTheme;
+      }
+    },
+    iconMap: {
+      n: 'sunny',
+      y: 'moon',
+      auto: 'desktop'
+    },
+    icon: function icon() {
+      return this.iconMap[this.on];
+    },
+    toggle: function toggle(status) {
+      this.on = status;
+      if (status === 'auto') {
+        window.localStorage.removeItem('hugo-theme-dream-is-dark');
+      } else {
+        window.localStorage.setItem('hugo-theme-dream-is-dark', status);
+      }
+      this.setThemeForUtterances();
+      this.changeSyntaxHighlightingTheme();
+    },
+    changeSyntaxHighlightingTheme: function changeSyntaxHighlightingTheme() {
+      if (document.querySelector('#dream-single-page')) {
+        var customSyntaxHighlightingUrl = this.isDark() ? window.customSyntaxHighlighting.dark : window.customSyntaxHighlighting.light;
+        document.querySelector('link[data-custom-syntax-highlighting]').setAttribute('href', customSyntaxHighlightingUrl);
+      }
+    },
+    setThemeForUtterances: function setThemeForUtterances() {
+      var utterances = document.querySelector('iframe.utterances-frame');
+      if (utterances) {
+        utterances.contentWindow.postMessage({
+          type: 'set-theme',
+          theme: this.isDark() ? 'github-dark' : 'github-light'
+        }, 'https://utteranc.es');
+      }
+    }
+  });
+});

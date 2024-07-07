@@ -46,17 +46,11 @@ other = " минут чтения"
 [updateAt]
 other = "Обновлено"
 
-[noTag]
-other = "Нет тегов"
-
 [prevPage]
 other = "Предыдущая"
 
 [nextPage]
 other = "Следующая"
-
-[saveAsImage]
-other = "Сохранить как изображение"
 
 [search]
 other = "Поиск"

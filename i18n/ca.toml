@@ -38,17 +38,11 @@ other = " minuts de lectura"
 [updateAt]
 other = "Actualització a"
 
-[noTag]
-other = "Sense etiquetes"
-
 [prevPage]
 other = "Pàgina anterior"
 
 [nextPage]
 other = "Pàgina següent"
-
-[saveAsImage]
-other = "Desa com a imatge"
 
 [search]
 other = "Buscar"

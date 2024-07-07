@@ -1,33 +1,9 @@
 {{ define "title" }}404 Not Found{{ end }}
 
 {{ define "main" }}
-<div class="dream-404-container">
-  <div class="ui basic center aligned segment">
-    {{ if or .Site.Params.backgroundDark .Site.Params.backgroundImageDark }}
-      <h1 class="ui header">
-        Oops...You are lost in dream.
-        <span class="sub header">Don't worry though, click the button below to wake up.</span>
-      </h1>
-      <p>
-        <button class="ui secondary button" onclick="window.location.href = '{{ .Site.BaseURL }}'">{{ i18n "backToHome" }}</button>
-      </p>
-    {{ else if .Site.Params.dark404 }}
-      <h1 class="ui inverted header">
-        Oops...You are lost in dream.
-        <span class="sub header">Don't worry though, click the button below to wake up.</span>
-      </h1>
-      <p>
-        <button class="ui inverted button" onclick="window.location.href = '{{ .Site.BaseURL }}'">{{ i18n "backToHome" }}</button>
-      </p>
-    {{ else }}
-      <h1 class="ui header">
-        Oops...You are lost in dream.
-        <span class="sub header">Don't worry though, click the button below to wake up.</span>
-      </h1>
-      <p>
-        <button class="ui secondary button" onclick="window.location.href = '{{ .Site.BaseURL }}'">{{ i18n "backToHome" }}</button>
-      </p>
-    {{ end }}
-  </div>
+<div class="h-[60vh] mx-auto px-4 flex flex-col justify-center items-center prose dark:prose-invert">
+  <h1>Oops...You are lost in dream.</h1>
+  <p>Don't worry though, click the button below to wake up.</p>
+  <button class="btn my-5" @click="window.location.href = '{{ site.BaseURL }}'">{{ T "backToHome" }}</button>
 </div>
 {{ end }}

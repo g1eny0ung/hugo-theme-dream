@@ -1,39 +1,44 @@
-{{ partial "header.html" . }}
+<div class="dream-grid">
+  {{ with site.GetPage "/about" }}
+  {{ $aboutPages := .Resources.ByType "page" }}
+  {{ range (sort $aboutPages "Date" "asc") }}
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">{{ .Title }}</div>
 
-<div class="ui relaxed grid dream-grid dream-back">
-  {{ $headless := .Site.GetPage "/about" }}
-  {{ $aboutPages := $headless.Resources.ByType "page" }}
-  {{ range $aboutPages }}
-  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
-    <article class="ui segment markdown-body">
-      <div class="ui medium header">{{ .Title }}</div>
-      {{ .Content | emojify }}
+        <div class="prose dark:prose-invert">
+          {{ .Content | emojify }}
+        </div>
+      </div>
+    </article>
+  </div>
+  {{ end }}
+  {{ end }}
+
+  {{ if (fileExists "data/socials.toml") }}
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">{{ T "socialLinks" }}</div>
+
+        {{ partialCached "socials.html" . }}
+      </div>
     </article>
   </div>
   {{ end }}
 
-  {{ if not .Site.Params.hideBackSocialLinks }}
-    <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
-      <article class="ui segment">
-        <div class="ui medium header">{{ i18n "socialLinks" }}</div>
-        {{ partialCached "socials.html" (dict "Site" .Site "IconSize" "large") }}
-      </article>
-    </div>
-  {{ end }}
-
-  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
-    {{ if .Site.Copyright }}
-    <article class="ui segment">
-      {{ .Site.Copyright | safeHTML }}
-    </article>
-    {{ end }}
-  </div>
-
-  {{ $disqusShortname := (or .Site.Config.Services.Disqus.Shortname .Site.DisqusShortname) }}
+  {{ $disqusShortname := (or site.Config.Services.Disqus.Shortname site.DisqusShortname) }}
   {{ if and $disqusShortname .IsHome }}
-  <div class="sixteen wide mobile eight wide tablet eight wide computer column dream-column">
-    <article class="ui segment">
-      {{ partial "disqus.html" (dict "Context" . "Identifier" "/" "DisqusShortname" $disqusShortname) }}
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">{{ template "_internal/disqus.html" . }}</div>
     </article>
   </div>
   {{ end }}

@@ -38,17 +38,11 @@ other = " minuti"
 [updateAt]
 other = "Aggiornato al"
 
-[noTag]
-other = "Nessun Tag"
-
 [prevPage]
 other = "Pagina precedente"
 
 [nextPage]
 other = "Pagina successiva"
-
-[saveAsImage]
-other = "Salva come immagine"
 
 [search]
 other = "Cerca"

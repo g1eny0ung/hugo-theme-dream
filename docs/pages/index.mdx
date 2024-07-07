@@ -2,9 +2,13 @@ import { Callout } from 'nextra/components'
 
 # Quick Start
 
-**_I assume you have already been browsed [Hugo Docs](https://gohugo.io/documentation/), if you want to use this theme, the docs will help you to understand the configurations._**
+**_I assume you have already been browsed [Hugo Getting started](https://gohugo.io/getting-started/), if you want to use this theme, the docs will help you to understand configurations._**
 
-## First, add i18n Support
+## Create configuration file
+
+Create `hugo.toml` if it doesn't exist in your blog folder.
+
+## Add i18n Support
 
 Open `hugo.toml` and write:
 
@@ -12,7 +16,7 @@ Open `hugo.toml` and write:
 defaultContentLanguage = "en"
 ```
 
-View the `i18n` folder for more details.
+View [i18n](./i18n.md) for support languages and more details.
 
 ## Website Analytics
 
@@ -27,7 +31,7 @@ ID = '...'
 
 ```
 
-<Callout type="warning" emoji="⚠️">
+<Callout type="warning">
 You may have used `googleAnalytics = "..."` before. This is deprecated in Hugo `0.120.0`.
 
 Please upgrade to the new configuration. See https://gohugo.io/methods/site/googleanalytics/ for more details.
@@ -35,7 +39,7 @@ Please upgrade to the new configuration. See https://gohugo.io/methods/site/goog
 
 ## Social Comments
 
-Dream now use [Disqus](https://disqus.com/) for social comments.
+Dream can use [Disqus](https://disqus.com/) for social comments.
 
 In `hugo.toml`, set:
 
@@ -44,15 +48,17 @@ In `hugo.toml`, set:
 [services.disqus]
 shortname = "..."
 ```
-<Callout type="warning" emoji="⚠️">
+<Callout type="warning">
 You may have used `disqusShortname = "..."` before. This is deprecated in Hugo `0.120.0`.
 
 Please upgrade to the new configuration. See https://gohugo.io/methods/site/disqusshortname/ for more details.
 </Callout>
 
+For more social comment systems, view [Social Comments](./social-comments.md).
+
 ## Add "About Me"
 
-Type in your terminal:
+Type below command in your terminal:
 
 ```bash
 hugo new about/me.md
@@ -70,7 +76,7 @@ Hi, my name is Yue Yang.
 This is my blog.
 ```
 
-Then create an `index.md` in the about folder and put below contents into it:
+Then create an `index.md` in the `content/about` folder and put below contents into it:
 
 ```md
 ---
@@ -78,19 +84,19 @@ headless: true
 ---
 ```
 
-Finally, click the button on the top left corner of the page. You will see what you just wrote.
+After that, you will see a "About" on the top right navagation bar. Click it to view your about page.
 
-## OK, write a post for your blog
+## Write your first article
 
 All of your posts must in the `content/posts` folder.
 
-You can generate it by:
+You can generate it with:
 
 ```bash
-hugo new posts/articleTitle.md
+hugo new posts/article-title.md
 ```
 
-By default, the new md file's template will contain:
+The default content of `article-title.md` is:
 
 ```md
 ---
@@ -101,11 +107,14 @@ author: Author Name
 # avatar: /img/author.jpg
 # authorlink: https://author.site
 cover: /img/cover.jpg
+# images:
+#   - /img/cover.jpg
 categories:
   - category1
 tags:
   - tag1
   - tag2
+# nolastmod: true
 draft: true
 ---
 
@@ -116,15 +125,11 @@ Cut out summary from your post content here.
 The remaining content of your post.
 ```
 
-You only need to change `author`, `cover`, `categories` and `tags` fields, the others will generate automatically.
+This is the default template of a post.
 
-- author: **Your name**
-- cover: **Current post's image**, for _quick start_, now you can delete this line, because the theme has been placed some default images for posts.
-- categories and tags: if you haven’t thought about it, you can ignore them for now.
+For a quick start, you can leave the default content as it is. Only remove `draft: true` to publish your post.
 
-At last, remove `draft: true` and run `hugo` to generate your site.
-
-If your want to have a preview in editing, run:
+For previewing your post, run:
 
 ```bash
 hugo server -D

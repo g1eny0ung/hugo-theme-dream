@@ -1,15 +1,15 @@
-$(document).ready(() => {
-  function initGrid() {
-    const $grid = $('.dream-grid').masonry({
+function initGrid() {
+  document.querySelectorAll('.dream-grid').forEach((grid) => {
+    const m = new Masonry(grid, {
       itemSelector: '.dream-column',
     })
 
-    $grid.imagesLoaded().progress(() => $grid.masonry('layout'))
+    imagesLoaded(m).on('process', () => m.masonry('layout'))
 
     if (window.hasTwitterEmbed) {
-      window.twttr.ready((twttr) => twttr.events.bind('loaded', () => $grid.masonry('layout')))
+      window.twttr.ready((twttr) => twttr.events.bind('loaded', () => m.masonry('layout')))
     }
-  }
+  })
+}
 
-  initGrid()
-})
+initGrid()

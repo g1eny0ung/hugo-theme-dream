@@ -1,0 +1,48 @@
+{{ define "title" }}
+{{- T (print "all" (strings.FirstUpper .Data.Plural)) -}}
+{{ end }}
+
+{{ define "main"}}
+
+<div class="flex flex-col md:flex-row gap-4 mt-8 lg:mt-12 px-4">
+  <div class="md:basis-[200px] lg:basis-[300px] prose dark:prose-invert">
+    <h1 class="text-2xl">
+      {{- T (print "all" (strings.FirstUpper .Data.Plural)) -}}
+    </h1>
+    <p class="text-sm">
+      {{- if eq (len .Data.Terms) 1 }}
+      {{- T .Data.Singular 1 }}
+      {{- else }}
+      {{- T .Data.Singular (len .Data.Terms) }}
+      {{- end }}
+    </p>
+    <div class="flex flex-wrap gap-4 mt-6">
+      {{ range .Data.Terms.Alphabetical }}
+      <a href="{{ .Page.RelPermalink }}" class="badge h-6 no-underline hover:badge-primary">
+        {{ .Page.LinkTitle }}
+      </a>
+      {{ end }}
+    </div>
+  </div>
+  <div class="divider divider-vertical md:divider-horizontal"></div>
+  <div class="flex-1 space-y-4">
+    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
+    {{ range $paginator.Pages }}
+    {{ .Render "term-summary" }}
+    {{ end }}
+
+    <div class="flex justify-center pt-8">
+      {{ partial "paginator.html" (dict "paginator" $paginator) }}
+    </div>
+  </div>
+</div>
+
+{{ end }}
+
+{{ define "js" }}
+
+{{ if .Site.Params.Experimental.jsDate }}
+{{ partial "luxon.html" . }}
+{{ end }}
+
+{{ end }}

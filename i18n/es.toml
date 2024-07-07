@@ -38,14 +38,8 @@ other = " minutos de lectura"
 [updateAt]
 other = "Actualizado en"
 
-[noTag]
-other = "Sin etiquetas"
-
 [prevPage]
 other = "Página anterior"
 
 [nextPage]
 other = "Página siguiente"
-
-[saveAsImage]
-other = "Guardar como imagen"
