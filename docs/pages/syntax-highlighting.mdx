@@ -1,6 +1,20 @@
+import { Callout } from 'nextra/components'
+
 # Syntax highlighting
 
 Setting `customSyntaxHighlighting = true` will enable syntax highlighting in posts.
+
+<Callout type="info">
+You still need to set below configuration in your `hugo.toml`:
+
+```toml
+[markup]
+[markup.highlight]
+noClasses = false
+```
+
+This makes sure that the generated HTML uses classes for syntax highlighting, not inline styles.
+</Callout>
 
 You will also need to specify what themes you want to use and generate them. They need to follow some established format:
 

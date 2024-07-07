@@ -1,9 +1,16 @@
+import { Callout } from 'nextra/components'
+
 # Params Configurations
+
+This page will introduce all the parameters that can be configured in the `[params]`.
 
 ## Example
 
 ```toml
 [params]
+lightTheme = "emerald"
+darkTheme = "forest"
+
 # backgroundImage = "/me/background.jpg"
 # backgroundImageDark = ""
 
@@ -49,6 +56,21 @@ jsDate = true
 jsDateFormat = "yyyy年MM月dd日"
 ```
 
+## Basic
+
+### Light and Dark Mode
+
+> Required.
+
+You can first add these two parameters to the `[params]`, they are default themes for light and dark mode.
+
+```toml
+lightTheme = "emerald"
+darkTheme = "forest"
+```
+
+For using other themes, view [Light and Dark Mode](light-and-dark-mode.md) for more details.
+
 ### backgroundImage = "/me/background.jpg"
 
 Define a global background image.
@@ -59,7 +81,7 @@ Define a global background image in dark mode.
 
 ### images = [""]
 
-See <https://gohugo.io/templates/internal/#open-graph>.
+View https://gohugo.io/templates/internal/#open-graph for more details.
 
 Use the first one of site images as the fallback image for Open Graph.
 
@@ -102,7 +124,7 @@ Enable RSS.
 
 Utterances is a lightweight comments widget built on GitHub Issues. By setting `utterancesRepo`, each post will have a comment section powered by GitHub Issues.
 
-View <https://utteranc.es> for more details.
+View https://utteranc.es for more details.
 
 ### valine = true
 
@@ -119,7 +141,7 @@ VALINE_LANGUAGE = "" # optional
 
 Default language param is "zh-CN" , other supported languages are "zh-TW" , "en" , "ja" .
 
-View <https://valine.js.org/en/quickstart> for more details.
+View https://valine.js.org/en/quickstart for more details.
 
 ### siteStartYear = 2016
 
@@ -144,13 +166,16 @@ Show summary cover image in the single post page.
 
 ### hasTwitterEmbed = true
 
-If you have embedded twitter components generated from <https://publish.twitter.com/>, please set this param to `true` for better performance.
+If you have embedded twitter components generated from https://publish.twitter.com/, please set this param to `true` for better performance.
 
 After setting this, you can safely remove the async script in the generated code.
 
 ## Advanced
 
-> Note: generally, the following advanced parameters are not necessary to be set. Their main purpose is to further customize the entire theme.
+<Callout type="info">
+  Generally, the following advanced parameters are not necessary to be set. Their main purpose is to further customize
+  the entire theme.
+</Callout>
 
 ### customCSS = ["css/custom.css"]
 
@@ -164,9 +189,9 @@ Like `customCSS`, add your custom JS files **after** the theme JS files.
 
 ## Experimental
 
-> Note:
->
-> The experimental parameters are often not perfect. They have advantages as well as certain disadvantages.
+<Callout type="info">
+  The experimental parameters are often not perfect. They have advantages as well as certain disadvantages.
+</Callout>
 
 ### jsDate
 
@@ -178,6 +203,6 @@ For how to define the format, see below.
 
 ### jsDateFormat
 
-Refer to this page (<https://moment.github.io/luxon/docs/manual/formatting.html>) to define your date format.
+Refer to this page (https://moment.github.io/luxon/docs/manual/formatting.html) to define your date format.
 
 For example, `yyyy-MM-dd` represents a date format like `2021-04-17`.

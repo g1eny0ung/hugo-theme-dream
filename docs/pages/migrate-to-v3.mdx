@@ -1,4 +1,4 @@
-import { Tabs } from 'nextra/components'
+import { Callout, Tabs } from 'nextra/components'
 
 # Migrate to v3
 
@@ -37,4 +37,118 @@ This guide will help you migrate your existing v2 project to v3. It will cover t
   </Tabs.Tab>
 </Tabs>
 
-## Guide
+## Params Changes
+
+Some params have been changed in v3. You can compare the following sections to make modifications.
+
+### copyright
+
+The old `copyright = ""` has been removed, it used to be used to display copyright on the About page. Now you can add
+a copyright file directly into the `content/about` folder, and it will be displayed on the About page:
+
+```bash
+hugo new about/copyright.md
+```
+
+### Colors and Dark Mode
+
+There're many color params in v2, but in v3, all params below have been removed:
+
+```toml
+# background = ""
+# linkColor = "seagreen"
+
+# dark mode
+# defaultDark = true
+# backgroundDark = "black"
+# darkLinkColor = "darkseagreen"
+# darkNav = true
+# dark404 = true
+```
+
+Currently, Dream uses daisyUI to provide some out-of-box [themes](https://daisyui.com/docs/themes/)
+to use in light and dark mode.
+
+Please view [Light and Dark Mode](light-and-dark-mode.md) for more details.
+
+### Tags and Categories
+
+If you have the following params specified, you can safely remove them:
+
+```toml
+# maxTags = 5
+# categoriesLimitInHeader = 6 # deprecated
+# headerBottomText = "" # deprecated
+```
+
+### Social Links
+
+Old specific social links have been removed:
+
+```toml
+# twitter = ""
+# facebook = ""
+# instagram = ""
+# mastodon = ""
+# linkedin = ""
+# github = ""
+# stackoverflow = ""
+# codepen = ""
+```
+
+Refer to [Social Links](social-links.md) for the updated configuration.
+
+### highlightjs
+
+hightlight.js has been deprecated in favor of Hugo built-in syntax highlighting,
+you can safely remove the following params:
+
+```toml
+# highlightjs = true
+# highlightjsCDN = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"
+# highlightjsExtraLanguages = ["ocaml"]
+# highlightjsTheme = "gruvbox-light"
+# highlightjsThemeDark = "gruvbox-dark"
+```
+
+If you want to custom the syntax highlighting,
+please refer to [Syntax Highlighting](syntax-highlighting.md).
+
+<Callout type="info">
+Customizing the syntax highlighting is recommended if you have code blocks in your posts.
+</Callout>
+
+### Search
+
+The old search has been removed, you can safely remove the following params:
+
+```toml
+# search
+# enableSearch = true
+```
+
+The new way to add search functionality is described in [Search](search.md).
+
+### Other options
+
+Below are some other options that have been removed, you can safely remove them:
+
+```toml
+# reversePostAndAside = true
+# shareInAside = true
+# fixedNav = true
+# collapsibleTags = true
+# collapseBySummary = true
+# disableFlip = true
+# hideBackSocialLinks = true
+```
+
+## Almost Done
+
+I hope this guide has helped you migrate your project to v3 successfully.
+
+I may ignore some deprecated params, if you encounter any problems,
+please feel free to raise them in the [issues](https://github.com/g1eny0ung/hugo-theme-dream/issues),
+thank you very much!
+
+Wish you a happy journey with Dream v3! 🎉

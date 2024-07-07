@@ -11,8 +11,11 @@ theme = "hugo-theme-dream"
 # ID = ''
 
 [params]
+lightTheme = "emerald"
+darkTheme = "forest"
+
 # backgroundImage = "/me/background.jpg"
-# backgroundImageDark = "/me/background-dark.jpg"
+# backgroundImageDark = ""
 
 author = "Yue Yang"
 # description = ""
