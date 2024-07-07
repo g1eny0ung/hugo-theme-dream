@@ -1,3 +1,7 @@
+# Sample workflow for building and deploying a Next.js site to GitHub Pages
+#
+# To get started with Next.js see: https://nextjs.org/docs/getting-started
+#
 name: Deploy docs to Pages
 
 on:
@@ -20,14 +24,11 @@ permissions:
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: 'pages'
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  # Build job
+  build:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -41,10 +42,9 @@ jobs:
           version: 8
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: '20'
           cache: 'pnpm'
           cache-dependency-path: 'docs/pnpm-lock.yaml'
-      - run: pnpm install
 
       - name: Restore cache
         uses: actions/cache@v4
@@ -54,6 +54,8 @@ jobs:
           key: ${{ runner.os }}-nextjs-${{ hashFiles('docs/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-
+
+      - run: pnpm install
       - name: Build
         run: pnpm run build
 
@@ -61,6 +63,15 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: './docs/out'
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
