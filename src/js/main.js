@@ -12,6 +12,10 @@ document.addEventListener('alpine:init', () => {
 
         this.on = 'auto'
       }
+
+      setTimeout(() => {
+        this.setThemeForUtterances()
+      }, 6000) // Set a bigger timeout to make sure the utterances iframe is loaded.
     },
 
     mql: window.matchMedia('(prefers-color-scheme: dark)'),

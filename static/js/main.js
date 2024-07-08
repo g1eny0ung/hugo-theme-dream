@@ -13,6 +13,9 @@ document.addEventListener('alpine:init', function () {
         });
         this.on = 'auto';
       }
+      setTimeout(function () {
+        _this.setThemeForUtterances();
+      }, 6000); // Set a bigger timeout to make sure the utterances iframe is loaded.
     },
     mql: window.matchMedia('(prefers-color-scheme: dark)'),
     on: 'n',
