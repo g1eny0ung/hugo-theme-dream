@@ -12,6 +12,15 @@ module.exports = withNextra({
   images: {
     unoptimized: true,
   },
+  async redirects() {
+    return [
+      {
+        source: '/netlify-cms',
+        destination: '/decap-cms',
+        permanent: true,
+      },
+    ]
+  },
 })
 
 // If you have other Next.js configurations, you can pass them as the parameter:
