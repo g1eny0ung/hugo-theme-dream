@@ -8,6 +8,8 @@
 >
   <template x-for="icon in icons">
     <div
+      role="button"
+      tabindex="0"
       class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
       :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
       @click="$store.darkMode.toggle(icon.status)"
