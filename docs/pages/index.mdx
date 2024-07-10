@@ -8,7 +8,9 @@ import { Callout } from 'nextra/components'
 
 Create `hugo.toml` if it doesn't exist in your blog folder.
 
-> You can download this [default configuration file](https://github.com/g1eny0ung/hugo-theme-dream/blob/master/hugo.example.toml), including all params used in Dream.
+<Callout type="info">
+You can download this [default configuration file](https://github.com/g1eny0ung/hugo-theme-dream/blob/master/hugo.example.toml), including all params used in Dream.
+</Callout>
 
 ## Add i18n Support
 
@@ -29,8 +31,7 @@ In `hugo.toml`, set:
 ```toml
 [services]
 [services.googleAnalytics]
-ID = '...'
-
+ID = "..."
 ```
 
 <Callout type="warning">
@@ -50,6 +51,7 @@ In `hugo.toml`, set:
 [services.disqus]
 shortname = "..."
 ```
+
 <Callout type="warning">
 You may have used `disqusShortname = "..."` before. This is deprecated in Hugo `0.120.0`.
 
