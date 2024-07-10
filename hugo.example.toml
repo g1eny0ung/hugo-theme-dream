@@ -8,7 +8,7 @@ theme = "hugo-theme-dream"
 # [services.disqus]
 # shortname = ""
 # [services.googleAnalytics]
-# ID = ''
+# ID = ""
 
 [params]
 lightTheme = "emerald"
@@ -17,11 +17,11 @@ darkTheme = "forest"
 # backgroundImage = "/me/background.jpg"
 # backgroundImageDark = ""
 
-author = "Yue Yang"
+author = "Dream"
 # description = ""
-avatar = "/img/avatar.jpeg"
+# avatar = "/img/avatar.png"
 headerTitle = "Hugo Theme Dream"
-motto = "Motto"
+# motto = ""
 
 # footerBottomText = ""
 
@@ -34,7 +34,7 @@ motto = "Motto"
 # LEANCLOUD_APP_KEY = ""
 # VALINE_LANGUAGE = ""
 
-email = "g1enyy0ung@gmail.com"
+# email = ""
 
 siteStartYear = 2016
 
