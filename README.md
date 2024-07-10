@@ -17,7 +17,7 @@
 
 Dream is a [Hugo](https://gohugo.io/) theme. I build it for [my blog](https://g1en.site).
 
-The main features are **Flippable About Page** and **Masonry Layout Posts**.
+The main features are **Masonry Layout Posts** and **Flippable About Page**.
 
 Dream also supports **light and dark mode** out of the box.
 
@@ -48,6 +48,6 @@ See [Hosting & Deployment](https://gohugo.io/hosting-and-deployment/).
 
 ## License
 
-Hugo Theme Dream is licensed under the MIT License.
+🌱 Hugo Theme Dream is licensed under the MIT License.
 
 Author: [g1eny0ung](https://github.com/g1eny0ung).
