@@ -4,8 +4,8 @@
 
 {{ define "main"}}
 
-<div class="flex gap-4 mt-8 lg:mt-12 px-4">
-  <div class="basis-[300px] prose dark:prose-invert">
+<div class="flex flex-col md:flex-row gap-4 mt-8 lg:mt-12 px-4">
+  <div class="md:basis-[200px] lg:basis-[300px] prose dark:prose-invert">
     <h1 class="text-2xl">
       {{- .Data.Term -}}
     </h1>
@@ -38,7 +38,7 @@
       {{ end }}
     </div>
   </div>
-  <div class="divider divider-horizontal"></div>
+  <div class="divider divider-vertical md:divider-horizontal"></div>
   <div class="flex-1 space-y-4">
     {{ $paginator := .Paginate .Pages }}
     {{ range $paginator.Pages }}

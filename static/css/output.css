@@ -3212,10 +3212,6 @@ html {
   flex-grow: 1;
 }
 
-.basis-\[300px\] {
-  flex-basis: 300px;
-}
-
 .cursor-pointer {
   cursor: pointer;
 }
