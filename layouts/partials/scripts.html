@@ -3,7 +3,6 @@
   window.darkTheme = {{ site.Params.darkTheme }}
 
   window.hasTwitterEmbed = {{ site.Params.hasTwitterEmbed }}
-
   if (window.hasTwitterEmbed) {
     // https://developer.twitter.com/en/docs/twitter-for-websites/javascript-api/guides/set-up-twitter-for-websites
     window.twttr = (function (d, s, id) {
@@ -25,7 +24,7 @@
     })(document, 'script', 'twitter-wjs')
   }
 </script>
-<script src="https://cdn.jsdelivr.net/npm/imagesloaded@4.1.4/imagesloaded.pkgd.js" integrity="sha256-ZtjBh+3lqbfJ5UfahD26E9Rns4w4UyNqMpPVZ+LTT/g=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
 <script src="{{ "/js/grid.js" | relURL }}"></script>
 <script src="{{ "/js/main.js" | relURL }}"></script>
