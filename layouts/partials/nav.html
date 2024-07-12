@@ -28,7 +28,15 @@
       {{ end }}
     </section>
 
-    <section class="flex items-center gap-2 md:gap-4">
+    <div class="dropdown dropdown-end sm:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-square">
+        <ion-icon name="menu-outline" size="large"></ion-icon>
+      </div>
+      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow">
+        {{ partial "navRightMobile.html" . }}
+      </ul>
+    </div>
+    <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
       {{ with site.GetPage "/about" }}
       {{ $aboutPages := .Resources.ByType "page" }}
       {{ if gt (len $aboutPages) 0 }}
@@ -40,7 +48,7 @@
 
       {{ if gt (len (where site.Pages "Type" "search")) 0 }}
       <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="{{ "search" | relLangURL }}" title="{{ T "search" }}">
-        <ion-icon name="search"></ion-icon>
+        <ion-icon class="group-hover:text-primary-content" name="search"></ion-icon>
       </a>
       {{ end }}
 
@@ -64,7 +72,7 @@
 
       {{ if site.Params.rss }}
       <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="{{ "index.xml" | relLangURL }}" title="RSS">
-        <ion-icon name="logo-rss"></ion-icon>
+        <ion-icon class="group-hover:text-primary-content" name="logo-rss"></ion-icon>
       </a>
       {{ end }}
     </section>
