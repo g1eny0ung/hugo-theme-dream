@@ -1,9 +1,23 @@
 <a class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="{{ .RelPermalink }}">
   <figure>
   {{ if .Params.cover }}
+    {{ with .Resources.Get .Params.cover }}
+    {{ $webp := .Resize (printf "%dx%d webp" .Width .Height) }}
+    <picture>
+      <source srcset="{{ $webp.RelPermalink }}" type="image/webp" />
+      <img src="{{ .RelPermalink }}" alt="{{ .Title }}" />
+    </picture>
+    {{ else }}
     <img src="{{ .Params.cover }}" alt="{{ .Title }}" />
+    {{ end }}
   {{ else }}
-    <img src="{{ "/img/" | relURL }}default{{ index (shuffle (seq 1 4)) 0 }}.jpg" alt="{{ .Title }}" />
+    {{ with resources.Get (printf "images/default%d.jpg" (index (seq 4 | shuffle) 0)) }}
+    {{ $webp := .Resize (printf "%dx%d webp" .Width .Height) }}
+    <picture>
+      <source srcset="{{ $webp.RelPermalink }}" type="image/webp" />
+      <img src="{{ .RelPermalink }}" alt="{{ .Title }}" />
+    </picture>
+    {{ end }}
   {{ end }}
   </figure>
 
