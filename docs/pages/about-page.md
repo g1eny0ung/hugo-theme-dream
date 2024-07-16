@@ -1,6 +1,6 @@
 # About Page
 
-In [Quick Start](./quick-start.md), we added **About Me** as below:
+In [Quick Start](/), we added **About Me** as below:
 
 ```bash
 hugo new about/me.md
