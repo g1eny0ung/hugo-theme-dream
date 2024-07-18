@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- Upgrate `imagesloaded` to `5.0.0`
+- Upgrade `imagesloaded` to `5.0.0`
 
 ### Fixed
 
