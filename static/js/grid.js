@@ -5,7 +5,7 @@ function initGrid() {
     var m = new Masonry(grid, {
       itemSelector: '.dream-column'
     });
-    imagesLoaded(grid).on('process', function () {
+    imagesLoaded(grid, function () {
       return m.masonry('layout');
     });
     if (window.hasTwitterEmbed) {

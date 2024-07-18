@@ -4,7 +4,7 @@ function initGrid() {
       itemSelector: '.dream-column',
     })
 
-    imagesLoaded(grid).on('process', () => m.masonry('layout'))
+    imagesLoaded(grid, () => m.masonry('layout'))
 
     if (window.hasTwitterEmbed) {
       window.twttr.ready((twttr) => twttr.events.bind('loaded', () => m.masonry('layout')))
