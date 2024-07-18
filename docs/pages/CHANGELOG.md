@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [3.1.0] - 2024-07-18
+
+### Added
+
+- Support image optimization for summary images. See [Image Optimization](https://g1en.site/hugo-theme-dream/summary-images#image-optimization) for more details.
+
+### Changed
+
+- Upgrate `imagesloaded` to `5.0.0`
+
+### Fixed
+
+- Fix the problem of misaligned images during initial loading
+
 ## [3.0.1] - 2024-07-12
 
 ### Fixed
