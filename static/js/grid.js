@@ -2,16 +2,16 @@
 
 function initGrid() {
   document.querySelectorAll('.dream-grid').forEach(function (grid) {
-    var m = new Masonry(grid, {
+    var msnry = new Masonry(grid, {
       itemSelector: '.dream-column'
     });
     imagesLoaded(grid, function () {
-      return m.masonry('layout');
+      return msnry.layout();
     });
     if (window.hasTwitterEmbed) {
       window.twttr.ready(function (twttr) {
         return twttr.events.bind('loaded', function () {
-          return m.masonry('layout');
+          return msnry.layout();
         });
       });
     }
