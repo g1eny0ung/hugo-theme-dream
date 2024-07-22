@@ -2,7 +2,7 @@
 <nav x-data="{ isSticky: false }"
   x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })"
   class="sticky top-0 z-30 mt-4 lg:mt-8 pt-4 pb-4"
-  :class="{ 'transition bg-base-100 shadow-xl dark:border-b dark:border-base-content/30': isSticky }">
+  :class="{ 'transition bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }">
 {{ else }}
 <nav class="mt-4 lg:mt-8 pt-4 pb-4">
 {{ end }}
@@ -32,7 +32,7 @@
       <div tabindex="0" role="button" class="btn btn-ghost btn-square">
         <ion-icon name="menu-outline" size="large"></ion-icon>
       </div>
-      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow">
+      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md">
         {{ partial "navRightMobile.html" . }}
       </ul>
     </div>
