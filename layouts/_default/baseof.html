@@ -29,7 +29,7 @@
 
     <div class="flip-container" :class="{ 'flip-it': flip }">
       <div class="flipper">
-        <section class="front">
+        <div class="front">
           <div class="container">
             {{ block "main" . }} {{ end }}
 
@@ -38,12 +38,12 @@
               {{ partial "footerRight.html" . }}
             </footer>
           </div>
-        </section>
-        <section class="back">
+        </div>
+        <div class="back">
           <div class="container">
             {{ partial "back.html" . }}
           </div>
-        </section>
+        </div>
       </div>
     </div>
 

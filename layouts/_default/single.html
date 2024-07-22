@@ -26,7 +26,7 @@
 
 {{ define "main" }}
 <div class="mt-4 px-4">
-  <section class="mx-auto prose dark:prose-invert" id="dream-single-page">
+  <article class="mx-auto prose dark:prose-invert" id="dream-single-page">
     <header>
       <h1>{{ .Title }}</h1>
       <p class="text-sm">
@@ -74,14 +74,12 @@
       </div>
     </header>
 
-    <main>
-      {{ if and .Params.Cover site.Params.showSummaryCoverInPost }}
-      <img src="{{ .Params.Cover }}" />
-      {{ end }}
+    {{ if and .Params.Cover site.Params.showSummaryCoverInPost }}
+    <img src="{{ .Params.Cover }}" />
+    {{ end }}
 
-      {{ .Content | emojify }}
-    </main>
-  </section>
+    {{ .Content | emojify }}
+  </article>
 
   {{ $disqusShortname := (or site.Config.Services.Disqus.Shortname site.DisqusShortname) }}
 
