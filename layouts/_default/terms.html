@@ -31,9 +31,11 @@
     {{ .Render "term-summary" }}
     {{ end }}
 
+    {{ if gt $paginator.TotalPages 1 }}
     <div class="flex justify-center pt-8">
       {{ partial "paginator.html" (dict "paginator" $paginator) }}
     </div>
+    {{ end }}
   </div>
 </div>
 
