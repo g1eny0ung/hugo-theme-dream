@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [3.1.1] - 2024-07-23
+
+### Changed
+
+- Adjust shadow style of navbar
+- Now if a paginator has only one page, the previous and next buttons will be hidden
+
+### Fixed
+
+- Correct the usage of semantic elements in `baseof.html` and `single.html`
+
 ## [3.1.0] - 2024-07-18
 
 ### Added
