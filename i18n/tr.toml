@@ -28,10 +28,6 @@ other = "{{ .Count }} kategori"
 one = "1 makale"
 other = "{{ .Count }} makale"
 
-[group]
-one = "1 grup"
-other = "{{ .Count }} grup"
-
 [socialLinks]
 other = "Sosyal Bağlantılar"
 
