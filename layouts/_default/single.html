@@ -80,6 +80,7 @@
 
     {{ .Content | emojify }}
 
+    {{ if site.Params.showPrevNextPost }}
     <div class="divider"></div>
     <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
       {{ with .NextInSection }}
@@ -106,6 +107,7 @@
       <div></div>
       {{ end }}
     </div>
+    {{ end }}
   </article>
 
   {{ $disqusShortname := (or site.Config.Services.Disqus.Shortname site.DisqusShortname) }}
