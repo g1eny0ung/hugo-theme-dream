@@ -3306,6 +3306,10 @@ html {
   width: 100%;
 }
 
+.max-w-48 {
+  max-width: 12rem;
+}
+
 .max-w-\[65ch\] {
   max-width: 65ch;
 }
@@ -3332,6 +3336,14 @@ html {
 
 .flex-wrap {
   flex-wrap: wrap;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
 }
 
 .items-center {
@@ -3362,6 +3374,12 @@ html {
 
 .\!justify-self-start {
   justify-self: start !important;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .rounded-box {
@@ -3422,12 +3440,9 @@ html {
   padding-bottom: 3rem;
 }
 
-.pb-4 {
-  padding-bottom: 1rem;
-}
-
-.pt-4 {
+.py-4 {
   padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .pt-8 {
@@ -3452,6 +3467,15 @@ html {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.font-normal {
+  font-weight: 400;
 }
 
 .font-semibold {
@@ -3637,6 +3661,10 @@ html {
 
 .hover\:underline:hover {
   text-decoration-line: underline;
+}
+
+.group:hover .group-hover\:text-neutral-content\/60 {
+  color: var(--fallback-nc,oklch(var(--nc)/0.6));
 }
 
 .group:hover .group-hover\:text-primary-content {
