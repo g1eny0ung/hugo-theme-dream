@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+None.
+
+## [3.2.0] - 2024-07-25
+
 ### Added
 
 - Add `showPrevNextPost` param to control the display of previous and next post links in the single post page
