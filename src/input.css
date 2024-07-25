@@ -55,3 +55,11 @@
     transform: rotateY(180deg);
   }
 }
+
+#TableOfContents {
+  @apply sticky top-24;
+}
+
+#TableOfContents ul {
+  @apply menu menu-sm;
+}

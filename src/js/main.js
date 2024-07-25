@@ -62,7 +62,7 @@ document.addEventListener('alpine:init', () => {
     },
 
     changeSyntaxHighlightingTheme() {
-      if (document.querySelector('#dream-single-page')) {
+      if (document.querySelector('#dream-single-post-main')) {
         const customSyntaxHighlightingUrl = this.isDark()
           ? window.customSyntaxHighlighting.dark
           : window.customSyntaxHighlighting.light

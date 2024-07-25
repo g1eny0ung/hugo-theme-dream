@@ -26,89 +26,100 @@
 
 {{ define "main" }}
 <div class="mt-4 px-4">
-  <article class="mx-auto prose dark:prose-invert" id="dream-single-page">
-    <header>
-      <h1>{{ .Title }}</h1>
-      <p class="text-sm">
-        {{ if site.Params.Experimental.jsDate }}
-          <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
-        {{ else }}
-          {{ if eq site.Language.Lang "zh" }}
-            {{ index site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}，{{ index site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
-          {{ else if eq site.Language.Lang "es" }}
-            {{ index site.Data.es.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index site.Data.es.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
-          {{ else if eq site.Language.Lang "pt" }}
-            {{ index site.Data.pt.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index site.Data.pt.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
-          {{ else if eq site.Language.Lang "fr" }}
-            {{ index site.Data.fr.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index site.Data.fr.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
-          {{ else }}
-            {{ .Date.Format "Monday, Jan 2, 2006" }}
-          {{ end }}
-        {{ end }}
-
-        | <span>{{ .ReadingTime }}{{ T "minuteRead" .ReadingTime }}</span>
-
-        {{ if ne .Params.nolastmod true }}
-        | <span>{{ T "updateAt" }}
+  {{ if site.Params.showTableOfContents }}
+  <div class="relative" x-data="{ height: '' }" x-init="height = $el.scrollHeight + 'px'">
+  {{ else }}
+  <div>
+  {{ end }}
+    {{ if site.Params.showTableOfContents }}
+    <div class="absolute right-0 lg:w-36 xl:w-48 hidden lg:block" :style="{ height }">
+      {{ .TableOfContents }}
+    </div>
+    {{ end }}
+    <article class="mx-auto prose dark:prose-invert" id="dream-single-post-main">
+      <header>
+        <h1>{{ .Title }}</h1>
+        <p class="text-sm">
           {{ if site.Params.Experimental.jsDate }}
-            <span data-format="luxon">{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}</span>
+            <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
           {{ else }}
             {{ if eq site.Language.Lang "zh" }}
-              {{ index site.Data.zh.Weekday (printf "%d" .Lastmod.Weekday) }}，{{ index site.Data.zh.Month (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Day }} 日，{{ .Lastmod.Year }} 年
+              {{ index site.Data.zh.Weekday (printf "%d" .Date.Weekday) }}，{{ index site.Data.zh.Month (printf "%d" .Date.Month) }} {{ .Date.Day }} 日，{{ .Date.Year }} 年
             {{ else if eq site.Language.Lang "es" }}
-              {{ index site.Data.es.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index site.Data.es.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
+              {{ index site.Data.es.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index site.Data.es.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
             {{ else if eq site.Language.Lang "pt" }}
-              {{ index site.Data.pt.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index site.Data.pt.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
+              {{ index site.Data.pt.Weekday (printf "%d" .Date.Weekday) }}, {{ .Date.Day }} de {{ index site.Data.pt.Month (printf "%d" .Date.Month) }} de {{ .Date.Year }}
             {{ else if eq site.Language.Lang "fr" }}
               {{ index site.Data.fr.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index site.Data.fr.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
             {{ else }}
-              {{ .Lastmod.Format "Monday, Jan 2, 2006" }}
+              {{ .Date.Format "Monday, Jan 2, 2006" }}
             {{ end }}
-          {{ end }}</span>
+          {{ end }}
+
+          | <span>{{ .ReadingTime }}{{ T "minuteRead" .ReadingTime }}</span>
+
+          {{ if ne .Params.nolastmod true }}
+          | <span>{{ T "updateAt" }}
+            {{ if site.Params.Experimental.jsDate }}
+              <span data-format="luxon">{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}</span>
+            {{ else }}
+              {{ if eq site.Language.Lang "zh" }}
+                {{ index site.Data.zh.Weekday (printf "%d" .Lastmod.Weekday) }}，{{ index site.Data.zh.Month (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Day }} 日，{{ .Lastmod.Year }} 年
+              {{ else if eq site.Language.Lang "es" }}
+                {{ index site.Data.es.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index site.Data.es.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
+              {{ else if eq site.Language.Lang "pt" }}
+                {{ index site.Data.pt.Weekday (printf "%d" .Lastmod.Weekday) }}, {{ .Lastmod.Day }} de {{ index site.Data.pt.Month (printf "%d" .Lastmod.Month) }} de {{ .Lastmod.Year }}
+              {{ else if eq site.Language.Lang "fr" }}
+                {{ index site.Data.fr.Weekday (printf "%d" .Date.Weekday) }} {{ .Date.Day }} {{ index site.Data.fr.Month (printf "%d" .Date.Month) }} {{ .Date.Year }}
+              {{ else }}
+                {{ .Lastmod.Format "Monday, Jan 2, 2006" }}
+              {{ end }}
+            {{ end }}</span>
+          {{ end }}
+        </p>
+        <div class="flex justify-between">
+          {{ partial "author.html" (dict "Params" .Params "template" "single") }}
+
+          {{ partial "share.html" . }}
+        </div>
+      </header>
+
+      {{ if and .Params.Cover site.Params.showSummaryCoverInPost }}
+      <img src="{{ .Params.Cover }}" />
+      {{ end }}
+
+      {{ .Content | emojify }}
+
+      {{ if site.Params.showPrevNextPost }}
+      <div class="divider"></div>
+      <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
+        {{ with .NextInSection }}
+        <a class="group btn btn-outline" href="{{ .RelPermalink }}" title="{{ .Title }}">
+          <ion-icon name="chevron-back"></ion-icon>
+          <div class="inline-flex flex-col items-start">
+            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">{{ T "prevPage" }}</span>
+            <span class="max-w-48 truncate">{{ .LinkTitle }}</span>
+          </div>
+        </a>
+        {{ else }}
+        <div></div>
         {{ end }}
-      </p>
-      <div class="flex justify-between">
-        {{ partial "author.html" (dict "Params" .Params "template" "single") }}
 
-        {{ partial "share.html" . }}
+        {{ with .PrevInSection }}
+        <a class="group btn btn-outline" href="{{ .RelPermalink }}" title="{{ .Title }}">
+          <div class="inline-flex flex-col items-end">
+            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">{{ T "nextPage" }}</span>
+            <span class="max-w-48 truncate">{{ .LinkTitle }}</span>
+          </div>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </a>
+        {{ else }}
+        <div></div>
+        {{ end }}
       </div>
-    </header>
-
-    {{ if and .Params.Cover site.Params.showSummaryCoverInPost }}
-    <img src="{{ .Params.Cover }}" />
-    {{ end }}
-
-    {{ .Content | emojify }}
-
-    {{ if site.Params.showPrevNextPost }}
-    <div class="divider"></div>
-    <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
-      {{ with .NextInSection }}
-      <a class="group btn btn-outline" href="{{ .RelPermalink }}" title="{{ .Title }}">
-        <ion-icon name="chevron-back"></ion-icon>
-        <div class="inline-flex flex-col items-start">
-          <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">{{ T "prevPage" }}</span>
-          <span class="max-w-48 truncate">{{ .LinkTitle }}</span>
-        </div>
-      </a>
-      {{ else }}
-      <div></div>
       {{ end }}
-
-      {{ with .PrevInSection }}
-      <a class="group btn btn-outline" href="{{ .RelPermalink }}" title="{{ .Title }}">
-        <div class="inline-flex flex-col items-end">
-          <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">{{ T "nextPage" }}</span>
-          <span class="max-w-48 truncate">{{ .LinkTitle }}</span>
-        </div>
-        <ion-icon name="chevron-forward"></ion-icon>
-      </a>
-      {{ else }}
-      <div></div>
-      {{ end }}
-    </div>
-    {{ end }}
-  </article>
+    </article>
+  </div>
 
   {{ $disqusShortname := (or site.Config.Services.Disqus.Shortname site.DisqusShortname) }}
 
