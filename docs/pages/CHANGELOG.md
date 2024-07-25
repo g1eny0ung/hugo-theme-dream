@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - Add `showPrevNextPost` param to control the display of previous and next post links in the single post page
+- Add `showTableOfContents` param to control the display of the table of contents in the single post page
 
 ## [3.1.1] - 2024-07-23
 

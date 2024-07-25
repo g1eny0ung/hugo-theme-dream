@@ -45,6 +45,7 @@ siteStartYear = 2016
 
 # options
 # stickyNav = true
+# showTableOfContents = true
 # showSummaryCoverInPost = true
 # showPrevNextPost = true
 # hasTwitterEmbed = true
