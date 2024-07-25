@@ -24,7 +24,6 @@ module.exports = {
       },
     },
   },
-  safelist: ['dark:border-b'],
   plugins: [require('@tailwindcss/typography'), require('daisyui')],
   darkMode: ['selector'],
   daisyui: {
