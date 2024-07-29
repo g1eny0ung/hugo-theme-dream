@@ -6,7 +6,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ block "title" . }} {{- T "home" -}} {{ end }} | {{ .Site.Title }}</title>
+    <title>{{ block "title" . -}} {{ T "home" }} {{- end }} | {{ .Site.Title }}</title>
 
     {{ partial "head.html" . }}
 

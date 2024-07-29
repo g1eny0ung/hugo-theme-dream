@@ -14,18 +14,8 @@
     </p>
     <div class="flex flex-wrap gap-4 mt-6">
       {{ $data := .Data }}
-      {{ $singular := $data.Singular }}
-      {{ $pages := slice }}
 
-      {{ if eq $singular "category" }}
-      {{ $pages = site.Taxonomies.categories }}
-      {{ end }}
-
-      {{ if eq $singular "tag" }}
-      {{ $pages = site.Taxonomies.tags }}
-      {{ end }}
-
-      {{ range $pages.Alphabetical }}
+      {{ range (index site.Taxonomies .Data.Plural).Alphabetical }}
       {{ if eq .Page.Title $data.Term }}
       <span class="badge h-6 badge-primary">
         {{ .Page.Title }}
