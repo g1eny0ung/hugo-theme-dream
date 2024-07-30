@@ -14,12 +14,12 @@ theme = "hugo-theme-dream"
 lightTheme = "emerald"
 darkTheme = "forest"
 
-# backgroundImage = "/me/background.jpg"
+# backgroundImage = "me/background.jpg"
 # backgroundImageDark = ""
 
 author = "Dream"
 # description = ""
-# avatar = "/img/avatar.png"
+# avatar = "img/avatar.png"
 headerTitle = "Hugo Theme Dream"
 # motto = ""
 
@@ -38,7 +38,7 @@ headerTitle = "Hugo Theme Dream"
 
 siteStartYear = 2016
 
-# favicon = "/favicon.ico"
+# favicon = "favicon.ico"
 
 # Syntax highlighting
 # customSyntaxHighlighting = true
