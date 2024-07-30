@@ -2,7 +2,10 @@ import { Callout } from 'nextra/components'
 
 # Syntax highlighting
 
-Setting `customSyntaxHighlighting = true` will enable syntax highlighting in posts.
+If you don't like the default syntax highlighting provided by Hugo,
+Setting `customSyntaxHighlighting = true` will enable the custom syntax highlighting provided by Chroma.
+
+```toml
 
 <Callout type="info">
 You still need to set below configuration in your `hugo.toml`:
@@ -16,7 +19,7 @@ noClasses = false
 This makes sure that the generated HTML uses classes for syntax highlighting, not inline styles.
 </Callout>
 
-You will also need to specify what themes you want to use and generate them. They need to follow some established format:
+Then you need to specify what themes you want to use and generate them. They need to follow below established rules:
 
 - You must generate separate themes for light and dark modes
 - They must be named `syntax-light.css` and `syntax-dark.css`
@@ -25,6 +28,7 @@ You will also need to specify what themes you want to use and generate them. The
 For example, you can generate them using the following command:
 
 ```bash
+# In your project directory.
 hugo gen chromastyles --style=github > assets/css/syntax-light.css
 hugo gen chromastyles --style=github-dark > assets/css/syntax-dark.css
 ```
