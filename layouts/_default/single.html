@@ -16,6 +16,13 @@
     background-color: var(--dream-pre-bg-dark, #262626);
   }
 </style>
+{{ else }}
+<style>
+  pre {
+    padding: 1em;
+    overflow: auto;
+  }
+</style>
 {{ end }}
 
 {{ if site.Params.valine }}
