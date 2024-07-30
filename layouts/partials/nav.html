@@ -10,14 +10,14 @@
     <section class="flex items-center gap-4">
       <div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="{{ T "flip" }}">
         <div class="h-10 rounded-full">
-          <img src="{{ site.Params.avatar | relURL }}" alt="{{ site.Params.headerTitle }}" />
+          <img src="{{ site.Params.avatar | absURL }}" alt="{{ site.Params.headerTitle }}" />
         </div>
       </div>
 
       {{ if or site.Params.headerTitle site.Params.motto }}
       <div>
         {{ if site.Params.headerTitle }}
-        <a href="{{ site.BaseURL }}" class="text-lg font-semibold cursor-pointer">
+        <a href="{{ site.BaseURL | absURL }}" class="text-lg font-semibold cursor-pointer">
           {{ site.Params.headerTitle }}
         </a>
         {{ end }}

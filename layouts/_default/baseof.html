@@ -13,7 +13,7 @@
     {{ block "css" . }} {{ end }}
 
     {{ range .Site.Params.Advanced.customCSS }}
-    <link rel="stylesheet" href="{{ . | relURL }}" />
+    <link rel="stylesheet" href="{{ . | absURL }}" />
     {{ end }}
 
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -51,7 +51,7 @@
     {{ block "js" . }} {{ end }}
 
     {{ range .Site.Params.Advanced.customJS }}
-    <script src="{{ . | relURL }}"></script>
+    <script src="{{ . | absURL }}"></script>
     {{ end }}
 
     {{ if site.Config.Services.GoogleAnalytics.ID }}
