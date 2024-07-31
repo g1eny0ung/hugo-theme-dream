@@ -1,5 +1,5 @@
 {{ if isset site.Params "favicon" }}
-<link href="{{ site.Params.favicon }}" rel="shortcut icon" type="image/x-icon" />
+<link href="{{ site.Params.favicon | relURL }}" rel="shortcut icon" type="image/x-icon" />
 {{ end }}
 
 {{ if eq .Type "posts" }}
@@ -23,18 +23,18 @@
 <!-- Site Generator -->
 {{ hugo.Generator }}
 
-<link rel="stylesheet" href="{{ "/css/output.css" | relURL }}" />
+<link rel="stylesheet" href="{{ "css/output.css" | relURL }}" />
 
 <style>
 {{ if site.Params.backgroundImage }}
 #dream-global-bg {
-  background-image: url({{ site.Params.backgroundImage }});
+  background-image: url({{ site.Params.backgroundImage | relURL }});
 }
 {{ end }}
 
 {{ if site.Params.backgroundImageDark }}
 html.dark #dream-global-bg {
-  background-image: url({{ site.Params.backgroundImageDark }});
+  background-image: url({{ site.Params.backgroundImageDark | relURL }});
 }
 {{ end }}
 </style>
