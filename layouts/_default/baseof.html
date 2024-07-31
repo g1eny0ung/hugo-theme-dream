@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}"
+<html lang="{{ site.LanguageCode }}"
   x-data
   :class="$store.darkMode.class()"
   :data-theme="$store.darkMode.theme()">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ block "title" . -}} {{ T "home" }} {{- end }} | {{ .Site.Title }}</title>
+    <title>{{ block "title" . -}} {{ T "home" }} {{- end }} | {{ site.Title }}</title>
 
     {{ partial "head.html" . }}
 
     {{ block "css" . }} {{ end }}
 
-    {{ range .Site.Params.Advanced.customCSS }}
+    {{ range site.Params.Advanced.customCSS }}
     <link rel="stylesheet" href="{{ . | relURL }}" />
     {{ end }}
 
@@ -50,7 +50,7 @@
     {{ partial "scripts.html" . }}
     {{ block "js" . }} {{ end }}
 
-    {{ range .Site.Params.Advanced.customJS }}
+    {{ range site.Params.Advanced.customJS }}
     <script src="{{ . | relURL }}"></script>
     {{ end }}
 

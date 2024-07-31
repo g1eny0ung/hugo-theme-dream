@@ -26,15 +26,15 @@
 <link rel="stylesheet" href="{{ "/css/output.css" | relURL }}" />
 
 <style>
-{{ if .Site.Params.backgroundImage }}
+{{ if site.Params.backgroundImage }}
 #dream-global-bg {
-  background-image: url({{ .Site.Params.backgroundImage }});
+  background-image: url({{ site.Params.backgroundImage }});
 }
 {{ end }}
 
-{{ if .Site.Params.backgroundImageDark }}
+{{ if site.Params.backgroundImageDark }}
 html.dark #dream-global-bg {
-  background-image: url({{ .Site.Params.backgroundImageDark }});
+  background-image: url({{ site.Params.backgroundImageDark }});
 }
 {{ end }}
 </style>

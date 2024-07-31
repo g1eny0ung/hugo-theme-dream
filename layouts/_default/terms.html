@@ -46,7 +46,7 @@
 
 {{ define "js" }}
 
-{{ if .Site.Params.Experimental.jsDate }}
+{{ if site.Params.Experimental.jsDate }}
 {{ partial "luxon.html" . }}
 {{ end }}
 

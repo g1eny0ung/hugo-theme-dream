@@ -10,7 +10,7 @@
     document.querySelectorAll('span[data-format="luxon"]').forEach(el => {
       const date = el.textContent
 
-      el.textContent = luxon.DateTime.fromISO(date, { locale: {{ .Site.Language.Lang }} }).toFormat({{ .Site.Params.Experimental.jsDateFormat | default "yyyy-MM-dd" }})
+      el.textContent = luxon.DateTime.fromISO(date, { locale: {{ site.Language.Lang }} }).toFormat({{ site.Params.Experimental.jsDateFormat | default "yyyy-MM-dd" }})
     })
   }
 </script>

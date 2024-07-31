@@ -1,6 +1,6 @@
 {{ define "main"}}
 
-{{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
+{{ $paginator := .Paginate (where site.RegularPages "Type" "posts") }}
 
 <div class="dream-grid">
   {{ range $paginator.Pages }}
@@ -20,7 +20,7 @@
 
 {{ define "js" }}
 
-{{ if .Site.Params.Experimental.jsDate }}
+{{ if site.Params.Experimental.jsDate }}
 {{ partial "luxon.html" . }}
 {{ end }}
 
