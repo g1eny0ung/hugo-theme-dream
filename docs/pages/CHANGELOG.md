@@ -9,6 +9,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 None.
 
+## [3.3.0] - 2024-08-01
+
+### Added
+
+- Support arbitrary taxonomies [#292](https://github.com/g1eny0ung/hugo-theme-dream/pull/292)
+
+### Fixed
+
+- Fix the overflow problem of pre's content
+- Fix an overflow problem when users enable always show scroll bars in the system settings
+- Resources accessibility when deploying site to a subdomain [#295](https://github.com/g1eny0ung/hugo-theme-dream/pull/295)
+
 ## [3.2.0] - 2024-07-25
 
 ### Added
