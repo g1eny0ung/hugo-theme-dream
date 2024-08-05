@@ -9,7 +9,7 @@
   "scripts": {
     "css": "tailwindcss -i ./src/input.css -o ./static/css/output.css",
     "js": "babel src --out-dir static --presets=@babel/preset-env",
-    "build": "npm run css && npm run js",
+    "build": "npm run css -- --minify && npm run js",
     "watch": "conc \"npm:css -- -w\" \"npm:js -- -w\""
   },
   "devDependencies": {
