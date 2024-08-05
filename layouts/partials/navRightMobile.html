@@ -19,8 +19,6 @@
 </li>
 {{ end }}
 
-{{ partial "navVRTTaxonomies.html" . }}
-
 {{ if site.Params.rss }}
 <li>
   <a class="inline-flex items-center p-2 cursor-pointer" href="{{ "index.xml" | relLangURL }}" title="RSS">
@@ -29,3 +27,5 @@
   </a>
 </li>
 {{ end }}
+
+{{ partial "navVRTTaxonomies.html" . }}

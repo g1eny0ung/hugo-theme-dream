@@ -52,6 +52,12 @@
       </a>
       {{ end }}
 
+      {{ if site.Params.rss }}
+      <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="{{ "index.xml" | relLangURL }}" title="RSS">
+        <ion-icon class="group-hover:text-primary-content" name="logo-rss"></ion-icon>
+      </a>
+      {{ end }}
+
       {{ if site.Params.collapseNavTaxonomies }}
       <div class="dropdown dropdown-end dropdown-hover">
         <div tabindex="0" role="button" class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" aria-label="Select an option">
@@ -79,12 +85,6 @@
         <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
       </a>
       {{ end }}
-      {{ end }}
-
-      {{ if site.Params.rss }}
-      <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="{{ "index.xml" | relLangURL }}" title="RSS">
-        <ion-icon class="group-hover:text-primary-content" name="logo-rss"></ion-icon>
-      </a>
       {{ end }}
     </section>
   </div>
