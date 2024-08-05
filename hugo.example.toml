@@ -1,6 +1,6 @@
 baseurl = "https://example.com"
-languageCode = "en"
 defaultContentLanguage = "en"
+languageCode = "en"
 title = "Hugo Theme Dream"
 theme = "hugo-theme-dream"
 

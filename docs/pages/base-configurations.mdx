@@ -1,0 +1,40 @@
+import { Callout } from 'nextra/components'
+
+# Base Configurations
+
+<Callout type="info">
+This doc only introduces some settings that are commonly used in most Hugo sites.
+
+Please view the [full configuration](https://gohugo.io/getting-started/configuration/#all-configuration-settings) for more details.
+</Callout>
+
+## Basic
+
+### baseURL = "https://g1en.site"
+
+The absolute URL (protocol, host, path, and trailing slash) of your published site.
+
+### defaultContentLanguage = "zh"
+
+Content without language indicator will default to this language. Default is `en`.
+
+### languageCode = "zh-Hans"
+
+LanguageCode is used to set the `lang` attribute in the `<html>` tag. It will also be:
+
+- Used in RSS
+- Used in the `og:locale` meta tag
+
+### title = "g1eny0ung 的博客"
+
+The site title.
+
+## Extra
+
+### enableRobotsTXT = true
+
+Optional. View https://en.wikipedia.org/wiki/Robots.txt to learn more about the `robots.txt` file.
+
+### hasCJKLanguage = true
+
+As my blog was written in Chinese, I need to set this to correct the `{{ .ReadingTime }}` of the post.
