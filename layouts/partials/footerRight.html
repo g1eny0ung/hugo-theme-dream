@@ -10,6 +10,7 @@
     <div
       role="button"
       tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
       class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
       :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
       @click="$store.darkMode.toggle(icon.status)"
