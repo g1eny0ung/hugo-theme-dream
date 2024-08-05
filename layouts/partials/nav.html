@@ -29,8 +29,8 @@
     </section>
 
     <div class="dropdown dropdown-end sm:hidden">
-      <div tabindex="0" role="button" class="btn btn-ghost btn-square">
-        <ion-icon name="menu-outline" size="large"></ion-icon>
+      <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
+        <ion-icon name="menu" class="text-2xl"></ion-icon>
       </div>
       <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md">
         {{ partial "navRightMobile.html" . }}
@@ -52,6 +52,16 @@
       </a>
       {{ end }}
 
+      {{ if site.Params.collapseNavTaxonomies }}
+      <div class="dropdown dropdown-end dropdown-hover">
+        <div tabindex="0" role="button" class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" aria-label="Select an option">
+          <ion-icon class="group-hover:text-primary-content text-xl" name="menu"></ion-icon>
+        </div>
+        <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-xl">
+          {{ partial "navVRTTaxonomies.html" . }}
+        </ul>
+      </div>
+      {{ else }}
       {{ if gt (len (where site.RegularPages "Type" "posts")) 0 }}
       <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="{{ "posts" | relLangURL }}" title="{{ T "archives" }}">
         <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
@@ -68,6 +78,7 @@
       <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="{{ "tags" | relLangURL }}" title="{{ T "allTags" }}">
         <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
       </a>
+      {{ end }}
       {{ end }}
 
       {{ if site.Params.rss }}
