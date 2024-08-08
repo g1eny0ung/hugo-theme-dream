@@ -1,0 +1,16 @@
+{{ $customItems := site.Params.navItems }}
+{{ $keys := slice }}
+
+{{ range $k, $v := $customItems }}
+{{ $keys = $keys | append $k }}
+{{ end }}
+
+{{ $restNavItems := complement .navItems $keys }}
+{{ $mobile := .mobile }}
+{{ range $restNavItems }}
+  {{ if $mobile }}
+    {{ partial "renderMobileNavItem.html" . }}
+  {{ else }}
+    {{ partial "renderNavItem.html" . }}
+  {{ end }}
+{{ end }}

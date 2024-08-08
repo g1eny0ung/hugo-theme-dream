@@ -45,7 +45,7 @@ siteStartYear = 2016
 
 # options
 # stickyNav = true
-# collapseNavTaxonomies = true
+# collapseNavItems = true
 # showTableOfContents = true
 # showSummaryCoverInPost = true
 # showPrevNextPost = true
