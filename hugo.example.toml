@@ -45,11 +45,14 @@ siteStartYear = 2016
 
 # options
 # stickyNav = true
-# collapseNavTaxonomies = true
+# reorderNavItems = ["search", "rss", "posts", "categories", "tags"]
+# collapseNavItems = ["posts", "categories", "tags"]
 # showTableOfContents = true
 # showSummaryCoverInPost = true
 # showPrevNextPost = true
 # hasTwitterEmbed = true
+
+# [params.navItems]
 
 # [params.advanced]
 # customCSS = ["css/custom.css"]

@@ -1,0 +1,51 @@
+import { Callout } from 'nextra/components'
+
+# Append Custom Items to the Navbar
+
+This doc will guide you on how to append custom items to the navbar.
+
+You can add arbitrary items to the navbar by setting
+the `[params.navItems]` in your `hugo.toml`, below is an example:
+
+<Callout>
+  For a good visual experience, it is recommended not to add too many customisation items, i.e. just highlight the
+  navigation items you want the user to see.
+</Callout>
+
+```toml
+[params]
+[params.navItems]
+series = { href = "/series", icon = "planet", title = "Series" }
+github = { href = "https://github.com/g1eny0ung", target = "_blank", icon = "logo-github", title = "GitHub" }
+```
+
+In this example, we define two keys `series` and `github` under `params.navItems`,
+Dream will find them and append them to the navbar by default.
+
+You can also reorder custom items with the default items by setting the `reorderNavItems` parameter in your `hugo.toml`:
+
+```toml
+reorderNavItems = ["github", "search", "rss", "posts", "categories", "tags", "series"]
+```
+
+The same goes for `collapseNavItems`, you can also collapse custom items to a dropdown menu:
+
+```toml
+collapseNavItems = ["series"]
+```
+
+The next section will describe the properties in the sub-tables we used in the example before.
+
+## Properties
+
+Each sub-table (object) can have the following properties.
+
+### Required
+
+- `href`: The URL of the item.
+- `title`: The title of the item.
+
+### Optional
+
+- `target`: The target attribute of the item.
+- `icon`: The name of the icon. You can find available icons [here](https://ionic.io/ionicons).
