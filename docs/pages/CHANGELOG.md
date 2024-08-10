@@ -7,7 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-None.
+- Add `reorderNavItems` and `collapseNavItems` params to reorder and collapse navigation items
+- Add `[params.navItems]` to append custom items to the navbar
 
 ## [3.3.0] - 2024-08-01
 
