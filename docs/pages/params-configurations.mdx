@@ -44,7 +44,8 @@ customSyntaxHighlighting = true
 
 # options
 stickyNav = true
-# collapseNavTaxonomies = true
+# reorderNavItems = ["search", "rss", "posts", "categories", "tags"]
+# collapseNavItems = ["posts", "categories", "tags"]
 showTableOfContents = true
 showSummaryCoverInPost = true
 showPrevNextPost = true
@@ -119,6 +120,7 @@ Used to display text at the bottom of the site footer, below the `siteStartYear`
 If this field is not specified, the default text will be displayed as:
 
 `🌱 Powered by Hugo with theme Dream.`
+
 </Callout>
 
 ### rss
@@ -165,9 +167,45 @@ View [Syntax highlighting](syntax-highlighting.md) for more details.
 
 Make navbar sticky when scrolling.
 
-### collapseNavTaxonomies
+### reorderNavItems
 
-Collapse taxonomy links (include the link of archives) in the right side navbar.
+Reorder the navigation items.
+
+This parameter is **an array of strings**, the default value is:
+
+```toml
+reorderNavItems = ["search", "rss", "posts", "categories", "tags"]
+```
+
+<Callout type="info">
+  The names of these default items are fixed, and they are the navigation items provided by the Dream theme by default.
+</Callout>
+
+<Callout type="info">
+This parameter also allows you to remove the default navigation items.
+For example, you don't want to show the `rss` item, you can set the value as:
+
+`reorderNavItems = ["search", "posts", "categories", "tags"]`
+
+</Callout>
+
+For reordering custom navigation items, see [Custom Nav Items](custom-nav-items.md).
+
+### collapseNavItems
+
+<Callout>
+  In mobile, this parameter will not take effect because all navigation items will be collapsed into a dropdown menu.
+</Callout>
+
+Collapse specific navigation items to a dropdown menu.
+
+For example, if you want to collapse the `posts`, `categories`, and `tags` items, you can set the value as:
+
+```toml
+collapseNavItems = ["posts", "categories", "tags"]
+```
+
+For collapsing custom navigation items, see [Custom Nav Items](custom-nav-items.md).
 
 ### showTableOfContents
 
