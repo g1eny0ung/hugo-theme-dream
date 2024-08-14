@@ -32,7 +32,7 @@
       <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
         <ion-icon name="menu" class="text-2xl"></ion-icon>
       </div>
-      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md">
+      <ul class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md">
         {{ partial "navMobileMenu.html" . }}
       </ul>
     </div>
@@ -73,7 +73,7 @@
         <div tabindex="0" role="button" class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" aria-label="Select an option">
           <ion-icon class="group-hover:text-primary-content text-xl" name="menu"></ion-icon>
         </div>
-        <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-xl">
+        <ul class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-xl">
           {{ range $collapseNavItems }}
           {{ partial "renderMobileNavItem.html" . }}
           {{ end }}
