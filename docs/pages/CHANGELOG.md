@@ -7,9 +7,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+None.
+
+## [3.4.1] - 2024-08-14
+
 ### Added
 
 - Allow text-based custom nav items
+
+### Changed
+
+- Refactor the implementation of localized time [#298](https://github.com/g1eny0ung/hugo-theme-dream/pull/298)
 
 ## [3.4.0] - 2024-08-10
 
