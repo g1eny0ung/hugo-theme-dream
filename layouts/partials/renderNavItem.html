@@ -22,8 +22,14 @@
 {{ $navItems := site.Params.navItems }}
 {{ $item := index $navItems . }}
 {{ with $item }}
-<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="{{ .href }}" target="{{ .target }}" title="{{ .title }}">
-  <ion-icon class="group-hover:text-primary-content" name="{{ .icon }}"></ion-icon>
-</a>
+  {{ if .icon }}
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="{{ .href }}" target="{{ .target }}" title="{{ .title }}">
+    <ion-icon class="group-hover:text-primary-content" name="{{ .icon }}"></ion-icon>
+  </a>
+  {{ else if .title }}
+  <a class="text-sm font-semibold cursor-pointer hover:underline" href="{{ .href }}" target="{{ .target }}" title="{{ .title }}">
+    {{ .title }}
+  </a>
+  {{ end }}
 {{ end }}
 {{ end }}
