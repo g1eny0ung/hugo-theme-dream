@@ -1,0 +1,34 @@
+<a class="flex justify-between items-center gap-4" href="{{ .RelPermalink }}">
+  <div>
+    <h2 class="text-lg font-medium underline">{{ .Title }}</h2>
+    <span class="date text-base-content/60 text-sm">
+    {{ if site.Params.Experimental.jsDate }}
+      <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
+    {{ else }}
+      {{ .Date | time.Format "Monday, Jan 2, 2006" }}
+    {{ end }}
+    </span>
+  </div>
+
+  <figure>
+  {{ if .Params.cover }}
+    {{ with .Resources.Get .Params.cover }}
+    {{ $webp := .Resize (printf "%dx%d webp" .Width .Height) }}
+    <picture>
+      <source srcset="{{ $webp.RelPermalink }}" type="image/webp" />
+      <img class="w-24 max-w-none rounded-lg" src="{{ .RelPermalink }}" alt="{{ .Title }}" />
+    </picture>
+    {{ else }}
+    <img src="{{ .Params.cover }}" alt="{{ .Title }}" />
+    {{ end }}
+  {{ else }}
+    {{ with resources.Get (printf "images/default%d.jpg" (index (seq 4 | shuffle) 0)) }}
+    {{ $webp := .Resize (printf "%dx%d webp" .Width .Height) }}
+    <picture>
+      <source srcset="{{ $webp.RelPermalink }}" type="image/webp" />
+      <img src="{{ .RelPermalink }}" alt="{{ .Title }}" />
+    </picture>
+    {{ end }}
+  {{ end }}
+  </figure>
+</a>
