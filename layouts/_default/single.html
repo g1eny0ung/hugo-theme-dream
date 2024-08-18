@@ -108,9 +108,7 @@
     </article>
   </div>
 
-  {{ $disqusShortname := (or site.Config.Services.Disqus.Shortname site.DisqusShortname) }}
-
-  {{ if or $disqusShortname site.Params.utterancesRepo site.Params.valine }}
+  {{ if or site.Config.Services.Disqus.Shortname site.Params.utterancesRepo site.Params.valine }}
   <div class="divider max-w-[65ch] mx-auto"></div>
   {{ end }}
 
