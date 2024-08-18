@@ -14,7 +14,11 @@
   {{ end }}
 
   {{ if (fileExists "data/socials.toml") }}
+  {{ if and site.Config.Services.Disqus.Shortname .IsHome }}
   <div>
+  {{ else }}
+  <div class="pb-4">
+  {{ end }}
     <div class="mb-4 text-lg font-medium">{{ T "socialLinks" }}</div>
 
     {{ partialCached "socials.html" . }}
@@ -22,8 +26,9 @@
   {{ end }}
 
   {{ if and site.Config.Services.Disqus.Shortname .IsHome }}
-    <div class="divider divider-vertical"></div>
-
+  <div class="divider divider-vertical"></div>
+  <div class="pb-4">
     {{ partial "disqus.html" (dict "Context" . "Identifier" "/") }}
+  </div>
   {{ end }}
 </div>
