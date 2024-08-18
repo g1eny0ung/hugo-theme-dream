@@ -113,7 +113,7 @@
   {{ end }}
 
   <section class="max-w-[65ch] mx-auto space-y-4">
-    {{ if $disqusShortname }}
+    {{ if site.Config.Services.Disqus.Shortname }}
     <article>
       {{ partial "disqus.html" (dict "Context" . "Identifier" .RelPermalink) }}
     </article>
