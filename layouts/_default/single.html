@@ -108,14 +108,12 @@
     </article>
   </div>
 
-  {{ $disqusShortname := (or site.Config.Services.Disqus.Shortname site.DisqusShortname) }}
-
-  {{ if or $disqusShortname site.Params.utterancesRepo site.Params.valine }}
+  {{ if or site.Config.Services.Disqus.Shortname site.Params.utterancesRepo site.Params.valine }}
   <div class="divider max-w-[65ch] mx-auto"></div>
   {{ end }}
 
   <section class="max-w-[65ch] mx-auto space-y-4">
-    {{ if $disqusShortname }}
+    {{ if site.Config.Services.Disqus.Shortname }}
     <article>
       {{ partial "disqus.html" (dict "Context" . "Identifier" .RelPermalink) }}
     </article>
