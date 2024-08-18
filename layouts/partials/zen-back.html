@@ -21,8 +21,7 @@
   </div>
   {{ end }}
 
-  {{ $disqusShortname := (or site.Config.Services.Disqus.Shortname site.DisqusShortname) }}
-  {{ if and $disqusShortname .IsHome }}
+  {{ if and site.Config.Services.Disqus.Shortname .IsHome }}
     <div class="divider divider-vertical"></div>
 
     {{ partial "disqus.html" (dict "Context" . "Identifier" "/") }}
