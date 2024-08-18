@@ -1,0 +1,30 @@
+<div class="max-w-[65ch] mt-8 mx-auto px-4">
+  {{ with site.GetPage "/about" }}
+  {{ $aboutPages := .Resources.ByType "page" }}
+  {{ range (sort $aboutPages "Date" "asc") }}
+  <div>
+    <div class="mb-4 text-lg font-medium">{{ .Title }}</div>
+
+    <div class="prose dark:prose-invert">
+      {{ .Content | emojify }}
+    </div>
+  </div>
+  <div class="divider divider-vertical"></div>
+  {{ end }}
+  {{ end }}
+
+  {{ if (fileExists "data/socials.toml") }}
+  <div>
+    <div class="mb-4 text-lg font-medium">{{ T "socialLinks" }}</div>
+
+    {{ partialCached "socials.html" . }}
+  </div>
+  {{ end }}
+
+  {{ $disqusShortname := (or site.Config.Services.Disqus.Shortname site.DisqusShortname) }}
+  {{ if and $disqusShortname .IsHome }}
+    <div class="divider divider-vertical"></div>
+
+    {{ partial "disqus.html" (dict "Context" . "Identifier" "/") }}
+  {{ end }}
+</div>
