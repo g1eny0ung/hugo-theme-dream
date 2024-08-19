@@ -9,6 +9,27 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 None.
 
+## [3.5.0] - 2024-08-19
+
+🍃 Hugo Theme Dream 3.5 introduces Zen mode. View [Zen Mode](./zen-mode.mdx) for more details.
+
+### Added
+
+- Zen mode: a simple layout that allows you to concentrate on reading and writing [#299](https://github.com/g1eny0ung/hugo-theme-dream/pull/299)
+
+### Changed
+
+- Now taxonomy pages follow the same layout as the home page
+
+### Deprecated
+
+- If you still use `disqusShortname`, please replace it with `services.disqus.shortname`
+
+### Fixed
+
+- Fix height of `.flip-container` class
+- Fix tabindex issue in nav menu
+
 ## [3.4.1] - 2024-08-14
 
 ### Added
