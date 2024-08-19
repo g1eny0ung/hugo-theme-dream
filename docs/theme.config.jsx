@@ -31,9 +31,9 @@ export default {
     ),
   },
   banner: {
-    key: '3.0-release',
+    key: 'zen-mode',
     text: (
-      <a href="https://g1en.site/hugo-theme-dream/migrate-to-v3">🎉 Hugo Theme Dream 3.0 is released. Read more →</a>
+      <a href="https://g1en.site/hugo-theme-dream/zen-mode">🍃 Hugo Theme Dream 3.5 introduces Zen mode. Read more →</a>
     ),
   },
 }

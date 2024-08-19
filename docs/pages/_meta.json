@@ -1,5 +1,5 @@
 {
-  "contact": {
+  "docs-v2": {
     "title": "Docs (v2)",
     "type": "page",
     "href": "https://hugo-theme-dream-docs-v2.netlify.app",
@@ -8,6 +8,7 @@
   "index": "Quick Start",
   "base-configurations": "Base Configurations",
   "params-configurations": "Params Configurations",
+  "zen-mode": "Zen Mode",
   "i18n": "i18n",
   "website-analytics": "Website Analytics",
   "social-comments": "Social Comments",
