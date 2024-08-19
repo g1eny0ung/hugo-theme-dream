@@ -11,6 +11,8 @@ theme = "hugo-theme-dream"
 # ID = ""
 
 [params]
+# zenMode = true
+
 lightTheme = "emerald"
 darkTheme = "forest"
 

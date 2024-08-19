@@ -6,7 +6,11 @@
 {{ else }}
 <nav class="mt-4 lg:mt-8 py-4">
 {{ end }}
+  {{ if site.Params.zenMode }}
+  <div class="container flex justify-between max-w-[65ch] mx-auto px-4 md:px-0">
+  {{ else }}
   <div class="container flex justify-between px-4">
+  {{ end }}
     <section class="flex items-center gap-4">
       <div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="{{ T "flip" }}">
         <div class="h-10 rounded-full">
