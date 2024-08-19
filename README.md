@@ -23,6 +23,10 @@ Dream also supports **light and dark mode** out of the box.
 
 ![Screenshot](https://github.com/g1eny0ung/hugo-theme-dream/blob/master/images/screenshot.png?raw=true)
 
+For people who prefer a simple and clean interface, Dream has a **Zen mode**. It is more concentrated on reading and writing.
+
+<img src="https://github.com/g1eny0ung/hugo-theme-dream/blob/master/docs/public/images/zen-mode.png?raw=true" alt="Zen Mode" height="500" />
+
 ## Installation
 
 Go into your site folder:
@@ -41,6 +45,7 @@ Then open `hugo.toml` and add `theme = "dream"`.
 ## Examples
 
 - [My blog](https://g1en.site) and its [source code](https://github.com/g1eny0ung/blog)
+- [A demo of Zen mode](https://g1en-site-zen-mode-preview.netlify.app/)
 
 ## Publish your site
 
