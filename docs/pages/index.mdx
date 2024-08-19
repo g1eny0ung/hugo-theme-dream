@@ -13,6 +13,27 @@ Create `hugo.toml` if it doesn't exist in your site folder.
 You can download and use this [default configuration file](https://github.com/g1eny0ung/hugo-theme-dream/blob/master/hugo.example.toml). It contains all params used in Dream.
 </Callout>
 
+## Default or Zen Mode
+
+Dream has two out-of-the-box modes: **Default** and **Zen**.
+
+Default mode will display your posts in a masonry layout.
+
+Zen mode will display your posts in a single column layout.
+It is more suitable for people who prefer a simple and clean interface.
+And it is more concentrated on reading and writing.
+
+Here is a demo of the Zen mode: https://g1en-site-zen-mode-preview.netlify.app/.
+
+You can enable Zen mode by adding `zenMode = true` to the configuration file.
+
+```toml
+[params]
+zenMode = true
+```
+
+View [Zen Mode](./zen-mode.md) for more details.
+
 ## Set language for your site
 
 Open `hugo.toml` and write:
@@ -94,7 +115,7 @@ headless: true
 ---
 ```
 
-After that, you will see a "About" on the top right navagation bar. Click it to view your about page.
+You will then see **About** in the top right navagation bar. Click it to view your about page.
 
 ## Write your first article
 
@@ -150,3 +171,5 @@ in your blog folder, the `-D` represent to build draft posts.
 ## End
 
 View more details and configurations on the left sidebar.
+
+Wish you a happy journey with 🌱 Dream!
