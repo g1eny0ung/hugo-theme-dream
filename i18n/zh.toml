@@ -5,7 +5,7 @@ other = "首页"
 other = "返回首页"
 
 [flip]
-other = "翻转！"
+other = "翻转一下！"
 
 [about]
 other = "关于"
@@ -17,15 +17,15 @@ other = "归档"
 other = "所有标签"
 
 [tag]
-one = "1 标签"
-other = "{{ .Count }} 标签"
+one = "1标签"
+other = "{{ .Count }}标签"
 
 [allCategories]
 other = "所有分类"
 
 [category]
-one = "1 分类"
-other = "{{ .Count }} 分类"
+one = "1分类"
+other = "{{ .Count }}分类"
 
 [article]
 one = "1篇文章"
@@ -35,7 +35,7 @@ other = "{{ .Count }}篇文章"
 other = "社交链接"
 
 [minuteRead]
-other = " 分钟阅读"
+other = "分钟阅读"
 
 [updateAt]
 other = "更新于"
