@@ -8,13 +8,6 @@ function initGrid() {
     imagesLoaded(grid, function () {
       return msnry.layout();
     });
-    if (window.hasTwitterEmbed) {
-      window.twttr.ready(function (twttr) {
-        return twttr.events.bind('loaded', function () {
-          return msnry.layout();
-        });
-      });
-    }
   });
 }
 initGrid();
