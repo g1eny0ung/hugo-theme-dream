@@ -5,10 +5,6 @@ function initGrid() {
     })
 
     imagesLoaded(grid, () => msnry.layout())
-
-    if (window.hasTwitterEmbed) {
-      window.twttr.ready((twttr) => twttr.events.bind('loaded', () => msnry.layout()))
-    }
   })
 }
 
