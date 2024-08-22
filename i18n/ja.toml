@@ -5,7 +5,10 @@ other = "Home"
 other = "Back to home"
 
 [flip]
-other = "フリップ"
+other = "Flip it!"
+
+[about]
+other = "About"
 
 [archives]
 other = "アーカイブ"
@@ -14,15 +17,15 @@ other = "アーカイブ"
 other = "タグ一覧"
 
 [tag]
-one = "1 タグ"
-other = "{{ .Count }} タグ"
+one = "1タグ"
+other = "{{ .Count }}タグ"
 
 [allCategories]
 other = "カテゴリー一覧"
 
 [category]
-one = "1 カテゴリー"
-other = "{{ .Count }} カテゴリー"
+one = "1カテゴリー"
+other = "{{ .Count }}カテゴリー"
 
 [article]
 one = "1 記事"
@@ -42,3 +45,6 @@ other = "前へ"
 
 [nextPage]
 other = "次へ"
+
+[search]
+other = "検索"
