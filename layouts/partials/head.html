@@ -7,10 +7,10 @@
 {{ template "_internal/schema.html" . }}
 
 {{ if eq .Type "posts" }}
-<!-- Page Author & Description -->
+<!-- Page Author -->
 <meta name="author" content="{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ site.Params.author }}{{ end }}" />
 {{ else }}
-<!-- Site Author & Description -->
+<!-- Site Author -->
 <meta name="author" content="{{ site.Params.author }}" />
 {{ end }}
 
