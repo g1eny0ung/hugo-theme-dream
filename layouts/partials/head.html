@@ -2,17 +2,17 @@
 <link href="{{ site.Params.favicon | relURL }}" rel="shortcut icon" type="image/x-icon" />
 {{ end }}
 
-{{ if eq .Type "posts" }}
-<!-- Page Author & Description -->
-<meta name="author" content="{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ site.Params.author }}{{ end }}" />
-<meta name="description" content="{{ .Summary | plainify }}" />
-{{ else }}
-<!-- Site Author & Description -->
-<meta name="author" content="{{ site.Params.author }}" />
-<meta name="description" content="{{ site.Params.description }}" />
-{{ end }}
-
 <link rel="canonical" href="{{ .Permalink }}" />
+
+{{ template "_internal/schema.html" . }}
+
+{{ if eq .Type "posts" }}
+<!-- Page Author -->
+<meta name="author" content="{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ site.Params.author }}{{ end }}" />
+{{ else }}
+<!-- Site Author -->
+<meta name="author" content="{{ site.Params.author }}" />
+{{ end }}
 
 <!-- Open Graph -->
 {{ template "_internal/opengraph.html" . }}
@@ -25,6 +25,7 @@
 
 <link rel="stylesheet" href="{{ "css/output.css" | relURL }}" />
 
+{{ if or site.Params.backgroundImage site.Params.backgroundImageDark }}
 <style>
 {{ if site.Params.backgroundImage }}
 #dream-global-bg {
@@ -38,3 +39,4 @@ html.dark #dream-global-bg {
 }
 {{ end }}
 </style>
+{{ end }}
