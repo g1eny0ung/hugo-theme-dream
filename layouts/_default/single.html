@@ -43,9 +43,11 @@
       {{ .TableOfContents }}
     </div>
     {{ end }}
-    <article class="mx-auto prose dark:prose-invert" id="dream-single-post-main">
+    <article class="mx-auto prose dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
+      {{ template "_internal/schema.html" . }}
+
       <header>
-        <h1>{{ .Title }}</h1>
+        <h1 itemprop="headline">{{ .Title }}</h1>
         <p class="text-sm">
           {{ if site.Params.Experimental.jsDate }}
             <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
