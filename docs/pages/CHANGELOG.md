@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-None.
+### Fixed
+
+- Incorrect use of the `_internal/schema.html` template [#306](https://github.com/g1eny0ung/hugo-theme-dream/pull/306)
 
 ## [3.6.0] - 2024-08-24
 
