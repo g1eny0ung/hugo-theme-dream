@@ -8,6 +8,23 @@
 <!-- Page Author & Description -->
 <meta name="author" content="{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ site.Params.author }}{{ end }}" />
 <meta name="description" content="{{ .Summary | plainify }}" />
+
+<!-- Keywords -->
+{{- $keywords := slice }}
+{{- with .Keywords }}
+  {{- $keywords = . }}
+{{- else }}
+  {{- range .GetTerms "tags" }}
+    {{- $keywords = $keywords | append .Title }}
+  {{- else }}
+    {{- range $taxonomy, $_ := site.Taxonomies }}
+      {{- range $.GetTerms $taxonomy }}
+        {{- $keywords = $keywords | append .Title }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+<meta name="keywords" content="{{ delimit $keywords `,` }}">
 {{ else }}
 <!-- Site Author & Description -->
 <meta name="author" content="{{ site.Params.author }}" />
