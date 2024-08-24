@@ -9,6 +9,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 None.
 
+## [3.6.0] - 2024-08-24
+
+### Added
+
+- Add `noDefaultSummaryCover` param [#301](https://github.com/g1eny0ung/hugo-theme-dream/pull/301)
+
+### Changed
+
+- Enhance Japanese translation [#303](https://github.com/g1eny0ung/hugo-theme-dream/pull/303)
+- Enhance Chinese translation
+- Supplement meta tags for SEO [#305](https://github.com/g1eny0ung/hugo-theme-dream/pull/305)
+
+### Deprecated
+
+- Deprecate `hasTwitterEmbed` param [#302](https://github.com/g1eny0ung/hugo-theme-dream/pull/302)
+
 ## [3.5.0] - 2024-08-19
 
 🍃 Hugo Theme Dream 3.5 introduces Zen mode. View [Zen Mode](./zen-mode.mdx) for more details.
