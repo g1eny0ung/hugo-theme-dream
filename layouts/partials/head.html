@@ -4,24 +4,24 @@
 
 <link rel="canonical" href="{{ .Permalink }}" />
 
-{{ template "_internal/schema.html" . }}
-
 {{ if eq .Type "posts" }}
-<!-- Page Author -->
+<!-- Page Author & Description -->
 <meta name="author" content="{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ site.Params.author }}{{ end }}" />
+<meta name="description" content="{{ .Summary | plainify }}" />
 {{ else }}
-<!-- Site Author -->
+<!-- Site Author & Description -->
 <meta name="author" content="{{ site.Params.author }}" />
+<meta name="description" content="{{ site.Params.description }}" />
 {{ end }}
+
+<!-- Site Generator -->
+{{ hugo.Generator }}
 
 <!-- Open Graph -->
 {{ template "_internal/opengraph.html" . }}
 
 <!-- Twitter Cards -->
 {{ template "_internal/twitter_cards.html" . }}
-
-<!-- Site Generator -->
-{{ hugo.Generator }}
 
 <link rel="stylesheet" href="{{ "css/output.css" | relURL }}" />
 
