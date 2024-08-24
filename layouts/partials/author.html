@@ -9,15 +9,17 @@
   <span>@</span>
   {{ end }}
 
-  <span>
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
   {{ if .Params.author }}
     {{ if and .Params.authorlink (eq .template "single") }}
-      <a href="{{ .Params.authorlink }}" target="_blank">{{ .Params.author }}</a>
+      <a itemprop="url" href="{{ .Params.authorlink }}" target="_blank">
+        <span itemprop="name">{{ .Params.author }}</span>
+      </a>
     {{ else }}
-      {{ .Params.author }}
+      <span itemprop="name">{{ .Params.author }}</span>
     {{ end }}
   {{ else }}
-    {{ site.Params.author }}
+    <span itemprop="name">{{ site.Params.author }}</span>
   {{ end }}
   </span>
 </div>

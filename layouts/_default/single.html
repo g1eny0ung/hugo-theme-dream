@@ -47,7 +47,7 @@
       {{ template "_internal/schema.html" . }}
 
       <header>
-        <h1>{{ .Title }}</h1>
+        <h1 itemprop="headline">{{ .Title }}</h1>
         <p class="text-sm">
           {{ if site.Params.Experimental.jsDate }}
             <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
