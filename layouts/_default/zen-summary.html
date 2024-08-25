@@ -14,7 +14,7 @@
   <figure>
     {{ with .Resources.Get .Params.cover }}
     {{ if eq .MediaType.SubType "svg" }}
-      <img src="{{ .RelPermalink }}" alt="{{ .Title }}" />
+      <img class="w-24 max-w-none rounded-lg" src="{{ .RelPermalink }}" alt="{{ .Title }}" />
     {{ else }}
       {{ $webp := .Resize (printf "%dx%d webp" .Width .Height) }}
       <picture>
@@ -23,7 +23,7 @@
       </picture>
     {{ end }}
     {{ else }}
-    <img src="{{ .Params.cover }}" alt="{{ .Title }}" />
+    <img class="w-24 max-w-none rounded-lg" src="{{ .Params.cover }}" alt="{{ .Title }}" />
     {{ end }}
   </figure>
   {{ else if not site.Params.noDefaultSummaryCover }}
