@@ -7,9 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+None.
+
+## [3.6.1] - 2024-08-25
+
 ### Fixed
 
+- Render SVG images in summary
 - Incorrect use of the `_internal/schema.html` template [#306](https://github.com/g1eny0ung/hugo-theme-dream/pull/306)
+- Remove shortcut link type in favicon
 
 ## [3.6.0] - 2024-08-24
 
