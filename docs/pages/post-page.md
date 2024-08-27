@@ -55,6 +55,14 @@ View the below section to learn more about the parameters.
 
 Dream supports [Mermaid](https://mermaid.js.org/) diagrams. You can use it in your post like below:
 
+> ```mermaid
+> graph TD;
+>     A-->B;
+>     A-->C;
+>     B-->D;
+>     C-->D;
+> ```
+
 ```mermaid
 graph TD;
     A-->B;
