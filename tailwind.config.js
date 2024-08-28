@@ -9,6 +9,11 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
+            blockquote: {
+              color: "var(--tw-prose-body)",
+              fontWeight: 'normal',
+              fontStyle: 'normal',
+            },
             p: {
               wordBreak: 'break-word',
             },
@@ -19,6 +24,12 @@ module.exports = {
             code: null,
             'code::before': null,
             'code::after': null,
+          },
+        },
+        quoteless: {
+          css: {
+            'blockquote p:first-of-type::before': { content: 'none' },
+            'blockquote p:first-of-type::after': { content: 'none' },
           },
         },
       },
