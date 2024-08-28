@@ -1,3 +1,9 @@
+note = "Note"
+tip = "Tip"
+important = "Important"
+warning = "Warning"
+caution = "Caution"
+
 [home]
 other = "Home"
 

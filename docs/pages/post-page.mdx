@@ -1,3 +1,5 @@
+import { Callout } from 'nextra/components'
+
 # Post Page
 
 In [Quick Start](/), we created an example article as below:
@@ -50,6 +52,50 @@ View the below section to learn more about the parameters.
 | `nolastmod`  | Disable the last modified date                                        | No             |
 
 ## Features
+
+## Alerts
+
+Dream supports [GitHub Alerts Markdown extension](https://github.blog/changelog/2023-12-14-new-markdown-extension-alerts-provide-distinctive-styling-for-significant-content/) compatible alerts. You can use it in your post like below:
+
+```md
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
+
+> [!TIP]
+> Helpful advice for doing things better or more easily.
+
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+
+> [!WARNING]
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]
+> Advises about risks or negative outcomes of certain actions.
+```
+
+See https://g1en.site/posts/dream-post-features/ for a live demo.
+
+If you want to change the default title of the alerts, you can add a
+[markdown attribute](https://gohugo.io/content-management/markdown-attributes/)
+named `text` like below:
+
+```md
+> [!NOTE]
+> The default alert title is changed to "Hello".
+{text="Hello"}
+```
+
+<Callout type="info">
+To enable markdown attributes for block-level elements, you still need to set
+below configuration in your `hugo.toml`:
+
+```toml
+[markup]
+[markup.goldmark.parser.attribute]
+block = true
+```
+</Callout>
 
 ### Mermaid Diagrams
 

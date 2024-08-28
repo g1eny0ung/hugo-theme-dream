@@ -43,7 +43,7 @@
       {{ .TableOfContents }}
     </div>
     {{ end }}
-    <article class="mx-auto prose dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
+    <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
       {{ template "_internal/schema.html" . }}
 
       <header>
@@ -164,7 +164,7 @@
 {{- $syntaxDarkCSS := resources.Get "css/syntax-dark.css" | minify -}}
 <script>
   window.customSyntaxHighlighting = {
-    light: {{ $syntaxLightCSS.RelPermalink}},
+    light: {{ $syntaxLightCSS.RelPermalink }},
     dark: {{ $syntaxDarkCSS.RelPermalink }}
   }
 
