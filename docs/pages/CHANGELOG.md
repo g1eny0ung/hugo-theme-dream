@@ -9,6 +9,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 None.
 
+## [3.7.0] - 2024-08-29
+
+### Added
+
+- Add [Mermaid](https://mermaid.js.org/intro/) diagrams support [#307](https://github.com/g1eny0ung/hugo-theme-dream/pull/307)
+- Add [GitHub Alerts Markdown extension](https://github.blog/changelog/2023-12-14-new-markdown-extension-alerts-provide-distinctive-styling-for-significant-content/) compatible alerts [#308](https://github.com/g1eny0ung/hugo-theme-dream/pull/308)
+
+### Fixed
+
+- Fix image size of summary cards in Zen mode
+
 ## [3.6.1] - 2024-08-25
 
 ### Fixed
