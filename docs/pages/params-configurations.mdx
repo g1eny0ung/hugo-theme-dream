@@ -33,7 +33,6 @@ utterancesRepo = "g1eny0ung/g1eny0ung.github.io"
 # valine = true
 # LEANCLOUD_APP_ID = ""
 # LEANCLOUD_APP_KEY = ""
-# VALINE_LANGUAGE = ""
 
 email = "g1enyy0ung@gmail.com"
 
@@ -52,6 +51,8 @@ stickyNav = true
 showTableOfContents = true
 showSummaryCoverInPost = true
 showPrevNextPost = true
+
+# [params.valineConfig]
 
 [params.advanced]
 # customCSS = ["css/custom.css"]
@@ -145,19 +146,26 @@ View https://utteranc.es for more details.
 ### valine
 
 Valine is a fast, simple & efficient Leancloud based no back end comment system.
+You can view https://valine.js.org/en/index.html for more details.
 
-To make it work, you still need to set first two parameters:
+To make it work, you still need to set these two parameters:
 
 ```toml
 [params]
 LEANCLOUD_APP_ID = ""
 LEANCLOUD_APP_KEY = ""
-VALINE_LANGUAGE = "" # optional
 ```
 
-Default language param is "zh-CN" , other supported languages are "zh-TW" , "en" , "ja" .
+You can also use `[params.valineConfig]` to customize Valine comments. For example:
 
-View https://valine.js.org/en/quickstart for more details.
+```toml
+[params.valineConfig]
+pageSize = 5
+```
+
+This will set the number of comments per page to 5.
+
+Refer to https://valine.js.org/en/configuration.html for the full list of configurations.
 
 ### siteStartYear
 
