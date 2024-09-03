@@ -7,7 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-None.
+### Added
+
+- Add `valineConfig` param to customize Valine comments [#309](https://github.com/g1eny0ung/hugo-theme-dream/pull/309)
+
+### Deprecated
+
+- Deprecate `VALINE_LANGUAGE` param [#309](https://github.com/g1eny0ung/hugo-theme-dream/pull/309)
 
 ## [3.7.0] - 2024-08-29
 

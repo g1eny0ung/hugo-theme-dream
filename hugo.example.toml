@@ -34,7 +34,6 @@ headerTitle = "Hugo Theme Dream"
 # valine = true
 # LEANCLOUD_APP_ID = ""
 # LEANCLOUD_APP_KEY = ""
-# VALINE_LANGUAGE = ""
 
 # email = ""
 
@@ -55,6 +54,8 @@ siteStartYear = 2016
 # showPrevNextPost = true
 
 # [params.navItems]
+
+# [params.valineConfig]
 
 # [params.advanced]
 # customCSS = ["css/custom.css"]
