@@ -1,8 +1,10 @@
 name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: bug
-assignees: ''
+description: Create a report to help us improve
+title: '[Bug]: '
+labels:
+  - bug
+assignees:
+  - g1eny0ung
 body:
   - type: input
     id: version
