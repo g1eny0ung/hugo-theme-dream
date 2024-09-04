@@ -35,6 +35,9 @@ headerTitle = "Hugo Theme Dream"
 # LEANCLOUD_APP_ID = ""
 # LEANCLOUD_APP_KEY = ""
 
+# waline = true
+# walineServer = ""
+
 # email = ""
 
 siteStartYear = 2016

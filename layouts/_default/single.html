@@ -25,9 +25,7 @@
 </style>
 {{ end }}
 
-{{ if site.Params.valine }}
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-{{ end }}
+{{ partialCached "commentSystemHeads.html" . }}
 
 {{ end }}
 
@@ -110,48 +108,13 @@
     </article>
   </div>
 
-  {{ if or site.Config.Services.Disqus.Shortname site.Params.utterancesRepo site.Params.valine }}
+  {{ if or site.Config.Services.Disqus.Shortname site.Params.utterancesRepo site.Params.valine site.Params.waline }}
   <div class="divider max-w-[65ch] mx-auto"></div>
-  {{ end }}
 
   <section class="max-w-[65ch] mx-auto space-y-4">
-    {{ if site.Config.Services.Disqus.Shortname }}
-    <article>
-      {{ partial "disqus.html" (dict "Context" . "Identifier" .RelPermalink) }}
-    </article>
-    {{ end }}
-
-    {{ if site.Params.utterancesRepo }}
-    <template x-if="['localhost', '127.0.0.1'].indexOf(window.location.hostname) == -1">
-      <article>
-        <script
-          src="https://utteranc.es/client.js"
-          repo="{{ site.Params.utterancesRepo }}"
-          issue-term="og:title"
-          theme="github-light"
-          crossorigin="anonymous"
-          async>
-        </script>
-      </article>
-    </template>
-    {{ end }}
-
-    {{ if site.Params.valine }}
-    <article>
-      <div id="vcomments"></div>
-    </article>
-    <script>
-      new Valine({
-        el: '#vcomments',
-        appId: '{{ site.Params.LEANCLOUD_APP_ID }}',
-        appKey: '{{ site.Params.LEANCLOUD_APP_KEY }}',
-        {{- range $k, $v := site.Params.valineConfig }}
-        {{ $k }}: {{ $v }},
-        {{- end }}
-      })
-    </script>
-    {{ end }}
+    {{ partialCached "commentSystems.html" . }}
   </section>
+  {{ end }}
 </div>
 {{ end }}
 
