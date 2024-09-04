@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - Add `valineConfig` param to customize Valine comments [#309](https://github.com/g1eny0ung/hugo-theme-dream/pull/309)
+- Support [Waline](https://waline.js.org/en/) comments [#310](https://github.com/g1eny0ung/hugo-theme-dream/pull/310)
 
 ### Deprecated
 
