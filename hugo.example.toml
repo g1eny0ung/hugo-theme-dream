@@ -58,8 +58,6 @@ siteStartYear = 2016
 
 # [params.navItems]
 
-# [params.valineConfig]
-
 # [params.advanced]
 # customCSS = ["css/custom.css"]
 # customJS = []

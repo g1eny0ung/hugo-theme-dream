@@ -55,8 +55,6 @@ showTableOfContents = true
 showSummaryCoverInPost = true
 showPrevNextPost = true
 
-# [params.valineConfig]
-
 [params.advanced]
 # customCSS = ["css/custom.css"]
 # customJS = []
@@ -160,16 +158,14 @@ LEANCLOUD_APP_ID = ""
 LEANCLOUD_APP_KEY = ""
 ```
 
-You can also use `[params.valineConfig]` to customize Valine comments. For example:
+To customize Valine, you can create a partial file named `valine.html` in the `layouts/partials` folder.
+Here is an [example](https://github.com/g1eny0ung/blog/blob/master/layouts/partials/valine.html).
 
-```toml
-[params.valineConfig]
-pageSize = 5
-```
+<Callout type="info">
+You still need to set the `valine` parameter to `true` to enable Valine when using a custom partial file.
 
-This will set the number of comments per page to 5.
-
-Refer to https://valine.js.org/en/configuration.html for the full list of configurations.
+Other related parameters will be ingored.
+</Callout>
 
 ### waline
 
@@ -184,12 +180,14 @@ waline = true
 walineServer = "https://your-waline-server.com"
 ```
 
-If you want to customize Waline for a advanced usage,
+If you want to customize Waline,
 you can create a partial file named `waline.html` in the `layouts/partials` folder.
 Here is an [example](https://github.com/g1eny0ung/blog/blob/master/layouts/partials/waline.html).
 
 <Callout type="info">
 You still need to set the `waline` parameter to `true` to enable Waline when using a custom partial file.
+
+Other related parameters will be ingored.
 </Callout>
 
 ### siteStartYear

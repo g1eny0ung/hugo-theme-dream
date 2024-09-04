@@ -21,27 +21,26 @@
 
 {{ if site.Params.valine }}
 <article>
+{{ if fileExists "layouts/partials/valine.html" }}
+  {{ partialCached "valine.html" . }}
+{{ else }}
   <div id="vcomments"></div>
   <script>
     new Valine({
       el: '#vcomments',
       appId: '{{ site.Params.LEANCLOUD_APP_ID }}',
-      appKey: '{{ site.Params.LEANCLOUD_APP_KEY }}',
-      {{- range $k, $v := site.Params.valineConfig }}
-      {{ $k }}: {{ $v }},
-      {{- end }}
+      appKey: '{{ site.Params.LEANCLOUD_APP_KEY }}'
     })
   </script>
+{{ end }}
 </article>
 {{ end }}
 
 {{ if site.Params.waline }}
+<article>
 {{ if fileExists "layouts/partials/waline.html" }}
-<article>
   {{ partialCached "waline.html" . }}
-</article>
 {{ else }}
-<article>
   <div id="waline"></div>
   <script type="module">
     import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
@@ -52,6 +51,6 @@
       serverURL: {{ site.Params.walineServer }},
     });
   </script>
-</article>
 {{ end }}
+</article>
 {{ end }}
