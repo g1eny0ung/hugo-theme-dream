@@ -9,9 +9,10 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for suggesting a feature! Please fill out the sections below to help us understand your request better.
-
-        If you have a question or need help, please open a discussion instead.
+        > [!TIP]
+        > Thanks for suggesting a feature! Please fill out the sections below to help us understand your request better.
+        >
+        > If you have a question or need help, please open a discussion instead.
   - type: textarea
     id: feature
     attributes:
