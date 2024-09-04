@@ -1,0 +1,38 @@
+name: Bug report
+about: Create a report to help us improve
+title: ''
+labels: bug
+assignees: ''
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: What version of Dream are you using?
+      placeholder: v3.x.x or master
+    validations:
+      required: true
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: What browsers are you seeing the problem on?
+      multiple: true
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Microsoft Edge
+  - type: textarea
+    id: bug
+    attributes:
+      label: Describe the bug
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: To Reproduce
+      description: Steps to reproduce the behavior.
+      placeholder: |
+        You can also include screenshots or any other relevant information here.
