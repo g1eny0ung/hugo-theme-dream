@@ -15,6 +15,9 @@ None.
 
 - Valine comments can now be customized using a partial file [#311](https://github.com/g1eny0ung/hugo-theme-dream/pull/311)
 - Support [Waline](https://waline.js.org/en/) comments [#310](https://github.com/g1eny0ung/hugo-theme-dream/pull/310)
+
+### Changed
+
 - Upgrade Hugo minimum version to 0.97.0
 
 ### Deprecated
