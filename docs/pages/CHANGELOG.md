@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 None.
 
+## [3.8.1] - 2024-09-08
+
+### Fixed
+
+- Fix the cache issue of `commentSystems.html`
+- Add missing "about" translation to the Italian language file
+
 ## [3.8.0] - 2024-09-07
 
 ### Added
