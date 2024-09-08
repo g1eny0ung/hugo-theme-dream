@@ -13,8 +13,8 @@ x-data="{
   search: '',
   get posts() { return this.search !== '' ? window.fuse.search(this.search) : [] },
 }">
-  <label class="input input-bordered flex items-center gap-2">
-    <input type="text" class="grow" placeholder="{{ T "search" }}" x-model.debounce="search" />
+  <label for="search" class="input input-bordered flex items-center gap-2">
+    <input id="search" name="search" type="text" class="grow" placeholder="{{ T "search" }}" x-model.debounce="search" />
     <ion-icon name="search"></ion-icon>
   </label>
 
