@@ -2,9 +2,20 @@
   window.lightTheme = {{ site.Params.lightTheme }}
   window.darkTheme = {{ site.Params.darkTheme }}
 </script>
+
 {{ if not site.Params.zenMode }}
-<script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
-<script src="{{ "js/grid.js" | relURL }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+
+  {{ $gridJs := resources.Get "js/grid.js" }}
+  {{ if hugo.IsProduction }}
+    {{ $gridJs = $gridJs | minify }}
+  {{ end }}
+  <script src="{{ $gridJs.RelPermalink }}"></script>
 {{ end }}
-<script src="{{ "js/main.js" | relURL }}"></script>
+
+{{ $mainJs := resources.Get "js/main.js" }}
+{{ if hugo.IsProduction }}
+  {{ $mainJs = $mainJs | minify }}
+{{ end }}
+<script src="{{ $mainJs.RelPermalink }}"></script>

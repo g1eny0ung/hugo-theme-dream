@@ -40,7 +40,11 @@
 <!-- Twitter Cards -->
 {{ template "_internal/twitter_cards.html" . }}
 
-<link rel="stylesheet" href="{{ "css/output.css" | relURL }}" />
+{{ $outputCss := resources.Get "css/output.css" }}
+{{ if hugo.IsProduction }}
+  {{ $outputCss = $outputCss | minify }}
+{{ end }}
+<link rel="stylesheet" href="{{ $outputCss.RelPermalink }}" />
 
 {{ if or site.Params.backgroundImage site.Params.backgroundImageDark }}
 <style>
