@@ -1,8 +1,16 @@
 <span class="flex items-center gap-2">
+  <span class="text-sm font-medium">Share on:</span>
   <a class="group inline-flex items-center p-2 text-sm rounded-full cursor-pointer hover:bg-primary" href="https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}" title="Share on X">
     <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
   </a>
   <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://facebook.com/sharer/sharer.php?u={{ .Permalink }}" title="Share on Facebook">
     <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
   </a>
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://wa.me/?text={{ .Title }}%20{{ .Permalink }}" title="Share on WhatsApp">
+    <ion-icon class="group-hover:text-primary-content" name="logo-whatsapp"></ion-icon>
+  </a>
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://www.instagram.com/?url={{ .Permalink }}" title="Share on Instagram">
+    <ion-icon class="group-hover:text-primary-content" name="logo-instagram"></ion-icon>
+  </a>
 </span>
+
