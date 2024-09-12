@@ -43,7 +43,7 @@
     <div class="card-actions justify-between items-center mt-4">
       {{ partial "author.html" (dict "Params" .Params "template" "summary") }}
 
-      <div class="inline-flex items-center">
+      <div class="flex items-center">
         <ion-icon name="time" class="mr-1"></ion-icon>
         <span>{{ .ReadingTime }}{{ T "minuteRead" .ReadingTime }}</span>
       </div>

@@ -1,8 +1,16 @@
-<span class="flex items-center gap-2">
+<div class="flex items-center gap-2">
+  <!-- slot: post-share-left.html -->
+  {{ if fileExists "layouts/partials/post-share-left.html" }}
+    {{ partial "post-share-left.html" . }}
+  {{ end }}
   <a class="group inline-flex items-center p-2 text-sm rounded-full cursor-pointer hover:bg-primary" href="https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}" title="Share on X">
     <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
   </a>
   <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://facebook.com/sharer/sharer.php?u={{ .Permalink }}" title="Share on Facebook">
     <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
   </a>
-</span>
+  <!-- slot: post-share-right.html -->
+  {{ if fileExists "layouts/partials/post-share-right.html" }}
+    {{ partial "post-share-right.html" . }}
+  {{ end }}
+</div>
