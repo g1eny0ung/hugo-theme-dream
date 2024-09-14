@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-None.
+### Added
+
+- Add `reorderShares` param [#320](https://github.com/g1eny0ung/hugo-theme-dream/pull/320)
 
 ## [3.8.1] - 2024-09-08
 
