@@ -52,7 +52,7 @@
 
       {{ $navItems := slice "search" "rss" "posts" "categories" "tags" }}
       {{ if site.Params.reorderNavItems }}
-      {{ $navItems = site.Params.reorderNavItems }}
+        {{ $navItems = site.Params.reorderNavItems }}
       {{ end }}
 
       {{ if not site.Params.collapseNavItems }}

@@ -54,6 +54,7 @@ stickyNav = true
 showTableOfContents = true
 showSummaryCoverInPost = true
 showPrevNextPost = true
+# reorderShares = ["x", "facebook", "whatsapp"]
 
 [params.advanced]
 # customCSS = ["css/custom.css"]
@@ -226,7 +227,6 @@ This parameter also allows you to remove the default navigation items.
 For example, you don't want to show the `rss` item, you can set the value as:
 
 `reorderNavItems = ["search", "posts", "categories", "tags"]`
-
 </Callout>
 
 For reordering custom navigation items, see [Custom Navbar Items](custom-nav-items.md).
@@ -265,6 +265,23 @@ Show summary cover image in the single post page.
 ### showPrevNextPost
 
 Show previous and next post links in the single post page.
+
+### reorderShares
+
+Same as [reorderNavItems](#reorderNavItems), reorder the share buttons in the single post page.
+
+This parameter is **an array of strings**, the default value is:
+
+```toml
+reorderShares = ["x", "facebook", "whatsapp"]
+```
+
+<Callout type="info">
+This parameter also allows you to remove the default share items.
+For example, you don't want to show the `whatsapp` item, you can set the value as:
+
+`reorderShares = ["x", "facebook"]`
+</Callout>
 
 ## Advanced
 
