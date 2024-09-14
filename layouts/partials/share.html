@@ -3,29 +3,29 @@
   {{ if fileExists "layouts/partials/post-share-left.html" }}
     {{ partial "post-share-left.html" . }}
   {{ end }}
-  {{ $ctx := . }}
-  {{ $shares := dict
+
+  {{ $shares := slice "x" "facebook" "whatsapp" }}
+  {{ $shareTitles := dict
     "x" "X"
     "facebook" "Facebook"
     "whatsapp" "WhatsApp"
   }}
+  {{ $shareLinks := dict
+    "x" (print "https://x.com/intent/post?text=" .Title "&url=" .Permalink)
+    "facebook" (print "https://facebook.com/sharer/sharer.php?u=" .Permalink)
+    "whatsapp" (print "https://wa.me/?text=" .Title " " .Permalink)
+  }}
   {{ if site.Params.reorderShares }}
-    {{ range site.Params.reorderShares }}
-      <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
-        href="https://twitter.com/intent/tweet?text={{ $ctx.Title }}&url={{ $ctx.Permalink }}"
-        title="Share on {{ index $shares . }}">
-        <ion-icon class="group-hover:text-primary-content" name="logo-{{ . }}"></ion-icon>
-      </a>
-    {{ end }}
-  {{ else }}
-    {{ range $shares }}
-      <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
-        href="https://twitter.com/intent/tweet?text={{ $ctx.Title }}&url={{ $ctx.Permalink }}"
-        title="Share on {{ index $shares . }}">
-        <ion-icon class="group-hover:text-primary-content" name="logo-{{ . }}"></ion-icon>
-      </a>
-    {{ end }}
+    {{ $shares = site.Params.reorderShares }}
   {{ end }}
+  {{ range $shares }}
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="{{ index $shareLinks . }}" target="_blank" rel="noopener noreferrer"
+      title="Share on {{ index $shareTitles . }}">
+      <ion-icon class="group-hover:text-primary-content" name="logo-{{ . }}"></ion-icon>
+    </a>
+  {{ end }}
+
   <!-- slot: post-share-right.html -->
   {{ if fileExists "layouts/partials/post-share-right.html" }}
     {{ partial "post-share-right.html" . }}
