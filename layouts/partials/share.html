@@ -9,6 +9,9 @@
   <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://facebook.com/sharer/sharer.php?u={{ .Permalink }}" title="Share on Facebook">
     <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
   </a>
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://wa.me/?text={{ .Title }}%20{{ .Permalink }}" title="Share on WhatsApp">
+    <ion-icon class="group-hover:text-primary-content" name="logo-whatsapp"></ion-icon>
+  </a>
   <!-- slot: post-share-right.html -->
   {{ if fileExists "layouts/partials/post-share-right.html" }}
     {{ partial "post-share-right.html" . }}
