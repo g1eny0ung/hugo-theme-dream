@@ -55,6 +55,7 @@ siteStartYear = 2016
 # showTableOfContents = true
 # showSummaryCoverInPost = true
 # showPrevNextPost = true
+# reorderShares = ["x", "facebook", "whatsapp"]
 
 # [params.navItems]
 
