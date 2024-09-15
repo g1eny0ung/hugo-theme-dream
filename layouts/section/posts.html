@@ -16,7 +16,8 @@
 
   <div class="max-w-[65ch] mx-auto mt-8 lg:mt-12">
     <ul class="timeline timeline-vertical">
-      {{ range .Pages.GroupByDate "2006" }}
+      {{ $groupByDate := default "2006" .Params.group_by_date }}
+      {{ range .Pages.GroupByDate $groupByDate }}
       <li class="[--timeline-col-start:64px]">
         <hr class="dark:bg-base-content" />
         <div class="timeline-start !justify-self-start">
