@@ -53,7 +53,9 @@
             {{ .Date | time.Format "Monday, Jan 2, 2006" }}
           {{ end }}
 
+          {{ if ne .Params.noreadingtime true }}
           | <span>{{ .ReadingTime }}{{ T "minuteRead" .ReadingTime }}</span>
+          {{ end }}
 
           {{ if ne .Params.nolastmod true }}
           | <span>{{ T "updateAt" }}
