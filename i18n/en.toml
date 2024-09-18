@@ -42,10 +42,10 @@ other = "Social Links"
 
 [minuteRead]
 one = " minute read"
-other = " minutes read"
+other = " minute read"
 
 [updateAt]
-other = "Update at"
+other = "Updated at"
 
 [prevPage]
 other = "Previous page"
