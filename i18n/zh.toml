@@ -17,7 +17,7 @@ allTags = "所有标签"
 allCategories = "所有分类"
 
 minuteRead = "分钟阅读"
-updateAt = "更新于"
+updatedAt = "更新于"
 socialLinks = "社交链接"
 
 [article]

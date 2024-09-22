@@ -35,7 +35,7 @@ other = "Liens sociaux"
 one = " minute de lecture"
 other = " minutes de lecture"
 
-[updateAt]
+[updatedAt]
 other = "Mise à jour le"
 
 [prevPage]

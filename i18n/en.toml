@@ -18,7 +18,7 @@ allCategories = "All Categories"
 allTags = "All Tags"
 
 minuteRead = " minute read"
-updateAt = "Updated at"
+updatedAt = "Updated at"
 socialLinks = "Social Links"
 
 [article]

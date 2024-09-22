@@ -37,7 +37,7 @@ other = "SNS"
 [minuteRead]
 other = "分で読めます"
 
-[updateAt]
+[updatedAt]
 other = "更新日時"
 
 [prevPage]

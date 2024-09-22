@@ -38,7 +38,7 @@ other = "Social"
 one = " minuto"
 other = " minuti"
 
-[updateAt]
+[updatedAt]
 other = "Aggiornato al"
 
 [prevPage]
