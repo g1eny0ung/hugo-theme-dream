@@ -39,6 +39,12 @@
     {{ if site.Params.showTableOfContents }}
     <div class="absolute right-0 lg:w-36 xl:w-48 hidden lg:block" :style="{ height }">
       {{ .TableOfContents }}
+
+      <div class="dream-adsense px-5">
+      {{ if fileExists "layouts/partials/adsense.html" }}
+        {{ partialCached "adsense.html" . }}
+      {{ end }}
+      </div>
     </div>
     {{ end }}
     <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
