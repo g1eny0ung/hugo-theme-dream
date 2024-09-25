@@ -7,9 +7,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [3.8.2] - 2024-09-25
+
 ### Added
 
+- Now you can share your post to WhatsApp [#317](https://github.com/g1eny0ung/hugo-theme-dream/pull/317)
 - Add `reorderShares` param [#320](https://github.com/g1eny0ung/hugo-theme-dream/pull/320)
+- Add a slot for Google AdSense on the post page, view [this issue](https://github.com/g1eny0ung/hugo-theme-dream/issues/315#issuecomment-2370701549) for more details
+
+### Changed
+
+- Rename `updateAt` to `updatedAt` in i18n files
+
+### Fixed
+
+- Tweak English translations for `minuteRead` and `updateAt` [#323](https://github.com/g1eny0ung/hugo-theme-dream/pull/323)
 
 ## [3.8.1] - 2024-09-08
 
