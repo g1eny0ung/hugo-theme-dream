@@ -1,45 +1,36 @@
-[home]
-other = "Accueil"
+note = "Note"
+tip = "Astuce"
+important = "Important"
+warning = "Attention"
+caution = "Prudence"
 
-[backToHome]
-other = "Revenir à l'accueil"
+home = "Accueil"
+backToHome = "Revenir à l'accueil"
+flip = "Retourne ça !"
+about = "À propos"
+search = "Rechercher"
+prevPage = "Page précédente"
+nextPage = "Page suivante"
 
-[flip]
-other = "Retourne ça !"
-
-[archives]
-other = "Archives"
-
-[allTags]
-other = "Tous les étiquettes"
-
-[tag]
-one = "1 étiquette"
-other = "{{ .Count }} étiquettes"
-
-[allCategories]
-other = "Toutes les catégories"
-
-[category]
-one = "1 catégorie"
-other = "{{ .Count }} catégories"
-
-[article]
-one = "1 article"
-other = "{{ .Count }} articles"
-
-[socialLinks]
-other = "Liens sociaux"
+archives = "Archives"
+allCategories = "Toutes les catégories"
+allTags = "Tous les étiquettes"
 
 [minuteRead]
 one = " minute de lecture"
 other = " minutes de lecture"
 
-[updatedAt]
-other = "Mise à jour le"
+updatedAt = "Mise à jour le"
+socialLinks = "Liens sociaux"
 
-[prevPage]
-other = "Page précédente"
+[article]
+one = "1 article"
+other = "{{ .Count }} articles"
 
-[nextPage]
-other = "Page suivante"
+[category]
+one = "1 catégorie"
+other = "{{ .Count }} catégories"
+
+[tag]
+one = "1 étiquette"
+other = "{{ .Count }} étiquettes"
