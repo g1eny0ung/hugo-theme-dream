@@ -6,6 +6,12 @@
         this.page.identifier = '{{ default .Identifier .Context.Params.disqus_identifier }}';
         this.page.title = '{{ default .Context.Title .Context.Params.disqus_title }}';
         this.page.url = '{{ default .Context.Permalink .Context.Params.disqus_url }}';
+
+        {{ if eq .Identifier "/" }}
+        this.callbacks.onReady.push(function () {
+            window.aboutMasonry.layout();
+        });
+        {{ end }}
     };
     function initDisqus() {
         if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
