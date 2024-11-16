@@ -4,6 +4,12 @@ function initGrid() {
       itemSelector: '.dream-column',
     })
 
+    if (grid.classList.contains('dream-grid-about')) {
+      // Export Masonry instance to global scope for about page,
+      // currently used for resizing the grid after Disqus comments are loaded.
+      window.aboutMasonry = msnry
+    }
+
     imagesLoaded(grid, () => msnry.layout())
   })
 }
