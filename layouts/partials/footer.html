@@ -1,0 +1,8 @@
+{{ if site.Params.zenMode }}
+<footer class="flex justify-between items-center gap-2 max-w-[65ch] mx-auto px-4 md:px-0 py-12">
+{{ else }}
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+{{ end }}
+  {{ partial "footerLeft.html" . }}
+  {{ partial "footerRight.html" . }}
+</footer>
