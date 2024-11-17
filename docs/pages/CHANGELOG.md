@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [3.9.0] - 2024-11-17
+
+### Added
+
+- Now you can group posts with any layout in archives page, see [custom group layout](https://g1en.site/hugo-theme-dream/archives-page#custom-group-layout) for more details
+
+### Changed
+
+- Append global page footer on about page [#329](https://github.com/g1eny0ung/hugo-theme-dream/pull/329)
+
+### Fixed
+
+- Supplement translations in fr/pt [#327](https://github.com/g1eny0ung/hugo-theme-dream/pull/327)
+- Dropdown menu links are not clickable on Safari [#334](https://github.com/g1eny0ung/hugo-theme-dream/pull/334)
+
 ## [3.8.2] - 2024-09-25
 
 ### Added
