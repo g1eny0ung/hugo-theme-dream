@@ -1,0 +1,34 @@
+# Alerts
+note = "Ghi chú"
+tip = "Mẹo vặt"
+important = "Quan trọng"
+warning = "Cảnh báo"
+caution = "Thận trọng"
+
+home = "Trang chủ"
+backToHome = "Quay lại trang chủ"
+flip = "Lật nó!"
+about = "Giới thiệu"
+search = "Tìm kiếm"
+prevPage = "Trang trước"
+nextPage = "Trang tiếp theo"
+
+archives = "Lưu trữ"
+allCategories = "Tất cả danh mục"
+allTags = "Tất cả thẻ"
+
+minuteRead = " phút đọc"
+updatedAt = "Cập nhật lúc"
+socialLinks = "Liên kết xã hội"
+
+[article]
+one = "1 bài viết"
+other = "{{ .Count }} bài viết"
+
+[category]
+one = "1 danh mục"
+other = "{{ .Count }} danh mục"
+
+[tag]
+one = "1 thẻ"
+other = "{{ .Count }} thẻ"
