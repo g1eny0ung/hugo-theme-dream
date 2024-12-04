@@ -17,12 +17,12 @@ archives = "Archivos"
 allCategories = "Todas las categorías"
 allTags = "Todas las etiquetas"
 
+updatedAt = "Actualizado en"
+socialLinks = "Enlaces sociales"
+
 [minuteRead]
 one = " minuto de lectura"
 other = " minutos de lectura"
-
-updatedAt = "Actualizado en"
-socialLinks = "Enlaces sociales"
 
 [article]
 one = "1 artículo"
