@@ -1,9 +1,11 @@
-const withNextra = require('nextra')({
+import nextra from 'nextra'
+
+const withNextra = nextra({
   theme: 'nextra-theme-docs',
   themeConfig: './theme.config.jsx',
 })
 
-module.exports = withNextra({
+export default withNextra({
   output: 'export',
   ...(process.env.NODE_ENV === 'production' &&
     process.env.IN_NETLIFY !== 'true' && {
@@ -15,4 +17,4 @@ module.exports = withNextra({
 })
 
 // If you have other Next.js configurations, you can pass them as the parameter:
-// module.exports = withNextra({ /* other next.js config */ })
+// export default withNextra({ /* other next.js config */ })

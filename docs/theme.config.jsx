@@ -9,15 +9,18 @@ export default {
       titleTemplate: '%s | Hugo Theme Dream',
     }
   },
-  primaryHue: 146,
-  primarySaturation: 50,
+  color: {
+    hue: 146,
+    saturation: 50,
+    lightness: 36,
+  },
   head: (
     <>
       <meta name="description" content="Documentation for Hugo Theme Dream" />
     </>
   ),
   footer: {
-    text: (
+    content: (
       <span>
         <a style={{ textDecoration: 'underline' }} href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">
           🌱 Hugo Theme Dream
@@ -32,7 +35,7 @@ export default {
   },
   banner: {
     key: 'zen-mode',
-    text: (
+    content: (
       <a href="https://g1en.site/hugo-theme-dream/zen-mode">🍃 Hugo Theme Dream 3.5 introduces Zen mode. Read more →</a>
     ),
   },
