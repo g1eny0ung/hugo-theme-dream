@@ -1,45 +1,37 @@
-[home]
-other = "Inicio"
+# Alertas
+note = "Nota"
+tip = "Consejo"
+important = "Importante"
+warning = "Advertencia"
+caution = "Cuidado"
 
-[backToHome]
-other = "Volver a inicio"
+home = "Inicio"
+backToHome = "Volver a inicio"
+flip = "Voltear!"
+about = "Acerca"
+search = "Buscar"
+prevPage = "Página anterior"
+nextPage = "Página siguiente"
 
-[flip]
-other = "Voltear!"
+archives = "Archivos"
+allCategories = "Todas las categorías"
+allTags = "Todas las etiquetas"
 
-[archives]
-other = "Archivos"
-
-[allTags]
-other = "Todas las etiquetas"
-
-[tag]
-one = "1 etiqueta"
-other = "{{ .Count }} etiquetas"
-
-[allCategories]
-other = "Todas las categorías"
-
-[category]
-one = "1 categoría"
-other = "{{ .Count }} categorías"
-
-[article]
-one = "1 artículo"
-other = "{{ .Count }} artículos"
-
-[socialLinks]
-other = "Enlaces sociales"
+updatedAt = "Actualizado en"
+socialLinks = "Enlaces sociales"
 
 [minuteRead]
 one = " minuto de lectura"
 other = " minutos de lectura"
 
-[updatedAt]
-other = "Actualizado en"
+[article]
+one = "1 artículo"
+other = "{{ .Count }} artículos"
 
-[prevPage]
-other = "Página anterior"
+[category]
+one = "1 categoría"
+other = "{{ .Count }} categorías"
 
-[nextPage]
-other = "Página siguiente"
+[tag]
+one = "1 etiqueta"
+other = "{{ .Count }} etiquetas"
