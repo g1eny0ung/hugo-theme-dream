@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- Make TOC scrollable when it is too long
+
 ## [3.9.0] - 2024-11-17
 
 ### Added

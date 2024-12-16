@@ -15,6 +15,7 @@
 
 .flip-container {
   width: 100vw;
+  /* 112px is the height of the navbar */
   height: calc(100vh - 112px);
   max-width: 100%;
   perspective: 1000px;
@@ -53,7 +54,10 @@
 }
 
 #TableOfContents {
-  @apply sticky top-24;
+  @apply sticky top-24 overflow-y-auto;
+
+  /* 6 + 1 rem */
+  max-height: calc(100vh - 7rem);
 }
 
 #TableOfContents ul {
