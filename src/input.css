@@ -15,7 +15,7 @@
 
 .flip-container {
   width: 100vw;
-  /* 80px + 2rem = 112px, it's the height of the navbar */
+  /* The height of navbar is 112px (80px + 2rem). */
   height: calc(100vh - 80px - 2rem);
   max-width: 100%;
   perspective: 1000px;
@@ -28,6 +28,10 @@
     .front {
       overflow: hidden;
     }
+
+    .back {
+      transform: translateX(0) rotateY(180deg);
+    }
   }
 
   .flipper {
@@ -35,7 +39,7 @@
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transition: all 0.75s;
+    transition: transform 0.75s;
   }
 
   .front,
@@ -46,6 +50,7 @@
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
+    transition: transform 0.75s;
   }
 
   .front {
@@ -53,7 +58,8 @@
   }
 
   .back {
-    transform: rotateY(180deg);
+    /* Hack: set translateX to -25% to make the back page not overlap the TOC. */
+    transform: translateX(-25%) rotateY(180deg);
   }
 }
 
