@@ -30,23 +30,10 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="mt-4 px-4">
-  {{ if site.Params.showTableOfContents }}
-  <div class="relative" x-data="{ height: '' }" x-init="height = $el.scrollHeight + 'px'">
-  {{ else }}
-  <div>
-  {{ end }}
-    {{ if site.Params.showTableOfContents }}
-    <div class="absolute right-0 lg:w-36 xl:w-48 hidden lg:block" :style="{ height }">
-      {{ .TableOfContents }}
+<div class="lg:grid lg:grid-cols-4 gap-4 mt-4 px-4">
+  <div class="hidden lg:block"></div>
 
-      <div class="dream-adsense px-5">
-      {{ if fileExists "layouts/partials/adsense.html" }}
-        {{ partialCached "adsense.html" . }}
-      {{ end }}
-      </div>
-    </div>
-    {{ end }}
+  <div class="lg:col-span-2">
     <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
       {{ template "_internal/schema.html" . }}
 
@@ -111,16 +98,28 @@
         {{ end }}
       </div>
       {{ end }}
+
+      {{ if or site.Config.Services.Disqus.Shortname site.Params.utterancesRepo site.Params.valine site.Params.waline }}
+      <div class="divider"></div>
+
+      <section class="space-y-4">
+        {{ partialCached "commentSystems.html" . .RelPermalink }}
+      </section>
+      {{ end }}
     </article>
   </div>
 
-  {{ if or site.Config.Services.Disqus.Shortname site.Params.utterancesRepo site.Params.valine site.Params.waline }}
-  <div class="divider max-w-[65ch] mx-auto"></div>
+  <div class="hidden lg:flex lg:flex-col lg:items-end">
+    {{ if fileExists "layouts/partials/adsense.html" }}
+    <div class="dream-adsense">
+      {{ partialCached "adsense.html" . }}
+    </div>
+    {{ end }}
 
-  <section class="max-w-[65ch] mx-auto space-y-4">
-    {{ partialCached "commentSystems.html" . .RelPermalink }}
-  </section>
-  {{ end }}
+    {{ if site.Params.showTableOfContents }}
+      {{ .TableOfContents }}
+    {{ end }}
+  </div>
 </div>
 {{ end }}
 

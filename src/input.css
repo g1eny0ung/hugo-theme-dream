@@ -15,13 +15,22 @@
 
 .flip-container {
   width: 100vw;
-  height: calc(100vh - 112px);
+  /* The height of navbar is 112px (80px + 2rem). */
+  height: calc(100vh - 80px - 2rem);
   max-width: 100%;
   perspective: 1000px;
 
   &.flip-it {
     .flipper {
       transform: rotateY(180deg);
+    }
+
+    .front {
+      overflow: hidden;
+    }
+
+    .back {
+      transform: translateX(0) rotateY(180deg);
     }
   }
 
@@ -30,7 +39,7 @@
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transition: all 0.75s ease;
+    transition: transform 0.75s;
   }
 
   .front,
@@ -41,6 +50,7 @@
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
+    transition: transform 0.75s;
   }
 
   .front {
@@ -48,12 +58,16 @@
   }
 
   .back {
-    transform: rotateY(180deg);
+    /* Hack: set translateX to -25% to make the back page not overlap the TOC. */
+    transform: translateX(-25%) rotateY(180deg);
   }
 }
 
 #TableOfContents {
-  @apply sticky top-24;
+  @apply sticky top-24 overflow-y-auto;
+
+  /* 6 + 1 rem */
+  max-height: calc(100vh - 7rem);
 }
 
 #TableOfContents ul {
