@@ -2,7 +2,7 @@ baseurl = "https://example.com"
 defaultContentLanguage = "en"
 languageCode = "en"
 title = "Hugo Theme Dream"
-theme = "hugo-theme-dream"
+theme = "dream"
 
 # [services]
 # [services.disqus]

@@ -21,11 +21,30 @@ For people who prefer a simple and clean interface,
 Dream has a [**Zen mode**](https://g1en.site/hugo-theme-dream/zen-mode).
 It is more concentrated on reading and writing.
 
-<img src="https://github.com/g1eny0ung/hugo-theme-dream/blob/master/docs/public/images/zen-mode.png?raw=true" alt="Zen Mode" height="500" />
+![Zen Mode](https://github.com/g1eny0ung/hugo-theme-dream/blob/master/docs/public/images/zen-mode.png?raw=true)
+
+## Installation
+
+Go into your site folder:
+
+```sh
+mkdir -p themes && cd themes
+git clone https://github.com/g1eny0ung/hugo-theme-dream.git dream
+```
 
 ## Create configuration file
 
-Create `hugo.toml` if it doesn't exist in your site folder.
+Create `hugo.toml` if it doesn't exist in your site folder, and then enable Dream by adding:
+
+```toml
+theme = "dream"
+```
+
+<Callout>
+If you are cloning the theme with another name, replace `dream` with the name you cloned.
+
+For example, if you cloned the theme with the name `my-dream`, you should write `theme = "my-dream"`.
+</Callout>
 
 <Callout type="info">
 You can download and use this [default configuration file](https://github.com/g1eny0ung/hugo-theme-dream/blob/master/hugo.example.toml). It contains all params used in Dream.
