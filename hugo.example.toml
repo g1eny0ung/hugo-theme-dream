@@ -54,6 +54,7 @@ siteStartYear = 2016
 # noDefaultSummaryCover = true
 # showTableOfContents = true
 # showSummaryCoverInPost = true
+# imageZoomableInPost = true
 # showPrevNextPost = true
 # reorderShares = ["x", "facebook", "whatsapp"]
 

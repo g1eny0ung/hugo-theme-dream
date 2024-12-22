@@ -149,4 +149,11 @@
 </script>
 {{ end }}
 
+{{ if site.Params.imageZoomableInPost }}
+  <script type="module">
+    import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm';
+    mediumZoom('#dream-single-post-main > img')
+  </script>
+{{ end }}
+
 {{ end }}

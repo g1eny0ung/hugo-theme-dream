@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+Add `imageZoomableInPost` param to control the zoomable of images in single post page
+
 ### Changed
 
 - Make TOC scrollable when it is too long
