@@ -3,12 +3,12 @@
 ![GitHub Release](https://img.shields.io/github/v/release/g1eny0ung/hugo-theme-dream)
 ![GitHub License](https://img.shields.io/github/license/g1eny0ung/hugo-theme-dream)
 
+> [!IMPORTANT]
 > The latest version of Dream is v3.x.
 >
 > If you are using v2.x, please check the [v2 branch](https://github.com/g1eny0ung/hugo-theme-dream/tree/v2) and its [docs](https://hugo-theme-dream-docs-v2.netlify.app/).
 
 - [Intro](#intro)
-- [Installation](#installation)
 - [Documentation](#documentation)
 - [Examples](#examples)
 - [Publish your site](#publish-your-site)
@@ -28,17 +28,6 @@ Dream has a [**Zen mode**](https://g1en.site/hugo-theme-dream/zen-mode).
 It is more concentrated on reading and writing.
 
 <img src="https://github.com/g1eny0ung/hugo-theme-dream/blob/master/docs/public/images/zen-mode.png?raw=true" alt="Zen Mode" height="500" />
-
-## Installation
-
-Go into your site folder:
-
-```bash
-cd themes
-git clone https://github.com/g1eny0ung/hugo-theme-dream.git dream
-```
-
-Then open `hugo.toml` and add `theme = "dream"`.
 
 ## Documentation
 
