@@ -53,6 +53,7 @@ stickyNav = true
 # noDefaultSummaryCover = true
 showTableOfContents = true
 showSummaryCoverInPost = true
+imageZoomableInPost = true
 showPrevNextPost = true
 # reorderShares = ["x", "facebook", "whatsapp"]
 
@@ -261,6 +262,28 @@ Show table of contents in the single post page.
 ### showSummaryCoverInPost
 
 Show summary cover image in the single post page.
+
+### imageZoomableInPost
+
+Make images zoomable in the single post page. This feature uses [medium-zoom](https://github.com/francoischalifour/medium-zoom) under the hood.
+
+<Callout type="info">
+For advanced usage, you may want to customize the medium-zoom options. Dream allows you to
+create a partial file named `medium-zoom.html` in the `layouts/partials` folder to replace the
+default behavior. For example, you can put the following code in the `medium-zoom.html` file:
+
+```html
+<script type="module">
+  import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm';
+  mediumZoom('#dream-single-post-content img', {
+    // Put your custom options here.
+  }) // #dream-single-post-content is the id of the post content.
+
+  // You can also further control the logic of zooming images.
+  // Like zooming lazy-loaded images.
+</script>
+```
+</Callout>
 
 ### showPrevNextPost
 
