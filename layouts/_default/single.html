@@ -64,11 +64,13 @@
         </div>
       </header>
 
-      {{ if and .Params.Cover site.Params.showSummaryCoverInPost }}
-      <img src="{{ .Params.Cover }}" alt="{{ .Title }}" />
-      {{ end }}
+      <section id="dream-single-post-content" itemprop="articleBody">
+        {{ if and .Params.Cover site.Params.showSummaryCoverInPost }}
+        <img src="{{ .Params.Cover }}" alt="{{ .Title }}" />
+        {{ end }}
 
-      {{ .Content | emojify }}
+        {{ .Content | emojify }}
+      </section>
 
       {{ if site.Params.showPrevNextPost }}
       <div class="divider"></div>
@@ -152,7 +154,7 @@
 {{ if site.Params.imageZoomableInPost }}
   <script type="module">
     import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm';
-    mediumZoom('#dream-single-post-main > img')
+    mediumZoom('#dream-single-post-content img')
   </script>
 {{ end }}
 
