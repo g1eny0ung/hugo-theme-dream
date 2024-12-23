@@ -263,9 +263,9 @@ Show table of contents in the single post page.
 
 Show summary cover image in the single post page.
 
-### imageZoomableInPost = true
+### imageZoomableInPost
 
-Make images zoomable in the single post page. This feature will use [medium-zoom](https://github.com/francoischalifour/medium-zoom) to implement.
+Make images zoomable in the single post page. This feature uses [medium-zoom](https://github.com/francoischalifour/medium-zoom) under the hood.
 
 <Callout type="info">
 For advanced usage, you may want to customize the medium-zoom options. Dream allows you to
@@ -279,7 +279,8 @@ default behavior. For example, you can put the following code in the `medium-zoo
     // Put your custom options here.
   }) // #dream-single-post-content is the id of the post content.
 
-  // You can also further control the logic of zooming images. Like zooming lazy-loaded images.
+  // You can also further control the logic of zooming images.
+  // Like zooming lazy-loaded images.
 </script>
 ```
 </Callout>

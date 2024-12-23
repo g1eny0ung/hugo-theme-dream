@@ -9,11 +9,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-Add `imageZoomableInPost` param to control the zoomable of images in single post page
+- Add `imageZoomableInPost` param to control the zoomable of images in the single post page [#345](https://github.com/g1eny0ung/hugo-theme-dream/pull/345)
 
 ### Changed
 
-- Make TOC scrollable when it is too long
+- Make TOC scrollable when it is too long [#340](https://github.com/g1eny0ung/hugo-theme-dream/pull/340)
 
 ## [3.9.0] - 2024-11-17
 
@@ -183,7 +183,7 @@ Add `imageZoomableInPost` param to control the zoomable of images in single post
 
 ### Added
 
-- Support image optimization for summary images. See [Image Optimization](https://g1en.site/hugo-theme-dream/summary-images#image-optimization) for more details.
+- Support image optimization for summary images. See [Image Optimization](https://g1en.site/hugo-theme-dream/summary-images#image-optimization) for more details
 
 ### Changed
 
