@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Make TOC scrollable when it is too long [#340](https://github.com/g1eny0ung/hugo-theme-dream/pull/340)
 
+### Fixed
+
+- Add background color to the dark mode switch button
+
 ## [3.9.0] - 2024-11-17
 
 ### Added
