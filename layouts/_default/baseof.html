@@ -60,6 +60,10 @@
       </script>
     {{ end }}
 
+    {{ if .Store.Get "hasMathjax" }}
+      {{ partialCached "mathjax.html" . }}
+    {{ end }}
+
     {{ range site.Params.Advanced.customJS }}
     <script src="{{ . | relURL }}"></script>
     {{ end }}
