@@ -120,3 +120,49 @@ graph TD;
     B-->D;
     C-->D;
 ```
+
+### Mathematics
+
+Dream supports mathematical equations and expressions by using [MathJax](https://www.mathjax.org/).
+This implementation of this feature referred to https://gohugo.io/content-management/mathematics/.
+
+For using this feature, you need to enable and configure the Goldmark passthrough extension in your site configuration:
+
+```toml
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+```
+
+And then you can use it like below:
+
+````mdx filename="Markdown"
+```math
+This is an inline \(a^*=x-b^*\) equation.
+
+These are block equations:
+
+\[a^*=x-b^*\]
+
+\[ a^*=x-b^* \]
+
+\[
+a^*=x-b^*
+\]
+
+These are also block equations:
+
+$$a^*=x-b^*$$
+
+$$ a^*=x-b^* $$
+
+$$
+a^*=x-b^*
+$$
+```
+````

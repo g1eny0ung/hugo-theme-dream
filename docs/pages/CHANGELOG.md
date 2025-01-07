@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - Add `imageZoomableInPost` param to control the zoomable of images in the single post page [#345](https://github.com/g1eny0ung/hugo-theme-dream/pull/345)
-- Support mathematical equations and expressions by using [MathJax](https://www.mathjax.org/)
+- Support mathematical equations and expressions by using [MathJax](https://www.mathjax.org/) [#350](https://github.com/g1eny0ung/hugo-theme-dream/pull/350)
 
 ### Changed
 
