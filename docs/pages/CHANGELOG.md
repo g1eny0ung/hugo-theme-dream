@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [3.10.0] - 2025-01-07
+
 ### Added
 
 - Add `imageZoomableInPost` param to control the zoomable of images in the single post page [#345](https://github.com/g1eny0ung/hugo-theme-dream/pull/345)
@@ -15,9 +17,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 
 - Make TOC scrollable when it is too long [#340](https://github.com/g1eny0ung/hugo-theme-dream/pull/340)
+- Bump Mermaid version to 11.4.1
+- Now external links will open in a new tab by default
 
 ### Fixed
 
+- Fix Disqus styling issues
 - Add background color to the dark mode switch button
 
 ## [3.9.0] - 2024-11-17
