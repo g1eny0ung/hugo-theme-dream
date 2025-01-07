@@ -53,6 +53,8 @@ View the below section to learn more about the parameters.
 
 ## Features
 
+> See https://g1en.site/posts/dream-post-features/ for a live demo.
+
 ### Alerts
 
 Dream supports [GitHub Alerts Markdown extension](https://github.blog/changelog/2023-12-14-new-markdown-extension-alerts-provide-distinctive-styling-for-significant-content/) compatible alerts. You can use it in your post like below:
@@ -73,8 +75,6 @@ Dream supports [GitHub Alerts Markdown extension](https://github.blog/changelog/
 > [!CAUTION]
 > Advises about risks or negative outcomes of certain actions.
 ```
-
-See https://g1en.site/posts/dream-post-features/ for a live demo.
 
 If you want to change the default title of the alerts, you can add a
 [markdown attribute](https://gohugo.io/content-management/markdown-attributes/)
@@ -99,7 +99,7 @@ block = true
 
 ### Mermaid Diagrams
 
-Dream supports [Mermaid](https://mermaid.js.org/) diagrams. You can use it in your post like below:
+Dream supports [Mermaid](https://mermaid.js.org/) diagrams. You can use it like below:
 
 ````mdx filename="Markdown"
 ```mermaid
@@ -120,3 +120,50 @@ graph TD;
     B-->D;
     C-->D;
 ```
+
+### Mathematics
+
+Dream supports mathematical equations and expressions by using [MathJax](https://www.mathjax.org/).
+The implementation of this feature referred to https://gohugo.io/content-management/mathematics/.
+
+To use this feature, you need to enable and configure the Goldmark passthrough extension in your site configuration:
+
+```toml
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+```
+
+And then you can use it like below:
+
+````mdx filename="Markdown"
+```math
+This is an inline \(a^*=x-b^*\) equation.
+```
+
+```math
+These are block equations:
+
+\[
+\begin{aligned}
+KL(\hat{y} || y) &= \sum_{c=1}^{M}\hat{y}_c \log{\frac{\hat{y}_c}{y_c}} \\
+JS(\hat{y} || y) &= \frac{1}{2}(KL(y||\frac{y+\hat{y}}{2}) + KL(\hat{y}||\frac{y+\hat{y}}{2}))
+\end{aligned}
+\]
+
+These are also block equations:
+
+$$a^*=x-b^*$$
+
+$$ a^*=x-b^* $$
+
+$$
+a^*=x-b^*
+$$
+```
+````
