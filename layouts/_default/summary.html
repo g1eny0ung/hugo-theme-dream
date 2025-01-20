@@ -40,8 +40,11 @@
 
     {{ .Summary | emojify | safeHTML }}
 
+    {{ $hasAuthor := or .Params.author site.Params.author }}
     <div class="card-actions justify-between items-center mt-4">
-      {{ partial "author.html" (dict "Params" .Params "template" "summary") }}
+      {{ if $hasAuthor }}
+        {{ partial "author.html" (dict "Params" .Params "template" "summary") }}
+      {{ end }}
 
       <div class="flex items-center">
         <ion-icon name="time" class="mr-1"></ion-icon>
