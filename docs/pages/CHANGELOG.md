@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- Remove author display if both post author and site author are not set
+- Remove author display if both post author and site author are not set [#354](https://github.com/g1eny0ung/hugo-theme-dream/pull/354)
 
 ## [3.10.0] - 2025-01-07
 
