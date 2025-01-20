@@ -57,8 +57,12 @@
             {{ end }}</span>
           {{ end }}
         </p>
+
+        {{ $hasAuthor := or .Params.author site.Params.author }}
         <div class="flex justify-between">
-          {{ partial "author.html" (dict "Params" .Params "template" "single") }}
+          {{ if $hasAuthor }}
+            {{ partial "author.html" (dict "Params" .Params "template" "single") }}
+          {{ end }}
 
           {{ partial "share.html" . }}
         </div>
