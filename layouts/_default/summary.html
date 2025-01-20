@@ -38,7 +38,7 @@
     {{ end }}
     </p>
 
-    {{ .Summary | emojify | safeHTML }}
+    {{ or .Description (.Summary | emojify | safeHTML) }}
 
     {{ $hasAuthor := or .Params.author site.Params.author }}
     <div class="card-actions justify-between items-center mt-4">
