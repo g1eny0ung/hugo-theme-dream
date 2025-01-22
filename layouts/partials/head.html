@@ -1,5 +1,9 @@
-{{ if isset site.Params "favicon" }}
-<link href="{{ site.Params.favicon | relURL }}" rel="icon" type="image/x-icon" />
+{{ with site.Params.favicon }}
+  {{ if hasPrefix . "<link" }}
+    {{ . | safeHTML }}
+  {{ else }}
+    <link href="{{ . | relURL }}" rel="icon" type="image/x-icon" />
+  {{ end }}
 {{ end }}
 
 <link rel="canonical" href="{{ .Permalink }}" />
