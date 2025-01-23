@@ -54,3 +54,28 @@
 {{ end }}
 </article>
 {{ end }}
+
+{{ if site.Params.twikoo }}
+<article>
+{{ if fileExists "layouts/partials/twikoo.html" }}
+  {{ partialCached "twikoo.html" . }}
+{{ else }}
+  <div id="tcomment"></div>
+  <style>
+    .twikoo :where(img) {
+      margin-top: 0em;
+      margin-bottom: 0em;
+    }
+  </style>
+  <script>
+    twikoo.init({
+      envId: {{ site.Params.envID }},
+      el: '#tcomment',
+      region: {{ site.Params.region }},
+      path: {{ site.Params.path }},
+      lang: {{ site.Params.lang }},
+    })
+  </script>
+{{ end }}
+</article>
+{{ end }}

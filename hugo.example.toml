@@ -38,6 +38,12 @@ headerTitle = "Hugo Theme Dream"
 # waline = true
 # walineServer = ""
 
+# twikoo = true
+# envID = ""
+# region = ""
+# path = 
+# lang = ""
+
 # email = ""
 
 siteStartYear = 2016
