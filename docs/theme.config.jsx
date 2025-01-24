@@ -34,6 +34,11 @@ export default {
         <meta property="og:url" content={`https://hugo-theme-dream.g1en.site${pathname}`} />
         <meta property="og:title" content={_title} />
         <meta property="og:description" content={description} />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2097283051393565"
+          crossorigin="anonymous"
+        ></script>
       </>
     )
   },
@@ -54,11 +59,6 @@ export default {
           </a>
           .
         </p>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2097283051393565"
-          crossorigin="anonymous"
-        ></script>
       </>
     ),
   },
