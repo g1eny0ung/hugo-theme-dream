@@ -7,7 +7,7 @@ export default function AdSense() {
   }, [])
 
   return (
-    <>
+    <div style={{ width: '100%' }}>
       <Script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2097283051393565"
@@ -22,6 +22,6 @@ export default function AdSense() {
         data-ad-format="auto"
         data-full-width-responsive="true"
       />
-    </>
+    </div>
   )
 }
