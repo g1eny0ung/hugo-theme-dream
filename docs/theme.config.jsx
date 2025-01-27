@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import { useConfig } from 'nextra-theme-docs'
+import Adsense from './AdSense'
 
 const siteTitle = '🌱 Hugo Theme Dream'
 function titleTemplate(title, siteTitle = siteTitle) {
@@ -34,13 +35,11 @@ export default {
         <meta property="og:url" content={`https://hugo-theme-dream.g1en.site${pathname}`} />
         <meta property="og:title" content={_title} />
         <meta property="og:description" content={description} />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2097283051393565"
-          crossorigin="anonymous"
-        ></script>
       </>
     )
+  },
+  toc: {
+    extraContent: <Adsense />,
   },
   footer: {
     content: (
