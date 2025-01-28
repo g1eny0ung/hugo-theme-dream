@@ -197,10 +197,11 @@ Other related parameters will be ingored.
 Twikoo is a **simple**, **safe**, **free** comment system.
 You can view https://twikoo.js.org/en/ for more details.
 
-To enable Twikoo, you need to set the `twikoo` parameter to `true` and set the following 4 parameters referring to the [official manual](https://twikoo.js.org/quick-start.html)
+To enable Twikoo, you need to set the `enabled` parameter to `true` and set the following 4 parameters referring to the [official manual](https://twikoo.js.org/quick-start.html)
 
 ```toml
-[params]
+[params.twikoo]
+enabled = true
 envID = ""
 region = ""
 path = 
@@ -211,7 +212,7 @@ If you want to customize Twikoo,
 you can create a partial file named `twikoo.html` in the `layouts/partials` folder.
 
 <Callout type="info">
-You still need to set the `twikoo` parameter to `true` to enable Twikoo when using a custom partial file.
+You still need to set the `enabled` parameter to `true` to enable Twikoo when using a custom partial file.
 
 Other related parameters and **CDN import** will be ingored.
 </Callout>

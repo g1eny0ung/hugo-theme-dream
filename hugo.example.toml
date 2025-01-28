@@ -38,12 +38,6 @@ headerTitle = "Hugo Theme Dream"
 # waline = true
 # walineServer = ""
 
-# twikoo = true
-# envID = ""
-# region = ""
-# path = 
-# lang = ""
-
 # email = ""
 
 siteStartYear = 2016
@@ -73,3 +67,10 @@ siteStartYear = 2016
 # [params.experimental]
 # jsDate = true
 # jsDateFormat = "yyyy年MM月dd日"
+
+[params.twikoo]
+# enabled = true
+# envID = ""
+# region = ""
+# path = 
+# lang = ""

@@ -55,7 +55,7 @@
 </article>
 {{ end }}
 
-{{ if site.Params.twikoo }}
+{{ if site.Params.twikoo.enabled }}
 <article>
 {{ if fileExists "layouts/partials/twikoo.html" }}
   {{ partialCached "twikoo.html" . }}
@@ -69,11 +69,11 @@
   </style>
   <script>
     twikoo.init({
-      envId: {{ site.Params.envID }},
+      envId: {{ site.Params.twikoo.envId }},
       el: '#tcomment',
-      region: {{ site.Params.region }},
-      path: {{ site.Params.path }},
-      lang: {{ site.Params.lang }},
+      region: {{ site.Params.twikoo.region }},
+      path: {{ site.Params.twikoo.path }},
+      lang: {{ site.Params.twikoo.lang }},
     })
   </script>
 {{ end }}
