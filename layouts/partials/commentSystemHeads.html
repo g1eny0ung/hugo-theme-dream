@@ -5,9 +5,3 @@
 {{ if site.Params.waline }}
 <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css" />
 {{ end }}
-
-{{ if site.Params.twikoo.enabled }}
-{{ if not (fileExists "layouts/partials/twikoo.html") }}
-<script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.41/dist/twikoo.min.js"></script>
-{{ end }}
-{{ end }}

@@ -61,19 +61,18 @@
   {{ partialCached "twikoo.html" . }}
 {{ else }}
   <div id="tcomment"></div>
-  <style>
-    .twikoo :where(img) {
-      margin-top: 0em;
-      margin-bottom: 0em;
-    }
-  </style>
+  <script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.41/dist/twikoo.min.js"></script>
   <script>
     twikoo.init({
-      envId: {{ site.Params.twikoo.envId }},
+      envId: {{ site.Params.twikoo.envID }},
       el: '#tcomment',
-      region: {{ site.Params.twikoo.region }},
-      path: {{ site.Params.twikoo.path }},
-      lang: {{ site.Params.twikoo.lang }},
+      {{ with site.Params.twikoo.region }}
+        region: {{ . }},
+      {{ end }}
+      path: {{ .RelPermalink }},
+      {{ with site.Params.twikoo.lang }}
+        lang: {{ . }},
+      {{ end }}
     })
   </script>
 {{ end }}

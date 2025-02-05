@@ -60,6 +60,12 @@ siteStartYear = 2016
 
 # [params.navItems]
 
+# [params.twikoo]
+# enabled = true
+# envID = ""
+# region = ""
+# lang = ""
+
 # [params.advanced]
 # customCSS = ["css/custom.css"]
 # customJS = []
@@ -67,10 +73,3 @@ siteStartYear = 2016
 # [params.experimental]
 # jsDate = true
 # jsDateFormat = "yyyy年MM月dd日"
-
-[params.twikoo]
-# enabled = true
-# envID = ""
-# region = ""
-# path = 
-# lang = ""
