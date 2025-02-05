@@ -54,3 +54,27 @@
 {{ end }}
 </article>
 {{ end }}
+
+{{ if site.Params.twikoo.enabled }}
+<article>
+{{ if fileExists "layouts/partials/twikoo.html" }}
+  {{ partialCached "twikoo.html" . }}
+{{ else }}
+  <div id="tcomment"></div>
+  <script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.41/dist/twikoo.min.js"></script>
+  <script>
+    twikoo.init({
+      envId: {{ site.Params.twikoo.envID }},
+      el: '#tcomment',
+      {{ with site.Params.twikoo.region }}
+        region: {{ . }},
+      {{ end }}
+      path: {{ .RelPermalink }},
+      {{ with site.Params.twikoo.lang }}
+        lang: {{ . }},
+      {{ end }}
+    })
+  </script>
+{{ end }}
+</article>
+{{ end }}
