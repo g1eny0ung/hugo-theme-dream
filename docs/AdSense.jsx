@@ -19,7 +19,7 @@ export default function AdSense() {
         style={{ display: 'flex', justifyContent: 'left' }}
         data-ad-client="ca-pub-2097283051393565"
         data-ad-slot="4533331907"
-        data-ad-format="auto"
+        data-ad-format="rectangle"
         data-full-width-responsive="true"
       />
     </div>
