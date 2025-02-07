@@ -1,0 +1,37 @@
+import { Callout } from 'nextra/components'
+
+# Google Adsense
+
+<Callout>
+Currently, this feature is still experimental. It's only take effect on the [Post Page](post-page.mdx).
+
+It may change in the future.
+</Callout>
+
+## How to use
+
+Even though Adsense provides auto ads, it's also necessary to add slots to control the position of the ads.
+
+You can create these partial files in the `layouts/partials` folder to enable Google Adsense on your site.
+
+- **`adsense.html`**
+- **`adsense-post-bottom.html`**
+
+The `adsense.html` is used to add the ads to the left sidebar on the post page. Please use
+the [display ad unit](https://support.google.com/adsense/answer/9274025) for this slot.
+
+The `adsense-post-bottom.html` is used to add the ads to the bottom of the post page. Please use
+the [In-article ad](https://support.google.com/adsense/answer/9185052) for this slot.
+
+After creating ad units, put the code in the partial file to make it work.
+
+## Tips
+
+### Use rectangle format
+
+After testing, I found that the ad unit with rectangle format is the best choice for the left sidebar (`adsense.html`).
+Otherwise, Adsense usually uses [a nearly `600px` height ad unit](https://support.google.com/google-ads/answer/7031480)
+because there is enough space for it.
+
+So I recommend referring to this [document](https://support.google.com/adsense/answer/9183460) to specify the
+`data-ad-format` to `rectangle`.

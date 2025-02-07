@@ -12,6 +12,7 @@ export default {
   i18n: 'Internationalization',
   'website-analytics': 'Website Analytics',
   'social-comments': 'Social Comments',
+  'adsense': 'Google AdSense',
   'post-page': 'Post Page',
   'about-page': 'About Page',
   'archives-page': 'Archives Page',
