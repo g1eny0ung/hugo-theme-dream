@@ -76,7 +76,7 @@
 
       <section id="dream-single-post-content" itemprop="articleBody">
         {{ if and .Params.Cover site.Params.showSummaryCoverInPost }}
-          <img class="w-full" src="{{ .Params.Cover }}" alt="{{ .Title }}" />
+          <img class="w-full z-30" src="{{ .Params.Cover }}" alt="{{ .Title }}" />
         {{ end }}
 
         {{ .Content | emojify }}
@@ -167,7 +167,10 @@
   {{ else }}
     <script type="module">
       import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm';
-      mediumZoom('#dream-single-post-content img')
+      mediumZoom('#dream-single-post-content img', {
+        background: 'oklch(var(--b1))',
+        margin: 24,
+      })
     </script>
   {{ end }}
 {{ end }}
