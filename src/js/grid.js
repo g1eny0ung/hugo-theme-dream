@@ -10,7 +10,10 @@ function initGrid() {
       window.aboutMasonry = msnry
     }
 
-    imagesLoaded(grid, () => msnry.layout())
+    imagesLoaded(grid, () => {
+      grid.style.opacity = 1
+      msnry.layout()
+    })
   })
 }
 

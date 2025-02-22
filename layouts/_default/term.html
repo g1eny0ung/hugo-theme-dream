@@ -41,19 +41,19 @@
     {{ $paginator := .Paginate .Pages }}
 
     {{ if site.Params.zenMode }}
-    <div class="dream-zen-posts px-4 space-y-8">
-      {{ range $paginator.Pages }}
-        {{ .Render "zen-summary" }}
-      {{ end }}
-    </div>
-    {{ else }}
-    <div class="dream-grid">
-    {{ range $paginator.Pages }}
-      <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
-        {{ .Render "summary" }}
+      <div class="dream-zen-posts px-4 space-y-8">
+        {{ range $paginator.Pages }}
+          {{ .Render "zen-summary" }}
+        {{ end }}
       </div>
-    {{ end }}
-    </div>
+    {{ else }}
+      <div class="dream-grid">
+        {{ range $paginator.Pages }}
+          <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
+            {{ .Render "summary" }}
+          </div>
+        {{ end }}
+      </div>
     {{ end }}
 
     {{ if gt $paginator.TotalPages 1 }}
