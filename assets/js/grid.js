@@ -9,7 +9,8 @@ function initGrid() {
       window.aboutMasonry = msnry;
     }
     imagesLoaded(grid, function () {
-      return msnry.layout();
+      grid.style.opacity = 1;
+      msnry.layout();
     });
   });
 }
