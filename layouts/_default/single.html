@@ -75,11 +75,38 @@
       </header>
 
       <section id="dream-single-post-content" itemprop="articleBody">
+        <section id="dream-single-post-content" itemprop="articleBody">
+          {{ if site.Params.showTaxonomyInPostTop }}
+            {{ $taxonomy := "tags" }}
+            {{ with .GetTerms $taxonomy }}
+            
+              <div class="flex flex-wrap gap-4 mt-6" style="margin-top: 1.5rem;">
+                {{ (site.GetPage $taxonomy).LinkTitle }}:
+                {{ range $k, $_ := . -}}
+                  <a class="badge h-6 no-underline hover:badge-primary" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+                {{- end }}
+              </div>
+            {{ end }}
+          {{ end }}  
+
         {{ if and .Params.Cover site.Params.showSummaryCoverInPost }}
           <img class="w-full z-30" src="{{ .Params.Cover }}" alt="{{ .Title }}" />
         {{ end }}
 
         {{ .Content | emojify }}
+
+        {{ if site.Params.showTaxonomyInPostBottom }}
+            {{ $taxonomy := "tags" }}
+            {{ with .GetTerms $taxonomy }}
+            
+              <div class="flex flex-wrap gap-4 mt-6" style="margin-top: 1.5rem;">
+                {{ (site.GetPage $taxonomy).LinkTitle }}:
+                {{ range $k, $_ := . -}}
+                  <a class="badge h-6 no-underline hover:badge-primary" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+                {{- end }}
+              </div>
+            {{ end }}
+          {{ end }}  
 
         {{ if fileExists "layouts/partials/adsense-post-bottom.html" }}
           <div class="dream-adsense-post-bottom">
