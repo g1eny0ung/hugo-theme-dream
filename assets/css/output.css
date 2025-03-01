@@ -3610,6 +3610,10 @@ html {
   --timeline-col-start: 64px;
 }
 
+iframe[title='Disqus'] {
+  display: none;
+}
+
 #dream-global-bg {
   position: fixed;
   top: 0;
