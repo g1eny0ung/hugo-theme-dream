@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Fix the background and z-index problem of the zoomable image
 - Optimize layout shifts when the homepage loads [#364](https://github.com/g1eny0ung/hugo-theme-dream/pull/364)
+- Disable Disqus ads
 
 ## [3.10.0] - 2025-01-07
 
