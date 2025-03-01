@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-iframe[title='Disqus'] {
+#disqus_thread iframe[src*=ads-iframe] {
   display: none;
 }
 

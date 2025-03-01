@@ -3610,7 +3610,7 @@ html {
   --timeline-col-start: 64px;
 }
 
-iframe[title='Disqus'] {
+#disqus_thread iframe[src*=ads-iframe] {
   display: none;
 }
 
