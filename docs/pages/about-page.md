@@ -24,7 +24,7 @@ headless: true
 ---
 ```
 
-You will be curious why it's needed to create an `index.md`. Because Dream don't want the about folder to be output as `RegularPages`.
+You will be curious why it's needed to create an `index.md`. Because Dream doesn't want the about folder to be output as `RegularPages`.
 
 Related docs: <https://gohugo.io/content-management/page-bundles/#headless-bundles>
 
