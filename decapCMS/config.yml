@@ -24,15 +24,19 @@ collections:
       - label: 'Last Modified Date'
         name: 'lastmod'
         widget: 'datetime'
+        required: false
       - label: 'Author'
         name: 'author'
         widget: 'string'
+        required: false
       - label: 'Author Link'
         name: 'authorlink'
         widget: 'string'
+        required: false
       - label: 'Cover'
         name: 'cover'
         widget: 'image'
+        required: false
       - label: 'Categories'
         name: 'categories'
         widget: 'list'
