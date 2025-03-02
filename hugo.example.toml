@@ -16,7 +16,7 @@ theme = "dream"
 lightTheme = "emerald"
 darkTheme = "forest"
 
-# backgroundImage = "me/background.jpg"
+# backgroundImage = "img/global-background.jpg"
 # backgroundImageDark = ""
 
 author = "Dream"
