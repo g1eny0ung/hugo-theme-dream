@@ -3,7 +3,6 @@ export default {
     title: 'Docs (v2)',
     type: 'page',
     href: 'https://hugo-theme-dream-docs-v2.netlify.app',
-    newWindow: true,
   },
   index: 'Quick Start',
   'base-configurations': 'Base Configurations',
