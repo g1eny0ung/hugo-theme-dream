@@ -10,7 +10,7 @@ module.exports = {
         DEFAULT: {
           css: {
             blockquote: {
-              color: "var(--tw-prose-body)",
+              color: 'var(--tw-prose-body)',
               fontWeight: 'normal',
               fontStyle: 'normal',
             },
@@ -35,10 +35,6 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography'), require('daisyui')],
+  plugins: [require('@tailwindcss/typography')],
   darkMode: ['selector'],
-  daisyui: {
-    themes: ['emerald', 'forest'],
-    darkTheme: 'forest',
-  },
 }

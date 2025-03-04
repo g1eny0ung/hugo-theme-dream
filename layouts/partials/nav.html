@@ -12,7 +12,7 @@
   <div class="container flex justify-between px-4">
   {{ end }}
     <section class="flex items-center gap-4">
-      <div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="{{ T "flip" }}">
+      <div class="avatar cursor-pointer hover:avatar-online" @click="flip = !flip" title="{{ T "flip" }}">
         <div class="h-10 rounded-full">
           <img src="{{ site.Params.avatar | relURL }}" alt="{{ site.Params.headerTitle }}" />
         </div>
@@ -36,7 +36,7 @@
       <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
         <ion-icon name="menu" class="text-2xl"></ion-icon>
       </div>
-      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md">
+      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-1 shadow-md">
         {{ partial "navMobileMenu.html" . }}
       </ul>
     </div>
@@ -81,7 +81,7 @@
         <div tabindex="0" role="button" class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" aria-label="Select an option">
           <ion-icon class="group-hover:text-primary-content text-xl" name="menu"></ion-icon>
         </div>
-        <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-xl">
+        <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-1 shadow-xl">
           {{ range $collapseNavItems }}
           {{ partial "renderMobileNavItem.html" . }}
           {{ end }}
