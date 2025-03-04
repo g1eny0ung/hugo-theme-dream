@@ -4,53 +4,30 @@ important = "重要"
 warning = "警告"
 caution = "小心"
 
-[home]
-other = "首页"
+home = "首页"
+backToHome = "返回首页"
+flip = "翻转一下！"
+about = "关于"
+search = "搜索"
+prevPage = "上一页"
+nextPage = "下一页"
 
-[backToHome]
-other = "返回首页"
+archives = "归档"
+allCategories = "所有分类"
+allTags = "所有标签"
 
-[flip]
-other = "翻转一下！"
-
-[about]
-other = "关于"
-
-[archives]
-other = "归档"
-
-[allTags]
-other = "所有标签"
-
-[tag]
-one = "1标签"
-other = "{{ .Count }}标签"
-
-[allCategories]
-other = "所有分类"
-
-[category]
-one = "1分类"
-other = "{{ .Count }}分类"
+minuteRead = "分钟阅读"
+updatedAt = "更新于"
+socialLinks = "社交链接"
 
 [article]
 one = "1篇文章"
 other = "{{ .Count }}篇文章"
 
-[socialLinks]
-other = "社交链接"
+[category]
+one = "1分类"
+other = "{{ .Count }}分类"
 
-[minuteRead]
-other = "分钟阅读"
-
-[updateAt]
-other = "更新于"
-
-[prevPage]
-other = "上一页"
-
-[nextPage]
-other = "下一页"
-
-[search]
-other = "搜索"
+[tag]
+one = "1标签"
+other = "{{ .Count }}标签"

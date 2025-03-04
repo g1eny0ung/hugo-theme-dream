@@ -1,4 +1,4 @@
-<div class="dream-grid">
+<div class="dream-grid dream-grid-about">
   {{ with site.GetPage "/about" }}
   {{ $aboutPages := .Resources.ByType "page" }}
   {{ range (sort $aboutPages "Date" "asc") }}

@@ -2,7 +2,9 @@ import { Callout } from 'nextra/components'
 
 # Summary Images
 
-Each post can be associated with a cover image. This image will be displayed in the summary of the post in the home page:
+Each post can have a cover image associated with it. This image is used in the summary view of the post.
+You can also display it on the single post page by setting the [`showSummaryCoverInPost`](./params-configurations.mdx#showsummarycoverinpost)
+parameter to `true`.
 
 ```md
 ---
@@ -12,8 +14,7 @@ cover: /img/build-a-chrome-extension-with-figwheel-main.png
 
 <Callout type="info">
   For a better visualization, it's recommended to set a cover image for each post (although it's not mandatory). I
-  personally go to [Unsplash](https://unsplash.com/) or [Pexels](https://www.pexels.com/) to select my posts' cover
-  images (choose the small size).
+  personally go to [Unsplash](https://unsplash.com/) or [Pexels](https://www.pexels.com/) to select covers (choose the small size).
 
   If you don't specify a cover image, Dream will use one of the predefined images as a placeholder in the summary card.
   To disable this behavior, set [`noDefaultSummaryCover`](./params-configurations.mdx#nodefaultsummarycover) to `true`.

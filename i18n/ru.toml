@@ -43,7 +43,7 @@ few = " минуты чтения"
 many = " минут чтения"
 other = " минут чтения"
 
-[updateAt]
+[updatedAt]
 other = "Обновлено"
 
 [prevPage]

@@ -30,17 +30,16 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="mt-4 px-4">
-  {{ if site.Params.showTableOfContents }}
-  <div class="relative" x-data="{ height: '' }" x-init="height = $el.scrollHeight + 'px'">
-  {{ else }}
-  <div>
-  {{ end }}
-    {{ if site.Params.showTableOfContents }}
-    <div class="absolute right-0 lg:w-36 xl:w-48 hidden lg:block" :style="{ height }">
-      {{ .TableOfContents }}
-    </div>
+<div class="lg:grid lg:grid-cols-4 gap-4 mt-4 px-4">
+  <div class="hidden lg:block">
+    {{ if fileExists "layouts/partials/adsense.html" }}
+      <div class="dream-adsense w-2/3">
+        {{ partialCached "adsense.html" . }}
+      </div>
     {{ end }}
+  </div>
+
+  <div class="lg:col-span-2">
     <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
       {{ template "_internal/schema.html" . }}
 
@@ -56,7 +55,7 @@
           | <span>{{ .ReadingTime }}{{ T "minuteRead" .ReadingTime }}</span>
 
           {{ if ne .Params.nolastmod true }}
-          | <span>{{ T "updateAt" }}
+          | <span>{{ T "updatedAt" }}
             {{ if site.Params.Experimental.jsDate }}
               <span data-format="luxon">{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}</span>
             {{ else }}
@@ -64,18 +63,30 @@
             {{ end }}</span>
           {{ end }}
         </p>
+
+        {{ $hasAuthor := or .Params.author site.Params.author }}
         <div class="flex justify-between">
-          {{ partial "author.html" (dict "Params" .Params "template" "single") }}
+          {{ if $hasAuthor }}
+            {{ partial "author.html" (dict "Params" .Params "template" "single") }}
+          {{ end }}
 
           {{ partial "share.html" . }}
         </div>
       </header>
 
-      {{ if and .Params.Cover site.Params.showSummaryCoverInPost }}
-      <img src="{{ .Params.Cover }}" alt="{{ .Title }}" />
-      {{ end }}
+      <section id="dream-single-post-content" itemprop="articleBody">
+        {{ if and .Params.Cover site.Params.showSummaryCoverInPost }}
+          <img class="w-full z-30" src="{{ .Params.Cover }}" alt="{{ .Title }}" />
+        {{ end }}
 
-      {{ .Content | emojify }}
+        {{ .Content | emojify }}
+
+        {{ if fileExists "layouts/partials/adsense-post-bottom.html" }}
+          <div class="dream-adsense-post-bottom">
+            {{ partialCached "adsense-post-bottom.html" . }}
+          </div>
+        {{ end }}
+      </section>
 
       {{ if site.Params.showPrevNextPost }}
       <div class="divider"></div>
@@ -105,16 +116,22 @@
         {{ end }}
       </div>
       {{ end }}
+
+      {{ if or site.Config.Services.Disqus.Shortname site.Params.utterancesRepo site.Params.valine site.Params.waline site.Params.twikoo.enabled }}
+      <div class="divider"></div>
+
+      <section class="space-y-4">
+        {{ partialCached "commentSystems.html" . .RelPermalink }}
+      </section>
+      {{ end }}
     </article>
   </div>
 
-  {{ if or site.Config.Services.Disqus.Shortname site.Params.utterancesRepo site.Params.valine site.Params.waline }}
-  <div class="divider max-w-[65ch] mx-auto"></div>
-
-  <section class="max-w-[65ch] mx-auto space-y-4">
-    {{ partialCached "commentSystems.html" . .RelPermalink }}
-  </section>
-  {{ end }}
+  <div class="hidden lg:flex lg:flex-col lg:items-end">
+    {{ if site.Params.showTableOfContents }}
+      {{ .TableOfContents }}
+    {{ end }}
+  </div>
 </div>
 {{ end }}
 
@@ -142,6 +159,20 @@
       .setAttribute('href', customSyntaxHighlightingUrl)
   })
 </script>
+{{ end }}
+
+{{ if site.Params.imageZoomableInPost }}
+  {{ if fileExists "layouts/partials/medium-zoom.html" }}
+    {{ partialCached "medium-zoom.html" . }}
+  {{ else }}
+    <script type="module">
+      import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm';
+      mediumZoom('#dream-single-post-content img', {
+        background: 'oklch(var(--b1))',
+        margin: 24,
+      })
+    </script>
+  {{ end }}
 {{ end }}
 
 {{ end }}

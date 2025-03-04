@@ -35,7 +35,7 @@ other = "Link-uri de social media"
 one = " minut de citit"
 other = " minute de citire"
 
-[updateAt]
+[updatedAt]
 other = "Actualizat la"
 
 [prevPage]

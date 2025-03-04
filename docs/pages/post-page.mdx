@@ -4,6 +4,7 @@ import { Callout } from 'nextra/components'
 
 In [Quick Start](/), we created an example article as below:
 
+{/* prettier-ignore */}
 ```md
 ---
 title: {{ replace .TranslationBaseName "-" " " | title }}
@@ -37,21 +38,23 @@ View the below section to learn more about the parameters.
 
 ## Parameters
 
-| Parameter    | Description                                                           | Auto-generated |
-| ------------ | --------------------------------------------------------------------- | -------------- |
-| `title`      | Title of the post                                                     | Yes            |
-| `date`       | Date of the post                                                      | Yes            |
-| `lastmod`    | Last modified date of the post                                        | Yes            |
-| `author`     | Author of the post, if it's not set, the global `author` will be used | No             |
-| `avatar`     | Author's avatar                                                       | No             |
-| `authorlink` | Custom link for the current author                                    | No             |
-| `cover`      | Cover image of the post                                               | No             |
-| `images`     | Used in `og:image` meta tag                                           | No             |
-| `categories` | Categories of the post                                                | No             |
-| `tags`       | Tags of the post                                                      | No             |
-| `nolastmod`  | Disable the last modified date                                        | No             |
+| Parameter    | Description                                                                                                                   | Required | Auto-generated |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------- | -------- | -------------- |
+| `title`      | Title of the post                                                                                                             | Yes      | Yes            |
+| `date`       | Date of the post                                                                                                              | Yes      | Yes            |
+| `lastmod`    | Last modified date of the post                                                                                                | No       | Yes            |
+| `author`     | Author of the post, if it's not set, the global `author` will be used. If both are not set, the author will not be displayed. | No       | No             |
+| `avatar`     | Author's avatar                                                                                                               | No       | No             |
+| `authorlink` | Custom link for the current author                                                                                            | No       | No             |
+| `cover`      | Cover image of the post                                                                                                       | No       | No             |
+| `images`     | Used in `og:image` meta tag                                                                                                   | No       | No             |
+| `categories` | Categories of the post                                                                                                        | No       | No             |
+| `tags`       | Tags of the post                                                                                                              | No       | No             |
+| `nolastmod`  | Disable the last modified date                                                                                                | No       | No             |
 
 ## Features
+
+> See https://g1en.site/posts/dream-post-features/ for a live demo.
 
 ### Alerts
 
@@ -74,12 +77,11 @@ Dream supports [GitHub Alerts Markdown extension](https://github.blog/changelog/
 > Advises about risks or negative outcomes of certain actions.
 ```
 
-See https://g1en.site/posts/dream-post-features/ for a live demo.
-
 If you want to change the default title of the alerts, you can add a
 [markdown attribute](https://gohugo.io/content-management/markdown-attributes/)
 named `text` like below:
 
+{/* prettier-ignore */}
 ```md
 > [!NOTE]
 > The default alert title is changed to "Hello".
@@ -95,11 +97,12 @@ below configuration in your `hugo.toml`:
 [markup.goldmark.parser.attribute]
 block = true
 ```
+
 </Callout>
 
 ### Mermaid Diagrams
 
-Dream supports [Mermaid](https://mermaid.js.org/) diagrams. You can use it in your post like below:
+Dream supports [Mermaid](https://mermaid.js.org/) diagrams. You can use it like below:
 
 ````mdx filename="Markdown"
 ```mermaid
@@ -120,3 +123,50 @@ graph TD;
     B-->D;
     C-->D;
 ```
+
+### Mathematics
+
+Dream supports mathematical equations and expressions by using [MathJax](https://www.mathjax.org/).
+The implementation of this feature referred to https://gohugo.io/content-management/mathematics/.
+
+To use this feature, you need to enable and configure the Goldmark passthrough extension in your site configuration:
+
+```toml
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+```
+
+And then you can use it like below:
+
+````mdx filename="Markdown"
+```math
+This is an inline \(a^*=x-b^*\) equation.
+```
+
+```math
+These are block equations:
+
+\[
+\begin{aligned}
+KL(\hat{y} || y) &= \sum_{c=1}^{M}\hat{y}_c \log{\frac{\hat{y}_c}{y_c}} \\
+JS(\hat{y} || y) &= \frac{1}{2}(KL(y||\frac{y+\hat{y}}{2}) + KL(\hat{y}||\frac{y+\hat{y}}{2}))
+\end{aligned}
+\]
+
+These are also block equations:
+
+$$a^*=x-b^*$$
+
+$$ a^*=x-b^* $$
+
+$$
+a^*=x-b^*
+$$
+```
+````

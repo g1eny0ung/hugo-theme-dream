@@ -8,6 +8,7 @@ Currently, Dream supports these comment systems:
 - [utterances](https://utteranc.es/)
 - [Valine](https://valine.js.org/en/)
 - [Waline](https://waline.js.org/en/)
+- [Twikoo](https://twikoo.js.org/en/)
 
 ## Disqus
 
@@ -25,7 +26,7 @@ You may have used `disqusShortname = "..."` before. This is deprecated in Hugo `
 Please upgrade to the new configuration. See https://gohugo.io/methods/site/disqusshortname/ for more details.
 </Callout>
 
-Disqus comments will be showed on the **Single Post Page** and **About Page**.
+Disqus comments will be showed on the [Post Page](post-page.mdx) and [About Page](about-page.md)
 
 ### Compatible with oklch colors
 
@@ -40,12 +41,18 @@ First, create a custom css file in `static/css/custom.css`:
 [data-theme="emerald"] #disqus_thread {
   color-scheme: none;
   background-color: #fff;
+}
+
+[data-theme="emerald"] #disqus_thread a {
   color: #333c4d;
 }
 
 [data-theme="forest"] #disqus_thread {
   color-scheme: none;
   background-color: #171213;
+}
+
+[data-theme="forest"] #disqus_thread a {
   color: #cbc9ca;
 }
 ```
@@ -73,16 +80,22 @@ Refer to [light-and-dark-mode](./light-and-dark-mode.md) and update `background-
 
 See: [utterancesRepo](params-configurations.mdx#utterancesrepo)
 
-The utterances only takes effect on the **Single Post Page**.
+The utterances only takes effect on the [Post Page](post-page.mdx).
 
 ## Valine
 
 See: [valine](params-configurations.mdx#valine)
 
-Valine only takes effect on the **Single Post Page**.
+Valine only takes effect on the [Post Page](post-page.mdx).
 
 ## Waline
 
 See: [waline](params-configurations.mdx#waline)
 
-Waline only takes effect on the **Single Post Page**.
+Waline only takes effect on the [Post Page](post-page.mdx).
+
+## Twikoo
+
+See: [twikoo](params-configurations.mdx#twikoo)
+
+Twikoo only takes effect on the [Post Page](post-page.mdx).

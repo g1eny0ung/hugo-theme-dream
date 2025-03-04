@@ -2,7 +2,7 @@ baseurl = "https://example.com"
 defaultContentLanguage = "en"
 languageCode = "en"
 title = "Hugo Theme Dream"
-theme = "hugo-theme-dream"
+theme = "dream"
 
 # [services]
 # [services.disqus]
@@ -16,7 +16,7 @@ theme = "hugo-theme-dream"
 lightTheme = "emerald"
 darkTheme = "forest"
 
-# backgroundImage = "me/background.jpg"
+# backgroundImage = "img/global-background.jpg"
 # backgroundImageDark = ""
 
 author = "Dream"
@@ -54,9 +54,17 @@ siteStartYear = 2016
 # noDefaultSummaryCover = true
 # showTableOfContents = true
 # showSummaryCoverInPost = true
+# imageZoomableInPost = true
 # showPrevNextPost = true
+# reorderShares = ["x", "facebook", "whatsapp"]
 
 # [params.navItems]
+
+# [params.twikoo]
+# enabled = true
+# envID = ""
+# region = ""
+# lang = ""
 
 # [params.advanced]
 # customCSS = ["css/custom.css"]

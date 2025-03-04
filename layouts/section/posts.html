@@ -7,7 +7,7 @@
 <div class="mt-8 lg:mt-12 px-4">
   <div class="mx-auto prose dark:prose-invert">
     <h1 class="text-3xl">
-      {{ default .Title (T "archives") }}
+      {{ default (T "archives") .Title }}
     </h1>
     {{ if .Content }}
     <p class="text-sm">{{ .Content }}</p>
@@ -16,7 +16,8 @@
 
   <div class="max-w-[65ch] mx-auto mt-8 lg:mt-12">
     <ul class="timeline timeline-vertical">
-      {{ range .Pages.GroupByDate "2006" }}
+      {{ $groupLayout := default "2006" .Params.groupLayout }}
+      {{ range .Pages.GroupByDate $groupLayout }}
       <li class="[--timeline-col-start:64px]">
         <hr class="dark:bg-base-content" />
         <div class="timeline-start !justify-self-start">

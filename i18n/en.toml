@@ -1,57 +1,34 @@
+# Alerts
 note = "Note"
 tip = "Tip"
 important = "Important"
 warning = "Warning"
 caution = "Caution"
 
-[home]
-other = "Home"
+home = "Home"
+backToHome = "Back to home"
+flip = "Flip it!"
+about = "About"
+search = "Search"
+prevPage = "Previous page"
+nextPage = "Next page"
 
-[backToHome]
-other = "Back to home"
+archives = "Archives"
+allCategories = "All Categories"
+allTags = "All Tags"
 
-[flip]
-other = "Flip it!"
-
-[about]
-other = "About"
-
-[archives]
-other = "Archives"
-
-[allTags]
-other = "All Tags"
-
-[tag]
-one = "1 tag"
-other = "{{ .Count }} tags"
-
-[allCategories]
-other = "All Categories"
-
-[category]
-one = "1 category"
-other = "{{ .Count }} categories"
+minuteRead = " minute read"
+updatedAt = "Updated at"
+socialLinks = "Social Links"
 
 [article]
 one = "1 article"
 other = "{{ .Count }} articles"
 
-[socialLinks]
-other = "Social Links"
+[category]
+one = "1 category"
+other = "{{ .Count }} categories"
 
-[minuteRead]
-one = " minute read"
-other = " minutes read"
-
-[updateAt]
-other = "Update at"
-
-[prevPage]
-other = "Previous page"
-
-[nextPage]
-other = "Next page"
-
-[search]
-other = "Search"
+[tag]
+one = "1 tag"
+other = "{{ .Count }} tags"

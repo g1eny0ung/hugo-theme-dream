@@ -1,5 +1,9 @@
-{{ if isset site.Params "favicon" }}
-<link href="{{ site.Params.favicon | relURL }}" rel="icon" type="image/x-icon" />
+{{ with site.Params.favicon }}
+  {{ if hasPrefix . "<link" }}
+    {{ . | safeHTML }}
+  {{ else }}
+    <link href="{{ . | relURL }}" rel="icon" type="image/x-icon" />
+  {{ end }}
 {{ end }}
 
 <link rel="canonical" href="{{ .Permalink }}" />
@@ -7,7 +11,7 @@
 {{ if eq .Type "posts" }}
 <!-- Page Author & Description -->
 <meta name="author" content="{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ site.Params.author }}{{ end }}" />
-<meta name="description" content="{{ .Summary | plainify }}" />
+<meta name="description" content="{{ (or .Description .Summary) | plainify }}" />
 
 <!-- Keywords -->
 {{- $keywords := slice }}

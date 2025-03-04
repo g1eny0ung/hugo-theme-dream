@@ -65,7 +65,7 @@ x-data="{
 
 {{ $data := slice }}
 {{ range (where site.RegularPages "Type" "posts") }}
-{{ $data = $data | append (dict "title" .Title "url" .RelPermalink "author" .Params.author "avatar" .Params.avatar "categories" .Params.categories "tags" .Params.tags "description" (.Summary | emojify | safeHTML) "readingTime" .ReadingTime) }}
+{{ $data = $data | append (dict "title" .Title "url" .RelPermalink "author" .Params.author "avatar" .Params.avatar "categories" .Params.categories "tags" .Params.tags "description" (or .Description (.Summary | emojify | safeHTML)) "readingTime" .ReadingTime) }}
 {{ end }}
 
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" integrity="sha256-42IbU8t3tOwwbexB7ZVRHm3YDRf65aBPPjRtIUufj5I=" crossorigin="anonymous"></script>
