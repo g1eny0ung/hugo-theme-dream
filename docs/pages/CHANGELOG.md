@@ -7,12 +7,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [3.11.0] - 2025-03-04
+
+### Added
+
+- Add Google AdSense support [#363](https://github.com/g1eny0ung/hugo-theme-dream/pull/363)
+
 ### Changed
 
 - Remove author display if both post author and site author are not set [#354](https://github.com/g1eny0ung/hugo-theme-dream/pull/354)
 - Prioritize page descriptions over page summaries [#356](https://github.com/g1eny0ung/hugo-theme-dream/pull/356)
 - Allow favicon to be specified in text format
 - Support Twikoo comment system [#359](https://github.com/g1eny0ung/hugo-theme-dream/pull/359)
+- Allow specifying `about` in [`reorderNavItems`](./params-configurations.mdx#reorderNavItems) [#371](https://github.com/g1eny0ung/hugo-theme-dream/pull/371)
 
 ### Fixed
 
