@@ -9,12 +9,10 @@ const siteTitle = '🌱 Hugo Theme Dream'
 
 /** @type {import('next').Metadata} */
 export const metadata = {
+  metadataBase: new URL('https://hugo-theme-dream.g1en.site'),
   title: {
     default: siteTitle,
     template: `%s | Hugo Theme Dream`,
-  },
-  openGraph: {
-    url: 'https://hugo-theme-dream.g1en.site',
   },
 }
 
