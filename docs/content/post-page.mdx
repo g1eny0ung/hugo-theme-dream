@@ -1,5 +1,3 @@
-import { Callout } from 'nextra/components'
-
 # Post Page
 
 In [Quick Start](/), we created an example article as below:
@@ -88,17 +86,15 @@ named `text` like below:
 {text="Hello"}
 ```
 
-<Callout type="info">
-To enable markdown attributes for block-level elements, you still need to set
-below configuration in your `hugo.toml`:
-
-```toml
-[markup]
-[markup.goldmark.parser.attribute]
-block = true
-```
-
-</Callout>
+> [!WARNING]
+>
+> To enable markdown attributes, you still need to set below configuration in your `hugo.toml`:
+>
+> ```toml
+> [markup]
+> [markup.goldmark.parser.attribute]
+> block = true
+> ```
 
 ### Mermaid Diagrams
 

@@ -1,5 +1,3 @@
-import { Callout } from 'nextra/components'
-
 # Summary Images
 
 Each post can have a cover image associated with it. This image is used in the summary view of the post.
@@ -12,19 +10,19 @@ cover: /img/build-a-chrome-extension-with-figwheel-main.png
 ---
 ```
 
-<Callout type="info">
-  For a better visualization, it's recommended to set a cover image for each post (although it's not mandatory). I
-  personally go to [Unsplash](https://unsplash.com/) or [Pexels](https://www.pexels.com/) to select covers (choose the small size).
-
-  If you don't specify a cover image, Dream will use one of the predefined images as a placeholder in the summary card.
-  To disable this behavior, set [`noDefaultSummaryCover`](./params-configurations.mdx#nodefaultsummarycover) to `true`.
-</Callout>
+> [!NOTE]
+>
+> For a better visualization, it's recommended to set a cover image for each post (although it's not mandatory). I
+> personally go to [Unsplash](https://unsplash.com/) or [Pexels](https://www.pexels.com/) to select covers (choose the small size).
+>
+> If you don't specify a cover image, Dream will use one of the predefined images as a placeholder in the summary card.
+> To disable this behavior, set [`noDefaultSummaryCover`](./params-configurations.mdx#nodefaultsummarycover) to `true`.
 
 ## Image Optimization
 
-<Callout>
-Hugo >= 0.97.0 is required.
-</Callout>
+> [!WARNING]
+>
+> Hugo >= 0.97.0 is required.
 
 Dream will transform summary images to webp format automatically if you are using
 [page bundles](https://gohugo.io/content-management/page-bundles/) to organize your posts.
