@@ -1,5 +1,3 @@
-import { Callout } from 'nextra/components'
-
 # Params Configurations
 
 This doc introduces all the parameters that can be configured in the `[params]`.
@@ -129,12 +127,11 @@ A motto that will be displayed below the `headerTitle`. This field is optional.
 
 Used to display text at the bottom of the site footer, below the `siteStartYear` field. This field supports HTML.
 
-<Callout type="info">
-If this field is not specified, the default text will be displayed as:
-
-`🌱 Powered by Hugo with theme Dream.`
-
-</Callout>
+> [!NOTE]
+>
+> If this field is not specified, the default text will be displayed as:
+>
+> `🌱 Powered by Hugo with theme Dream.`
 
 ### rss
 
@@ -163,11 +160,11 @@ LEANCLOUD_APP_KEY = ""
 To customize Valine, you can create a partial file named `valine.html` in the `layouts/partials` folder.
 Here is an [example](https://github.com/g1eny0ung/blog/blob/master/layouts/partials/valine.html).
 
-<Callout type="info">
-You still need to set the `valine` parameter to `true` to enable Valine when using a custom partial file.
-
-Other related parameters will be ingored.
-</Callout>
+> [!NOTE]
+>
+> You still need to set the `valine` parameter to `true` to enable Valine when using a custom partial file.
+>
+> Other related parameters will be ignored.
 
 ### waline
 
@@ -186,11 +183,11 @@ If you want to customize Waline,
 you can create a partial file named `waline.html` in the `layouts/partials` folder.
 Here is an [example](https://github.com/g1eny0ung/blog/blob/master/layouts/partials/waline.html).
 
-<Callout type="info">
-You still need to set the `waline` parameter to `true` to enable Waline when using a custom partial file.
-
-Other related parameters will be ingored.
-</Callout>
+> [!NOTE]
+>
+> You still need to set the `waline` parameter to `true` to enable Waline when using a custom partial file.
+>
+> Other related parameters will be ignored.
 
 ### twikoo
 
@@ -211,11 +208,11 @@ If you want to customize Twikoo,
 you can create a partial file named `twikoo.html` in the `layouts/partials` folder.
 Here is an [example](https://github.com/g1eny0ung/blog/blob/master/layouts/partials/twikoo.html).
 
-<Callout type="info">
-You still need to set the `params.twikoo.enabled` parameter to `true` to enable Twikoo when using a custom partial file.
-
-Other related parameters will be ingored.
-</Callout>
+> [!NOTE]
+>
+> You still need to set the `params.twikoo.enabled` parameter to `true` to enable Twikoo when using a custom partial file.
+>
+> Other related parameters will be ignored.
 
 ### siteStartYear
 
@@ -226,13 +223,13 @@ site footer.
 
 Custom the [favicon](https://en.wikipedia.org/wiki/Favicon) of your site, place it in the `static` folder.
 
-<Callout type="info">
-You can also specify the favicon in text format (starting with `<link`), for example:
-
-```html
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🌱</text></svg>"></link>
-```
-</Callout>
+> [!NOTE]
+>
+> You can also specify the favicon in text format (starting with `<link`), for example:
+>
+> ```html
+> <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🌱</text></svg>"></link>
+> ```
 
 ### customSyntaxHighlighting
 
@@ -252,25 +249,24 @@ This parameter is **an array of strings**, the default value is:
 reorderNavItems = ["about", "search", "rss", "posts", "categories", "tags"]
 ```
 
-<Callout type="info">
-  The names of these default items are fixed, and they are the navigation items provided by the Dream theme by default.
-</Callout>
+> [!NOTE]
+>
+> The names of these default items are fixed, and they are the navigation items provided by the Dream theme by default.
 
-<Callout type="info">
-This parameter also allows you to remove the default navigation items.
-For example, if you don't want to show the `rss` item, you can set the value as:
-
-`reorderNavItems = ["about", "search", "posts", "categories", "tags"]`
-
-</Callout>
+> [!NOTE]
+>
+> This parameter also allows you to remove the default navigation items.
+> For example, if you don't want to show the `rss` item, you can set the value as:
+>
+> `reorderNavItems = ["about", "search", "posts", "categories", "tags"]`
 
 For reordering custom navigation items, see [Custom Navbar Items](custom-nav-items.mdx).
 
 ### collapseNavItems
 
-<Callout>
-  In mobile, this parameter will not take effect because all navigation items will be collapsed into a dropdown menu.
-</Callout>
+> [!WARNING]
+>
+> In mobile, this parameter will not take effect because all navigation items will be collapsed into a dropdown menu.
 
 Collapse specific navigation items to a dropdown menu.
 
@@ -301,23 +297,23 @@ Show the summary cover image at the top of the single post page.
 
 Make images zoomable in the single post page. This feature uses [medium-zoom](https://github.com/francoischalifour/medium-zoom) under the hood.
 
-<Callout type="info">
-For advanced usage, you may want to customize the medium-zoom options. Dream allows you to
-create a partial file named `medium-zoom.html` in the `layouts/partials` folder to replace the
-default behavior. For example, you can put the following code in the `medium-zoom.html` file:
-
-```html
-<script type="module">
-  import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm';
-  mediumZoom('#dream-single-post-content img', {
-    // Put your custom options here.
-  }) // #dream-single-post-content is the id of the post content.
-
-  // You can also further control the logic of zooming images.
-  // Like zooming lazy-loaded images.
-</script>
-```
-</Callout>
+> [!NOTE]
+>
+> For advanced usage, you may want to customize the medium-zoom options. Dream allows you to
+> create a partial file named `medium-zoom.html` in the `layouts/partials` folder to replace the
+> default behavior. For example, you can put the following code in the `medium-zoom.html` file:
+>
+> ```html
+> <script type="module">
+>   import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm'
+>   mediumZoom('#dream-single-post-content img', {
+>     // Put your custom options here.
+>   }) // #dream-single-post-content is the id of the post content.
+>
+>   // You can also further control the logic of zooming images.
+>   // Like zooming lazy-loaded images.
+> </script>
+> ```
 
 ### showPrevNextPost
 
@@ -333,19 +329,19 @@ This parameter is **an array of strings**, the default value is:
 reorderShares = ["x", "facebook", "whatsapp"]
 ```
 
-<Callout type="info">
-This parameter also allows you to remove the default share items.
-For example, if you don't want to show the `whatsapp` item, you can set the value as:
-
-`reorderShares = ["x", "facebook"]`
-</Callout>
+> [!NOTE]
+>
+> This parameter also allows you to remove the default share items.
+> For example, if you don't want to show the `whatsapp` item, you can set the value as:
+>
+> `reorderShares = ["x", "facebook"]`
 
 ## Advanced
 
-<Callout>
-  Generally, the following advanced parameters are not necessary to be set. Their main purpose is to further customize
-  the entire theme.
-</Callout>
+> [!WARNING]
+>
+> Generally, the following advanced parameters are not necessary to be set. Their main purpose is to further customize
+> the entire theme.
 
 ### customCSS
 
@@ -363,9 +359,9 @@ View [Custom Theme](custom.md#js) for more details.
 
 ## Experimental
 
-<Callout type="warning">
-  The experimental parameters are often not perfect. They have advantages as well as certain disadvantages.
-</Callout>
+> [!WARNING]
+>
+> The experimental parameters are often not perfect. They have advantages as well as certain disadvantages.
 
 ### jsDate
 

@@ -1,11 +1,9 @@
-import { Callout } from 'nextra/components'
-
 # Quick Start
 
-<Callout>
-I assume you have already read [Hugo Getting Started](https://gohugo.io/getting-started/),
-this can help you to get an overview of Hugo and understand this guide better.
-</Callout>
+> [!NOTE]
+>
+> I assume you have already read [Hugo Getting Started](https://gohugo.io/getting-started/),
+> this can help you to get an overview of Hugo and understand this guide better.
 
 ## Introduction
 
@@ -40,15 +38,15 @@ Create `hugo.toml` if it doesn't already exist in your site folder, and then ena
 theme = "dream"
 ```
 
-<Callout>
-If you are cloning the theme with another name, replace `dream` with the name you cloned.
+> [!NOTE]
+>
+> If you are cloning the theme with another name, replace `dream` with the name you cloned.
+>
+> For example, if you cloned the theme with the name `my-dream`, you should write `theme = "my-dream"`.
 
-For example, if you cloned the theme with the name `my-dream`, you should write `theme = "my-dream"`.
-</Callout>
-
-<Callout type="info">
-You can download and use this [default configuration file](https://github.com/g1eny0ung/hugo-theme-dream/blob/master/hugo.example.toml). It contains all params used in Dream.
-</Callout>
+> [!NOTE]
+>
+> You can download and use this [default configuration file](https://github.com/g1eny0ung/hugo-theme-dream/blob/master/hugo.example.toml). It contains all params used in Dream.
 
 ## Default or Zen Mode
 
@@ -93,11 +91,11 @@ In `hugo.toml`, set:
 ID = "..."
 ```
 
-<Callout type="warning">
-You may have used `googleAnalytics = "..."` before. This is deprecated in Hugo `0.120.0`.
-
-Please upgrade to the new configuration. See https://gohugo.io/methods/site/googleanalytics/ for more details.
-</Callout>
+> [!WARNING]
+>
+> You may have used `googleAnalytics = "..."` before. This is deprecated in Hugo `0.120.0`.
+>
+> Please upgrade to the new configuration. See https://gohugo.io/methods/site/googleanalytics/ for more details.
 
 ## Social Comments
 
@@ -111,29 +109,29 @@ In `hugo.toml`, set:
 shortname = "..."
 ```
 
-<Callout type="warning">
-You may have used `disqusShortname = "..."` before. This is deprecated in Hugo `0.120.0`.
+> [!WARNING]
+>
+> You may have used `disqusShortname = "..."` before. This is deprecated in Hugo `0.120.0`.
+>
+> Please upgrade to the new configuration. See https://gohugo.io/methods/site/disqusshortname/ for more details.
 
-Please upgrade to the new configuration. See https://gohugo.io/methods/site/disqusshortname/ for more details.
-</Callout>
-
-<Callout type="error">
-Currently, Disqus does not support [oklch colors](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch) which is used in Dream.
-We need to make an extra hack to make it work. See [Compatible with oklch colors](./social-comments.md#compatible-with-oklch-colors) for more details.
-</Callout>
+> [!WARNING]
+>
+> Currently, Disqus does not support [oklch colors](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch) which is used in Dream.
+> We need to make an extra hack to make it work. See [Compatible with oklch colors](./social-comments.md#compatible-with-oklch-colors) for more details.
 
 For more social comment systems, view [Social Comments](./social-comments.md).
 
 ## Introduce Yourself
 
 Dream provides a flippable about page to introduce yourself.
-Type below command in your terminal to create the first section about you:
+Type the command below in your terminal to create the first section about you:
 
 ```bash
 hugo new about/me.md
 ```
 
-Write somethings **about you**:
+Write something **about you**:
 
 ```md
 ---
