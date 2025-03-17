@@ -4,7 +4,7 @@
   {{ range (sort $aboutPages "Date" "asc") }}
   <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
     <article
-      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+      class="card bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
     >
       <div class="card-body">
         <div class="card-title">{{ .Title }}</div>
@@ -21,7 +21,7 @@
   {{ if (fileExists "data/socials.toml") }}
   <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
     <article
-      class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+      class="card bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
     >
       <div class="card-body">
         <div class="card-title">{{ T "socialLinks" }}</div>
@@ -35,7 +35,7 @@
   {{ if and site.Config.Services.Disqus.Shortname .IsHome }}
   <div class="w-full md:w-1/2 p-4 dream-column">
     <article
-      class="card card-compact bg-base-100 shadow-xl dark:border dark:border-base-content/30"
+      class="card bg-base-100 shadow-xl dark:border dark:border-base-content/30"
     >
       <div class="card-body">
         {{ partial "disqus.html" (dict "Context" . "Identifier" "/") }}
