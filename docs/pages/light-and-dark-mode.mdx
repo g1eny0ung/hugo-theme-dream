@@ -13,18 +13,14 @@ There are two steps to customize the light and dark mode:
    darkTheme = "forest"
    ```
 
-1. And then, open `tailwind.config.js` in the root directory of Dream, specify the themes you want to use:
+1. And then, open `src/input.css` in the root directory of Dream, specify the themes you want to use:
 
-   ```js
-   module.exports = {
-     // ...
-     daisyui: {
-       themes: ['emerald', 'forest'], // Specify the themes you want to use.
-       darkTheme: 'forest', // Specify the dark theme.
-     },
+   ```css
+   @plugin "daisyui" {
+     themes: emerald --default, forest --prefersdark;
    }
    ```
 
-   <Callout>You must insatll dependencies (`pnpm i`) before compile the CSS.</Callout>
+   <Callout>You must install dependencies (`pnpm i`) before compiling the CSS.</Callout>
 
    Then run `npm run css` or `pnpm css` to compile the CSS.
