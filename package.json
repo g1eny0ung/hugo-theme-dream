@@ -16,10 +16,10 @@
     "@babel/cli": "^7.24.7",
     "@babel/core": "^7.24.7",
     "@babel/preset-env": "^7.24.7",
-    "@tailwindcss/cli": "^4.0.9",
+    "@tailwindcss/cli": "^4.0.14",
     "@tailwindcss/typography": "^0.5.16",
     "concurrently": "^9.1.2",
-    "daisyui": "^5.0.0",
-    "tailwindcss": "^4.0.9"
+    "daisyui": "^5.0.4",
+    "tailwindcss": "^4.0.14"
   }
 }

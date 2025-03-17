@@ -92,10 +92,10 @@
       <div class="divider"></div>
       <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
         {{ with .NextInSection }}
-        <a class="group btn btn-outline" href="{{ .RelPermalink }}" title="{{ .Title }}">
+        <a role="button" class="btn btn-outline h-12" href="{{ .RelPermalink }}" title="{{ .Title }}">
           <ion-icon name="chevron-back"></ion-icon>
           <div class="inline-flex flex-col items-start">
-            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">{{ T "prevPage" }}</span>
+            <span class="text-base-content/60 text-xs font-normal">{{ T "prevPage" }}</span>
             <span class="max-w-48 truncate">{{ .LinkTitle }}</span>
           </div>
         </a>
@@ -104,9 +104,9 @@
         {{ end }}
 
         {{ with .PrevInSection }}
-        <a class="group btn btn-outline" href="{{ .RelPermalink }}" title="{{ .Title }}">
+        <a role="button" class="btn btn-outline h-12" href="{{ .RelPermalink }}" title="{{ .Title }}">
           <div class="inline-flex flex-col items-end">
-            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">{{ T "nextPage" }}</span>
+            <span class="text-base-content/60 text-xs font-normal">{{ T "nextPage" }}</span>
             <span class="max-w-48 truncate">{{ .LinkTitle }}</span>
           </div>
           <ion-icon name="chevron-forward"></ion-icon>

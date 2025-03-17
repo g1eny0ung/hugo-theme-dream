@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./layouts/**/*.html'],
   theme: {
     container: {
       center: true,
@@ -34,7 +33,5 @@ module.exports = {
         },
       },
     },
-  },
-  plugins: [require('@tailwindcss/typography')],
-  darkMode: ['selector'],
+  }
 }
