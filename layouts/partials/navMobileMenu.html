@@ -1,7 +1,5 @@
-{{ $navItems := slice "search" "rss" "posts" "categories" "tags" }}
-{{ if site.Params.reorderNavItems }}
-{{ $navItems = site.Params.reorderNavItems }}
-{{ end }}
+{{ $navItems := .navItems }}
+
 {{ range $navItems }}
 {{ partial "renderMobileNavItem.html" . }}
 {{ end }}
