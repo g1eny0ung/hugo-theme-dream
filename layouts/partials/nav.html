@@ -32,20 +32,20 @@
       {{ end }}
     </section>
 
+    {{ $navItems := slice "about" "search" "rss" "posts" "categories" "tags" }}
+    {{ if site.Params.reorderNavItems }}
+      {{ $navItems = site.Params.reorderNavItems }}
+    {{ end }}
+
     <div class="dropdown dropdown-end sm:hidden">
       <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
         <ion-icon name="menu" class="text-2xl"></ion-icon>
       </div>
       <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-1 shadow-md">
-        {{ partial "navMobileMenu.html" . }}
+        {{ partial "navMobileMenu.html" (dict "navItems" $navItems) }}
       </ul>
     </div>
     <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
-      {{ $navItems := slice "about" "search" "rss" "posts" "categories" "tags" }}
-      {{ if site.Params.reorderNavItems }}
-        {{ $navItems = site.Params.reorderNavItems }}
-      {{ end }}
-
       {{ if not site.Params.collapseNavItems }}
 
       {{ range $navItems }}
