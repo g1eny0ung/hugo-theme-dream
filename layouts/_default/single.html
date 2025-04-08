@@ -127,7 +127,10 @@
     </article>
   </div>
 
-  <div class="hidden lg:flex lg:flex-col lg:items-end">
+  <div
+    x-data="tocHighlighter()"
+    @scroll.window="debouncedScroll"
+    class="hidden lg:flex lg:flex-col lg:items-end">
     {{ if site.Params.showTableOfContents }}
       {{ .TableOfContents }}
     {{ end }}
@@ -160,6 +163,12 @@
   })
 </script>
 {{ end }}
+
+{{ $tocJs := resources.Get "js/toc.js" }}
+{{ if hugo.IsProduction }}
+  {{ $tocJs = $tocJs | minify }}
+{{ end }}
+<script src="{{ $tocJs.RelPermalink }}"></script>
 
 {{ if site.Params.imageZoomableInPost }}
   {{ if fileExists "layouts/partials/medium-zoom.html" }}
