@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- Mathematics enhancements [#387](https://github.com/g1eny0ung/hugo-theme-dream/pull/387)
+  - Support `$` delimiter for inline math
+  - Support `math: true` page param for whole page math rendering
+
 ## [3.12.0] - 2025-04-09
 
 ### Added

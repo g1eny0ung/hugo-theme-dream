@@ -22,6 +22,7 @@ tags:
   - tag1
   - tag2
 # nolastmod: true
+# math: true
 draft: true
 ---
 
@@ -139,7 +140,7 @@ To use this feature, you need to enable and configure the Goldmark passthrough e
         enable = true
         [markup.goldmark.extensions.passthrough.delimiters]
           block = [['\[', '\]'], ['$$', '$$']]
-          inline = [['\(', '\)']]
+          inline = [['\(', '\)'], ['$', '$']]
 ```
 
 And then you can use it like below:
@@ -147,6 +148,8 @@ And then you can use it like below:
 ````mdx filename="Markdown"
 ```math
 This is an inline \(a^*=x-b^*\) equation.
+
+This is also an inline $a^*=x-b^*$ equation.
 ```
 
 ```math
@@ -163,10 +166,23 @@ These are also block equations:
 
 $$a^*=x-b^*$$
 
-$$ a^*=x-b^* $$
-
 $$
 a^*=x-b^*
 $$
 ```
 ````
+
+If you don't want to use the `math` codeblock everywhere, you can also set **`math: true`** in the front matter of your post like below:
+
+```md
+---
+math: true # YAML syntax
+---
+```
+
+This allows you to use mathematics with other markdown syntaxes in the whole post, like:
+
+```md
+- This is an inline \(a^*=x-b^*\) equation.
+- This is also an inline $a^*=x-b^*$ equation.
+```
