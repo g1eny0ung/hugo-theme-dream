@@ -29,7 +29,7 @@ function tocHighlighter() {
       var minOffset = Infinity;
       this.headings.forEach(function (el, index) {
         var rect = el.getBoundingClientRect();
-        var offset = Math.abs(rect.top - 100);
+        var offset = Math.abs(rect.top);
         if (rect.top < window.innerHeight && offset < minOffset) {
           minOffset = offset;
           closest = index;
