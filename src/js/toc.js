@@ -26,7 +26,7 @@ function tocHighlighter() {
 
       this.headings.forEach((el, index) => {
         const rect = el.getBoundingClientRect()
-        const offset = Math.abs(rect.top - 100)
+        const offset = Math.abs(rect.top)
 
         if (rect.top < window.innerHeight && offset < minOffset) {
           minOffset = offset
