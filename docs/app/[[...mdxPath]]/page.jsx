@@ -4,25 +4,18 @@ import { useMDXComponents as getMDXComponents } from '../../mdx-components'
 export const generateStaticParams = generateStaticParamsFor('mdxPath')
 
 export async function generateMetadata(props) {
-  const { mdxPath } = await props.params
-  const { metadata } = await importPage(mdxPath)
-
-  return {
-    title: metadata.title,
-    openGraph: {
-      url: mdxPath ? mdxPath[0] : '/',
-    },
-  }
+  const params = await props.params
+  const { metadata } = await importPage(params.mdxPath)
+  return metadata
 }
 
 const Wrapper = getMDXComponents().wrapper
 
 export default async function Page(props) {
   const params = await props.params
-  const result = await importPage(params.mdxPath)
-  const { default: MDXContent, toc, metadata } = result
+  const { default: MDXContent, toc, metadata, sourceCode } = await importPage(params.mdxPath)
   return (
-    <Wrapper toc={toc} metadata={metadata}>
+    <Wrapper toc={toc} metadata={metadata} sourceCode={sourceCode}>
       <MDXContent {...props} params={params} />
     </Wrapper>
   )

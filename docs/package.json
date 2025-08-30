@@ -10,13 +10,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "^15.2.1",
-    "nextra": "^4.2.14",
-    "nextra-theme-docs": "^4.2.14",
+    "next": "^15.5.2",
+    "nextra": "^4.4.0",
+    "nextra-theme-docs": "^4.4.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@theguild/remark-mermaid": "^0.2.0"
+    "@theguild/remark-mermaid": "^0.3.0"
   }
 }
