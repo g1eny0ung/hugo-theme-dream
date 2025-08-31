@@ -1,0 +1,18 @@
+# Website Analytics
+
+Now, Dream only support [Google Analytics](https://www.google.com/analytics/).
+
+In `hugo.toml`, set:
+
+```toml
+[services]
+[services.googleAnalytics]
+ID = '...'
+
+```
+
+> [!WARNING]
+>
+> You may have used `googleAnalytics = "..."` before. This is deprecated in Hugo `0.120.0`.
+>
+> Please upgrade to the new configuration. See https://gohugo.io/methods/site/googleanalytics/ for more details.
