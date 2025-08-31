@@ -92,10 +92,10 @@
       <div class="divider"></div>
       <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
         {{ with .NextInSection }}
-        <a class="group btn btn-outline" href="{{ .RelPermalink }}" title="{{ .Title }}">
+        <a role="button" class="btn btn-outline h-12" href="{{ .RelPermalink }}" title="{{ .Title }}">
           <ion-icon name="chevron-back"></ion-icon>
           <div class="inline-flex flex-col items-start">
-            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">{{ T "prevPage" }}</span>
+            <span class="text-base-content/60 text-xs font-normal">{{ T "prevPage" }}</span>
             <span class="max-w-48 truncate">{{ .LinkTitle }}</span>
           </div>
         </a>
@@ -104,9 +104,9 @@
         {{ end }}
 
         {{ with .PrevInSection }}
-        <a class="group btn btn-outline" href="{{ .RelPermalink }}" title="{{ .Title }}">
+        <a role="button" class="btn btn-outline h-12" href="{{ .RelPermalink }}" title="{{ .Title }}">
           <div class="inline-flex flex-col items-end">
-            <span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">{{ T "nextPage" }}</span>
+            <span class="text-base-content/60 text-xs font-normal">{{ T "nextPage" }}</span>
             <span class="max-w-48 truncate">{{ .LinkTitle }}</span>
           </div>
           <ion-icon name="chevron-forward"></ion-icon>
@@ -127,7 +127,11 @@
     </article>
   </div>
 
-  <div class="hidden lg:flex lg:flex-col lg:items-end">
+  <div
+    x-data="tocHighlighter()"
+    @scroll.window="debouncedScroll"
+    class="hidden lg:flex lg:flex-col lg:items-end lg:self-start"
+  >
     {{ if site.Params.showTableOfContents }}
       {{ .TableOfContents }}
     {{ end }}
@@ -138,28 +142,35 @@
 {{ define "js" }}
 
 {{ if site.Params.Experimental.jsDate }}
-{{ partial "luxon.html" . }}
+  {{ partial "luxon.html" . }}
 {{ end }}
 
 {{ if site.Params.customSyntaxHighlighting }}
-{{- $syntaxLightCSS := resources.Get "css/syntax-light.css" | minify -}}
-{{- $syntaxDarkCSS := resources.Get "css/syntax-dark.css" | minify -}}
-<script>
-  window.customSyntaxHighlighting = {
-    light: {{ $syntaxLightCSS.RelPermalink }},
-    dark: {{ $syntaxDarkCSS.RelPermalink }}
-  }
+  {{- $syntaxLightCSS := resources.Get "css/syntax-light.css" | minify -}}
+  {{- $syntaxDarkCSS := resources.Get "css/syntax-dark.css" | minify -}}
 
-  document.addEventListener('alpine:initialized', () => {
-    var isDark = Alpine.store('darkMode').isDark()
-    var customSyntaxHighlightingUrl = isDark ? window.customSyntaxHighlighting.dark : window.customSyntaxHighlighting.light
+  <script>
+    window.customSyntaxHighlighting = {
+      light: {{ $syntaxLightCSS.RelPermalink }},
+      dark: {{ $syntaxDarkCSS.RelPermalink }}
+    }
 
-    document
-      .querySelector('link[data-custom-syntax-highlighting]')
-      .setAttribute('href', customSyntaxHighlightingUrl)
-  })
-</script>
+    document.addEventListener('alpine:initialized', () => {
+      var isDark = Alpine.store('darkMode').isDark()
+      var customSyntaxHighlightingUrl = isDark ? window.customSyntaxHighlighting.dark : window.customSyntaxHighlighting.light
+
+      document
+        .querySelector('link[data-custom-syntax-highlighting]')
+        .setAttribute('href', customSyntaxHighlightingUrl)
+    })
+  </script>
 {{ end }}
+
+{{ $tocJs := resources.Get "js/toc.js" }}
+{{ if hugo.IsProduction }}
+  {{ $tocJs = $tocJs | minify }}
+{{ end }}
+<script src="{{ $tocJs.RelPermalink }}"></script>
 
 {{ if site.Params.imageZoomableInPost }}
   {{ if fileExists "layouts/partials/medium-zoom.html" }}
@@ -173,6 +184,10 @@
       })
     </script>
   {{ end }}
+{{ end }}
+
+{{ if .Params.math }}
+  {{ .Page.Store.Set "hasMathjax" true }}
 {{ end }}
 
 {{ end }}

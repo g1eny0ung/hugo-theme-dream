@@ -1,8 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss' source(none);
 
-#disqus_thread iframe[src*=ads-iframe] {
+@source "../layouts";
+
+@plugin '@tailwindcss/typography';
+@plugin "daisyui" {
+  themes: emerald --default, forest --prefersdark;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@config '../tailwind.config.js';
+
+#disqus_thread iframe[src*='ads-iframe'] {
   display: none;
 }
 

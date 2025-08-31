@@ -20,13 +20,13 @@
       {{ range .Pages.GroupByDate $groupLayout }}
       <li class="[--timeline-col-start:64px]">
         <hr class="dark:bg-base-content" />
-        <div class="timeline-start !justify-self-start">
+        <div class="timeline-start justify-self-start!">
           <div class="text-lg font-semibold">{{ .Key }}</div>
         </div>
         <div class="timeline-middle flex items-center mx-8 my-2">
           <ion-icon name="time"></ion-icon>
         </div>
-        <div class="timeline-end timeline-box dark:border-base-content/60 prose dark:prose-invert my-8">
+        <div class="timeline-end timeline-box dark:border-base-content/60 prose dark:prose-invert my-8 text-sm">
           <ul>
             {{ range .Pages }}
             <li>
