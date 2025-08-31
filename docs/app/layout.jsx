@@ -11,7 +11,7 @@ const siteTitle = '🌱 Hugo Theme Dream'
 export const metadata = {
   metadataBase: new URL('https://hugo-theme-dream.g1en.site'),
   title: {
-    default: siteTitle,
+    default: 'Hugo Theme Dream',
     template: `%s | Hugo Theme Dream`,
   },
 }
