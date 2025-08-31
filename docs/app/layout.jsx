@@ -18,7 +18,7 @@ export const metadata = {
 
 const banner = (
   <Banner storageKey="zen-mode">
-    <a href="https://g1en.site/hugo-theme-dream/zen-mode">{siteTitle} 3.5 introduces Zen mode. Read more →</a>
+    <a href="https://hugo-theme-dream.g1en.site/zen-mode">{siteTitle} 3.5 introduces Zen mode. Read more →</a>
   </Banner>
 )
 const navbar = (
