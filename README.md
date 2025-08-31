@@ -24,14 +24,14 @@ Dream also supports **light and dark mode** out of the box.
 ![Screenshot](https://github.com/g1eny0ung/hugo-theme-dream/blob/master/images/screenshot.png?raw=true)
 
 For people who prefer a simple and clean interface,
-Dream has a [**Zen mode**](https://g1en.site/hugo-theme-dream/zen-mode).
+Dream has a [**Zen mode**](https://hugo-theme-dream.g1en.site/zen-mode).
 It is more concentrated on reading and writing.
 
 <img src="https://github.com/g1eny0ung/hugo-theme-dream/blob/master/docs/public/images/zen-mode.png?raw=true" alt="Zen Mode" height="500" />
 
 ## Documentation
 
-<https://g1en.site/hugo-theme-dream>
+<https://hugo-theme-dream.g1en.site>
 
 ## Examples
 

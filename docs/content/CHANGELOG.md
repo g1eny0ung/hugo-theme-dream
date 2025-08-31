@@ -70,7 +70,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- Now you can group posts with any layout in archives page, see [custom group layout](https://g1en.site/hugo-theme-dream/archives-page#custom-group-layout) for more details
+- Now you can group posts with any layout in archives page, see [custom group layout](https://hugo-theme-dream.g1en.site/archives-page#custom-group-layout) for more details
 
 ### Changed
 
@@ -234,7 +234,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 
-- Support image optimization for summary images. See [Image Optimization](https://g1en.site/hugo-theme-dream/summary-images#image-optimization) for more details
+- Support image optimization for summary images. See [Image Optimization](https://hugo-theme-dream.g1en.site/summary-images#image-optimization) for more details
 
 ### Changed
 
@@ -256,4 +256,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 🎉 Hugo Theme Dream 3.0 is released.
 
-See the [migration guide](https://g1en.site/hugo-theme-dream/migrate-to-v3) for more details.
+See the [migration guide](https://hugo-theme-dream.g1en.site/migrate-to-v3) for more details.
