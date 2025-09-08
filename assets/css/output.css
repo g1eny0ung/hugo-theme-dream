@@ -971,9 +971,6 @@
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
-  .top-24 {
-    top: calc(var(--spacing) * 24);
-  }
   .z-1 {
     z-index: 1;
   }
@@ -2322,11 +2319,6 @@
       align-items: flex-end;
     }
   }
-  .lg\:self-start {
-    @media (width >= 64rem) {
-      align-self: flex-start;
-    }
-  }
   .xl\:w-1\/4 {
     @media (width >= 80rem) {
       width: calc(1/4 * 100%);
@@ -2394,6 +2386,9 @@
     }
   }
 }
+html {
+  scroll-behavior: smooth;
+}
 #disqus_thread iframe[src*='ads-iframe'] {
   display: none;
 }
@@ -2449,8 +2444,13 @@
 #TableOfContents {
   position: sticky;
   top: calc(var(--spacing) * 24);
-  overflow-y: auto;
   max-height: calc(100vh - 7rem);
+  overflow-y: auto;
+}
+@supports (-moz-appearance: none) {
+  #TableOfContents {
+    position: initial;
+  }
 }
 #TableOfContents ul {
   display: flex;

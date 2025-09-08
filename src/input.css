@@ -12,6 +12,10 @@
 
 @config '../tailwind.config.js';
 
+html {
+  scroll-behavior: smooth;
+}
+
 #disqus_thread iframe[src*='ads-iframe'] {
   display: none;
 }
@@ -78,10 +82,17 @@
 }
 
 #TableOfContents {
-  @apply sticky top-24 overflow-y-auto;
+  @apply sticky top-24;
 
-  /* 6 + 1 rem */
+  /* top-24 + 1rem */
   max-height: calc(100vh - 7rem);
+  overflow-y: auto;
+}
+
+@supports (-moz-appearance: none) {
+  #TableOfContents {
+    position: initial;
+  }
 }
 
 #TableOfContents ul {

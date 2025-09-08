@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- Optimize browser compatibility of toc and achieve smooth scrolling
+
 ## [3.13.0] - 2025-09-08
 
 ### Added
