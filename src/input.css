@@ -1,5 +1,6 @@
 @import 'tailwindcss' source(none);
 
+@source "input.css";
 @source "../layouts";
 
 @plugin '@tailwindcss/typography';
