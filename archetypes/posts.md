@@ -6,6 +6,7 @@ author: Author Name
 # avatar: /img/author.jpg
 # authorlink: https://author.site
 cover: /img/cover.jpg
+# covercaption: a description of the cover image
 # images:
 #   - /img/cover.jpg
 categories:

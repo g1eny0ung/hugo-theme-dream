@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Mathematics enhancements [#387](https://github.com/g1eny0ung/hugo-theme-dream/pull/387)
   - Support `$` delimiter for inline math
   - Support `math: true` page param for whole page math rendering
+- Add `covercaption` page param to display a caption for the cover image in the single post page (you need to set `showSummaryCoverInPost` to `true` first)
 
 ## [3.12.0] - 2025-04-09
 

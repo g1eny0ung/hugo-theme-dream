@@ -76,7 +76,12 @@
 
       <section id="dream-single-post-content" itemprop="articleBody">
         {{ if and .Params.Cover site.Params.showSummaryCoverInPost }}
-          <img class="w-full z-30" src="{{ .Params.Cover }}" alt="{{ .Title }}" />
+          <figure>
+            <img class="z-30" src="{{ .Params.Cover }}" alt="{{ .Title }}" />
+            {{ with .Params.covercaption }}
+              <figcaption class="text-sm italic text-center mt-2">{{ . }}</figcaption>
+            {{ end }}
+          </figure>
         {{ end }}
 
         {{ .Content | emojify }}

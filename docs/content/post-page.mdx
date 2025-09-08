@@ -12,6 +12,7 @@ author: Author Name
 # avatar: /img/author.jpg
 # authorlink: https://author.site
 cover: /img/cover.jpg
+# covercaption: a description of the cover image
 # images:
 #   - /img/cover.jpg
 categories:
@@ -37,19 +38,20 @@ View the below section to learn more about the parameters.
 
 ## Parameters
 
-| Parameter    | Description                                                                                                                   | Required | Auto-generated |
-| ------------ | ----------------------------------------------------------------------------------------------------------------------------- | -------- | -------------- |
-| `title`      | Title of the post                                                                                                             | Yes      | Yes            |
-| `date`       | Date of the post                                                                                                              | Yes      | Yes            |
-| `lastmod`    | Last modified date of the post                                                                                                | No       | Yes            |
-| `author`     | Author of the post, if it's not set, the global `author` will be used. If both are not set, the author will not be displayed. | No       | No             |
-| `avatar`     | Author's avatar                                                                                                               | No       | No             |
-| `authorlink` | Custom link for the current author                                                                                            | No       | No             |
-| `cover`      | Cover image of the post                                                                                                       | No       | No             |
-| `images`     | Used in `og:image` meta tag                                                                                                   | No       | No             |
-| `categories` | Categories of the post                                                                                                        | No       | No             |
-| `tags`       | Tags of the post                                                                                                              | No       | No             |
-| `nolastmod`  | Disable the last modified date                                                                                                | No       | No             |
+| Parameter      | Description                                                                                                                   | Required | Auto-generated |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------- | -------- | -------------- |
+| `title`        | Title of the post                                                                                                             | Yes      | Yes            |
+| `date`         | Date of the post                                                                                                              | Yes      | Yes            |
+| `lastmod`      | Last modified date of the post                                                                                                | No       | Yes            |
+| `author`       | Author of the post, if it's not set, the global `author` will be used. If both are not set, the author will not be displayed. | No       | No             |
+| `avatar`       | Author's avatar                                                                                                               | No       | No             |
+| `authorlink`   | Custom link for the current author                                                                                            | No       | No             |
+| `cover`        | Cover image of the post                                                                                                       | No       | No             |
+| `covercaption` | Caption for the cover image                                                                                                   | No       | No             |
+| `images`       | Used in `og:image` meta tag                                                                                                   | No       | No             |
+| `categories`   | Categories of the post                                                                                                        | No       | No             |
+| `tags`         | Tags of the post                                                                                                              | No       | No             |
+| `nolastmod`    | Disable the last modified date                                                                                                | No       | No             |
 
 ## Features
 
@@ -179,6 +181,6 @@ math: true # YAML syntax
 This allows you to use mathematics with other markdown syntaxes in the whole post, like:
 
 ```md
-- This is an inline \(a^*=x-b^*\) equation.
+- This is an inline \(a^_=x-b^_\) equation.
 - This is also an inline $a^*=x-b^*$ equation.
 ```
