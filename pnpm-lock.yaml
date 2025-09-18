@@ -27,8 +27,8 @@ importers:
         specifier: ^9.2.1
         version: 9.2.1
       daisyui:
-        specifier: ^5.1.8
-        version: 5.1.8
+        specifier: ^5.1.13
+        version: 5.1.13
       tailwindcss:
         specifier: ^4.1.13
         version: 4.1.13
@@ -827,8 +827,8 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
 
-  daisyui@5.1.8:
-    resolution: {integrity: sha512-MJd683sm8ydToKrPoY8q72cht4j2EKellmTex51alY7L4p782gUtXTAZwiMOZixeKda/qb/c94XgoyLWSm4VNg==}
+  daisyui@5.1.13:
+    resolution: {integrity: sha512-KWPF/4R+EHTJRqKZFNmSDPfAZ5xeS6YWB/2kS7Y6wGKg+atscUi2DOp6HoDD/OgGML0PJTtTpgwpTfeHVfjk7w==}
 
   debug@4.4.1:
     resolution: {integrity: sha512-KcKCqiftBJcZr++7ykoDIEwSa3XWowTfNPo92BYxjXiyYEVrUQh2aLyhxBCwww+heortUFxEJYcRzosstTEBYQ==}
@@ -2207,7 +2207,7 @@ snapshots:
 
   cssesc@3.0.0: {}
 
-  daisyui@5.1.8: {}
+  daisyui@5.1.13: {}
 
   debug@4.4.1:
     dependencies:

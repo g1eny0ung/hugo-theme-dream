@@ -19,7 +19,7 @@
     "@tailwindcss/cli": "^4.1.13",
     "@tailwindcss/typography": "^0.5.16",
     "concurrently": "^9.2.1",
-    "daisyui": "^5.1.8",
+    "daisyui": "^5.1.13",
     "tailwindcss": "^4.1.13"
   }
 }
