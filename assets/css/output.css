@@ -1886,9 +1886,6 @@
   .h-12 {
     height: calc(var(--spacing) * 12);
   }
-  .h-\[32px\] {
-    height: 32px;
-  }
   .h-\[60vh\] {
     height: 60vh;
   }
