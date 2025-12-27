@@ -22,19 +22,8 @@ document.addEventListener('alpine:init', function () {
     isDark: function isDark() {
       return this.on === 'auto' ? this.mql.matches : this.on === 'y';
     },
-    "class": function _class() {
-      if (this.on === 'auto') {
-        return this.mql.matches ? 'dark' : 'light';
-      } else {
-        return this.on === 'y' ? 'dark' : 'light';
-      }
-    },
     theme: function theme() {
-      if (this.on === 'auto') {
-        return this.mql.matches ? window.darkTheme : window.lightTheme;
-      } else {
-        return this.on === 'y' ? window.darkTheme : window.lightTheme;
-      }
+      return this.isDark() ? window.darkTheme : window.lightTheme;
     },
     iconMap: {
       n: 'sunny',
