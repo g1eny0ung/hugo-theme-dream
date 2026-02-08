@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [3.14.0] - 2026-02-08
+
 ### Added
 
 - Support image title as <https://gohugo.io/render-hooks/images/> describes
