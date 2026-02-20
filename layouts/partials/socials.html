@@ -7,7 +7,7 @@
   </li>
   {{ end }}
 
-  {{ range site.Data.socials.socials }}
+  {{ range hugo.Data.socials.socials }}
   <li>
     <a href="{{ .href }}" target="{{ .target }}" title="{{ .title }}">
       <ion-icon name="{{ .icon }}"></ion-icon>
