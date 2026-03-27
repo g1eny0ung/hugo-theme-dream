@@ -1880,9 +1880,6 @@
   .h-8 {
     height: calc(var(--spacing) * 8);
   }
-  .h-10 {
-    height: calc(var(--spacing) * 10);
-  }
   .h-12 {
     height: calc(var(--spacing) * 12);
   }
@@ -1894,6 +1891,9 @@
   }
   .w-8 {
     width: calc(var(--spacing) * 8);
+  }
+  .w-12 {
+    width: calc(var(--spacing) * 12);
   }
   .w-24 {
     width: calc(var(--spacing) * 24);
@@ -2203,6 +2203,10 @@
       --badge-color: var(--color-primary);
       --badge-fg: var(--color-primary-content);
     }
+  }
+  .select-none {
+    -webkit-user-select: none;
+    user-select: none;
   }
   .\[--timeline-col-start\:64px\] {
     --timeline-col-start: 64px;

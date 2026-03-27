@@ -11,9 +11,9 @@
   {{ else }}
   <div class="container flex justify-between px-4">
   {{ end }}
-    <section class="flex items-center gap-4">
+    <section class="flex items-center gap-2">
       <div class="avatar cursor-pointer hover:avatar-online" @click="flip = !flip" title="{{ T "flip" }}">
-        <div class="h-10 rounded-full">
+        <div class="w-12 h-12 rounded-full select-none">
           <img src="{{ site.Params.avatar | relURL }}" alt="{{ site.Params.headerTitle }}" />
         </div>
       </div>
