@@ -35,8 +35,7 @@
   <body x-data="{
     flip: false,
   }">
-    <!-- If backgroundImage defined -->
-    {{ with site.Params.backgroundImage }}
+    {{ with or site.Params.backgroundImage site.Params.backgroundImageDark }}
       <div id="dream-global-bg"></div>
     {{ end }}
 
