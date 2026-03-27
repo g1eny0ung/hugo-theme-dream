@@ -29,21 +29,21 @@ x-data="{
         <div class="card-actions justify-between items-center mt-4">
           <div class="flex items-center">
             <template x-if="post.item.avatar">
-            <div class="avatar mr-1">
-              <div class="w-8 rounded-full">
-                <img class="my-0" :src="post.item.avatar" :alt="post.item.author" />
+              <div class="avatar mr-1">
+                <div class="w-8 rounded-full">
+                  <img class="my-0" :src="post.item.avatar" :alt="post.item.author" />
+                </div>
               </div>
-            </div>
             </template>
             <template x-if="!post.item.avatar">
-            <span>@</span>
+              <span>@</span>
             </template>
 
             <template x-if="post.item.author">
-            <span x-text="post.item.author"></span>
+              <span x-text="post.item.author"></span>
             </template>
             <template x-if="!post.item.author">
-            <span>{{ site.Params.author }}</span>
+              <span>{{ site.Params.author }}</span>
             </template>
             </span>
           </div>
