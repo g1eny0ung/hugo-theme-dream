@@ -1,7 +1,6 @@
 {
   "name": "docs",
   "version": "1.0.0",
-  "description": "",
   "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
@@ -18,5 +17,8 @@
   },
   "devDependencies": {
     "@theguild/remark-mermaid": "^0.3.0"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }

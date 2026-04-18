@@ -10,6 +10,7 @@ on:
     branches: ['master']
     paths:
       - 'docs/**'
+      - '.github/workflows/docs.yml'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -35,19 +36,19 @@ jobs:
         working-directory: docs
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v5
         with:
-          version: 8
-      - uses: actions/setup-node@v4
+          version: 10
+      - uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version: 24
           cache: 'pnpm'
           cache-dependency-path: 'docs/pnpm-lock.yaml'
 
       - name: Restore cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             docs/.next/cache
@@ -60,7 +61,7 @@ jobs:
         run: pnpm run build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: './docs/out'
 
@@ -74,4 +75,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
