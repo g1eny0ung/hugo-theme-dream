@@ -61,6 +61,12 @@
   {{ partialCached "twikoo.html" . }}
 {{ else }}
   <div id="tcomment"></div>
+  <style>
+    .twikoo :where(img) {
+      margin-top: 0em;
+      margin-bottom: 0em;
+    }
+  </style>
   <script src="https://cdn.jsdelivr.net/npm/twikoo@1.7.7/dist/twikoo.min.js"></script>
   <script>
     twikoo.init({
