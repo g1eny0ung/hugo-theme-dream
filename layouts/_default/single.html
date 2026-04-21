@@ -125,7 +125,7 @@
       {{ if or site.Config.Services.Disqus.Shortname site.Params.utterancesRepo site.Params.valine site.Params.waline site.Params.twikoo.enabled }}
       <div class="divider"></div>
 
-      <section class="space-y-4">
+      <section class="space-y-4 not-prose">
         {{ partialCached "commentSystems.html" . .RelPermalink }}
       </section>
       {{ end }}
