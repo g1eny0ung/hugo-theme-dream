@@ -1,4 +1,4 @@
-/*! tailwindcss v4.1.18 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.2.3 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -459,6 +459,9 @@
       @layer daisyui.l1.l2.l3 {
         width: unset;
       }
+    }
+    .prose :where(a&:not(.btn-link)):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+      text-decoration-line: none;
     }
     @layer daisyui.l1.l2.l3 {
       display: inline-flex;
@@ -1004,6 +1007,9 @@
         }
       }
     }
+  }
+  .end {
+    inset-inline-end: var(--spacing);
   }
   .top-0 {
     top: calc(var(--spacing) * 0);
@@ -1887,7 +1893,7 @@
     height: 60vh;
   }
   .w-2\/3 {
-    width: calc(2/3 * 100%);
+    width: calc(2 / 3 * 100%);
   }
   .w-8 {
     width: calc(var(--spacing) * 8);
@@ -2117,7 +2123,7 @@
     text-decoration-line: none;
   }
   .prose {
-    & :where(.btn-link):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    & :where(a.btn:not(.btn-link)):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
       text-decoration-line: none;
     }
   }
@@ -2315,7 +2321,7 @@
   }
   .md\:w-1\/2 {
     @media (width >= 48rem) {
-      width: calc(1/2 * 100%);
+      width: calc(1 / 2 * 100%);
     }
   }
   .md\:basis-\[200px\] {
@@ -2370,7 +2376,7 @@
   }
   .lg\:w-1\/3 {
     @media (width >= 64rem) {
-      width: calc(1/3 * 100%);
+      width: calc(1 / 3 * 100%);
     }
   }
   .lg\:basis-\[300px\] {
@@ -2395,7 +2401,7 @@
   }
   .xl\:w-1\/4 {
     @media (width >= 80rem) {
-      width: calc(1/4 * 100%);
+      width: calc(1 / 4 * 100%);
     }
   }
   .dark\:border {

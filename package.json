@@ -9,18 +9,18 @@
   "scripts": {
     "css": "tailwindcss -i ./src/input.css -o ./assets/css/output.css",
     "js": "babel src --out-dir assets --presets=@babel/preset-env --no-comments",
-    "build": "npm run css && npm run js",
-    "watch": "conc \"npm:css -- -w\" \"npm:js -- -w\""
+    "build": "pnpm run css && pnpm run js",
+    "watch": "conc \"pnpm:css -- -w\" \"pnpm:js -- -w\""
   },
   "devDependencies": {
     "@babel/cli": "^7.28.3",
     "@babel/core": "^7.28.4",
     "@babel/preset-env": "^7.28.3",
-    "@tailwindcss/cli": "^4.1.18",
+    "@tailwindcss/cli": "^4.2.3",
     "@tailwindcss/typography": "^0.5.19",
     "concurrently": "^9.2.1",
-    "daisyui": "^5.5.14",
-    "tailwindcss": "^4.1.18"
+    "daisyui": "^5.5.19",
+    "tailwindcss": "^4.2.3"
   },
   "engines": {
     "node": ">=22"
