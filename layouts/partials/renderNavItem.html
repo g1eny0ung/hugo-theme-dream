@@ -30,6 +30,7 @@
   <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
 </a>
 {{ else }}
+
 {{ $navItems := site.Params.navItems }}
 {{ $item := index $navItems . }}
 {{ with $item }}
@@ -43,4 +44,5 @@
   </a>
   {{ end }}
 {{ end }}
+
 {{ end }}

@@ -48,6 +48,7 @@
   </a>
 </li>
 {{ else }}
+
 {{ $navItems := site.Params.navItems }}
 {{ $item := index $navItems . }}
 {{ with $item }}
@@ -60,4 +61,5 @@
   </a>
 </li>
 {{ end }}
+
 {{ end }}
