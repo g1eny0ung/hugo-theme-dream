@@ -14,14 +14,21 @@ The absolute URL (protocol, host, path, and trailing slash) of your published si
 
 ### defaultContentLanguage = "zh"
 
-Content without language indicator will default to this language. Default is `en`.
+The projects’s default content language. Default is `en`.
 
-### languageCode = "zh-Hans"
+You need to configure it to enable the corresponding [i18n](./i18n.md).
 
-LanguageCode is used to set the `lang` attribute in the `<html>` tag. It will also be:
+### locale = "zh-Hans"
+
+> [!IMPORTANT]
+>
+> Before [Hugo v0.158.0](https://github.com/gohugoio/hugo/releases/tag/v0.158.0),
+> Hugo used `languageCode` to indicate the site's locale. Now it's deprecated. You need to replace it with `locale` to make it work in the future.
+
+Locale is used to set the `lang` attribute in the `<html>` tag. It will also be:
 
 - Used in RSS
-- Used in the `og:locale` meta tag
+- Used in the `og:locale` meta tag (Open Graph protocol)
 
 ### title = "g1eny0ung's Blog"
 
