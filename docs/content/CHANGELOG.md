@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [3.15.0] - 2026-04-30
+
+### Changed
+
+- Add `data-nosnippet` attribute to flippable about page other than home to prevent search engines from showing it as a snippet in search results
+
+### Deprecated
+
+- Replace `languageCode` with `locale`, see [Base Configurations](https://hugo-theme-dream.g1en.site/base-configurations#locale--zh-hans) for more details.
+
+### Fixed
+
+- The global background image is not shown in dark mode when `backgroundImageDark` is set
+- The styles of comment systems are no longer affected by theme styles
+- Update footer to adapt to mobile layout
+
 ## [3.14.0] - 2026-02-08
 
 ### Added
