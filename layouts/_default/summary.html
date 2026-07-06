@@ -1,4 +1,4 @@
-<a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="{{ .RelPermalink }}">
+<div class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30">
   {{ if .Params.cover }}
   <figure>
     {{ with .Resources.Get .Params.cover }}
@@ -28,17 +28,21 @@
   {{ end }}
 
   <div class="card-body">
-    <h2 class="card-title">{{ .Title }}</h2>
+    <h2 class="card-title">
+      <a class="after:absolute after:inset-0" href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </h2>
 
     <p class="date text-base-content/60">
-    {{ if site.Params.Experimental.jsDate }}
-      <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
-    {{ else }}
-      {{ .Date | time.Format "Monday, Jan 2, 2006" }}
-    {{ end }}
+      {{ if site.Params.Experimental.jsDate }}
+        <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
+      {{ else }}
+        {{ .Date | time.Format "Monday, Jan 2, 2006" }}
+      {{ end }}
     </p>
 
-    {{ or .Description (.Summary | emojify | safeHTML) }}
+    <p class="[&_a]:font-medium [&_a]:underline z-10">
+      {{- or .Description (.Summary | replaceRE "^<p>" "" | replaceRE "</p>$" "" | emojify | safeHTML) -}}
+    </p>
 
     {{ $hasAuthor := or .Params.author site.Params.author }}
     <div class="card-actions justify-between items-center mt-4">
@@ -52,4 +56,4 @@
       </div>
     </div>
   </div>
-</a>
+</div>
