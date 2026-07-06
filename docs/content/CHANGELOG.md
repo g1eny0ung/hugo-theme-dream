@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 
 - Remove the extra space at the end of markdown links
+- Allow links in the summary
 
 ## [3.15.0] - 2026-04-30
 
