@@ -10,7 +10,7 @@
     "css": "tailwindcss -i ./src/input.css -o ./assets/css/output.css",
     "js": "babel src --out-dir assets --presets=@babel/preset-env --no-comments",
     "build": "pnpm run css && pnpm run js",
-    "watch": "conc \"pnpm:css -- -w\" \"pnpm:js -- -w\""
+    "watch": "conc \"pnpm:css -w\" \"pnpm:js -w\""
   },
   "devDependencies": {
     "@babel/cli": "^8.0.1",
