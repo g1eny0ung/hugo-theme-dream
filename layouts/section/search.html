@@ -11,7 +11,7 @@
 {{ end }}
 x-data="{
   search: '',
-  get posts() { return this.search !== '' ? window.fuse.search(this.search) : [] },
+  get posts() { return this.search !== '' ? window.fuseInstance.search(this.search) : [] },
 }">
   <label for="search" class="input w-full">
     <input id="search" name="search" type="text" autofocus class="grow" placeholder="{{ T "search" }}" x-model.debounce="search" />
@@ -65,19 +65,20 @@ x-data="{
 
 {{ $data := slice }}
 {{ range (where site.RegularPages "Type" "posts") }}
-{{ $data = $data | append (dict "title" .Title "url" .RelPermalink "author" .Params.author "avatar" .Params.avatar "categories" .Params.categories "tags" .Params.tags "description" (or .Description (.Summary | emojify | safeHTML)) "readingTime" .ReadingTime) }}
+  {{ $data = $data | append (dict "title" .Title "url" .RelPermalink "author" .Params.author "avatar" .Params.avatar "categories" .Params.categories "tags" .Params.tags "description" (or .Description (.Summary | plainify)) "readingTime" .ReadingTime) }}
 {{ end }}
 
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.2.0/dist/fuse.min.js" integrity="sha256-iTXB3d/JTO+DocuUpeiiDkW0dAu1NhOLXIWxeNiIWxc=" crossorigin="anonymous"></script>
 <script>
-  var fuseData = {{ $data }};
-  var fuseOptions = {
+  const fuseData = {{ $data }};
+  const fuseOptions = {
     keys: [
-      "title",
+      { name: "title", weight: 0.6 },
+      { name: "description", weight: 0.4 },
     ]
   };
 
-  var fuse = new Fuse(fuseData, fuseOptions);
+  window.fuseInstance = new Fuse(fuseData, fuseOptions);
 </script>
 
 {{ end }}
