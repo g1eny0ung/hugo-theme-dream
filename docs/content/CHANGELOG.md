@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [3.16.0] - 2026-07-13
+
 ### Added
 
 - Add optional pan and zoom controls for Mermaid diagrams with a reset button [#410](https://github.com/g1eny0ung/hugo-theme-dream/pull/410)
