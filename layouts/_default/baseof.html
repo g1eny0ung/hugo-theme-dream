@@ -29,7 +29,7 @@
         document.documentElement.setAttribute('data-theme', theme)
       })()
     </script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.1/dist/cdn.min.js" integrity="sha256-Rmqrc5SKeSLTSnQ9shSKWmJco1ks8c1hLI8UG2Np03M=" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.12/dist/cdn.min.js" integrity="sha256-V7N9fK6aJ9ll/a5K3MhEJF39xAfmVa7oXc//OggDaj8=" crossorigin="anonymous"></script>
   </head>
 
   <body x-data="{
@@ -73,7 +73,7 @@
 
     {{ if .Store.Get "hasMermaid" }}
       <script type="module">
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.esm.min.mjs';
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.16.0/dist/mermaid.esm.min.mjs';
         mermaid.initialize({ startOnLoad: true });
       </script>
     {{ end }}
@@ -83,14 +83,13 @@
     {{ end }}
 
     {{ range site.Params.Advanced.customJS }}
-    <script src="{{ . | relURL }}"></script>
+      <script src="{{ . | relURL }}"></script>
     {{ end }}
 
-    {{ if site.Config.Services.GoogleAnalytics.ID }}
-    {{ template "_internal/google_analytics.html" . }}
+    {{ if and hugo.IsProduction site.Config.Services.GoogleAnalytics.ID }}
+      {{ template "_internal/google_analytics.html" . }}
     {{ end }}
 
-    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.esm.js" integrity="sha256-/IFmi82bIhdYWctu0UddSlJqpnzWm7Vh2C4CM32wF/k=" crossorigin="anonymous"></script>
-    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.js" integrity="sha256-mr7eJMX3VC3F7G32mk4oWp1C6a2tlMYxUdptfT7uKI8=" crossorigin="anonymous"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@8.0.13/dist/ionicons/ionicons.esm.js" integrity="sha256-46Vf2l/aX0tBSf2YXcaYMxF7JVJl30zn8Y9L9zZNXMA=" crossorigin="anonymous"></script>
   </body>
 </html>

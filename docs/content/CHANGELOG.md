@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- Update cdn dependencies to the latest version
+
 ### Fixed
 
 - Remove the extra space at the end of markdown links

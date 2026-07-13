@@ -1,16 +1,18 @@
 <script
-  src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"
-  integrity="sha256-4sbTzmCCW9LGrIh5OsN8V5Pfdad1F1MwhLAOyXKnsE0="
+  src="https://cdn.jsdelivr.net/npm/luxon@3.7.2/build/global/luxon.min.js"
+  integrity="sha256-UWxf6lyCvfH7XEcrmq/cqc2m3IBrLBLOnWLC4Pw0gQQ="
   crossorigin="anonymous"
 ></script>
 <script>
   format()
 
   function format() {
-    document.querySelectorAll('span[data-format="luxon"]').forEach(el => {
+    document.querySelectorAll('span[data-format="luxon"]').forEach((el) => {
       const date = el.textContent
 
-      el.textContent = luxon.DateTime.fromISO(date, { locale: {{ site.Language.Lang }} }).toFormat({{ site.Params.Experimental.jsDateFormat | default "yyyy-MM-dd" }})
+      el.textContent = luxon.DateTime.fromISO(date, { locale: '{{ site.Language.Lang }}' }).toFormat(
+        '{{ site.Params.Experimental.jsDateFormat | default "yyyy-MM-dd" }}',
+      )
     })
   }
 </script>
