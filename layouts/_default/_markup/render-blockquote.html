@@ -9,7 +9,7 @@
 {{ if eq .Type "alert" }}
   <blockquote class="dream-alert {{ .AlertType }}">
     <p class="heading">
-      <ion-icon name="{{ (index $icons .AlertType) }}"></ion-icon>
+      <ion-icon class="text-base" name="{{ (index $icons .AlertType) }}"></ion-icon>
       {{- or .Attributes.text (T .AlertType) (title .AlertType) -}}
     </p>
     {{ .Text | safeHTML }}

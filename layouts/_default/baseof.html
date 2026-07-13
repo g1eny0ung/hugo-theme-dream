@@ -74,8 +74,21 @@
     {{ if .Store.Get "hasMermaid" }}
       <script type="module">
         import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.16.0/dist/mermaid.esm.min.mjs';
-        mermaid.initialize({ startOnLoad: true });
+
+        mermaid.initialize({ startOnLoad: false });
+        await mermaid.run({ querySelector: '.mermaid' });
+
+        document.querySelectorAll('.mermaid-panzoom').forEach((container) => {
+          const mermaid = container.firstElementChild;
+          const diagram = mermaid.querySelector('svg');
+          const panzoom = window.Panzoom(diagram, { maxScale: 5 });
+          const resetButton = container.querySelector('.mermaid-panzoom-reset');
+
+          mermaid.addEventListener('wheel', panzoom.zoomWithWheel);
+          resetButton.addEventListener('click', () => panzoom.reset());
+        });
       </script>
+      <script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom@4.6.2/dist/panzoom.min.js" integrity="sha256-PONU73tJPvtipNSsqvhvotYCfrYphXpOFEBB3hoRLB4=" crossorigin="anonymous"></script>
     {{ end }}
 
     {{ if .Store.Get "hasMathjax" }}

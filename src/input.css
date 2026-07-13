@@ -99,13 +99,31 @@ html {
   @apply menu menu-sm;
 }
 
+.mermaid-panzoom {
+  @apply relative border border-transparent rounded-box;
+}
+
+.mermaid-panzoom:hover,
+.mermaid-panzoom:focus-within {
+  @apply border-base-300;
+}
+
+.mermaid-panzoom > .mermaid {
+  @apply overflow-hidden;
+}
+
+.mermaid-panzoom-reset {
+  @apply absolute z-1 right-2 bottom-2 opacity-0 pointer-events-none transition-opacity duration-150 ease-in-out;
+}
+
+.mermaid-panzoom:hover .mermaid-panzoom-reset,
+.mermaid-panzoom:focus-within .mermaid-panzoom-reset {
+  @apply opacity-100 pointer-events-auto;
+}
+
 .dream-alert {
   > .heading {
     @apply flex items-center gap-1 text-sm font-medium;
-  }
-
-  ion-icon {
-    font-size: 1rem;
   }
 
   &.note {
