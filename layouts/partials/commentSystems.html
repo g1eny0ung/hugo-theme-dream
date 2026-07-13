@@ -1,4 +1,4 @@
-{{ if site.Config.Services.Disqus.Shortname }}
+{{ if and hugo.IsProduction site.Config.Services.Disqus.Shortname }}
 <article>
   {{ partial "disqus.html" (dict "Context" . "Identifier" .RelPermalink) }}
 </article>

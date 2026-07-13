@@ -32,7 +32,7 @@
 {{ define "main" }}
 <div class="lg:grid lg:grid-cols-4 gap-4 mt-4 px-4">
   <div class="hidden lg:block">
-    {{ if fileExists "layouts/partials/adsense.html" }}
+    {{ if and hugo.IsProduction (fileExists "layouts/partials/adsense.html") }}
       <div class="dream-adsense w-2/3">
         {{ partialCached "adsense.html" . }}
       </div>
@@ -86,7 +86,7 @@
 
         {{ .Content | emojify }}
 
-        {{ if fileExists "layouts/partials/adsense-post-bottom.html" }}
+        {{ if and hugo.IsProduction (fileExists "layouts/partials/adsense-post-bottom.html") }}
           <div class="dream-adsense-post-bottom">
             {{ partialCached "adsense-post-bottom.html" . }}
           </div>
