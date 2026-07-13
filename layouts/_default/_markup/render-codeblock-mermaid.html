@@ -1,4 +1,12 @@
+{{ $zoom := eq (index .Attributes "zoom") "true" }}
+{{ if $zoom }}<div class="mermaid-panzoom">{{ end }}
 <pre class="mermaid">
   {{ .Inner | htmlEscape | safeHTML }}
 </pre>
+{{ if $zoom }}
+  <button class="btn btn-square btn-sm mermaid-panzoom-reset" type="button" aria-label="Reset diagram zoom" title="Reset zoom">
+    <ion-icon class="text-sm" name="refresh-outline" aria-hidden="true"></ion-icon>
+  </button>
+</div>
+{{ end }}
 {{ .Page.Store.Set "hasMermaid" true }}

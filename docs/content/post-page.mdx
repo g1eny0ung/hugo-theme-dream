@@ -123,6 +123,22 @@ graph TD;
     C-->D;
 ```
 
+#### Pan and Zoom
+
+Pan and zoom are disabled by default. Enable them for an individual diagram by adding `zoom="true"` to its code block attributes:
+
+````mdx filename="Markdown"
+```mermaid {zoom="true"}
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+````
+
+Drag the enabled diagram to pan it, use the mouse wheel to zoom, and hover over it to reveal a reset button in the bottom-right corner. Clicking the button restores the initial zoom and position.
+
 ### Mathematics
 
 Dream supports mathematical equations and expressions by using [MathJax](https://www.mathjax.org/).
