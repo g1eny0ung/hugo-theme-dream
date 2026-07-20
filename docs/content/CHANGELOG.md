@@ -7,9 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [3.16.1] - 2026-07-20
+
 ## Changed
 
 - Update search keys to include `description` or `summary`
+
+## Fixed
+
+- Prevent TOC from overlapping the article [#412](https://github.com/g1eny0ung/hugo-theme-dream/pull/412)
 
 ## [3.16.0] - 2026-07-13
 
