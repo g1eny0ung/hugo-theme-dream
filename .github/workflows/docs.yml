@@ -40,7 +40,7 @@ jobs:
 
       - uses: pnpm/action-setup@v6
         with:
-          version: 11.11.0 # FIXME: Reset to 11 once https://github.com/pnpm/action-setup/issues/276 is resolved.
+          version: 11
       - uses: actions/setup-node@v6
         with:
           node-version: 24
