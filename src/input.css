@@ -87,6 +87,10 @@ html {
   /* top-24 + 1rem */
   max-height: calc(100vh - 7rem);
   overflow-y: auto;
+
+  /* Prevent long headings (e.g. CJK titles) from making the TOC wider than
+     its grid column and overlapping the article (#411 / #412) */
+  max-width: 100%;
 }
 
 @supports (-moz-appearance: none) {
