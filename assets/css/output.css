@@ -2548,6 +2548,7 @@ html {
   top: calc(var(--spacing) * 24);
   max-height: calc(100vh - 7rem);
   overflow-y: auto;
+  max-width: 100%;
 }
 @supports (-moz-appearance: none) {
   #TableOfContents {
