@@ -5,7 +5,7 @@
     {{ if eq .MediaType.SubType "svg" }}
       <img src="{{ .RelPermalink }}" alt="{{ .Title }}" />
     {{ else }}
-      {{ $webp := .Resize (printf "%dx%d webp" .Width .Height) }}
+      {{ $webp := .Process "webp" }}
       <picture>
         <source srcset="{{ $webp.RelPermalink }}" type="image/webp" />
         <img src="{{ .RelPermalink }}" alt="{{ .Title }}" />
@@ -18,7 +18,7 @@
   {{ else if not site.Params.noDefaultSummaryCover }}
   <figure>
     {{ with resources.Get (printf "images/default%d.jpg" (index (seq 4 | shuffle) 0)) }}
-    {{ $webp := .Resize (printf "%dx%d webp" .Width .Height) }}
+    {{ $webp := .Process "webp" }}
     <picture>
       <source srcset="{{ $webp.RelPermalink }}" type="image/webp" />
       <img src="{{ .RelPermalink }}" alt="{{ .Title }}" />
