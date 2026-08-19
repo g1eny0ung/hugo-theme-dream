@@ -1,0 +1,10 @@
+{{- $version := split (printf "%s" hugo.Version) "." -}}
+{{- $supportsImageResourceChecks := or
+  (gt (int (index $version 0)) 0)
+  (ge (int (index $version 1)) 154)
+-}}
+{{- $shouldProcess := ne .MediaType.SubType "svg" -}}
+{{- if $supportsImageResourceChecks -}}
+  {{- $shouldProcess = and (reflect.IsImageResource .) (reflect.IsImageResourceProcessable .) -}}
+{{- end -}}
+{{- return $shouldProcess -}}
