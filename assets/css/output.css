@@ -36,6 +36,7 @@
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
+    --font-weight-bold: 700;
     --radius-lg: 0.5rem;
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --default-transition-duration: 150ms;
@@ -1093,6 +1094,9 @@
   .z-30 {
     z-index: 30;
   }
+  .z-50 {
+    z-index: 50;
+  }
   .timeline-end {
     @layer daisyui.l1.l2.l3 {
       grid-column-start: 1;
@@ -1940,6 +1944,9 @@
   .max-w-none {
     max-width: none;
   }
+  .min-w-20 {
+    min-width: calc(var(--spacing) * 20);
+  }
   .flex-1 {
     flex: 1;
   }
@@ -2053,6 +2060,22 @@
       border-color: color-mix(in oklab, var(--color-base-content) 30%, transparent);
     }
   }
+  .menu-active {
+    :where(:not(ul, menu, details, .menu-title, .btn))& {
+      @layer daisyui.l1.l2 {
+        --tw-outline-style: none;
+        outline-style: none;
+        @media (forced-colors: active) {
+          outline: 2px solid transparent;
+          outline-offset: 2px;
+        }
+        color: var(--menu-active-fg);
+        background-color: var(--menu-active-bg);
+        background-size: auto, calc(var(--noise) * 100%);
+        background-image: none, var(--fx-noise);
+      }
+    }
+  }
   .bg-base-100 {
     background-color: var(--color-base-100);
   }
@@ -2137,6 +2160,10 @@
   .text-xs {
     font-size: var(--text-xs);
     line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
   }
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
