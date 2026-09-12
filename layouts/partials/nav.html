@@ -37,15 +37,29 @@
       {{ $navItems = site.Params.reorderNavItems }}
     {{ end }}
 
-    <div class="dropdown dropdown-end sm:hidden">
-      <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
-        <ion-icon name="menu" class="text-2xl"></ion-icon>
+    <div class="flex items-center sm:hidden">
+      {{ partial "languageSwitcher.html" . }}
+
+      <div class="dropdown dropdown-end">
+        <div
+          tabindex="0"
+          role="button"
+          class="btn btn-ghost btn-square"
+          aria-label="Select an option"
+        >
+          <ion-icon name="menu" class="text-2xl"></ion-icon>
+        </div>
+        <ul
+          tabindex="0"
+          class="dropdown-content menu w-36 bg-base-100 rounded-box z-10 shadow-md"
+        >
+          {{ partial "navMobileMenu.html" (dict "navItems" $navItems) }}
+        </ul>
       </div>
-      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-10 shadow-md">
-        {{ partial "navMobileMenu.html" (dict "navItems" $navItems) }}
-      </ul>
     </div>
     <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
+      {{ partial "languageSwitcher.html" . }}
+
       {{ if not site.Params.collapseNavItems }}
 
       {{ range $navItems }}
