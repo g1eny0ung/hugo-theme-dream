@@ -1,0 +1,53 @@
+{{- $currentPage := . -}}
+
+{{ if hugo.IsMultilingual }}
+  <div class="dropdown dropdown-end">
+    <div
+      tabindex="0"
+      role="button"
+      class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      aria-label="{{ T "chooseLanguage" }}"
+      title="{{ T "chooseLanguage" }}"
+    >
+      <ion-icon
+        class="group-hover:text-primary-content text-xl"
+        name="globe-outline"
+      ></ion-icon>
+    </div>
+
+    <ul
+      tabindex="0"
+      class="dropdown-content menu mt-2 min-w-20 rounded-box bg-base-100 p-2 shadow-xl z-50"
+    >
+      {{ range hugo.Sites }}
+        {{- $targetSite := . -}}
+        {{- $targetPage := false -}}
+
+        {{ range $currentPage.AllTranslations }}
+          {{ if eq .Language.Lang $targetSite.Language.Lang }}
+            {{ $targetPage = . }}
+          {{ end }}
+        {{ end }}
+
+        {{- $href := $targetSite.Home.RelPermalink -}}
+        {{ with $targetPage }}
+          {{ $href = .RelPermalink }}
+        {{ end }}
+
+        {{- $isCurrent := eq $targetSite.Language.Lang $currentPage.Language.Lang -}}
+
+        <li>
+          <a
+            href="{{ $href }}"
+            lang="{{ $targetSite.Language.Locale }}"
+            hreflang="{{ $targetSite.Language.Locale }}"
+            class="{{ if $isCurrent }}menu-active font-bold{{ end }}"
+            {{ if $isCurrent }}aria-current="page"{{ end }}
+          >
+            {{ $targetSite.Language.Lang }}
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}
