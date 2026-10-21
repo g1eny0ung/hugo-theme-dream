@@ -1,12 +1,29 @@
+{{- $src := .Destination -}}
+{{- $url := (try (urls.Parse .Destination)).Value -}}
+{{- if and $url (not $url.IsAbs) (not (strings.HasPrefix .Destination "/")) $url.Path -}}
+  {{- $owner := .PageInner -}}
+  {{- $resourcePath := $url.Path -}}
+  {{- with .PageInner.Parent -}}
+    {{- if eq .BundleType "leaf" -}}
+      {{- $owner = . -}}
+      {{- $relativeDir := strings.TrimPrefix .File.Dir $.PageInner.File.Dir -}}
+      {{- $resourcePath = path.Join $relativeDir $url.Path -}}
+    {{- end -}}
+  {{- end -}}
+  {{- with $owner.Resources.Get $resourcePath -}}
+    {{- $src = printf "%s%s" .RelPermalink (replaceRE "^[^?#]*" "" $.Destination) -}}
+  {{- end -}}
+{{- end -}}
+
 {{- if .IsBlock -}}
   <figure>
-    <img src="{{ .Destination | safeURL }}"
+    <img src="{{ $src | safeURL }}"
       {{- with .PlainText }} alt="{{ . }}"{{ end -}}
     >
     {{- with .Title }}<figcaption class="text-sm italic text-center mt-2">{{ . }}</figcaption>{{ end -}}
   </figure>
 {{- else -}}
-  <img src="{{ .Destination | safeURL }}"
+  <img src="{{ $src | safeURL }}"
     {{- with .PlainText }} alt="{{ . }}"{{ end -}}
     {{- with .Title }} title="{{ . }}"{{ end -}}
   >
