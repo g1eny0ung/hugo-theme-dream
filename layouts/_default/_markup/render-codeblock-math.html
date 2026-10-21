@@ -1,4 +1,4 @@
 <p class="mathjax">
-  {{- .Inner | safeHTML -}}
+  {{- .Inner | htmlEscape | safeHTML -}}
 </p>
 {{ .Page.Store.Set "hasMathjax" true }}
