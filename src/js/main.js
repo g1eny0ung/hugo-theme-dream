@@ -3,15 +3,12 @@ document.addEventListener('alpine:init', () => {
     init() {
       const isDark = window.localStorage.getItem('hugo-theme-dream-is-dark')
 
-      if (isDark) {
-        this.on = isDark
-      } else {
-        this.mql.addEventListener('change', (event) => {
-          this.on = event.matches ? 'y' : 'n'
-        })
+      this.on = isDark || 'auto'
+      this.systemDark = this.mql.matches
 
-        this.on = 'auto'
-      }
+      this.mql.addEventListener('change', (event) => {
+        this.systemDark = event.matches
+      })
 
       setTimeout(() => {
         this.setThemeForUtterances()
@@ -20,9 +17,10 @@ document.addEventListener('alpine:init', () => {
 
     mql: window.matchMedia('(prefers-color-scheme: dark)'),
     on: 'n',
+    systemDark: false,
 
     isDark() {
-      return this.on === 'auto' ? this.mql.matches : this.on === 'y'
+      return this.on === 'auto' ? this.systemDark : this.on === 'y'
     },
     theme() {
       return this.isDark() ? window.darkTheme : window.lightTheme
