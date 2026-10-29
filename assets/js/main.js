@@ -7,10 +7,15 @@ document.addEventListener('alpine:init', () => {
       this.mql.addEventListener('change', event => {
         this.systemDark = event.matches;
         this.changeSyntaxHighlightingTheme();
-      });
-      setTimeout(() => {
         this.setThemeForUtterances();
-      }, 6000);
+      });
+      window.addEventListener('message', event => {
+        const utterances = document.querySelector('iframe.utterances-frame');
+        if (event.origin === 'https://utteranc.es' && event.source === utterances?.contentWindow && event.data?.type === 'resize') {
+          this.setThemeForUtterances();
+        }
+      });
+      this.setThemeForUtterances();
     },
     mql: window.matchMedia('(prefers-color-scheme: dark)'),
     on: 'n',

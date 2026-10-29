@@ -9,11 +9,22 @@ document.addEventListener('alpine:init', () => {
       this.mql.addEventListener('change', (event) => {
         this.systemDark = event.matches
         this.changeSyntaxHighlightingTheme()
+        this.setThemeForUtterances()
       })
 
-      setTimeout(() => {
-        this.setThemeForUtterances()
-      }, 6000) // Set a bigger timeout to make sure the utterances iframe is loaded.
+      window.addEventListener('message', (event) => {
+        const utterances = document.querySelector('iframe.utterances-frame')
+
+        if (
+          event.origin === 'https://utteranc.es' &&
+          event.source === utterances?.contentWindow &&
+          event.data?.type === 'resize'
+        ) {
+          this.setThemeForUtterances()
+        }
+      })
+
+      this.setThemeForUtterances()
     },
 
     mql: window.matchMedia('(prefers-color-scheme: dark)'),
