@@ -1,9 +1,0 @@
-{{ $navItems := .navItems }}
-
-{{ range $navItems }}
-{{ partial "renderMobileNavItem.html" . }}
-{{ end }}
-
-{{ with site.Params.navItems }}
-{{ partial "navCustomItems.html" (dict "navItems" $navItems "mobile" true) }}
-{{ end }}

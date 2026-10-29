@@ -37,12 +37,18 @@
       {{ $navItems = site.Params.reorderNavItems }}
     {{ end }}
 
+    {{ range $key, $_ := site.Params.navItems }}
+      {{ $navItems = union $navItems (slice $key) }}
+    {{ end }}
+
     <div class="dropdown dropdown-end sm:hidden">
       <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
         <ion-icon name="menu" class="text-2xl"></ion-icon>
       </div>
       <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-10 shadow-md">
-        {{ partial "navMobileMenu.html" (dict "navItems" $navItems) }}
+        {{ range $navItems }}
+        {{ partial "renderMobileNavItem.html" . }}
+        {{ end }}
       </ul>
     </div>
     <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
@@ -52,13 +58,9 @@
       {{ partial "renderNavItem.html" . }}
       {{ end }}
 
-      {{ with site.Params.navItems }}
-      {{ partial "navCustomItems.html" (dict "navItems" $navItems "mobile" false) }}
-      {{ end }}
-
       {{ else }}
 
-      {{ $collapseNavItems := site.Params.collapseNavItems }}
+      {{ $collapseNavItems := intersect site.Params.collapseNavItems $navItems }}
       {{ $items := complement $collapseNavItems $navItems }}
       {{ range $items }}
       {{ partial "renderNavItem.html" . }}
@@ -71,10 +73,6 @@
         <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-10 shadow-xl">
           {{ range $collapseNavItems }}
           {{ partial "renderMobileNavItem.html" . }}
-          {{ end }}
-
-          {{ with site.Params.navItems }}
-          {{ partial "navCustomItems.html" (dict "navItems" $navItems "mobile" true) }}
           {{ end }}
         </ul>
       </div>
