@@ -17,7 +17,7 @@
   <div class="max-w-[65ch] mx-auto mt-8 lg:mt-12">
     <ul class="timeline timeline-vertical">
       {{ $groupLayout := default "2006" .Params.groupLayout }}
-      {{ range .Pages.GroupByDate $groupLayout }}
+      {{ range .RegularPagesRecursive.GroupByDate $groupLayout }}
       <li class="[--timeline-col-start:64px]">
         <hr class="dark:bg-base-content" />
         <div class="timeline-start justify-self-start!">
