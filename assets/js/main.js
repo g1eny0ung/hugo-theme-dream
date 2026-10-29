@@ -6,6 +6,7 @@ document.addEventListener('alpine:init', () => {
       this.systemDark = this.mql.matches;
       this.mql.addEventListener('change', event => {
         this.systemDark = event.matches;
+        this.changeSyntaxHighlightingTheme();
       });
       setTimeout(() => {
         this.setThemeForUtterances();
@@ -39,9 +40,10 @@ document.addEventListener('alpine:init', () => {
       this.changeSyntaxHighlightingTheme();
     },
     changeSyntaxHighlightingTheme() {
-      if (document.querySelector('#dream-single-post-main')) {
+      const stylesheet = document.querySelector('link[data-custom-syntax-highlighting]');
+      if (stylesheet) {
         const customSyntaxHighlightingUrl = this.isDark() ? window.customSyntaxHighlighting.dark : window.customSyntaxHighlighting.light;
-        document.querySelector('link[data-custom-syntax-highlighting]').setAttribute('href', customSyntaxHighlightingUrl);
+        stylesheet.setAttribute('href', customSyntaxHighlightingUrl);
       }
     },
     setThemeForUtterances() {
