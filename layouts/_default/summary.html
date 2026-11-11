@@ -46,7 +46,7 @@
 
     {{ $hasAuthor := or .Params.author site.Params.author }}
     <div class="card-actions justify-between items-center mt-4">
-      {{ if $hasAuthor }}
+      {{ if and $hasAuthor (not site.Params.hideAuthorInSummary) }}
         {{ partial "author.html" (dict "Params" .Params "template" "summary") }}
       {{ end }}
 

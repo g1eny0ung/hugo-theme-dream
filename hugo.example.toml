@@ -52,6 +52,7 @@ siteStartYear = 2016
 # reorderNavItems = ["about", "search", "rss", "posts", "categories", "tags"]
 # collapseNavItems = ["posts", "categories", "tags"]
 # noDefaultSummaryCover = true
+# hideAuthorInSummary = true
 # showTableOfContents = true
 # showSummaryCoverInPost = true
 # imageZoomableInPost = true
