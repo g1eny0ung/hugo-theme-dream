@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [3.18.0] - 2026-11-11
+
+### Changed
+
+- Load Utterances only in Hugo's production environment. To preview it locally, run `hugo server --environment production`.
+- Let the site's Disqus settings control whether ads appear.
+- Reduce vertical spacing around the previous and next post links.
+
+### Fixed
+
+- Preserve manual light and dark mode selections when the system color scheme changes.
+- Keep custom code highlighting in sync with automatic theme changes and allow theme switching when custom highlighting is disabled.
+- Sync [Disqus](./social-comments.mdx#disqus) and Utterances with the site's light and dark modes, including when Utterances loads late.
+- Honor custom navigation order and collapse settings on desktop and mobile.
+- Link to the current language's homepage from the site title and the 404 page.
+- Include posts in nested sections on the archives page.
+- Preserve special characters in math code blocks and in shared post titles and links.
+- Resolve relative paths for bundled images when content appears outside its source page.
+- Convert summary covers to WebP at their original size and keep unsupported image formats as-is.
+
 ## [3.17.0] - 2026-08-02
 
 ### Changed
