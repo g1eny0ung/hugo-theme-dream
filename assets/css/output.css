@@ -2595,6 +2595,14 @@ html {
     transform: translateX(-25%) rotateY(180deg);
   }
 }
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .flip-container .flipper, .flip-container .front, .flip-container .back {
+    transition: none;
+  }
+}
 .dream-flip-avatar:focus-visible {
   outline: 2px solid var(--color-base-content);
   outline-offset: 2px;
@@ -2620,7 +2628,7 @@ html {
     position: initial;
   }
 }
-#TableOfContents ul {
+#TableOfContents > ul {
   @layer daisyui.l1.l2.l3 {
     display: flex;
     width: fit-content;
