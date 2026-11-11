@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "next build && pagefind --site out --output-path out/_pagefind",
     "start": "next start"
   },
   "dependencies": {
@@ -15,7 +15,8 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@theguild/remark-mermaid": "^0.3.0"
+    "@theguild/remark-mermaid": "^0.3.0",
+    "pagefind": "^1.6.0"
   },
   "engines": {
     "node": ">=22"
