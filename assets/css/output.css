@@ -2491,6 +2491,18 @@
 html {
   scroll-behavior: smooth;
 }
+:where(#disqus_thread, #disqus_recommendations) {
+  color-scheme: normal;
+  background-color: #fff;
+  color: #333c4d;
+}
+:where(.dark) :where(#disqus_thread, #disqus_recommendations) {
+  background-color: #171213;
+  color: #cbc9ca;
+}
+:where(#disqus_thread, #disqus_recommendations) a {
+  color: inherit;
+}
 #disqus_thread iframe[src*='ads-iframe'] {
   display: none;
 }

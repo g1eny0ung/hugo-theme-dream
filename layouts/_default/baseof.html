@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ site.Language.Locale }}"
   x-data
-  :class="$store.darkMode.isDark() ? 'dark' : 'light'"
+  :class="{ dark: $store.darkMode.isDark(), light: !$store.darkMode.isDark() }"
   :data-theme="$store.darkMode.theme()">
   <head>
     <meta charset="UTF-8">
@@ -27,6 +27,7 @@
         const theme = isDark ? window.darkTheme : window.lightTheme
 
         document.documentElement.setAttribute('data-theme', theme)
+        document.documentElement.classList.add(isDark ? 'dark' : 'light')
       })()
     </script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.12/dist/cdn.min.js" integrity="sha256-V7N9fK6aJ9ll/a5K3MhEJF39xAfmVa7oXc//OggDaj8=" crossorigin="anonymous"></script>

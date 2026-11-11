@@ -28,51 +28,42 @@ Disqus comments will be displayed on the [Post Page](post-page.mdx) and [About P
 
 ### Compatible with oklch colors
 
-Disqus will detect the color scheme of the website and change the color of the comments accordingly.
-However, Disqus does not support [oklch colors](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch) which is used in Dream.
+Set the color scheme to **Auto** in your Disqus admin settings so that Disqus can detect the page's colors.
+Dream reloads Disqus when you switch between light and dark mode, including changes to your system preference in automatic mode.
 
-To make Disqus work with Dream, we need to make an extra hack.
+Dream includes compatible colors for Disqus comments and Recommendations because Disqus cannot parse the theme's OKLCH colors.
+The defaults match the `emerald` and `forest` themes. No custom CSS is required for these themes.
 
-First, create a custom css file in `static/css/custom.css`:
+If you use [other themes](light-and-dark-mode.md), override these colors in `static/css/custom.css` with hex or RGB values:
 
 ```css
-[data-theme="emerald"] #disqus_thread {
-  color-scheme: none;
+.light #disqus_thread,
+.light #disqus_recommendations {
   background-color: #fff;
-}
-
-[data-theme="emerald"] #disqus_thread a {
   color: #333c4d;
 }
 
-[data-theme="forest"] #disqus_thread {
-  color-scheme: none;
+.dark #disqus_thread,
+.dark #disqus_recommendations {
   background-color: #171213;
-}
-
-[data-theme="forest"] #disqus_thread a {
   color: #cbc9ca;
 }
 ```
 
-The `background-color` and `color` can be obtained by inspecting the website in the browser. Follow below steps:
+To get the `background-color` and `color` values for your themes, inspect your site in the browser.
 
-1. Open the devtools in the browser (press `F12`).
-2. Click the `html` tag in the `Elements` tab.
-3. Then search for `background` in the `Styles` tab.
-4. Open the color picker and transform the oklch format to hex format.
-5. Copy them to the custom css file.
+1. Open the browser's developer tools (`F12`) and select the `<html>` element in the **Elements** tab.
+2. In the **Computed** tab, look for `background-color` and `color`. Expand each property to find its rule in the **Styles** tab.
+3. Open the color picker for each value and switch its format to **HEX**. Copy the values into the matching light or dark rules in `static/css/custom.css`.
+4. Switch to the other mode and repeat for that theme.
 
-After finishing above steps, remember to include this custom css file in `customCSS` in `hugo.toml`:
+Include the file in `hugo.toml`:
 
 ```toml
 [params]
 [params.advanced]
 customCSS = ["css/custom.css"]
 ```
-
-You may want to change the default themes `emerald` and `forest` to other themes.
-Refer to [light-and-dark-mode](./light-and-dark-mode.md) and update `background-color` and `color` accordingly.
 
 ## utterances
 

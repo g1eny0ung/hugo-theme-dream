@@ -2,17 +2,32 @@
 {{- if not $pc.Disable -}}
 {{ if site.Config.Services.Disqus.Shortname }}<div id="disqus_thread"></div>
 <script>
+    {{ if eq .Identifier "/" }}
+    function layoutDisqusAbout() {
+        window.aboutMasonry?.layout();
+    }
+    {{ end }}
+
     window.disqus_config = function () {
         this.page.identifier = '{{ default .Identifier .Context.Params.disqus_identifier }}';
         this.page.title = '{{ default .Context.Title .Context.Params.disqus_title }}';
         this.page.url = '{{ default .Context.Permalink .Context.Params.disqus_url }}';
 
         {{ if eq .Identifier "/" }}
-        this.callbacks.onReady.push(function () {
-            window.aboutMasonry.layout();
-        });
+        if (!this.callbacks.onReady.includes(layoutDisqusAbout)) {
+            this.callbacks.onReady.push(layoutDisqusAbout);
+        }
         {{ end }}
     };
+
+    let disqusDark = document.documentElement.classList.contains('dark');
+    new MutationObserver(() => {
+        const isDark = document.documentElement.classList.contains('dark');
+        if (isDark === disqusDark) return;
+        disqusDark = isDark;
+        window.DISQUS?.reset?.({ reload: true });
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
     function initDisqus() {
         var d = document, s = d.createElement('script'); s.async = true;
         s.src = '//' + {{ site.Config.Services.Disqus.Shortname }} + '.disqus.com/embed.js';
