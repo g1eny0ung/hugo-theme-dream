@@ -14,17 +14,18 @@
     <section class="flex items-center gap-2">
       {{ $isAbout := and .IsPage (eq . (site.GetPage "/about")) }}
       {{ if $isAbout }}
-      <a class="avatar cursor-pointer hover:avatar-online" href="{{ site.Home.RelPermalink }}" aria-label="{{ T "home" }}">
+      <a class="avatar cursor-pointer" href="{{ site.Home.RelPermalink }}" aria-label="{{ T "home" }}">
       {{ else }}
-      <div class="avatar cursor-pointer hover:avatar-online" @click="flip = !flip" title="{{ T "flip" }}">
+      <button type="button" class="avatar dream-flip-avatar w-12 h-12 shrink-0 rounded-full cursor-pointer"
+        @click="flip = !flip" title="{{ T "flip" }}" aria-label="{{ T "flip" }}" :aria-pressed="flip">
       {{ end }}
-        <div class="w-12 h-12 rounded-full select-none">
+        <span class="dream-flip-avatar-face block w-12 h-12 rounded-full overflow-hidden select-none">
           <img src="{{ site.Params.avatar | relURL }}" alt="{{ site.Params.headerTitle }}" />
-        </div>
+        </span>
       {{ if $isAbout }}
       </a>
       {{ else }}
-      </div>
+      </button>
       {{ end }}
 
       {{ if or site.Params.headerTitle site.Params.motto }}

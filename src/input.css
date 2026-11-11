@@ -93,6 +93,22 @@ html {
   }
 }
 
+.dream-flip-avatar:focus-visible {
+  outline: 2px solid var(--color-base-content);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .dream-flip-avatar > .dream-flip-avatar-face {
+    transform: perspective(120px) rotateY(0deg);
+    transition: transform 0.75s;
+  }
+
+  .dream-flip-avatar[aria-pressed="true"] > .dream-flip-avatar-face {
+    transform: perspective(120px) rotateY(180deg);
+  }
+}
+
 #TableOfContents {
   @apply sticky top-24;
 

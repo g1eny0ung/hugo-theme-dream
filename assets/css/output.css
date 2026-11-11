@@ -2003,6 +2003,9 @@
   .max-w-none {
     max-width: none;
   }
+  .shrink-0 {
+    flex-shrink: 0;
+  }
   .grow {
     flex-grow: 1;
   }
@@ -2090,6 +2093,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+  .overflow-hidden {
+    overflow: hidden;
   }
   .timeline-box {
     @layer daisyui.l1.l2.l3 {
@@ -2321,27 +2327,6 @@
     &::after {
       content: var(--tw-content);
       inset: 0;
-    }
-  }
-  .hover\:avatar-online {
-    &:hover {
-      @media (hover: hover) {
-        @layer daisyui.l1.l2 {
-          &:before {
-            content: "";
-            position: absolute;
-            z-index: 1;
-            display: block;
-            border-radius: calc(infinity * 1px);
-            background-color: var(--color-success);
-            outline: 2px solid var(--color-base-100);
-            width: 15%;
-            height: 15%;
-            top: 7%;
-            right: 7%;
-          }
-        }
-      }
     }
   }
   .hover\:bg-base-content\/10 {
@@ -2608,6 +2593,19 @@ html {
   }
   .back {
     transform: translateX(-25%) rotateY(180deg);
+  }
+}
+.dream-flip-avatar:focus-visible {
+  outline: 2px solid var(--color-base-content);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .dream-flip-avatar > .dream-flip-avatar-face {
+    transform: perspective(120px) rotateY(0deg);
+    transition: transform 0.75s;
+  }
+  .dream-flip-avatar[aria-pressed="true"] > .dream-flip-avatar-face {
+    transform: perspective(120px) rotateY(180deg);
   }
 }
 #TableOfContents {
