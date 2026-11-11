@@ -1,15 +1,19 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import Script from 'next/script'
 
 export default function AdSense() {
+  const containerRef = useRef(null)
+
   useEffect(() => {
+    if (!containerRef.current.offsetWidth) return
+
     ;(window.adsbygoogle = window.adsbygoogle || []).push({})
   }, [])
 
   return (
-    <div style={{ width: '100%' }}>
+    <div ref={containerRef} style={{ width: '100%' }}>
       <Script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2097283051393565"
