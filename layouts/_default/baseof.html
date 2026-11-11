@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ block "title" . -}} {{ T "home" }} {{- end }} | {{ site.Title }}</title>
 
+    {{ block "pagination" . }}{{ end }}
     {{ partial "head.html" . }}
 
     {{ block "css" . }} {{ end }}

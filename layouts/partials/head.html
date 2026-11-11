@@ -6,7 +6,17 @@
   {{ end }}
 {{ end }}
 
-<link rel="canonical" href="{{ .Permalink }}" />
+{{ $canonical := .Permalink }}
+{{ with .Store.Get "dreamPaginator" }}
+  {{ if gt .PageNumber 1 }}
+    {{ $canonical = .URL | absURL }}
+  {{ end }}
+{{ end }}
+<link rel="canonical" href="{{ $canonical }}" />
+
+{{ if and .IsSection (eq .Section "search") }}
+<meta name="robots" content="noindex" />
+{{ end }}
 
 {{ if eq .Type "posts" }}
 <!-- Page Author & Description -->
@@ -35,7 +45,7 @@
 {{ if and .IsPage (eq . (site.GetPage "/about")) }}
 <meta name="description" content="{{ (or .Description .Summary site.Params.description) | plainify }}" />
 {{ else }}
-<meta name="description" content="{{ site.Params.description | plainify }}" />
+<meta name="description" content="{{ (or .Description site.Params.description) | plainify }}" />
 {{ end }}
 {{ end }}
 
@@ -43,7 +53,13 @@
 {{ hugo.Generator }}
 
 <!-- Open Graph -->
-{{ template "_internal/opengraph.html" . }}
+{{ $openGraph := partial "opengraph.html" . }}
+{{ if ne $canonical .Permalink }}
+  {{ $original := printf `property="og:url" content=%q` .Permalink }}
+  {{ $current := printf `property="og:url" content=%q` $canonical }}
+  {{ $openGraph = replace $openGraph $original $current 1 | safeHTML }}
+{{ end }}
+{{ $openGraph }}
 
 <!-- Twitter Cards -->
 {{ template "_internal/twitter_cards.html" . }}

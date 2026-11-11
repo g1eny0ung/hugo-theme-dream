@@ -4,6 +4,10 @@
 {{ default $title $translation -}}
 {{ end }}
 
+{{ define "pagination" }}
+  {{ .Store.Set "dreamPaginator" (.Paginate (where site.RegularPages (print ".Params." .Data.Plural) "ne" nil)) }}
+{{ end }}
+
 {{ define "main"}}
 
 {{ if site.Params.zenMode }}
@@ -37,7 +41,7 @@
   <div class="divider divider-vertical md:divider-horizontal px-4 md:px-0"></div>
   {{ end }}
   <div class="flex-1">
-    {{ $paginator := .Paginate (where site.RegularPages (print ".Params." .Data.Plural) "ne" nil) }}
+    {{ $paginator := .Store.Get "dreamPaginator" }}
 
     {{ if site.Params.zenMode }}
       <div class="dream-zen-posts px-4 space-y-8">

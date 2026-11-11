@@ -1,6 +1,10 @@
+{{ define "pagination" }}
+  {{ .Store.Set "dreamPaginator" (.Paginate (where site.RegularPages "Type" "posts")) }}
+{{ end }}
+
 {{ define "main"}}
 
-{{ $paginator := .Paginate (where site.RegularPages "Type" "posts") }}
+{{ $paginator := .Store.Get "dreamPaginator" }}
 
 {{ if site.Params.zenMode }}
 <div class="dream-zen-posts max-w-[65ch] mt-8 mx-auto px-4 space-y-8">

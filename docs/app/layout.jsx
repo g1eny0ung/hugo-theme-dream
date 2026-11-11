@@ -2,17 +2,18 @@ import { Layout, Navbar, Footer } from 'nextra-theme-docs'
 import { Banner, Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
 import Adsense from './AdSense'
+import { siteName, siteUrl } from './site'
 // Required for theme styles, previously was imported under the hood
 import 'nextra-theme-docs/style.css'
 
-const siteTitle = '🌱 Hugo Theme Dream'
+const siteTitle = `🌱 ${siteName}`
 
 /** @type {import('next').Metadata} */
 export const metadata = {
-  metadataBase: new URL('https://hugo-theme-dream.g1en.site'),
+  metadataBase: new URL(siteUrl),
   title: {
-    default: 'Hugo Theme Dream',
-    template: `%s | Hugo Theme Dream`,
+    default: siteName,
+    template: `%s | ${siteName}`,
   },
 }
 
