@@ -2503,9 +2503,6 @@ html {
 :where(#disqus_thread, #disqus_recommendations) a {
   color: inherit;
 }
-#disqus_thread iframe[src*='ads-iframe'] {
-  display: none;
-}
 #dream-global-bg {
   position: fixed;
   top: 0;
