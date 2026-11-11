@@ -109,34 +109,9 @@ For more social comment systems, view [Social Comments](./social-comments.md).
 
 ## Introduce Yourself
 
-Dream provides a flippable about page to introduce yourself.
-Type the command below in your terminal to create the first section about you:
+Follow the [About Page guide](./about-page.md) to publish your introduction at `/about/`. The avatar opens the flippable About view from other pages.
 
-```bash
-hugo new about/me.md
-```
-
-Write something **about you**:
-
-```md
----
-title: About Me
----
-
-Hi, my name is Yue Yang.
-
-This is my blog.
-```
-
-Then create an `index.md` in the `content/about` folder and put below contents into it:
-
-```md
----
-headless: true
----
-```
-
-You will then see **About** in the top right navigation bar. Click it to display your about page.
+If you are upgrading a site that uses `headless: true`, see [Compatibility with existing sites](./about-page.md#compatibility-with-existing-sites).
 
 ## Write your first article
 

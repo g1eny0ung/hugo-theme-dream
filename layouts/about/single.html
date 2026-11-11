@@ -1,0 +1,22 @@
+{{ define "title" }}{{ .Title }}{{ end }}
+
+{{ define "main" }}
+<main class="mx-auto mt-8 px-4 prose dark:prose-invert">
+  <h1>{{ .Title }}</h1>
+  {{ .Content | emojify }}
+
+  {{ range sort (.Resources.ByType "page") "Date" "asc" }}
+    <section>
+      <h2>{{ .Title }}</h2>
+      {{ .Content | emojify }}
+    </section>
+  {{ end }}
+
+  {{ if fileExists "data/socials.toml" }}
+    <section>
+      <h2>{{ T "socialLinks" }}</h2>
+      {{ partialCached "socials.html" . }}
+    </section>
+  {{ end }}
+</main>
+{{ end }}

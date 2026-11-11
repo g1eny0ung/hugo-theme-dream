@@ -1,8 +1,11 @@
 {{ if and (eq . "about") }}
 
 {{ with site.GetPage "/about" }}
-{{ $aboutPages := .Resources.ByType "page" }}
-{{ if gt (len $aboutPages) 0 }}
+{{ if and .IsPage .RelPermalink }}
+<a class="text-sm font-semibold cursor-pointer hover:underline" href="{{ .RelPermalink }}" title="{{ T "about" }}">
+  {{- T "about" -}}
+</a>
+{{ else if .Resources.ByType "page" }}
 <div role="link" tabindex="0" class="text-sm font-semibold cursor-pointer hover:underline" @click="flip = !flip" title="{{ T "about" }}">
   {{- T "about" -}}
 </div>

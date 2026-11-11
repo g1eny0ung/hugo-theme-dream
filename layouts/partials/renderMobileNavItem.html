@@ -1,8 +1,14 @@
 {{ if (eq . "about") }}
 
 {{ with site.GetPage "/about" }}
-{{ $aboutPages := .Resources.ByType "page" }}
-{{ if gt (len $aboutPages) 0 }}
+{{ if and .IsPage .RelPermalink }}
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="{{ .RelPermalink }}" title="{{ T "about" }}">
+    <ion-icon name="information-circle"></ion-icon>
+    {{- T "about" -}}
+  </a>
+</li>
+{{ else if .Resources.ByType "page" }}
 <li>
   <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="{{ T "about" }}">
     <ion-icon name="information-circle"></ion-icon>

@@ -12,11 +12,20 @@
   <div class="container flex justify-between px-4">
   {{ end }}
     <section class="flex items-center gap-2">
+      {{ $isAbout := and .IsPage (eq . (site.GetPage "/about")) }}
+      {{ if $isAbout }}
+      <a class="avatar cursor-pointer hover:avatar-online" href="{{ site.Home.RelPermalink }}" aria-label="{{ T "home" }}">
+      {{ else }}
       <div class="avatar cursor-pointer hover:avatar-online" @click="flip = !flip" title="{{ T "flip" }}">
+      {{ end }}
         <div class="w-12 h-12 rounded-full select-none">
           <img src="{{ site.Params.avatar | relURL }}" alt="{{ site.Params.headerTitle }}" />
         </div>
+      {{ if $isAbout }}
+      </a>
+      {{ else }}
       </div>
+      {{ end }}
 
       {{ if or site.Params.headerTitle site.Params.motto }}
       <div>

@@ -51,11 +51,8 @@
             {{ partial "footer.html" . }}
           </div>
         </div>
-        {{ if .IsHome }}
-        <div class="back">
-        {{ else }}
-        <div class="back" data-nosnippet>
-        {{ end }}
+        {{ if not (and .IsPage (eq . (site.GetPage "/about"))) }}
+        <div class="back"{{ if not .IsHome }} data-nosnippet{{ end }}>
           <div class="container">
             {{ if site.Params.zenMode }}
               {{ partial "zen-back.html" . }}
@@ -66,6 +63,7 @@
             {{ partial "footer.html" . }}
           </div>
         </div>
+        {{ end }}
       </div>
     </div>
 

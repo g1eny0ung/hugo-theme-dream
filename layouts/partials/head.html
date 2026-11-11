@@ -32,7 +32,11 @@
 {{ else }}
 <!-- Site Author & Description -->
 <meta name="author" content="{{ site.Params.author }}" />
+{{ if and .IsPage (eq . (site.GetPage "/about")) }}
+<meta name="description" content="{{ (or .Description .Summary site.Params.description) | plainify }}" />
+{{ else }}
 <meta name="description" content="{{ site.Params.description | plainify }}" />
+{{ end }}
 {{ end }}
 
 <!-- Site Generator -->
