@@ -31,7 +31,7 @@
         document.documentElement.classList.add(isDark ? 'dark' : 'light')
       })()
     </script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.12/dist/cdn.min.js" integrity="sha256-V7N9fK6aJ9ll/a5K3MhEJF39xAfmVa7oXc//OggDaj8=" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.17.5/dist/cdn.min.js" integrity="sha256-tANunprCL6b2rhuikuAV4fPpyF0Neec+TI65uxObUi4=" crossorigin="anonymous"></script>
   </head>
 
   <body x-data="{
@@ -72,21 +72,31 @@
     {{ block "js" . }} {{ end }}
 
     {{ if .Store.Get "hasMermaid" }}
-      <script type="module">
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.16.0/dist/mermaid.esm.min.mjs';
+      <script id="dream-mermaid" type="module" src="https://cdn.jsdelivr.net/npm/mermaid@12.3.0/dist/mermaid.esm.min.mjs" integrity="sha256-eCXU9Qt3JXmCRr3dZ+oinRLgvRoOntxnugycqf8uTis=" crossorigin="anonymous"></script>
+      <script>
+        document.getElementById('dream-mermaid').addEventListener('load', async (event) => {
+          const { default: mermaid } = await import(event.currentTarget.src);
 
-        mermaid.initialize({ startOnLoad: false });
-        await mermaid.run({ querySelector: '.mermaid' });
+          mermaid.initialize({
+            startOnLoad: false,
+            theme: 'default',
+            look: 'classic',
+            flowchart: { layout: 'dagre' },
+            class: { layout: 'dagre' },
+            state: { layout: 'dagre' },
+          });
+          await mermaid.run({ querySelector: '.mermaid' });
 
-        document.querySelectorAll('.mermaid-panzoom').forEach((container) => {
-          const mermaid = container.firstElementChild;
-          const diagram = mermaid.querySelector('svg');
-          const panzoom = window.Panzoom(diagram, { maxScale: 5 });
-          const resetButton = container.querySelector('.mermaid-panzoom-reset');
+          document.querySelectorAll('.mermaid-panzoom').forEach((container) => {
+            const mermaid = container.firstElementChild;
+            const diagram = mermaid.querySelector('svg');
+            const panzoom = window.Panzoom(diagram, { maxScale: 5 });
+            const resetButton = container.querySelector('.mermaid-panzoom-reset');
 
-          mermaid.addEventListener('wheel', panzoom.zoomWithWheel);
-          resetButton.addEventListener('click', () => panzoom.reset());
-        });
+            mermaid.addEventListener('wheel', panzoom.zoomWithWheel);
+            resetButton.addEventListener('click', () => panzoom.reset());
+          });
+        }, { once: true });
       </script>
       <script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom@4.6.2/dist/panzoom.min.js" integrity="sha256-PONU73tJPvtipNSsqvhvotYCfrYphXpOFEBB3hoRLB4=" crossorigin="anonymous"></script>
     {{ end }}
@@ -103,6 +113,6 @@
       {{ template "_internal/google_analytics.html" . }}
     {{ end }}
 
-    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@8.0.13/dist/ionicons/ionicons.esm.js" integrity="sha256-46Vf2l/aX0tBSf2YXcaYMxF7JVJl30zn8Y9L9zZNXMA=" crossorigin="anonymous"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@8.1.0/dist/ionicons/ionicons.esm.js" integrity="sha256-nV54vbcmAakPnygPy6nvhg7LVyKELt7WF3KHWuRBUZo=" crossorigin="anonymous"></script>
   </body>
 </html>

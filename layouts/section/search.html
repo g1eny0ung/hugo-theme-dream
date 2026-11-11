@@ -9,10 +9,7 @@
 {{ else }}
 <div class="mt-8 lg:mt-12 px-4"
 {{ end }}
-x-data="{
-  search: '',
-  get posts() { return this.search !== '' ? window.fuseInstance.search(this.search) : [] },
-}">
+x-data="dreamSearch">
   <label for="search" class="input w-full">
     <input id="search" name="search" type="text" autofocus class="grow" placeholder="{{ T "search" }}" x-model.debounce="search" />
     <ion-icon name="search"></ion-icon>
@@ -68,8 +65,13 @@ x-data="{
   {{ $data = $data | append (dict "title" .Title "url" .RelPermalink "author" .Params.author "avatar" .Params.avatar "categories" .Params.categories "tags" .Params.tags "description" (or .Description (.Summary | plainify)) "readingTime" .ReadingTime) }}
 {{ end }}
 
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.2.0/dist/fuse.min.js" integrity="sha256-iTXB3d/JTO+DocuUpeiiDkW0dAu1NhOLXIWxeNiIWxc=" crossorigin="anonymous"></script>
+<script id="dream-fuse" type="module" src="https://cdn.jsdelivr.net/npm/fuse.js@7.5.0/dist/fuse.min.mjs" integrity="sha256-WrUk0SSSuyM1aOlgAEbhqqliPTbr5olYkUT33Jsdpvc=" crossorigin="anonymous"></script>
 <script>
+  const fuseScript = document.getElementById('dream-fuse');
+  const fuseReady = new Promise((resolve, reject) => {
+    fuseScript.addEventListener('load', resolve, { once: true });
+    fuseScript.addEventListener('error', () => reject(new Error('Could not load Fuse.js')), { once: true });
+  });
   const fuseData = {{ $data }};
   const fuseOptions = {
     keys: [
@@ -78,7 +80,23 @@ x-data="{
     ]
   };
 
-  window.fuseInstance = new Fuse(fuseData, fuseOptions);
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('dreamSearch', () => ({
+      search: '',
+      findPosts: null,
+
+      async init() {
+        await fuseReady;
+        const { default: Fuse } = await import(fuseScript.src);
+        const fuse = new Fuse(fuseData, fuseOptions);
+        this.findPosts = (query) => fuse.search(query);
+      },
+
+      get posts() {
+        return this.search && this.findPosts ? this.findPosts(this.search) : [];
+      },
+    }));
+  });
 </script>
 
 {{ end }}
