@@ -31,16 +31,4 @@
     </article>
   </div>
   {{ end }}
-
-  {{ if and hugo.IsProduction site.Config.Services.Disqus.Shortname .IsHome }}
-  <div class="w-full md:w-1/2 p-4 dream-column">
-    <article
-      class="card bg-base-100 shadow-xl dark:border dark:border-base-content/30"
-    >
-      <div class="card-body">
-        {{ partial "disqus.html" (dict "Context" . "Identifier" "/") }}
-      </div>
-    </article>
-  </div>
-  {{ end }}
 </div>

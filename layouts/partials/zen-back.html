@@ -19,9 +19,4 @@
       {{ partialCached "socials.html" . }}
     </div>
   {{ end }}
-
-  {{ if and hugo.IsProduction site.Config.Services.Disqus.Shortname .IsHome }}
-    <div class="divider divider-vertical"></div>
-    {{ partial "disqus.html" (dict "Context" . "Identifier" "/") }}
-  {{ end }}
 </div>

@@ -18,5 +18,13 @@
       {{ partialCached "socials.html" . }}
     </section>
   {{ end }}
+
+  {{ if and hugo.IsProduction site.Config.Services.Disqus.Shortname }}
+    {{ with partial "disqus.html" (dict "Context" site.Home "Identifier" "/") }}
+      <div class="mt-8 not-prose">
+        {{ . }}
+      </div>
+    {{ end }}
+  {{ end }}
 </main>
 {{ end }}
