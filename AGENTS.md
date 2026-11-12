@@ -27,6 +27,14 @@ Keep configuration names and defaults consistent with `hugo.example.toml` and `d
 Write documentation in English and link existing guides instead of copying them.
 Follow `.editorconfig` and `.prettierrc` for formatting.
 
+## GitHub release notes
+
+Use [v3.19.0](https://github.com/g1eny0ung/hugo-theme-dream/releases/tag/v3.19.0) as an example of the opening Note and change list.
+
+1. Start the release body with a GitHub Markdown `> [!NOTE]` alert. Acknowledge AI assistance when it contributed to the release and link to [open an issue](https://github.com/g1eny0ung/hugo-theme-dream/issues/new).
+2. Use the version entry in [CHANGELOG.md](docs/content/CHANGELOG.md) for the body. Keep the applicable `### Added`, `### Changed`, and `### Fixed` headings. Group related changes and explain what users will notice or need to do when upgrading. Summarize relevant dependency upgrades in one bullet. Use absolute links to the published documentation.
+3. End with `**Full Changelog**: https://github.com/g1eny0ung/hugo-theme-dream/compare/v3.18.0...v3.19.0` on its own line. Substitute the previous and new release tags for the example tags.
+
 ## Dependencies and caches
 
 Use Node.js 24 for local development to match the documentation CI.
