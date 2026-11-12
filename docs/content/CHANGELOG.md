@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [3.19.0] - 2026-11-12
+
+### Added
+
+- Publish a standalone [About page](./about-page.md) at `/about/`. To switch from a headless About page, remove `headless: true` from `content/about/index.md` and add a title and description. The existing [Disqus discussion](./social-comments.mdx#disqus) moves from the flippable view to the standalone page.
+- Set [`hideAuthorInSummary`](./params-configurations.mdx#hideauthorinsummary) to hide the author name and avatar on post summary cards while keeping the reading time visible.
+
+### Changed
+
+- Add breadcrumbs to category and tag pages, and move category and tag links above the post grid on their overview pages.
+- The avatar flips with the page and can be activated with a keyboard. When reduced motion is enabled, page flips and scrolling skip their animations.
+- Upgrade browser dependencies, including Mermaid 12, MathJax 4, and the Twikoo 2 client.
+
+### Fixed
+
+- Fix the menu styling of nested entries in the table of contents.
+- Use the URL of the current page in search and social metadata for paginated home, category, and tag listings. Tell search engines to skip the site's built-in search page.
+- Restore search on the Dream documentation site.
+
 ## [3.18.0] - 2026-11-11
 
 ### Changed
