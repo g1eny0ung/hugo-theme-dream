@@ -17,7 +17,7 @@
       {{ $webp := .Process "webp" }}
       <picture>
         <source srcset="{{ $webp.RelPermalink }}" type="image/webp" />
-        <img class="w-24 max-w-none rounded-lg" src="{{ .RelPermalink }}" alt="{{ .Title }}" />
+        <img class="w-24 max-w-none rounded-lg" src="{{ .RelPermalink }}" alt="{{ .Title }}" width="{{ .Width }}" height="{{ .Height }}" />
       </picture>
     {{ else }}
       <img class="w-24 max-w-none rounded-lg" src="{{ .RelPermalink }}" alt="{{ .Title }}" />
@@ -32,7 +32,7 @@
     {{ $webp := .Process "webp" }}
     <picture>
       <source srcset="{{ $webp.RelPermalink }}" type="image/webp" />
-      <img src="{{ .RelPermalink }}" alt="{{ .Title }}" />
+      <img src="{{ .RelPermalink }}" alt="{{ .Title }}" width="{{ .Width }}" height="{{ .Height }}" />
     </picture>
     {{ end }}
   </figure>

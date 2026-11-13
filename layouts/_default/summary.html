@@ -6,7 +6,7 @@
       {{ $webp := .Process "webp" }}
       <picture>
         <source srcset="{{ $webp.RelPermalink }}" type="image/webp" />
-        <img src="{{ .RelPermalink }}" alt="{{ .Title }}" />
+        <img src="{{ .RelPermalink }}" alt="{{ .Title }}" width="{{ .Width }}" height="{{ .Height }}" />
       </picture>
     {{ else }}
       <img src="{{ .RelPermalink }}" alt="{{ .Title }}" />
@@ -21,7 +21,7 @@
     {{ $webp := .Process "webp" }}
     <picture>
       <source srcset="{{ $webp.RelPermalink }}" type="image/webp" />
-      <img src="{{ .RelPermalink }}" alt="{{ .Title }}" />
+      <img src="{{ .RelPermalink }}" alt="{{ .Title }}" width="{{ .Width }}" height="{{ .Height }}" />
     </picture>
     {{ end }}
   </figure>
