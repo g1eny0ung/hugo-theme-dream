@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [3.19.1] - 2026-11-13
+
+### Fixed
+
+- Keep homepage post cards visible in responsive rows when the masonry layout scripts fail to load.
+- Let readers flip the legacy About view with Enter or Space from the desktop and mobile navigation. Tab moves through the visible side only.
+- Reserve space for local and default summary covers in both the standard layout and Zen Mode to reduce layout shifts as images load.
+
 ## [3.19.0] - 2026-11-12
 
 ### Added
