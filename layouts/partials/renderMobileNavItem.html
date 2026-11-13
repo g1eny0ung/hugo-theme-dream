@@ -10,10 +10,10 @@
 </li>
 {{ else if .Resources.ByType "page" }}
 <li>
-  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="{{ T "about" }}">
+  <button type="button" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" :aria-pressed="flip" title="{{ T "about" }}">
     <ion-icon name="information-circle"></ion-icon>
     {{- T "about" -}}
-  </div>
+  </button>
 </li>
 {{ end }}
 {{ end }}
