@@ -45,7 +45,7 @@
 
       <header>
         <h1 itemprop="headline">{{ .Title }}</h1>
-        <p class="text-sm">
+        <div class="text-sm">
           {{ if site.Params.Experimental.jsDate }}
             <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
           {{ else }}
@@ -63,10 +63,15 @@
               {{ end }}
             </span>
           {{ end }}
-        </p>
+        </div>
+        {{ if site.Params.showPostTaxonomies }}
+          {{ with partial "post-taxonomies.html" . }}
+            <div class="mt-2 flex flex-wrap items-center gap-1 text-sm [&>.badge]:min-h-6 [&>.badge]:py-px">{{ . }}</div>
+          {{ end }}
+        {{ end }}
 
         {{ $hasAuthor := or .Params.author site.Params.author }}
-        <div class="flex justify-between">
+        <div class="flex justify-between mt-2">
           {{ if $hasAuthor }}
             {{ partial "author.html" (dict "Params" .Params "template" "single") }}
           {{ end }}

@@ -54,6 +54,7 @@ siteStartYear = 2016
 # noDefaultSummaryCover = true
 # hideAuthorInSummary = true
 # showTableOfContents = true
+# showPostTaxonomies = true
 # showSummaryCoverInPost = true
 # imageZoomableInPost = true
 # showPrevNextPost = true

@@ -16,6 +16,8 @@ nextPage = "পরের পৃষ্ঠা"
 archives = "আর্কাইভ"
 allCategories = "সব বিভাগ"
 allTags = "সব ট্যাগ"
+categories = "বিভাগ"
+tags = "ট্যাগ"
 
 minuteRead = " মিনিটে পড়া যাবে"
 updatedAt = "আপডেট করা হয়েছে"

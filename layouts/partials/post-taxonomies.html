@@ -1,0 +1,8 @@
+{{- $separator := "" -}}
+{{- range $taxonomy := slice "categories" "tags" -}}
+  {{- with $.GetTerms $taxonomy }}
+    <span class="whitespace-nowrap">{{ $separator }}{{ T $taxonomy }}</span>
+    {{ partial "taxonomy-badges.html" . }}
+    {{ $separator = "| " }}
+  {{- end -}}
+{{- end -}}

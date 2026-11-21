@@ -16,6 +16,8 @@ nextPage = "Sonraki sayfa"
 archives = "Arşivler"
 allCategories = "Tüm kategoriler"
 allTags = "Tüm etiketler"
+categories = "Kategoriler"
+tags = "Etiketler"
 
 minuteRead = " dakikalık okuma"
 updatedAt = "Güncellenme tarihi"

@@ -16,6 +16,8 @@ nextPage = "Página siguiente"
 archives = "Archivo"
 allCategories = "Todas las categorías"
 allTags = "Todas las etiquetas"
+categories = "Categorías"
+tags = "Etiquetas"
 
 updatedAt = "Actualizado el"
 socialLinks = "Enlaces sociales"

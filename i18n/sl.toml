@@ -16,6 +16,8 @@ nextPage = "Naslednja stran"
 archives = "Arhiv"
 allCategories = "Vse kategorije"
 allTags = "Vse oznake"
+categories = "Kategorije"
+tags = "Oznake"
 
 updatedAt = "Posodobljeno"
 socialLinks = "Povezave do družbenih omrežij"

@@ -16,6 +16,8 @@ nextPage = "העמוד הבא"
 archives = "ארכיון"
 allCategories = "כל הקטגוריות"
 allTags = "כל התגיות"
+categories = "קטגוריות"
+tags = "תגיות"
 
 updatedAt = "עודכן בתאריך"
 socialLinks = "קישורים לרשתות חברתיות"

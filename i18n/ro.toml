@@ -16,6 +16,8 @@ nextPage = "Pagina următoare"
 archives = "Arhive"
 allCategories = "Toate categoriile"
 allTags = "Toate etichetele"
+categories = "Categorii"
+tags = "Etichete"
 
 updatedAt = "Actualizat la"
 socialLinks = "Linkuri către rețelele sociale"
