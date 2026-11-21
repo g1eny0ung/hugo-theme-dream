@@ -16,6 +16,8 @@ nextPage = "次のページ"
 archives = "アーカイブ"
 allCategories = "すべてのカテゴリー"
 allTags = "すべてのタグ"
+categories = "カテゴリー"
+tags = "タグ"
 
 minuteRead = "分で読めます"
 updatedAt = "更新日"

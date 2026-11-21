@@ -22,7 +22,7 @@
     <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
       href="{{ index $shareLinks . }}" target="_blank" rel="noopener noreferrer"
       title="Share on {{ index $shareTitles . }}">
-      <ion-icon class="group-hover:text-primary-content" name="logo-{{ . }}"></ion-icon>
+      <ion-icon class="group-hover:text-primary-content{{ if eq . "x" }} scale-90{{ end }}" name="logo-{{ . }}"></ion-icon>
     </a>
   {{ end }}
 

@@ -16,6 +16,8 @@ nextPage = "Next page"
 archives = "Archives"
 allCategories = "All Categories"
 allTags = "All Tags"
+categories = "Categories"
+tags = "Tags"
 
 minuteRead = " minute read"
 updatedAt = "Updated at"

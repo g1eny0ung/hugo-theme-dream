@@ -16,6 +16,8 @@ nextPage = "Следующая страница"
 archives = "Архивы"
 allCategories = "Все категории"
 allTags = "Все теги"
+categories = "Категории"
+tags = "Теги"
 
 updatedAt = "Обновлено"
 socialLinks = "Социальные сети"

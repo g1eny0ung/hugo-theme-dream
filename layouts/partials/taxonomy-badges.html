@@ -1,0 +1,8 @@
+{{ range . }}
+<a
+  href="{{ .RelPermalink }}"
+  class="badge h-auto min-h-8 py-0.5 no-underline wrap-anywhere hover:badge-primary"
+>
+  {{ .LinkTitle }}
+</a>
+{{ end }}

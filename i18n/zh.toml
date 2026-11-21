@@ -15,6 +15,8 @@ nextPage = "下一页"
 archives = "归档"
 allCategories = "所有分类"
 allTags = "所有标签"
+categories = "分类"
+tags = "标签"
 
 minuteRead = "分钟阅读"
 updatedAt = "更新于"

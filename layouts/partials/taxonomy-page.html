@@ -21,15 +21,12 @@
       <p class="text-sm text-base-content/75">{{ .count }}</p>
     </div>
     {{ with .terms }}
+    {{ $termPages := slice }}
+    {{ range . }}
+      {{ $termPages = $termPages | append .Page }}
+    {{ end }}
     <div class="flex flex-wrap gap-2 mt-4 prose dark:prose-invert max-w-none">
-      {{ range . }}
-      <a
-        href="{{ .Page.RelPermalink }}"
-        class="badge h-auto min-h-8 max-w-full py-0.5 no-underline wrap-anywhere hover:badge-primary"
-      >
-        {{ .Page.LinkTitle }}
-      </a>
-      {{ end }}
+      {{ partial "taxonomy-badges.html" $termPages }}
     </div>
     {{ end }}
   </header>

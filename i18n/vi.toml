@@ -16,6 +16,8 @@ nextPage = "Trang tiếp theo"
 archives = "Lưu trữ"
 allCategories = "Tất cả danh mục"
 allTags = "Tất cả thẻ"
+categories = "Danh mục"
+tags = "Thẻ"
 
 minuteRead = " phút đọc"
 updatedAt = "Cập nhật lúc"

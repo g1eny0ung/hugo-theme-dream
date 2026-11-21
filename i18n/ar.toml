@@ -16,6 +16,8 @@ nextPage = "الصفحة التالية"
 archives = "الأرشيف"
 allCategories = "جميع الفئات"
 allTags = "جميع الوسوم"
+categories = "الفئات"
+tags = "الوسوم"
 
 updatedAt = "آخر تحديث في"
 socialLinks = "روابط التواصل الاجتماعي"

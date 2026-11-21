@@ -16,6 +16,8 @@ nextPage = "Pàgina següent"
 archives = "Arxiu"
 allCategories = "Totes les categories"
 allTags = "Totes les etiquetes"
+categories = "Categories"
+tags = "Etiquetes"
 
 updatedAt = "Actualitzat el"
 socialLinks = "Enllaços socials"
