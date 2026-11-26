@@ -7,6 +7,8 @@ caution = "Precaució"
 
 home = "Inici"
 backToHome = "Tornar a l'inici"
+pageNotFound = "No s'ha trobat la pàgina"
+pageNotFoundDescription = "És possible que l'adreça sigui incorrecta o que la pàgina s'hagi mogut o eliminat."
 flip = "Gira-la!"
 about = "Quant a"
 search = "Cerca"

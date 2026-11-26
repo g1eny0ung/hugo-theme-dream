@@ -7,6 +7,8 @@ caution = "Dikkat"
 
 home = "Ana sayfa"
 backToHome = "Ana sayfaya dön"
+pageNotFound = "Sayfa bulunamadı"
+pageNotFoundDescription = "Adres yanlış olabilir veya sayfa taşınmış ya da kaldırılmış olabilir."
 flip = "Çevir!"
 about = "Hakkında"
 search = "Arama"

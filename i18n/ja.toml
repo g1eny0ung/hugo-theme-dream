@@ -7,6 +7,8 @@ caution = "注意"
 
 home = "ホーム"
 backToHome = "ホームに戻る"
+pageNotFound = "ページが見つかりません"
+pageNotFoundDescription = "URLが正しくないか、ページが移動または削除された可能性があります。"
 flip = "裏返す！"
 about = "このサイトについて"
 search = "検索"

@@ -7,6 +7,8 @@ caution = "Uzmanību"
 
 home = "Sākums"
 backToHome = "Atpakaļ uz sākumu"
+pageNotFound = "Lapa nav atrasta"
+pageNotFoundDescription = "Iespējams, adrese ir nepareiza vai lapa ir pārvietota vai dzēsta."
 flip = "Apgriezt!"
 about = "Par"
 search = "Meklēt"

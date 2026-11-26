@@ -7,6 +7,8 @@ caution = "Prudence"
 
 home = "Accueil"
 backToHome = "Retour à l'accueil"
+pageNotFound = "Page introuvable"
+pageNotFoundDescription = "L'adresse est peut-être incorrecte ou la page a peut-être été déplacée ou supprimée."
 flip = "Retourner !"
 about = "À propos"
 search = "Rechercher"

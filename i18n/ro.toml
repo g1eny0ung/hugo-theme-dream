@@ -7,6 +7,8 @@ caution = "Atenție"
 
 home = "Pagina principală"
 backToHome = "Înapoi la pagina principală"
+pageNotFound = "Pagina nu a fost găsită"
+pageNotFoundDescription = "Este posibil ca adresa să fie incorectă sau ca pagina să fi fost mutată ori eliminată."
 flip = "Întoarce!"
 about = "Despre"
 search = "Căutare"

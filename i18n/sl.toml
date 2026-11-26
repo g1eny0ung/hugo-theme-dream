@@ -7,6 +7,8 @@ caution = "Previdno"
 
 home = "Domov"
 backToHome = "Nazaj domov"
+pageNotFound = "Strani ni mogoče najti"
+pageNotFoundDescription = "Naslov je morda napačen ali pa je bila stran premaknjena ali odstranjena."
 flip = "Obrni!"
 about = "O spletišču"
 search = "Iskanje"

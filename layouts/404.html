@@ -1,9 +1,13 @@
-{{ define "title" }}404 Not Found{{ end }}
+{{ define "dream-404-title" }}{{ T "pageNotFound" | default "Page not found" }}{{ end }}
+
+{{ define "title" }}{{ template "dream-404-title" . }}{{ end }}
 
 {{ define "main" }}
-<div class="h-[60vh] mx-auto px-4 flex flex-col justify-center items-center prose dark:prose-invert">
-  <h1>Oops...You are lost in dream.</h1>
-  <p>Don't worry though, click the button below to wake up.</p>
-  <button class="btn my-5" @click="window.location.href = '{{ site.Home.RelPermalink }}'">{{ T "backToHome" }}</button>
-</div>
+<main dir="auto" class="min-h-[60vh] px-4 py-12 flex flex-col justify-center items-center text-center">
+  <h1 class="text-3xl sm:text-4xl font-bold text-balance">{{ template "dream-404-title" . }}</h1>
+  <p class="mt-3 max-w-prose text-pretty">
+    {{ T "pageNotFoundDescription" | default "The address may be incorrect, or the page may have moved or been removed." }}
+  </p>
+  <a class="btn btn-outline mt-6" href="{{ site.Home.RelPermalink }}">{{ T "backToHome" | default "Back to home" }}</a>
+</main>
 {{ end }}

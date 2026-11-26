@@ -7,6 +7,8 @@ caution = "Thận trọng"
 
 home = "Trang chủ"
 backToHome = "Quay lại trang chủ"
+pageNotFound = "Không tìm thấy trang"
+pageNotFoundDescription = "Địa chỉ có thể không chính xác hoặc trang đã được di chuyển hay xóa."
 flip = "Lật!"
 about = "Giới thiệu"
 search = "Tìm kiếm"

@@ -7,6 +7,8 @@ caution = "Caution"
 
 home = "Home"
 backToHome = "Back to home"
+pageNotFound = "Page not found"
+pageNotFoundDescription = "The address may be incorrect, or the page may have moved or been removed."
 flip = "Flip it!"
 about = "About"
 search = "Search"

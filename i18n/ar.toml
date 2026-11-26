@@ -7,6 +7,8 @@ caution = "تنبيه"
 
 home = "الرئيسية"
 backToHome = "العودة إلى الصفحة الرئيسية"
+pageNotFound = "الصفحة غير موجودة"
+pageNotFoundDescription = "قد يكون عنوان الصفحة غير صحيح، أو ربما نُقلت الصفحة أو حُذفت."
 flip = "اقلبها!"
 about = "حول"
 search = "بحث"

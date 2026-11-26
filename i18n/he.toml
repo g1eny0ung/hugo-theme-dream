@@ -7,6 +7,8 @@ caution = "זהירות"
 
 home = "דף הבית"
 backToHome = "חזרה לדף הבית"
+pageNotFound = "הדף לא נמצא"
+pageNotFoundDescription = "ייתכן שהכתובת שגויה, או שהדף הועבר או הוסר."
 flip = "הפוך!"
 about = "אודות"
 search = "חיפוש"

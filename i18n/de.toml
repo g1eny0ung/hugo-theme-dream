@@ -7,6 +7,8 @@ caution = "Vorsicht"
 
 home = "Startseite"
 backToHome = "Zurück zur Startseite"
+pageNotFound = "Seite nicht gefunden"
+pageNotFoundDescription = "Möglicherweise ist die Adresse falsch oder die Seite wurde verschoben oder gelöscht."
 flip = "Umdrehen!"
 about = "Über"
 search = "Suche"

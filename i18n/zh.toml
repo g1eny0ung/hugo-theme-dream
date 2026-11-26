@@ -6,6 +6,8 @@ caution = "小心"
 
 home = "首页"
 backToHome = "返回首页"
+pageNotFound = "页面未找到"
+pageNotFoundDescription = "网址可能有误，页面也可能已移动或删除。"
 flip = "翻转一下！"
 about = "关于"
 search = "搜索"
