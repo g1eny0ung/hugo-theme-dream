@@ -41,19 +41,19 @@ many = " минут чтения"
 other = " минут чтения"
 
 [article]
-one = "1 статья"
+one = "{{ .Count }} статья"
 few = "{{ .Count }} статьи"
 many = "{{ .Count }} статей"
 other = "{{ .Count }} статьи"
 
 [category]
-one = "1 категория"
+one = "{{ .Count }} категория"
 few = "{{ .Count }} категории"
 many = "{{ .Count }} категорий"
 other = "{{ .Count }} категории"
 
 [tag]
-one = "1 тег"
+one = "{{ .Count }} тег"
 few = "{{ .Count }} тега"
 many = "{{ .Count }} тегов"
 other = "{{ .Count }} тега"

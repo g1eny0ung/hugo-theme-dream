@@ -47,7 +47,7 @@ x-data="dreamSearch">
 
           <div class="inline-flex items-center">
             <ion-icon name="time" class="mr-1"></ion-icon>
-            <span><span x-text="post.item.readingTime"></span>{{ T "minuteRead" .ReadingTime }}</span>
+            <span x-text="post.item.readingTime"></span>
           </div>
         </div>
       </div>
@@ -62,7 +62,8 @@ x-data="dreamSearch">
 
 {{ $data := slice }}
 {{ range (where site.RegularPages "Type" "posts") }}
-  {{ $data = $data | append (dict "title" .Title "url" .RelPermalink "author" .Params.author "avatar" .Params.avatar "categories" .Params.categories "tags" .Params.tags "description" (or .Description (.Summary | plainify)) "readingTime" .ReadingTime) }}
+  {{ $readingTime := printf "%d%s" .ReadingTime (T "minuteRead" .ReadingTime) }}
+  {{ $data = $data | append (dict "title" .Title "url" .RelPermalink "author" .Params.author "avatar" .Params.avatar "categories" .Params.categories "tags" .Params.tags "description" (or .Description (.Summary | plainify)) "readingTime" $readingTime) }}
 {{ end }}
 
 <script id="dream-fuse" type="module" src="https://cdn.jsdelivr.net/npm/fuse.js@7.5.0/dist/fuse.min.mjs" integrity="sha256-WrUk0SSSuyM1aOlgAEbhqqliPTbr5olYkUT33Jsdpvc=" crossorigin="anonymous"></script>

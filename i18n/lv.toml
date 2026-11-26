@@ -41,15 +41,15 @@ other = " minūtes lasīšanai"
 
 [article]
 zero = "{{ .Count }} rakstu"
-one = "1 raksts"
+one = "{{ .Count }} raksts"
 other = "{{ .Count }} raksti"
 
 [category]
 zero = "{{ .Count }} kategoriju"
-one = "1 kategorija"
+one = "{{ .Count }} kategorija"
 other = "{{ .Count }} kategorijas"
 
 [tag]
 zero = "{{ .Count }} tagu"
-one = "1 tags"
+one = "{{ .Count }} tags"
 other = "{{ .Count }} tagi"

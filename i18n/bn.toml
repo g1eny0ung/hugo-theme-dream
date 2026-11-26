@@ -36,13 +36,13 @@ selectDarkMode = "গাঢ় মোড ব্যবহার করুন"
 selectSystemMode = "সিস্টেমের সেটিংস অনুসরণ করুন"
 
 [article]
-one = "1টি নিবন্ধ"
+one = "{{ .Count }}টি নিবন্ধ"
 other = "{{ .Count }}টি নিবন্ধ"
 
 [category]
-one = "1টি বিভাগ"
+one = "{{ .Count }}টি বিভাগ"
 other = "{{ .Count }}টি বিভাগ"
 
 [tag]
-one = "1টি ট্যাগ"
+one = "{{ .Count }}টি ট্যাগ"
 other = "{{ .Count }}টি ট্যাগ"

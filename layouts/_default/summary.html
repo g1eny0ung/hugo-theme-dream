@@ -36,7 +36,7 @@
       {{ if site.Params.Experimental.jsDate }}
         <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
       {{ else }}
-        {{ .Date | time.Format "Monday, Jan 2, 2006" }}
+        {{ .Date | time.Format ":date_full" }}
       {{ end }}
     </p>
 

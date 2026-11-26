@@ -41,19 +41,19 @@ few = " minute branja"
 other = " minut branja"
 
 [article]
-one = "1 članek"
+one = "{{ .Count }} članek"
 two = "{{ .Count }} članka"
 few = "{{ .Count }} članki"
 other = "{{ .Count }} člankov"
 
 [category]
-one = "1 kategorija"
+one = "{{ .Count }} kategorija"
 two = "{{ .Count }} kategoriji"
 few = "{{ .Count }} kategorije"
 other = "{{ .Count }} kategorij"
 
 [tag]
-one = "1 oznaka"
+one = "{{ .Count }} oznaka"
 two = "{{ .Count }} oznaki"
 few = "{{ .Count }} oznake"
 other = "{{ .Count }} oznak"

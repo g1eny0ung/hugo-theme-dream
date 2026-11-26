@@ -39,13 +39,13 @@ one = " minute de lecture"
 other = " minutes de lecture"
 
 [article]
-one = "1 article"
+one = "{{ .Count }} article"
 other = "{{ .Count }} articles"
 
 [category]
-one = "1 catégorie"
+one = "{{ .Count }} catégorie"
 other = "{{ .Count }} catégories"
 
 [tag]
-one = "1 étiquette"
+one = "{{ .Count }} étiquette"
 other = "{{ .Count }} étiquettes"
