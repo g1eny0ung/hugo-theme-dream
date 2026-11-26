@@ -142,6 +142,10 @@ html {
   @apply menu menu-sm;
 }
 
+.prose pre:has(> code):not([dir]) {
+  direction: ltr;
+}
+
 .mermaid-panzoom {
   @apply relative border border-transparent rounded-box;
 }
@@ -156,7 +160,7 @@ html {
 }
 
 .mermaid-panzoom-reset {
-  @apply absolute z-1 right-2 bottom-2 opacity-0 pointer-events-none transition-opacity duration-150 ease-in-out;
+  @apply absolute z-1 end-2 bottom-2 opacity-0 pointer-events-none transition-opacity duration-150 ease-in-out;
 }
 
 .mermaid-panzoom:hover .mermaid-panzoom-reset,

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.Language.Locale }}"
+<html lang="{{ site.Language.Locale }}"{{ with site.Language.Direction }} dir="{{ . }}"{{ end }}
   x-data
   :class="{ dark: $store.darkMode.isDark(), light: !$store.darkMode.isDark() }"
   :data-theme="$store.darkMode.theme()">

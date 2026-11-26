@@ -26,7 +26,7 @@ x-data="dreamSearch">
         <div class="card-actions justify-between items-center mt-4">
           <div class="flex items-center">
             <template x-if="post.item.avatar">
-              <div class="avatar mr-1">
+              <div class="avatar me-1">
                 <div class="w-8 rounded-full">
                   <img class="my-0" :src="post.item.avatar" :alt="post.item.author" />
                 </div>
@@ -46,7 +46,7 @@ x-data="dreamSearch">
           </div>
 
           <div class="inline-flex items-center">
-            <ion-icon name="time" class="mr-1"></ion-icon>
+            <ion-icon name="time" class="me-1"></ion-icon>
             <span x-text="post.item.readingTime"></span>
           </div>
         </div>
