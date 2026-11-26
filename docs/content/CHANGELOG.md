@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [3.20.0] - 2026-11-27
+
+### Added
+
+- Enable [`showPostTaxonomies`](https://hugo-theme-dream.g1en.site/params-configurations#showposttaxonomies) to display a post's categories and tags below the date and reading time. Each badge links to its archive. [#430](https://github.com/g1eny0ung/hugo-theme-dream/pull/430)
+- Set `direction = "rtl"` for a language in Hugo to show navigation, breadcrumbs, post grids, and pagination right to left. Code blocks keep their left-to-right direction by default.
+
+### Changed
+
+- Format post and summary dates for the current language and region. When `jsDate` is enabled, Luxon uses the full site locale and honors `jsDateFormat`.
+- Use the default theme button styles for the 404 home link, previous and next post links, and pagination.
+
+### Fixed
+
+- Show a localized 404 message and a link to the current language's homepage that works without JavaScript.
+- Translate the default footer credit, tooltips, and accessible labels in all 18 bundled languages. Use the localized archive title in the heading and browser tab unless the site sets a custom title.
+- Use each post's reading time to choose the correct word form in search results. Fix post, category, and tag counts that could show `1` for other values.
+
 ## [3.19.1] - 2026-11-13
 
 ### Fixed
