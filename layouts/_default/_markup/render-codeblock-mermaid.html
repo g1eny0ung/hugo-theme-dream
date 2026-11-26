@@ -4,7 +4,7 @@
   {{ .Inner | htmlEscape | safeHTML }}
 </pre>
 {{ if $zoom }}
-  <button class="btn btn-square btn-sm mermaid-panzoom-reset" type="button" aria-label="Reset diagram zoom" title="Reset zoom">
+  <button class="btn btn-square btn-sm mermaid-panzoom-reset" type="button" aria-label="{{ T "resetDiagramZoom" }}" title="{{ T "resetZoom" }}">
     <ion-icon class="text-sm" name="refresh-outline" aria-hidden="true"></ion-icon>
   </button>
 </div>

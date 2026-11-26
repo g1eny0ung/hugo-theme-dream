@@ -11,12 +11,13 @@
   {{ if site.Params.footerBottomText }}
   <p>{{ site.Params.footerBottomText | safeHTML }}</p>
   {{ else }}
+  {{ $hugo := `<a class="hover:underline" href="https://gohugo.io/" target="_blank">Hugo</a>` }}
+  {{ $dream := `<a class="hover:underline" href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>` }}
   <p class="text-sm">
     🌱
     <span class="text-base-content/60">
-      Powered by <a class="hover:underline" href="https://gohugo.io/" target="_blank">Hugo</a> with theme
-      <a class="hover:underline" href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</span
-    >
+      {{ T "footerPoweredBy" (dict "Hugo" $hugo "Dream" $dream) | safeHTML }}
+    </span>
   </p>
   {{ end }}
 </div>

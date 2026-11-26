@@ -14,6 +14,8 @@ about = "Acerca de"
 search = "Buscar"
 prevPage = "Página anterior"
 nextPage = "Página siguiente"
+moreNavigationOptions = "Más opciones de navegación"
+breadcrumb = "Ruta de navegación"
 
 archives = "Archivo"
 allCategories = "Todas las categorías"
@@ -23,6 +25,14 @@ tags = "Etiquetas"
 
 updatedAt = "Actualizado el"
 socialLinks = "Enlaces sociales"
+email = "Correo electrónico"
+shareOn = "Compartir en {{ .Platform }}"
+resetDiagramZoom = "Restablecer el zoom del diagrama"
+resetZoom = "Restablecer el zoom"
+footerPoweredBy = "Creado con {{ .Hugo }} y el tema {{ .Dream }}."
+selectLightMode = "Usar el modo claro"
+selectDarkMode = "Usar el modo oscuro"
+selectSystemMode = "Seguir la configuración del sistema"
 
 [minuteRead]
 one = " minuto de lectura"

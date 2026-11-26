@@ -14,6 +14,8 @@ about = "Par"
 search = "Meklēt"
 prevPage = "Iepriekšējā lapa"
 nextPage = "Nākamā lapa"
+moreNavigationOptions = "Citas navigācijas iespējas"
+breadcrumb = "Navigācijas ceļš"
 
 archives = "Arhīvs"
 allCategories = "Visas kategorijas"
@@ -23,6 +25,14 @@ tags = "Tagi"
 
 updatedAt = "Atjaunināts"
 socialLinks = "Sociālo tīklu saites"
+email = "E-pasts"
+shareOn = "Kopīgot platformā {{ .Platform }}"
+resetDiagramZoom = "Atiestatīt diagrammas tālummaiņu"
+resetZoom = "Atiestatīt tālummaiņu"
+footerPoweredBy = "Vietne veidota ar {{ .Hugo }}, izmantojot tēmu {{ .Dream }}."
+selectLightMode = "Izmantot gaišo režīmu"
+selectDarkMode = "Izmantot tumšo režīmu"
+selectSystemMode = "Izmantot sistēmas iestatījumus"
 
 [minuteRead]
 zero = " minūšu lasīšanai"

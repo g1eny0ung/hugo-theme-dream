@@ -14,6 +14,8 @@ about = "אודות"
 search = "חיפוש"
 prevPage = "העמוד הקודם"
 nextPage = "העמוד הבא"
+moreNavigationOptions = "אפשרויות ניווט נוספות"
+breadcrumb = "נתיב ניווט"
 
 archives = "ארכיון"
 allCategories = "כל הקטגוריות"
@@ -23,6 +25,14 @@ tags = "תגיות"
 
 updatedAt = "עודכן בתאריך"
 socialLinks = "קישורים לרשתות חברתיות"
+email = "דואר אלקטרוני"
+shareOn = "שיתוף ב־{{ .Platform }}"
+resetDiagramZoom = "איפוס זום התרשים"
+resetZoom = "איפוס זום"
+footerPoweredBy = "מופעל באמצעות {{ .Hugo }} עם ערכת העיצוב {{ .Dream }}."
+selectLightMode = "שימוש במצב בהיר"
+selectDarkMode = "שימוש במצב כהה"
+selectSystemMode = "שימוש בהגדרות המערכת"
 
 [minuteRead]
 one = " דקת קריאה"

@@ -1,8 +1,8 @@
 <div
   x-data="{ icons: [
-    { name: 'sunny', status: 'n' },
-    { name: 'moon', status: 'y' },
-    { name: 'desktop', status: 'auto' }
+    { name: 'sunny', status: 'n', label: {{ T "selectLightMode" | jsonify }} },
+    { name: 'moon', status: 'y', label: {{ T "selectDarkMode" | jsonify }} },
+    { name: 'desktop', status: 'auto', label: {{ T "selectSystemMode" | jsonify }} }
   ] }"
   class="flex items-center gap-2 h-8 px-2 bg-base-100 border border-base-content/30 rounded-full"
 >
@@ -10,7 +10,7 @@
     <div
       role="button"
       tabindex="0"
-      :aria-label="'Select ' + icon.name + ' mode'"
+      :aria-label="icon.label"
       class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
       :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
       @click="$store.darkMode.toggle(icon.status)"

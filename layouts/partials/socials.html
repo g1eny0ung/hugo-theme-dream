@@ -1,7 +1,8 @@
 <ul class="menu menu-horizontal flex-wrap w-full px-0 [&_ion-icon]:text-lg">
   {{ if site.Params.email }}
+  {{ $label := T "email" }}
   <li>
-    <a href="mailto:{{ site.Params.email }}" title="Email">
+    <a href="mailto:{{ site.Params.email }}" title="{{ $label }}" aria-label="{{ $label }}">
       <ion-icon name="mail"></ion-icon>
     </a>
   </li>

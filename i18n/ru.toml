@@ -14,6 +14,8 @@ about = "О сайте"
 search = "Поиск"
 prevPage = "Предыдущая страница"
 nextPage = "Следующая страница"
+moreNavigationOptions = "Дополнительные параметры навигации"
+breadcrumb = "Хлебные крошки"
 
 archives = "Архивы"
 allCategories = "Все категории"
@@ -23,6 +25,14 @@ tags = "Теги"
 
 updatedAt = "Обновлено"
 socialLinks = "Социальные сети"
+email = "Электронная почта"
+shareOn = "Поделиться в {{ .Platform }}"
+resetDiagramZoom = "Сбросить масштаб диаграммы"
+resetZoom = "Сбросить масштаб"
+footerPoweredBy = "Сайт создан на {{ .Hugo }} с темой {{ .Dream }}."
+selectLightMode = "Использовать светлый режим"
+selectDarkMode = "Использовать тёмный режим"
+selectSystemMode = "Использовать настройки системы"
 
 [minuteRead]
 one = " минута чтения"

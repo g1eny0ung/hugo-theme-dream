@@ -14,6 +14,8 @@ about = "Despre"
 search = "Căutare"
 prevPage = "Pagina precedentă"
 nextPage = "Pagina următoare"
+moreNavigationOptions = "Mai multe opțiuni de navigare"
+breadcrumb = "Traseu de navigare"
 
 archives = "Arhive"
 allCategories = "Toate categoriile"
@@ -23,6 +25,14 @@ tags = "Etichete"
 
 updatedAt = "Actualizat la"
 socialLinks = "Linkuri către rețelele sociale"
+email = "E-mail"
+shareOn = "Distribuie pe {{ .Platform }}"
+resetDiagramZoom = "Resetează scara diagramei"
+resetZoom = "Resetează scara"
+footerPoweredBy = "Creat cu {{ .Hugo }} și tema {{ .Dream }}."
+selectLightMode = "Folosește modul luminos"
+selectDarkMode = "Folosește modul întunecat"
+selectSystemMode = "Urmează setările sistemului"
 
 [minuteRead]
 one = " minut de lectură"

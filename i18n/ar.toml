@@ -14,6 +14,8 @@ about = "حول"
 search = "بحث"
 prevPage = "الصفحة السابقة"
 nextPage = "الصفحة التالية"
+moreNavigationOptions = "المزيد من خيارات التنقل"
+breadcrumb = "مسار التنقل"
 
 archives = "الأرشيف"
 allCategories = "جميع الفئات"
@@ -23,6 +25,14 @@ tags = "الوسوم"
 
 updatedAt = "آخر تحديث في"
 socialLinks = "روابط التواصل الاجتماعي"
+email = "البريد الإلكتروني"
+shareOn = "مشاركة على {{ .Platform }}"
+resetDiagramZoom = "إعادة ضبط تكبير المخطط"
+resetZoom = "إعادة ضبط التكبير"
+footerPoweredBy = "يعمل بواسطة {{ .Hugo }} باستخدام قالب {{ .Dream }}."
+selectLightMode = "استخدام الوضع الفاتح"
+selectDarkMode = "استخدام الوضع الداكن"
+selectSystemMode = "اتباع إعدادات النظام"
 
 [minuteRead]
 zero = " دقيقة للقراءة"

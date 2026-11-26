@@ -14,6 +14,8 @@ about = "Quant a"
 search = "Cerca"
 prevPage = "Pàgina anterior"
 nextPage = "Pàgina següent"
+moreNavigationOptions = "Més opcions de navegació"
+breadcrumb = "Fil d’Ariadna"
 
 archives = "Arxiu"
 allCategories = "Totes les categories"
@@ -23,6 +25,14 @@ tags = "Etiquetes"
 
 updatedAt = "Actualitzat el"
 socialLinks = "Enllaços socials"
+email = "Correu electrònic"
+shareOn = "Comparteix a {{ .Platform }}"
+resetDiagramZoom = "Restableix el zoom del diagrama"
+resetZoom = "Restableix el zoom"
+footerPoweredBy = "Creat amb {{ .Hugo }} i el tema {{ .Dream }}."
+selectLightMode = "Fes servir el mode clar"
+selectDarkMode = "Fes servir el mode fosc"
+selectSystemMode = "Segueix la configuració del sistema"
 
 [minuteRead]
 one = " minut de lectura"

@@ -14,6 +14,8 @@ about = "O spletišču"
 search = "Iskanje"
 prevPage = "Prejšnja stran"
 nextPage = "Naslednja stran"
+moreNavigationOptions = "Več možnosti krmarjenja"
+breadcrumb = "Drobtinice"
 
 archives = "Arhiv"
 allCategories = "Vse kategorije"
@@ -23,6 +25,14 @@ tags = "Oznake"
 
 updatedAt = "Posodobljeno"
 socialLinks = "Povezave do družbenih omrežij"
+email = "E-pošta"
+shareOn = "Deli na platformi {{ .Platform }}"
+resetDiagramZoom = "Ponastavi povečavo diagrama"
+resetZoom = "Ponastavi povečavo"
+footerPoweredBy = "Izdelano z orodjem {{ .Hugo }} in temo {{ .Dream }}."
+selectLightMode = "Uporabi svetli način"
+selectDarkMode = "Uporabi temni način"
+selectSystemMode = "Uporabi sistemske nastavitve"
 
 [minuteRead]
 one = " minuta branja"
